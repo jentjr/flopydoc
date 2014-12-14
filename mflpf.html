@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,6 +49,232 @@
             
   <div class="section" id="flopy-modflow-mflpf-module">
 <h1>flopy.modflow.mflpf Module<a class="headerlink" href="#flopy-modflow-mflpf-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-flopy.modflow.mflpf"></span><p>mflpf module.  Contains the ModflowLpf class. Note that the user can access
+the ModflowLpf class as <cite>flopy.modflow.ModflowLpf</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?lpf.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
+<dt id="flopy.modflow.mflpf.ModflowLpf">
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mflpf.</tt><tt class="descname">ModflowLpf</tt><big>(</big><em>model</em>, <em>laytyp=0</em>, <em>layavg=0</em>, <em>chani=1.0</em>, <em>layvka=0</em>, <em>laywet=0</em>, <em>ilpfcb=53</em>, <em>hdry=-1e+30</em>, <em>iwdflg=0</em>, <em>wetfct=0.1</em>, <em>iwetit=1</em>, <em>ihdwet=0</em>, <em>hk=1.0</em>, <em>hani=1.0</em>, <em>vka=1.0</em>, <em>ss=1e-05</em>, <em>sy=0.15</em>, <em>vkcb=0.0</em>, <em>wetdry=-0.01</em>, <em>storagecoefficient=False</em>, <em>constantcv=False</em>, <em>thickstrt=False</em>, <em>nocvcorrection=False</em>, <em>novfc=False</em>, <em>extension='lpf'</em>, <em>unitnumber=15</em><big>)</big><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Discretization Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>ilpfcb</strong> : int</p>
+<blockquote>
+<div><p>A flag and unit number. (default is 53).</p>
+</div></blockquote>
+<p><strong>hdry</strong> : float</p>
+<blockquote>
+<div><p>Is the head that is assigned to cells that are converted to dry during
+a simulation. Although this value plays no role in the model
+calculations, it is useful as an indicator when looking at the
+resulting heads that are output from the model. HDRY is thus similar
+to HNOFLO in the Basic Package, which is the value assigned to cells
+that are no-flow cells at the start of a model simulation. (default
+is -1.e30).</p>
+</div></blockquote>
+<p><strong>laytyp</strong> : int or array of ints (nlay)</p>
+<blockquote>
+<div><p>Layer type (default is 0).</p>
+</div></blockquote>
+<p><strong>layavg</strong> : int or array of ints (nlay)</p>
+<blockquote>
+<div><p>Layer average (default is 0).
+0 is harmonic mean
+1 is logarithmic mean
+2 is arithmetic mean of saturated thickness and logarithmic mean of
+of hydraulic conductivity</p>
+</div></blockquote>
+<p><strong>chani</strong> : float or array of floats (nlay)</p>
+<blockquote>
+<div><p>contains a value for each layer that is a flag or the horizontal
+anisotropy. If CHANI is less than or equal to 0, then variable HANI
+defines horizontal anisotropy. If CHANI is greater than 0, then CHANI
+is the horizontal anisotropy for the entire layer, and HANI is not
+read. If any HANI parameters are used, CHANI for all layers must be
+less than or equal to 0. Use as many records as needed to enter a
+value of CHANI for each layer. The horizontal anisotropy is the ratio
+of the hydraulic conductivity along columns (the Y direction) to the
+hydraulic conductivity along rows (the X direction).</p>
+</div></blockquote>
+<p><strong>layvka</strong> : float or array of floats (nlay)</p>
+<blockquote>
+<div><p>a flag for each layer that indicates whether variable VKA is vertical
+hydraulic conductivity or the ratio of horizontal to vertical
+hydraulic conductivity.</p>
+</div></blockquote>
+<p><strong>laywet</strong> : float or array of floats (nlay)</p>
+<blockquote>
+<div><p>contains a flag for each layer that indicates if wetting is active.</p>
+</div></blockquote>
+<p><strong>wetfct</strong> : float</p>
+<blockquote>
+<div><p>is a factor that is included in the calculation of the head that is
+initially established at a cell when it is converted from dry to wet.
+(default is 0.1).</p>
+</div></blockquote>
+<p><strong>iwetit</strong> : int</p>
+<blockquote>
+<div><p>is the iteration interval for attempting to wet cells. Wetting is
+attempted every IWETIT iteration. If using the PCG solver
+(Hill, 1990), this applies to outer iterations, not inner iterations.
+If IWETIT  less than or equal to 0, it is changed to 1.
+(default is 1).</p>
+</div></blockquote>
+<p><strong>ihdwet</strong> : int</p>
+<blockquote>
+<div><p>is a flag that determines which equation is used to define the
+initial head at cells that become wet. (default is 0)</p>
+</div></blockquote>
+<p><strong>hk</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>is the hydraulic conductivity along rows. HK is multiplied by
+horizontal anisotropy (see CHANI and HANI) to obtain hydraulic
+conductivity along columns. (default is 1.0).</p>
+</div></blockquote>
+<p><strong>hani</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>is the ratio of hydraulic conductivity along columns to hydraulic
+conductivity along rows, where HK of item 10 specifies the hydraulic
+conductivity along rows. Thus, the hydraulic conductivity along
+columns is the product of the values in HK and HANI.
+(default is 1.0).</p>
+</div></blockquote>
+<p><strong>vka</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>is either vertical hydraulic conductivity or the ratio of horizontal
+to vertical hydraulic conductivity depending on the value of LAYVKA.
+(default is 1.0).</p>
+</div></blockquote>
+<p><strong>ss</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>is specific storage unless the STORAGECOEFFICIENT option is used.
+When STORAGECOEFFICIENT is used, Ss is confined storage coefficient.
+(default is 1.e-5).</p>
+</div></blockquote>
+<p><strong>sy</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>is specific yield. (default is 0.15).</p>
+</div></blockquote>
+<p><strong>vkcb</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>is the vertical hydraulic conductivity of a Quasi-three-dimensional
+confining bed below a layer. (default is 0.0).</p>
+</div></blockquote>
+<p><strong>wetdry</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>is a combination of the wetting threshold and a flag to indicate
+which neighboring cells can cause a cell to become wet.
+(default is -0.01).</p>
+</div></blockquote>
+<p><strong>storagecoefficient</strong> : boolean</p>
+<blockquote>
+<div><p>indicates that variable Ss and SS parameters are read as storage
+coefficient rather than specific storage. (default is False).</p>
+</div></blockquote>
+<p><strong>constantcv</strong> : boolean</p>
+<blockquote>
+<div><p>indicates that vertical conductance for an unconfined cell is
+computed from the cell thickness rather than the saturated thickness.
+The CONSTANTCV option automatically invokes the NOCVCORRECTION
+option. (default is False).</p>
+</div></blockquote>
+<p><strong>thickstrt</strong> : boolean</p>
+<blockquote>
+<div><p>indicates that layers having a negative LAYTYP are confined, and their
+cell thickness for conductance calculations will be computed as
+STRT-BOT rather than TOP-BOT. (default is False).</p>
+</div></blockquote>
+<p><strong>nocvcorrection</strong> : boolean</p>
+<blockquote>
+<div><p>indicates that vertical conductance is not corrected when the vertical
+flow correction is applied. (default is False).</p>
+</div></blockquote>
+<p><strong>novfc</strong> : boolean</p>
+<blockquote>
+<div><p>turns off the vertical flow correction under dewatered conditions.
+This option turns off the vertical flow calculation described on p.
+5-8 of USGS Techniques and Methods Report 6-A16 and the vertical
+conductance correction described on p. 5-18 of that report.
+(default is False).</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;lpf&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 15).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mflpf.ModflowLpf.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to
+which this package will be added.</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dis</strong> : ModflowLpf object</p>
+<blockquote class="last">
+<div><p>ModflowLpf object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">mflpf</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.lpf&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mflpf.ModflowLpf.write_file">
+<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the file.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +311,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>

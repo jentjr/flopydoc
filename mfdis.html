@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -41,8 +47,300 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfdis-module">
-<h1>flopy.modflow.mfdis Module<a class="headerlink" href="#flopy-modflow-mfdis-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-flopy.modflow.mfdis">
+<span id="flopy-modflow-mfdis-module"></span><h1>flopy.modflow.mfdis Module<a class="headerlink" href="#module-flopy.modflow.mfdis" title="Permalink to this headline">¶</a></h1>
+<p>mfdis module.  Contains the ModflowDis class. Note that the user can access
+the ModflowDis class as <cite>flopy.modflow.ModflowDis</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?dis.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
+<dt id="flopy.modflow.mfdis.ModflowDis">
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdis.</tt><tt class="descname">ModflowDis</tt><big>(</big><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Discretization Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>nlay</strong> : int</p>
+<blockquote>
+<div><p>Number of model layers (the default is 1).</p>
+</div></blockquote>
+<p><strong>nrow</strong> : int</p>
+<blockquote>
+<div><p>Number of model rows (the default is 2).</p>
+</div></blockquote>
+<p><strong>ncol</strong> : int</p>
+<blockquote>
+<div><p>Number of model columns (the default is 2).</p>
+</div></blockquote>
+<p><strong>nper</strong> : int</p>
+<blockquote>
+<div><p>Number of model stress periods (the default is 1).</p>
+</div></blockquote>
+<p><strong>delr</strong> : float or array of floats (ncol), optional</p>
+<blockquote>
+<div><p>An array of spacings along a row (the default is 1.0).</p>
+</div></blockquote>
+<p><strong>delc</strong> : float or array of floats (nrow), optional</p>
+<blockquote>
+<div><p>An array of spacings along a column (the default is 0.0).</p>
+</div></blockquote>
+<p><strong>laycbd</strong> : int or array of ints (nlay), optional</p>
+<blockquote>
+<div><p>An array of flags indicating whether or not a layer has a Quasi-3D
+confining bed below it. 0 indicates no confining bed, and not zero
+indicates a confining bed. LAYCBD for the bottom layer must be 0. (the
+default is 1)</p>
+</div></blockquote>
+<p><strong>top</strong> : float or array of floats (nrow, ncol), optional</p>
+<blockquote>
+<div><p>An array of the top elevation of layer 1. For the common situation in
+which the top layer represents a water-table aquifer, it may be
+reasonable to set Top equal to land-surface elevation (the default is
+1.0)</p>
+</div></blockquote>
+<p><strong>botm</strong> : float or array of floats (nlay, nrow, ncol), optional</p>
+<blockquote>
+<div><p>An array of the bottom elevation for each model cell (the default is
+0.)</p>
+</div></blockquote>
+<p><strong>perlen</strong> : float or array of floats (nper)</p>
+<blockquote>
+<div><p>An array of the stress period lengths.</p>
+</div></blockquote>
+<p><strong>nstp</strong> : int or array of ints (nper)</p>
+<blockquote>
+<div><p>Number of time steps in each stress period (default is 1).</p>
+</div></blockquote>
+<p><strong>tsmult</strong> : float or array of floats (nper)</p>
+<blockquote>
+<div><p>Time step multiplier (default is 1.0).</p>
+</div></blockquote>
+<p><strong>steady</strong> : boolean or array of boolean (nper)</p>
+<blockquote>
+<div><p>true or False indicating whether or not stress period is steady state
+(default is True).</p>
+</div></blockquote>
+<p><strong>itmuni</strong> : int</p>
+<blockquote>
+<div><p>Time units, default is days (4)</p>
+</div></blockquote>
+<p><strong>lenuni</strong> : int</p>
+<blockquote>
+<div><p>Length units, default is meters (2)</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;dis&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 11).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="5%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>heading</td>
+<td>str</td>
+<td>Text string written to top of package input file.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.checklayerthickness">
+<tt class="descname">checklayerthickness</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.checklayerthickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check layer thickness.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_cell_volumes">
+<tt class="descname">get_cell_volumes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_cell_volumes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an array of cell volumes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>vol</strong> : array of floats (nlay, nrow, ncol)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_lrc">
+<tt class="descname">get_lrc</tt><big>(</big><em>nodes</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_lrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get layer, row, column from a list of MODFLOW node numbers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>v</strong> : list of tuples containing the layer (k), row (i),</p>
+<blockquote class="last">
+<div><p>and column (j) for each node in the input list</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_node">
+<tt class="descname">get_node</tt><big>(</big><em>lrc_list</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get node number from a list of MODFLOW layer, row, column tuples.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>v</strong> : list of MODFLOW nodes for each layer (k), row (i),</p>
+<blockquote class="last">
+<div><p>and column (j) tuple in the input list</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_node_coordinates">
+<tt class="descname">get_node_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_node_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get y, x, and z cell centroids.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>y</strong> : list of cell y-centroids</p>
+<p><strong>x</strong> : list of cell x-centroids</p>
+<p class="last"><strong>z</strong> : array of floats (nlay, nrow, ncol)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.getbotm">
+<tt class="descname">getbotm</tt><big>(</big><em>k=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.getbotm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the bottom array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>botm</strong> : array of floats (nlay, nrow, ncol), or</p>
+<p class="last"><strong>botm</strong> : array of floats (nrow, ncol) if k is not none</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.gettop">
+<tt class="descname">gettop</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.gettop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the top array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>top</strong> : array of floats (nrow, ncol)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfdis.ModflowDis.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to
+which this package will be added.</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dis</strong> : ModflowDis object</p>
+<blockquote class="last">
+<div><p>ModflowDis object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">mfbas</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.dis&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.read_from_cnf">
+<tt class="descname">read_from_cnf</tt><big>(</big><em>cnf_file_name</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.read_from_cnf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read discretization informatio from an MT3D configuration file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.modflow.mfdis.ModflowDis.thickness">
+<tt class="descname">thickness</tt><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a util_3d array of cell thicknesses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>thickness</strong> : util3d array of floats (nlay, nrow, ncol)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.write_file">
+<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the file.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +377,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>

@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,6 +49,301 @@
             
   <div class="section" id="flopy-utils-binaryfile-module">
 <h1>flopy.utils.binaryfile Module<a class="headerlink" href="#flopy-utils-binaryfile-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-flopy.utils.binaryfile"></span><dl class="class">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">BinaryLayerFile</tt><big>(</big><em>filename</em>, <em>precision</em>, <em>verbose</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BinaryLayerFile class is the super class from which specific derived
+classes are formed.  This class should not be instantiated directly</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile.get_alldata">
+<tt class="descname">get_alldata</tt><big>(</big><em>mflay=None</em>, <em>nodata=-9999</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a four-dimensional array (ntimes,nlay,nrow,ncol) if mflay = None
+Return a three-dimensional arrayn (ntimes,nrow,ncol) if mflay is
+specified.  mflay is the MODFLOW layer number (i.e., it starts at 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstp=0</em>, <em>kper=0</em>, <em>idx=None</em>, <em>totim=0</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a three dimensional value array for the specified kstp, kper
+pair or totim value, or return a two dimensional head array
+if the mflay argument is specified, where mflay is the MODFLOW layer
+number (starting at 1).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile.get_header">
+<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile.get_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the file header</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique stress periods and time steps in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique times in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>k=0</em>, <em>i=0</em>, <em>j=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a time series array of size [ntimes, nstations].</p>
+<p>The get_ts method can be called as ts = hdobj.get_ts(1, 2, 3),
+which will get the time series for layer 1, row 2, and column 3.
+The time value will be in the first column of the array.</p>
+<p>Alternatively, the get_ts method can be called with a list like
+ts = hdobj.get_ts( [(1, 2, 3), (2, 3, 4)] ), which will return
+the time series for two different cells.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.BinaryLayerFile.list_records">
+<tt class="descname">list_records</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.BinaryLayerFile.list_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of all of the records in the file
+obj.list_records()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryfile.CellBudgetFile">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">CellBudgetFile</tt><big>(</big><em>filename</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>The CellBudgetFile ...</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstp=0</em>, <em>kper=0</em>, <em>idx=None</em>, <em>totim=-1</em>, <em>ilay=0</em>, <em>text=''</em>, <em>verbose=False</em>, <em>full3D=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a three dimensional value array for the specified kstp, kper
+pair or totim value, or return a two dimensional head array
+if the ilay argument is specified.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_data_by_text">
+<tt class="descname">get_data_by_text</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_data_by_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns one array of size (Ndata,nlay,nrow,ncol) of all
+records with text. Trailing spaces can be ignored</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_header">
+<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the file header</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique stress periods and time steps in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.list_records">
+<tt class="descname">list_records</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.list_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of all of the records in the file
+obj.list_records()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.skip_record">
+<tt class="descname">skip_record</tt><big>(</big><em>header</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.skip_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skip over this record, not counting header and header2.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.unique_record_names">
+<tt class="descname">unique_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.unique_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all unique record names</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryfile.HeadFile">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">HeadFile</tt><big>(</big><em>filename</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>The HeadFile class provides simple ways to retrieve 2d and 3d 
+head arrays from a MODFLOW binary head file and time series
+arrays for one or more cells.</p>
+<p>A HeadFile object is created as
+hdobj = HeadFile(filename, precision=&#8217;single&#8217;)</p>
+<p>This class can also be used for a binary drawdown file as
+ddnobj = HeadFile(filename, precision=&#8217;single&#8217;, text=&#8217;drawdown&#8217;)</p>
+<p>The BinaryLayerFile class is built on a record array consisting of
+headers, which are record arrays of the modflow header information
+(kstp, kper, pertim, totim, text, nrow, ncol, ilay)
+and long integers, which are pointers to first bytes of data for
+the corresponding data array.</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.get_alldata">
+<tt class="descname">get_alldata</tt><big>(</big><em>mflay=None</em>, <em>nodata=-9999</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a four-dimensional array (ntimes,nlay,nrow,ncol) if mflay = None
+Return a three-dimensional arrayn (ntimes,nrow,ncol) if mflay is
+specified.  mflay is the MODFLOW layer number (i.e., it starts at 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstp=0</em>, <em>kper=0</em>, <em>idx=None</em>, <em>totim=0</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a three dimensional value array for the specified kstp, kper
+pair or totim value, or return a two dimensional head array
+if the mflay argument is specified, where mflay is the MODFLOW layer
+number (starting at 1).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.get_header">
+<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the file header</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique stress periods and time steps in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique times in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>k=0</em>, <em>i=0</em>, <em>j=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a time series array of size [ntimes, nstations].</p>
+<p>The get_ts method can be called as ts = hdobj.get_ts(1, 2, 3),
+which will get the time series for layer 1, row 2, and column 3.
+The time value will be in the first column of the array.</p>
+<p>Alternatively, the get_ts method can be called with a list like
+ts = hdobj.get_ts( [(1, 2, 3), (2, 3, 4)] ), which will return
+the time series for two different cells.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.list_records">
+<tt class="descname">list_records</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.list_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of all of the records in the file
+obj.list_records()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryfile.UcnFile">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">UcnFile</tt><big>(</big><em>filename</em>, <em>text='concentration'</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UcnFile class provides simple ways to retrieve 2d and 3d 
+concentration arrays from a MT3D binary head file and time series
+arrays for one or more cells.</p>
+<p>A UcnFile object is created as
+ucnobj = UcnFile(filename, precision=&#8217;single&#8217;)</p>
+<p>The BinaryLayerFile class is built on a record array consisting of
+headers, which are record arrays of the modflow header information
+(kstp, kper, pertim, totim, text, nrow, ncol, ilay)
+and long integers, which are pointers to first bytes of data for
+the corresponding data array.</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.get_alldata">
+<tt class="descname">get_alldata</tt><big>(</big><em>mflay=None</em>, <em>nodata=-9999</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a four-dimensional array (ntimes,nlay,nrow,ncol) if mflay = None
+Return a three-dimensional arrayn (ntimes,nrow,ncol) if mflay is
+specified.  mflay is the MODFLOW layer number (i.e., it starts at 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstp=0</em>, <em>kper=0</em>, <em>idx=None</em>, <em>totim=0</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a three dimensional value array for the specified kstp, kper
+pair or totim value, or return a two dimensional head array
+if the mflay argument is specified, where mflay is the MODFLOW layer
+number (starting at 1).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.get_header">
+<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the file header</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique stress periods and time steps in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique times in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>k=0</em>, <em>i=0</em>, <em>j=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a time series array of size [ntimes, nstations].</p>
+<p>The get_ts method can be called as ts = hdobj.get_ts(1, 2, 3),
+which will get the time series for layer 1, row 2, and column 3.
+The time value will be in the first column of the array.</p>
+<p>Alternatively, the get_ts method can be called with a list like
+ts = hdobj.get_ts( [(1, 2, 3), (2, 3, 4)] ), which will return
+the time series for two different cells.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.list_records">
+<tt class="descname">list_records</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.list_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of all of the records in the file
+obj.list_records()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryfile.binaryheader">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">binaryheader</tt><big>(</big><em>bintype=None</em>, <em>precision='single'</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.binaryheader" title="Permalink to this definition">¶</a></dt>
+<dd><p>The binary_header class is a class to create headers for MODFLOW
+binary files</p>
+<p class="rubric">Methods</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.binaryfile.binaryread">
+<tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">binaryread</tt><big>(</big><em>file</em>, <em>vartype</em>, <em>shape=1</em>, <em>charlen=16</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.binaryread" title="Permalink to this definition">¶</a></dt>
+<dd><p>uses numpy to read from binary file.  This
+was found to be faster than the struct
+approach and is used as the default.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.binaryfile.binaryread_struct">
+<tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">binaryread_struct</tt><big>(</big><em>file</em>, <em>vartype</em>, <em>shape=1</em>, <em>charlen=16</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.binaryread_struct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read text, a scalar value, or an array of values from a binary file.
+file is an open file object
+vartype is the return variable type: str, numpy.int32, numpy.float32,</p>
+<blockquote>
+<div>or numpy.float64</div></blockquote>
+<dl class="docutils">
+<dt>shape is the shape of the returned array (shape(1) returns a single value)</dt>
+<dd>for example, shape = (nlay, nrow, ncol)</dd>
+<dt>charlen is the length of the text string.  Note that string arrays cannot</dt>
+<dd>be returned, only multi-character strings.  Shape has no affect on strings.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.binaryfile.join_struct_arrays">
+<tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">join_struct_arrays</tt><big>(</big><em>arrays</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.join_struct_arrays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple function that can join two numpy structured arrays.</p>
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +380,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>

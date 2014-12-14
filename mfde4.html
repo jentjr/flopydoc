@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,6 +49,125 @@
             
   <div class="section" id="flopy-modflow-mfde4-module">
 <h1>flopy.modflow.mfde4 Module<a class="headerlink" href="#flopy-modflow-mfde4-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-flopy.modflow.mfde4"></span><p>mfde4 module.  Contains the ModflowDe4 class. Note that the user can access
+the ModflowDe4 class as <cite>flopy.modflow.ModflowDe4</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?de4.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
+<dt id="flopy.modflow.mfde4.ModflowDe4">
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfde4.</tt><tt class="descname">ModflowDe4</tt><big>(</big><em>model</em>, <em>itmx=50</em>, <em>mxup=0</em>, <em>mxlow=0</em>, <em>mxbw=0</em>, <em>ifreq=3</em>, <em>mutd4=0</em>, <em>accl=1</em>, <em>hclose=1e-05</em>, <em>iprd4=1</em>, <em>extension='de4'</em>, <em>unitnumber=28</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfde4.ModflowDe4" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW DE4 - Direct Solver Package</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>itmx</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of iterations for each time step. Specify ITMAX = 1 if 
+iteration is not desired. Ideally iteration would not be required for 
+direct solution. However, it is necessary to iterate if the flow 
+equation is nonlinear or if computer precision limitations result in 
+inaccurate calculations as indicated by a large water budget error 
+(default is 50).</p>
+</div></blockquote>
+<p><strong>mxup</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of equations in the upper part of the equations to be 
+solved. This value impacts the amount of memory used by the DE4 
+Package. If specified as 0, the program will calculate MXUP as half 
+the number of cells in the model, which is an upper limit (default 
+is 0).</p>
+</div></blockquote>
+<p><strong>mxlow</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of equations in the lower part of equations to be 
+solved. This value impacts the amount of memory used by the DE4 
+Package. If specified as 0, the program will calculate MXLOW as half 
+the number of cells in the model, which is an upper limit (default is 
+0).</p>
+</div></blockquote>
+<p><strong>mxbw</strong> : int</p>
+<blockquote>
+<div><p>Maximum band width plus 1 of the lower part of the head coefficients 
+matrix. This value impacts the amount of memory used by the DE4 
+Package. If specified as 0, the program will calculate MXBW as the 
+product of the two smallest grid dimensions plus 1, which is an 
+upper limit (default is 0).</p>
+</div></blockquote>
+<p><strong>ifreq</strong> : int</p>
+<blockquote>
+<div><p>Flag indicating the frequency at which coefficients in head matrix 
+change.
+IFREQ = 1 indicates that the flow equations are linear and that 
+coefficients of simulated head for all stress terms are constant 
+for all stress periods. 
+IFREQ = 2 indicates that the flow equations are linear, but 
+coefficients of simulated head for some stress terms may change 
+at the start of each stress period.
+IFREQ = 3 indicates that a nonlinear flow equation is being solved, 
+which means that some terms in the head coefficients matrix depend 
+on simulated head (default is 3).</p>
+</div></blockquote>
+<p><strong>mutd4</strong> : int</p>
+<blockquote>
+<div><p>Flag that indicates the quantity of information that is printed when 
+convergence information is printed for a time step.
+MUTD4 = 0 indicates that the number of iterations in the time step 
+and the maximum head change each iteration are printed.
+MUTD4 = 1 indicates that only the number of iterations in the time 
+step is printed.
+MUTD4 = 2 indicates no information is printed (default is 0).</p>
+</div></blockquote>
+<p><strong>accl</strong> : int</p>
+<blockquote>
+<div><p>Multiplier for the computed head change for each iteration. Normally 
+this value is 1. A value greater than 1 may be useful for improving 
+the rate of convergence when using external iteration to solve 
+nonlinear problems (default is 1).</p>
+</div></blockquote>
+<p><strong>hclose</strong> : float</p>
+<blockquote>
+<div><p>Head change closure criterion. If iterating (ITMX &gt; 1), iteration 
+stops when the absolute value of head change at every node is less 
+than or equal to HCLOSE. HCLOSE is not used if not iterating, but a 
+value must always be specified (default is 1e-5).</p>
+</div></blockquote>
+<p><strong>iprd4</strong> : int</p>
+<blockquote>
+<div><p>Time step interval for printing out convergence information when 
+iterating (ITMX &gt; 1). If IPRD4 is 2, convergence information is 
+printed every other time step. A value must always be specified 
+even if not iterating (default is 1).</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;de4&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 28).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfde4.ModflowDe4.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfde4.ModflowDe4.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>f is either a filename or a file handle.  If the arrays in the file
+are specified using internal, external, or older style array control
+records, then f should be a file handle, and the ext_unit_dict
+dictionary of unitnumber:open(filename, &#8216;r&#8217;) must be included.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +204,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>

@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,6 +49,36 @@
             
   <div class="section" id="flopy-modflow-mfbcf-module">
 <h1>flopy.modflow.mfbcf Module<a class="headerlink" href="#flopy-modflow-mfbcf-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-flopy.modflow.mfbcf"></span><dl class="class">
+<dt id="flopy.modflow.mfbcf.ModflowBcf">
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfbcf.</tt><tt class="descname">ModflowBcf</tt><big>(</big><em>model</em>, <em>ibcfcb=0</em>, <em>intercellt=0</em>, <em>laycon=3</em>, <em>trpy=1.0</em>, <em>hdry=-1e+30</em>, <em>iwdflg=0</em>, <em>wetfct=0.1</em>, <em>iwetit=1</em>, <em>ihdwet=0</em>, <em>tran=1.0</em>, <em>hy=1.0</em>, <em>vcont=1.0</em>, <em>sf1=1e-05</em>, <em>sf2=0.15</em>, <em>wetdry=-0.01</em>, <em>extension='bcf'</em>, <em>unitnumber=15</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfbcf.ModflowBcf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block centered flow package class
+intercellt: specifies how to compute intercell conductance
+laycon: specifies the layer type
+trpy: horizontal anisotropy factor for each layer
+hdry: head in cells that are converted to dry during a simulation
+iwdflg: flag that determines if the wetting capability is active
+wetfct: factor that is included in the calculation of the head when a cell is converted from dry to wet
+iwetit: iteration interval for attempting to wet cells
+ihdwet: flag that determines which equation is used to define the initial head at cells that become wet
+tran : transmissivity of each layer; tran is used when laycon = 0 or 2
+hy : hydraulic conductivity of each layer; hy is used when laycon = 1 or &gt;2
+vcont : leakance between layers
+sf1: 
+sf2: 
+wetdry:</p>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfbcf.ModflowBcf.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfbcf.ModflowBcf.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>f is either a filename or a file handle.  if the arrays in the file
+are specified using interal, external, or older style array control
+records, then f should be a file handle, and the ext_unit_dict
+dictionary of unitnumber:open(filename, &#8216;r&#8217;) must be included.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +115,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>

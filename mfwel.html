@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,6 +49,163 @@
             
   <div class="section" id="flopy-modflow-mfwel-module">
 <h1>flopy.modflow.mfwel Module<a class="headerlink" href="#flopy-modflow-mfwel-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-flopy.modflow.mfwel"></span><p>mfwel module.  Contains the ModflowWel class. Note that the user can access
+the ModflowWel class as <cite>flopy.modflow.ModflowWel</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?wel.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
+<dt id="flopy.modflow.mfwel.ModflowWel">
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfwel.</tt><tt class="descname">ModflowWel</tt><big>(</big><em>model</em>, <em>iwelcb=0</em>, <em>layer_row_column_data=None</em>, <em>layer_row_column_Q=None</em>, <em>extension='wel'</em>, <em>unitnumber=20</em>, <em>options=None</em>, <em>naux=0</em>, <em>zerobase=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfwel.ModflowWel" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Well Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>iwelcb</strong> : int</p>
+<blockquote>
+<div><p>is a flag and a unit number. (the default is 0).</p>
+</div></blockquote>
+<p><strong>layer_row_column_data</strong> : list of records</p>
+<blockquote>
+<div><p>In its most general form, this is a triple list of well records  The
+innermost list is the layer, row, column, and flux rate for a single
+well.  Then for a stress period, there can be a list of wells.  Then
+for a simulation, there can be a separate list for each stress period.
+This gives the form of</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>lrcq = [</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>[  #stress period 1</dt>
+<dd><p class="first last">[l1, r1, c1, q1],
+[l2, r2, c2, q2],
+[l3, r3, c3, q3],
+],</p>
+</dd>
+<dt>[  #stress period 2</dt>
+<dd><p class="first last">[l1, r1, c1, q1],
+[l2, r2, c2, q2],
+[l3, r3, c3, q3],
+], ...</p>
+</dd>
+<dt>[  #stress period kper</dt>
+<dd><p class="first last">[l1, r1, c1, q1],
+[l2, r2, c2, q2],
+[l3, r3, c3, q3],
+],</p>
+</dd>
+</dl>
+</div></blockquote>
+<p class="last">]</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Note that if there are not records in layer_row_column_data, then the
+last group of wells will apply until the end of the simulation.</p>
+</div></blockquote>
+<p><strong>layer_row_column_Q</strong> : list of records</p>
+<blockquote>
+<div><p>Deprecated - use layer_row_column_data instead.</p>
+</div></blockquote>
+<p><strong>options</strong> : list of strings</p>
+<blockquote>
+<div><p>Package options. (default is None).</p>
+</div></blockquote>
+<p><strong>naux</strong> : int</p>
+<blockquote>
+<div><p>number of auxiliary variables</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;wel&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is 11).</p>
+</div></blockquote>
+<p><strong>zerobase</strong> : boolean (default is True)</p>
+<blockquote class="last">
+<div><p>True when zero-based indices are used: layers, rows, columns start at 0
+False when one-based indices are used: layers, rows, columns start at 1 (deprecated)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Parameters are not supported in FloPy.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lrcq</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">100.</span><span class="p">]]]</span>  <span class="c">#this well will be applied to all stress</span>
+<span class="gp">&gt;&gt;&gt; </span>                             <span class="c">#periods</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wel</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowWel</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">layer_row_column_data</span><span class="o">=</span><span class="n">lrcq</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes</p>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfwel.ModflowWel.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfwel.ModflowWel.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to
+which this package will be added.</p>
+</div></blockquote>
+<p><strong>nper</strong> : int</p>
+<blockquote>
+<div><p>The number of stress periods.  If nper is None, then nper will be
+obtained from the model object. (default is None).</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>wel</strong> : ModflowWel object</p>
+<blockquote class="last">
+<div><p>ModflowWel object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wel</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">mfwel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.wel&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfwel.ModflowWel.write_file">
+<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfwel.ModflowWel.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the file.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +242,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>

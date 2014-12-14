@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,6 +49,187 @@
             
   <div class="section" id="flopy-modflow-mfoc-module">
 <h1>flopy.modflow.mfoc Module<a class="headerlink" href="#flopy-modflow-mfoc-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-flopy.modflow.mfoc"></span><p>mfoc module.  Contains the ModflowOc class. Note that the user can access
+the ModflowOc class as <cite>flopy.modflow.ModflowOc</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?oc.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
+<dt id="flopy.modflow.mfoc.ModflowOc">
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfoc.</tt><tt class="descname">ModflowOc</tt><big>(</big><em>model, ihedfm=0, iddnfm=0, item2=[[0, 1, 0, 1]], item3=[[0, 0, 1, 0]], extension=['oc', 'hds', 'ddn', 'cbc'], unitnumber=[14, 51, 52, 53], save_head_every=None, words=None, compact=False, chedfm=None, cddnfm=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Output Control Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>ihedfm</strong> : int</p>
+<blockquote>
+<div><p>is a code for the format in which heads will be printed.
+(default is 0).</p>
+</div></blockquote>
+<p><strong>iddnfm</strong> : int</p>
+<blockquote>
+<div><p>is a code for the format in which heads will be printed.
+(default is 0).</p>
+</div></blockquote>
+<p><strong>item2</strong> : list of ints</p>
+<blockquote>
+<div><p>[incode, ihddfl, ibudfl, icbcfl], where incode is the code for reading
+Item 3. ihddfl is a head and drawdown output flag. This flag allows
+Item 3 flags to be specified in an early time step and then used or not
+used in subsequent time steps. Thus, it may be possible to use IHDDFL
+to avoid resetting Item 3 flags every time step.  ibudfl is a budget
+print flag. icbcfl is a flag for writing cell-by-cell flow data.
+(default is [[0, 1, 0, 1]]).</p>
+</div></blockquote>
+<p><strong>item3</strong> : list of ints</p>
+<blockquote>
+<div><p>[hdpr, ddpr, hdsv, ddsv]
+hdpr is the output flag for head printout.
+ddpr is the output flag for drawdown printout.
+hdsv is the output flag for head save.
+ddsv is the output flag for drawdown save.
+(default is [[0, 0, 1, 0]]).</p>
+</div></blockquote>
+<p><strong>extension</strong> : list of strings</p>
+<blockquote>
+<div><p>(default is [&#8216;oc&#8217;,&#8217;hds&#8217;,&#8217;ddn&#8217;,&#8217;cbc&#8217;]).</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : list of ints</p>
+<blockquote>
+<div><p>(default is [14, 51, 52, 53]).</p>
+</div></blockquote>
+<p><strong>save_head_every</strong> : int</p>
+<blockquote>
+<div><p>Time step interval for printing and/or saving results
+(default is None).</p>
+</div></blockquote>
+<p><strong>words</strong> : list of instructions</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Can be specified as a 2d list of the following form:</dt>
+<dd><p class="first last">[[per,stp,&#8217;head&#8217;,&#8217;drawdown&#8217;,&#8217;budget&#8217;,&#8217;pbudget&#8217;, &#8216;phead&#8217;]]</p>
+</dd>
+</dl>
+<p>In this 2d form, phead, pbudget will print the head and budget.
+Words can also be a 1d list of data items, such as</p>
+<blockquote>
+<div><p>[&#8216;head&#8217;,&#8217;drawdown&#8217;,&#8217;budget&#8217;].</p>
+</div></blockquote>
+<p>With a 1d list, the save_head_every option is used to determine the
+output frequency.
+(default is None).</p>
+</div></blockquote>
+<p><strong>compact</strong> : boolean</p>
+<blockquote>
+<div><p>Save results in compact budget form. (default is False).</p>
+</div></blockquote>
+<p><strong>chedfm</strong> : string</p>
+<blockquote>
+<div><p>is a character value that specifies the format for saving heads, and
+can only be specified if the word method of output control is used.
+The format must contain 20 characters or less and must be a valid
+Fortran format that is enclosed in parentheses. The format must be
+enclosed in apostrophes if it contains one or more blanks or commas.
+The optional word LABEL after the format is used to indicate that
+each layer of output should be preceded with a line that defines the
+output (simulation time, the layer being output, and so forth). If
+there is no record specifying CHEDFM, then heads are written to a
+binary (unformatted) file. Binary files are usually more compact than
+text files, but they are not generally transportable among different
+computer operating systems or different Fortran compilers.</p>
+</div></blockquote>
+<p><strong>cddnfm</strong> : string</p>
+<blockquote class="last">
+<div><p>is a character value that specifies the format for saving drawdown, and
+can only be specified if the word method of output control is used.
+The format must contain 20 characters or less and must be a valid
+Fortran format that is enclosed in parentheses. The format must be
+enclosed in apostrophes if it contains one or more blanks or commas.
+The optional word LABEL after the format is used to indicate that
+each layer of output should be preceded with a line that defines the
+output (simulation time, the layer being output, and so forth). If
+there is no record specifying CDDNFM, then drawdowns are written to a
+binary (unformatted) file. Binary files are usually more compact than
+text files, but they are not generally transportable among different
+computer operating systems or different Fortran compilers.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The &#8220;words&#8221; method for specifying output control is preferred in most
+cases.  Also, the &#8220;compact&#8221; budget should normally be used as it produces
+files that are typically much smaller.  The compact budget form is also
+a requirement for using the MODPATH particle tracking program.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">words</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;head&#39;</span><span class="p">],</span> <span class="n">save_head_every</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfoc.ModflowOc.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to
+which this package will be added.</p>
+</div></blockquote>
+<p><strong>nper</strong> : int</p>
+<blockquote>
+<div><p>The number of stress periods.  If nper is None, then nper will be
+obtained from the model object. (default is None).</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>oc</strong> : ModflowOc object</p>
+<blockquote class="last">
+<div><p>ModflowOc object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">mfoc</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.oc&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfoc.ModflowOc.write_file">
+<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the file.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +266,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>

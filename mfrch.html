@@ -32,6 +32,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,6 +49,121 @@
             
   <div class="section" id="flopy-modflow-mfrch-module">
 <h1>flopy.modflow.mfrch Module<a class="headerlink" href="#flopy-modflow-mfrch-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-flopy.modflow.mfrch"></span><p>mfrch module.  Contains the ModflowRch class. Note that the user can access
+the ModflowRch class as <cite>flopy.modflow.ModflowRch</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?rch.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
+<dt id="flopy.modflow.mfrch.ModflowRch">
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfrch.</tt><tt class="descname">ModflowRch</tt><big>(</big><em>model</em>, <em>nrchop=3</em>, <em>irchcb=0</em>, <em>rech=0.001</em>, <em>irch=1</em>, <em>extension='rch'</em>, <em>unitnumber=19</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfrch.ModflowRch" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Recharge Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>irchcb</strong> : int</p>
+<blockquote>
+<div><p>is a flag and a unit number. (the default is 0).</p>
+</div></blockquote>
+<p><strong>nrchop</strong> : int</p>
+<blockquote>
+<div><p>is the recharge option code. Recharge fluxes are defined in a layer
+variable, RECH, with one value for each vertical column. Accordingly,
+recharge is applied to one cell in each vertical column, and the
+option code determines which cell in the column is selected for
+recharge.</p>
+</div></blockquote>
+<p><strong>rech</strong> : float or array of float (nrow, ncol)</p>
+<blockquote>
+<div><p>is the recharge flux. (default is 1.e-3).</p>
+</div></blockquote>
+<p><strong>irch</strong> : int or array of int</p>
+<blockquote>
+<div><p>is the layer number variable that defines the layer in each vertical
+column where recharge is applied. (default is 1).</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;rch&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 19).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Parameters are not supported in FloPy.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rch</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowRch</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nrchop</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">rech</span><span class="o">=</span><span class="mf">1.2e-4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfrch.ModflowRch.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfrch.ModflowRch.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to
+which this package will be added.</p>
+</div></blockquote>
+<p><strong>nper</strong> : int</p>
+<blockquote>
+<div><p>The number of stress periods.  If nper is None, then nper will be
+obtained from the model object. (default is None).</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>rch</strong> : ModflowRch object</p>
+<blockquote class="last">
+<div><p>ModflowRch object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rch</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">mfrch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.rch&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfrch.ModflowRch.write_file">
+<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfrch.ModflowRch.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the file.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -79,6 +200,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
