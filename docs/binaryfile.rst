@@ -1,0 +1,6 @@
+flopy.utils.binaryfile Module
+========================
+
+.. automodule:: flopy.utils.binaryfile
+   :members:
+   :inherited-members:
