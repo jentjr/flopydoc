@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorial 1: Confined Steady-State Flow Model &mdash; flopy 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 2.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">flopy 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tutorial-1-confined-steady-state-flow-model">
+<h1>Tutorial 1: Confined Steady-State Flow Model<a class="headerlink" href="#tutorial-1-confined-steady-state-flow-model" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial demonstrates use of flopy to develop a simple MODFLOW model.  And I mean really simple.</p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>If flopy has been properly installed, then it can be imported as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">flopy</span>
+</pre></div>
+</div>
+<p>However, you may have a custom version of flopy, or maybe flopy hasn&#8217;t been officially &#8220;installed&#8221;.  In this case, you can tell python where flopy is by adding the flopy path to sys.path.  In this case, we use the following commands to set the path correctly:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">flopypth</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;flopy.svn&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">flopypth</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flopypth</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">flopy</span>
+</pre></div>
+</div>
+<p>The os.path.join function is used here to create the path so that it will work on any operating system. A relative path is used here to indicate that the flopy package is contained two folders up and down into the flopy.svn folder.</p>
+<p>Now that we can import flopy, we begin creating our simple MODFLOW model.</p>
+</div>
+<div class="section" id="creating-the-modflow-model">
+<h2>Creating the MODFLOW Model<a class="headerlink" href="#creating-the-modflow-model" title="Permalink to this headline">¶</a></h2>
+<p>One of the nice things about creating models in python is that it is very easy to change one or two things and completely change the grid resolution for your model.  So in this example, we will design our python script so that the number of layers, columns, and rows can be easily changed.</p>
+<p>We can create a very simple MODFLOW model that has a basic package (BAS), discretization input file (DIS), layer-property flow LPF) package, output control (OC), and preconditioned conjugate gradient (PCG) solver.  Each one of these has its own input file, which will be created automatically by flopy, provided that pass flopy the correct information.</p>
+<div class="section" id="discretization">
+<h3>Discretization<a class="headerlink" href="#discretization" title="Permalink to this headline">¶</a></h3>
+<p>We start by creating our flopy model object as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Assign name and create modflow model object</span>
+<span class="n">modelname</span> <span class="o">=</span> <span class="s">&#39;tutorial1&#39;</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span> <span class="n">exe_name</span><span class="o">=</span><span class="s">&#39;mf2005&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, let&#8217;s proceed by defining our model domain and creating a MODFLOW grid to span the domain:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#model domain and grid definition</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="mf">1000.</span>
+<span class="n">Ly</span> <span class="o">=</span> <span class="mf">1000.</span>
+<span class="n">ztop</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">zbot</span> <span class="o">=</span> <span class="o">-</span><span class="mf">50.</span>
+<span class="n">nlay</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">nrow</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ncol</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">delr</span> <span class="o">=</span> <span class="n">Lx</span><span class="o">/</span><span class="n">ncol</span>
+<span class="n">delc</span> <span class="o">=</span> <span class="n">Ly</span><span class="o">/</span><span class="n">nrow</span>
+<span class="n">delv</span> <span class="o">=</span> <span class="p">(</span><span class="n">ztop</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">/</span> <span class="n">nlay</span>
+<span class="n">botm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">ztop</span><span class="p">,</span> <span class="n">zbot</span><span class="p">,</span> <span class="n">nlay</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With this information, we can now create the flopy discretization object by entering the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Create the discretization object</span>
+<span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">nlay</span><span class="p">,</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">,</span> <span class="n">delr</span><span class="o">=</span><span class="n">delr</span><span class="p">,</span> <span class="n">delc</span><span class="o">=</span><span class="n">delc</span><span class="p">,</span>
+                               <span class="n">top</span><span class="o">=</span><span class="n">ztop</span><span class="p">,</span> <span class="n">botm</span><span class="o">=</span><span class="n">botm</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+</div>
+<p>The obvious question at this point is, how do I know which arguments are required by this strange thing called flopy.modflow.ModflowDis?  Fortunately, there is an online help page for each one of the model objects.  The page for the DIS input file is located at <a class="reference external" href="mfdis.html">flopy.modflow.mfdis</a>.</p>
+</div>
+<div class="section" id="basic-package">
+<h3>Basic Package<a class="headerlink" href="#basic-package" title="Permalink to this headline">¶</a></h3>
+<p>Next we can create a flopy object that represents the MODFLOW Basic Package.  Details on the flopy BAS class are at: <a class="reference external" href="mfbas.html">flopy.modflow.mfbas</a>.  For this simple model, we will assign constant head values of 10. and 0. to the first and last model columns (in all layers), respectively.  The python code for doing this is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Variables for the BAS package</span>
+<span class="n">ibound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">nlay</span><span class="p">,</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="n">ibound</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">ibound</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">strt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">nlay</span><span class="p">,</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">strt</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.</span>
+<span class="n">strt</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">bas</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowBas</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">ibound</span><span class="o">=</span><span class="n">ibound</span><span class="p">,</span> <span class="n">strt</span><span class="o">=</span><span class="n">strt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="layer-property-flow-package">
+<h3>Layer-Property Flow Package<a class="headerlink" href="#layer-property-flow-package" title="Permalink to this headline">¶</a></h3>
+<p>Details on the flopy LPF class are at: <a class="reference external" href="mflpf.html">flopy.modflow.mflpf</a>.  Values of 10. are assigned for the horizontal and vertical hydraulic conductivity:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add LPF package to the MODFLOW model</span>
+<span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">hk</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">vka</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Because we did not specify a value for laytyp, Flopy will use the default value of 0, which means that this model will be confined.</p>
+</div>
+<div class="section" id="output-control">
+<h3>Output Control<a class="headerlink" href="#output-control" title="Permalink to this headline">¶</a></h3>
+<p>Details on the flopy OC class are at: <a class="reference external" href="mfoc.html">flopy.modflow.mfoc</a>.  Here we can use the default OC settings by specifying the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add OC package to the MODFLOW model</span>
+<span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="preconditioned-conjugate-gradient-package">
+<h3>Preconditioned Conjugate Gradient Package<a class="headerlink" href="#preconditioned-conjugate-gradient-package" title="Permalink to this headline">¶</a></h3>
+<p>Details on the flopy PCG class are at: <a class="reference external" href="mfpcg.html">flopy.modflow.mfpcg</a>.  The default settings used by flopy will be used by specifying the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add PCG package to the MODFLOW model</span>
+<span class="n">pcg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcg</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="writing-the-modflow-data-files">
+<h3>Writing the MODFLOW Data Files<a class="headerlink" href="#writing-the-modflow-data-files" title="Permalink to this headline">¶</a></h3>
+<p>The MODFLOW input data files are written by simply issuing the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Write the MODFLOW model input files</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">write_input</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-the-modeling">
+<h2>Running the Modeling<a class="headerlink" href="#running-the-modeling" title="Permalink to this headline">¶</a></h2>
+<p>Flopy can also be used to run the model.  The model object (mf in this example) has an attached method that will run the model.  For this to work, the MODFLOW program must be located somewhere within the system path, or within the working directory.  In this example, we have specified that the name of the executable program is &#8216;mf2005&#8217;.  Issue the following to run the model:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Run the MODFLOW model</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">run_model3</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here we have used run_model3.  A model can also be run using run_model1, which creates a batch file, and run_model2, which will pause after the model has completed.</p>
+</div>
+<div class="section" id="post-processing-the-results">
+<h2>Post-Processing the Results<a class="headerlink" href="#post-processing-the-results" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have successfully built and run our MODFLOW model, we can look at the results.  MODFLOW writes the simulated heads to a binary data output file.  We cannot look at these heads with a text editor, but flopy has a binary utility that can be used to read the heads.  The following statements will read the binary head file and create a plot of simulated heads for layer 1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="kn">as</span> <span class="nn">bf</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">hds</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="n">modelname</span><span class="o">+</span><span class="s">&#39;.hds&#39;</span><span class="p">)</span>
+<span class="n">head</span> <span class="o">=</span> <span class="n">hds</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">delr</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">Lx</span> <span class="o">-</span> <span class="n">delr</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">Ly</span> <span class="o">-</span> <span class="n">delc</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">delc</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If everything has worked properly, you should see the following head contours.</p>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="_images/tutorial1fig1.png"><img alt="head contours in first layer" src="_images/tutorial1fig1.png" /></a>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tutorial 1: Confined Steady-State Flow Model</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#creating-the-modflow-model">Creating the MODFLOW Model</a><ul>
+<li><a class="reference internal" href="#discretization">Discretization</a></li>
+<li><a class="reference internal" href="#basic-package">Basic Package</a></li>
+<li><a class="reference internal" href="#layer-property-flow-package">Layer-Property Flow Package</a></li>
+<li><a class="reference internal" href="#output-control">Output Control</a></li>
+<li><a class="reference internal" href="#preconditioned-conjugate-gradient-package">Preconditioned Conjugate Gradient Package</a></li>
+<li><a class="reference internal" href="#writing-the-modflow-data-files">Writing the MODFLOW Data Files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-the-modeling">Running the Modeling</a></li>
+<li><a class="reference internal" href="#post-processing-the-results">Post-Processing the Results</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tutorial1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">flopy 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
