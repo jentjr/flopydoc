@@ -1,6 +1,6 @@
 flopy.mt3dms.mtgcg Module
 ========================
 
-.. automodule:: flopy.mt3dms.mtgcg
+.. automodule:: flopy.mt3d.mtgcg
    :members:
    :inherited-members:
