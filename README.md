@@ -9,6 +9,9 @@ The flopy documentation can be viewed here:
 
 http://modflowpy.github.io/flopydoc/
 
+Build the Documentation
+-----------------------
+
 For anyone who is inclined to build this documentation on your own, it can be done.  Here are a few steps that you will need to follow:
 
   * Everything here assumes that the flopy version 3 repository has been cloned to a folder called flopy3.git.  From a working folder, this can be created using the following command:
