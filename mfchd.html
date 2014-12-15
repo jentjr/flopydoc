@@ -23,7 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfde4 Module" href="mfde4.html" />
+    <link rel="prev" title="flopy.modflow.mfbcf Module" href="mfbcf.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +41,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfbcf.html" title="flopy.modflow.mfbcf Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,7 +65,7 @@ the ModflowChd class as <cite>flopy.modflow.ModflowChd</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfchd.ModflowChd">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfchd.</tt><tt class="descname">ModflowChd</tt><big>(</big><em>model</em>, <em>layer_row_column_data=None</em>, <em>layer_row_column_shead_ehead=None</em>, <em>cosines=None</em>, <em>extension='chd'</em>, <em>unitnumber=24</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfchd.ModflowChd" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfchd.</tt><tt class="descname">ModflowChd</tt><big>(</big><em>model</em>, <em>layer_row_column_data=None</em>, <em>layer_row_column_shead_ehead=None</em>, <em>cosines=None</em>, <em>extension='chd'</em>, <em>unitnumber=24</em>, <em>zerobase=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfchd.ModflowChd" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Constant Head Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -113,17 +123,18 @@ last group of chds will apply until the end of the simulation.</p>
 <blockquote>
 <div><p>Package options. (default is None).</p>
 </div></blockquote>
-<p><strong>naux</strong> : int</p>
-<blockquote>
-<div><p>number of auxiliary variables</p>
-</div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
 <div><p>Filename extension (default is &#8216;chd&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote class="last">
+<blockquote>
 <div><p>File unit number (default is 24).</p>
+</div></blockquote>
+<p><strong>zerobase</strong> : boolean (default is True)</p>
+<blockquote class="last">
+<div><p>True when zero-based indices are used: layers, rows, columns start at 0
+False when one-based indices are used: layers, rows, columns start at 1 (deprecated)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -157,6 +168,12 @@ last group of chds will apply until the end of the simulation.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfbcf.html"
+                        title="previous chapter">flopy.modflow.mfbcf Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfde4.html"
+                        title="next chapter">flopy.modflow.mfde4 Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mfchd.txt"
@@ -191,7 +208,14 @@ last group of chds will apply until the end of the simulation.</p>
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfbcf.html" title="flopy.modflow.mfbcf Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

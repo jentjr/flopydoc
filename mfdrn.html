@@ -23,7 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfevt Module" href="mfevt.html" />
+    <link rel="prev" title="flopy.modflow.mfdis Module" href="mfdis.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +41,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfevt.html" title="flopy.modflow.mfevt Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfdis.html" title="flopy.modflow.mfdis Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,7 +65,7 @@ the ModflowDrn class as <cite>flopy.modflow.ModflowDrn</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfdrn.ModflowDrn">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdrn.</tt><tt class="descname">ModflowDrn</tt><big>(</big><em>model</em>, <em>idrncb=0</em>, <em>layer_row_column_data=None</em>, <em>layer_row_column_elevation_cond=None</em>, <em>extension='drn'</em>, <em>unitnumber=21</em>, <em>options=None</em>, <em>naux=0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdrn.</tt><tt class="descname">ModflowDrn</tt><big>(</big><em>model</em>, <em>idrncb=0</em>, <em>layer_row_column_data=None</em>, <em>layer_row_column_elevation_cond=None</em>, <em>extension='drn'</em>, <em>unitnumber=21</em>, <em>options=None</em>, <em>naux=0</em>, <em>zerobase=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Drain Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -126,8 +136,13 @@ last group of drains will apply until the end of the simulation.</p>
 <div><p>Filename extension (default is &#8216;drn&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote class="last">
+<blockquote>
 <div><p>File unit number (default is 21).</p>
+</div></blockquote>
+<p><strong>zerobase</strong> : boolean (default is True)</p>
+<blockquote class="last">
+<div><p>True when zero-based indices are used: layers, rows, columns start at 0
+False when one-based indices are used: layers, rows, columns start at 1 (deprecated)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -164,6 +179,12 @@ dictionary of unitnumber:open(filename, &#8216;r&#8217;) must be included.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfdis.html"
+                        title="previous chapter">flopy.modflow.mfdis Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfevt.html"
+                        title="next chapter">flopy.modflow.mfevt Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mfdrn.txt"
@@ -198,7 +219,14 @@ dictionary of unitnumber:open(filename, &#8216;r&#8217;) must be included.</p>
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfevt.html" title="flopy.modflow.mfevt Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfdis.html" title="flopy.modflow.mfdis Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
