@@ -9,5 +9,6 @@ The flopy documentation can be viewed here:
 
 http://modflowpy.github.io/flopydoc/
 
+For anyone who is inclined to build this documentation on your own, it can be done.  Here are a few steps that you will need to follow:
 
-
+  * setup the main repository.  
