@@ -1,8 +1,8 @@
 Flopy Code
-============================
+==========
 
 Base Class
----------------
+----------
 Contents:
 
 .. toctree::
@@ -11,7 +11,7 @@ Contents:
    mbase
 
 Model Classes
----------------
+-------------
 Contents:
 
 .. toctree::
@@ -23,7 +23,7 @@ Contents:
    swt
 
 MODFLOW Packages
----------------
+----------------
 
 Contents:
 
@@ -62,7 +62,7 @@ Contents:
    mfaddoutsidefile
 
 MODPATH Packages
----------------
+----------------
 
 Contents:
 
@@ -101,7 +101,7 @@ Contents:
 
 
 Model Utilities (including binary file readers)
----------------
+-----------------------------------------------
 
 Contents:
 
@@ -110,6 +110,4 @@ Contents:
 
    mfreadnam
    binaryfile
-   mtreadbinaries
-   mfreadbinaries
    util_array
