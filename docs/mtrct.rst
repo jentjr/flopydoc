@@ -1,5 +1,5 @@
-flopy.mt3dms.mtrct Module
-========================
+flopy.mt3d.mtrct Module
+=======================
 
 .. automodule:: flopy.mt3d.mtrct
    :members:

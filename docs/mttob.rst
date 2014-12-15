@@ -1,5 +1,5 @@
-flopy.mt3dms.mttob Module
-========================
+flopy.mt3d.mttob Module
+=======================
 
 .. automodule:: flopy.mt3d.mttob
    :members:

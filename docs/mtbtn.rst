@@ -1,5 +1,5 @@
-flopy.mt3dms.mtbtn Module
-========================
+flopy.mt3d.mtbtn Module
+=======================
 
 .. automodule:: flopy.mt3d.mtbtn
    :members:
