@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3dms.mtbtn Module &mdash; flopy 3.0 documentation</title>
+    <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="flopy 3.0 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.mt3dms.mtdsp Module" href="mtdsp.html" />
-    <link rel="prev" title="flopy.mt3dms.mtadv Module" href="mtadv.html" /> 
+    <link rel="next" title="flopy.mt3d.mtdsp Module" href="mtdsp.html" />
+    <link rel="prev" title="flopy.mt3d.mtadv Module" href="mtadv.html" /> 
   </head>
   <body>
     <div class="related">
@@ -42,10 +42,10 @@
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mtdsp.html" title="flopy.mt3dms.mtdsp Module"
+          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mtadv.html" title="flopy.mt3dms.mtadv Module"
+          <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
@@ -57,8 +57,192 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-mt3dms-mtbtn-module">
-<h1>flopy.mt3dms.mtbtn Module<a class="headerlink" href="#flopy-mt3dms-mtbtn-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-flopy.mt3d.mtbtn">
+<span id="flopy-mt3d-mtbtn-module"></span><h1>flopy.mt3d.mtbtn Module<a class="headerlink" href="#module-flopy.mt3d.mtbtn" title="Permalink to this headline">¶</a></h1>
+<p>mtbtn module. Contains the Mt3dBtn class. Note that the user can access
+the Mt3dBtn class as <cite>flopy.mt3d.Mt3dBtn</cite>.</p>
+<p>Additional information for this MT3DMS package can be found in the MT3DMS
+User&#8217;s Manual.</p>
+<dl class="class">
+<dt id="flopy.mt3d.mtbtn.Mt3dBtn">
+<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtbtn.</tt><tt class="descname">Mt3dBtn</tt><big>(</big><em>model</em>, <em>ncomp=None</em>, <em>mcomp=1</em>, <em>tunit='D'</em>, <em>lunit='M'</em>, <em>munit='KG'</em>, <em>prsity=0.3</em>, <em>icbund=1</em>, <em>sconc=0.0</em>, <em>cinact=1e+30</em>, <em>thkmin=0.01</em>, <em>ifmtcn=0</em>, <em>ifmtnp=0</em>, <em>ifmtrf=0</em>, <em>ifmtdp=0</em>, <em>savucn=True</em>, <em>nprs=0</em>, <em>timprs=None</em>, <em>obs=None</em>, <em>nprobs=1</em>, <em>chkmas=True</em>, <em>nprmas=1</em>, <em>dt0=0</em>, <em>mxstrn=50000</em>, <em>ttsmult=1.0</em>, <em>ttsmax=0</em>, <em>species_names=[]</em>, <em>extension='btn'</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic Transport Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <tt class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></tt>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>ncomp</strong> : int</p>
+<blockquote>
+<div><p>The total number of chemical species in the simulation. (default is
+None, will be changed to 1 if sconc is single value)</p>
+</div></blockquote>
+<p><strong>mcomp</strong> : int</p>
+<blockquote>
+<div><p>The total number of &#8216;mobile&#8217; species (default is 1). mcomp must be
+equal or less than ncomp.</p>
+</div></blockquote>
+<p><strong>tunit</strong> : str</p>
+<blockquote>
+<div><p>The name of unit for time (default is &#8216;D&#8217;, for &#8216;days&#8217;). Used for
+identification purposes only.</p>
+</div></blockquote>
+<p><strong>lunit</strong> : str</p>
+<blockquote>
+<div><p>The name of unit for length (default is &#8216;M&#8217;, for &#8216;meters&#8217;). Used for
+identification purposes only.</p>
+</div></blockquote>
+<p><strong>munit</strong> : str</p>
+<blockquote>
+<div><p>The name of unit for mass (default is &#8216;KG&#8217;, for &#8216;kilograms&#8217;). Used for
+identification purposes only.</p>
+</div></blockquote>
+<p><strong>prsity</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>The effective porosity of the porous medium in a single porosity
+system, or the mobile porosity in a dual-porosity medium (the immobile
+porosity is defined through the Chemical Reaction Package. (default is
+0.25).</p>
+</div></blockquote>
+<p><strong>icbund</strong> : int or array of ints (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>The icbund array specifies the boundary condition type for solute
+species (shared by all species). If icbund = 0, the cell is an inactive
+concentration cell; If icbund &lt; 0, the cell is a constant-concentration
+cell; If icbund &gt; 0, the cell is an active concentration cell where the
+concentration value will be calculated. (default is 1).</p>
+</div></blockquote>
+<p><strong>sconc</strong> : float, array of (nlay, nrow, ncol), or filename, or a list (length</p>
+<blockquote>
+<div><blockquote>
+<div><p>ncomp) of these for multi-species simulations</p>
+</div></blockquote>
+<p>The starting concentration for the solute transport simulation.</p>
+</div></blockquote>
+<p><strong>cinact</strong> : float</p>
+<blockquote>
+<div><p>The value for indicating an inactive concentration cell. (default is
+1e30).</p>
+</div></blockquote>
+<p><strong>thkmin</strong> : float</p>
+<blockquote>
+<div><p>The minimum saturated thickness in a cell, expressed as the decimal
+fraction of its thickness, below which the cell is considered inactive.
+(default is 0.01).</p>
+</div></blockquote>
+<p><strong>ifmtcn</strong> : int</p>
+<blockquote>
+<div><p>A flag/format code indicating how the calculated concentration should
+be printed to the standard output text file. Format codes for printing
+are listed in Table 3 of the MT3DMS manual. If ifmtcn &gt; 0 printing is
+in wrap form; ifmtcn &lt; 0 printing is in strip form; if ifmtcn = 0
+concentrations are not printed. (default is 0).</p>
+</div></blockquote>
+<p><strong>ifmtnp</strong> : int</p>
+<blockquote>
+<div><p>A flag/format code indicating how the number of particles should
+be printed to the standard output text file. The convention is
+the same as for ifmtcn. (default is 0).</p>
+</div></blockquote>
+<p><strong>ifmtrf</strong> : int</p>
+<blockquote>
+<div><p>A flag/format code indicating how the calculated retardation factor
+should be printed to the standard output text file. The convention is
+the same as for ifmtcn. (default is 0).</p>
+</div></blockquote>
+<p><strong>ifmtdp</strong> : int</p>
+<blockquote>
+<div><p>A flag/format code indicating how the distance-weighted dispersion
+coefficient should be printed to the standard output text file. The
+convention is the same as for ifmtcn. (default is 0).</p>
+</div></blockquote>
+<p><strong>savucn</strong> : bool</p>
+<blockquote>
+<div><p>A logical flag indicating whether the concentration solution should be
+saved in an unformatted file. (default is True).</p>
+</div></blockquote>
+<p><strong>nprs</strong> : int</p>
+<blockquote>
+<div><p>A flag indicating (i) the frequency of the output and
+(ii) whether the output frequency is specified in terms
+of total elapsed simulation time or the transport step number. If
+nprs &gt; 0 results will be saved at the times as specified in timprs;
+if nprs = 0, results will not be saved except at the end of simulation;
+if NPRS &lt; 0, simulation results will be saved whenever the number of
+transport steps is an even multiple of nprs. (default is 0).</p>
+</div></blockquote>
+<p><strong>timprs</strong> : list of floats</p>
+<blockquote>
+<div><p>The total elapsed time at which the simulation results are saved. The
+number of entries in timprs must equal nprs. (default is None).</p>
+</div></blockquote>
+<p><strong>obs: array of int</strong> :</p>
+<blockquote>
+<div><p>An array with the cell indices (layer, row, column) for which the
+concentration is to be printed at every transport step. (default is
+None).</p>
+</div></blockquote>
+<p><strong>nprobs: int</strong> :</p>
+<blockquote>
+<div><p>An integer indicating how frequently the concentration at the specified
+observation points should be saved. (default is 1).</p>
+</div></blockquote>
+<p><strong>chkmas: bool</strong> :</p>
+<blockquote>
+<div><p>A logical flag indicating whether a one-line summary of mass balance
+information should be printed. (default is True).</p>
+</div></blockquote>
+<p><strong>nprmas: int</strong> :</p>
+<blockquote>
+<div><p>An integer indicating how frequently the mass budget information
+should be saved. (default is 1).</p>
+</div></blockquote>
+<p><strong>dt0: float</strong> :</p>
+<blockquote>
+<div><p>The user-specified initial transport step size within each time-step 
+of the flow solution. (default is 0).</p>
+</div></blockquote>
+<p><strong>mxstrn: int</strong> :</p>
+<blockquote>
+<div><p>The maximum number of transport steps allowed within one time step
+of the flow solution. (default is 50000).</p>
+</div></blockquote>
+<p><strong>ttsmult: float</strong> :</p>
+<blockquote>
+<div><p>The multiplier for successive transport steps within a flow time-step
+if the GCG solver is used and the solution option for the advection
+term is the standard finite-difference method. (default is 1.0).</p>
+</div></blockquote>
+<p><strong>ttsmax: float</strong> :</p>
+<blockquote>
+<div><p>The maximum transport step size allowed when transport step size
+multiplier TTSMULT &gt; 1.0. (default is 0).</p>
+</div></blockquote>
+<p><strong>species_names: list of str</strong> :</p>
+<blockquote>
+<div><p>A list of names for every species in the simulation.</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote class="last">
+<div><p>Filename extension (default is &#8216;btn&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">btn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dBtn</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+</dd></dl>
+
 </div>
 
 
@@ -69,10 +253,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="mtadv.html"
-                        title="previous chapter">flopy.mt3dms.mtadv Module</a></p>
+                        title="previous chapter">flopy.mt3d.mtadv Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mtdsp.html"
-                        title="next chapter">flopy.mt3dms.mtdsp Module</a></p>
+                        title="next chapter">flopy.mt3d.mtdsp Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mtbtn.txt"
@@ -108,10 +292,10 @@
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mtdsp.html" title="flopy.mt3dms.mtdsp Module"
+          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="mtadv.html" title="flopy.mt3dms.mtadv Module"
+          <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
              >previous</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
