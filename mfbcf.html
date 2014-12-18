@@ -23,7 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfchd Module" href="mfchd.html" />
+    <link rel="prev" title="flopy.modflow.mfbas Module" href="mfbas.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +41,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfchd.html" title="flopy.modflow.mfchd Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfbas.html" title="flopy.modflow.mfbas Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -47,26 +57,108 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfbcf-module">
-<h1>flopy.modflow.mfbcf Module<a class="headerlink" href="#flopy-modflow-mfbcf-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfbcf"></span><dl class="class">
+  <div class="section" id="module-flopy.modflow.mfbcf">
+<span id="flopy-modflow-mfbcf-module"></span><h1>flopy.modflow.mfbcf Module<a class="headerlink" href="#module-flopy.modflow.mfbcf" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
 <dt id="flopy.modflow.mfbcf.ModflowBcf">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mfbcf.</tt><tt class="descname">ModflowBcf</tt><big>(</big><em>model</em>, <em>ibcfcb=0</em>, <em>intercellt=0</em>, <em>laycon=3</em>, <em>trpy=1.0</em>, <em>hdry=-1e+30</em>, <em>iwdflg=0</em>, <em>wetfct=0.1</em>, <em>iwetit=1</em>, <em>ihdwet=0</em>, <em>tran=1.0</em>, <em>hy=1.0</em>, <em>vcont=1.0</em>, <em>sf1=1e-05</em>, <em>sf2=0.15</em>, <em>wetdry=-0.01</em>, <em>extension='bcf'</em>, <em>unitnumber=15</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfbcf.ModflowBcf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Block centered flow package class
-intercellt: specifies how to compute intercell conductance
-laycon: specifies the layer type
-trpy: horizontal anisotropy factor for each layer
-hdry: head in cells that are converted to dry during a simulation
-iwdflg: flag that determines if the wetting capability is active
-wetfct: factor that is included in the calculation of the head when a cell is converted from dry to wet
-iwetit: iteration interval for attempting to wet cells
-ihdwet: flag that determines which equation is used to define the initial head at cells that become wet
-tran : transmissivity of each layer; tran is used when laycon = 0 or 2
-hy : hydraulic conductivity of each layer; hy is used when laycon = 1 or &gt;2
-vcont : leakance between layers
-sf1: 
-sf2: 
-wetdry:</p>
+<dd><p>MODFLOW Block Centered Flow Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.Modflow</span></tt>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>ibcfcb</strong> : int</p>
+<blockquote>
+<div><p>A flag and unit number. (default is 0)</p>
+</div></blockquote>
+<p><strong>intercellt</strong> : int</p>
+<blockquote>
+<div><p>Intercell transmissivities, harmonic mean (0), arithmetic mean (1),
+logarithmetic mean (2), combination (3). (default is 0)</p>
+</div></blockquote>
+<p><strong>laycon</strong> : int</p>
+<blockquote>
+<div><p>Layer type, confined (0), unconfined (1), constant T, variable S (2),
+variable T, variable S (default is 3)</p>
+</div></blockquote>
+<p><strong>trpy</strong> : float or array of floats (nlay)</p>
+<blockquote>
+<div><p>horizontal anisotropy ratio (default is 1.0)</p>
+</div></blockquote>
+<p><strong>hdry</strong> : float</p>
+<blockquote>
+<div><p>head assigned when cell is dry - used as indicator(default is -1E+30)</p>
+</div></blockquote>
+<p><strong>iwdflg</strong> : int</p>
+<blockquote>
+<div><p>flag to indicate if wetting is inactive (0) or not (non zero)
+(default is 0)</p>
+</div></blockquote>
+<p><strong>wetfct</strong> : float</p>
+<blockquote>
+<div><p>factor used when cell is converted from dry to wet (default is 0.1)</p>
+</div></blockquote>
+<p><strong>iwetit</strong> : int</p>
+<blockquote>
+<div><p>iteration interval in wetting/drying algorithm (default is 1)</p>
+</div></blockquote>
+<p><strong>ihdwet</strong> : int</p>
+<blockquote>
+<div><p>flag to indicate how initial head is computd for cells that become
+wet (default is 0)</p>
+</div></blockquote>
+<p><strong>tran</strong> : float or array of floats (nlay, nrow, ncol), optional</p>
+<blockquote>
+<div><p>transmissivity (only read if laycon is 0 or 2) (default is 1.0)</p>
+</div></blockquote>
+<p><strong>hy</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>hydraulic conductivity (only read if laycon is 1 or 3)
+(default is 1.0)</p>
+</div></blockquote>
+<p><strong>vcont</strong> : float or array of floats (nlay-1, nrow, ncol)</p>
+<blockquote>
+<div><p>vertical leakance between layers (default is 1.0)</p>
+</div></blockquote>
+<p><strong>sf1</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>specific storage (confined) or storage coefficient (unconfined),
+read when there is at least one transient stress period.
+(default is 1e-5)</p>
+</div></blockquote>
+<p><strong>sf2</strong> : float or array of floats (nrow, ncol)</p>
+<blockquote>
+<div><p>specific yield, only read when laycon is 2 or 3 and there is at least
+one transient stress period (default is 0.15)</p>
+</div></blockquote>
+<p><strong>wetdry</strong> : float</p>
+<blockquote>
+<div><p>a combination of the wetting threshold and a flag to indicate which
+neighboring cells can cause a cell to become wet (default is -0.01)</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;bcf&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 15).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bcf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowBcf</span><span class="p">(</span><span class="n">ml</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfbcf.ModflowBcf.load">
@@ -87,6 +179,12 @@ dictionary of unitnumber:open(filename, &#8216;r&#8217;) must be included.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfbas.html"
+                        title="previous chapter">flopy.modflow.mfbas Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfchd.html"
+                        title="next chapter">flopy.modflow.mfchd Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mfbcf.txt"
@@ -121,7 +219,14 @@ dictionary of unitnumber:open(filename, &#8216;r&#8217;) must be included.</p>
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfchd.html" title="flopy.modflow.mfchd Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfbas.html" title="flopy.modflow.mfbas Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

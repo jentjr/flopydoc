@@ -23,7 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.binaryfile Module" href="binaryfile.html" />
+    <link rel="prev" title="flopy.seawat.swtvdf Module" href="swtvdf.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +41,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,10 +59,60 @@
             
   <div class="section" id="flopy-utils-mfreadnam-module">
 <h1>flopy.utils.mfreadnam Module<a class="headerlink" href="#flopy-utils-mfreadnam-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.utils.mfreadnam"></span><dl class="function">
+<span class="target" id="module-flopy.utils.mfreadnam"></span><p>mfreadnam module.  Contains the NamData class. Note that the user can access
+the NamData class as <cite>flopy.modflow.NamData</cite>.</p>
+<p>Additional information about the MODFLOW name file can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/name_file.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
+<dt id="flopy.utils.mfreadnam.NamData">
+<em class="property">class </em><tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">NamData</tt><big>(</big><em>pkgtype</em>, <em>name</em>, <em>handle</em>, <em>packages</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.NamData" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Namefile Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote class="last">
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lrcd</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">]]]</span>  <span class="c">#this drain will be applied to all</span>
+<span class="gp">&gt;&gt;&gt; </span>                                 <span class="c">#stress periods</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">drn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDrn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">layer_row_column_data</span><span class="o">=</span><span class="n">lrcd</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="flopy.utils.mfreadnam.parsenamefile">
 <tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">parsenamefile</tt><big>(</big><em>namfilename</em>, <em>packages</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.parsenamefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>function to parse the nam file and return a dictionary with types, names, units and handles</p>
+<dd><p>Function to parse the nam file and return a dictionary with types,
+names, units and handles</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>namefilename</strong> : string</p>
+<blockquote>
+<div><p>Name of the MODFLOW namefile to parse.</p>
+</div></blockquote>
+<p><strong>packages</strong> : dictionary</p>
+<blockquote class="last">
+<div><p>Dictionary of package objects as defined in the mfnam_packages
+attribute of the model object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -63,6 +123,12 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="swtvdf.html"
+                        title="previous chapter">flopy.seawat.swtvdf Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="binaryfile.html"
+                        title="next chapter">flopy.utils.binaryfile Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mfreadnam.txt"
@@ -97,7 +163,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

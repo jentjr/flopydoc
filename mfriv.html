@@ -65,7 +65,7 @@ the ModflowRiv class as <cite>flopy.modflow.ModflowRiv</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfriv.ModflowRiv">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfriv.</tt><tt class="descname">ModflowRiv</tt><big>(</big><em>model</em>, <em>irivcb=0</em>, <em>layer_row_column_data=None</em>, <em>extension='riv'</em>, <em>unitnumber=18</em>, <em>options=None</em>, <em>naux=0</em>, <em>zerobase=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfriv.ModflowRiv" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfriv.</tt><tt class="descname">ModflowRiv</tt><big>(</big><em>model</em>, <em>ipakcb=0</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='riv'</em>, <em>unitnumber=18</em>, <em>options=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfriv.ModflowRiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW River Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -132,13 +132,8 @@ group of rivers will apply until the end of the simulation.</p>
 <div><p>Filename extension (default is &#8216;riv&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is 18).</p>
-</div></blockquote>
-<p><strong>zerobase</strong> : boolean (default is True)</p>
 <blockquote class="last">
-<div><p>True when zero-based indices are used: layers, rows, columns start at 0
-False when one-based indices are used: layers, rows, columns start at 1 (deprecated)</p>
+<div><p>File unit number (default is 18).</p>
 </div></blockquote>
 </td>
 </tr>

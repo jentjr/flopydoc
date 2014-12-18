@@ -65,7 +65,7 @@ the ModflowDrn class as <cite>flopy.modflow.ModflowDrn</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfdrn.ModflowDrn">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdrn.</tt><tt class="descname">ModflowDrn</tt><big>(</big><em>model</em>, <em>idrncb=0</em>, <em>layer_row_column_data=None</em>, <em>layer_row_column_elevation_cond=None</em>, <em>extension='drn'</em>, <em>unitnumber=21</em>, <em>options=None</em>, <em>naux=0</em>, <em>zerobase=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdrn.</tt><tt class="descname">ModflowDrn</tt><big>(</big><em>model</em>, <em>ipakcb=0</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='drn'</em>, <em>unitnumber=21</em>, <em>options=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Drain Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -136,13 +136,8 @@ last group of drains will apply until the end of the simulation.</p>
 <div><p>Filename extension (default is &#8216;drn&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is 21).</p>
-</div></blockquote>
-<p><strong>zerobase</strong> : boolean (default is True)</p>
 <blockquote class="last">
-<div><p>True when zero-based indices are used: layers, rows, columns start at 0
-False when one-based indices are used: layers, rows, columns start at 1 (deprecated)</p>
+<div><p>File unit number (default is 21).</p>
 </div></blockquote>
 </td>
 </tr>
@@ -160,15 +155,6 @@ False when one-based indices are used: layers, rows, columns start at 1 (depreca
 </div>
 <p class="rubric">Attributes</p>
 <p class="rubric">Methods</p>
-<dl class="staticmethod">
-<dt id="flopy.modflow.mfdrn.ModflowDrn.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>f is either a filename or a file handle.  if the arrays in the file
-are specified using interal, external, or older style array control
-records, then f should be a file handle, and the ext_unit_dict
-dictionary of unitnumber:open(filename, &#8216;r&#8217;) must be included.</p>
-</dd></dl>
-
 </dd></dl>
 
 </div>

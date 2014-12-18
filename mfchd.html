@@ -65,7 +65,7 @@ the ModflowChd class as <cite>flopy.modflow.ModflowChd</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfchd.ModflowChd">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfchd.</tt><tt class="descname">ModflowChd</tt><big>(</big><em>model</em>, <em>layer_row_column_data=None</em>, <em>layer_row_column_shead_ehead=None</em>, <em>cosines=None</em>, <em>extension='chd'</em>, <em>unitnumber=24</em>, <em>zerobase=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfchd.ModflowChd" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfchd.</tt><tt class="descname">ModflowChd</tt><big>(</big><em>model</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='chd'</em>, <em>unitnumber=24</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfchd.ModflowChd" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Constant Head Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -73,19 +73,25 @@ MODFLOW Guide</a>.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
+<div><blockquote>
 <div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
 this package will be added.</p>
 </div></blockquote>
-<p><strong>layer_row_column_data</strong> : list of records</p>
+<dl class="docutils">
+<dt>stress_period_data <span class="classifier-delimiter">:</span> <span class="classifier">list of boundaries or</span></dt>
+<dd><p class="first last">recarray of boundaries or
+dictionary of boundaries</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Each chd cell is defined through definition of</strong> :</p>
 <blockquote>
-<div><p>In its most general form, this is a triple list of chd records  The
-innermost list is the layer, row, column, shead, and ehead for a single
-chd.  Then for a stress period, there can be a list of chds.  Then
-for a simulation, there can be a separate list for each stress period.
-This gives the form of</p>
+<div><p>layer (int), row (int), column (int), shead (float), ehead (float)
+The simplest form is a list of boundaries that each are itself a list.
+One list is specified for each stress period. This gives the form of</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>layer_row_column_data = [</dt>
+<dt>stress_period_data = [</dt>
 <dd><blockquote class="first">
 <div><dl class="docutils">
 <dt>[  #stress period 1</dt>
@@ -112,36 +118,28 @@ This gives the form of</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>Note that if there are not records in layer_row_column_data, then the
-last group of chds will apply until the end of the simulation.</p>
-</div></blockquote>
-<p><strong>layer_row_column_shead_ehead</strong> : list of records</p>
-<blockquote>
-<div><p>Deprecated - use layer_row_column_data instead.</p>
-</div></blockquote>
-<p><strong>options</strong> : list of strings</p>
-<blockquote>
-<div><p>Package options. (default is None).</p>
+<p>Note that if the number of lists is smaller than the number of stress
+periods, then the last list of chds will apply until the end of the
+simulation. Full details of all options to specify stress_period_data
+can be found in the flopy3 boundaries Notebook in the basic
+subdirectory of the examples directory</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
 <div><p>Filename extension (default is &#8216;chd&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is 24).</p>
-</div></blockquote>
-<p><strong>zerobase</strong> : boolean (default is True)</p>
 <blockquote class="last">
-<div><p>True when zero-based indices are used: layers, rows, columns start at 0
-False when one-based indices are used: layers, rows, columns start at 1 (deprecated)</p>
+<div><p>File unit number (default is 24).</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Parameters are not supported in FloPy.</p>
+<p>Parameters are supported in Flopy only when reading in existing models.
+Parameter values are converted to native values in Flopy and the
+connection to &#8220;parameters&#8221; is thus nonexistent.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
@@ -152,12 +150,6 @@ False when one-based indices are used: layers, rows, columns start at 1 (depreca
 </div>
 <p class="rubric">Attributes</p>
 <p class="rubric">Methods</p>
-<dl class="method">
-<dt id="flopy.modflow.mfchd.ModflowChd.load">
-<tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfchd.ModflowChd.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>The load method has not been implemented for this package.</p>
-</dd></dl>
-
 </dd></dl>
 
 </div>
