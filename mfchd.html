@@ -87,36 +87,35 @@ dictionary of boundaries</p>
 <p><strong>Each chd cell is defined through definition of</strong> :</p>
 <blockquote>
 <div><p>layer (int), row (int), column (int), shead (float), ehead (float)
-The simplest form is a list of boundaries that each are itself a list.
-One list is specified for each stress period. This gives the form of</p>
+The simplest form is a dictionary with a lists of boundaries for each
+stress period, where each list of boundaries itself is a list of
+boundaries. Indices of the dictionary are the numbers of the stress
+period. This gives the form of</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>stress_period_data = [</dt>
-<dd><blockquote class="first">
-<div><dl class="docutils">
-<dt>[  #stress period 1</dt>
-<dd><p class="first last">[l1, r1, c1, shead1, ehead1],
-[l2, r2, c2, shead2, ehead2],
-[l3, r3, c3, shead3, ehead3],
+<div><p>stress_period_data =
+{0: [</p>
+<blockquote>
+<div><p>[lay, row, col, shead, ehead],
+[lay, row, col, shead, ehead],
+[lay, row, col, shead, ehead]
 ],</p>
-</dd>
-<dt>[  #stress period 2</dt>
-<dd><p class="first last">[l1, r1, c1, shead1, ehead1],
-[l2, r2, c2, shead2, ehead2],
-[l3, r3, c3, shead3, ehead3],
+</div></blockquote>
+<dl class="docutils">
+<dt>1:  [</dt>
+<dd><p class="first last">[lay, row, col, shead, ehead],
+[lay, row, col, shead, ehead],
+[lay, row, col, shead, ehead]
 ], ...</p>
 </dd>
-<dt>[  #stress period kper</dt>
-<dd><p class="first last">[l1, r1, c1, shead1, ehead1],
-[l2, r2, c2, shead2, ehead2],
-[l3, r3, c3, shead3, ehead3],
-],</p>
+<dt>kper:</dt>
+<dd><p class="first last">[
+[lay, row, col, shead, ehead],
+[lay, row, col, shead, ehead],
+[lay, row, col, shead, ehead]
+]</p>
 </dd>
 </dl>
-</div></blockquote>
-<p class="last">]</p>
-</dd>
-</dl>
+<p>}</p>
 </div></blockquote>
 <p>Note that if the number of lists is smaller than the number of stress
 periods, then the last list of chds will apply until the end of the

@@ -72,22 +72,33 @@ MODFLOW Guide</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
 this package will be added.</p>
+</div></blockquote>
+<p><strong>pkgtype</strong> : string</p>
+<blockquote>
+<div><p>String identifying the type of MODFLOW package. See the
+mfnam_packages dictionary keys in the model object for a list
+of supported packages. This dictionary is also passed in as packages.</p>
+</div></blockquote>
+<p><strong>packages</strong> : dictionary</p>
+<blockquote>
+<div><p>Dictionary of package objects as defined in the mfnam_packages
+attribute of the model object</p>
+</div></blockquote>
+<p><strong>name</strong> : string</p>
+<blockquote>
+<div><p>Filename of the package file identified in the name file</p>
+</div></blockquote>
+<p><strong>handle</strong> : file handle</p>
+<blockquote class="last">
+<div><p>File handle refering to the file identified by &#8220;name&#8221; above</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lrcd</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">]]]</span>  <span class="c">#this drain will be applied to all</span>
-<span class="gp">&gt;&gt;&gt; </span>                                 <span class="c">#stress periods</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">drn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDrn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">layer_row_column_data</span><span class="o">=</span><span class="n">lrcd</span><span class="p">)</span>
-</pre></div>
-</div>
 <p class="rubric">Attributes</p>
 </dd></dl>
 
@@ -105,9 +116,16 @@ names, units and handles</p>
 <div><p>Name of the MODFLOW namefile to parse.</p>
 </div></blockquote>
 <p><strong>packages</strong> : dictionary</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Dictionary of package objects as defined in the mfnam_packages
 attribute of the model object</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ext_unit_dict</strong> : dictionary</p>
+<blockquote class="last">
+<div><p>For each file listed in the namefile, a NamData instance
+is stored in the ext_unit_dict dictionary keyed by unit number</p>
 </div></blockquote>
 </td>
 </tr>
