@@ -1,7 +1,7 @@
 mbase Classes
 ========================
 
-.. autoclass:: flopy.mbase.Basemodel
+.. autoclass:: flopy.mbase.BaseModel
    :members:
    :inherited-members:
    
