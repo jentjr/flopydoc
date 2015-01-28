@@ -43,3 +43,21 @@ make html
 
   * This will update the html files in flopydoc-doc.  Pushing these changes to github will update the documentation served from github.  That's it!
 
+Directory structure
+
+    |--\flopy3.git (or whatever your flopy3 repo is)
+    |----\examples
+    |----\flopy
+    |----\test
+
+    |--\flopy3doc
+    |----\flopydoc-doc
+    |------\doctrees
+    |------\html (this is git repository of flopydoc, but it is the gh-pages branch)
+    |----\flopydoc.git (this is the flopydoc git repository with the master branch)
+    |------\docs
+    |------LICENSE
+    |------manual.pdf
+    |------README.md
+    |------README.rst
+ 
