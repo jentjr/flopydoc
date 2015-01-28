@@ -61,12 +61,20 @@
 <span id="flopy-mt3d-mtssm-module"></span><h1>flopy.mt3d.mtssm Module<a class="headerlink" href="#module-flopy.mt3d.mtssm" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtssm.Mt3dSsm">
-<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtssm.</tt><tt class="descname">Mt3dSsm</tt><big>(</big><em>model</em>, <em>criv=0.0</em>, <em>cghb=0.0</em>, <em>cibd=0.0</em>, <em>cchd=0.0</em>, <em>crch=0.0</em>, <em>cpbc=1.0</em>, <em>cwel=0.0</em>, <em>cevt=0.0</em>, <em>itype_dict=None</em>, <em>extension='ssm'</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtssm.Mt3dSsm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtssm.</tt><tt class="descname">Mt3dSsm</tt><big>(</big><em>model</em>, <em>crch=None</em>, <em>cevt=None</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='ssm'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtssm.Mt3dSsm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sink &amp; Source Mixing package class</p>
 <p class="rubric">Methods</p>
 <dl class="method">
+<dt id="flopy.mt3d.mtssm.Mt3dSsm.from_package">
+<tt class="descname">from_package</tt><big>(</big><em>package</em>, <em>ncomp_aux_names</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtssm.Mt3dSsm.from_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>read the point source and sink info from a package
+ncomp_aux_names (list): the aux variable names in the package
+that are the component concentrations</p>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="flopy.mt3d.mtssm.Mt3dSsm.load">
-<tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mtssm.Mt3dSsm.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtssm.Mt3dSsm.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 

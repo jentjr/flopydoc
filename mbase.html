@@ -60,13 +60,77 @@
   <div class="section" id="mbase-classes">
 <h1>mbase Classes<a class="headerlink" href="#mbase-classes" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="flopy.mbase.BaseModel">
+<em class="property">class </em><tt class="descclassname">flopy.mbase.</tt><tt class="descname">BaseModel</tt><big>(</big><em>modelname='modflowtest'</em>, <em>namefile_ext='nam'</em>, <em>exe_name='mf2k.exe'</em>, <em>model_ws=None</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW based models base class</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.add_external">
+<tt class="descname">add_external</tt><big>(</big><em>fname</em>, <em>unit</em>, <em>binflag=False</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel.add_external" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supports SWR usage and non-loaded existing external arrays</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.add_package">
+<tt class="descname">add_package</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel.add_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a flopy package object to this model.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.assign_external">
+<tt class="descname">assign_external</tt><big>(</big><em>num</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel.assign_external" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign an external file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.remove_package">
+<tt class="descname">remove_package</tt><big>(</big><em>pname</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel.remove_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a package from this model.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.run_model">
+<tt class="descname">run_model</tt><big>(</big><em>silent=False</em>, <em>pause=False</em>, <em>report=False</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel.run_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will run the model using subprocess.Popen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>silent</strong> : boolean</p>
+<blockquote>
+<div><p>Echo run information to screen (default is True).</p>
+</div></blockquote>
+<p><strong>pause</strong> : boolean, optional</p>
+<blockquote>
+<div><p>Pause upon completion (the default is False).</p>
+</div></blockquote>
+<p><strong>report</strong> : string, optional</p>
+<blockquote>
+<div><p>Name of file to store stdout. (default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>(success, buff)</strong> :</p>
+<p><strong>success</strong> : boolean</p>
+<p class="last"><strong>buff</strong> : list of lines of stdout</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.write_name_file">
+<tt class="descname">write_name_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel.write_name_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every Package needs its own writenamefile function</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="flopy.mbase.Package">
 <em class="property">class </em><tt class="descclassname">flopy.mbase.</tt><tt class="descname">Package</tt><big>(</big><em>parent</em>, <em>extension='glo'</em>, <em>name='GLOBAL'</em>, <em>unit_number=1</em>, <em>extra=''</em>, <em>allowDuplicates=False</em><big>)</big><a class="headerlink" href="#flopy.mbase.Package" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>General Package class</dt>
-<dd>allowDuplicates allows more than one package of the same class to be added.
-This is needed for mfaddoutsidefile if used for more than one file.</dd>
-</dl>
+<dd><p>Base package class from which most other packages are derived.</p>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.mbase.Package.load">

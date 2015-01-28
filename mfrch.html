@@ -65,7 +65,7 @@ the ModflowRch class as <cite>flopy.modflow.ModflowRch</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfrch.ModflowRch">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfrch.</tt><tt class="descname">ModflowRch</tt><big>(</big><em>model</em>, <em>nrchop=3</em>, <em>irchcb=0</em>, <em>rech=0.001</em>, <em>irch=1</em>, <em>extension='rch'</em>, <em>unitnumber=19</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfrch.ModflowRch" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfrch.</tt><tt class="descname">ModflowRch</tt><big>(</big><em>model</em>, <em>nrchop=3</em>, <em>irchcb=0</em>, <em>rech=0.001</em>, <em>irch=0</em>, <em>extension='rch'</em>, <em>unitnumber=19</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfrch.ModflowRch" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Recharge Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -82,20 +82,19 @@ this package will be added.</p>
 </div></blockquote>
 <p><strong>nrchop</strong> : int</p>
 <blockquote>
-<div><p>is the recharge option code. Recharge fluxes are defined in a layer
-variable, RECH, with one value for each vertical column. Accordingly,
-recharge is applied to one cell in each vertical column, and the
-option code determines which cell in the column is selected for
-recharge.</p>
+<div><p>is the recharge option code. 
+1: Recharge to top grid layer only
+2: Recharge to layer defined in irch
+3: Recharge to highest active cell (default is 3).</p>
 </div></blockquote>
-<p><strong>rech</strong> : float or array of float (nrow, ncol)</p>
+<p><strong>rech</strong> : float or array of floats (nrow, ncol)</p>
 <blockquote>
 <div><p>is the recharge flux. (default is 1.e-3).</p>
 </div></blockquote>
-<p><strong>irch</strong> : int or array of int</p>
+<p><strong>irch</strong> : int or array of ints (nrow, ncol)</p>
 <blockquote>
-<div><p>is the layer number variable that defines the layer in each vertical
-column where recharge is applied. (default is 1).</p>
+<div><p>is the layer to which recharge is applied in each vertical
+column (only used when nrchop=2). (default is 0).</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>

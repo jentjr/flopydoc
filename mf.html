@@ -59,6 +59,7 @@
             
   <div class="section" id="module-flopy.modflow.mf">
 <span id="flopy-modflow-mf-module"></span><h1>flopy.modflow.mf Module<a class="headerlink" href="#module-flopy.modflow.mf" title="Permalink to this headline">¶</a></h1>
+<p>mf module.  Contains the ModflowGlobal, ModflowList, and Modflow classes.</p>
 <dl class="class">
 <dt id="flopy.modflow.mf.Modflow">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mf.</tt><tt class="descname">Modflow</tt><big>(</big><em>modelname='modflowtest'</em>, <em>namefile_ext='nam'</em>, <em>version='mf2005'</em>, <em>exe_name='mf2005.exe'</em>, <em>listunit=2</em>, <em>model_ws=None</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>silent=0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow" title="Permalink to this definition">¶</a></dt>
@@ -160,6 +161,12 @@ that are created with write_model. (the default is &#8216;modflowtest&#8217;)</p
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modflow.mf.Modflow.next_ext_unit">
+<tt class="descname">next_ext_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.next_ext_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to encapsulate next_ext_unit attribute</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modflow.mf.Modflow.remove_package">
 <tt class="descname">remove_package</tt><big>(</big><em>pname</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.remove_package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a package from this model.</p>
@@ -167,30 +174,7 @@ that are created with write_model. (the default is &#8216;modflowtest&#8217;)</p
 
 <dl class="method">
 <dt id="flopy.modflow.mf.Modflow.run_model">
-<tt class="descname">run_model</tt><big>(</big><em>pause=True</em>, <em>report=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.run_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the model.  This method will create and run a Windows batch file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pause</strong> : boolean, optional</p>
-<blockquote>
-<div><p>Add a pause to the end of the batch file.
-(the default is False)</p>
-</div></blockquote>
-<p><strong>report</strong> : string, optional</p>
-<blockquote class="last">
-<div><p>Name of file to store stdout. (default is None).</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.modflow.mf.Modflow.run_model2">
-<tt class="descname">run_model2</tt><big>(</big><em>silent=True</em>, <em>pause=False</em>, <em>report=False</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.run_model2" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">run_model</tt><big>(</big><em>silent=False</em>, <em>pause=False</em>, <em>report=False</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.run_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will run the model using subprocess.Popen.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -220,13 +204,6 @@ that are created with write_model. (the default is &#8216;modflowtest&#8217;)</p
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.modflow.mf.Modflow.run_model3">
-<tt class="descname">run_model3</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.run_model3" title="Permalink to this definition">¶</a></dt>
-<dd><p>Minimal form of run model.  No input parameters and no return
-parameters.  Runs model using subprocess.Popen.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.modflow.mf.Modflow.write_name_file">
 <tt class="descname">write_name_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.write_name_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the model files.</p>
@@ -237,7 +214,7 @@ parameters.  Runs model using subprocess.Popen.</p>
 <dl class="class">
 <dt id="flopy.modflow.mf.ModflowGlobal">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mf.</tt><tt class="descname">ModflowGlobal</tt><big>(</big><em>model</em>, <em>extension='glo'</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowGlobal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Global Package class</p>
+<dd><p>ModflowGlobal Package class</p>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mf.ModflowGlobal.load">
@@ -250,7 +227,7 @@ parameters.  Runs model using subprocess.Popen.</p>
 <dl class="class">
 <dt id="flopy.modflow.mf.ModflowList">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mf.</tt><tt class="descname">ModflowList</tt><big>(</big><em>model</em>, <em>extension='list'</em>, <em>unitnumber=2</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowList" title="Permalink to this definition">¶</a></dt>
-<dd><p>List Package class</p>
+<dd><p>ModflowList Package class</p>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mf.ModflowList.load">

@@ -65,7 +65,7 @@ the Mt3dBtn class as <cite>flopy.mt3d.Mt3dBtn</cite>.</p>
 User&#8217;s Manual.</p>
 <dl class="class">
 <dt id="flopy.mt3d.mtbtn.Mt3dBtn">
-<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtbtn.</tt><tt class="descname">Mt3dBtn</tt><big>(</big><em>model</em>, <em>ncomp=None</em>, <em>mcomp=1</em>, <em>tunit='D'</em>, <em>lunit='M'</em>, <em>munit='KG'</em>, <em>prsity=0.3</em>, <em>icbund=1</em>, <em>sconc=0.0</em>, <em>cinact=1e+30</em>, <em>thkmin=0.01</em>, <em>ifmtcn=0</em>, <em>ifmtnp=0</em>, <em>ifmtrf=0</em>, <em>ifmtdp=0</em>, <em>savucn=True</em>, <em>nprs=0</em>, <em>timprs=None</em>, <em>obs=None</em>, <em>nprobs=1</em>, <em>chkmas=True</em>, <em>nprmas=1</em>, <em>dt0=0</em>, <em>mxstrn=50000</em>, <em>ttsmult=1.0</em>, <em>ttsmax=0</em>, <em>species_names=[]</em>, <em>extension='btn'</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtbtn.</tt><tt class="descname">Mt3dBtn</tt><big>(</big><em>model</em>, <em>ncomp=1</em>, <em>mcomp=1</em>, <em>tunit='D'</em>, <em>lunit='M'</em>, <em>munit='KG'</em>, <em>prsity=0.3</em>, <em>icbund=1</em>, <em>sconc=0.0</em>, <em>cinact=1e+30</em>, <em>thkmin=0.01</em>, <em>ifmtcn=0</em>, <em>ifmtnp=0</em>, <em>ifmtrf=0</em>, <em>ifmtdp=0</em>, <em>savucn=True</em>, <em>nprs=0</em>, <em>timprs=None</em>, <em>obs=None</em>, <em>nprobs=1</em>, <em>chkmas=True</em>, <em>nprmas=1</em>, <em>dt0=0</em>, <em>mxstrn=50000</em>, <em>ttsmult=1.0</em>, <em>ttsmax=0</em>, <em>species_names=[]</em>, <em>extension='btn'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Basic Transport Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -241,6 +241,48 @@ multiplier TTSMULT &gt; 1.0. (default is 0).</p>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.mt3d.mtbtn.Mt3dBtn.geticbund">
+<tt class="descname">geticbund</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.geticbund" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the icbund array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>icbund</strong> : numpy.ndarray (nlay, nrow, ncol)</p>
+<blockquote class="last">
+<div><p>icbund object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.mt3d.mtbtn.Mt3dBtn.icbund">
+<tt class="descname">icbund</tt><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.icbund" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the icbund array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>icbund</strong> : numpy.ndarray (nlay, nrow, ncol)</p>
+<blockquote class="last">
+<div><p>icbund object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mtbtn.Mt3dBtn.seticbund">
+<tt class="descname">seticbund</tt><big>(</big><em>icbund</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.seticbund" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the icbund array.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>

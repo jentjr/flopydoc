@@ -85,8 +85,7 @@ of supported packages. This dictionary is also passed in as packages.</p>
 <p><strong>packages</strong> : dictionary</p>
 <blockquote>
 <div><p>Dictionary of package objects as defined in the
-<a href="#id1"><span class="problematic" id="id2">:attribute:`flopy.modflow.mf.Modflow.mfnam_packages`</span></a>
-attribute of the <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a> class.</p>
+<cite>mfnam_packages</cite> attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>.</p>
 </div></blockquote>
 <p><strong>name</strong> : string</p>
 <blockquote>
@@ -94,7 +93,7 @@ attribute of the <a class="reference internal" href="mf.html#flopy.modflow.mf.Mo
 </div></blockquote>
 <p><strong>handle</strong> : file handle</p>
 <blockquote class="last">
-<div><p>File handle referring to the file identified by &#8220;name&#8221; above</p>
+<div><p>File handle referring to the file identified by <cite>name</cite></p>
 </div></blockquote>
 </td>
 </tr>
@@ -105,7 +104,7 @@ attribute of the <a class="reference internal" href="mf.html#flopy.modflow.mf.Mo
 
 <dl class="function">
 <dt id="flopy.utils.mfreadnam.parsenamefile">
-<tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">parsenamefile</tt><big>(</big><em>namfilename</em>, <em>packages</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.parsenamefile" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">parsenamefile</tt><big>(</big><em>namfilename</em>, <em>packages</em>, <em>verbose=True</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.parsenamefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to parse the nam file and return a dictionary with types,
 names, units and handles</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -118,15 +117,19 @@ names, units and handles</p>
 </div></blockquote>
 <p><strong>packages</strong> : dictionary</p>
 <blockquote>
-<div><p>Dictionary of package objects as defined in the mfnam_packages
-attribute of the model object</p>
+<div><p>Dictionary of package objects as defined in the <cite>mfnam_packages</cite>
+attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : logical</p>
+<blockquote>
+<div><p>Print messages to screen.  Default is True.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ext_unit_dict</strong> : dictionary</p>
 <blockquote class="last">
-<div><p>For each file listed in the namefile, a
-:class;`flopy.utils.mfreadnam.NamData` instance
+<div><p>For each file listed in the name file, a
+<a class="reference internal" href="#flopy.utils.mfreadnam.NamData" title="flopy.utils.mfreadnam.NamData"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.NamData</span></tt></a> instance
 is stored in the ext_unit_dict dictionary keyed by unit number</p>
 </div></blockquote>
 </td>
