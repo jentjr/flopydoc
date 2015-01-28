@@ -43,6 +43,12 @@ make html
 
   * This will update the html files in flopydoc-doc.  Pushing these changes to github will update the documentation served from github.  That's it!
 
+  * Now that the html pages are updated, you need to commit the changes and then push them.  Do this using:
+
+git add .
+git commit -m "rebuilt docs"
+git push origin gh-pages
+
 Directory structure
 
     |--\flopy3.git (or whatever your flopy3 repo is)
