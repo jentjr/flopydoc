@@ -23,7 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfmnwi Module" href="mfmnwi.html" />
+    <link rel="prev" title="flopy.modflow.mfmnw1 Module" href="mfmnw1.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +41,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfmnw1.html" title="flopy.modflow.mfmnw1 Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,12 +61,283 @@
 <h1>flopy.modflow.mfmnw2 Module<a class="headerlink" href="#flopy-modflow-mfmnw2-module" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-flopy.modflow.mfmnw2"></span><dl class="class">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfmnw2.</tt><tt class="descname">ModflowMnw2</tt><big>(</big><em>model</em>, <em>mnwmax=0</em>, <em>iwl2cb=-1</em>, <em>mnwprnt=0</em>, <em>aux=None</em>, <em>wellid=None</em>, <em>nnodes=None</em>, <em>losstype=None</em>, <em>pumploc=0</em>, <em>qlimit=0</em>, <em>ppflag=0</em>, <em>pumpcap=0</em>, <em>lay_row_col=None</em>, <em>ztop_zbotm_row_col=None</em>, <em>rw=0</em>, <em>rskin=0</em>, <em>kskin=0</em>, <em>b=0</em>, <em>c=0</em>, <em>p=0</em>, <em>cwc=0</em>, <em>pp=1</em>, <em>itmp=0</em>, <em>wellid_qdes=None</em>, <em>capmult=0</em>, <em>cprime=0</em>, <em>extension='mnw2'</em>, <em>unitnumber=34</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multi-node well 2 package class</p>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfmnw2.</tt><tt class="descname">ModflowMnw2</tt><big>(</big><em>model</em>, <em>mnwmax=0</em>, <em>iwl2cb=-1</em>, <em>mnwprnt=0</em>, <em>aux=None</em>, <em>wellid=None</em>, <em>nnodes=None</em>, <em>losstype=None</em>, <em>pumploc=0</em>, <em>qlimit=0</em>, <em>ppflag=0</em>, <em>pumpcap=0</em>, <em>lay_row_col=None</em>, <em>ztop_zbotm_row_col=None</em>, <em>rw=0</em>, <em>rskin=0</em>, <em>kskin=0</em>, <em>b=0</em>, <em>c=0</em>, <em>p=0</em>, <em>cwc=0</em>, <em>pp=1</em>, <em>itmp=0</em>, <em>wellid_qdes=None</em>, <em>extension='mnw2'</em>, <em>unitnumber=34</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8216;Multi-Node Well 2 Package Class&#8217;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type :class:&#8217;flopy.modflow.mf.Modflow&#8217;) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>mnwmax</strong> : integer</p>
+<blockquote>
+<div><p>Maximum number of multi-node wells (MNW) to be simulated (default is 0)</p>
+</div></blockquote>
+<p><strong>iwl2cb</strong> : integer</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>A flag and a unit number</dt>
+<dd><dl class="first docutils">
+<dt>if IWL2CB &gt; 0, then it is the unit number to which MNW cell-by-cell flow terms will be</dt>
+<dd><p class="first last">recorded whenever cell-by-cell budget data are written to a file (as determined by the
+output control options of MODFLOW).</p>
+</dd>
+</dl>
+<p>if IWL2CB = 0, then MNW cell-by-cell flow terms will not be printed or recorded.
+if IWL2CB &lt; 0, then well injection or withdrawal rates and water levels in the well and</p>
+<blockquote class="last">
+<div><p>its multiple cells will be printed in the main MODFLOW listing (output) file whenever cell-by-cell
+budget data are written to a file (as determined by the output control options of MODFLOW).</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>(default is -1)</p>
+</div></blockquote>
+<p><strong>mnwprnt</strong> : integer</p>
+<blockquote>
+<div><p>Flag controlling the level of detail of information about multi-node wells to be written to the
+main MODFLOW listing (output) file. If MNWPRNT = 0, then only basic well information will be
+printed in the main MODFLOW output file; increasing the value of MNWPRNT yields more information,
+up to a maximum level of detail corresponding with MNWPRNT = 2.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>aux</strong> : list of strings</p>
+<p><strong>(note: not sure if the words AUX or AUXILIARY are necessary)</strong> :</p>
+<blockquote>
+<div><p>in the style of AUXILIARY abc or AUX abc where
+abc is the name of an auxiliary parameter to be read for each multi-node well as part
+of dataset 4a. Up to five parameters can be specified, each of which must be preceded
+by AUXILIARY or AUX. These parameters will not be used by the MNW2 Package, but
+they will be available for use by other packages.
+(default is None)</p>
+</div></blockquote>
+<p><strong>wellid</strong> : array of strings (shape = (MNWMAX))</p>
+<blockquote>
+<div><p>The name of the wells. This is a unique identification label for each well.
+The text string is limited to 20 alphanumeric characters. If the name of the well includes
+spaces, then enclose the name in quotes.
+(default is None)</p>
+</div></blockquote>
+<p><strong>nnodes</strong> : integers</p>
+<blockquote>
+<div><p>The number of cells (nodes) associated with this well. NNODES normally is &gt; 0, but for the
+case of a vertical borehole, setting NNODES &lt; 0 will allow the user to specify the elevations
+of the tops and bottoms of well screens or open intervals (rather than grid layer numbers),
+and the absolute value of NNODES equals the number of open intervals (or well screens) to be
+specified in dataset 2d. If this option is used, then the model will compute the layers in which
+the open intervals occur, the lengths of the open intervals, and the relative vertical position
+of the open interval within a model layer (for example, see figure 14 and related discussion)
+(default is None)</p>
+</div></blockquote>
+<p><strong>losstype</strong> : string</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>The user-specified model for well loss. The following loss types are currently supported.</dt>
+<dd><dl class="first last docutils">
+<dt>NONE there are no well corrections and the head in the well is assumed to equal the head</dt>
+<dd><p class="first last">in the cell. This option (hWELL = hn) is only valid for a single-node well (NNODES = 1).
+(This is equivalent to using the original WEL Package of MODFLOW, but specifying the single-node
+well within the MNW2 Package enables the use of constraints.)</p>
+</dd>
+<dt>THIEM this option allows for only the cell-to-well correction at the well based on the Thiem (1906)</dt>
+<dd><p class="first last">equation; head in the well is determined from equation 2 as (hWELL = hn + AQn), and the model
+computes A on the basis of the user-specified well radius (Rw) and previously defined values of
+cell transmissivity and grid spacing. Coefficients B and C in equation 2 are automatically
+set = 0.0. User must define Rw in dataset 2c or 2d.</p>
+</dd>
+<dt>SKIN this option allows for formation damage or skin corrections at the well:</dt>
+<dd><p class="first last">hWELL = hn + AQn + BQn (from equation 2), where A is determined by the model from the value of
+Rw, and B is determined by the model from Rskin and Kskin. User must define Rw, Rskin, and Kskin in
+dataset 2c or 2d.</p>
+</dd>
+<dt>GENERAL head loss is defined with coefficients A, B, and C and power exponent P</dt>
+<dd><p class="first last">(hWELL = hn + AQn + BQn + CQnP). A is determined by the model from the value of Rw.
+must define Rw, B, C, and P in dataset 2c or 2d. A value of P = 2.0 is suggested if no other
+data are available (the model allows 1.0 &lt;= P &lt;= 3.5). Entering a value of C = 0 will result
+in a linear model in which the value of B is entered directly (rather than entering properties
+of the skin, as with the SKIN option).</p>
+</dd>
+<dt>SPECIFYcwc the user specifies an effective conductance value (equivalent to the combined</dt>
+<dd><p class="first last">effects of the A, B, and C well-loss coefficients expressed in equation 15) between the well and
+the cell representing the aquifer, CWC. User must define CWC in dataset 2c or 2d. If there are
+multiple screens within the grid cell or if partial penetration corrections are to be made, then
+the effective value of CWC for the node may be further adjusted automatically by MNW2.
+(default is None)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>pumploc</strong> : integer</p>
+<blockquote>
+<div><p>The location along the borehole of the pump intake (if any).
+If PUMPLOC = 0, then either there is no pump or the intake location (or discharge point for an
+injection well) is assumed to occur above the first active node associated with the multi-node well
+(that is, the node closest to the land surface or to the wellhead). If PUMPLOC &gt; 0, then the cell in
+which the intake (or outflow) is located will be specified in dataset 2e as a LAY-ROW-COL grid location.
+For a vertical well only, specifying PUMPLOC &lt; 0, will enable the option to define the vertical position of
+the pump intake (or outflow) as an elevation in dataset 2e (for the given spatial grid location [ROW-COL]
+defined for this well in 2d).
+(default is 0)</p>
+</div></blockquote>
+<p><strong>qlimit</strong> : integer</p>
+<blockquote>
+<div><p>Indicates whether the water level (head) in the well will be used to constrain
+the pumping rate. If Qlimit = 0, then there are no constraints for this well. If Qlimit &gt; 0, then
+pumpage will be limited (constrained) by the water level in the well, and relevant parameters are
+constant in time and defined below in dataset 2f. If Qlimit &lt; 0, then pumpage will be limited
+(constrained) by the water level in the well, and relevant parameters can vary with time and are
+defined for every stress period in dataset 4b.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>ppflag</strong> : integer</p>
+<blockquote>
+<div><p>Flag that determines whether the calculated head in the well will be corrected for the
+effect of partial penetration of the well screen in the cell. If PPFLAG = 0, then the head in the
+well will not be adjusted for the effects of partial penetration. If PPFLAG &gt; 0, then the head in
+the well will be adjusted for the effects of partial penetration if the section of well containing
+the well screen is vertical (as indicated by identical row-column locations in the grid). If
+NNODES &lt; 0 (that is, the open intervals of the well are defined by top and bottom elevations),
+then the model will automatically calculate the fraction of penetration for each node and the
+relative vertical position of the well screen. If NNODES &gt; 0, then the fraction of penetration for
+each node must be defined in dataset 2d (see below) and the well screen will be assumed to be
+centered vertically within the thickness of the cell (except if the well is located in the uppermost
+model layer that is under unconfined conditions, in which case the bottom of the well screen will be
+assumed to be aligned with the bottom boundary of the cell and the assumed length of well screen will
+be based on the initial head in that cell).
+(default is 0)</p>
+</div></blockquote>
+<p><strong>pumpcap</strong> : integer</p>
+<blockquote>
+<div><p>A flag and value that determines whether the discharge of a pumping (withdrawal) well (Q &lt; 0.0)
+will be adjusted for changes in the lift (or total dynamic head) with time. If PUMPCAP = 0,
+then the discharge from the well will not be adjusted on the basis of changes in lift. If PUMPCAP &gt; 0
+for a withdrawal well, then the discharge from the well will be adjusted on the basis of the lift, as
+calculated from the most recent water level in the well. In this case, data describing the head-capacity
+relation for the pump must be listed in datasets 2g and 2h, and the use of that relation can be switched
+on or off for each stress period using a flag in dataset 4a. The number of entries (lines) in dataset 2h
+corresponds to the value of PUMPCAP. If PUMPCAP does not equal 0, it must be set to an integer value of
+between 1 and 25, inclusive.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>lay_row_col</strong> : list of arrays (shape = (NNODES,3), length = MNWMAX)</p>
+<blockquote>
+<div><p>Layer, row, and column numbers of each model cell (node) for the current well. If NNODES &gt; 0,
+then a total of NNODES model cells (nodes) must be specified for each well (and dataset 2d must
+contain NNODES records). In the list of nodes defining the multi-node well, the data list must be
+constructed and ordered so that the first node listed represents the node closest to the wellhead,
+the last node listed represents the node furthest from the wellhead, and all nodes are listed in
+sequential order from the top to the bottom of the well (corresponding to the order of first to
+last well nodes). A particular node in the grid can be associated with more than one multi-node well.
+(default is None)</p>
+</div></blockquote>
+<p><strong>ztop_zbotm_row_col</strong> : list of arrays (shape = (abs(NNODES),2), length = MNWMAX)</p>
+<blockquote>
+<div><p>The top and bottom elevations of the open intervals (or screened intervals) of a vertical well.
+These values are only read if NNODES &lt; 0 in dataset 2a. The absolute value of NNODES indicates
+how many open intervals are to be defined, and so must correspond exactly to the number of records
+in dataset 2d for this well. In the list of intervals defining the multi-node well, the data list
+must be constructed and ordered so that the first interval listed represents the shallowest one,
+the last interval listed represents the deepest one, and all intervals are listed in sequential
+order from the top to the bottom of the well. If an interval partially or fully intersects a model
+layer, then a node will be defined in that cell. If more than one open interval intersects a
+particular layer, then a length-weighted average of the cell-to-well conductances will be used to
+define the well-node characteristics; for purposes of calculating effects of partial penetration,
+the cumulative length of well screens will be assumed to be centered vertically within the thickness
+of the cell. If the well is a single-node well by definition of LOSSTYPE = NONE and the defined open
+interval straddles more than one model layer, then the well will be associated with the cell where
+the center of the open interval exists.
+(default is None)</p>
+<dl class="docutils">
+<dt>if losstype != None (see losstype for definitions)</dt>
+<dd><dl class="first last docutils">
+<dt>rw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">(default is 0)</p>
+</dd>
+<dt>rskin <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">(default is 0)</p>
+</dd>
+<dt>kskin <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">(default is 0)</p>
+</dd>
+<dt>b <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">(default is 0)</p>
+</dd>
+<dt>c <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">(default is 0)</p>
+</dd>
+<dt>p <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">(default is 0)</p>
+</dd>
+<dt>cwc  float</dt>
+<dd><p class="first last">(default is 0)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>pp</strong> : float</p>
+<blockquote>
+<div><p>the fraction of partial penetration for this cell
+(see PPFLAG in dataset 2b). Only specify if PPFLAG &gt; 0 and NNODES &gt; 0.
+(default is 1)</p>
+</div></blockquote>
+<p><strong>itmp</strong> : integer</p>
+<blockquote>
+<div><p>For reusing or reading multi-node well data; it can change each stress period.
+ITMP must be &gt;= 0 for the first stress period of a simulation.
+if ITMP &gt; 0, then ITMP is the total number of active multi-node wells simulated during the stress period,
+and only wells listed in dataset 4a will be active during the stress period. Characteristics of each
+well are defined in datasets 2 and 4.
+if ITMP = 0, then no multi-node wells are active for the stress period and the following dataset is
+skipped.
+if ITMP &lt; 0, then the same number of wells and well information will be reused from the previous stress
+period and dataset 4 is skipped.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>wellid_qdes</strong> : list of arrays (shape = (NPER,MNWMAX,2))</p>
+<blockquote>
+<div><p>the actual (or maximum desired, if constraints are to be applied) volumetric pumping rate
+(negative for withdrawal or positive for injection) at the well (L3/T). Qdes should be set to 0
+for nonpumping wells. If constraints are applied, then the calculated volumetric withdrawal or
+injection rate may be adjusted to range from 0 to Qdes and is not allowed to switch directions
+between withdrawal and injection conditions during any stress period. When PUMPCAP &gt; 0, in the
+first stress period in which Qdes is specified with a negative value, Qdes represents the maximum
+operating discharge for the pump; in subsequent stress periods, any different negative values of
+Qdes are ignored, although values are subject to adjustment for CapMult. If Qdes &gt;= 0.0, then
+pump-capacity adjustments are not applied.
+(default is None)</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;mnw2&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 34).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Parameters are not supported in FloPy.</p>
+<p>This implementation does not allow well loss parameters {Rw,Rskin,Kskin,B,C,P,CWC,PP} to vary along the length
+of a given well. It also does not currently support data sections 2e, 2f, 2g, 2h, or 4b as defined in the data
+input instructions for the MNW2 package.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mnw2</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowMnw2</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
-<dl class="method">
+<dl class="staticmethod">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.load">
-<tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -64,6 +345,12 @@
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.wellid_qdes">
 <tt class="descname">wellid_qdes</tt><em class="property"> = None</em><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.wellid_qdes" title="Permalink to this definition">¶</a></dt>
 <dd><p>NOTE: some arrays are not pre-formatted here as their shapes vary from well to well and from period to period.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfmnw2.ModflowMnw2.write_file">
+<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the file.</p>
 </dd></dl>
 
 </dd></dl>
@@ -76,6 +363,12 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfmnw1.html"
+                        title="previous chapter">flopy.modflow.mfmnw1 Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfmnwi.html"
+                        title="next chapter">flopy.modflow.mfmnwi Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mfmnw2.txt"
@@ -110,7 +403,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfmnw1.html" title="flopy.modflow.mfmnw1 Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

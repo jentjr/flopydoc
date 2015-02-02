@@ -23,7 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfnwt Module" href="mfnwt.html" />
+    <link rel="prev" title="flopy.modflow.mfmnw2 Module" href="mfmnw2.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +41,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfmnw2.html" title="flopy.modflow.mfmnw2 Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -52,11 +62,58 @@
 <span class="target" id="module-flopy.modflow.mfmnwi"></span><dl class="class">
 <dt id="flopy.modflow.mfmnwi.ModflowMnwi">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mfmnwi.</tt><tt class="descname">ModflowMnwi</tt><big>(</big><em>model</em>, <em>wel1flag=1</em>, <em>qsumflag=1</em>, <em>byndflag=1</em>, <em>mnwobs=1</em>, <em>wellid_unit_qndflag_qhbflag_concflag=None</em>, <em>extension='mnwi'</em>, <em>unitnumber=58</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnwi.ModflowMnwi" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multi-node well information package class</p>
+<dd><p>&#8216;Multi-Node Well Information Package Class&#8217;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>wel1flag</strong> : integer</p>
+<blockquote>
+<div><p>Flag indicating output to be written for each MNW node at the end of each stress period</p>
+</div></blockquote>
+<p><strong>qsumflag :integer</strong> :</p>
+<blockquote>
+<div><p>Flag indicating output to be written for each multi-node well</p>
+</div></blockquote>
+<p><strong>byndflag :integer</strong> :</p>
+<blockquote>
+<div><p>Flag indicating output to be written for each MNW node</p>
+</div></blockquote>
+<p><strong>mnwobs :integer</strong> :</p>
+<blockquote>
+<div><p>Number of multi-node wells for which detailed flow, head, and solute data re to be saved</p>
+</div></blockquote>
+<p><strong>wellid_unit_qndflag_qhbflag_concflag</strong> : list of lists</p>
+<blockquote>
+<div><p>Containing wells and related information to be output (length : [MNWOBS][4or5])</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;mnwi&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 58).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ghb</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowMnwi</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
-<dl class="method">
+<dl class="staticmethod">
 <dt id="flopy.modflow.mfmnwi.ModflowMnwi.load">
-<tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnwi.ModflowMnwi.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnwi.ModflowMnwi.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -70,6 +127,12 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfmnw2.html"
+                        title="previous chapter">flopy.modflow.mfmnw2 Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfnwt.html"
+                        title="next chapter">flopy.modflow.mfnwt Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mfmnwi.txt"
@@ -104,7 +167,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfmnw2.html" title="flopy.modflow.mfmnw2 Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

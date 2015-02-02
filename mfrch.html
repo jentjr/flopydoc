@@ -65,7 +65,7 @@ the ModflowRch class as <cite>flopy.modflow.ModflowRch</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfrch.ModflowRch">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfrch.</tt><tt class="descname">ModflowRch</tt><big>(</big><em>model</em>, <em>nrchop=3</em>, <em>irchcb=0</em>, <em>rech=0.001</em>, <em>irch=0</em>, <em>extension='rch'</em>, <em>unitnumber=19</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfrch.ModflowRch" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfrch.</tt><tt class="descname">ModflowRch</tt><big>(</big><em>model</em>, <em>nrchop=3</em>, <em>ipakcb=0</em>, <em>rech=0.001</em>, <em>irch=0</em>, <em>extension='rch'</em>, <em>unitnumber=19</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfrch.ModflowRch" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Recharge Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -76,7 +76,7 @@ MODFLOW Guide</a>.</p>
 <div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
 this package will be added.</p>
 </div></blockquote>
-<p><strong>irchcb</strong> : int</p>
+<p><strong>ipakcb</strong> : int</p>
 <blockquote>
 <div><p>is a flag and a unit number. (the default is 0).</p>
 </div></blockquote>
@@ -109,7 +109,9 @@ column (only used when nrchop=2). (default is 0).</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Parameters are not supported in FloPy.</p>
+<p>Parameters are supported in Flopy only when reading in existing models.
+Parameter values are converted to native values in Flopy and the
+connection to &#8220;parameters&#8221; is thus nonexistent.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>

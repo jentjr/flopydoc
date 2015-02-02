@@ -23,7 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfmnw2 Module" href="mfmnw2.html" />
+    <link rel="prev" title="flopy.modflow.mflpf Module" href="mflpf.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +41,14 @@
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfmnw2.html" title="flopy.modflow.mfmnw2 Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mflpf.html" title="flopy.modflow.mflpf Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -52,12 +62,83 @@
 <span class="target" id="module-flopy.modflow.mfmnw1"></span><dl class="class">
 <dt id="flopy.modflow.mfmnw1.ModflowMnw1">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mfmnw1.</tt><tt class="descname">ModflowMnw1</tt><big>(</big><em>model</em>, <em>mxmnw=0</em>, <em>iwl2cb=0</em>, <em>iwelpt=0</em>, <em>nomoiter=0</em>, <em>kspref=1</em>, <em>wel1_bynode_qsum=None</em>, <em>itmp=0</em>, <em>lay_row_col_qdes_mn_multi=None</em>, <em>mnwname=None</em>, <em>extension='mnw1'</em>, <em>unitnumber=33</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw1.ModflowMnw1" title="Permalink to this definition">¶</a></dt>
-<dd><p>NOTE: The functionality of the ADD flag in data set 4 is not supported. Also not supported are all water-quality parameters (Qwval Iqwgrp),
-water level limitations (Hlim Href DD), non-linear well losses, and pumping limitations (QCUT Q-%CUT Qfrcmn Qfrcmx DEFAULT).</p>
+<dd><p>MODFLOW Multi-Node Well 1 Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>mxmnw</strong> : integer</p>
+<blockquote>
+<div><p>maximum number of multi-node wells to be simulated</p>
+</div></blockquote>
+<p><strong>iwl2cb</strong> : integer</p>
+<blockquote>
+<div><p>flag and unit number</p>
+</div></blockquote>
+<p><strong>iwelpt</strong> : integer</p>
+<blockquote>
+<div><p>verbosity flag</p>
+</div></blockquote>
+<p><strong>nomoiter</strong> : integer</p>
+<blockquote>
+<div><p>the number of iterations for which flow in MNW wells is calculated</p>
+</div></blockquote>
+<p><strong>kspref</strong> : string</p>
+<blockquote>
+<div><p>which set of water levels are to be used as reference values for calculating drawdown</p>
+</div></blockquote>
+<p><strong>losstype</strong> : string</p>
+<blockquote>
+<div><p>head loss type for each well</p>
+</div></blockquote>
+<p><strong>wel1_bynode_qsum</strong> : list of lists</p>
+<blockquote>
+<div><p>nested list containing file names, unit numbers, and ALLTIME flag for auxilary output, e.g. [[&#8216;test.ByNode&#8217;,92,&#8217;ALLTIME&#8217;]]</p>
+</div></blockquote>
+<p><strong>itmp</strong> : array</p>
+<blockquote>
+<div><p>number of wells to be simulated for each stress period (shape : (NPER))</p>
+</div></blockquote>
+<p><strong>lay_row_col_qdes_mn_multi</strong> : list of arrays</p>
+<blockquote>
+<div><p>lay, row, col, qdes, and MN or MULTI flag for all well nodes (length : NPER)</p>
+</div></blockquote>
+<p><strong>mnwname</strong> : string</p>
+<blockquote>
+<div><p>prefix name of file for outputting time series data from MNW1</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;mnw1&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 33).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Parameters are not supported in FloPy.</p>
+<p>The functionality of the ADD flag in data set 4 is not supported. Also not supported
+are all water-quality parameters (Qwval Iqwgrp), water-level limitations (Hlim, Href, DD),
+non-linear well losses, and pumping limitations (QCUT, Q-%CUT, Qfrcmn, Qfrcmx, DEFAULT).</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mnw1</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowMnw1</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
-<dl class="method">
+<dl class="staticmethod">
 <dt id="flopy.modflow.mfmnw1.ModflowMnw1.load">
-<tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw1.ModflowMnw1.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnw1.ModflowMnw1.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -71,6 +152,12 @@ water level limitations (Hlim Href DD), non-linear well losses, and pumping limi
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mflpf.html"
+                        title="previous chapter">flopy.modflow.mflpf Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfmnw2.html"
+                        title="next chapter">flopy.modflow.mfmnw2 Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/mfmnw1.txt"
@@ -105,7 +192,14 @@ water level limitations (Hlim Href DD), non-linear well losses, and pumping limi
         <li class="right" >
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="mfmnw2.html" title="flopy.modflow.mfmnw2 Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mflpf.html" title="flopy.modflow.mflpf Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
