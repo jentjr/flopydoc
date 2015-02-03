@@ -1,7 +1,7 @@
 Tutorial 1: Confined Steady-State Flow Model
 ============================================
 
-This tutorial demonstrates use of flopy to develop a simple MODFLOW model.  And I mean really simple.
+This tutorial demonstrates use of flopy to develop a simple MODFLOW model.  And I mean really simple.  Note that you can access this tutorial python script from `here <https://github.com/modflowpy/flopy/blob/master/examples/Tutorials/Tutorial01/tutorial01.py>`_.
 
 Getting Started
 ---------------
@@ -14,7 +14,7 @@ However, you may have a custom version of flopy, or maybe flopy hasn't been offi
     import os
     import sys
     import numpy as np
-    flopypth = os.path.join('..', '..', 'flopy.svn')
+    flopypth = os.path.join('..', '..', 'flopy')
     if flopypth not in sys.path:
         sys.path.append(flopypth)
     import flopy
@@ -34,13 +34,13 @@ Discretization
 
 We start by creating our flopy model object as follows::
 
-    #Assign name and create modflow model object
+    # Assign name and create modflow model object
     modelname = 'tutorial1'
     mf = flopy.modflow.Modflow(modelname, exe_name='mf2005')
 
 Next, let's proceed by defining our model domain and creating a MODFLOW grid to span the domain::
 
-    #model domain and grid definition
+    # Model domain and grid definition
     Lx = 1000.
     Ly = 1000.
     ztop = 0.
@@ -81,7 +81,7 @@ Layer-Property Flow Package
 
 Details on the flopy LPF class are at: `flopy.modflow.mflpf <mflpf.html>`__.  Values of 10. are assigned for the horizontal and vertical hydraulic conductivity::
 
-    #Add LPF package to the MODFLOW model
+    # Add LPF package to the MODFLOW model
     lpf = flopy.modflow.ModflowLpf(mf, hk=10., vka=10.)
 
 Because we did not specify a value for laytyp, Flopy will use the default value of 0, which means that this model will be confined.
@@ -99,7 +99,7 @@ Preconditioned Conjugate Gradient Package
 
 Details on the flopy PCG class are at: `flopy.modflow.mfpcg <mfpcg.html>`__.  The default settings used by flopy will be used by specifying the following commands::
 
-    #Add PCG package to the MODFLOW model
+    # Add PCG package to the MODFLOW model
     pcg = flopy.modflow.ModflowPcg(mf)
 
 Writing the MODFLOW Data Files
@@ -107,7 +107,7 @@ Writing the MODFLOW Data Files
 
 The MODFLOW input data files are written by simply issuing the following::
 
-    #Write the MODFLOW model input files
+    # Write the MODFLOW model input files
     mf.write_input()
 
 Running the Modeling
@@ -115,8 +115,8 @@ Running the Modeling
 
 Flopy can also be used to run the model.  The model object (mf in this example) has an attached method that will run the model.  For this to work, the MODFLOW program must be located somewhere within the system path, or within the working directory.  In this example, we have specified that the name of the executable program is 'mf2005'.  Issue the following to run the model::
 
-    #Run the MODFLOW model
-    mf.run_model3()
+    # Run the MODFLOW model
+    success, buff = mf.run_model()
 
 Here we have used run_model3.  A model can also be run using run_model1, which creates a batch file, and run_model2, which will pause after the model has completed.
 

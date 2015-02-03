@@ -8,7 +8,7 @@
     
     <title>Tutorial 2: Unconfined Transient Flow Model &mdash; flopy 3.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -67,6 +67,7 @@
 <li>Period 3 (100 days) &#8211; pumping well at model center with rate = -10., left and right GHB = 10., and 0.</li>
 </ul>
 <p>We will start with selected model commands from the previous tutorial.</p>
+<p>Note that you can access this tutorial python script from <a class="reference external" href="https://github.com/modflowpy/flopy/blob/master/examples/Tutorials/Tutorial02/tutorial02.py">here</a>.</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>As shown in the previous tutorial, import flopy using your preferred method, such as:</p>
@@ -79,7 +80,7 @@
 <div class="section" id="define-the-model-extent-grid-resolution-and-characteristics">
 <h3>Define the Model Extent, Grid Resolution, and Characteristics<a class="headerlink" href="#define-the-model-extent-grid-resolution-and-characteristics" title="Permalink to this headline">¶</a></h3>
 <p>Assign the model information:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#model domain and grid definition</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Model domain and grid definition</span>
 <span class="n">Lx</span> <span class="o">=</span> <span class="mf">1000.</span>
 <span class="n">Ly</span> <span class="o">=</span> <span class="mf">1000.</span>
 <span class="n">ztop</span> <span class="o">=</span> <span class="mf">0.</span>
@@ -107,7 +108,8 @@
 <div class="section" id="define-the-stress-periods">
 <h3>Define the Stress Periods<a class="headerlink" href="#define-the-stress-periods" title="Permalink to this headline">¶</a></h3>
 <p>To create a model with multiple stress periods, we need to define nper, perlen, nstp, and steady.  This is done in the following block in a manner that allows us to pass these variable directly to the discretization object:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">nper</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Time step parameters</span>
+<span class="n">nper</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">perlen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 <span class="n">nstp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 <span class="n">steady</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
@@ -117,7 +119,7 @@
 <div class="section" id="create-time-invariant-flopy-objects">
 <h3>Create Time-Invariant Flopy Objects<a class="headerlink" href="#create-time-invariant-flopy-objects" title="Permalink to this headline">¶</a></h3>
 <p>With this information, we can now create the static flopy objects that do not change with time:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#flopy objects</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Flopy objects</span>
 <span class="n">modelname</span> <span class="o">=</span> <span class="s">&#39;tutorial2&#39;</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span> <span class="n">exe_name</span><span class="o">=</span><span class="s">&#39;mf2005&#39;</span><span class="p">)</span>
 <span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">nlay</span><span class="p">,</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">,</span> <span class="n">delr</span><span class="o">=</span><span class="n">delr</span><span class="p">,</span> <span class="n">delc</span><span class="o">=</span><span class="n">delc</span><span class="p">,</span>
@@ -133,7 +135,7 @@
 <h3>Transient General-Head Boundary Package<a class="headerlink" href="#transient-general-head-boundary-package" title="Permalink to this headline">¶</a></h3>
 <p>At this point, our model is ready to add our transient boundary packages.  First, we will create the GHB object, which is of the following type: <a class="reference external" href="mfghb.html">flopy.modflow.ModflowGhb</a>.</p>
 <p>The key to creating Flopy transient boundary packages is recognizing that the boundary data is stored in a three dimensional list (i.e. bnddata = [[[]]] ).  The innermost part of this list is a single boundary condition.  For a GHB it is [layer, row, column, stage, conductance].  The next outermost part is a list of all the boundaries for a single stress period.  The outermost list contains a group of boundaries for each stress period.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#make list for stress period 1</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Make list for stress period 1</span>
 <span class="n">stageleft</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">stageright</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">bound_sp1</span> <span class="o">=</span> <span class="p">[]</span>
@@ -141,11 +143,11 @@
     <span class="n">condleft</span> <span class="o">=</span> <span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="n">stageleft</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">*</span> <span class="n">delc</span>
     <span class="n">condright</span> <span class="o">=</span> <span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="n">stageright</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">*</span> <span class="n">delc</span>
     <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
-        <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ir</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
-        <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ir</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
+        <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
+        <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
 <span class="k">print</span> <span class="s">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp1</span><span class="p">),</span> <span class="s">&#39;GHBs for stress period 1.&#39;</span>
 
-<span class="c">#make list for stress period 2</span>
+<span class="c"># Make list for stress period 2</span>
 <span class="n">stageleft</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">stageright</span> <span class="o">=</span> <span class="mf">0.</span>
 <span class="n">condleft</span> <span class="o">=</span> <span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="n">stageleft</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">*</span> <span class="n">delc</span>
@@ -153,36 +155,39 @@
 <span class="n">bound_sp2</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">il</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">nlay</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
-        <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ir</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
-        <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ir</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
+        <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
+        <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
 <span class="k">print</span> <span class="s">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp2</span><span class="p">),</span> <span class="s">&#39;GHBs for stress period 2.&#39;</span>
 
-<span class="c">#We do not need to make a list for stress period 3.</span>
-<span class="c">#Flopy will automatically take the list and apply it</span>
-<span class="c">#to the end of the simulation, if necessary</span>
-<span class="n">boundlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">bound_sp1</span><span class="p">,</span> <span class="n">bound_sp2</span><span class="p">]</span>
+<span class="c"># We do not need to add a dictionary entry for stress period 3.</span>
+<span class="c"># Flopy will automatically take the list from stess period 2 and apply it</span>
+<span class="c"># to the end of the simulation, if necessary</span>
+<span class="n">stress_period_data</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">bound_sp1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="n">bound_sp2</span><span class="p">}</span>
 
-<span class="c">#Create the flopy ghb object</span>
-<span class="n">ghb</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowGhb</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">layer_row_column_data</span><span class="o">=</span><span class="n">boundlist</span><span class="p">)</span>
+<span class="c"># Create the flopy ghb object</span>
+<span class="n">ghb</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowGhb</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">stress_period_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="transient-well-package">
 <h3>Transient Well Package<a class="headerlink" href="#transient-well-package" title="Permalink to this headline">¶</a></h3>
 <p>Now we can create the well package object, which is of the type, <a class="reference external" href="mfwel.html">flopy.modflow.ModflowWel</a>.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">pumping_rate</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.</span>
-<span class="n">wel_sp1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]</span>
-<span class="n">wel_sp2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]</span>
-<span class="n">wel_sp3</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">pumping_rate</span><span class="p">]]</span>
-<span class="n">welllist</span> <span class="o">=</span> <span class="p">[</span><span class="n">wel_sp1</span><span class="p">,</span> <span class="n">wel_sp2</span><span class="p">,</span> <span class="n">wel_sp3</span><span class="p">]</span>
-<span class="n">wel</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowWel</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">layer_row_column_data</span><span class="o">=</span><span class="n">welllist</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Create the well package</span>
+<span class="c"># Remember to use zero-based layer, row, column indices!</span>
+<span class="n">pumping_rate</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.</span>
+<span class="n">wel_sp1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]</span>
+<span class="n">wel_sp2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]</span>
+<span class="n">wel_sp3</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">pumping_rate</span><span class="p">]]</span>
+<span class="n">stress_period_data</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">wel_sp1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="n">wel_sp2</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="n">wel_sp3</span><span class="p">}</span>
+<span class="n">wel</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowWel</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">stress_period_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="output-control">
 <h3>Output Control<a class="headerlink" href="#output-control" title="Permalink to this headline">¶</a></h3>
 <p>Here we create the output control package object, which is of the type <a class="reference external" href="mfoc.html">flopy.modflow.ModflowOc</a>.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;head&#39;</span><span class="p">,</span><span class="s">&#39;drawdown&#39;</span><span class="p">,</span><span class="s">&#39;budget&#39;</span><span class="p">,</span> <span class="s">&#39;phead&#39;</span><span class="p">,</span> <span class="s">&#39;pbudget&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Output control</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;head&#39;</span><span class="p">,</span><span class="s">&#39;drawdown&#39;</span><span class="p">,</span><span class="s">&#39;budget&#39;</span><span class="p">,</span> <span class="s">&#39;phead&#39;</span><span class="p">,</span> <span class="s">&#39;pbudget&#39;</span><span class="p">]</span>
 <span class="n">save_head_every</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">words</span><span class="o">=</span><span class="n">words</span><span class="p">,</span> <span class="n">save_head_every</span><span class="o">=</span><span class="n">save_head_every</span><span class="p">)</span>
 </pre></div>
@@ -192,11 +197,11 @@
 <div class="section" id="running-the-modeling">
 <h2>Running the Modeling<a class="headerlink" href="#running-the-modeling" title="Permalink to this headline">¶</a></h2>
 <p>Run the model with run_model2, which returns a success flag and the stream of output. With run_model2, we have some finer control, that allows us to suppress the output.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#write the model input files</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Write the model input files</span>
 <span class="n">mf</span><span class="o">.</span><span class="n">write_input</span><span class="p">()</span>
 
-<span class="c">#run the model</span>
-<span class="n">success</span><span class="p">,</span> <span class="n">mfoutput</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">run_model2</span><span class="p">(</span><span class="n">silent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c"># Run the model</span>
+<span class="n">success</span><span class="p">,</span> <span class="n">mfoutput</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">run_model</span><span class="p">(</span><span class="n">silent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;MODFLOW did not terminate normally.&#39;</span><span class="p">)</span>
 </pre></div>
@@ -209,11 +214,11 @@
 * get_data() will return a three-dimensional head array for the specified time
 * get_ts() will return a time series array [ntimes, headval] for the specified cell</p>
 <p>Using these methods, we can create head plots and hydrographs from the model results.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#imports</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Imports</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="kn">as</span> <span class="nn">bf</span>
 
-<span class="c">#Create the headfile object</span>
+<span class="c"># Create the headfile object</span>
 <span class="n">headobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="n">modelname</span><span class="o">+</span><span class="s">&#39;.hds&#39;</span><span class="p">)</span>
 <span class="n">times</span> <span class="o">=</span> <span class="n">headobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 
@@ -223,6 +228,7 @@
 <span class="k">print</span> <span class="s">&#39;Levels: &#39;</span><span class="p">,</span> <span class="n">levels</span>
 <span class="k">print</span> <span class="s">&#39;Extent: &#39;</span><span class="p">,</span> <span class="n">extent</span>
 
+<span class="c"># Make the plots</span>
 <span class="n">mytimes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">101.0</span><span class="p">,</span> <span class="mf">201.0</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">time</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mytimes</span><span class="p">):</span>
     <span class="k">print</span> <span class="s">&#39;*****Processing time: &#39;</span><span class="p">,</span> <span class="n">time</span>
@@ -259,13 +265,16 @@
 <div class="section" id="plot-head-versus-time">
 <h3>Plot Head Versus Time<a class="headerlink" href="#plot-head-versus-time" title="Permalink to this headline">¶</a></h3>
 <p>Make a plot of head versus time by extracting the binary heads from the headobj:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ts</span> <span class="o">=</span> <span class="n">headobj</span><span class="o">.</span><span class="n">get_ts</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncol</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Plot the head versus time</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">headobj</span><span class="o">.</span><span class="n">get_ts</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ttl</span> <span class="o">=</span> <span class="s">&#39;Head at cell ({0},{1},{2})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncol</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ttl</span> <span class="o">=</span> <span class="s">&#39;Head at cell ({0},{1},{2})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">idx</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">ttl</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;head&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ts</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -354,7 +363,7 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White.
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>

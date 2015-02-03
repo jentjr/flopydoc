@@ -8,7 +8,7 @@
     
     <title>What is FloPy? &mdash; flopy 3.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -23,7 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" /> 
+    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="next" title="Tutorials" href="tutorials.html" />
+    <link rel="prev" title="Welcome to flopy’s documentation!" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -32,6 +34,18 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorials.html" title="Tutorials"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to flopy’s documentation!"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -44,16 +58,40 @@
   <div class="section" id="what-is-flopy">
 <h1>What is FloPy?<a class="headerlink" href="#what-is-flopy" title="Permalink to this headline">¶</a></h1>
 <p>FloPy is a collection of Python scripts for building, running, and processing MODFLOW, MODPATH, MT3D, SWI, and SEAWAT models.</p>
-<p>The design of the FloPy project is still under development, although we are zooming in on the final structure. When the structure is complete and documented we will start asking for additional help in implementing all packages. For now, you can give it a try if you wish. It works well already for many problems.</p>
-<p>Return to the Google Code <a class="reference external" href="http://code.google.com/p/flopy/">FloPy</a> website.</p>
+<p>This documentation is for Version 3.</p>
+<p>Return to the Github <a class="reference external" href="https://github.com/modflowpy/flopy">FloPy</a> website.</p>
 </div>
 <div class="section" id="flopy-installation">
 <h1>FloPy Installation?<a class="headerlink" href="#flopy-installation" title="Permalink to this headline">¶</a></h1>
-<p>There is a Windows binary installer listed on the downloads page; however, this installer has not been kept up-to-date.  The best way to obtain a copy of FloPy is to retrieve a copy using Subversion, often called &#8216;svn&#8217;.  For Windows users, <a class="reference external" href="http://tortoisesvn.net/">TortoiseSVN</a> is a very easy way to work with svn repositories and it integrates nicely with the Windows file manager.</p>
-<p>As you will see from the FloPy <a class="reference external" href="http://code.google.com/p/flopy/source/checkout">source</a> page, the entire FloPy package can be downloaded using the following svn command.  There is also a browse tab on this page that allows you to explore the underlying FloPy source code.</p>
-<p>svn checkout <a class="reference external" href="http://flopy.googlecode.com/svn/trunk/">http://flopy.googlecode.com/svn/trunk/</a> flopy-read-only</p>
-<p>As FloPy evolves, you can download updates by performing an &#8220;svn update&#8221;.  This will download any new files or changes into your FloPy folder.</p>
-<p>In the near future, we hope to offer binary installers for FloPy.</p>
+<p>The best way to obtain a copy of FloPy is to retrieve a copy from Github.</p>
+<p>There are several ways to install flopy:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>The easiest way is to install the Flopy package is to use pip. Simply type the following command from a Windows command-line window or unix terminal: &#8220;pip install flopy&#8221;.  After you install Flopy, do an import and print flopy.__version__ to make sure that you&#8217;re using Version 3 or newer.</li>
+<li>Alternatively, the latest stable version of Flopy can be downloaded from Github: <a class="reference external" href="https://github.com/modflowpy/flopy">https://github.com/modflowpy/flopy</a></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="flopy-development-team">
+<h1>Flopy Development Team<a class="headerlink" href="#flopy-development-team" title="Permalink to this headline">¶</a></h1>
+<p>Flopy is developed by a team of MODFLOW users that have switched over to using Python for model development and post processing.  Members of the team currently include:</p>
+<ul class="simple">
+<li>Mark Baker</li>
+<li>Vincent Post</li>
+<li>Chris Langevin</li>
+<li>Joe Hughes</li>
+<li>Jeremy White</li>
+<li>Alain Frances</li>
+<li>Mike Fienen</li>
+<li>Jeff Starn</li>
+</ul>
+<p>with contributions from:</p>
+<ul class="simple">
+<li>Jason Belino</li>
+<li>Kolja Rotzoll</li>
+<li>and others</li>
+</ul>
+<p>Feel free to contact one of us if you would like to participate in Flopy development.  We could use the help!</p>
 </div>
 
 
@@ -66,8 +104,15 @@
   <ul>
 <li><a class="reference internal" href="#">What is FloPy?</a></li>
 <li><a class="reference internal" href="#flopy-installation">FloPy Installation?</a></li>
+<li><a class="reference internal" href="#flopy-development-team">Flopy Development Team</a></li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to flopy&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tutorials.html"
+                        title="next chapter">Tutorials</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/introduction.txt"
@@ -96,11 +141,23 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorials.html" title="Tutorials"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to flopy’s documentation!"
+             >previous</a> |</li>
         <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White.
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>

@@ -8,7 +8,7 @@
     
     <title>flopy.utils.util_array Module &mdash; flopy 3.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -203,7 +203,7 @@ returns (itmp,file entry string from util_2d)</p>
 
 <dl class="class">
 <dt id="flopy.utils.util_array.util_2d">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">util_2d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name=None</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_2d" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">util_2d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name=None</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>util_2d class for handling 2-D model arrays</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -341,7 +341,7 @@ may touch.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.util_2d.parse_control_record">
-<em class="property">static </em><tt class="descname">parse_control_record</tt><big>(</big><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;type 'numpy.float32'&gt;</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">parse_control_record</tt><big>(</big><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;type 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses a control record when reading an existing file
 rectifies fixed to free format
 current_unit (optional) indicates the unit number of the file being parsed</p>
@@ -374,7 +374,7 @@ may touch.</p>
 
 <dl class="class">
 <dt id="flopy.utils.util_array.util_3d">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">util_3d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>locat=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_3d" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">util_3d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>locat=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_3d" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>util_3d class for handling 3-D model arrays.  just a thin wrapper around</dt>
 <dd>util_2d</dd>
@@ -498,7 +498,7 @@ is reset to value.</p>
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White.
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>

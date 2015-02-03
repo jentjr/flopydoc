@@ -8,7 +8,7 @@
     
     <title>flopy.modflow.mf Module &mdash; flopy 3.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -158,6 +158,25 @@ file package to refer to it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> : Package object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mf.Modflow.add_pop_key_list">
+<tt class="descname">add_pop_key_list</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.add_pop_key_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a external file unit number to a list that will be used to remove
+model output (typically binary) files from ext_unit_dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key</strong> : int</p>
+<blockquote class="last">
+<div><p>file unit number</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
@@ -467,7 +486,7 @@ file name or the unit number.</p>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mf.ModflowGlobal.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowGlobal.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowGlobal.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -480,7 +499,7 @@ file name or the unit number.</p>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mf.ModflowList.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowList.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowList.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -545,7 +564,7 @@ file name or the unit number.</p>
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White.
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>

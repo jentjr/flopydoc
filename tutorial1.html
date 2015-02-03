@@ -8,7 +8,7 @@
     
     <title>Tutorial 1: Confined Steady-State Flow Model &mdash; flopy 3.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -59,7 +59,7 @@
             
   <div class="section" id="tutorial-1-confined-steady-state-flow-model">
 <h1>Tutorial 1: Confined Steady-State Flow Model<a class="headerlink" href="#tutorial-1-confined-steady-state-flow-model" title="Permalink to this headline">¶</a></h1>
-<p>This tutorial demonstrates use of flopy to develop a simple MODFLOW model.  And I mean really simple.</p>
+<p>This tutorial demonstrates use of flopy to develop a simple MODFLOW model.  And I mean really simple.  Note that you can access this tutorial python script from <a class="reference external" href="https://github.com/modflowpy/flopy/blob/master/examples/Tutorials/Tutorial01/tutorial01.py">here</a>.</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>If flopy has been properly installed, then it can be imported as follows:</p>
@@ -70,7 +70,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="n">flopypth</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;flopy.svn&#39;</span><span class="p">)</span>
+<span class="n">flopypth</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;flopy&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">flopypth</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flopypth</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">flopy</span>
@@ -86,13 +86,13 @@
 <div class="section" id="discretization">
 <h3>Discretization<a class="headerlink" href="#discretization" title="Permalink to this headline">¶</a></h3>
 <p>We start by creating our flopy model object as follows:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Assign name and create modflow model object</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Assign name and create modflow model object</span>
 <span class="n">modelname</span> <span class="o">=</span> <span class="s">&#39;tutorial1&#39;</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span> <span class="n">exe_name</span><span class="o">=</span><span class="s">&#39;mf2005&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Next, let&#8217;s proceed by defining our model domain and creating a MODFLOW grid to span the domain:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#model domain and grid definition</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Model domain and grid definition</span>
 <span class="n">Lx</span> <span class="o">=</span> <span class="mf">1000.</span>
 <span class="n">Ly</span> <span class="o">=</span> <span class="mf">1000.</span>
 <span class="n">ztop</span> <span class="o">=</span> <span class="mf">0.</span>
@@ -131,7 +131,7 @@
 <div class="section" id="layer-property-flow-package">
 <h3>Layer-Property Flow Package<a class="headerlink" href="#layer-property-flow-package" title="Permalink to this headline">¶</a></h3>
 <p>Details on the flopy LPF class are at: <a class="reference external" href="mflpf.html">flopy.modflow.mflpf</a>.  Values of 10. are assigned for the horizontal and vertical hydraulic conductivity:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add LPF package to the MODFLOW model</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add LPF package to the MODFLOW model</span>
 <span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">hk</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">vka</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -148,7 +148,7 @@
 <div class="section" id="preconditioned-conjugate-gradient-package">
 <h3>Preconditioned Conjugate Gradient Package<a class="headerlink" href="#preconditioned-conjugate-gradient-package" title="Permalink to this headline">¶</a></h3>
 <p>Details on the flopy PCG class are at: <a class="reference external" href="mfpcg.html">flopy.modflow.mfpcg</a>.  The default settings used by flopy will be used by specifying the following commands:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add PCG package to the MODFLOW model</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add PCG package to the MODFLOW model</span>
 <span class="n">pcg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcg</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -156,7 +156,7 @@
 <div class="section" id="writing-the-modflow-data-files">
 <h3>Writing the MODFLOW Data Files<a class="headerlink" href="#writing-the-modflow-data-files" title="Permalink to this headline">¶</a></h3>
 <p>The MODFLOW input data files are written by simply issuing the following:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Write the MODFLOW model input files</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Write the MODFLOW model input files</span>
 <span class="n">mf</span><span class="o">.</span><span class="n">write_input</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -165,8 +165,8 @@
 <div class="section" id="running-the-modeling">
 <h2>Running the Modeling<a class="headerlink" href="#running-the-modeling" title="Permalink to this headline">¶</a></h2>
 <p>Flopy can also be used to run the model.  The model object (mf in this example) has an attached method that will run the model.  For this to work, the MODFLOW program must be located somewhere within the system path, or within the working directory.  In this example, we have specified that the name of the executable program is &#8216;mf2005&#8217;.  Issue the following to run the model:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Run the MODFLOW model</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">run_model3</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Run the MODFLOW model</span>
+<span class="n">success</span><span class="p">,</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">run_model</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Here we have used run_model3.  A model can also be run using run_model1, which creates a batch file, and run_model2, which will pause after the model has completed.</p>
@@ -268,7 +268,7 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White.
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>

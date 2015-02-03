@@ -1,25 +1,43 @@
 What is FloPy? 
-============================
+==============
 
 FloPy is a collection of Python scripts for building, running, and processing MODFLOW, MODPATH, MT3D, SWI, and SEAWAT models.
 
-The design of the FloPy project is still under development, although we are zooming in on the final structure. When the structure is complete and documented we will start asking for additional help in implementing all packages. For now, you can give it a try if you wish. It works well already for many problems.
+This documentation is for Version 3.
 
-Return to the Google Code `FloPy <http://code.google.com/p/flopy/>`_ website.
+Return to the Github `FloPy <https://github.com/modflowpy/flopy>`_ website.
 
 
 FloPy Installation? 
-============================
+===================
 
-There is a Windows binary installer listed on the downloads page; however, this installer has not been kept up-to-date.  The best way to obtain a copy of FloPy is to retrieve a copy using Subversion, often called 'svn'.  For Windows users, `TortoiseSVN <http://tortoisesvn.net/>`__ is a very easy way to work with svn repositories and it integrates nicely with the Windows file manager.
+The best way to obtain a copy of FloPy is to retrieve a copy from Github.
 
-As you will see from the FloPy `source <http://code.google.com/p/flopy/source/checkout>`__ page, the entire FloPy package can be downloaded using the following svn command.  There is also a browse tab on this page that allows you to explore the underlying FloPy source code.
+There are several ways to install flopy:
 
-svn checkout http://flopy.googlecode.com/svn/trunk/ flopy-read-only
+  1. The easiest way is to install the Flopy package is to use pip. Simply type the following command from a Windows command-line window or unix terminal: "pip install flopy".  After you install Flopy, do an import and print flopy.__version__ to make sure that you're using Version 3 or newer.
 
-As FloPy evolves, you can download updates by performing an "svn update".  This will download any new files or changes into your FloPy folder.
-
-In the near future, we hope to offer binary installers for FloPy.
+  2. Alternatively, the latest stable version of Flopy can be downloaded from Github: https://github.com/modflowpy/flopy
 
 
- 
+Flopy Development Team
+======================
+
+Flopy is developed by a team of MODFLOW users that have switched over to using Python for model development and post processing.  Members of the team currently include:
+
+* Mark Baker
+* Vincent Post
+* Chris Langevin
+* Joe Hughes
+* Jeremy White
+* Alain Frances
+* Mike Fienen
+* Jeff Starn
+
+with contributions from:
+
+* Jason Belino
+* Kolja Rotzoll
+* and others
+
+Feel free to contact one of us if you would like to participate in Flopy development.  We could use the help!
