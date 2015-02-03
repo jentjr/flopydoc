@@ -46,8 +46,11 @@ make html
   * Now that the html pages are updated, you need to commit the changes and then push them.  Do this using:
 
     git add .
+    
     git commit -m "rebuilt docs"
+    
     git push origin gh-pages
+    
 
 Directory structure
 
