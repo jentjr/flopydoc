@@ -10,6 +10,8 @@ In this example, we will convert the tutorial 1 model into an unconfined, transi
 
 We will start with selected model commands from the previous tutorial.
 
+Note that you can access this tutorial python script from `here <https://github.com/modflowpy/flopy/blob/master/examples/Tutorials/Tutorial02/tutorial02.py>`_.
+
 Getting Started
 ---------------
 As shown in the previous tutorial, import flopy using your preferred method, such as::
@@ -24,7 +26,7 @@ Define the Model Extent, Grid Resolution, and Characteristics
 
 Assign the model information::
 
-    #model domain and grid definition
+    # Model domain and grid definition
     Lx = 1000.
     Ly = 1000.
     ztop = 0.
@@ -53,6 +55,7 @@ Define the Stress Periods
 
 To create a model with multiple stress periods, we need to define nper, perlen, nstp, and steady.  This is done in the following block in a manner that allows us to pass these variable directly to the discretization object::
 
+    # Time step parameters
     nper = 3
     perlen = [1, 100, 100]
     nstp = [1, 100, 100]
@@ -63,7 +66,7 @@ Create Time-Invariant Flopy Objects
 
 With this information, we can now create the static flopy objects that do not change with time::
 
-    #flopy objects
+    # Flopy objects
     modelname = 'tutorial2'
     mf = flopy.modflow.Modflow(modelname, exe_name='mf2005')
     dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc,
@@ -81,7 +84,7 @@ At this point, our model is ready to add our transient boundary packages.  First
 
 The key to creating Flopy transient boundary packages is recognizing that the boundary data is stored in a three dimensional list (i.e. bnddata = [[[]]] ).  The innermost part of this list is a single boundary condition.  For a GHB it is [layer, row, column, stage, conductance].  The next outermost part is a list of all the boundaries for a single stress period.  The outermost list contains a group of boundaries for each stress period.::
 
-    #make list for stress period 1
+    # Make list for stress period 1
     stageleft = 10.
     stageright = 10.
     bound_sp1 = []
@@ -89,11 +92,11 @@ The key to creating Flopy transient boundary packages is recognizing that the bo
         condleft = hk * (stageleft - zbot) * delc
         condright = hk * (stageright - zbot) * delc
         for ir in xrange(nrow):
-            bound_sp1.append([il + 1, ir + 1, 0 + 1, stageleft, condleft])
-            bound_sp1.append([il + 1, ir + 1, ncol - 1, stageright, condright])
+            bound_sp1.append([il, ir, 0, stageleft, condleft])
+            bound_sp1.append([il, ir, ncol - 1, stageright, condright])
     print 'Adding ', len(bound_sp1), 'GHBs for stress period 1.'
 
-    #make list for stress period 2
+    # Make list for stress period 2
     stageleft = 10.
     stageright = 0.
     condleft = hk * (stageleft - zbot) * delc
@@ -101,17 +104,17 @@ The key to creating Flopy transient boundary packages is recognizing that the bo
     bound_sp2 = []
     for il in xrange(nlay):
         for ir in xrange(nrow):
-            bound_sp2.append([il + 1, ir + 1, 0 + 1, stageleft, condleft])
-            bound_sp2.append([il + 1, ir + 1, ncol - 1, stageright, condright])
+            bound_sp2.append([il, ir, 0, stageleft, condleft])
+            bound_sp2.append([il, ir, ncol - 1, stageright, condright])
     print 'Adding ', len(bound_sp2), 'GHBs for stress period 2.'
 
-    #We do not need to make a list for stress period 3.
-    #Flopy will automatically take the list and apply it
-    #to the end of the simulation, if necessary
-    boundlist = [bound_sp1, bound_sp2]
+    # We do not need to add a dictionary entry for stress period 3.
+    # Flopy will automatically take the list from stess period 2 and apply it
+    # to the end of the simulation, if necessary
+    stress_period_data = {0: bound_sp1, 1: bound_sp2}
 
-    #Create the flopy ghb object
-    ghb = flopy.modflow.ModflowGhb(mf, layer_row_column_data=boundlist)
+    # Create the flopy ghb object
+    ghb = flopy.modflow.ModflowGhb(mf, stress_period_data=stress_period_data)
 
 
 Transient Well Package
@@ -119,12 +122,14 @@ Transient Well Package
 
 Now we can create the well package object, which is of the type, `flopy.modflow.ModflowWel <mfwel.html>`__.::
 
+    # Create the well package
+    # Remember to use zero-based layer, row, column indices!
     pumping_rate = -100.
-    wel_sp1 = [[1, nrow/2, nrow/2, 0.]]
-    wel_sp2 = [[1, nrow/2, nrow/2, 0.]]
-    wel_sp3 = [[1, nrow/2, nrow/2, pumping_rate]]
-    welllist = [wel_sp1, wel_sp2, wel_sp3]
-    wel = flopy.modflow.ModflowWel(mf, layer_row_column_data=welllist)
+    wel_sp1 = [[0, nrow/2 - 1, nrow/2, 0.]]
+    wel_sp2 = [[0, nrow/2 - 1, nrow/2, 0.]]
+    wel_sp3 = [[0, nrow/2 - 1, nrow/2, pumping_rate]]
+    stress_period_data = {0: wel_sp1, 1: wel_sp2, 2: wel_sp3}
+    wel = flopy.modflow.ModflowWel(mf, stress_period_data=stress_period_data)
 
 
 Output Control
@@ -132,6 +137,7 @@ Output Control
 
 Here we create the output control package object, which is of the type `flopy.modflow.ModflowOc <mfoc.html>`__.::
 
+    # Output control
     words = ['head','drawdown','budget', 'phead', 'pbudget']
     save_head_every = 1
     oc = flopy.modflow.ModflowOc(mf, words=words, save_head_every=save_head_every)
@@ -142,11 +148,11 @@ Running the Modeling
 
 Run the model with run_model2, which returns a success flag and the stream of output. With run_model2, we have some finer control, that allows us to suppress the output.::
 
-    #write the model input files
+    # Write the model input files
     mf.write_input()
 
-    #run the model
-    success, mfoutput = mf.run_model2(silent=True, pause=False)
+    # Run the model
+    success, mfoutput = mf.run_model(silent=True, pause=False)
     if not success:
         raise Exception('MODFLOW did not terminate normally.')
 
@@ -160,11 +166,11 @@ Once again, we can read heads from the MODFLOW binary output file, using the `fl
 
 Using these methods, we can create head plots and hydrographs from the model results.::
 
-    #imports
+    # Imports
     import matplotlib.pyplot as plt
     import flopy.utils.binaryfile as bf
 
-    #Create the headfile object
+    # Create the headfile object
     headobj = bf.HeadFile(modelname+'.hds')
     times = headobj.get_times()
 
@@ -174,6 +180,7 @@ Using these methods, we can create head plots and hydrographs from the model res
     print 'Levels: ', levels
     print 'Extent: ', extent
 
+    # Make the plots
     mytimes = [1.0, 101.0, 201.0]
     for iplot, time in enumerate(mytimes):
         print '*****Processing time: ', time
@@ -218,13 +225,16 @@ Plot Head Versus Time
 ^^^^^^^^^^^^^^^^^^^^^
 Make a plot of head versus time by extracting the binary heads from the headobj::
 
-    ts = headobj.get_ts(1, nrow/2, ncol/2)
+    # Plot the head versus time
+    idx = (0, nrow/2 - 1, ncol/2 - 1)
+    ts = headobj.get_ts(idx)
     plt.subplot(1, 1, 1)
-    ttl = 'Head at cell ({0},{1},{2})'.format(1, nrow/2, ncol/2)
+    ttl = 'Head at cell ({0},{1},{2})'.format(idx[0] + 1, idx[1] + 1, idx[2] + 1)
     plt.title(ttl)
     plt.xlabel('time')
     plt.ylabel('head')
     plt.plot(ts[:, 0], ts[:, 1])
+    plt.show()
 
 .. figure:: _images/tutorial2fig4.png
    :alt: head contours in first layer

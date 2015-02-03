@@ -43,7 +43,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'flopy'
-copyright = u'2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White'
+copyright = u'2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -93,7 +93,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'pyramid'  #'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -113,6 +113,7 @@ html_theme = 'default'
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #html_logo = None
+html_logo = 'images/flopyzero.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -155,7 +156,7 @@ html_static_path = ['_static']
 #html_show_sphinx = True
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-#html_show_copyright = True
+#html_show_copyright = False
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
