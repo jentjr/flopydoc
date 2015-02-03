@@ -57,8 +57,15 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-utils-binaryfile-module">
-<h1>flopy.utils.binaryfile Module<a class="headerlink" href="#flopy-utils-binaryfile-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-flopy.utils.binaryfile">
+<span id="flopy-utils-binaryfile-module"></span><h1>flopy.utils.binaryfile Module<a class="headerlink" href="#module-flopy.utils.binaryfile" title="Permalink to this headline">¶</a></h1>
+<p>Module to read MODFLOW binary output files.  The module contains three
+important classes that can be accessed by the user.</p>
+<ul class="simple">
+<li>HeadFile (Binary head file.  Can also be used for drawdown)</li>
+<li>UcnFile (Binary concentration file from MT3DMS)</li>
+<li>CellBudgetFile (Binary cell-by-cell flow file)</li>
+</ul>
 <dl class="class">
 <dt id="flopy.utils.binaryfile.HeadFile">
 <em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">HeadFile</tt><big>(</big><em>filename</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile" title="Permalink to this definition">¶</a></dt>
@@ -112,54 +119,144 @@ the corresponding data array.</p>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.close" title="Permalink to this definition">¶</a></dt>
-<dd><p>close the file handle</p>
+<dd><p>Close the file handle.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.get_alldata">
 <tt class="descname">get_alldata</tt><big>(</big><em>mflay=None</em>, <em>nodata=-9999</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_alldata" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a four-dimensional array (ntimes,nlay,nrow,ncol) if mflay = None
-Return a three-dimensional arrayn (ntimes,nrow,ncol) if mflay is
-specified.  mflay is the MODFLOW layer number (i.e., it starts at 1)</p>
+<dd><p>Get all of the data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mflay</strong> : integer</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (Default is None.)</p>
+</div></blockquote>
+<p><strong>nodata</strong> : float</p>
+<blockquote>
+<div><p>The nodata value in the data array.  All array values that have the
+nodata value will be assigned np.nan.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nlay, nrow, ncol) if mflay is None or it
+has size (ntimes, nrow, ncol) if mlay is specified.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.get_data">
 <tt class="descname">get_data</tt><big>(</big><em>kstpkper=(0</em>, <em>0)</em>, <em>idx=None</em>, <em>totim=0</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a three dimensional value array for the specified (kstp, kper)
-tuple or totim value, or return a two dimensional head array
-if the mflay argument is specified, where mflay is the MODFLOW layer
-number (starting at 1).</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.binaryfile.HeadFile.get_header">
-<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_header" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read the file header</p>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time.</p>
+</div></blockquote>
+<p><strong>mflay</strong> : integer</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (Default is None.)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nlay, nrow, ncol) if mflay is None or it has size
+(nrow, ncol) if mlay is specified.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.get_kstpkper">
 <tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of unique stress periods and time steps in the file</p>
+<dd><p>Get a list of unique stress periods and time steps in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in binary file.  kstp and
+kper values are presently one-based.  This may change in the
+future.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of unique times in the file</p>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>k=0</em>, <em>i=0</em>, <em>j=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_ts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create and return a time series array of size [ntimes, nstations].</p>
-<p>The get_ts method can be called as ts = hdobj.get_ts(1, 2, 3),
-which will get the time series for layer 1, row 2, and column 3.
-The time value will be in the first column of the array.</p>
-<p>Alternatively, the get_ts method can be called with a list like
-ts = hdobj.get_ts( [(1, 2, 3), (2, 3, 4)] ), which will return
-the time series for two different cells.</p>
+<tt class="descname">get_ts</tt><big>(</big><em>idx</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from the binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
+<blockquote>
+<div><p>idx can be (layer, row, column) or it can be a list in the form
+[(layer, row, column), (layer, row, column), ...].  The layer,
+row, and column values must be zero based.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, ncells + 1).  The first column in the
+data array will contain time (totim).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The layer, row, and column values must be zero-based, and must be
+within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j &lt; ncol</p>
 </dd></dl>
 
 <dl class="method">
@@ -219,54 +316,144 @@ the corresponding data array.</p>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.close" title="Permalink to this definition">¶</a></dt>
-<dd><p>close the file handle</p>
+<dd><p>Close the file handle.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.get_alldata">
 <tt class="descname">get_alldata</tt><big>(</big><em>mflay=None</em>, <em>nodata=-9999</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_alldata" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a four-dimensional array (ntimes,nlay,nrow,ncol) if mflay = None
-Return a three-dimensional arrayn (ntimes,nrow,ncol) if mflay is
-specified.  mflay is the MODFLOW layer number (i.e., it starts at 1)</p>
+<dd><p>Get all of the data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mflay</strong> : integer</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (Default is None.)</p>
+</div></blockquote>
+<p><strong>nodata</strong> : float</p>
+<blockquote>
+<div><p>The nodata value in the data array.  All array values that have the
+nodata value will be assigned np.nan.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nlay, nrow, ncol) if mflay is None or it
+has size (ntimes, nrow, ncol) if mlay is specified.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.get_data">
 <tt class="descname">get_data</tt><big>(</big><em>kstpkper=(0</em>, <em>0)</em>, <em>idx=None</em>, <em>totim=0</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a three dimensional value array for the specified (kstp, kper)
-tuple or totim value, or return a two dimensional head array
-if the mflay argument is specified, where mflay is the MODFLOW layer
-number (starting at 1).</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.binaryfile.UcnFile.get_header">
-<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_header" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read the file header</p>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time.</p>
+</div></blockquote>
+<p><strong>mflay</strong> : integer</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (Default is None.)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nlay, nrow, ncol) if mflay is None or it has size
+(nrow, ncol) if mlay is specified.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.get_kstpkper">
 <tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of unique stress periods and time steps in the file</p>
+<dd><p>Get a list of unique stress periods and time steps in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in binary file.  kstp and
+kper values are presently one-based.  This may change in the
+future.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of unique times in the file</p>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>k=0</em>, <em>i=0</em>, <em>j=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_ts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create and return a time series array of size [ntimes, nstations].</p>
-<p>The get_ts method can be called as ts = hdobj.get_ts(1, 2, 3),
-which will get the time series for layer 1, row 2, and column 3.
-The time value will be in the first column of the array.</p>
-<p>Alternatively, the get_ts method can be called with a list like
-ts = hdobj.get_ts( [(1, 2, 3), (2, 3, 4)] ), which will return
-the time series for two different cells.</p>
+<tt class="descname">get_ts</tt><big>(</big><em>idx</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from the binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
+<blockquote>
+<div><p>idx can be (layer, row, column) or it can be a list in the form
+[(layer, row, column), (layer, row, column), ...].  The layer,
+row, and column values must be zero based.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, ncells + 1).  The first column in the
+data array will contain time (totim).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The layer, row, and column values must be zero-based, and must be
+within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j &lt; ncol</p>
 </dd></dl>
 
 <dl class="method">
@@ -313,7 +500,38 @@ obj.list_records()</p>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.close" title="Permalink to this definition">¶</a></dt>
-<dd><p>close the file handle</p>
+<dd><p>Close the file handle</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.create3D">
+<tt class="descname">create3D</tt><big>(</big><em>data</em>, <em>nlay</em>, <em>nrow</em>, <em>ncol</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.create3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a dictionary of {node: q, ...} into a numpy masked array.
+In most cases this should not be called directly by the user unless
+you know what you&#8217;re doing.  Instead, it is used as part of the
+full3D keyword for get_data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : dictionary</p>
+<blockquote>
+<div><p>Dictionary with node keywords and flows (q) items.</p>
+</div></blockquote>
+<p><strong>nlay, nrow, ncol</strong> : int</p>
+<blockquote>
+<div><p>Number of layers, rows, and columns of the model grid.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy masked array</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -369,41 +587,98 @@ array of size (nlay, nrow, ncol) for those list-style
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.binaryfile.CellBudgetFile.get_data_by_text">
-<tt class="descname">get_data_by_text</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_data_by_text" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns one array of size (Ndata,nlay,nrow,ncol) of all
-records with text. Trailing spaces can be ignored</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.binaryfile.CellBudgetFile.get_header">
-<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_header" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read the file header</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_kstpkper">
 <tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of unique stress periods and time steps in the file</p>
+<dd><p>Get a list of unique stress periods and time steps in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in binary file.  kstp and
+kper values are presently one-based.  This may change in the
+future.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_nrecords">
 <tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_nrecords" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of records in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>Number of records in the file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_record">
 <tt class="descname">get_record</tt><big>(</big><em>idx</em>, <em>full3D=False</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_record" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get one record from the cell by cell flow file.
-idx is the record number to get.</p>
+<dd><p>Get a single data record from the budget file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : boolean</p>
+<blockquote>
+<div><p>If true, print additional information to to the screen during the
+extraction.  (Default is False).</p>
+</div></blockquote>
+<p><strong>full3D</strong> : boolean</p>
+<blockquote>
+<div><p>If true, then return the record as a three dimensional numpy
+array, even for those list-style records writen as part of a
+&#8216;COMPACT BUDGET&#8217; MODFLOW budget file.  (Default is False.)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>record</strong> : a single data record</p>
+<blockquote class="last">
+<div><p>The structure of the returned object depends on the structure of
+the data in the cbb file.</p>
+<p>If full3D is True, then this method will return a numpy masked
+array of size (nlay, nrow, ncol) for those list-style
+&#8216;COMPACT BUDGET&#8217; records written by MODFLOW.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of unique times in the file</p>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -413,15 +688,21 @@ idx is the record number to get.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.binaryfile.CellBudgetFile.skip_record">
-<tt class="descname">skip_record</tt><big>(</big><em>header</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.skip_record" title="Permalink to this definition">¶</a></dt>
-<dd><p>Skip over this record, not counting header and header2.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.unique_record_names">
 <tt class="descname">unique_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.unique_record_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns all unique record names</p>
+<dd><p>Get a list of unique record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
