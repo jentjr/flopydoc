@@ -114,4 +114,5 @@ Contents:
    util_array
    util_list
    binaryhydmodfile
+   binaryswrfile
 
