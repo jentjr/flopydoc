@@ -1,6 +1,7 @@
 """
 Simple script to help create files needed to make a sphinx documentation
-website of the flopy project.
+website of the flopy project.  The script will read through all of the
+flopy modules and create the sphinx autodoc rst (restructured text) files.
 
 """
 

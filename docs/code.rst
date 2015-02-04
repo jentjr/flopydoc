@@ -37,6 +37,7 @@ Contents:
    mfdis
    mfdrn
    mfevt
+   mfhfb
    mfghb
    mfgmg
    mflmt
@@ -111,3 +112,7 @@ Contents:
    mfreadnam
    binaryfile
    util_array
+   util_list
+   binaryhydmodfile
+   binaryswrfile
+
