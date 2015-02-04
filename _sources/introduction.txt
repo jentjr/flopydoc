@@ -29,10 +29,10 @@ To update your version of FloPy3 with the bleeding edge code from the git reposi
 
     pip install git+https://github.com/modflowpy/flopy.git --update
 
-Flopy Development Team
+FloPy Development Team
 ======================
 
-Flopy is developed by a team of MODFLOW users that have switched over to using Python for model development and post processing.  Members of the team currently include:
+FloPy is developed by a team of MODFLOW users that have switched over to using Python for model development and post processing.  Members of the team currently include:
 
 * Mark Baker
 * Vincent Post
@@ -49,4 +49,4 @@ with contributions from:
 * Kolja Rotzoll
 * and others
 
-Feel free to contact one of us if you would like to participate in Flopy development.  We could use the help!
+Feel free to contact one of us if you would like to participate in FloPy development.  We could use the help!

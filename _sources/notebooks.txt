@@ -1,7 +1,7 @@
 Ipython Notebooks
 =================
 
-Flopy3 Boundaries
+FloPy3 Boundaries
 -----------------
 
 `flopy3boundaries: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/basic/flopy3boundaries.ipynb>`_ an Ipython notebook that explains how to assign boundaries in Flopy3.
