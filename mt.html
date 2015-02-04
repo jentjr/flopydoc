@@ -38,7 +38,7 @@
 <div class="header">
   <div class="logo">
     <a href="index.html">
-      <img class="logo" src="_static/flopyzero.png" alt="Logo"/>
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
     </a>
   </div>
 </div>
@@ -80,7 +80,7 @@
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mt.Mt3dList.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -94,19 +94,259 @@
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.add_external">
 <tt class="descname">add_external</tt><big>(</big><em>fname</em>, <em>unit</em>, <em>binflag=False</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.add_external" title="Permalink to this definition">¶</a></dt>
-<dd><p>Supports SWR usage and non-loaded existing external arrays</p>
+<dd><p>Assign an external array so that it will be listed as a DATA or
+DATA(BINARY) entry in the name file.  This will allow an outside
+file package to refer to it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of external array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote>
+<div><p>unit number of external array</p>
+</div></blockquote>
+<p><strong>binflag</strong> : boolean</p>
+<blockquote class="last">
+<div><p>binary or not. (default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.add_package">
 <tt class="descname">add_package</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.add_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a flopy package object to this model.</p>
+<dd><p>Add a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> : Package object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.add_pop_key_list">
+<tt class="descname">add_pop_key_list</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.add_pop_key_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a external file unit number to a list that will be used to remove
+model output (typically binary) files from ext_unit_dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key</strong> : int</p>
+<blockquote class="last">
+<div><p>file unit number</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.assign_external">
+<tt class="descname">assign_external</tt><big>(</big><em>num</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.assign_external" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign external file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int</p>
+<blockquote>
+<div><p>array number</p>
+</div></blockquote>
+<p><strong>prefix</strong> : string</p>
+<blockquote class="last">
+<div><p>array prefix</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.build_array_name">
+<tt class="descname">build_array_name</tt><big>(</big><em>num</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.build_array_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build array name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int</p>
+<blockquote>
+<div><p>array number</p>
+</div></blockquote>
+<p><strong>prefix</strong> : string</p>
+<blockquote class="last">
+<div><p>array prefix</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.change_model_ws">
+<tt class="descname">change_model_ws</tt><big>(</big><em>new_pth=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.change_model_ws" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the model work space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>new_pth</strong> : str</p>
+<blockquote>
+<div><p>Location of new model workspace.  If this path does not exist,
+it will be created. (default is None, which will be assigned to
+the present working directory).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>val</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>Can be used to see what packages are in the model, and can then
+be used with get_package to pull out individual packages.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.get_name">
+<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>name of model</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.get_name_file_entries">
+<tt class="descname">get_name_file_entries</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.get_name_file_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a string representation of the name file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.get_package">
+<tt class="descname">get_package</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>Name of the package, &#8216;RIV&#8217;, &#8216;LPF&#8217;, etc.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pp</strong> : Package object</p>
+<blockquote class="last">
+<div><p>Package object of type <a class="reference internal" href="mbase.html#flopy.mbase.Package" title="flopy.mbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.mbase.Package</span></tt></a></p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.get_package_list">
+<tt class="descname">get_package_list</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.get_package_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all the package names.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>val</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>Can be used to see what packages are in the model, and can then
+be used with get_package to pull out individual packages.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.mt3d.mt.Mt3dms.name">
+<tt class="descname">name</tt><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>name of model</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.remove_external">
+<tt class="descname">remove_external</tt><big>(</big><em>fname=None</em>, <em>unit=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.remove_external" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an external file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of external array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of external array</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.remove_package">
 <tt class="descname">remove_package</tt><big>(</big><em>pname</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.remove_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove a package from this model.</p>
+<dd><p>Remove a package from this model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pname</strong> : string</p>
+<blockquote class="last">
+<div><p>Name of the package, such as &#8216;RIV&#8217;, &#8216;BAS6&#8217;, etc.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -135,6 +375,52 @@
 <p><strong>success</strong> : boolean</p>
 <p class="last"><strong>buff</strong> : list of lines of stdout</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.set_exename">
+<tt class="descname">set_exename</tt><big>(</big><em>exe_name</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.set_exename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the name of the executable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>exe_name</strong> : name of the executable</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.set_name">
+<tt class="descname">set_name</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set model name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>value</strong> : str</p>
+<blockquote class="last">
+<div><p>Name to assign to model.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.write_input">
+<tt class="descname">write_input</tt><big>(</big><em>SelPackList=False</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.write_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the input.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>SelPackList</strong> : False or list of packages</td>
 </tr>
 </tbody>
 </table>

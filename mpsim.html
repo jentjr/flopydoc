@@ -38,7 +38,7 @@
 <div class="header">
   <div class="logo">
     <a href="index.html">
-      <img class="logo" src="_static/flopyzero.png" alt="Logo"/>
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
     </a>
   </div>
 </div>
@@ -79,7 +79,7 @@ the ModpathSim class as <cite>flopy.modpath.ModpathSim</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modpath.mpsim.ModpathSim">
-<em class="property">class </em><tt class="descclassname">flopy.modpath.mpsim.</tt><tt class="descname">ModpathSim</tt><big>(</big><em>model, mp_name_file='mp.nam', mp_list_file='mp.list', option_flags=[1, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1], endpoint_file='mp.end', pathline_file='mp.pth', time_ser_file='mp.tim_ser', advobs_file='mp.advobs', ref_time=0, ref_time_per_stp=[0, 1, 1.0], stop_time=None, group_ct=1, group_name=['group_1'], group_placement=[[1, 1, 1, 0, 1, 1]], release_times=[[1, 1]], group_region=[[1, 1, 1, 1, 1, 1]], mask_nlay=[1], mask_layer=[1], mask_1lay=[1], face_ct=[1], ifaces=[[6, 1, 1]], part_ct=[[1, 1, 1]], strt_file='starting.locations', time_ct=1, release_time_incr=1, time_pts=[1], cell_bd_ct=1, bud_loc=[[1, 1, 1]], trace_file='trace_file.txt', trace_id=1, stop_zone=1, zone=1, retard_fac=1.0, retard_fcCB=1.0, extension='mpsim'</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpsim.ModpathSim" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modpath.mpsim.</tt><tt class="descname">ModpathSim</tt><big>(</big><em>model, mp_name_file='mp.nam', mp_list_file='mp.list', option_flags=[1, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1], endpoint_file='mp.end', pathline_file='mp.pth', time_ser_file='mp.tim_ser', advobs_file='mp.advobs', ref_time=0, ref_time_per_stp=[0, 1, 1.0], stop_time=None, group_ct=1, group_name=['group_1'], group_placement=[[1, 1, 1, 0, 1, 1]], release_times=[[1, 1]], group_region=[[1, 1, 1, 1, 1, 1]], mask_nlay=[1], mask_layer=[1], mask_1lay=[1], face_ct=[1], ifaces=[[6, 1, 1]], part_ct=[[1, 1, 1]], strt_file='starting.locations', time_ct=1, release_time_incr=1, time_pts=[1], particle_cell_cnt=[[2, 2, 2]], cell_bd_ct=1, bud_loc=[[1, 1, 1]], trace_file='trace_file.txt', trace_id=1, stop_zone=1, zone=1, retard_fac=1.0, retard_fcCB=1.0, extension='mpsim'</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpsim.ModpathSim" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODPATH Simulation File Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -119,9 +119,9 @@ this package will be added.</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<dl class="method">
+<dl class="staticmethod">
 <dt id="flopy.modpath.mpsim.ModpathSim.load">
-<tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modpath.mpsim.ModpathSim.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpsim.ModpathSim.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 

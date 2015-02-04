@@ -38,7 +38,7 @@
 <div class="header">
   <div class="logo">
     <a href="index.html">
-      <img class="logo" src="_static/flopyzero.png" alt="Logo"/>
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
     </a>
   </div>
 </div>
@@ -79,7 +79,7 @@ the ModpathBas class as <cite>flopy.modflow.ModpathBas</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modpath.mpbas.ModpathBas">
-<em class="property">class </em><tt class="descclassname">flopy.modpath.mpbas.</tt><tt class="descname">ModpathBas</tt><big>(</big><em>model</em>, <em>hnoflo=-9999.0</em>, <em>hdry=-8888.0</em>, <em>def_face_ct=0</em>, <em>bud_label=None</em>, <em>def_iface=None</em>, <em>laytyp=0</em>, <em>ibound=1</em>, <em>prsity=0.3</em>, <em>prsityCB=0.3</em>, <em>extension='mpbas'</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modpath.mpbas.</tt><tt class="descname">ModpathBas</tt><big>(</big><em>model</em>, <em>hnoflo=-9999.0</em>, <em>hdry=-8888.0</em>, <em>def_face_ct=0</em>, <em>bud_label=None</em>, <em>def_iface=None</em>, <em>laytyp=0</em>, <em>ibound=1</em>, <em>prsity=0.3</em>, <em>prsityCB=0.3</em>, <em>extension='mpbas'</em>, <em>unitnumber=86</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODPATH Basic Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -156,9 +156,51 @@ this package will be added.</p>
 </table>
 <p class="rubric">Methods</p>
 <dl class="method">
+<dt id="flopy.modpath.mpbas.ModpathBas.getibound">
+<tt class="descname">getibound</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.getibound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ibound array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray (nlay, nrow, ncol)</p>
+<blockquote class="last">
+<div><p>ibound object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.modpath.mpbas.ModpathBas.ibound">
+<tt class="descname">ibound</tt><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.ibound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ibound array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray (nlay, nrow, ncol)</p>
+<blockquote class="last">
+<div><p>ibound object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="flopy.modpath.mpbas.ModpathBas.load">
-<tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mpbas.ModpathBas.setibound">
+<tt class="descname">setibound</tt><big>(</big><em>ibound</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.setibound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the ibound array.</p>
 </dd></dl>
 
 <dl class="method">
