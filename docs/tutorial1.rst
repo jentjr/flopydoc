@@ -1,11 +1,11 @@
 Tutorial 1: Confined Steady-State Flow Model
 ============================================
 
-This tutorial demonstrates use of flopy to develop a simple MODFLOW model.  And I mean really simple.  Note that you can access this tutorial python script from `here <https://github.com/modflowpy/flopy/blob/master/examples/Tutorials/Tutorial01/tutorial01.py>`_.
+This tutorial demonstrates use of FloPy to develop a simple MODFLOW model.  And I mean really simple.  Note that you can access this tutorial python script from `here <https://github.com/modflowpy/flopy/blob/master/examples/Tutorials/Tutorial01/tutorial01.py>`_.
 
 Getting Started
 ---------------
-If flopy has been properly installed, then it can be imported as follows::
+If FloPy has been properly installed, then it can be imported as follows::
 
     import flopy
 
