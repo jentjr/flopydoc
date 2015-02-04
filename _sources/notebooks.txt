@@ -16,3 +16,8 @@ SWI Example 1
 
 `swiex1: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/swi_examples/swiex1.ipynb>`_ an Ipython notebook for the SWI2 example problem of a rotating interface.
 
+
+Henry Problem
+-------------
+
+`henry: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/henry/henry.ipynb>`_ an Ipython notebook for the SEAWAT example problem of the class Henry saltwater intrusion problem.
