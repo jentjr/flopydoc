@@ -82,7 +82,7 @@ Transient General-Head Boundary Package
 
 At this point, our model is ready to add our transient boundary packages.  First, we will create the GHB object, which is of the following type: `flopy.modflow.ModflowGhb <mfghb.html>`__.
 
-The key to creating Flopy transient boundary packages is recognizing that the boundary data is stored in a three dimensional list (i.e. bnddata = [[[]]] ).  The innermost part of this list is a single boundary condition.  For a GHB it is [layer, row, column, stage, conductance].  The next outermost part is a list of all the boundaries for a single stress period.  The outermost list contains a group of boundaries for each stress period.::
+The key to creating Flopy transient boundary packages is recognizing that the boundary data is stored in a dictionary with key values equal to the zero-based stress period number and values equal to the boundary conditions for that stress period.  For a GHB the values can be a two-dimensional nested list of [layer, row, column, stage, conductance]::
 
     # Make list for stress period 1
     stageleft = 10.
