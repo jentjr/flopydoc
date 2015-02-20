@@ -125,9 +125,9 @@ Now we can create the well package object, which is of the type, `flopy.modflow.
     # Create the well package
     # Remember to use zero-based layer, row, column indices!
     pumping_rate = -100.
-    wel_sp1 = [[0, nrow/2 - 1, nrow/2, 0.]]
-    wel_sp2 = [[0, nrow/2 - 1, nrow/2, 0.]]
-    wel_sp3 = [[0, nrow/2 - 1, nrow/2, pumping_rate]]
+    wel_sp1 = [[0, nrow/2 - 1, ncol/2 - 1, 0.]]
+    wel_sp2 = [[0, nrow/2 - 1, ncol/2 - 1, 0.]]
+    wel_sp3 = [[0, nrow/2 - 1, ncol/2 - 1, pumping_rate]]
     stress_period_data = {0: wel_sp1, 1: wel_sp2, 2: wel_sp3}
     wel = flopy.modflow.ModflowWel(mf, stress_period_data=stress_period_data)
 
@@ -174,11 +174,15 @@ Using these methods, we can create head plots and hydrographs from the model res
     headobj = bf.HeadFile(modelname+'.hds')
     times = headobj.get_times()
 
-    #Setup contour parameters
+    # Setup contour parameters
     levels = np.arange(1, 10, 1)
     extent = (delr/2., Lx - delr/2., delc/2., Ly - delc/2.)
     print 'Levels: ', levels
     print 'Extent: ', extent
+
+    # Well point
+    wpt = ((float(ncol/2)-0.5)*delr, (float(nrow/2-1)+0.5)*delc)
+    wpt = (450., 550.)
 
     # Make the plots
     mytimes = [1.0, 101.0, 201.0]
@@ -197,11 +201,20 @@ Using these methods, we can create head plots and hydrographs from the model res
         plt.title('stress period ' + str(iplot + 1))
         plt.imshow(head[0, :, :], extent=extent, cmap='BrBG', vmin=0., vmax=10.)
         plt.colorbar()
-        CS = plt.contour(head[0, :, :], levels=levels, extent=extent)
-        plt.clabel(CS, inline=1, fontsize=10, fmt='%1.1f')
+        CS = plt.contour(np.flipud(head[0, :, :]), levels=levels, extent=extent,
+                         zorder=10)
+        plt.clabel(CS, inline=1, fontsize=10, fmt='%1.1f', zorder=11)
+        mfc = 'None'
+        if (iplot+1) == len(mytimes):
+            mfc='black'
+        plt.plot(wpt[0], wpt[1], lw=0, marker='o', markersize=8,
+                 markeredgewidth=0.5,
+                 markeredgecolor='black', markerfacecolor=mfc, zorder=9)
+        plt.text(wpt[0]+25, wpt[1]-25, 'well', size=12, zorder=12)
         plt.show()
 
     plt.show()
+
 
 If everything has worked properly, you should see the following head contours.
 
