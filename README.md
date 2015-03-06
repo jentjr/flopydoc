@@ -53,6 +53,8 @@ make html
 
     or run all these commands at once: git add .; git commit -m "rebuilt docs"; git push origin gh-pages
 
+  * If you have made any changes to the rst files, then you should also commit and push those too.  Those are stored on the master branch of flopydoc.
+
 Directory structure
 
     |--\flopy3.git (or whatever your flopy3 repo is)
