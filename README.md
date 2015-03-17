@@ -41,9 +41,9 @@ git checkout -b gh-pages remotes/origin/gh-pages
 
 make html
 
-  * This will update the html files in flopydoc-doc.  Pushing these changes to github will update the documentation served from github.  That's it!
+  * This will update the html files in flopydoc-doc.  
 
-  * Now that the html pages are updated, you need to commit the changes and then push them.  Do this using:
+  * Now that the html pages are updated, you need to commit the changes and then push them.  Do the following commands from the \flopy3doc\flopydoc-doc\html directory using:
 
     git add .
     
@@ -52,6 +52,8 @@ make html
     git push origin gh-pages
 
     or run all these commands at once: git add .; git commit -m "rebuilt docs"; git push origin gh-pages
+
+  * If you have made any changes to the rst files, then you should also commit and push those too.  Those are stored on the master branch of flopydoc.
 
 Directory structure
 
