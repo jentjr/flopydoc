@@ -118,7 +118,7 @@ Flopy can also be used to run the model.  The model object (mf in this example) 
     # Run the MODFLOW model
     success, buff = mf.run_model()
 
-Here we have used run_model3.  A model can also be run using run_model1, which creates a batch file, and run_model2, which will pause after the model has completed.
+Here we have used run_model, and we could also have specified values for the optional keywords silent, pause, and report.
 
 Post-Processing the Results
 ---------------------------

@@ -13,7 +13,7 @@ print os.getcwd()
 #look through the following subdirectories, and grab all of the
 #modules that should be added to the sphinx documentation.
 flopypth = os.path.join('..', '..', '..', 'flopy3.git', 'flopy')
-pthlist = ['modflow', 'mt3d', 'seawat', 'utils']
+pthlist = ['modflow', 'mt3d', 'seawat', 'utils', 'plot']
 namelist = []
 for pth in pthlist:
     dirpth = os.path.join(flopypth, pth)

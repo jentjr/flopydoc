@@ -19,6 +19,7 @@
    flopy.modflow.mfmnwi
    flopy.modflow.mfnwt
    flopy.modflow.mfoc
+   flopy.modflow.mfoc88
    flopy.modflow.mfpar
    flopy.modflow.mfparbc
    flopy.modflow.mfpbc
@@ -55,3 +56,6 @@
    flopy.utils.mfreadnam
    flopy.utils.util_array
    flopy.utils.util_list
+   flopy.plot.crosssection
+   flopy.plot.map
+   flopy.plot.plotutil
