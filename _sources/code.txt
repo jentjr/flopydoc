@@ -47,6 +47,7 @@ Contents:
    mfmnwi
    mfnwt
    mfoc
+   mfoc88
    mfpbc
    mfpcg
    mfpcgn
@@ -115,4 +116,15 @@ Contents:
    util_list
    binaryhydmodfile
    binaryswrfile
+
+
+Plotting Utilities
+------------------
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   map
+   crosssection
 

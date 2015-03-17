@@ -16,3 +16,7 @@ Ipython Notebooks
 
 `watertablerecharge: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/Notebooks/flopy3_WatertableRecharge_example.ipynb>`_ an Ipython notebook for a simple water table problem with recharge.
 
+`flopy3ssm: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/Notebooks/flopy3_multi-component_SSM.ipynb>`_ an Ipython notebook for creating a Source/Sink (SSM) Package for MT3DMS and SEAWAT.
+
+`flopy3_MapExample: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/Notebooks/flopy3_MapExample.ipynb>`_ an Ipython notebook for plotting maps and cross sections.
+

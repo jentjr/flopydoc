@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfoc Module &mdash; flopy 3.0 documentation</title>
+    <title>flopy.modflow.mfoc Module &mdash; flopy 3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.0',
+        VERSION:     '3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.0 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfpbc Module" href="mfpbc.html" />
+    <link rel="next" title="flopy.modflow.mfoc88 Module" href="mfoc88.html" />
     <link rel="prev" title="flopy.modflow.mfnwt Module" href="mfnwt.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -56,12 +56,12 @@
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mfpbc.html" title="flopy.modflow.mfpbc Module"
+          <a href="mfoc88.html" title="flopy.modflow.mfoc88 Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -79,7 +79,7 @@ the ModflowOc class as <cite>flopy.modflow.ModflowOc</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfoc.ModflowOc">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfoc.</tt><tt class="descname">ModflowOc</tt><big>(</big><em>model, ihedfm=0, iddnfm=0, item2=[[0, 1, 0, 1]], item3=[[0, 0, 1, 0]], extension=['oc', 'hds', 'ddn', 'cbc'], unitnumber=[14, 51, 52, 53], save_head_every=None, words=None, compact=False, chedfm=None, cddnfm=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfoc.</tt><tt class="descname">ModflowOc</tt><big>(</big><em>model, ihedfm=0, iddnfm=0, chedfm=None, cddnfm=None, cboufm=None, compact=True, stress_period_data={(0, 0): ['save head']}, extension=['oc', 'hds', 'ddn', 'cbc'], unitnumber=[14, 51, 52, 53]</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Output Control Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -100,62 +100,9 @@ this package will be added.</p>
 <div><p>is a code for the format in which heads will be printed.
 (default is 0).</p>
 </div></blockquote>
-<p><strong>item2</strong> : list of ints</p>
-<blockquote>
-<div><p>[incode, ihddfl, ibudfl, icbcfl], where incode is the code for reading
-Item 3. ihddfl is a head and drawdown output flag. This flag allows
-Item 3 flags to be specified in an early time step and then used or not
-used in subsequent time steps. Thus, it may be possible to use IHDDFL
-to avoid resetting Item 3 flags every time step.  ibudfl is a budget
-print flag. icbcfl is a flag for writing cell-by-cell flow data.
-(default is [[0, 1, 0, 1]]).</p>
-</div></blockquote>
-<p><strong>item3</strong> : list of ints</p>
-<blockquote>
-<div><p>[hdpr, ddpr, hdsv, ddsv]
-hdpr is the output flag for head printout.
-ddpr is the output flag for drawdown printout.
-hdsv is the output flag for head save.
-ddsv is the output flag for drawdown save.
-(default is [[0, 0, 1, 0]]).</p>
-</div></blockquote>
-<p><strong>extension</strong> : list of strings</p>
-<blockquote>
-<div><p>(default is [&#8216;oc&#8217;,&#8217;hds&#8217;,&#8217;ddn&#8217;,&#8217;cbc&#8217;]).</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : list of ints</p>
-<blockquote>
-<div><p>(default is [14, 51, 52, 53]).</p>
-</div></blockquote>
-<p><strong>save_head_every</strong> : int</p>
-<blockquote>
-<div><p>Time step interval for printing and/or saving results
-(default is None).</p>
-</div></blockquote>
-<p><strong>words</strong> : list of instructions</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>Can be specified as a 2d list of the following form:</dt>
-<dd><p class="first last">[[per,stp,&#8217;head&#8217;,&#8217;drawdown&#8217;,&#8217;budget&#8217;,&#8217;pbudget&#8217;, &#8216;phead&#8217;]]</p>
-</dd>
-</dl>
-<p>In this 2d form, phead, pbudget will print the head and budget.
-Words can also be a 1d list of data items, such as</p>
-<blockquote>
-<div><p>[&#8216;head&#8217;,&#8217;drawdown&#8217;,&#8217;budget&#8217;].</p>
-</div></blockquote>
-<p>With a 1d list, the save_head_every option is used to determine the
-output frequency.
-(default is None).</p>
-</div></blockquote>
-<p><strong>compact</strong> : boolean</p>
-<blockquote>
-<div><p>Save results in compact budget form. (default is False).</p>
-</div></blockquote>
 <p><strong>chedfm</strong> : string</p>
 <blockquote>
-<div><p>is a character value that specifies the format for saving heads, and
-can only be specified if the word method of output control is used.
+<div><p>is a character value that specifies the format for saving heads.
 The format must contain 20 characters or less and must be a valid
 Fortran format that is enclosed in parentheses. The format must be
 enclosed in apostrophes if it contains one or more blanks or commas.
@@ -165,12 +112,12 @@ output (simulation time, the layer being output, and so forth). If
 there is no record specifying CHEDFM, then heads are written to a
 binary (unformatted) file. Binary files are usually more compact than
 text files, but they are not generally transportable among different
-computer operating systems or different Fortran compilers.</p>
+computer operating systems or different Fortran compilers.
+(default is None)</p>
 </div></blockquote>
 <p><strong>cddnfm</strong> : string</p>
-<blockquote class="last">
-<div><p>is a character value that specifies the format for saving drawdown, and
-can only be specified if the word method of output control is used.
+<blockquote>
+<div><p>is a character value that specifies the format for saving drawdown.
 The format must contain 20 characters or less and must be a valid
 Fortran format that is enclosed in parentheses. The format must be
 enclosed in apostrophes if it contains one or more blanks or commas.
@@ -180,27 +127,88 @@ output (simulation time, the layer being output, and so forth). If
 there is no record specifying CDDNFM, then drawdowns are written to a
 binary (unformatted) file. Binary files are usually more compact than
 text files, but they are not generally transportable among different
-computer operating systems or different Fortran compilers.</p>
+computer operating systems or different Fortran compilers.
+(default is None)</p>
+</div></blockquote>
+<p><strong>cboufm</strong> : string</p>
+<blockquote>
+<div><p>is a character value that specifies the format for saving ibound.
+The format must contain 20 characters or less and must be a valid
+Fortran format that is enclosed in parentheses. The format must be
+enclosed in apostrophes if it contains one or more blanks or commas.
+The optional word LABEL after the format is used to indicate that
+each layer of output should be preceded with a line that defines the
+output (simulation time, the layer being output, and so forth). If
+there is no record specifying CBOUFM, then ibounds are written to a
+binary (unformatted) file. Binary files are usually more compact than
+text files, but they are not generally transportable among different
+computer operating systems or different Fortran compilers.
+(default is None)</p>
+</div></blockquote>
+<p><strong>stress_period_data</strong> : dictionary of of lists</p>
+<blockquote>
+<div><p>Dictionary key is a tuple with the zero-based period and step 
+(IPEROC, ITSOC) for each print/save option list. 
+(default is {(0,0):[&#8216;save head&#8217;]})</p>
+<dl class="docutils">
+<dt>The list can have any valid MODFLOW OC print/save option:</dt>
+<dd><p class="first">PRINT HEAD
+PRINT DRAWDOWN
+PRINT BUDGET
+SAVE HEAD
+SAVE DRAWDOWN
+SAVE BUDGET
+SAVE IBOUND</p>
+<p class="last">The lists can also include (1) DDREFERENCE in the list to reset 
+drawdown reference to the period and step and (2) a list of layers 
+for PRINT HEAD, SAVE HEAD, PRINT DRAWDOWN, SAVE DRAWDOWN, and
+SAVE IBOUND.</p>
+</dd>
+</dl>
+<p>The list is used for every stress period and time step after the 
+(IPEROC, ITSOC) tuple until a (IPEROC, ITSOC) tuple is entered with
+and empty list.</p>
+</div></blockquote>
+<p><strong>compact</strong> : boolean</p>
+<blockquote>
+<div><p>Save results in compact budget form. (default is True).</p>
+</div></blockquote>
+<p><strong>extension</strong> : list of strings</p>
+<blockquote>
+<div><p>(default is [&#8216;oc&#8217;,&#8217;hds&#8217;,&#8217;ddn&#8217;,&#8217;cbc&#8217;]).</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : list of ints</p>
+<blockquote class="last">
+<div><p>(default is [14, 51, 52, 53]).</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The &#8220;words&#8221; method for specifying output control is preferred in most
-cases.  Also, the &#8220;compact&#8221; budget should normally be used as it produces
-files that are typically much smaller.  The compact budget form is also
-a requirement for using the MODPATH particle tracking program.</p>
+<p>The &#8220;words&#8221; method for specifying output control is the only option 
+available.  Also, the &#8220;compact&#8221; budget should normally be used as it 
+produces files that are typically much smaller.  The compact budget form is 
+also a requirement for using the MODPATH particle tracking program.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">words</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;head&#39;</span><span class="p">],</span> <span class="n">save_head_every</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="p">[</span><span class="s">&#39;print head&#39;</span><span class="p">],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="p">[],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">249</span><span class="p">):</span> <span class="p">[</span><span class="s">&#39;print head&#39;</span><span class="p">],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">):</span> <span class="p">[],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">499</span><span class="p">):</span> <span class="p">[</span><span class="s">&#39;print head&#39;</span><span class="p">,</span> <span class="s">&#39;save ibound&#39;</span><span class="p">],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">):</span> <span class="p">[],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">749</span><span class="p">):</span> <span class="p">[</span><span class="s">&#39;print head&#39;</span><span class="p">,</span> <span class="s">&#39;ddreference&#39;</span><span class="p">],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">750</span><span class="p">):</span> <span class="p">[],</span>
+<span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">999</span><span class="p">):</span> <span class="p">[</span><span class="s">&#39;print head&#39;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc3</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">spd</span><span class="p">,</span> <span class="n">cboufm</span><span class="o">=</span><span class="s">&#39;(20i5)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfoc.ModflowOc.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>nstp=None</em>, <em>nlay=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -219,6 +227,19 @@ which this package will be added.</p>
 <blockquote>
 <div><p>The number of stress periods.  If nper is None, then nper will be
 obtained from the model object. (default is None).</p>
+</div></blockquote>
+<p><strong>nstp</strong> : list</p>
+<blockquote>
+<div><p>List containing the number of time steps in each stress period.  
+If nstp is None, then nstp will be obtained from the DIS package 
+attached to the model object. (default is None).</p>
+</div></blockquote>
+<p><strong>nlay</strong> : int</p>
+<blockquote>
+<div><p>The number of model layers.  If nlay is None, then nnlay will be
+obtained from the model object. nlay only needs to be specified
+if an empty model object is passed in and the oc file being loaded
+is defined using numeric codes. (default is None).</p>
 </div></blockquote>
 <p><strong>ext_unit_dict</strong> : dictionary, optional</p>
 <blockquote>
@@ -266,8 +287,8 @@ constructed using the function
   <p class="topless"><a href="mfnwt.html"
                         title="previous chapter">flopy.modflow.mfnwt Module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="mfpbc.html"
-                        title="next chapter">flopy.modflow.mfpbc Module</a></p>
+  <p class="topless"><a href="mfoc88.html"
+                        title="next chapter">flopy.modflow.mfoc88 Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -298,12 +319,12 @@ constructed using the function
           <a href="np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mfpbc.html" title="flopy.modflow.mfpbc Module"
+          <a href="mfoc88.html" title="flopy.modflow.mfoc88 Module"
              >next</a> |</li>
         <li class="right" >
           <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.0 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

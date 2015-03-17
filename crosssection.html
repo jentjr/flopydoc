@@ -1,0 +1,609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.plot.crosssection Module &mdash; flopy 3.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="prev" title="flopy.plot.map Module" href="map.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.plot.crosssection">
+<span id="flopy-plot-crosssection-module"></span><h1>flopy.plot.crosssection Module<a class="headerlink" href="#module-flopy.plot.crosssection" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.plot.crosssection.ModelCrossSection">
+<em class="property">class </em><tt class="descclassname">flopy.plot.crosssection.</tt><tt class="descname">ModelCrossSection</tt><big>(</big><em>ax=None</em>, <em>model=None</em>, <em>dis=None</em>, <em>line=None</em>, <em>layer=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>extent=None</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to create a map of the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.pyplot axis</p>
+<blockquote>
+<div><p>The plot axis.  If not provided it, plt.gca() will be used.</p>
+</div></blockquote>
+<p><strong>model</strong> : flopy.modflow object</p>
+<blockquote>
+<div><p>flopy model object. (Default is None)</p>
+</div></blockquote>
+<p><strong>dis</strong> : flopy.modflow.ModflowDis object</p>
+<blockquote>
+<div><p>flopy discretization object. (Default is None)</p>
+</div></blockquote>
+<p><strong>line</strong> : dict</p>
+<blockquote>
+<div><p>Dictionary with either &#8220;row&#8221;, &#8220;column&#8221;, or &#8220;line&#8221; key. If key
+is &#8220;row&#8221; or &#8220;column&#8221; key value should be the zero-based row or
+column index for cross-section. If key is &#8220;line&#8221; value should
+be an array of (x, y) tuples with vertices of cross-section. 
+Vertices should be in map coordinates consistent with xul,
+yul, and rotation.</p>
+</div></blockquote>
+<p><strong>layer</strong> : int</p>
+<blockquote>
+<div><p>Layer to plot.  Default is None.  If layer is not None, it must 
+be between 0 and nlay - 1. If layer is None all layers will be
+included in the cross-section.</p>
+</div></blockquote>
+<p><strong>xul</strong> : float</p>
+<blockquote>
+<div><p>x coordinate for upper left corner</p>
+</div></blockquote>
+<p><strong>yul</strong> : float</p>
+<blockquote>
+<div><p>y coordinate for upper left corner.  The default is the sum of the
+delc array.</p>
+</div></blockquote>
+<p><strong>rotation</strong> : float</p>
+<blockquote>
+<div><p>Angle of grid rotation around the upper left corner.  A positive value
+indicates clockwise rotation.  Angles are in degrees.</p>
+</div></blockquote>
+<p><strong>extent</strong> : tuple of floats</p>
+<blockquote class="last">
+<div><p>(xmin, xmax, ymin, ymax) will be used to specify axes limits.  If None
+then these will be calculated based on grid, coordinates, and rotation.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.contour_array">
+<tt class="descname">contour_array</tt><big>(</big><em>a</em>, <em>masked_values=None</em>, <em>head=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.contour_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contour a three-dimensional array. If there is a layer tied to 
+the class (self.layer), then the method will plot this layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to plot.</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : iterable of floats, ints</p>
+<blockquote>
+<div><p>Values to mask.</p>
+</div></blockquote>
+<p><strong>head</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to set top of patches to the minimum
+of the top of a layer or the head value. Used to create
+patches that conform to water-level elevations.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.pyplot.contour</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>contour_set</strong> : matplotlib.pyplot.contour</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.get_extent">
+<tt class="descname">get_extent</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.get_extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the extent of the rotated and offset grid</p>
+<p>Return (xmin, xmax, ymin, ymax)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.get_grid_line_collection">
+<tt class="descname">get_grid_line_collection</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.get_grid_line_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a LineCollection of the grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.collections.LineCollection</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>linecollection</strong> : matplotlib.collections.LineCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.get_grid_patch_collection">
+<tt class="descname">get_grid_patch_collection</tt><big>(</big><em>zpts</em>, <em>plotarray</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.get_grid_patch_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a PatchCollection of plotarray in unmasked cells</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>zpts</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>array of z elevations that correspond to the x, y, and horizontal
+distance along the cross-section (self.xpts). Constructed using
+plotutil.cell_value_points().</p>
+</div></blockquote>
+<p><strong>plotarray</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to attach to the Patch Collection.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.get_xcenter_array">
+<tt class="descname">get_xcenter_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.get_xcenter_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell center x
+coordinate for every column in the grid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.get_xedge_array">
+<tt class="descname">get_xedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.get_xedge_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell edge x
+coordinates for every column in the grid.  Array is of size (ncol + 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.get_ycenter_array">
+<tt class="descname">get_ycenter_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.get_ycenter_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell center x
+coordinate for every row in the grid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.get_yedge_array">
+<tt class="descname">get_yedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.get_yedge_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell edge y
+coordinates for every row in the grid.  Array is of size (nrow + 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.plot_array">
+<tt class="descname">plot_array</tt><big>(</big><em>a</em>, <em>masked_values=None</em>, <em>head=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a three-dimensional array as a patch collection.  If there 
+is a layer tied to the class (self.layer), then the method will 
+plot this layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to plot.</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : iterable of floats, ints</p>
+<blockquote>
+<div><p>Values to mask.</p>
+</div></blockquote>
+<p><strong>head</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to set top of patches to the minimum
+of the top of a layer or the head value. Used to create
+patches that conform to water-level elevations.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.plot_bc">
+<tt class="descname">plot_bc</tt><big>(</big><em>ftype=None</em>, <em>package=None</em>, <em>kper=0</em>, <em>color=None</em>, <em>masked_values=None</em>, <em>head=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_bc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot boundary conditions locations for a specific boundary
+type from a flopy model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ftype</strong> : string</p>
+<blockquote>
+<div><p>Package name string (&#8216;WEL&#8217;, &#8216;GHB&#8217;, etc.). (Default is None)</p>
+</div></blockquote>
+<p><strong>package</strong> : flopy.modflow.Modflow package class instance</p>
+<blockquote>
+<div><p>flopy package class instance. (Default is None)</p>
+</div></blockquote>
+<p><strong>kper</strong> : int</p>
+<blockquote>
+<div><p>Stress period to plot</p>
+</div></blockquote>
+<p><strong>color</strong> : string</p>
+<blockquote>
+<div><p>matplotlib color string. (Default is None)</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : iterable of floats, ints</p>
+<blockquote>
+<div><p>Values to mask.</p>
+</div></blockquote>
+<p><strong>head</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to set top of patches to the minimum
+of the top of a layer or the head value. Used to create
+patches that conform to water-level elevations.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.plot_discharge">
+<tt class="descname">plot_discharge</tt><big>(</big><em>frf</em>, <em>fff</em>, <em>flf=None</em>, <em>head=None</em>, <em>kstep=1</em>, <em>hstep=1</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_discharge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use quiver to plot vectors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>frf</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>MODFLOW&#8217;s &#8216;flow right face&#8217;</p>
+</div></blockquote>
+<p><strong>fff</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>MODFLOW&#8217;s &#8216;flow front face&#8217;</p>
+</div></blockquote>
+<p><strong>flf</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>MODFLOW&#8217;s &#8216;flow lower face&#8217; (Default is None.)</p>
+</div></blockquote>
+<p><strong>head</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>MODFLOW&#8217;s head array.  If not provided, then will assume confined
+conditions in order to calculated saturated thickness.</p>
+</div></blockquote>
+<p><strong>kstep</strong> : int</p>
+<blockquote>
+<div><p>layer frequency to plot. (Default is 1.)</p>
+</div></blockquote>
+<p><strong>hstep</strong> : int</p>
+<blockquote>
+<div><p>horizontal frequency to plot. (Default is 1.)</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>Keyword arguments passed to plt.quiver()</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>quiver</strong> : matplotlib.pyplot.quiver</p>
+<blockquote class="last">
+<div><p>Vectors</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.plot_fill_between">
+<tt class="descname">plot_fill_between</tt><big>(</big><em>a, colors=['blue', 'red'], masked_values=None, **kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_fill_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a three-dimensional array as lines.  If there is a layer 
+tied to the class (self.layer), then the method will plot 
+this layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to plot.</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : iterable of floats, ints</p>
+<blockquote>
+<div><p>Values to mask.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.pyplot.plot</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>plot</strong> : list containing matplotlib.fillbetween objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.plot_grid">
+<tt class="descname">plot_grid</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the grid lines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kwargs</strong> : ax, colors.  The remaining kwargs are passed into the</p>
+<blockquote>
+<div><p>the LineCollection constructor.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>lc</strong> : matplotlib.collections.LineCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.plot_ibound">
+<tt class="descname">plot_ibound</tt><big>(</big><em>ibound=None</em>, <em>color_noflow='black'</em>, <em>color_ch='blue'</em>, <em>head=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_ibound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a plot of ibound.  If not specified, then pull ibound from the
+self.model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>ibound array to plot.  (Default is ibound in &#8216;BAS6&#8217; package.)</p>
+</div></blockquote>
+<p><strong>color_noflow</strong> : string</p>
+<blockquote>
+<div><p>(Default is &#8216;black&#8217;)</p>
+</div></blockquote>
+<p><strong>color_ch</strong> : string</p>
+<blockquote>
+<div><p>Color for constant heads (Default is &#8216;blue&#8217;.)</p>
+</div></blockquote>
+<p><strong>head</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to set top of patches to the minimum
+of the top of a layer or the head value. Used to create
+patches that conform to water-level elevations.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.plot_surface">
+<tt class="descname">plot_surface</tt><big>(</big><em>a</em>, <em>masked_values=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a three-dimensional array as lines.  If there is a layer 
+tied to the class (self.layer), then the method will plot 
+this layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to plot.</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : iterable of floats, ints</p>
+<blockquote>
+<div><p>Values to mask.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.pyplot.plot</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>plot</strong> : list containing matplotlib.plot objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.set_zcentergrid">
+<tt class="descname">set_zcentergrid</tt><big>(</big><em>vs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.set_zcentergrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an array of z elevations at the center of a cell that is based 
+on minimum of cell top elevation (self.elev) or passed vs numpy.ndarray</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vs</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to plot.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>zcentergrid</strong> : numpy.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.crosssection.ModelCrossSection.set_zpts">
+<tt class="descname">set_zpts</tt><big>(</big><em>vs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.set_zpts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an array of z elevations based on minimum of cell elevation
+(self.elev) or passed vs numpy.ndarray</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vs</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array to plot.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>zpts</strong> : numpy.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="map.html"
+                        title="previous chapter">flopy.plot.map Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
