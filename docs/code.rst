@@ -133,4 +133,5 @@ Contents:
 
    map
    crosssection
+   plotutil
 
