@@ -50,10 +50,18 @@
    flopy.mt3d.mttob
    flopy.seawat.swt
    flopy.seawat.swtvdf
+   flopy.modpath.mp
+   flopy.modpath.mpbas
+   flopy.modpath.mpsim
    flopy.utils.binaryfile
    flopy.utils.binaryhydmodfile
    flopy.utils.binaryswrfile
+   flopy.utils.datafile
+   flopy.utils.flopy_io
+   flopy.utils.formattedfile
    flopy.utils.mfreadnam
+   flopy.utils.modpathfile
+   flopy.utils.reference
    flopy.utils.util_array
    flopy.utils.util_list
    flopy.plot.crosssection
