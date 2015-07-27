@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfriv Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.modflow.mfriv Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html" />
-    <link rel="prev" title="flopy.modflow.mfrch Module" href="mfrch.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfsip.html" title="flopy.modflow.mfsip Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfrch.html" title="flopy.modflow.mfrch Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -164,7 +153,56 @@ group of rivers will apply until the end of the simulation.</p>
 </pre></div>
 </div>
 <p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="96%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>mxactr</td>
+<td>(int) Maximum number of river cells for a stress period.  This is calculated automatically by FloPy based on the information in layer_row_column_data.</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_record</span></tt>(kper,&nbsp;index,&nbsp;values)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_default_dtype</span></tt>([structured])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_empty</span></tt>([ncells,&nbsp;aux_names,&nbsp;structured])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfriv.ModflowRiv.load" title="flopy.modflow.mfriv.ModflowRiv.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;nper,&nbsp;ext_unit_dict])</td>
+<td>Load an existing package.</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">ncells</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfriv.ModflowRiv.write_file" title="flopy.modflow.mfriv.ModflowRiv.write_file"><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt></a>()</td>
+<td>Write the file.</td>
+</tr>
+</tbody>
+</table>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfriv.ModflowRiv.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfriv.ModflowRiv.load" title="Permalink to this definition">¶</a></dt>
@@ -229,12 +267,6 @@ constructed using the function
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfrch.html"
-                        title="previous chapter">flopy.modflow.mfrch Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfsip.html"
-                        title="next chapter">flopy.modflow.mfsip Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -261,16 +293,7 @@ constructed using the function
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfsip.html" title="flopy.modflow.mfsip Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfrch.html" title="flopy.modflow.mfrch Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

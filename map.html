@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.plot.map Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.plot.map Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.plot.crosssection Module" href="crosssection.html" />
-    <link rel="prev" title="flopy.utils.binaryswrfile Module" href="binaryswrfile.html" />
+    <link rel="prev" title="flopy.utils.util_list Module" href="util_list.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -53,15 +52,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="crosssection.html" title="flopy.plot.crosssection Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
+          <a href="util_list.html" title="flopy.utils.util_list Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -75,7 +68,7 @@
 <span id="flopy-plot-map-module"></span><h1>flopy.plot.map Module<a class="headerlink" href="#module-flopy.plot.map" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.plot.map.ModelMap">
-<em class="property">class </em><tt class="descclassname">flopy.plot.map.</tt><tt class="descname">ModelMap</tt><big>(</big><em>ax=None</em>, <em>model=None</em>, <em>dis=None</em>, <em>layer=0</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>extent=None</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.plot.map.</tt><tt class="descname">ModelMap</tt><big>(</big><em>sr=None</em>, <em>ax=None</em>, <em>model=None</em>, <em>dis=None</em>, <em>layer=0</em>, <em>extent=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=None</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to create a map of the model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -83,7 +76,8 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.pyplot axis</p>
 <blockquote>
-<div><p>The plot axis.  If not provided it, plt.gca() will be used.</p>
+<div><p>The plot axis.  If not provided it, plt.gca() will be used.
+If there is not a current axis then a new one will be created.</p>
 </div></blockquote>
 <p><strong>model</strong> : flopy.modflow object</p>
 <blockquote>
@@ -120,7 +114,57 @@ then these will be calculated based on grid, coordinates, and rotation.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">extent</span></tt></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.contour_array" title="flopy.plot.map.ModelMap.contour_array"><tt class="xref py py-obj docutils literal"><span class="pre">contour_array</span></tt></a>(a[,&nbsp;masked_values])</td>
+<td>Contour an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.get_grid_line_collection" title="flopy.plot.map.ModelMap.get_grid_line_collection"><tt class="xref py py-obj docutils literal"><span class="pre">get_grid_line_collection</span></tt></a>(**kwargs)</td>
+<td>Get a LineCollection of the grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_array" title="flopy.plot.map.ModelMap.plot_array"><tt class="xref py py-obj docutils literal"><span class="pre">plot_array</span></tt></a>(a[,&nbsp;masked_values])</td>
+<td>Plot an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_bc" title="flopy.plot.map.ModelMap.plot_bc"><tt class="xref py py-obj docutils literal"><span class="pre">plot_bc</span></tt></a>([ftype,&nbsp;package,&nbsp;kper,&nbsp;color])</td>
+<td>Plot boundary conditions locations for a specific boundary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_discharge" title="flopy.plot.map.ModelMap.plot_discharge"><tt class="xref py py-obj docutils literal"><span class="pre">plot_discharge</span></tt></a>(frf,&nbsp;fff[,&nbsp;dis,&nbsp;flf,&nbsp;head,&nbsp;...])</td>
+<td>Use quiver to plot vectors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_endpoint" title="flopy.plot.map.ModelMap.plot_endpoint"><tt class="xref py py-obj docutils literal"><span class="pre">plot_endpoint</span></tt></a>(ep,&nbsp;**kwargs)</td>
+<td>Plot the MODPATH endpoints.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_grid" title="flopy.plot.map.ModelMap.plot_grid"><tt class="xref py py-obj docutils literal"><span class="pre">plot_grid</span></tt></a>(**kwargs)</td>
+<td>Plot the grid lines.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_ibound" title="flopy.plot.map.ModelMap.plot_ibound"><tt class="xref py py-obj docutils literal"><span class="pre">plot_ibound</span></tt></a>([ibound,&nbsp;color_noflow,&nbsp;color_ch])</td>
+<td>Make a plot of ibound.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_pathline" title="flopy.plot.map.ModelMap.plot_pathline"><tt class="xref py py-obj docutils literal"><span class="pre">plot_pathline</span></tt></a>(pl,&nbsp;**kwargs)</td>
+<td>Plot the MODPATH pathlines.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_shapefile" title="flopy.plot.map.ModelMap.plot_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">plot_shapefile</span></tt></a>(shp,&nbsp;**kwargs)</td>
+<td>Plot a shapefile.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.contour_array">
 <tt class="descname">contour_array</tt><big>(</big><em>a</em>, <em>masked_values=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.contour_array" title="Permalink to this definition">¶</a></dt>
@@ -152,44 +196,9 @@ will contour the layer tied to this class (self.layer).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.plot.map.ModelMap.get_extent">
-<tt class="descname">get_extent</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.get_extent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the extent of the rotated and offset grid</p>
-<p>Return (xmin, xmax, ymin, ymax)</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.plot.map.ModelMap.get_grid_line_collection">
 <tt class="descname">get_grid_line_collection</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.get_grid_line_collection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a LineCollection of the grid</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.plot.map.ModelMap.get_xcenter_array">
-<tt class="descname">get_xcenter_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.get_xcenter_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a numpy one-dimensional float array that has the cell center x
-coordinate for every column in the grid.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.plot.map.ModelMap.get_xedge_array">
-<tt class="descname">get_xedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.get_xedge_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a numpy one-dimensional float array that has the cell edge x
-coordinates for every column in the grid.  Array is of size (ncol + 1)</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.plot.map.ModelMap.get_ycenter_array">
-<tt class="descname">get_ycenter_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.get_ycenter_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a numpy one-dimensional float array that has the cell center x
-coordinate for every row in the grid.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.plot.map.ModelMap.get_yedge_array">
-<tt class="descname">get_yedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.get_yedge_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a numpy one-dimensional float array that has the cell edge y
-coordinates for every row in the grid.  Array is of size (nrow + 1)</p>
 </dd></dl>
 
 <dl class="method">
@@ -262,7 +271,7 @@ type from a flopy model</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_discharge">
-<tt class="descname">plot_discharge</tt><big>(</big><em>frf</em>, <em>fff</em>, <em>flf=None</em>, <em>head=None</em>, <em>istep=1</em>, <em>jstep=1</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_discharge" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot_discharge</tt><big>(</big><em>frf</em>, <em>fff</em>, <em>dis=None</em>, <em>flf=None</em>, <em>head=None</em>, <em>istep=1</em>, <em>jstep=1</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_discharge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use quiver to plot vectors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -303,6 +312,39 @@ conditions in order to calculated saturated thickness.</p>
 <blockquote class="last">
 <div><p>Vectors of specific discharge.</p>
 </div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.map.ModelMap.plot_endpoint">
+<tt class="descname">plot_endpoint</tt><big>(</big><em>ep</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_endpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the MODPATH endpoints.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ep</strong> : rec array</p>
+<blockquote>
+<div><p>rec array is data returned from modpathfile EndpointFile
+get_data() or get_alldata() methods. Data in rec array
+is &#8216;x&#8217;, &#8216;y&#8217;, &#8216;z&#8217;, &#8216;time&#8217;, &#8216;k&#8217;, and &#8216;particleid&#8217;.</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : layer, ax, c, s, colorbar, colorbar_label, shrink. The</p>
+<blockquote>
+<div><p>remaining kwargs are passed into the matplotlib scatter
+method. If layer=&#8217;all&#8217;, endpoints are output for all layers.
+If colorbar is True a colorbar will be added to the plot.
+If colorbar_label is passed in and colorbar is True then
+colorbar_label will be passed to the colorbar set_label()
+method. If shrink is passed in and colorbar is True then
+the colorbar size will be set using shrink.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>sp</strong> : matplotlib.pyplot.scatter</p>
 </td>
 </tr>
 </tbody>
@@ -361,6 +403,35 @@ self.ml</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.plot.map.ModelMap.plot_pathline">
+<tt class="descname">plot_pathline</tt><big>(</big><em>pl</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_pathline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the MODPATH pathlines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pl</strong> : list of rec arrays or a single rec array</p>
+<blockquote>
+<div><p>rec array or list of rec arrays is data returned from
+modpathfile PathlineFile get_data() or get_alldata()
+methods. Data in rec array is &#8216;x&#8217;, &#8216;y&#8217;, &#8216;z&#8217;, &#8216;time&#8217;,
+&#8216;k&#8217;, and &#8216;particleid&#8217;.</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : layer, ax, colors.  The remaining kwargs are passed</p>
+<blockquote>
+<div><p>into the LineCollection constructor. If layer=&#8217;all&#8217;,
+pathlines are output for all layers</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>lc</strong> : matplotlib.collections.LineCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_shapefile">
 <tt class="descname">plot_shapefile</tt><big>(</big><em>shp</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot a shapefile.  The shapefile must be in the same coordinates as
@@ -394,11 +465,8 @@ the rotated and offset grid.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="binaryswrfile.html"
-                        title="previous chapter">flopy.utils.binaryswrfile Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="crosssection.html"
-                        title="next chapter">flopy.plot.crosssection Module</a></p>
+  <p class="topless"><a href="util_list.html"
+                        title="previous chapter">flopy.utils.util_list Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -426,15 +494,9 @@ the rotated and offset grid.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="crosssection.html" title="flopy.plot.crosssection Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
+          <a href="util_list.html" title="flopy.utils.util_list Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

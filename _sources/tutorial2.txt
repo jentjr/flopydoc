@@ -218,17 +218,17 @@ Using these methods, we can create head plots and hydrographs from the model res
 
 If everything has worked properly, you should see the following head contours.
 
-.. figure:: _images/tutorial2fig1.png
+.. figure:: _static/tutorial2fig1.png
    :alt: head contours for stress period 1
    :scale: 100 %
    :align: center
 
-.. figure:: _images/tutorial2fig2.png
+.. figure:: _static/tutorial2fig2.png
    :alt: head contours for stress period 2
    :scale: 100 %
    :align: center
 
-.. figure:: _images/tutorial2fig3.png
+.. figure:: _static/tutorial2fig3.png
    :alt: head contours for stress period 3
    :scale: 100 %
    :align: center
@@ -249,7 +249,7 @@ Make a plot of head versus time by extracting the binary heads from the headobj:
     plt.plot(ts[:, 0], ts[:, 1])
     plt.show()
 
-.. figure:: _images/tutorial2fig4.png
+.. figure:: _static/tutorial2fig4.png
    :alt: head contours in first layer
    :scale: 100 %
    :align: center

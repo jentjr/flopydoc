@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.seawat.swt Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.seawat.swt Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfbas Module" href="mfbas.html" />
-    <link rel="prev" title="flopy.mt3d.mt Module" href="mt.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfbas.html" title="flopy.modflow.mfbas Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mt.html" title="flopy.mt3d.mt Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -77,7 +66,96 @@
 <dt id="flopy.seawat.swt.Seawat">
 <em class="property">class </em><tt class="descclassname">flopy.seawat.swt.</tt><tt class="descname">Seawat</tt><big>(</big><em>modelname='mt3dmstest'</em>, <em>namefile_ext='nam'</em>, <em>modflowmodel=None</em>, <em>mt3dmsmodel=None</em>, <em>exe_name='swt_v4.exe'</em>, <em>model_ws=None</em>, <em>verbose=False</em>, <em>external_path=None</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat" title="Permalink to this definition">¶</a></dt>
 <dd><p>SEAWAT base class</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">mf</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">mt</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.name" title="flopy.seawat.swt.Seawat.name"><tt class="xref py py-obj docutils literal"><span class="pre">name</span></tt></a></td>
+<td>Get model name</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">vdf</span></tt></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.add_external" title="flopy.seawat.swt.Seawat.add_external"><tt class="xref py py-obj docutils literal"><span class="pre">add_external</span></tt></a>(fname,&nbsp;unit[,&nbsp;binflag])</td>
+<td>Assign an external array so that it will be listed as a DATA or DATA(BINARY) entry in the name file.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.add_package" title="flopy.seawat.swt.Seawat.add_package"><tt class="xref py py-obj docutils literal"><span class="pre">add_package</span></tt></a>(p)</td>
+<td>Add a package.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.add_pop_key_list" title="flopy.seawat.swt.Seawat.add_pop_key_list"><tt class="xref py py-obj docutils literal"><span class="pre">add_pop_key_list</span></tt></a>(key)</td>
+<td>Add a external file unit number to a list that will be used to remove model output (typically binary) files from ext_unit_dict.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.assign_external" title="flopy.seawat.swt.Seawat.assign_external"><tt class="xref py py-obj docutils literal"><span class="pre">assign_external</span></tt></a>(num,&nbsp;prefix)</td>
+<td>Assign external file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.build_array_name" title="flopy.seawat.swt.Seawat.build_array_name"><tt class="xref py py-obj docutils literal"><span class="pre">build_array_name</span></tt></a>(num,&nbsp;prefix)</td>
+<td>Build array name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.change_model_ws" title="flopy.seawat.swt.Seawat.change_model_ws"><tt class="xref py py-obj docutils literal"><span class="pre">change_model_ws</span></tt></a>([new_pth])</td>
+<td>Change the model work space.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.get_name" title="flopy.seawat.swt.Seawat.get_name"><tt class="xref py py-obj docutils literal"><span class="pre">get_name</span></tt></a>()</td>
+<td>Get model name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.get_name_file_entries" title="flopy.seawat.swt.Seawat.get_name_file_entries"><tt class="xref py py-obj docutils literal"><span class="pre">get_name_file_entries</span></tt></a>()</td>
+<td>Get a string representation of the name file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.get_package" title="flopy.seawat.swt.Seawat.get_package"><tt class="xref py py-obj docutils literal"><span class="pre">get_package</span></tt></a>(name)</td>
+<td>Get a package.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.get_package_list" title="flopy.seawat.swt.Seawat.get_package_list"><tt class="xref py py-obj docutils literal"><span class="pre">get_package_list</span></tt></a>()</td>
+<td>Get a list of all the package names.</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getmf</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getmt</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getvdf</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.remove_external" title="flopy.seawat.swt.Seawat.remove_external"><tt class="xref py py-obj docutils literal"><span class="pre">remove_external</span></tt></a>([fname,&nbsp;unit])</td>
+<td>Remove an external file from the model by specifying either the file name or the unit number.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.remove_package" title="flopy.seawat.swt.Seawat.remove_package"><tt class="xref py py-obj docutils literal"><span class="pre">remove_package</span></tt></a>(pname)</td>
+<td>Remove a package from this model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.run_model" title="flopy.seawat.swt.Seawat.run_model"><tt class="xref py py-obj docutils literal"><span class="pre">run_model</span></tt></a>([silent,&nbsp;pause,&nbsp;report])</td>
+<td>This method will run the model using subprocess.Popen.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.set_exename" title="flopy.seawat.swt.Seawat.set_exename"><tt class="xref py py-obj docutils literal"><span class="pre">set_exename</span></tt></a>(exe_name)</td>
+<td>Set the name of the executable.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.set_name" title="flopy.seawat.swt.Seawat.set_name"><tt class="xref py py-obj docutils literal"><span class="pre">set_name</span></tt></a>(value)</td>
+<td>Set model name</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.seawat.swt.Seawat.write_input" title="flopy.seawat.swt.Seawat.write_input"><tt class="xref py py-obj docutils literal"><span class="pre">write_input</span></tt></a>([SelPackList])</td>
+<td>Write the input.</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_name_file</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.add_external">
 <tt class="descname">add_external</tt><big>(</big><em>fname</em>, <em>unit</em>, <em>binflag=False</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.add_external" title="Permalink to this definition">¶</a></dt>
@@ -352,13 +430,14 @@ file name or the unit number.</p>
 <blockquote>
 <div><p>Pause upon completion (the default is False).</p>
 </div></blockquote>
-<p><strong>report</strong> : string, optional</p>
+<p><strong>report</strong> : boolean, optional</p>
 <blockquote>
-<div><p>Name of file to store stdout. (default is None).</p>
+<div><p>Save stdout lines to a list (buff) which is returned 
+by the method . (the default is False).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>(success, buff)</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(success, buff)</p>
 <p><strong>success</strong> : boolean</p>
 <p class="last"><strong>buff</strong> : list of lines of stdout</p>
 </td>
@@ -420,6 +499,32 @@ file name or the unit number.</p>
 <em class="property">class </em><tt class="descclassname">flopy.seawat.swt.</tt><tt class="descname">SeawatList</tt><big>(</big><em>model</em>, <em>extension='list'</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.SeawatList" title="Permalink to this definition">¶</a></dt>
 <dd><p>List Package class</p>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.seawat.swt.SeawatList.load" title="flopy.seawat.swt.SeawatList.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(model,&nbsp;pack_type,&nbsp;f[,&nbsp;nper,&nbsp;pop_key_list])</td>
+<td>The load method has not been implemented for this package.</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="staticmethod">
 <dt id="flopy.seawat.swt.SeawatList.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.SeawatList.load" title="Permalink to this definition">¶</a></dt>
@@ -436,12 +541,6 @@ file name or the unit number.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mt.html"
-                        title="previous chapter">flopy.mt3d.mt Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfbas.html"
-                        title="next chapter">flopy.modflow.mfbas Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -468,16 +567,7 @@ file name or the unit number.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfbas.html" title="flopy.modflow.mfbas Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mt.html" title="flopy.mt3d.mt Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.mfreadnam Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.utils.mfreadnam Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.binaryfile Module" href="binaryfile.html" />
-    <link rel="prev" title="flopy.seawat.swtvdf Module" href="swtvdf.html" />
+    <link rel="next" title="flopy.utils.modpathfile Module" href="modpathfile.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -53,15 +52,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+          <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
              accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -85,35 +78,69 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
-this package will be added.</p>
-</div></blockquote>
-<p><strong>pkgtype</strong> : string</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pkgtype</strong> : string</p>
 <blockquote>
 <div><p>String identifying the type of MODFLOW package. See the
 mfnam_packages dictionary keys in the model object for a list
 of supported packages. This dictionary is also passed in as packages.</p>
-</div></blockquote>
-<p><strong>packages</strong> : dictionary</p>
-<blockquote>
-<div><p>Dictionary of package objects as defined in the
-<cite>mfnam_packages</cite> attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>.</p>
 </div></blockquote>
 <p><strong>name</strong> : string</p>
 <blockquote>
 <div><p>Filename of the package file identified in the name file</p>
 </div></blockquote>
 <p><strong>handle</strong> : file handle</p>
-<blockquote class="last">
+<blockquote>
 <div><p>File handle referring to the file identified by <cite>name</cite></p>
+</div></blockquote>
+<p><strong>packages</strong> : dictionary</p>
+<blockquote class="last">
+<div><p>Dictionary of package objects as defined in the
+<cite>mfnam_packages</cite> attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>filehandle</td>
+<td>(file handle) File handle to the package file. Read from <cite>handle</cite>.</td>
+</tr>
+<tr class="row-even"><td>filename</td>
+<td>(string) Filename of the package file identified in the name file. Read from <cite>name</cite>.</td>
+</tr>
+<tr class="row-odd"><td>filetype</td>
+<td>(string) String identifying the type of MODFLOW package. Read from <cite>pkgtype</cite>.</td>
+</tr>
+<tr class="row-even"><td>package</td>
+<td>(string) Package type. Only assigned if <cite>pkgtype</cite> is found in the keys of <cite>packages</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.mfreadnam.getfiletypeunit">
+<tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">getfiletypeunit</tt><big>(</big><em>nf</em>, <em>filetype</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.getfiletypeunit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to return unit number of a package from a NamData instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>nf</strong> : NamData instance</p>
+<p><strong>filetype</strong> : string, name of package seeking information for</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>cunit</strong> : int, unit number corresponding to the package type</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -160,12 +187,9 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="swtvdf.html"
-                        title="previous chapter">flopy.seawat.swtvdf Module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="binaryfile.html"
-                        title="next chapter">flopy.utils.binaryfile Module</a></p>
+  <p class="topless"><a href="modpathfile.html"
+                        title="next chapter">flopy.utils.modpathfile Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -193,15 +217,9 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+          <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
              >next</a> |</li>
-        <li class="right" >
-          <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

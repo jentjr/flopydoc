@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>mbase Classes &mdash; flopy 3.1 documentation</title>
+    <title>mbase Classes &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mf Module" href="mf.html" />
     <link rel="prev" title="Flopy Code" href="code.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -53,15 +52,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mf.html" title="flopy.modflow.mf Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
           <a href="code.html" title="Flopy Code"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -75,7 +68,7 @@
 <h1>mbase Classes<a class="headerlink" href="#mbase-classes" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mbase.BaseModel">
-<em class="property">class </em><tt class="descclassname">flopy.mbase.</tt><tt class="descname">BaseModel</tt><big>(</big><em>modelname='modflowtest'</em>, <em>namefile_ext='nam'</em>, <em>exe_name='mf2k.exe'</em>, <em>model_ws=None</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.mbase.</tt><tt class="descname">BaseModel</tt><big>(</big><em>modelname='modflowtest'</em>, <em>namefile_ext='nam'</em>, <em>exe_name='mf2k.exe'</em>, <em>model_ws=None</em>, <em>structured=True</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW based models base class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -104,7 +97,78 @@ to the current working directory.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">name</span></tt></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_external</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_package</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_pop_key_list</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">assign_external</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">build_array_name</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">change_model_ws</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_name</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_name_file_entries</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_package</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_package_list</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">remove_external</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">remove_package</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">run_model</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">set_exename</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">set_name</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_input</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_name_file</span></tt></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.mbase.BaseModel.add_external">
 <tt class="descname">add_external</tt><big>(</big><em>fname</em>, <em>unit</em>, <em>binflag=False</em><big>)</big><a class="headerlink" href="#flopy.mbase.BaseModel.add_external" title="Permalink to this definition">¶</a></dt>
@@ -379,13 +443,14 @@ file name or the unit number.</p>
 <blockquote>
 <div><p>Pause upon completion (the default is False).</p>
 </div></blockquote>
-<p><strong>report</strong> : string, optional</p>
+<p><strong>report</strong> : boolean, optional</p>
 <blockquote>
-<div><p>Name of file to store stdout. (default is None).</p>
+<div><p>Save stdout lines to a list (buff) which is returned 
+by the method . (the default is False).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>(success, buff)</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(success, buff)</p>
 <p><strong>success</strong> : boolean</p>
 <p class="last"><strong>buff</strong> : list of lines of stdout</p>
 </td>
@@ -453,6 +518,32 @@ file name or the unit number.</p>
 <em class="property">class </em><tt class="descclassname">flopy.mbase.</tt><tt class="descname">Package</tt><big>(</big><em>parent</em>, <em>extension='glo'</em>, <em>name='GLOBAL'</em>, <em>unit_number=1</em>, <em>extra=''</em>, <em>allowDuplicates=False</em><big>)</big><a class="headerlink" href="#flopy.mbase.Package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base package class from which most other packages are derived.</p>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="staticmethod">
 <dt id="flopy.mbase.Package.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.mbase.Package.load" title="Permalink to this definition">¶</a></dt>
@@ -478,9 +569,6 @@ file name or the unit number.</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="code.html"
                         title="previous chapter">Flopy Code</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mf.html"
-                        title="next chapter">flopy.modflow.mf Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -508,15 +596,9 @@ file name or the unit number.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mf.html" title="flopy.modflow.mf Module"
-             >next</a> |</li>
-        <li class="right" >
           <a href="code.html" title="Flopy Code"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

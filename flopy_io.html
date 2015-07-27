@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_list Module &mdash; flopy 3.3 documentation</title>
+    <title>flopy.utils.flopy_io Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.plot.map Module" href="map.html" />
+    <link rel="next" title="flopy.utils.formattedfile Module" href="formattedfile.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,7 +52,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="map.html" title="flopy.plot.map Module"
+          <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
              accesskey="N">next</a> |</li>
         <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
@@ -64,75 +64,69 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-flopy.utils.util_list">
-<span id="flopy-utils-util-list-module"></span><h1>flopy.utils.util_list Module<a class="headerlink" href="#module-flopy.utils.util_list" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt>util_list module.  Contains the mflist class.</dt>
-<dd>This classes encapsulates modflow-style list inputs away
-from the individual packages.  The end-user should not need to
-instantiate this class directly.</dd>
-</dl>
-<dl class="class">
-<dt id="flopy.utils.util_list.mflist">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_list.</tt><tt class="descname">mflist</tt><big>(</big><em>model</em>, <em>dtype</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist" title="Permalink to this definition">¶</a></dt>
-<dd><p>a generic object for handling transient boundary condition lists</p>
+  <div class="section" id="module-flopy.utils.flopy_io">
+<span id="flopy-utils-flopy-io-module"></span><h1>flopy.utils.flopy_io Module<a class="headerlink" href="#module-flopy.utils.flopy_io" title="Permalink to this headline">¶</a></h1>
+<p>Module for exporting and importing flopy model attributes</p>
+<dl class="function">
+<dt id="flopy.utils.flopy_io.model_attributes_to_shapfile">
+<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">model_attributes_to_shapfile</tt><big>(</big><em>filename</em>, <em>ml</em>, <em>package_names=None</em>, <em>array_dict=None</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.model_attributes_to_shapfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper function for writing a shapefile for the model grid.  If package_names is not none,
+then search through the requested packages looking for arrays that can
+be added to the shapefile as attributes</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
 <blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
-this package will be added.</p>
+<div><p>name of the shapefile to write</p>
 </div></blockquote>
-<p><strong>dtype</strong> : np.dtype</p>
+<p><strong>ml</strong> : flopy.mbase</p>
 <blockquote>
-<div><p>a numpy dtype describing the columns of the list data</p>
+<div><p>model instance</p>
 </div></blockquote>
-<p><strong>data</strong> : varies</p>
-<blockquote class="last">
-<div><p>the data of the transient list (optional). (the default is None)</p>
+<p><strong>package_names</strong> : (optional) list of package names (e.g. [&#8220;dis&#8221;,&#8221;lpf&#8221;])</p>
+<blockquote>
+<div><p>packages to scrap arrays out of for adding to shapefile</p>
 </div></blockquote>
+<p><strong>array_dict</strong> : (optional) dict of {name:2D array} pairs</p>
+<blockquote>
+<div><p>additional 2D arrays to add as attributes to the grid shapefile</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="8%" />
-<col width="92%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>mxact</td>
-<td>(int) the max number of active bc for any stress period</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="27%" />
-<col width="73%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>add_record(kper,index,value)</td>
-<td>(None) add a record to stress period kper at index location</td>
-</tr>
-<tr class="row-even"><td>write_transient(f)</td>
-<td>(None) write the transient sequence to the model input file f</td>
-</tr>
-<tr class="row-odd"><td>check_kij()</td>
-<td>(None) checks for boundaries outside of model domain - issues warnings only</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="flopy.utils.util_list.mflist.get_indices">
-<tt class="descname">get_indices</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.get_indices" title="Permalink to this definition">¶</a></dt>
-<dd><p>a helper function for plotting - get all unique indices</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="flopy.utils.flopy_io.write_grid_shapefile">
+<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">write_grid_shapefile</tt><big>(</big><em>filename</em>, <em>sr</em>, <em>array_dict</em>, <em>nan_val=-10000000000.0</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.write_grid_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a grid shapefile array_dict attributes.
+Parameters
+&#8212;&#8212;&#8212;-
+filename : string</p>
+<blockquote>
+<div>name of the shapefile to write</div></blockquote>
+<dl class="docutils">
+<dt>ml <span class="classifier-delimiter">:</span> <span class="classifier">flopy.mbase</span></dt>
+<dd>model instance</dd>
+<dt>package_names <span class="classifier-delimiter">:</span> <span class="classifier">(optional) list of package names (e.g. [&#8220;dis&#8221;,&#8221;lpf&#8221;])</span></dt>
+<dd>packages to scrap arrays out of for adding to shapefile</dd>
+<dt>array_dict <span class="classifier-delimiter">:</span> <span class="classifier">(optional) dict of {name:2D array} pairs</span></dt>
+<dd>additional 2D arrays to add as attributes to the grid shapefile</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -144,8 +138,8 @@ this package will be added.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Next topic</h4>
-  <p class="topless"><a href="map.html"
-                        title="next chapter">flopy.plot.map Module</a></p>
+  <p class="topless"><a href="formattedfile.html"
+                        title="next chapter">flopy.utils.formattedfile Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -173,7 +167,7 @@ this package will be added.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="map.html" title="flopy.plot.map Module"
+          <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
              >next</a> |</li>
         <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 

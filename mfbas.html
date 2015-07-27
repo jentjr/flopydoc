@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfbas Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.modflow.mfbas Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfbcf Module" href="mfbcf.html" />
-    <link rel="prev" title="flopy.seawat.swt Module" href="swt.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfbcf.html" title="flopy.modflow.mfbcf Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="swt.html" title="flopy.seawat.swt Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -140,26 +129,54 @@ will unless the budget percent discrepancy is greater than stoper
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="8%" />
-<col width="13%" />
-<col width="78%" />
+<col width="9%" />
+<col width="91%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>heading</td>
-<td>str</td>
-<td>Text string written to top of package input file.</td>
+<td>(str) Text string written to top of package input file.</td>
 </tr>
 <tr class="row-even"><td>options</td>
-<td>list of str</td>
-<td>Can be either or a combination of XSECTION, CHTOCH or FREE.</td>
+<td>(list of str) Can be either or a combination of XSECTION, CHTOCH or FREE.</td>
 </tr>
 <tr class="row-odd"><td>ifrefm</td>
-<td>bool</td>
-<td>Indicates whether or not packages will be written as free format.</td>
+<td>(bool) Indicates whether or not packages will be written as free format.</td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfbas.ModflowBas.getibound" title="flopy.modflow.mfbas.ModflowBas.getibound"><tt class="xref py py-obj docutils literal"><span class="pre">getibound</span></tt></a>()</td>
+<td>Get ibound array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfbas.ModflowBas.load" title="flopy.modflow.mfbas.ModflowBas.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;nlay,&nbsp;nrow,&nbsp;ncol,&nbsp;ext_unit_dict])</td>
+<td>Load an existing package.</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfbas.ModflowBas.setibound" title="flopy.modflow.mfbas.ModflowBas.setibound"><tt class="xref py py-obj docutils literal"><span class="pre">setibound</span></tt></a>(ibound)</td>
+<td>Set the ibound array.</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfbas.ModflowBas.write_file" title="flopy.modflow.mfbas.ModflowBas.write_file"><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt></a>()</td>
+<td>Write the package input file.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.modflow.mfbas.ModflowBas.getibound">
 <tt class="descname">getibound</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfbas.ModflowBas.getibound" title="Permalink to this definition">¶</a></dt>
@@ -267,12 +284,6 @@ constructed using the function
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="swt.html"
-                        title="previous chapter">flopy.seawat.swt Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfbcf.html"
-                        title="next chapter">flopy.modflow.mfbcf Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -299,16 +310,7 @@ constructed using the function
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfbcf.html" title="flopy.modflow.mfbcf Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="swt.html" title="flopy.seawat.swt Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

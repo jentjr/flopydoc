@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.modpathfile Module &mdash; flopy 3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="prev" title="flopy.utils.mfreadnam Module" href="mfreadnam.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.utils.modpathfile">
+<span id="flopy-utils-modpathfile-module"></span><h1>flopy.utils.modpathfile Module<a class="headerlink" href="#module-flopy.utils.modpathfile" title="Permalink to this headline">¶</a></h1>
+<p>Module to read MODPATH output files.  The module contains three
+important classes that can be accessed by the user.</p>
+<ul class="simple">
+<li>PathlineFile (Binary head file.  Can also be used for drawdown)</li>
+</ul>
+<dl class="class">
+<dt id="flopy.utils.modpathfile.EndpointFile">
+<em class="property">class </em><tt class="descclassname">flopy.utils.modpathfile.</tt><tt class="descname">EndpointFile</tt><big>(</big><em>filename</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>EndpointFile Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the concentration file</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The EndpointeFile class provides simple ways to retrieve MODPATH 6
+endpoint data from a MODPATH 6 ascii endpoint file.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">endobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">EndpointFile</span><span class="p">(</span><span class="s">&#39;model.mpend&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e1</span> <span class="o">=</span> <span class="n">endobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_alldata" title="flopy.utils.modpathfile.EndpointFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([final])</td>
+<td>get endpoint data from the endpoint file for all endpoints.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_data" title="flopy.utils.modpathfile.EndpointFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([partid,&nbsp;final])</td>
+<td>get endpoint data from the endpoint file for a single particle.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_maxid" title="flopy.utils.modpathfile.EndpointFile.get_maxid"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxid</span></tt></a>()</td>
+<td>Get the maximum endpoint particle id in the file endpoint file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_maxtime" title="flopy.utils.modpathfile.EndpointFile.get_maxtime"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxtime</span></tt></a>()</td>
+<td>Get the maximum time in endpoint file</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.utils.modpathfile.EndpointFile.get_alldata">
+<tt class="descname">get_alldata</tt><big>(</big><em>final=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<dd><p>get endpoint data from the endpoint file for all endpoints.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>final</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used determine if the initial or final endpoint
+time should be returned, Default is True</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>A numpy recarray with the final or initial (final=False)
+x, y, z, time, k, and particleid for endpoint partid.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">endobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">EndpointFile</span><span class="p">(</span><span class="s">&#39;model.mpend&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">endobj</span><span class="o">.</span><span class="n">get_alldata</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.EndpointFile.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>partid=0</em>, <em>final=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>get endpoint data from the endpoint file for a single particle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>partid</strong> : int</p>
+<blockquote>
+<div><p>The zero-based particle id.  The first record is record 0.</p>
+</div></blockquote>
+<p><strong>final</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used determine if the initial or final endpoint
+time should be returned, Default is True</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>A numpy recarray with the final or initial (final=False)
+x, y, z, time, k, and particleid for endpoint partid.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">endobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">EndpointFile</span><span class="p">(</span><span class="s">&#39;model.mpend&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e1</span> <span class="o">=</span> <span class="n">endobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.EndpointFile.get_maxid">
+<tt class="descname">get_maxid</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_maxid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the maximum endpoint particle id in the file endpoint file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>Maximum enpoint particle id.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.EndpointFile.get_maxtime">
+<tt class="descname">get_maxtime</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_maxtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the maximum time in endpoint file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<blockquote class="last">
+<div><p>Maximum endpoint time.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.modpathfile.PathlineFile">
+<em class="property">class </em><tt class="descclassname">flopy.utils.modpathfile.</tt><tt class="descname">PathlineFile</tt><big>(</big><em>filename</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>PathlineFile Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the concentration file</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The PathlineFile class provides simple ways to retrieve MODPATH 6
+pathline data from a MODPATH 6 ascii pathline file.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pthobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PathlineFile</span><span class="p">(</span><span class="s">&#39;model.mppth&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">pthobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_alldata" title="flopy.utils.modpathfile.PathlineFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([totim,&nbsp;ge])</td>
+<td>get pathline data from the pathline file for all pathlines and all times.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_data" title="flopy.utils.modpathfile.PathlineFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([partid,&nbsp;totim,&nbsp;ge])</td>
+<td>get pathline data from the pathline file for a single pathline.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_maxid" title="flopy.utils.modpathfile.PathlineFile.get_maxid"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxid</span></tt></a>()</td>
+<td>Get the maximum pathline number in the file pathline file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_maxtime" title="flopy.utils.modpathfile.PathlineFile.get_maxtime"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxtime</span></tt></a>()</td>
+<td>Get the maximum time in pathline file</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.utils.modpathfile.PathlineFile.get_alldata">
+<tt class="descname">get_alldata</tt><big>(</big><em>totim=None</em>, <em>ge=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<dd><p>get pathline data from the pathline file for all pathlines and all times.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. All pathline points for particle partid
+that are greater than or equal to (ge=True) or less than or
+equal to (ge=False) totim will be returned. Default is None</p>
+</div></blockquote>
+<p><strong>ge</strong> : bool</p>
+<blockquote>
+<div><p>Boolean that determines if pathline times greater than or equal
+to or less than or equal to totim is used to create a subset
+of pathlines. Default is True.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>plist</strong> : a list of numpy record array</p>
+<blockquote class="last">
+<div><p>A list of numpy recarrays with the x, y, z, time, k, and particleid for
+all pathlines.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.modpathfile</span> <span class="kn">as</span> <span class="nn">mpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pthobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PathlineFile</span><span class="p">(</span><span class="s">&#39;model.mppth&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">pthobj</span><span class="o">.</span><span class="n">get_alldata</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.PathlineFile.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>partid=0</em>, <em>totim=None</em>, <em>ge=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>get pathline data from the pathline file for a single pathline.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>partid</strong> : int</p>
+<blockquote>
+<div><p>The zero-based particle id.  The first record is record 0.</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. All pathline points for particle partid
+that are greater than or equal to (ge=True) or less than or
+equal to (ge=False) totim will be returned. Default is None</p>
+</div></blockquote>
+<p><strong>ge</strong> : bool</p>
+<blockquote>
+<div><p>Boolean that determines if pathline times greater than or equal
+to or less than or equal to totim is used to create a subset
+of pathlines. Default is True.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>A numpy recarray with the x, y, z, time, k, and particleid for
+pathline partid.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.modpathfile</span> <span class="kn">as</span> <span class="nn">mpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pthobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PathlineFile</span><span class="p">(</span><span class="s">&#39;model.mppth&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">pthobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.PathlineFile.get_maxid">
+<tt class="descname">get_maxid</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_maxid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the maximum pathline number in the file pathline file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>Maximum pathline number.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.PathlineFile.get_maxtime">
+<tt class="descname">get_maxtime</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_maxtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the maximum time in pathline file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<blockquote class="last">
+<div><p>Maximum pathline timer.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfreadnam.html"
+                        title="previous chapter">flopy.utils.mfreadnam Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

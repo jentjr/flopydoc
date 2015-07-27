@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.binaryhydmodfile Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.utils.binaryhydmodfile Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.binaryswrfile Module" href="binaryswrfile.html" />
-    <link rel="prev" title="flopy.utils.util_list Module" href="util_list.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="util_list.html" title="flopy.utils.util_list Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -78,6 +67,38 @@
 <em class="property">class </em><tt class="descclassname">flopy.utils.binaryhydmodfile.</tt><tt class="descname">HydmodBinaryStatements</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class of methods for reading MODFLOW binary files</p>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">character</span></tt></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">uint8</span></tt></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements.double" title="flopy.utils.binaryhydmodfile.HydmodBinaryStatements.double"><tt class="xref py py-obj docutils literal"><span class="pre">double</span></tt></a></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">float64</span></tt></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements.integer" title="flopy.utils.binaryhydmodfile.HydmodBinaryStatements.integer"><tt class="xref py py-obj docutils literal"><span class="pre">integer</span></tt></a></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">int32</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_double</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_hyd_text</span></tt>([nchar])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_integer</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_real</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements.real" title="flopy.utils.binaryhydmodfile.HydmodBinaryStatements.real"><tt class="xref py py-obj docutils literal"><span class="pre">real</span></tt></a></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">float32</span></tt></td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="flopy.utils.binaryhydmodfile.HydmodBinaryStatements.double">
 <tt class="descname">double</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements.double" title="Permalink to this definition">¶</a></dt>
@@ -103,6 +124,68 @@
 <em class="property">class </em><tt class="descclassname">flopy.utils.binaryhydmodfile.</tt><tt class="descname">HydmodObs</tt><big>(</big><em>filename</em>, <em>double=False</em>, <em>slurp=False</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads binary MODFLOW HYDMOD package output</p>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">character</span></tt></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">uint8</span></tt></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryhydmodfile.HydmodObs.double" title="flopy.utils.binaryhydmodfile.HydmodObs.double"><tt class="xref py py-obj docutils literal"><span class="pre">double</span></tt></a></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">float64</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_hyd_labels</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_num_items</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_point_offset</span></tt>(ipos)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_time_gage</span></tt>(record[,&nbsp;lblstrip])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_time_list</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_values</span></tt>(idx)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryhydmodfile.HydmodObs.integer" title="flopy.utils.binaryhydmodfile.HydmodObs.integer"><tt class="xref py py-obj docutils literal"><span class="pre">integer</span></tt></a></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">int32</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_double</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_header</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_hyd_text</span></tt>([nchar])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_integer</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">read_real</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryhydmodfile.HydmodObs.real" title="flopy.utils.binaryhydmodfile.HydmodObs.real"><tt class="xref py py-obj docutils literal"><span class="pre">real</span></tt></a></td>
+<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">float32</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">rewind_file</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">slurp</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">time_list</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="flopy.utils.binaryhydmodfile.HydmodObs.double">
 <tt class="descname">double</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.double" title="Permalink to this definition">¶</a></dt>
@@ -131,12 +214,6 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="util_list.html"
-                        title="previous chapter">flopy.utils.util_list Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="binaryswrfile.html"
-                        title="next chapter">flopy.utils.binaryswrfile Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -163,16 +240,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="util_list.html" title="flopy.utils.util_list Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

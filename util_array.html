@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_array Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.utils.util_array Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.util_list Module" href="util_list.html" />
-    <link rel="prev" title="flopy.utils.binaryfile Module" href="binaryfile.html" />
+    <link rel="prev" title="flopy.utils.reference Module" href="reference.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -53,15 +52,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="util_list.html" title="flopy.utils.util_list Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+          <a href="reference.html" title="flopy.utils.reference Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -100,21 +93,6 @@ npl: number of numbers per line</div></blockquote>
 <tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">cast2dict</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.cast2dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts scalar or list to dictionary keyed on kper that
 can be used with the transient_2d class.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="flopy.utils.util_array.meta_interceptor">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">meta_interceptor</tt><a class="headerlink" href="#flopy.utils.util_array.meta_interceptor" title="Permalink to this definition">¶</a></dt>
-<dd><p>meta class to catch existing instances of util_2d,
-transient_2d and util_3d to prevent re-instantiating them.
-a lot of python trickery here...</p>
-<p class="rubric">Methods</p>
-<dl class="method">
-<dt id="flopy.utils.util_array.meta_interceptor.mro">
-<tt class="descname">mro</tt><big>(</big><big>)</big> &rarr; list<a class="headerlink" href="#flopy.utils.util_array.meta_interceptor.mro" title="Permalink to this definition">¶</a></dt>
-<dd><p>return a type&#8217;s method resolution order</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="function">
@@ -199,18 +177,27 @@ the ext_filename is reset to value.</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="25%" />
-<col width="57%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>transient_2ds</td>
-<td>dict{kper:util_2d}</td>
-<td>the transient sequence of util_2d objects</td>
+<td>(dict{kper:util_2d}) the transient sequence of util_2d objects</td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.transient_2d.get_kper_entry" title="flopy.utils.util_array.transient_2d.get_kper_entry"><tt class="xref py py-obj docutils literal"><span class="pre">get_kper_entry</span></tt></a>(kper)</td>
+<td>get the file entry info for a given kper</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.utils.util_array.transient_2d.build_transient_sequence">
 <tt class="descname">build_transient_sequence</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_array.transient_2d.build_transient_sequence" title="Permalink to this definition">¶</a></dt>
@@ -222,6 +209,114 @@ the ext_filename is reset to value.</p>
 <tt class="descname">get_kper_entry</tt><big>(</big><em>kper</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.transient_2d.get_kper_entry" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the file entry info for a given kper
 returns (itmp,file entry string from util_2d)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_array.transient_2d.plot">
+<tt class="descname">plot</tt><big>(</big><em>filename_base=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.transient_2d.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot transient 2-D model input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
+<blockquote>
+<div><p>List of matplotlib.pyplot.axis that will be used to plot 
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</div></blockquote>
+<p><strong>pcolor</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
+plot will be plotted. (default is True)</p>
+</div></blockquote>
+<p><strong>colorbar</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</div></blockquote>
+<p><strong>contour</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</div></blockquote>
+<p><strong>clabel</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</div></blockquote>
+<p><strong>grid</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : list</p>
+<blockquote>
+<div><p>List of unique values to be excluded from the plot.</p>
+</div></blockquote>
+<p><strong>kper</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based stress period number to return</p>
+</div></blockquote>
+<p><strong>filename_base</strong> : str</p>
+<blockquote>
+<div><p>Base file name that will be used to automatically generate file 
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</div></blockquote>
+<p><strong>file_extension</strong> : str</p>
+<blockquote>
+<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis is returned.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">rch</span><span class="o">.</span><span class="n">rech</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_array.transient_2d.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.transient_2d.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Export transient 2D data to a shapefile (as polygons). Adds an </dt>
+<dd>attribute for each unique util_2d instance in self.data</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">rch</span><span class="o">.</span><span class="n">rech</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s">&#39;test_rech.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -295,7 +390,29 @@ the ext_filename is reset to value.</p>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.util_2d.array" title="flopy.utils.util_array.util_2d.array"><tt class="xref py py-obj docutils literal"><span class="pre">array</span></tt></a></td>
+<td>get the array representation of value attribute</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.util_2d.get_file_entry" title="flopy.utils.util_array.util_2d.get_file_entry"><tt class="xref py py-obj docutils literal"><span class="pre">get_file_entry</span></tt></a>()</td>
+<td>this is the entry point for getting an</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="flopy.utils.util_array.util_2d.array">
 <tt class="descname">array</tt><a class="headerlink" href="#flopy.utils.util_array.util_2d.array" title="Permalink to this definition">¶</a></dt>
@@ -366,10 +483,111 @@ current_unit (optional) indicates the unit number of the file being parsed</p>
 lot of defense here, so we can make assumptions later</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.utils.util_array.util_2d.plot">
+<tt class="descname">plot</tt><big>(</big><em>title=None</em>, <em>filename_base=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_2d.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D model input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
+<blockquote>
+<div><p>List of matplotlib.pyplot.axis that will be used to plot 
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</div></blockquote>
+<p><strong>pcolor</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
+plot will be plotted. (default is True)</p>
+</div></blockquote>
+<p><strong>colorbar</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</div></blockquote>
+<p><strong>contour</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</div></blockquote>
+<p><strong>clabel</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</div></blockquote>
+<p><strong>grid</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : list</p>
+<blockquote>
+<div><p>List of unique values to be excluded from the plot.</p>
+</div></blockquote>
+<p><strong>filename_base</strong> : str</p>
+<blockquote>
+<div><p>Base file name that will be used to automatically generate file 
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</div></blockquote>
+<p><strong>file_extension</strong> : str</p>
+<blockquote>
+<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis is returned.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="flopy.utils.util_array.util_2d.string">
 <tt class="descname">string</tt><a class="headerlink" href="#flopy.utils.util_array.util_2d.string" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the string represenation of value attribute</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_array.util_2d.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_2d.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export 2-D model data to a shapefile (as polygons) of self.array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s">&#39;test_top.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -454,7 +672,138 @@ ext_filename is reset to value.</p>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>array</td>
+<td>(np.ndarray) the array representation of the 3-D object</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>get_file_entry</td>
+<td>(string) get the model input file string including the control record for the entire 3-D property</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.utils.util_array.util_3d.plot">
+<tt class="descname">plot</tt><big>(</big><em>filename_base=None</em>, <em>mflay=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_3d.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 3-D model input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
+<blockquote>
+<div><p>List of matplotlib.pyplot.axis that will be used to plot 
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</div></blockquote>
+<p><strong>pcolor</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
+plot will be plotted. (default is True)</p>
+</div></blockquote>
+<p><strong>colorbar</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</div></blockquote>
+<p><strong>contour</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</div></blockquote>
+<p><strong>clabel</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</div></blockquote>
+<p><strong>grid</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : list</p>
+<blockquote>
+<div><p>List of unique values to be excluded from the plot.</p>
+</div></blockquote>
+<p><strong>mflay</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</div></blockquote>
+<p><strong>filename_base</strong> : str</p>
+<blockquote>
+<div><p>Base file name that will be used to automatically generate file 
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</div></blockquote>
+<p><strong>file_extension</strong> : str</p>
+<blockquote>
+<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis is returned.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">hk</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_array.util_3d.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_3d.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Export 3-D model data to shapefile (polygons).  Adds an</dt>
+<dd>attribute for each util_2d in self.u2ds</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">hk</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -466,11 +815,8 @@ ext_filename is reset to value.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="binaryfile.html"
-                        title="previous chapter">flopy.utils.binaryfile Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="util_list.html"
-                        title="next chapter">flopy.utils.util_list Module</a></p>
+  <p class="topless"><a href="reference.html"
+                        title="previous chapter">flopy.utils.reference Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -498,15 +844,9 @@ ext_filename is reset to value.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="util_list.html" title="flopy.utils.util_list Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+          <a href="reference.html" title="flopy.utils.reference Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

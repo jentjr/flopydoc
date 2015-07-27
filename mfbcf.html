@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfbcf Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.modflow.mfbcf Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfchd Module" href="mfchd.html" />
-    <link rel="prev" title="flopy.modflow.mfbas Module" href="mfbas.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfchd.html" title="flopy.modflow.mfchd Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfbas.html" title="flopy.modflow.mfbas Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -75,7 +64,7 @@
 <span id="flopy-modflow-mfbcf-module"></span><h1>flopy.modflow.mfbcf Module<a class="headerlink" href="#module-flopy.modflow.mfbcf" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfbcf.ModflowBcf">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfbcf.</tt><tt class="descname">ModflowBcf</tt><big>(</big><em>model</em>, <em>ibcfcb=0</em>, <em>intercellt=0</em>, <em>laycon=3</em>, <em>trpy=1.0</em>, <em>hdry=-1e+30</em>, <em>iwdflg=0</em>, <em>wetfct=0.1</em>, <em>iwetit=1</em>, <em>ihdwet=0</em>, <em>tran=1.0</em>, <em>hy=1.0</em>, <em>vcont=1.0</em>, <em>sf1=1e-05</em>, <em>sf2=0.15</em>, <em>wetdry=-0.01</em>, <em>extension='bcf'</em>, <em>unitnumber=15</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfbcf.ModflowBcf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfbcf.</tt><tt class="descname">ModflowBcf</tt><big>(</big><em>model</em>, <em>ibcfcb=53</em>, <em>intercellt=0</em>, <em>laycon=3</em>, <em>trpy=1.0</em>, <em>hdry=-1e+30</em>, <em>iwdflg=0</em>, <em>wetfct=0.1</em>, <em>iwetit=1</em>, <em>ihdwet=0</em>, <em>tran=1.0</em>, <em>hy=1.0</em>, <em>vcont=1.0</em>, <em>sf1=1e-05</em>, <em>sf2=0.15</em>, <em>wetdry=-0.01</em>, <em>extension='bcf'</em>, <em>unitnumber=15</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfbcf.ModflowBcf" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Block Centered Flow Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -88,7 +77,7 @@ this package will be added.</p>
 </div></blockquote>
 <p><strong>ibcfcb</strong> : int</p>
 <blockquote>
-<div><p>A flag and unit number. (default is 0)</p>
+<div><p>A flag and unit number. (default is 53)</p>
 </div></blockquote>
 <p><strong>intercellt</strong> : int</p>
 <blockquote>
@@ -174,6 +163,32 @@ neighboring cells can cause a cell to become wet (default is -0.01)</p>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfbcf.ModflowBcf.load" title="flopy.modflow.mfbcf.ModflowBcf.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;ext_unit_dict])</td>
+<td>Load an existing package.</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfbcf.ModflowBcf.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfbcf.ModflowBcf.load" title="Permalink to this definition">¶</a></dt>
@@ -232,12 +247,6 @@ constructed using the function
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfbas.html"
-                        title="previous chapter">flopy.modflow.mfbas Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfchd.html"
-                        title="next chapter">flopy.modflow.mfchd Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -264,16 +273,7 @@ constructed using the function
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfchd.html" title="flopy.modflow.mfchd Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfbas.html" title="flopy.modflow.mfbas Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

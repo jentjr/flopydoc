@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfmnwi Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.modflow.mfmnwi Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfnwt Module" href="mfnwt.html" />
-    <link rel="prev" title="flopy.modflow.mfmnw2 Module" href="mfmnw2.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfmnw2.html" title="flopy.modflow.mfmnw2 Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -90,15 +79,15 @@ this package will be added.</p>
 <blockquote>
 <div><p>Flag indicating output to be written for each MNW node at the end of each stress period</p>
 </div></blockquote>
-<p><strong>qsumflag :integer</strong> :</p>
+<p><strong>qsumflag :integer</strong></p>
 <blockquote>
 <div><p>Flag indicating output to be written for each multi-node well</p>
 </div></blockquote>
-<p><strong>byndflag :integer</strong> :</p>
+<p><strong>byndflag :integer</strong></p>
 <blockquote>
 <div><p>Flag indicating output to be written for each MNW node</p>
 </div></blockquote>
-<p><strong>mnwobs :integer</strong> :</p>
+<p><strong>mnwobs :integer</strong></p>
 <blockquote>
 <div><p>Number of multi-node wells for which detailed flow, head, and solute data re to be saved</p>
 </div></blockquote>
@@ -125,6 +114,32 @@ this package will be added.</p>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfmnwi.ModflowMnwi.load" title="flopy.modflow.mfmnwi.ModflowMnwi.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(model,&nbsp;pack_type,&nbsp;f[,&nbsp;nper,&nbsp;pop_key_list])</td>
+<td>The load method has not been implemented for this package.</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfmnwi.ModflowMnwi.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfmnwi.ModflowMnwi.load" title="Permalink to this definition">¶</a></dt>
@@ -141,12 +156,6 @@ this package will be added.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfmnw2.html"
-                        title="previous chapter">flopy.modflow.mfmnw2 Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfnwt.html"
-                        title="next chapter">flopy.modflow.mfnwt Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -173,16 +182,7 @@ this package will be added.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfmnw2.html" title="flopy.modflow.mfmnw2 Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

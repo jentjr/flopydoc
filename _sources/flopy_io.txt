@@ -1,6 +1,6 @@
-flopy.modflow.mfpval Module
+flopy.utils.flopy_io Module
 ===========================
 
-.. automodule:: flopy.modflow.mfpval
+.. automodule:: flopy.utils.flopy_io
    :members:
    :inherited-members:

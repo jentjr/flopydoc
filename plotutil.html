@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.plot.plotutil Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.plot.plotutil Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -49,10 +49,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -74,6 +71,17 @@ important classes that can be accessed by the user.</p>
 <dd><p>The binary_header class is a class to create headers for MODFLOW
 binary files</p>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.plotutil.SwiConcentration.calc_conc" title="flopy.plot.plotutil.SwiConcentration.calc_conc"><tt class="xref py py-obj docutils literal"><span class="pre">calc_conc</span></tt></a>(zeta[,&nbsp;layer])</td>
+<td>Calculate concentrations for a given time step using passed zeta.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.plot.plotutil.SwiConcentration.calc_conc">
 <tt class="descname">calc_conc</tt><big>(</big><em>zeta</em>, <em>layer=None</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.SwiConcentration.calc_conc" title="Permalink to this definition">¶</a></dt>
@@ -111,6 +119,12 @@ is None, then the concentration will be calculated for all layers.
 </div>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.plot.plotutil.cell_value_points">
+<tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">cell_value_points</tt><big>(</big><em>pts</em>, <em>xedge</em>, <em>yedge</em>, <em>vdata</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.cell_value_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>How about some doc strings</p>
 </dd></dl>
 
 <dl class="function">
@@ -161,6 +175,12 @@ this function so that the z axis is positive in the upward direction.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="flopy.plot.plotutil.line_intersect_grid">
+<tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">line_intersect_grid</tt><big>(</big><em>ptsin</em>, <em>xedge</em>, <em>yedge</em>, <em>returnVertices=False</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.line_intersect_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>How about some doc strings</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="flopy.plot.plotutil.plot_shapefile">
 <tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">plot_shapefile</tt><big>(</big><em>shp</em>, <em>ax=None</em>, <em>radius=500.0</em>, <em>cmap='Dark2'</em>, <em>edgecolor='scaled'</em>, <em>facecolor='scaled'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.plot_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generic function for plotting a shapefile.</p>
@@ -207,14 +227,6 @@ Some common kwargs would be &#8216;linewidths&#8217;, &#8216;linestyles&#8217;, 
 </dd></dl>
 
 <dl class="function">
-<dt id="flopy.plot.plotutil.rotate">
-<tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">rotate</tt><big>(</big><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.rotate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given x and y array-like values calculate the rotation about an
-arbitrary origin and then return the rotated coordinates.  theta is in
-radians.</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="flopy.plot.plotutil.saturated_thickness">
 <tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">saturated_thickness</tt><big>(</big><em>head</em>, <em>top</em>, <em>botm</em>, <em>laytyp</em>, <em>mask_values=None</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.saturated_thickness" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the saturated thickness.</p>
@@ -252,6 +264,38 @@ radians.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.plot.plotutil.shapefile_get_vertices">
+<tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">shapefile_get_vertices</tt><big>(</big><em>shp</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.shapefile_get_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get vertices for the features in a shapefile</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>shp</strong> : string</p>
+<blockquote>
+<div><p>Name of the shapefile to extract shapefile feature vertices.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertices</strong> : list</p>
+<blockquote class="last">
+<div><p>Vertices is a list with vertices for each feature in the shapefile. 
+Individual feature vertices are x, y tuples and contained in a list.
+A list with a single x, y tuple is returned for point shapefiles. A
+list with multiple x, y tuples is returned for polyline and polygon
+shapefiles.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;import flopy
+&gt;&gt;&gt;fshp = &#8216;myshapefile&#8217;
+&gt;&gt;&gt;lines = flopy.plot.plotutil.shapefile_get_vertices(fshp)</p>
 </dd></dl>
 
 <dl class="function">
@@ -310,10 +354,7 @@ radians.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

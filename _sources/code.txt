@@ -58,6 +58,7 @@ Contents:
    mfsor
    mfswi
    mfswi2
+   mfswr1
    mfupw
    mfuzf1
    mfwel
@@ -110,12 +111,17 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   mfreadnam
+   datafile
    binaryfile
-   util_array
-   util_list
    binaryhydmodfile
    binaryswrfile
+   flopy_io
+   formattedfile
+   mfreadnam
+   modpathfile
+   reference
+   util_array
+   util_list
 
 
 Plotting Utilities

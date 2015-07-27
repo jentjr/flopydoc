@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.mt3d.mtdsp Module" href="mtdsp.html" />
-    <link rel="prev" title="flopy.mt3d.mtadv Module" href="mtadv.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -194,49 +183,49 @@ transport steps is an even multiple of nprs. (default is 0).</p>
 <div><p>The total elapsed time at which the simulation results are saved. The
 number of entries in timprs must equal nprs. (default is None).</p>
 </div></blockquote>
-<p><strong>obs: array of int</strong> :</p>
+<p><strong>obs: array of int</strong></p>
 <blockquote>
 <div><p>An array with the cell indices (layer, row, column) for which the
 concentration is to be printed at every transport step. (default is
 None).</p>
 </div></blockquote>
-<p><strong>nprobs: int</strong> :</p>
+<p><strong>nprobs: int</strong></p>
 <blockquote>
 <div><p>An integer indicating how frequently the concentration at the specified
 observation points should be saved. (default is 1).</p>
 </div></blockquote>
-<p><strong>chkmas: bool</strong> :</p>
+<p><strong>chkmas: bool</strong></p>
 <blockquote>
 <div><p>A logical flag indicating whether a one-line summary of mass balance
 information should be printed. (default is True).</p>
 </div></blockquote>
-<p><strong>nprmas: int</strong> :</p>
+<p><strong>nprmas: int</strong></p>
 <blockquote>
 <div><p>An integer indicating how frequently the mass budget information
 should be saved. (default is 1).</p>
 </div></blockquote>
-<p><strong>dt0: float</strong> :</p>
+<p><strong>dt0: float</strong></p>
 <blockquote>
 <div><p>The user-specified initial transport step size within each time-step 
 of the flow solution. (default is 0).</p>
 </div></blockquote>
-<p><strong>mxstrn: int</strong> :</p>
+<p><strong>mxstrn: int</strong></p>
 <blockquote>
 <div><p>The maximum number of transport steps allowed within one time step
 of the flow solution. (default is 50000).</p>
 </div></blockquote>
-<p><strong>ttsmult: float</strong> :</p>
+<p><strong>ttsmult: float</strong></p>
 <blockquote>
 <div><p>The multiplier for successive transport steps within a flow time-step
 if the GCG solver is used and the solution option for the advection
 term is the standard finite-difference method. (default is 1.0).</p>
 </div></blockquote>
-<p><strong>ttsmax: float</strong> :</p>
+<p><strong>ttsmax: float</strong></p>
 <blockquote>
 <div><p>The maximum transport step size allowed when transport step size
 multiplier TTSMULT &gt; 1.0. (default is 0).</p>
 </div></blockquote>
-<p><strong>species_names: list of str</strong> :</p>
+<p><strong>species_names: list of str</strong></p>
 <blockquote>
 <div><p>A list of names for every species in the simulation.</p>
 </div></blockquote>
@@ -254,7 +243,51 @@ multiplier TTSMULT &gt; 1.0. (default is 0).</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">btn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dBtn</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mtbtn.Mt3dBtn.icbund" title="flopy.mt3d.mtbtn.Mt3dBtn.icbund"><tt class="xref py py-obj docutils literal"><span class="pre">icbund</span></tt></a></td>
+<td>Return the icbund array.</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mtbtn.Mt3dBtn.geticbund" title="flopy.mt3d.mtbtn.Mt3dBtn.geticbund"><tt class="xref py py-obj docutils literal"><span class="pre">geticbund</span></tt></a>()</td>
+<td>Return the icbund array.</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt>(f,&nbsp;model[,&nbsp;nlay,&nbsp;nrow,&nbsp;ncol,&nbsp;ext_unit_dict])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mtbtn.Mt3dBtn.seticbund" title="flopy.mt3d.mtbtn.Mt3dBtn.seticbund"><tt class="xref py py-obj docutils literal"><span class="pre">seticbund</span></tt></a>(icbund)</td>
+<td>Set the icbund array.</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.mt3d.mtbtn.Mt3dBtn.geticbund">
 <tt class="descname">geticbund</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.geticbund" title="Permalink to this definition">¶</a></dt>
@@ -307,12 +340,6 @@ multiplier TTSMULT &gt; 1.0. (default is 0).</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mtadv.html"
-                        title="previous chapter">flopy.mt3d.mtadv Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mtdsp.html"
-                        title="next chapter">flopy.mt3d.mtdsp Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -339,16 +366,7 @@ multiplier TTSMULT &gt; 1.0. (default is 0).</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

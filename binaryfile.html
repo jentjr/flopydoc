@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.binaryfile Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.utils.binaryfile Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.util_array Module" href="util_array.html" />
-    <link rel="prev" title="flopy.utils.mfreadnam Module" href="mfreadnam.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="util_array.html" title="flopy.utils.util_array Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -82,7 +71,7 @@ important classes that can be accessed by the user.</p>
 </ul>
 <dl class="class">
 <dt id="flopy.utils.binaryfile.HeadFile">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">HeadFile</tt><big>(</big><em>filename</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">HeadFile</tt><big>(</big><em>filename</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>verbose=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>HeadFile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -94,7 +83,7 @@ important classes that can be accessed by the user.</p>
 </div></blockquote>
 <p><strong>text</strong> : string</p>
 <blockquote>
-<div><p>Name of the text string in the ucn file.  Default is &#8216;head&#8217;</p>
+<div><p>Name of the text string in the head file.  Default is &#8216;head&#8217;</p>
 </div></blockquote>
 <p><strong>precision</strong> : string</p>
 <blockquote>
@@ -119,17 +108,52 @@ and long integers, which are pointers to first bytes of data for
 the corresponding data array.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="kn">as</span> <span class="nn">bf</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">UcnFile</span><span class="p">(</span><span class="s">&#39;model.hds&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s">&#39;single&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s">&#39;model.hds&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s">&#39;single&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ddnobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">UcnFile</span><span class="p">(</span><span class="s">&#39;model.ddn&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&#39;drawdown&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s">&#39;single&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ddnobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s">&#39;model.ddn&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&#39;drawdown&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s">&#39;single&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ddnobj</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">ddnobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="mf">100.</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.close" title="flopy.utils.binaryfile.HeadFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
+<td>Close the file handle.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_alldata" title="flopy.utils.binaryfile.HeadFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([mflay,&nbsp;nodata])</td>
+<td>Get all of the data from the file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_data" title="flopy.utils.binaryfile.HeadFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([kstpkper,&nbsp;idx,&nbsp;totim,&nbsp;mflay])</td>
+<td>Get data from the file for the specified conditions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_kstpkper" title="flopy.utils.binaryfile.HeadFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
+<td>Get a list of unique stress periods and time steps in the file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_times" title="flopy.utils.binaryfile.HeadFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
+<td>Get a list of unique times in the file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_ts" title="flopy.utils.binaryfile.HeadFile.get_ts"><tt class="xref py py-obj docutils literal"><span class="pre">get_ts</span></tt></a>(idx)</td>
+<td>Get a time series from the binary file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.list_records" title="flopy.utils.binaryfile.HeadFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
+<td>Print a list of all of the records in the file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.plot" title="flopy.utils.binaryfile.HeadFile.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([axes,&nbsp;kstpkper,&nbsp;totim,&nbsp;mflay,&nbsp;...])</td>
+<td>Plot 3-D model output data in a specific location</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.to_shapefile" title="flopy.utils.binaryfile.HeadFile.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;kstpkper,&nbsp;totim,&nbsp;...])</td>
+<td>Export model output data to a shapefile at a specific location  in LayerFile instance.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.close" title="Permalink to this definition">¶</a></dt>
@@ -169,7 +193,7 @@ has size (ntimes, nrow, ncol) if mlay is specified.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>kstpkper=(0</em>, <em>0)</em>, <em>idx=None</em>, <em>totim=0</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_data</tt><big>(</big><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -204,6 +228,10 @@ all layers will be included. (Default is None.)</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry
+Examples
+&#8212;&#8212;&#8211;</p>
 </dd></dl>
 
 <dl class="method">
@@ -280,11 +308,142 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
 obj.list_records()</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.plot">
+<tt class="descname">plot</tt><big>(</big><em>axes=None</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>mflay=None</em>, <em>filename_base=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 3-D model output data in a specific location
+in LayerFile instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
+<blockquote>
+<div><p>List of matplotlib.pyplot.axis that will be used to plot 
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values.</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time.</p>
+</div></blockquote>
+<p><strong>pcolor</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
+plot will be plotted. (default is True)</p>
+</div></blockquote>
+<p><strong>colorbar</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</div></blockquote>
+<p><strong>contour</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</div></blockquote>
+<p><strong>clabel</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</div></blockquote>
+<p><strong>grid</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : list</p>
+<blockquote>
+<div><p>List of unique values to be excluded from the plot.</p>
+</div></blockquote>
+<p><strong>mflay</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</div></blockquote>
+<p><strong>filename_base</strong> : str</p>
+<blockquote>
+<div><p>Base file name that will be used to automatically generate file 
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</div></blockquote>
+<p><strong>file_extension</strong> : str</p>
+<blockquote>
+<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s">&#39;test.hds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>mflay=None</em>, <em>attrib_name='lf_data'</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Export model output data to a shapefile at a specific location</dt>
+<dd>in LayerFile instance.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values.</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time.</p>
+</div></blockquote>
+<p><strong>mflay</strong> : integer</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then layer 1
+will be written</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s">&#39;test.hds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_heads_sp6.shp&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="flopy.utils.binaryfile.UcnFile">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">UcnFile</tt><big>(</big><em>filename</em>, <em>text='concentration'</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">UcnFile</tt><big>(</big><em>filename</em>, <em>text='concentration'</em>, <em>precision='single'</em>, <em>verbose=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>UcnFile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -327,6 +486,41 @@ the corresponding data array.</p>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.close" title="flopy.utils.binaryfile.UcnFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
+<td>Close the file handle.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_alldata" title="flopy.utils.binaryfile.UcnFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([mflay,&nbsp;nodata])</td>
+<td>Get all of the data from the file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_data" title="flopy.utils.binaryfile.UcnFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([kstpkper,&nbsp;idx,&nbsp;totim,&nbsp;mflay])</td>
+<td>Get data from the file for the specified conditions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_kstpkper" title="flopy.utils.binaryfile.UcnFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
+<td>Get a list of unique stress periods and time steps in the file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_times" title="flopy.utils.binaryfile.UcnFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
+<td>Get a list of unique times in the file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_ts" title="flopy.utils.binaryfile.UcnFile.get_ts"><tt class="xref py py-obj docutils literal"><span class="pre">get_ts</span></tt></a>(idx)</td>
+<td>Get a time series from the binary file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.list_records" title="flopy.utils.binaryfile.UcnFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
+<td>Print a list of all of the records in the file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.plot" title="flopy.utils.binaryfile.UcnFile.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([axes,&nbsp;kstpkper,&nbsp;totim,&nbsp;mflay,&nbsp;...])</td>
+<td>Plot 3-D model output data in a specific location</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.to_shapefile" title="flopy.utils.binaryfile.UcnFile.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;kstpkper,&nbsp;totim,&nbsp;...])</td>
+<td>Export model output data to a shapefile at a specific location  in LayerFile instance.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.close" title="Permalink to this definition">¶</a></dt>
@@ -366,7 +560,7 @@ has size (ntimes, nrow, ncol) if mlay is specified.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>kstpkper=(0</em>, <em>0)</em>, <em>idx=None</em>, <em>totim=0</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_data</tt><big>(</big><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>mflay=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -401,6 +595,10 @@ all layers will be included. (Default is None.)</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry
+Examples
+&#8212;&#8212;&#8211;</p>
 </dd></dl>
 
 <dl class="method">
@@ -477,11 +675,142 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
 obj.list_records()</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.plot">
+<tt class="descname">plot</tt><big>(</big><em>axes=None</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>mflay=None</em>, <em>filename_base=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 3-D model output data in a specific location
+in LayerFile instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
+<blockquote>
+<div><p>List of matplotlib.pyplot.axis that will be used to plot 
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values.</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time.</p>
+</div></blockquote>
+<p><strong>pcolor</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
+plot will be plotted. (default is True)</p>
+</div></blockquote>
+<p><strong>colorbar</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</div></blockquote>
+<p><strong>contour</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</div></blockquote>
+<p><strong>clabel</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</div></blockquote>
+<p><strong>grid</strong> : bool</p>
+<blockquote>
+<div><p>Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : list</p>
+<blockquote>
+<div><p>List of unique values to be excluded from the plot.</p>
+</div></blockquote>
+<p><strong>mflay</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</div></blockquote>
+<p><strong>filename_base</strong> : str</p>
+<blockquote>
+<div><p>Base file name that will be used to automatically generate file 
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</div></blockquote>
+<p><strong>file_extension</strong> : str</p>
+<blockquote>
+<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s">&#39;test.hds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>mflay=None</em>, <em>attrib_name='lf_data'</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Export model output data to a shapefile at a specific location</dt>
+<dd>in LayerFile instance.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values.</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time.</p>
+</div></blockquote>
+<p><strong>mflay</strong> : integer</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then layer 1
+will be written</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s">&#39;test.hds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_heads_sp6.shp&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="flopy.utils.binaryfile.CellBudgetFile">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">CellBudgetFile</tt><big>(</big><em>filename</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryfile.</tt><tt class="descname">CellBudgetFile</tt><big>(</big><em>filename</em>, <em>precision='single'</em>, <em>verbose=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>CellBudgetFile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -511,6 +840,41 @@ obj.list_records()</p>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.close" title="flopy.utils.binaryfile.CellBudgetFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
+<td>Close the file handle</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.create3D" title="flopy.utils.binaryfile.CellBudgetFile.create3D"><tt class="xref py py-obj docutils literal"><span class="pre">create3D</span></tt></a>(data,&nbsp;nlay,&nbsp;nrow,&nbsp;ncol)</td>
+<td>Convert a dictionary of {node: q, ...} into a numpy masked array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_data" title="flopy.utils.binaryfile.CellBudgetFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([idx,&nbsp;kstpkper,&nbsp;totim,&nbsp;text,&nbsp;...])</td>
+<td>get data from the budget file.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_kstpkper" title="flopy.utils.binaryfile.CellBudgetFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
+<td>Get a list of unique stress periods and time steps in the file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_nrecords" title="flopy.utils.binaryfile.CellBudgetFile.get_nrecords"><tt class="xref py py-obj docutils literal"><span class="pre">get_nrecords</span></tt></a>()</td>
+<td>Return the number of records in the file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_record" title="flopy.utils.binaryfile.CellBudgetFile.get_record"><tt class="xref py py-obj docutils literal"><span class="pre">get_record</span></tt></a>(idx[,&nbsp;full3D,&nbsp;verbose])</td>
+<td>Get a single data record from the budget file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_times" title="flopy.utils.binaryfile.CellBudgetFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
+<td>Get a list of unique times in the file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.list_records" title="flopy.utils.binaryfile.CellBudgetFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
+<td>Print a list of all of the records in the file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.unique_record_names" title="flopy.utils.binaryfile.CellBudgetFile.unique_record_names"><tt class="xref py py-obj docutils literal"><span class="pre">unique_record_names</span></tt></a>()</td>
+<td>Get a list of unique record names in the file</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.close" title="Permalink to this definition">¶</a></dt>
@@ -729,12 +1093,6 @@ array of size (nlay, nrow, ncol) for those list-style
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfreadnam.html"
-                        title="previous chapter">flopy.utils.mfreadnam Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="util_array.html"
-                        title="next chapter">flopy.utils.util_array Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -761,16 +1119,7 @@ array of size (nlay, nrow, ncol) for those list-style
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="util_array.html" title="flopy.utils.util_array Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

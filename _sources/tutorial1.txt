@@ -137,7 +137,7 @@ Now that we have successfully built and run our MODFLOW model, we can look at th
 
 If everything has worked properly, you should see the following head contours.
 
-.. figure:: _images/tutorial1fig1.png
+.. figure:: _static/tutorial1fig1.png
    :alt: head contours in first layer
    :scale: 100 %
    :align: left

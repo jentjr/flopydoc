@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mt Module &mdash; flopy 3.1 documentation</title>
+    <title>flopy.mt3d.mt Module &mdash; flopy 3.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1',
+        VERSION:     '3.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.1 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.seawat.swt Module" href="swt.html" />
-    <link rel="prev" title="flopy.modpath.mp Module" href="mp.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,16 +50,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="swt.html" title="flopy.seawat.swt Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mp.html" title="flopy.modpath.mp Module"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -78,6 +67,32 @@
 <em class="property">class </em><tt class="descclassname">flopy.mt3d.mt.</tt><tt class="descname">Mt3dList</tt><big>(</big><em>model</em>, <em>extension='list'</em>, <em>listunit=7</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList" title="Permalink to this definition">¶</a></dt>
 <dd><p>List package class</p>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dList.load" title="flopy.mt3d.mt.Mt3dList.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(model,&nbsp;pack_type,&nbsp;f[,&nbsp;nper,&nbsp;pop_key_list])</td>
+<td>The load method has not been implemented for this package.</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mt.Mt3dList.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList.load" title="Permalink to this definition">¶</a></dt>
@@ -90,7 +105,126 @@
 <dt id="flopy.mt3d.mt.Mt3dms">
 <em class="property">class </em><tt class="descclassname">flopy.mt3d.mt.</tt><tt class="descname">Mt3dms</tt><big>(</big><em>modelname='mt3dmstest'</em>, <em>namefile_ext='nam'</em>, <em>modflowmodel=None</em>, <em>ftlfilename=None</em>, <em>model_ws=None</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>listunit=7</em>, <em>exe_name='mt3dms.exe'</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms" title="Permalink to this definition">¶</a></dt>
 <dd><p>MT3DMS base class</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">adv</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">btn</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">dsp</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">gcg</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">mf</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.name" title="flopy.mt3d.mt.Mt3dms.name"><tt class="xref py py-obj docutils literal"><span class="pre">name</span></tt></a></td>
+<td>Get model name</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">rct</span></tt></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">ssm</span></tt></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.add_external" title="flopy.mt3d.mt.Mt3dms.add_external"><tt class="xref py py-obj docutils literal"><span class="pre">add_external</span></tt></a>(fname,&nbsp;unit[,&nbsp;binflag])</td>
+<td>Assign an external array so that it will be listed as a DATA or DATA(BINARY) entry in the name file.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.add_package" title="flopy.mt3d.mt.Mt3dms.add_package"><tt class="xref py py-obj docutils literal"><span class="pre">add_package</span></tt></a>(p)</td>
+<td>Add a package.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.add_pop_key_list" title="flopy.mt3d.mt.Mt3dms.add_pop_key_list"><tt class="xref py py-obj docutils literal"><span class="pre">add_pop_key_list</span></tt></a>(key)</td>
+<td>Add a external file unit number to a list that will be used to remove model output (typically binary) files from ext_unit_dict.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.assign_external" title="flopy.mt3d.mt.Mt3dms.assign_external"><tt class="xref py py-obj docutils literal"><span class="pre">assign_external</span></tt></a>(num,&nbsp;prefix)</td>
+<td>Assign external file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.build_array_name" title="flopy.mt3d.mt.Mt3dms.build_array_name"><tt class="xref py py-obj docutils literal"><span class="pre">build_array_name</span></tt></a>(num,&nbsp;prefix)</td>
+<td>Build array name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.change_model_ws" title="flopy.mt3d.mt.Mt3dms.change_model_ws"><tt class="xref py py-obj docutils literal"><span class="pre">change_model_ws</span></tt></a>([new_pth])</td>
+<td>Change the model work space.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_name" title="flopy.mt3d.mt.Mt3dms.get_name"><tt class="xref py py-obj docutils literal"><span class="pre">get_name</span></tt></a>()</td>
+<td>Get model name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_name_file_entries" title="flopy.mt3d.mt.Mt3dms.get_name_file_entries"><tt class="xref py py-obj docutils literal"><span class="pre">get_name_file_entries</span></tt></a>()</td>
+<td>Get a string representation of the name file.</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_ncomp</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_package" title="flopy.mt3d.mt.Mt3dms.get_package"><tt class="xref py py-obj docutils literal"><span class="pre">get_package</span></tt></a>(name)</td>
+<td>Get a package.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_package_list" title="flopy.mt3d.mt.Mt3dms.get_package_list"><tt class="xref py py-obj docutils literal"><span class="pre">get_package_list</span></tt></a>()</td>
+<td>Get a list of all the package names.</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getadv</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getbtn</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getdsp</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getgcg</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getmf</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getrct</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getssm</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">next_ext_unit</span></tt>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.remove_external" title="flopy.mt3d.mt.Mt3dms.remove_external"><tt class="xref py py-obj docutils literal"><span class="pre">remove_external</span></tt></a>([fname,&nbsp;unit])</td>
+<td>Remove an external file from the model by specifying either the file name or the unit number.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.remove_package" title="flopy.mt3d.mt.Mt3dms.remove_package"><tt class="xref py py-obj docutils literal"><span class="pre">remove_package</span></tt></a>(pname)</td>
+<td>Remove a package from this model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.run_model" title="flopy.mt3d.mt.Mt3dms.run_model"><tt class="xref py py-obj docutils literal"><span class="pre">run_model</span></tt></a>([silent,&nbsp;pause,&nbsp;report])</td>
+<td>This method will run the model using subprocess.Popen.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.set_exename" title="flopy.mt3d.mt.Mt3dms.set_exename"><tt class="xref py py-obj docutils literal"><span class="pre">set_exename</span></tt></a>(exe_name)</td>
+<td>Set the name of the executable.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.set_name" title="flopy.mt3d.mt.Mt3dms.set_name"><tt class="xref py py-obj docutils literal"><span class="pre">set_name</span></tt></a>(value)</td>
+<td>Set model name</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.write_input" title="flopy.mt3d.mt.Mt3dms.write_input"><tt class="xref py py-obj docutils literal"><span class="pre">write_input</span></tt></a>([SelPackList])</td>
+<td>Write the input.</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_name_file</span></tt>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.add_external">
 <tt class="descname">add_external</tt><big>(</big><em>fname</em>, <em>unit</em>, <em>binflag=False</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.add_external" title="Permalink to this definition">¶</a></dt>
@@ -365,13 +499,14 @@ file name or the unit number.</p>
 <blockquote>
 <div><p>Pause upon completion (the default is False).</p>
 </div></blockquote>
-<p><strong>report</strong> : string, optional</p>
+<p><strong>report</strong> : boolean, optional</p>
 <blockquote>
-<div><p>Name of file to store stdout. (default is None).</p>
+<div><p>Save stdout lines to a list (buff) which is returned 
+by the method . (the default is False).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>(success, buff)</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(success, buff)</p>
 <p><strong>success</strong> : boolean</p>
 <p class="last"><strong>buff</strong> : list of lines of stdout</p>
 </td>
@@ -436,12 +571,6 @@ file name or the unit number.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mp.html"
-                        title="previous chapter">flopy.modpath.mp Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="swt.html"
-                        title="next chapter">flopy.seawat.swt Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -468,16 +597,7 @@ file name or the unit number.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="swt.html" title="flopy.seawat.swt Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mp.html" title="flopy.modpath.mp Module"
-             >previous</a> |</li>
-        <li><a href="index.html">flopy 3.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
