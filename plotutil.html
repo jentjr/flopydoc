@@ -126,7 +126,53 @@ is None, then the concentration will be calculated for all layers.
 <dl class="function">
 <dt id="flopy.plot.plotutil.cell_value_points">
 <tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">cell_value_points</tt><big>(</big><em>pts</em>, <em>xedge</em>, <em>yedge</em>, <em>vdata</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.cell_value_points" title="Permalink to this definition">¶</a></dt>
-<dd><p>How about some doc strings</p>
+<dd><p>Intersect a list of polyline vertices with a rectilinear MODFLOW
+grid. Vertices at the intersection of the polyline with the grid
+cell edges is returned. Optionally the original polyline vertices
+are returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pts</strong> : list</p>
+<blockquote>
+<div><p>A list of x, y points and polyline length to extract defining the
+vertices of a polyline that</p>
+</div></blockquote>
+<p><strong>xedge</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>x-coordinate of the edge of each MODFLOW column. The shape of xedge is
+(NCOL + 1). If xedge is not a numpy.ndarray it is converted to a
+numpy.ndarray.</p>
+</div></blockquote>
+<p><strong>yedge</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>y-coordinate of the edge of each MODFLOW row. The shape of yedge is
+(NROW + 1). If yedge is not a numpy.ndarray it is converted to a
+numpy.ndarray.</p>
+</div></blockquote>
+<p><strong>vdata</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Data (i.e., head, hk, etc.) for a rectilinear MODFLOW model grid. The
+shape of vdata is (NROW, NCOL). If vdata is not a numpy.ndarray it is
+converted to a numpy.ndarray.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vcell</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>numpy.ndarray of of data values from the vdata numpy.ndarray at x- and
+y-coordinate locations in pts.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vcell</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">plotutil</span><span class="o">.</span><span class="n">cell_value_points</span><span class="p">(</span><span class="n">xpts</span><span class="p">,</span> <span class="n">xedge</span><span class="p">,</span> <span class="n">yedge</span><span class="p">,</span> <span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -177,9 +223,98 @@ this function so that the z axis is positive in the upward direction.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="flopy.plot.plotutil.findrowcolumn">
+<tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">findrowcolumn</tt><big>(</big><em>pt</em>, <em>xedge</em>, <em>yedge</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.findrowcolumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the MODFLOW cell containing the x- and y- point provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pt</strong> : list or tuple</p>
+<blockquote>
+<div><p>A list or tuple containing a x- and y- coordinate</p>
+</div></blockquote>
+<p><strong>xedge</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>x-coordinate of the edge of each MODFLOW column. xedge is dimensioned
+to NCOL + 1. If xedge is not a numpy.ndarray it is converted to a
+numpy.ndarray.</p>
+</div></blockquote>
+<p><strong>yedge</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>y-coordinate of the edge of each MODFLOW row. yedge is dimensioned
+to NROW + 1. If yedge is not a numpy.ndarray it is converted to a
+numpy.ndarray.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>irow, jcol</strong> : int</p>
+<blockquote class="last">
+<div><p>Row and column location containing x- and y- point passed to function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">irow</span><span class="p">,</span> <span class="n">jcol</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">plotutil</span><span class="o">.</span><span class="n">findrowcolumn</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">xedge</span><span class="p">,</span> <span class="n">yedge</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="flopy.plot.plotutil.line_intersect_grid">
-<tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">line_intersect_grid</tt><big>(</big><em>ptsin</em>, <em>xedge</em>, <em>yedge</em>, <em>returnVertices=False</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.line_intersect_grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>How about some doc strings</p>
+<tt class="descclassname">flopy.plot.plotutil.</tt><tt class="descname">line_intersect_grid</tt><big>(</big><em>ptsin</em>, <em>xedge</em>, <em>yedge</em>, <em>returnvertices=False</em><big>)</big><a class="headerlink" href="#flopy.plot.plotutil.line_intersect_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Intersect a list of polyline vertices with a rectilinear MODFLOW
+grid. Vertices at the intersection of the polyline with the grid
+cell edges is returned. Optionally the original polyline vertices
+are returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ptsin</strong> : list</p>
+<blockquote>
+<div><p>A list of x, y points defining the vertices of a polyline that will be
+intersected with the rectilinear MODFLOW grid</p>
+</div></blockquote>
+<p><strong>xedge</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>x-coordinate of the edge of each MODFLOW column. xedge is dimensioned
+to NCOL + 1. If xedge is not a numpy.ndarray it is converted to a
+numpy.ndarray.</p>
+</div></blockquote>
+<p><strong>yedge</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>y-coordinate of the edge of each MODFLOW row. yedge is dimensioned
+to NROW + 1. If yedge is not a numpy.ndarray it is converted to a
+numpy.ndarray.</p>
+</div></blockquote>
+<p><strong>returnvertices: bool</strong></p>
+<blockquote>
+<div><p>Return the original polyline vertices in the list of numpy.ndarray
+containing vertices resulting from intersection of the provided
+polygon and the MODFLOW model grid if returnvertices=True.
+(default is False).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>(x, y, dlen)</strong> : numpy.ndarray of tuples</p>
+<blockquote class="last">
+<div><p>numpy.ndarray of tuples containing the x, y, and segment length of the
+intersection of the provided polyline with the rectilinear MODFLOW
+grid.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ptsout</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">plotutil</span><span class="o">.</span><span class="n">line_intersect_grid</span><span class="p">(</span><span class="n">ptsin</span><span class="p">,</span> <span class="n">xedge</span><span class="p">,</span> <span class="n">yedge</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">

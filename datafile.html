@@ -292,36 +292,6 @@ These are zero-based kstp and kper values.</p>
 <blockquote>
 <div><p>The simulation time.</p>
 </div></blockquote>
-<p><strong>pcolor</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
-plot will be plotted. (default is True)</p>
-</div></blockquote>
-<p><strong>colorbar</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if a color bar will be added to
-the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
-(default is False)</p>
-</div></blockquote>
-<p><strong>contour</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.contour
-plot will be plotted. (default is False)</p>
-</div></blockquote>
-<p><strong>clabel</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.clabel
-will be plotted. Only used if contour=True. (default is False)</p>
-</div></blockquote>
-<p><strong>grid</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if the model grid will be plotted
-on the figure. (default is False)</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : list</p>
-<blockquote>
-<div><p>List of unique values to be excluded from the plot.</p>
-</div></blockquote>
 <p><strong>mflay</strong> : int</p>
 <blockquote>
 <div><p>MODFLOW zero-based layer number to return.  If None, then all
@@ -329,14 +299,42 @@ all layers will be included. (default is None)</p>
 </div></blockquote>
 <p><strong>filename_base</strong> : str</p>
 <blockquote>
-<div><p>Base file name that will be used to automatically generate file 
+<div><p>Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </div></blockquote>
-<p><strong>file_extension</strong> : str</p>
+<p><strong>**kwargs</strong> : dict</p>
 <blockquote>
-<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+<div><dl class="docutils">
+<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+plot will be plotted. (default is True)</p>
+</dd>
+<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</dd>
+<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</dd>
+<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</dd>
+<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</dd>
+<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</dd>
+</dl>
 </div></blockquote>
 </td>
 </tr>
@@ -382,6 +380,10 @@ These are zero-based kstp and kper values.</p>
 <blockquote>
 <div><p>MODFLOW zero-based layer number to return.  If None, then layer 1
 will be written</p>
+</div></blockquote>
+<p><strong>attrib_name</strong> : str</p>
+<blockquote>
+<div><p>Base name of attribute columns. (default is &#8216;lf_data&#8217;)</p>
 </div></blockquote>
 </td>
 </tr>

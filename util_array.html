@@ -487,52 +487,54 @@ lot of defense here, so we can make assumptions later</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>title</strong> : str</p>
 <blockquote>
-<div><p>List of matplotlib.pyplot.axis that will be used to plot 
-data for each layer. If axes=None axes will be generated.
-(default is None)</p>
-</div></blockquote>
-<p><strong>pcolor</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
-plot will be plotted. (default is True)</p>
-</div></blockquote>
-<p><strong>colorbar</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if a color bar will be added to
-the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
-(default is False)</p>
-</div></blockquote>
-<p><strong>contour</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.contour
-plot will be plotted. (default is False)</p>
-</div></blockquote>
-<p><strong>clabel</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.clabel
-will be plotted. Only used if contour=True. (default is False)</p>
-</div></blockquote>
-<p><strong>grid</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if the model grid will be plotted
-on the figure. (default is False)</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : list</p>
-<blockquote>
-<div><p>List of unique values to be excluded from the plot.</p>
+<div><p>Plot title. If a plot title is not provide one will be
+created based on data name (self.name). (default is None)</p>
 </div></blockquote>
 <p><strong>filename_base</strong> : str</p>
 <blockquote>
-<div><p>Base file name that will be used to automatically generate file 
+<div><p>Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </div></blockquote>
-<p><strong>file_extension</strong> : str</p>
+<p><strong>**kwargs</strong> : dict</p>
 <blockquote>
-<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+<div><dl class="docutils">
+<dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
+<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</dd>
+<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+plot will be plotted. (default is True)</p>
+</dd>
+<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</dd>
+<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</dd>
+<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</dd>
+<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</dd>
+<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</dd>
+</dl>
 </div></blockquote>
 </td>
 </tr>
@@ -699,57 +701,54 @@ ext_filename is reset to value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
-<blockquote>
-<div><p>List of matplotlib.pyplot.axis that will be used to plot 
-data for each layer. If axes=None axes will be generated.
-(default is None)</p>
-</div></blockquote>
-<p><strong>pcolor</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.pcolormesh 
-plot will be plotted. (default is True)</p>
-</div></blockquote>
-<p><strong>colorbar</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if a color bar will be added to
-the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
-(default is False)</p>
-</div></blockquote>
-<p><strong>contour</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.contour
-plot will be plotted. (default is False)</p>
-</div></blockquote>
-<p><strong>clabel</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if matplotlib.pyplot.clabel
-will be plotted. Only used if contour=True. (default is False)</p>
-</div></blockquote>
-<p><strong>grid</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to determine if the model grid will be plotted
-on the figure. (default is False)</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : list</p>
-<blockquote>
-<div><p>List of unique values to be excluded from the plot.</p>
-</div></blockquote>
-<p><strong>mflay</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mflay</strong> : int</p>
 <blockquote>
 <div><p>MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </div></blockquote>
 <p><strong>filename_base</strong> : str</p>
 <blockquote>
-<div><p>Base file name that will be used to automatically generate file 
+<div><p>Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </div></blockquote>
-<p><strong>file_extension</strong> : str</p>
+<p><strong>**kwargs</strong> : dict</p>
 <blockquote>
-<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+<div><dl class="docutils">
+<dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
+<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</dd>
+<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+plot will be plotted. (default is True)</p>
+</dd>
+<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</dd>
+<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</dd>
+<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</dd>
+<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</dd>
+<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</dd>
+</dl>
 </div></blockquote>
 </td>
 </tr>
