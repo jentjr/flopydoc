@@ -37,7 +37,7 @@ git clone git@github.com:modflowpy/flopydoc.git html
 
 git checkout -b gh-pages remotes/origin/gh-pages
 
-  * At this point, the directory structure should match the directory structure that was used to create the documentation.  Changes can now be made to flopy3.git by editing the files in that folder and running the following command from flopy3.git/docs:
+  * At this point, the directory structure should match the directory structure that was used to create the documentation.  Changes can now be made to flopydoc.git by editing the files in that folder and running the following command from flopydoc.git/docs:
 
 make html
 
