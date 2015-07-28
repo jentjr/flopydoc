@@ -89,6 +89,11 @@ this package will be added.</p>
 <blockquote>
 <div><p>a numpy dtype describing the columns of the list data</p>
 </div></blockquote>
+<p><strong>name</strong> : str</p>
+<blockquote>
+<div><p>Unique name for package stress_period_data. Identical to the package
+name.</p>
+</div></blockquote>
 <p><strong>data</strong> : varies</p>
 <blockquote class="last">
 <div><p>the data of the transient list (optional). (the default is None)</p>
@@ -131,6 +136,165 @@ this package will be added.</p>
 <dt id="flopy.utils.util_list.mflist.get_indices">
 <tt class="descname">get_indices</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.get_indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>a helper function for plotting - get all unique indices</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_list.mflist.plot">
+<tt class="descname">plot</tt><big>(</big><em>pack</em>, <em>key</em>, <em>names</em>, <em>kper</em>, <em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot stress period boundary condition (mflist) data for a specified
+stress period</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pack</strong> : Package object</p>
+<blockquote>
+<div><p>flopy package object</p>
+</div></blockquote>
+<p><strong>key</strong> : str</p>
+<blockquote>
+<div><p>mflist dictionary key</p>
+</div></blockquote>
+<p><strong>names</strong> : list</p>
+<blockquote>
+<div><p>List of names for figure titles</p>
+</div></blockquote>
+<p><strong>kper</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based stress period number to return. (default is zero)</p>
+</div></blockquote>
+<p><strong>filename_base</strong> : str</p>
+<blockquote>
+<div><p>Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</div></blockquote>
+<p><strong>file_extension</strong> : str</p>
+<blockquote>
+<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</div></blockquote>
+<p><strong>mflay</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dict</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
+<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</dd>
+<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+plot will be plotted. (default is True)</p>
+</dd>
+<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</dd>
+<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</dd>
+<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</dd>
+<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</dd>
+<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis is returned.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_list.mflist.to_array">
+<tt class="descname">to_array</tt><big>(</big><em>kper=0</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.to_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert stress period boundary condition (mflist) data for a
+specified stress period to a 3-D numpy array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kper</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based stress period number to return. (default is zero)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict of numpy.ndarrays</p>
+<blockquote class="last">
+<div><p>Dictionary of 3-D numpy arrays containing the stress period data for
+a selected stress period. The dictonary keys are the mflist dtype
+names for the stress period data (&#8216;cond&#8217;, &#8216;flux&#8217;, &#8216;bhead&#8217;, etc.).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">stress_period_data</span><span class="o">.</span><span class="n">to_array</span><span class="p">(</span><span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_list.mflist.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>kper=0</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export stress period boundary condition (mflist) data for a specified
+stress period</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+<p><strong>kper</strong> : int</p>
+<blockquote>
+<div><p>MODFLOW zero-based stress period number to return. (default is zero)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">,</span> <span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>

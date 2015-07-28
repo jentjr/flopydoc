@@ -157,10 +157,13 @@ then these will be calculated based on grid, coordinates, and rotation.</p>
 <tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_ibound" title="flopy.plot.map.ModelMap.plot_ibound"><tt class="xref py py-obj docutils literal"><span class="pre">plot_ibound</span></tt></a>([ibound,&nbsp;color_noflow,&nbsp;color_ch])</td>
 <td>Make a plot of ibound.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_pathline" title="flopy.plot.map.ModelMap.plot_pathline"><tt class="xref py py-obj docutils literal"><span class="pre">plot_pathline</span></tt></a>(pl,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_inactive" title="flopy.plot.map.ModelMap.plot_inactive"><tt class="xref py py-obj docutils literal"><span class="pre">plot_inactive</span></tt></a>([ibound,&nbsp;color_noflow])</td>
+<td>Make a plot of inactive cells.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_pathline" title="flopy.plot.map.ModelMap.plot_pathline"><tt class="xref py py-obj docutils literal"><span class="pre">plot_pathline</span></tt></a>(pl,&nbsp;**kwargs)</td>
 <td>Plot the MODPATH pathlines.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_shapefile" title="flopy.plot.map.ModelMap.plot_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">plot_shapefile</span></tt></a>(shp,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.map.ModelMap.plot_shapefile" title="flopy.plot.map.ModelMap.plot_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">plot_shapefile</span></tt></a>(shp,&nbsp;**kwargs)</td>
 <td>Plot a shapefile.</td>
 </tr>
 </tbody>
@@ -392,6 +395,32 @@ self.ml</p>
 <p><strong>color_ch</strong> : string</p>
 <blockquote>
 <div><p>Color for constant heads (Default is &#8216;blue&#8217;.)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.map.ModelMap.plot_inactive">
+<tt class="descname">plot_inactive</tt><big>(</big><em>ibound=None</em>, <em>color_noflow='black'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_inactive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a plot of inactive cells.  If not specified, then pull ibound from the
+self.ml</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>ibound array to plot.  (Default is ibound in &#8216;BAS6&#8217; package.)</p>
+</div></blockquote>
+<p><strong>color_noflow</strong> : string</p>
+<blockquote>
+<div><p>(Default is &#8216;black&#8217;)</p>
 </div></blockquote>
 </td>
 </tr>
