@@ -68,7 +68,7 @@ the ModflowDis class as <cite>flopy.modflow.ModflowDis</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfdis.ModflowDis">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdis.</tt><tt class="descname">ModflowDis</tt><big>(</big><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em>, <em>start_datetime=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdis.</tt><tt class="descname">ModflowDis</tt><big>(</big><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Discretization Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -402,11 +402,14 @@ all layers will be included. (default is None)</p>
 <dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
 </dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">mflist dictionary key. (default is None)</p>
+</dd>
 </dl>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
 <blockquote class="last">
 <div><p>Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>

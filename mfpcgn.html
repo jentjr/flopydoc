@@ -80,11 +80,11 @@ Only programmed to work with the default values; may need work for other options
 <tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfpcgn.ModflowPcgn.load" title="flopy.modflow.mfpcgn.ModflowPcgn.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;ext_unit_dict])</td>
 <td>Load an existing package.</td>
 </tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
-<td></td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfpcgn.ModflowPcgn.plot" title="flopy.modflow.mfpcgn.ModflowPcgn.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
+<td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
 </tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
-<td></td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile" title="flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
+<td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
 </tr>
 <tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
 <td></td>
@@ -130,6 +130,88 @@ constructed using the function
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pcgn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcgn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.pcgn&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfpcgn.ModflowPcgn.plot">
+<tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)
+package input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">mflist dictionary key. (default is None)</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
+<blockquote class="last">
+<div><p>Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
+<dd>attribute for each layer in each data array</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>

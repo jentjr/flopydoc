@@ -20,3 +20,4 @@ Ipython Notebooks
 
 `flopy3_MapExample: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/Notebooks/flopy3_MapExample.ipynb>`_ an Ipython notebook for plotting maps and cross sections.
 
+`flopy3_PlotArrayExample: <http://nbviewer.ipython.org/github/modflowpy/flopy/blob/master/examples/Notebooks/flopy3_PlotArrayExample.ipynb>`_ an Ipython notebook for plotting model arrays.

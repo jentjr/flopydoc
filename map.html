@@ -74,7 +74,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.pyplot axis</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sr</strong> : flopy.utils.reference.SpatialReference</p>
+<blockquote>
+<div><p>The spatial reference class (Default is None)</p>
+</div></blockquote>
+<p><strong>ax</strong> : matplotlib.pyplot axis</p>
 <blockquote>
 <div><p>The plot axis.  If not provided it, plt.gca() will be used.
 If there is not a current axis then a new one will be created.</p>
@@ -114,6 +118,14 @@ then these will be calculated based on grid, coordinates, and rotation.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>ModelMap must know the position and rotation of the grid in order to make
+the plot.  This information is contained in the SpatialReference class
+(sr), which can be passed.  If sr is None, then it looks for sr in dis.
+If dis is None, then it looks for sr in model.dis.  If all of these
+arguments are none, then it uses xul, yul, and rotation.  If none of these
+arguments are provided, then it puts the lower-left-hand corner of the
+grid at (0, 0).</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="longtable docutils">
 <colgroup>

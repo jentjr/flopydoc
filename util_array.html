@@ -247,6 +247,10 @@ plot will be plotted. (default is True)</p>
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
 </dd>
+<dt>inactive <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a black overlay in inactive
+cells in a layer will be displayed. (default is True)</p>
+</dd>
 <dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
 plot will be plotted. (default is False)</p>
@@ -262,8 +266,10 @@ on the figure. (default is False)</p>
 <dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
 <dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
-<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return</p>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. If
+kper=&#8217;all&#8217; then data for all stress period will be
+extracted. (default is zero).</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -458,7 +464,7 @@ ext_unit_dict has been initialized from the NAM file</p>
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.util_2d.load_txt">
 <em class="property">static </em><tt class="descname">load_txt</tt><big>(</big><em>shape</em>, <em>file_in</em>, <em>dtype</em>, <em>fmtin</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.util_2d.load_txt" title="Permalink to this definition">¶</a></dt>
-<dd><p>load a (possibly wrapped format) array from a file 
+<dd><p>load a (possibly wrapped format) array from a file
 (self.__value) and casts to the proper type (self.dtype)
 made static to support the load functionality 
 this routine now supports fixed format arrays where the numbers
@@ -520,6 +526,10 @@ plot will be plotted. (default is True)</p>
 <dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
+</dd>
+<dt>inactive <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a black overlay in inactive
+cells in a layer will be displayed. (default is True)</p>
 </dd>
 <dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
@@ -735,6 +745,10 @@ plot will be plotted. (default is True)</p>
 <dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
+</dd>
+<dt>inactive <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a black overlay in inactive
+cells in a layer will be displayed. (default is True)</p>
 </dd>
 <dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
