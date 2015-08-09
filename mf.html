@@ -196,26 +196,32 @@ that are created with write_model. (the default is &#8216;modflowtest&#8217;)</p
 <tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.load" title="flopy.modflow.mf.Modflow.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f[,&nbsp;version,&nbsp;exe_name,&nbsp;verbose,&nbsp;...])</td>
 <td>Load an existing model.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.next_ext_unit" title="flopy.modflow.mf.Modflow.next_ext_unit"><tt class="xref py py-obj docutils literal"><span class="pre">next_ext_unit</span></tt></a>()</td>
+<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">load_results</span></tt>(**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.next_ext_unit" title="flopy.modflow.mf.Modflow.next_ext_unit"><tt class="xref py py-obj docutils literal"><span class="pre">next_ext_unit</span></tt></a>()</td>
 <td>Function to encapsulate next_ext_unit attribute</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.plot" title="flopy.modflow.mf.Modflow.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([SelPackList])</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.plot" title="flopy.modflow.mf.Modflow.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([SelPackList])</td>
 <td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.remove_external" title="flopy.modflow.mf.Modflow.remove_external"><tt class="xref py py-obj docutils literal"><span class="pre">remove_external</span></tt></a>([fname,&nbsp;unit])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.remove_external" title="flopy.modflow.mf.Modflow.remove_external"><tt class="xref py py-obj docutils literal"><span class="pre">remove_external</span></tt></a>([fname,&nbsp;unit])</td>
 <td>Remove an external file from the model by specifying either the file name or the unit number.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.remove_package" title="flopy.modflow.mf.Modflow.remove_package"><tt class="xref py py-obj docutils literal"><span class="pre">remove_package</span></tt></a>(pname)</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.remove_package" title="flopy.modflow.mf.Modflow.remove_package"><tt class="xref py py-obj docutils literal"><span class="pre">remove_package</span></tt></a>(pname)</td>
 <td>Remove a package from this model</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.run_model" title="flopy.modflow.mf.Modflow.run_model"><tt class="xref py py-obj docutils literal"><span class="pre">run_model</span></tt></a>([silent,&nbsp;pause,&nbsp;report])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.run_model" title="flopy.modflow.mf.Modflow.run_model"><tt class="xref py py-obj docutils literal"><span class="pre">run_model</span></tt></a>([silent,&nbsp;pause,&nbsp;report])</td>
 <td>This method will run the model using subprocess.Popen.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.set_exename" title="flopy.modflow.mf.Modflow.set_exename"><tt class="xref py py-obj docutils literal"><span class="pre">set_exename</span></tt></a>(exe_name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.set_exename" title="flopy.modflow.mf.Modflow.set_exename"><tt class="xref py py-obj docutils literal"><span class="pre">set_exename</span></tt></a>(exe_name)</td>
 <td>Set the name of the executable.</td>
 </tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">set_name</span></tt>(value)</td>
+<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">set_name</span></tt>(value)</td>
 <td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.to_shapefile" title="flopy.modflow.mf.Modflow.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;package_names])</td>
+<td>Wrapper function for writing a shapefile for the model grid.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.Modflow.write_input" title="flopy.modflow.mf.Modflow.write_input"><tt class="xref py py-obj docutils literal"><span class="pre">write_input</span></tt></a>([SelPackList])</td>
 <td>Write the input.</td>
@@ -621,6 +627,39 @@ by the method . (the default is False).</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modflow.mf.Modflow.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>package_names=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper function for writing a shapefile for the model grid.  If package_names
+is not None, then search through the requested packages looking for arrays
+that can be added to the shapefile as attributes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>name of the shapefile to write</p>
+</div></blockquote>
+<p><strong>package_names</strong> : list of package names (e.g. [&#8220;dis&#8221;,&#8221;lpf&#8221;])</p>
+<blockquote>
+<div><p>Packages to export data arrays to shapefile. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">SelPackList</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modflow.mf.Modflow.write_input">
 <tt class="descname">write_input</tt><big>(</big><em>SelPackList=False</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.Modflow.write_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the input.</p>
@@ -662,7 +701,7 @@ by the method . (the default is False).</p>
 <tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.ModflowGlobal.plot" title="flopy.modflow.mf.ModflowGlobal.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
 <td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.ModflowGlobal.to_shapefile" title="flopy.modflow.mf.ModflowGlobal.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.ModflowGlobal.to_shapefile" title="flopy.modflow.mf.ModflowGlobal.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename)</td>
 <td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
 </tr>
 <tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
@@ -733,7 +772,7 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mf.ModflowGlobal.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowGlobal.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowGlobal.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
 <dd>attribute for each layer in each data array</dd>
@@ -783,7 +822,7 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mf.ModflowList.plot" title="flopy.modflow.mf.ModflowList.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
 <td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.ModflowList.to_shapefile" title="flopy.modflow.mf.ModflowList.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mf.ModflowList.to_shapefile" title="flopy.modflow.mf.ModflowList.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename)</td>
 <td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
 </tr>
 <tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
@@ -854,7 +893,7 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mf.ModflowList.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowList.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.modflow.mf.ModflowList.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
 <dd>attribute for each layer in each data array</dd>

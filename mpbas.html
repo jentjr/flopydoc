@@ -151,19 +151,13 @@ this package will be added.</p>
 <tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.getibound" title="flopy.modpath.mpbas.ModpathBas.getibound"><tt class="xref py py-obj docutils literal"><span class="pre">getibound</span></tt></a>()</td>
-<td>Return the ibound array.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.load" title="flopy.modpath.mpbas.ModpathBas.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(model,&nbsp;pack_type,&nbsp;f[,&nbsp;nper,&nbsp;pop_key_list])</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.load" title="flopy.modpath.mpbas.ModpathBas.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(model,&nbsp;pack_type,&nbsp;f[,&nbsp;nper,&nbsp;pop_key_list])</td>
 <td>The load method has not been implemented for this package.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.plot" title="flopy.modpath.mpbas.ModpathBas.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.plot" title="flopy.modpath.mpbas.ModpathBas.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
 <td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.setibound" title="flopy.modpath.mpbas.ModpathBas.setibound"><tt class="xref py py-obj docutils literal"><span class="pre">setibound</span></tt></a>(ibound)</td>
-<td>Set the ibound array.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.to_shapefile" title="flopy.modpath.mpbas.ModpathBas.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modpath.mpbas.ModpathBas.to_shapefile" title="flopy.modpath.mpbas.ModpathBas.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename)</td>
 <td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
 </tr>
 <tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
@@ -174,42 +168,6 @@ this package will be added.</p>
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="flopy.modpath.mpbas.ModpathBas.getibound">
-<tt class="descname">getibound</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.getibound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the ibound array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray (nlay, nrow, ncol)</p>
-<blockquote class="last">
-<div><p>ibound object.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="flopy.modpath.mpbas.ModpathBas.ibound">
-<tt class="descname">ibound</tt><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.ibound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the ibound array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray (nlay, nrow, ncol)</p>
-<blockquote class="last">
-<div><p>ibound object.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="staticmethod">
 <dt id="flopy.modpath.mpbas.ModpathBas.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.load" title="Permalink to this definition">¶</a></dt>
@@ -269,14 +227,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.modpath.mpbas.ModpathBas.setibound">
-<tt class="descname">setibound</tt><big>(</big><em>ibound</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.setibound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the ibound array.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.modpath.mpbas.ModpathBas.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.modpath.mpbas.ModpathBas.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
 <dd>attribute for each layer in each data array</dd>

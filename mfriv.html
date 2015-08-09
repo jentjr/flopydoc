@@ -79,48 +79,54 @@ MODFLOW Guide</a>.</p>
 <div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
 this package will be added.</p>
 </div></blockquote>
-<p><strong>irivcb</strong> : int</p>
+<p><strong>ipakcb</strong> : int</p>
 <blockquote>
 <div><p>is a flag and a unit number. (the default is 0).</p>
 </div></blockquote>
-<p><strong>layer_row_column_data</strong> : list of records</p>
+<p><strong>stress_period_data</strong> : list of boundaries or</p>
 <blockquote>
-<div><p>In its most general form, this is a triple list of river records  The
-innermost list is the layer, row, column, and flux rate for a single
-river.  Then for a stress period, there can be a list of rivers.  Then
-for a simulation, there can be a separate list for each stress period.
-This gives the form of</p>
+<div><blockquote>
+<div><p>recarray of boundaries or
+dictionary of boundaries</p>
+</div></blockquote>
+<p>Each river cell is defined through definition of
+layer (int), row (int), column (int), stage (float), cond (float),
+rbot (float).
+The simplest form is a dictionary with a lists of boundaries for each
+stress period, where each list of boundaries itself is a list of
+boundaries. Indices of the dictionary are the numbers of the stress
+period. This gives the form of</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>lrcd = [</dt>
-<dd><blockquote class="first">
-<div><dl class="docutils">
-<dt>[  #stress period 1</dt>
-<dd><p class="first last">[l1, r1, c1, stg1, cond1, rbot1],
-[l2, r2, c2, stg2, cond2, rbot2],
-[l3, r3, c3, stg3, cond3, rbot3],
+<div><p>stress_period_data =
+{0: [</p>
+<blockquote>
+<div><p>[lay, row, col, stage, cond, rbot],
+[lay, row, col, stage, cond, rbot],
+[lay, row, col, stage, cond, rbot]
 ],</p>
-</dd>
-<dt>[  #stress period 2</dt>
-<dd><p class="first last">[l1, r1, c1, stg1, cond1, rbot1],
-[l2, r2, c2, stg2, cond2, rbot2],
-[l3, r3, c3, stg3, cond3, rbot3],
+</div></blockquote>
+<dl class="docutils">
+<dt>1:  [</dt>
+<dd><p class="first last">[lay, row, col, stage, cond, rbot],
+[lay, row, col, stage, cond, rbot],
+[lay, row, col, stage, cond, rbot]
 ], ...</p>
 </dd>
-<dt>[  #stress period kper</dt>
-<dd><p class="first last">[l1, r1, c1, stg1, cond1, rbot1],
-[l2, r2, c2, stg2, cond2, rbot2],
-[l3, r3, c3, stg3, cond3, rbot3],
-],</p>
+<dt>kper:</dt>
+<dd><p class="first last">[
+[lay, row, col, stage, cond, rbot],
+[lay, row, col, stage, cond, rbot],
+[lay, row, col, stage, cond, rbot]
+]</p>
 </dd>
 </dl>
+<p>}</p>
 </div></blockquote>
-<p class="last">]</p>
-</dd>
-</dl>
-</div></blockquote>
-<p>Note that if there are not records in layer_row_column_Q, then the last
-group of rivers will apply until the end of the simulation.</p>
+<p>Note that if the number of lists is smaller than the number of stress
+periods, then the last list of rivers will apply until the end of the
+simulation. Full details of all options to specify stress_period_data
+can be found in the flopy3 boundaries Notebook in the basic
+subdirectory of the examples directory</p>
 </div></blockquote>
 <p><strong>options</strong> : list of strings</p>
 <blockquote>
@@ -193,7 +199,7 @@ group of rivers will apply until the end of the simulation.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfriv.ModflowRiv.plot" title="flopy.modflow.mfriv.ModflowRiv.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
 <td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfriv.ModflowRiv.to_shapefile" title="flopy.modflow.mfriv.ModflowRiv.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfriv.ModflowRiv.to_shapefile" title="flopy.modflow.mfriv.ModflowRiv.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename)</td>
 <td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
 </tr>
 <tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
@@ -306,7 +312,7 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfriv.ModflowRiv.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfriv.ModflowRiv.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfriv.ModflowRiv.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
 <dd>attribute for each layer in each data array</dd>
