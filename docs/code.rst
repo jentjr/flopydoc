@@ -53,12 +53,16 @@ Contents:
    mfpcgn
    mfrch
    mfriv
+   mfsfr2
    mfsip
    mfsms
    mfsor
+   mfstr
+   mfsub
    mfswi
    mfswi2
    mfswr1
+   mfswt
    mfupw
    mfuzf1
    mfwel
@@ -101,6 +105,19 @@ Contents:
    :maxdepth: 2
 
    swtvdf
+   swtvsc
+
+
+MODFLOW-USG Packages
+--------------------
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   mfbct
+   mfdisu
 
 
 Model Utilities (including binary file readers)
@@ -117,6 +134,7 @@ Contents:
    binaryswrfile
    flopy_io
    formattedfile
+   mflistfile
    mfreadnam
    modpathfile
    reference
@@ -134,4 +152,26 @@ Contents:
    map
    crosssection
    plotutil
+
+
+Export Utilities
+----------------
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   netcdf
+   utils
+
+
+PEST Utilities
+--------------
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   templatewriter
+   tplarray
 

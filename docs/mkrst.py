@@ -13,7 +13,8 @@ print os.getcwd()
 #look through the following subdirectories, and grab all of the
 #modules that should be added to the sphinx documentation.
 flopypth = os.path.join('..', '..', '..', 'flopy3.git', 'flopy')
-pthlist = ['modflow', 'mt3d', 'seawat', 'modpath', 'utils', 'plot']
+pthlist = ['export', 'modflow', 'modpath', 'mt3d', 'pest', 'plot', 'seawat',
+           'utils']
 namelist = []
 for pth in pthlist:
     dirpth = os.path.join(flopypth, pth)
@@ -38,6 +39,7 @@ for name in namelist:
     prefix = name.strip().split('.')[2]
     fname = prefix + '.rst'
     if not os.path.exists(fname):
+        print('Creating new rst file: {}'.format(fname))
         f = open(fname, 'w')
         s = name + ' Module'
         f.write(s + '\n')

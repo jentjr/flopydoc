@@ -1,3 +1,5 @@
+   flopy.export.netcdf
+   flopy.export.utils
    flopy.modflow.mf
    flopy.modflow.mfaddoutsidefile
    flopy.modflow.mfbas
@@ -6,6 +8,7 @@
    flopy.modflow.mfchd
    flopy.modflow.mfde4
    flopy.modflow.mfdis
+   flopy.modflow.mfdisu
    flopy.modflow.mfdrn
    flopy.modflow.mfevt
    flopy.modflow.mfghb
@@ -20,6 +23,7 @@
    flopy.modflow.mfnwt
    flopy.modflow.mfoc
    flopy.modflow.mfoc88
+   flopy.modflow.mfoutput
    flopy.modflow.mfpar
    flopy.modflow.mfparbc
    flopy.modflow.mfpbc
@@ -29,16 +33,23 @@
    flopy.modflow.mfpval
    flopy.modflow.mfrch
    flopy.modflow.mfriv
+   flopy.modflow.mfsfr2
    flopy.modflow.mfsip
    flopy.modflow.mfsms
    flopy.modflow.mfsor
+   flopy.modflow.mfstr
+   flopy.modflow.mfsub
    flopy.modflow.mfswi
    flopy.modflow.mfswi2
    flopy.modflow.mfswr1
+   flopy.modflow.mfswt
    flopy.modflow.mfupw
    flopy.modflow.mfuzf1
    flopy.modflow.mfwel
    flopy.modflow.mfzon
+   flopy.modpath.mp
+   flopy.modpath.mpbas
+   flopy.modpath.mpsim
    flopy.mt3d.mt
    flopy.mt3d.mtadv
    flopy.mt3d.mtbtn
@@ -48,22 +59,24 @@
    flopy.mt3d.mtrct
    flopy.mt3d.mtssm
    flopy.mt3d.mttob
+   flopy.pest.params
+   flopy.pest.templatewriter
+   flopy.pest.tplarray
+   flopy.plot.crosssection
+   flopy.plot.map
+   flopy.plot.plotutil
    flopy.seawat.swt
    flopy.seawat.swtvdf
-   flopy.modpath.mp
-   flopy.modpath.mpbas
-   flopy.modpath.mpsim
+   flopy.seawat.swtvsc
    flopy.utils.binaryfile
    flopy.utils.binaryhydmodfile
    flopy.utils.binaryswrfile
    flopy.utils.datafile
    flopy.utils.flopy_io
    flopy.utils.formattedfile
+   flopy.utils.mflistfile
    flopy.utils.mfreadnam
    flopy.utils.modpathfile
    flopy.utils.reference
    flopy.utils.util_array
    flopy.utils.util_list
-   flopy.plot.crosssection
-   flopy.plot.map
-   flopy.plot.plotutil
