@@ -70,10 +70,11 @@
             
   <div class="section" id="module-flopy.utils.modpathfile">
 <span id="flopy-utils-modpathfile-module"></span><h1>flopy.utils.modpathfile Module<a class="headerlink" href="#module-flopy.utils.modpathfile" title="Permalink to this headline">¶</a></h1>
-<p>Module to read MODPATH output files.  The module contains three
+<p>Module to read MODPATH output files.  The module contains two
 important classes that can be accessed by the user.</p>
 <ul class="simple">
-<li>PathlineFile (Binary head file.  Can also be used for drawdown)</li>
+<li>EndpointFile (ascii endpoint file)</li>
+<li>PathlineFile (ascii pathline file)</li>
 </ul>
 <dl class="class">
 <dt id="flopy.utils.modpathfile.EndpointFile">
@@ -85,7 +86,7 @@ important classes that can be accessed by the user.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
 <blockquote>
-<div><p>Name of the concentration file</p>
+<div><p>Name of the endpoint file</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -107,7 +108,7 @@ endpoint data from a MODPATH 6 ascii endpoint file.</p>
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_alldata">
 <tt class="descname">get_alldata</tt><big>(</big><em>final=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_alldata" title="Permalink to this definition">¶</a></dt>
-<dd><p>get endpoint data from the endpoint file for all endpoints.</p>
+<dd><p>Get endpoint data from the endpoint file for all endpoints.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -139,7 +140,7 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_data">
 <tt class="descname">get_data</tt><big>(</big><em>partid=0</em>, <em>final=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>get endpoint data from the endpoint file for a single particle.</p>
+<dd><p>Get endpoint data from the endpoint file for a single particle.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -220,7 +221,7 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
 <blockquote>
-<div><p>Name of the concentration file</p>
+<div><p>Name of the pathline file</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -349,7 +350,7 @@ pathline partid.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
 <blockquote class="last">
-<div><p>Maximum pathline timer.</p>
+<div><p>Maximum pathline time.</p>
 </div></blockquote>
 </td>
 </tr>

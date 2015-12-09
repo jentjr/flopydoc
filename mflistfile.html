@@ -26,7 +26,7 @@
     <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.mfreadnam Module" href="mfreadnam.html" />
-    <link rel="prev" title="flopy.utils.formattedfile Module" href="formattedfile.html" />
+    <link rel="prev" title="flopy.utils.gridgen Module" href="gridgen.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -56,7 +56,7 @@
           <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
+          <a href="gridgen.html" title="flopy.utils.gridgen Module"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
@@ -87,11 +87,11 @@ recarrays, which can then be easily plotted.</p>
 </div></blockquote>
 <p><strong>budgetkey</strong> : str</p>
 <blockquote>
-<div><p>the text string identifying the budget table</p>
+<div><p>the text string identifying the budget table. (default is None)</p>
 </div></blockquote>
 <p><strong>timeunit</strong> : str</p>
 <blockquote class="last">
-<div><p>the time unit to return in the recarray (default is &#8216;days&#8217;)</p>
+<div><p>the time unit to return in the recarray. (default is &#8216;days&#8217;)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -111,7 +111,7 @@ and SwrListBudget (MODFLOW with the SWR process)</p>
 <dt id="flopy.utils.mflistfile.ListBudget.get_budget">
 <tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the recarrays with the incremental and cumulative water budget items
-in the list file</p>
+in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -145,7 +145,7 @@ water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.ListBudget.get_cumulative">
 <tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<dd><p>Get a recarray with the cumulative water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -233,7 +233,7 @@ returned. (default is False).</p>
 <dt id="flopy.utils.mflistfile.ListBudget.get_dataframes">
 <tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
-items in the list file</p>
+items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -265,7 +265,7 @@ incremental and cumulative water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.ListBudget.get_incremental">
 <tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<dd><p>Get a recarray with the incremental water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -322,7 +322,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.ListBudget.get_record_names">
 <tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of water budget record names in the file</p>
+<dd><p>Get a list of water budget record names in the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -345,7 +345,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.ListBudget.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of unique water budget times in the list file</p>
+<dd><p>Get a list of unique water budget times in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -374,7 +374,7 @@ kper values are zero-based.</p>
 <dt id="flopy.utils.mflistfile.MfListBudget.get_budget">
 <tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the recarrays with the incremental and cumulative water budget items
-in the list file</p>
+in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -408,7 +408,7 @@ water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfListBudget.get_cumulative">
 <tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<dd><p>Get a recarray with the cumulative water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -496,7 +496,7 @@ returned. (default is False).</p>
 <dt id="flopy.utils.mflistfile.MfListBudget.get_dataframes">
 <tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
-items in the list file</p>
+items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -528,7 +528,7 @@ incremental and cumulative water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfListBudget.get_incremental">
 <tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<dd><p>Get a recarray with the incremental water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -585,7 +585,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfListBudget.get_record_names">
 <tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of water budget record names in the file</p>
+<dd><p>Get a list of water budget record names in the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -608,7 +608,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfListBudget.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of unique water budget times in the list file</p>
+<dd><p>Get a list of unique water budget times in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -637,7 +637,7 @@ kper values are zero-based.</p>
 <dt id="flopy.utils.mflistfile.MfusgListBudget.get_budget">
 <tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the recarrays with the incremental and cumulative water budget items
-in the list file</p>
+in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -671,7 +671,7 @@ water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfusgListBudget.get_cumulative">
 <tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<dd><p>Get a recarray with the cumulative water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -759,7 +759,7 @@ returned. (default is False).</p>
 <dt id="flopy.utils.mflistfile.MfusgListBudget.get_dataframes">
 <tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
-items in the list file</p>
+items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -791,7 +791,7 @@ incremental and cumulative water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfusgListBudget.get_incremental">
 <tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<dd><p>Get a recarray with the incremental water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -848,7 +848,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfusgListBudget.get_record_names">
 <tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of water budget record names in the file</p>
+<dd><p>Get a list of water budget record names in the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -871,7 +871,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfusgListBudget.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of unique water budget times in the list file</p>
+<dd><p>Get a list of unique water budget times in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -900,7 +900,7 @@ kper values are zero-based.</p>
 <dt id="flopy.utils.mflistfile.SwrListBudget.get_budget">
 <tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the recarrays with the incremental and cumulative water budget items
-in the list file</p>
+in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -934,7 +934,7 @@ water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwrListBudget.get_cumulative">
 <tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<dd><p>Get a recarray with the cumulative water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1022,7 +1022,7 @@ returned. (default is False).</p>
 <dt id="flopy.utils.mflistfile.SwrListBudget.get_dataframes">
 <tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
-items in the list file</p>
+items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1054,7 +1054,7 @@ incremental and cumulative water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwrListBudget.get_incremental">
 <tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<dd><p>Get a recarray with the incremental water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1111,7 +1111,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwrListBudget.get_record_names">
 <tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of water budget record names in the file</p>
+<dd><p>Get a list of water budget record names in the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1134,7 +1134,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwrListBudget.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of unique water budget times in the list file</p>
+<dd><p>Get a list of unique water budget times in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1163,7 +1163,7 @@ kper values are zero-based.</p>
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_budget">
 <tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the recarrays with the incremental and cumulative water budget items
-in the list file</p>
+in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1197,7 +1197,7 @@ water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_cumulative">
 <tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<dd><p>Get a recarray with the cumulative water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1285,7 +1285,7 @@ returned. (default is False).</p>
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_dataframes">
 <tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
-items in the list file</p>
+items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1317,7 +1317,7 @@ incremental and cumulative water budget entries.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_incremental">
 <tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<dd><p>Get a recarray with the incremental water budget items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1374,7 +1374,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_record_names">
 <tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of water budget record names in the file</p>
+<dd><p>Get a list of water budget record names in the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1397,7 +1397,7 @@ kper values are zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_times">
 <tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of unique water budget times in the list file</p>
+<dd><p>Get a list of unique water budget times in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1428,8 +1428,8 @@ kper values are zero-based.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="formattedfile.html"
-                        title="previous chapter">flopy.utils.formattedfile Module</a></p>
+  <p class="topless"><a href="gridgen.html"
+                        title="previous chapter">flopy.utils.gridgen Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mfreadnam.html"
                         title="next chapter">flopy.utils.mfreadnam Module</a></p>
@@ -1463,7 +1463,7 @@ kper values are zero-based.</p>
           <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
+          <a href="gridgen.html" title="flopy.utils.gridgen Module"
              >previous</a> |</li>
         <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
