@@ -38,6 +38,7 @@ Contents:
    mfdrn
    mfevt
    mfhfb
+   mfhyd
    mfghb
    mfgmg
    mflmt
@@ -118,6 +119,7 @@ Contents:
 
    mfbct
    mfdisu
+   mfsms
 
 
 Model Utilities (including binary file readers)
@@ -134,6 +136,7 @@ Contents:
    binaryswrfile
    flopy_io
    formattedfile
+   gridgen
    mflistfile
    mfreadnam
    modpathfile
@@ -172,6 +175,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   params
    templatewriter
    tplarray
 
