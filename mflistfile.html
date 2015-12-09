@@ -1,0 +1,1477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.mflistfile Module &mdash; flopy 3.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.mfreadnam Module" href="mfreadnam.html" />
+    <link rel="prev" title="flopy.utils.formattedfile Module" href="formattedfile.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.utils.mflistfile">
+<span id="flopy-utils-mflistfile-module"></span><h1>flopy.utils.mflistfile Module<a class="headerlink" href="#module-flopy.utils.mflistfile" title="Permalink to this headline">¶</a></h1>
+<p>This is a set of classes for reading budget information out of MODFLOW-style
+listing files.  Cumulative and incremental budgets are returned as numpy
+recarrays, which can then be easily plotted.</p>
+<dl class="class">
+<dt id="flopy.utils.mflistfile.ListBudget">
+<em class="property">class </em><tt class="descclassname">flopy.utils.mflistfile.</tt><tt class="descname">ListBudget</tt><big>(</big><em>file_name</em>, <em>budgetkey=None</em>, <em>timeunit='days'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW family list file handling</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file_name</strong> : str</p>
+<blockquote>
+<div><p>the list file name</p>
+</div></blockquote>
+<p><strong>budgetkey</strong> : str</p>
+<blockquote>
+<div><p>the text string identifying the budget table</p>
+</div></blockquote>
+<p><strong>timeunit</strong> : str</p>
+<blockquote class="last">
+<div><p>the time unit to return in the recarray (default is &#8216;days&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The ListBudget class should not be instantiated directly.  Access is
+through derived classes: MfListBudget (MODFLOW), SwtListBudget (SEAWAT)
+and SwrListBudget (MODFLOW with the SWR process)</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span><span class="p">,</span> <span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_in</span><span class="p">,</span> <span class="n">df_out</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">(</span><span class="n">start_datetime</span><span class="o">=</span><span class="s">&quot;10-21-2015&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_budget">
+<tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the recarrays with the incremental and cumulative water budget items
+in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
+<blockquote class="last">
+<div><p>Numpy recarrays with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period. A
+separate recarray is returned for the incremental and cumulative
+water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_cumulative">
+<tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>incremental=False</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get water budget data from the list file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None).</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values. (default is None).</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None).</p>
+</div></blockquote>
+<p><strong>incremental</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if incremental or cumulative water
+budget data for the specified conditions will be returned. If
+incremental=True, incremental water budget data will be returned.
+If incremental=False, cumulative water budget data will be
+returned. (default is False).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
+&#8216;value&#8217;, &#8216;name&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_dataframes">
+<tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframes with the incremental and cumulative water budget
+items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
+<blockquote>
+<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
+<blockquote class="last">
+<div><p>Pandas dataframes with the incremental and cumulative water budget
+items in list file. A separate pandas dataframe is returned for the
+incremental and cumulative water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_incremental">
+<tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods and time steps in the list file
+water budgets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in list file.  kstp and
+kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of water budget record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique water budget times in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique water budget simulation times (totim) in list file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.mflistfile.MfListBudget">
+<em class="property">class </em><tt class="descclassname">flopy.utils.mflistfile.</tt><tt class="descname">MfListBudget</tt><big>(</big><em>file_name</em>, <em>budgetkey=None</em>, <em>timeunit='days'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_budget">
+<tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the recarrays with the incremental and cumulative water budget items
+in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
+<blockquote class="last">
+<div><p>Numpy recarrays with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period. A
+separate recarray is returned for the incremental and cumulative
+water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_cumulative">
+<tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>incremental=False</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get water budget data from the list file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None).</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values. (default is None).</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None).</p>
+</div></blockquote>
+<p><strong>incremental</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if incremental or cumulative water
+budget data for the specified conditions will be returned. If
+incremental=True, incremental water budget data will be returned.
+If incremental=False, cumulative water budget data will be
+returned. (default is False).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
+&#8216;value&#8217;, &#8216;name&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_dataframes">
+<tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframes with the incremental and cumulative water budget
+items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
+<blockquote>
+<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
+<blockquote class="last">
+<div><p>Pandas dataframes with the incremental and cumulative water budget
+items in list file. A separate pandas dataframe is returned for the
+incremental and cumulative water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_incremental">
+<tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods and time steps in the list file
+water budgets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in list file.  kstp and
+kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of water budget record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique water budget times in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique water budget simulation times (totim) in list file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.mflistfile.MfusgListBudget">
+<em class="property">class </em><tt class="descclassname">flopy.utils.mflistfile.</tt><tt class="descname">MfusgListBudget</tt><big>(</big><em>file_name</em>, <em>budgetkey=None</em>, <em>timeunit='days'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_budget">
+<tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the recarrays with the incremental and cumulative water budget items
+in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
+<blockquote class="last">
+<div><p>Numpy recarrays with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period. A
+separate recarray is returned for the incremental and cumulative
+water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_cumulative">
+<tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>incremental=False</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get water budget data from the list file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None).</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values. (default is None).</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None).</p>
+</div></blockquote>
+<p><strong>incremental</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if incremental or cumulative water
+budget data for the specified conditions will be returned. If
+incremental=True, incremental water budget data will be returned.
+If incremental=False, cumulative water budget data will be
+returned. (default is False).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
+&#8216;value&#8217;, &#8216;name&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_dataframes">
+<tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframes with the incremental and cumulative water budget
+items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
+<blockquote>
+<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
+<blockquote class="last">
+<div><p>Pandas dataframes with the incremental and cumulative water budget
+items in list file. A separate pandas dataframe is returned for the
+incremental and cumulative water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_incremental">
+<tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods and time steps in the list file
+water budgets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in list file.  kstp and
+kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of water budget record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique water budget times in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique water budget simulation times (totim) in list file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.mflistfile.SwrListBudget">
+<em class="property">class </em><tt class="descclassname">flopy.utils.mflistfile.</tt><tt class="descname">SwrListBudget</tt><big>(</big><em>file_name</em>, <em>budgetkey=None</em>, <em>timeunit='days'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_budget">
+<tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the recarrays with the incremental and cumulative water budget items
+in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
+<blockquote class="last">
+<div><p>Numpy recarrays with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period. A
+separate recarray is returned for the incremental and cumulative
+water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_cumulative">
+<tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>incremental=False</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get water budget data from the list file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None).</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values. (default is None).</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None).</p>
+</div></blockquote>
+<p><strong>incremental</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if incremental or cumulative water
+budget data for the specified conditions will be returned. If
+incremental=True, incremental water budget data will be returned.
+If incremental=False, cumulative water budget data will be
+returned. (default is False).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
+&#8216;value&#8217;, &#8216;name&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_dataframes">
+<tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframes with the incremental and cumulative water budget
+items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
+<blockquote>
+<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
+<blockquote class="last">
+<div><p>Pandas dataframes with the incremental and cumulative water budget
+items in list file. A separate pandas dataframe is returned for the
+incremental and cumulative water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_incremental">
+<tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods and time steps in the list file
+water budgets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in list file.  kstp and
+kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of water budget record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique water budget times in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique water budget simulation times (totim) in list file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.mflistfile.SwtListBudget">
+<em class="property">class </em><tt class="descclassname">flopy.utils.mflistfile.</tt><tt class="descname">SwtListBudget</tt><big>(</big><em>file_name</em>, <em>budgetkey=None</em>, <em>timeunit='days'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_budget">
+<tt class="descname">get_budget</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the recarrays with the incremental and cumulative water budget items
+in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
+<blockquote class="last">
+<div><p>Numpy recarrays with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period. A
+separate recarray is returned for the incremental and cumulative
+water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_cumulative">
+<tt class="descname">get_cumulative</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the cumulative water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>incremental=False</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get water budget data from the list file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None).</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values. (default is None).</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None).</p>
+</div></blockquote>
+<p><strong>incremental</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if incremental or cumulative water
+budget data for the specified conditions will be returned. If
+incremental=True, incremental water budget data will be returned.
+If incremental=False, cumulative water budget data will be
+returned. (default is False).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
+&#8216;value&#8217;, &#8216;name&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_dataframes">
+<tt class="descname">get_dataframes</tt><big>(</big><em>start_datetime='1-1-1970'</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframes with the incremental and cumulative water budget
+items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
+<blockquote>
+<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
+<blockquote class="last">
+<div><p>Pandas dataframes with the incremental and cumulative water budget
+items in list file. A separate pandas dataframe is returned for the
+incremental and cumulative water budget entries.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_incremental">
+<tt class="descname">get_incremental</tt><big>(</big><em>names=None</em><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the incremental water budget items in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
+<blockquote>
+<div><p>Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
+<blockquote class="last">
+<div><p>Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_kstpkper">
+<tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods and time steps in the list file
+water budgets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kstp, kper combinations in list file.  kstp and
+kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of water budget record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique water budget times in the list file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique water budget simulation times (totim) in list file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="formattedfile.html"
+                        title="previous chapter">flopy.utils.formattedfile Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfreadnam.html"
+                        title="next chapter">flopy.utils.mfreadnam Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

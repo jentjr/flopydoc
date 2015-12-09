@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfoc Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.modflow.mfoc Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfoc88 Module" href="mfoc88.html" />
+    <link rel="prev" title="flopy.modflow.mfnwt Module" href="mfnwt.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfoc88.html" title="flopy.modflow.mfoc88 Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -194,33 +202,99 @@ also a requirement for using the MODPATH particle tracking program.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc3</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">spd</span><span class="p">,</span> <span class="n">cboufm</span><span class="o">=</span><span class="s">&#39;(20i5)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<dl class="method">
+<dt id="flopy.modflow.mfoc.ModflowOc.check">
+<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check package data for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
-<td></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a sting is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfoc.ModflowOc.load" title="flopy.modflow.mfoc.ModflowOc.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;nper,&nbsp;nstp,&nbsp;nlay,&nbsp;ext_unit_dict])</td>
-<td>Load an existing package.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfoc.ModflowOc.plot" title="flopy.modflow.mfoc.ModflowOc.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
-<td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfoc.ModflowOc.to_shapefile" title="flopy.modflow.mfoc.ModflowOc.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename)</td>
-<td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfoc.ModflowOc.write_file" title="flopy.modflow.mfoc.ModflowOc.write_file"><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt></a>()</td>
-<td>Write the file.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfoc.ModflowOc.get_ocoutput_units">
+<em class="property">static </em><tt class="descname">get_ocoutput_units</tt><big>(</big><em>f</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.get_ocoutput_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get head and drawdown units from a OC file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ihedun</strong> : integer</p>
+<blockquote>
+<div><p>Unit number of the head file.</p>
+</div></blockquote>
+<p><strong>fhead</strong> : str</p>
+<blockquote>
+<div><p>File name of the head file. Is only defined if ext_unit_dict is
+passed and the unit number is a valid key.
+, headfilename, oc : ModflowOc object
+ModflowOc object.</p>
+</div></blockquote>
+<p><strong>iddnun</strong> : integer</p>
+<blockquote>
+<div><p>Unit number of the drawdown file.</p>
+</div></blockquote>
+<p><strong>fddn</strong> : str</p>
+<blockquote class="last">
+<div><p>File name of the drawdown file. Is only defined if ext_unit_dict is
+passed and the unit number is a valid key.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihds</span><span class="p">,</span> <span class="n">hf</span><span class="p">,</span> <span class="n">iddn</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="o">.</span><span class="n">get_ocoutput_units</span><span class="p">(</span><span class="s">&#39;test.oc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfoc.ModflowOc.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>nstp=None</em>, <em>nlay=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.load" title="Permalink to this definition">¶</a></dt>
@@ -285,7 +359,7 @@ constructed using the function
 <dl class="method">
 <dt id="flopy.modflow.mfoc.ModflowOc.plot">
 <tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 package input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -308,10 +382,11 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 all layers will be included. (default is None)</p>
 </dd>
 <dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
 </dd>
 <dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">mflist dictionary key. (default is None)</p>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -336,11 +411,9 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfoc.ModflowOc.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
-<dd>attribute for each layer in each data array</dd>
-</dl>
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
+Adds an attribute for each layer in each data array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -367,7 +440,15 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfoc.ModflowOc.write_file">
 <tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.write_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write the file.</p>
+<dd><p>Write the package file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -380,6 +461,12 @@ a list of matplotlib.pyplot.axis are returned.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfnwt.html"
+                        title="previous chapter">flopy.modflow.mfnwt Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfoc88.html"
+                        title="next chapter">flopy.modflow.mfoc88 Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -406,7 +493,13 @@ a list of matplotlib.pyplot.axis are returned.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfoc88.html" title="flopy.modflow.mfoc88 Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfnwt.html" title="flopy.modflow.mfnwt Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

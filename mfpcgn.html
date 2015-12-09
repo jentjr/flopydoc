@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfpcgn Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.modflow.mfpcgn Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfrch Module" href="mfrch.html" />
+    <link rel="prev" title="flopy.modflow.mfpcg Module" href="mfpcg.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfrch.html" title="flopy.modflow.mfrch Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfpcg.html" title="flopy.modflow.mfpcg Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -62,38 +70,233 @@
             
   <div class="section" id="flopy-modflow-mfpcgn-module">
 <h1>flopy.modflow.mfpcgn Module<a class="headerlink" href="#flopy-modflow-mfpcgn-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfpcgn"></span><dl class="class">
+<span class="target" id="module-flopy.modflow.mfpcgn"></span><p>mfpcgn module.  Contains the ModflowPcgn class. Note that the user can access
+the ModflowStr class as <cite>flopy.modflow.ModflowPcgn</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/pcgn.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
 <dt id="flopy.modflow.mfpcgn.ModflowPcgn">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfpcgn.</tt><tt class="descname">ModflowPcgn</tt><big>(</big><em>model, iter_mo=50, iter_mi=30, close_h=1e-05, close_r=1e-05, relax=1.0, ifill=0, unit_pc=0, unit_ts=0, adamp=0, damp=1.0, damp_lb=0.001, rate_d=0.1, chglimit=0.0, acnvg=0, cnvg_lb=0.001, mcnvg=2, rate_c=-1.0, ipunit=0, extension=['pcgn'], unit_number=27</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pcgn Package
-Only programmed to work with the default values; may need work for other options</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfpcgn.</tt><tt class="descname">ModflowPcgn</tt><big>(</big><em>model</em>, <em>iter_mo=50</em>, <em>iter_mi=30</em>, <em>close_r=1e-05</em>, <em>close_h=1e-05</em>, <em>relax=1.0</em>, <em>ifill=0</em>, <em>unit_pc=0</em>, <em>unit_ts=0</em>, <em>adamp=0</em>, <em>damp=1.0</em>, <em>damp_lb=0.001</em>, <em>rate_d=0.1</em>, <em>chglimit=0.0</em>, <em>acnvg=0</em>, <em>cnvg_lb=0.001</em>, <em>mcnvg=2</em>, <em>rate_c=-1.0</em>, <em>ipunit=0</em>, <em>extension='pcgn'</em>, <em>unit_number=27</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Pcgn Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfpcgn.ModflowPcgn.load" title="flopy.modflow.mfpcgn.ModflowPcgn.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;ext_unit_dict])</td>
-<td>Load an existing package.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfpcgn.ModflowPcgn.plot" title="flopy.modflow.mfpcgn.ModflowPcgn.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
-<td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile" title="flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
-<td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfpcgn.ModflowPcgn.write_file" title="flopy.modflow.mfpcgn.ModflowPcgn.write_file"><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt></a>()</td>
-<td>Write the package input file.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>iter_mo</strong> : int</p>
+<blockquote>
+<div><p>The maximum number of Picard (outer) iterations allowed. For nonlinear
+problems, this variable must be set to some number greater than one,
+depending on the problem size and degree of nonlinearity. If ITER_MO
+is set to 1, then the PCGN solver assumes that the problem is linear
+and the input requirements are greatly truncated. (default is 50)</p>
+</div></blockquote>
+<p><strong>iter_mi</strong> : int</p>
+<blockquote>
+<div><p>The maximum number of PCG (inner) iterations allowed. Generally,
+this variable is set to some number greater than one, depending on
+the matrix size, degree of convergence called for, and the nature of
+the problem. For a nonlinear problem, ITER_MI should be set large
+enough that the PCG iteration converges freely with the relative
+convergence parameter epsilon described in the Parameters Related
+to Convergence of Inner Iteration: Line 4 subsection.
+(default is 30)</p>
+</div></blockquote>
+<p><strong>close_r</strong> : float</p>
+<blockquote>
+<div><p>The residual-based stopping criterion for iteration. This parameter is
+used differently, depending on whether it is applied to a linear or
+nonlinear problem.</p>
+<p>If ITER_MO = 1: For a linear problem, the variant of the conjugate
+gradient method outlined in algorithm 2 is employed, but uses the
+absolute convergence criterion in place of the relative convergence
+criterion. CLOSE_R is used as the value in the absolute convergence
+criterion for quitting the PCG iterative solver. CLOSE_R is compared
+to the square root of the weighted residual norm. In particular, if
+the square root of the weighted residual norm is less than CLOSE_R,
+then the linear PCG iterative solve is said to have converged,
+causing the PCG iteration to cease and control of the program to
+pass out of the PCG solver.</p>
+<p>If ITER_MO &gt; 1: For a nonlinear problem, CLOSE_R is used as a criterion
+for quitting the Picard (outer) iteration. CLOSE_R is compared to the
+square root of the inner product of the residuals (the residual norm)
+as calculated on entry to the PCG solver at the beginning of every
+Picard iteration. If this norm is less than CLOSE_R, then the Picard
+iteration is considered to have converged.</p>
+</div></blockquote>
+<p><strong>close_h</strong> : float</p>
+<blockquote>
+<div><p>CLOSE_H is used as an alternate stopping criterion for the Picard
+iteration needed to solve a nonlinear problem. The maximum value of
+the head change is obtained for each Picard iteration, after completion
+of the inner, PCG iteration. If this maximum head change is less than
+CLOSE_H, then the Picard iteration is considered tentatively to have
+converged. However, as nonlinear problems can demonstrate oscillation
+in the head solution, the Picard iteration is not declared to have
+converged unless the maximum head change is less than CLOSE_H for
+three Picard iterations. If these Picard iterations are sequential,
+then a good solution is assumed to have been obtained. If the Picard
+iterations are not sequential, then a warning is issued advising that
+the convergence is conditional and the user is urged to examine the
+mass balance of the solution.</p>
+</div></blockquote>
+<p><strong>relax</strong> : float</p>
+<blockquote>
+<div><p>is the relaxation parameter used with npcond = 1. (default is 1.0)</p>
+</div></blockquote>
+<p><strong>ifill</strong> : int</p>
+<blockquote>
+<div><p>is the fill level of the MIC preconditioner. Preconditioners with
+fill levels of 0 and 1 are available (IFILL = 0 and IFILL = 1,
+respectively). (default is 0)</p>
+</div></blockquote>
+<p><strong>unit_pc</strong> : int</p>
+<blockquote>
+<div><p>is the unit number of an optional output file where progress for the
+inner PCG iteration can be written. (default is 0)</p>
+</div></blockquote>
+<p><strong>unit_ts</strong> : int</p>
+<blockquote>
+<div><p>is the unit number of an optional output file where the actual time in
+the PCG solver is accumulated. (default is 0)</p>
+</div></blockquote>
+<p><strong>adamp</strong> : int</p>
+<blockquote>
+<div><p>defines the mode of damping applied to the linear solution. In general,
+damping determines how much of the head changes vector shall be applied
+to the hydraulic head vector hj in Picard iteration j. (default is 0)</p>
+<p>If adamp=0: Ordinary damping is employed and a constant value of damping
+parameter will be used throughout the Picard iteration. This option
+requires a valid value for DAMP.</p>
+<p>If adamp=1: Adaptive damping is employed.</p>
+<p>If adamp=2: Enhanced damping algorithm in which the damping value is
+increased (but never decreased) provided the Picard iteration is
+proceeding satisfactorily.</p>
+</div></blockquote>
+<p><strong>damp</strong> : float</p>
+<blockquote>
+<div><p>is the damping factor. (default is 1.)</p>
+</div></blockquote>
+<p><strong>damp_lb</strong> : float</p>
+<blockquote>
+<div><p>is the lower bound placed on the dampening; generally, 0 &lt; DAMP_LB &lt; DAMP.
+(default is 0.001)</p>
+</div></blockquote>
+<p><strong>rate_d</strong> : float</p>
+<blockquote>
+<div><p>is a rate parameter; generally, 0 &lt; RATE_D &lt; 1. (default is 0.1)</p>
+</div></blockquote>
+<p><strong>chglimit</strong> : float</p>
+<blockquote>
+<div><p>this variable limits the maximum head change applicable to the updated
+hydraulic heads in a Picard iteration. If CHGLIMIT = 0.0, then adaptive
+damping proceeds without this feature. (default is 0.)</p>
+</div></blockquote>
+<p><strong>acnvg</strong> : int</p>
+<blockquote>
+<div><p>defines the mode of convergence applied to the PCG solver. (default is 0)</p>
+</div></blockquote>
+<p><strong>cnvg_lb</strong> : int</p>
+<blockquote>
+<div><p>is the minimum value that the relative convergence is allowed to take under
+the self-adjusting convergence option. CNVG_LB is used only in convergence
+mode ACNVG = 1. (default is 0.001)</p>
+</div></blockquote>
+<p><strong>mcnvg</strong> : float</p>
+<blockquote>
+<div><p>increases the relative PCG convergence criteria by a power equal to MCNVG.
+MCNVG is used only in convergence mode ACNVG = 2. (default is 2)</p>
+</div></blockquote>
+<p><strong>rate_c</strong> : float</p>
+<blockquote>
+<div><p>this option results in variable enhancement of epsilon. If 0 &lt; RATE_C &lt; 1,
+then enhanced relative convergence is allowed to decrease by increasing
+epsilon(j) = epsilon(j-1) + RATE_C epsilon(j-1), where j is the Picard
+iteration number; this change in epsilon occurs so long as the Picard
+iteration is progressing satisfactorily. If RATE_C &lt;= 0, then the value
+of epsilon set by MCNVG remains unchanged through the Picard iteration.
+It should be emphasized that RATE_C must have a value greater than 0
+for the variable enhancement to be effected; otherwise epsilon remains
+constant. RATE_C is used only in convergence mode ACNVG = 2.
+(default is -1.)</p>
+</div></blockquote>
+<p><strong>ipunit</strong> : int</p>
+<blockquote>
+<div><p>enables progress reporting for the Picard iteration. If IPUNIT &gt;= 0,
+then a record of progress made by the Picard iteration for each time
+step is printed in the MODFLOW Listing file (Harbaugh and others, 2000).
+This record consists of the total number of dry cells at the end of each
+time step as well as the total number of PCG iterations necessary to
+obtain convergence. In addition, if IPUNIT &gt; 0, then extensive
+diagnostics for each Picard iteration is also written in comma-separated
+format to a file whose unit number corresponds to IPUNIT; the name for
+this file, along with its unit number and type DATA should be entered in
+the MODFLOW Name file. If IPUNIT &lt; 0 then printing of all progress
+concerning the Picard iteration is suppressed, as well as information on
+the nature of the convergence of the Picard iteration. (default is 0)</p>
+</div></blockquote>
+<p><strong>extension</strong> : list string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;pcgn&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 27).</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcgn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcgn</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modflow.mfpcgn.ModflowPcgn.check">
+<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check package data for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a sting is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfpcgn.ModflowPcgn.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.load" title="Permalink to this definition">¶</a></dt>
@@ -137,7 +340,7 @@ constructed using the function
 <dl class="method">
 <dt id="flopy.modflow.mfpcgn.ModflowPcgn.plot">
 <tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 package input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -160,10 +363,11 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 all layers will be included. (default is None)</p>
 </dd>
 <dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
 </dd>
 <dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">mflist dictionary key. (default is None)</p>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -189,10 +393,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile">
 <tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
-<dd>attribute for each layer in each data array</dd>
-</dl>
+<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
+Adds an attribute for each layer in each data array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -219,7 +421,15 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfpcgn.ModflowPcgn.write_file">
 <tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.write_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write the package input file.</p>
+<dd><p>Write the package file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -232,6 +442,12 @@ a list of matplotlib.pyplot.axis are returned.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfpcg.html"
+                        title="previous chapter">flopy.modflow.mfpcg Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfrch.html"
+                        title="next chapter">flopy.modflow.mfrch Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -258,7 +474,13 @@ a list of matplotlib.pyplot.axis are returned.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfrch.html" title="flopy.modflow.mfrch Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfpcg.html" title="flopy.modflow.mfpcg Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.pest.params Module &mdash; flopy 3.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.pest.templatewriter Module" href="templatewriter.html" />
+    <link rel="prev" title="flopy.export.utils Module" href="utils.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="templatewriter.html" title="flopy.pest.templatewriter Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="flopy.export.utils Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.pest.params">
+<span id="flopy-pest-params-module"></span><h1>flopy.pest.params Module<a class="headerlink" href="#module-flopy.pest.params" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.pest.params.Params">
+<em class="property">class </em><tt class="descclassname">flopy.pest.params.</tt><tt class="descname">Params</tt><big>(</big><em>mfpackage</em>, <em>partype</em>, <em>parname</em>, <em>startvalue</em>, <em>lbound</em>, <em>ubound</em>, <em>span</em>, <em>transform='log'</em><big>)</big><a class="headerlink" href="#flopy.pest.params.Params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to define parameters that will be estimated using PEST.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mfpackage</strong> : str</p>
+<blockquote>
+<div><p>The Modflow package type to associated with this parameter.
+&#8216;LPF&#8217; is one package that is working now.</p>
+</div></blockquote>
+<p><strong>partype</strong> : str</p>
+<blockquote>
+<div><p>The parameter type, such as &#8216;hk&#8217;.  This must be a valid attribute
+in the mfpackage.</p>
+</div></blockquote>
+<p><strong>parname</strong> : str</p>
+<blockquote>
+<div><p>The parameter name, such as &#8216;HK_1&#8217;.</p>
+</div></blockquote>
+<p><strong>startvalue</strong> : float</p>
+<blockquote>
+<div><p>The starting value for the parameter.</p>
+</div></blockquote>
+<p><strong>lbound</strong> : float</p>
+<blockquote>
+<div><p>The lower bound for the parameter.</p>
+</div></blockquote>
+<p><strong>ubound</strong> : float</p>
+<blockquote>
+<div><p>The upper bound for the parameter.</p>
+</div></blockquote>
+<p><strong>span</strong> : dict</p>
+<blockquote>
+<div><p>The span over which the parameter applies.  The span depends on the
+type of array that the parameter applies to.  For 3d arrays, span
+should have either &#8216;idx&#8217; or &#8216;layers&#8217; keys.  span[&#8216;layers&#8217;] should
+be a list of layer to for which parname will be applied as a
+multiplier.
+idx is a tuple, which contains the indices to which this parameter
+applies.  For example, if the parameter applies to a part of a 3D
+MODFLOW array, then idx can be a tuple of layer, row, and column
+indices (e.g. (karray, iarray, jarray).
+This idx variable could also be a 3D bool array.  It is ultimately
+used to assign parameter to the array using arr[idx] = parname.
+For transient 2d arrays, span must include a &#8216;kpers&#8217; key such that
+span[&#8216;kpers&#8217;] is a list of stress period to which parname will be
+applied as a multiplier.</p>
+</div></blockquote>
+<p class="last"><strong>transform</strong> : Parameter transformation type.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.pest.params.zonearray2params">
+<tt class="descclassname">flopy.pest.params.</tt><tt class="descname">zonearray2params</tt><big>(</big><em>mfpackage</em>, <em>partype</em>, <em>parzones</em>, <em>lbound</em>, <em>ubound</em>, <em>parvals</em>, <em>transform</em>, <em>zonearray</em><big>)</big><a class="headerlink" href="#flopy.pest.params.zonearray2params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to create a list of flopy parameters from a zone array
+and list of parameter zone numbers.</p>
+<p>The parameter name is set equal to the parameter type and the parameter
+zone value, separated by an underscore.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="previous chapter">flopy.export.utils Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="templatewriter.html"
+                        title="next chapter">flopy.pest.templatewriter Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="templatewriter.html" title="flopy.pest.templatewriter Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="flopy.export.utils Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

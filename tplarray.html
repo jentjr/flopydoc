@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.pest.tplarray Module &mdash; flopy 3.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="prev" title="flopy.pest.templatewriter Module" href="templatewriter.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="templatewriter.html" title="flopy.pest.templatewriter Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.pest.tplarray">
+<span id="flopy-pest-tplarray-module"></span><h1>flopy.pest.tplarray Module<a class="headerlink" href="#module-flopy.pest.tplarray" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.pest.tplarray.Util2dTpl">
+<em class="property">class </em><tt class="descclassname">flopy.pest.tplarray.</tt><tt class="descname">Util2dTpl</tt><big>(</big><em>chararray</em>, <em>name</em>, <em>multiplier</em>, <em>indexed_param</em><big>)</big><a class="headerlink" href="#flopy.pest.tplarray.Util2dTpl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to define a two-dimensional template array for use with parameter
+estimation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>chararray</strong> : A Numpy ndarray of dtype &#8216;str&#8217;.</p>
+<p><strong>name</strong> : The parameter type.  This will be written to the control record</p>
+<blockquote>
+<div><p>as a comment.</p>
+</div></blockquote>
+<p><strong>indexed_param</strong> : bool</p>
+<blockquote class="last">
+<div><p>A flag to indicated whether or not the array contains parameter names
+within the array itself.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.pest.tplarray.Util2dTpl.get_file_entry">
+<tt class="descname">get_file_entry</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.pest.tplarray.Util2dTpl.get_file_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the array into a string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>file_entry</strong> : str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.pest.tplarray.Util3dTpl">
+<em class="property">class </em><tt class="descclassname">flopy.pest.tplarray.</tt><tt class="descname">Util3dTpl</tt><big>(</big><em>u3d</em><big>)</big><a class="headerlink" href="#flopy.pest.tplarray.Util3dTpl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to define a three-dimensional template array for use with parameter
+estimation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>u3d</strong> : Util3d object</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.pest.tplarray.Util3dTpl.add_parameter">
+<tt class="descname">add_parameter</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#flopy.pest.tplarray.Util3dTpl.add_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the chararray with the parameter name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> : flopy.pest.params.Params</p>
+<blockquote class="last">
+<div><p>Parameter.  Must have .idx and .name attributes</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.pest.tplarray.get_template_array">
+<tt class="descclassname">flopy.pest.tplarray.</tt><tt class="descname">get_template_array</tt><big>(</big><em>pakarray</em><big>)</big><a class="headerlink" href="#flopy.pest.tplarray.get_template_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the package array into the appropriate template array</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="templatewriter.html"
+                        title="previous chapter">flopy.pest.templatewriter Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="templatewriter.html" title="flopy.pest.templatewriter Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

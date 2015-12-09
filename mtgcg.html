@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mtgcg Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.mt3d.mtgcg Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.mt3d.mtphc Module" href="mtphc.html" />
+    <link rel="prev" title="flopy.mt3d.mtdsp Module" href="mtdsp.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mtphc.html" title="flopy.mt3d.mtphc Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -64,39 +72,259 @@
 <span id="flopy-mt3d-mtgcg-module"></span><h1>flopy.mt3d.mtgcg Module<a class="headerlink" href="#module-flopy.mt3d.mtgcg" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtgcg.Mt3dGcg">
-<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtgcg.</tt><tt class="descname">Mt3dGcg</tt><big>(</big><em>model</em>, <em>mxiter=1</em>, <em>iter1=50</em>, <em>isolve=3</em>, <em>ncrs=0</em>, <em>accl=1</em>, <em>cclose=1e-05</em>, <em>iprgcg=0</em>, <em>extension='gcg'</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generalized Conjugate Gradient solver package class</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtgcg.</tt><tt class="descname">Mt3dGcg</tt><big>(</big><em>model</em>, <em>mxiter=1</em>, <em>iter1=50</em>, <em>isolve=3</em>, <em>ncrs=0</em>, <em>accl=1</em>, <em>cclose=1e-05</em>, <em>iprgcg=0</em>, <em>extension='gcg'</em>, <em>unitnumber=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg" title="Permalink to this definition">¶</a></dt>
+<dd><p>MT3DMS Generalized Conjugate Gradient Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mtgcg.Mt3dGcg.load" title="flopy.mt3d.mtgcg.Mt3dGcg.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(model,&nbsp;pack_type,&nbsp;f[,&nbsp;nper,&nbsp;pop_key_list])</td>
-<td>The load method has not been implemented for this package.</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt>(*args,&nbsp;**kwargs)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt>(*args,&nbsp;**kwargs)</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt>()</td>
-<td></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><tt class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></tt></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>mxiter</strong> : int</p>
+<blockquote>
+<div><p>is the maximum number of outer iterations; it should be set to an
+integer greater than one only when a nonlinear sorption isotherm is
+included in simulation. (default is 1)</p>
+</div></blockquote>
+<p><strong>iter1</strong> : int</p>
+<blockquote>
+<div><p>is the maximum number of inner iterations; a value of 30-50 should be
+adequate for most problems. (default is 50)</p>
+</div></blockquote>
+<p><strong>isolve</strong> : int</p>
+<blockquote>
+<div><p>is the type of preconditioners to be used with the Lanczos/ORTHOMIN
+acceleration scheme:
+= 1, Jacobi
+= 2, SSOR
+= 3, Modified Incomplete Cholesky (MIC) (MIC usually converges faster,
+but it needs significantly more memory)
+(default is 3)</p>
+</div></blockquote>
+<p><strong>ncrs</strong> : int</p>
+<blockquote>
+<div><p>is an integer flag for treatment of dispersion tensor cross terms:
+= 0, lump all dispersion cross terms to the right-hand-side
+(approximate but highly efficient). = 1, include full dispersion
+tensor (memory intensive).
+(default is 0)</p>
+</div></blockquote>
+<p><strong>accl</strong> : float</p>
+<blockquote>
+<div><p>is the relaxation factor for the SSOR option; a value of 1.0 is
+generally adequate.
+(default is 1)</p>
+</div></blockquote>
+<p><strong>cclose</strong> : float</p>
+<blockquote>
+<div><p>is the convergence criterion in terms of relative concentration; a
+real value between 10-4 and 10-6 is generally adequate.
+(default is 1.E-5)</p>
+</div></blockquote>
+<p><strong>iprgcg</strong> : int</p>
+<blockquote>
+<div><p>IPRGCG is the interval for printing the maximum concentration changes
+of each iteration. Set IPRGCG to zero as default for printing at the
+end of each stress period.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;gcg&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 35).</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dGcg</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.mt3d.mtgcg.Mt3dGcg.check">
+<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check package data for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a sting is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtgcg.Mt3dGcg.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>The load method has not been implemented for this package.</p>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><tt class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></tt></a>) to
+which this package will be added.</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gcg</strong> :  Mt3dGcg object</p>
+<blockquote class="last">
+<div><p>Mt3dGcg object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dGcg</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.gcg&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mtgcg.Mt3dGcg.plot">
+<tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
+package input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is &#8216;png&#8217;)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
+<blockquote class="last">
+<div><p>Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mtgcg.Mt3dGcg.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
+Adds an attribute for each layer in each data array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Shapefile name to write</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mt3d.mtgcg.Mt3dGcg.write_file">
+<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the package file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -109,6 +337,12 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mtdsp.html"
+                        title="previous chapter">flopy.mt3d.mtdsp Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mtphc.html"
+                        title="next chapter">flopy.mt3d.mtphc Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -135,7 +369,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mtphc.html" title="flopy.mt3d.mtphc Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

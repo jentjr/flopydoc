@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.formattedfile Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.utils.formattedfile Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.mflistfile Module" href="mflistfile.html" />
     <link rel="prev" title="flopy.utils.flopy_io Module" href="flopy_io.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -52,9 +53,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="mflistfile.html" title="flopy.utils.mflistfile Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="flopy_io.html" title="flopy.utils.flopy_io Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -73,7 +77,7 @@ important classes that can be accessed by the user.</p>
 </ul>
 <dl class="class">
 <dt id="flopy.utils.formattedfile.FormattedHeadFile">
-<em class="property">class </em><tt class="descclassname">flopy.utils.formattedfile.</tt><tt class="descname">FormattedHeadFile</tt><big>(</big><em>filename</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.formattedfile.FormattedHeadFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.formattedfile.</tt><tt class="descname">FormattedHeadFile</tt><big>(</big><em>filename</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>verbose=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.formattedfile.FormattedHeadFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>FormattedHeadFile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -119,42 +123,6 @@ with headers.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec2</span> <span class="o">=</span> <span class="n">ddnobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="mf">100.</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.close" title="flopy.utils.formattedfile.FormattedHeadFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
-<td>Close the file handle.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.get_alldata" title="flopy.utils.formattedfile.FormattedHeadFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([mflay,&nbsp;nodata])</td>
-<td>Get all of the data from the file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.get_data" title="flopy.utils.formattedfile.FormattedHeadFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([kstpkper,&nbsp;idx,&nbsp;totim,&nbsp;mflay])</td>
-<td>Get data from the file for the specified conditions.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.get_kstpkper" title="flopy.utils.formattedfile.FormattedHeadFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
-<td>Get a list of unique stress periods and time steps in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.get_times" title="flopy.utils.formattedfile.FormattedHeadFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
-<td>Get a list of unique times in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.get_ts" title="flopy.utils.formattedfile.FormattedHeadFile.get_ts"><tt class="xref py py-obj docutils literal"><span class="pre">get_ts</span></tt></a>(idx)</td>
-<td>Get a time series from the formatted file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.list_records" title="flopy.utils.formattedfile.FormattedHeadFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
-<td>Print a list of all of the records in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.plot" title="flopy.utils.formattedfile.FormattedHeadFile.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([axes,&nbsp;kstpkper,&nbsp;totim,&nbsp;mflay,&nbsp;...])</td>
-<td>Plot 3-D model output data in a specific location</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeadFile.to_shapefile" title="flopy.utils.formattedfile.FormattedHeadFile.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;kstpkper,&nbsp;totim,&nbsp;...])</td>
-<td>Export model output data to a shapefile at a specific location  in LayerFile instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.formattedfile.FormattedHeadFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.formattedfile.FormattedHeadFile.close" title="Permalink to this definition">¶</a></dt>
@@ -461,27 +429,6 @@ formatted files.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeader.get_dtype" title="flopy.utils.formattedfile.FormattedHeader.get_dtype"><tt class="xref py py-obj docutils literal"><span class="pre">get_dtype</span></tt></a>()</td>
-<td>Return the dtype</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeader.get_names" title="flopy.utils.formattedfile.FormattedHeader.get_names"><tt class="xref py py-obj docutils literal"><span class="pre">get_names</span></tt></a>()</td>
-<td>Return the dtype names</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeader.get_values" title="flopy.utils.formattedfile.FormattedHeader.get_values"><tt class="xref py py-obj docutils literal"><span class="pre">get_values</span></tt></a>()</td>
-<td>Return the header values</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedHeader.read_header" title="flopy.utils.formattedfile.FormattedHeader.read_header"><tt class="xref py py-obj docutils literal"><span class="pre">read_header</span></tt></a>(text_file)</td>
-<td>Read header information from a formatted file</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.formattedfile.FormattedHeader.get_dtype">
 <tt class="descname">get_dtype</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.formattedfile.FormattedHeader.get_dtype" title="Permalink to this definition">¶</a></dt>
@@ -523,45 +470,9 @@ formatted files.</p>
 
 <dl class="class">
 <dt id="flopy.utils.formattedfile.FormattedLayerFile">
-<em class="property">class </em><tt class="descclassname">flopy.utils.formattedfile.</tt><tt class="descname">FormattedLayerFile</tt><big>(</big><em>filename</em>, <em>precision</em>, <em>verbose</em><big>)</big><a class="headerlink" href="#flopy.utils.formattedfile.FormattedLayerFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.formattedfile.</tt><tt class="descname">FormattedLayerFile</tt><big>(</big><em>filename</em>, <em>precision</em>, <em>verbose</em>, <em>kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.formattedfile.FormattedLayerFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>The FormattedLayerFile class is the super class from which specific derived
 classes are formed.  This class should not be instantiated directly</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.close" title="flopy.utils.formattedfile.FormattedLayerFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
-<td>Close the file handle.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.get_alldata" title="flopy.utils.formattedfile.FormattedLayerFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([mflay,&nbsp;nodata])</td>
-<td>Get all of the data from the file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.get_data" title="flopy.utils.formattedfile.FormattedLayerFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([kstpkper,&nbsp;idx,&nbsp;totim,&nbsp;mflay])</td>
-<td>Get data from the file for the specified conditions.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.get_kstpkper" title="flopy.utils.formattedfile.FormattedLayerFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
-<td>Get a list of unique stress periods and time steps in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.get_times" title="flopy.utils.formattedfile.FormattedLayerFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
-<td>Get a list of unique times in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.get_ts" title="flopy.utils.formattedfile.FormattedLayerFile.get_ts"><tt class="xref py py-obj docutils literal"><span class="pre">get_ts</span></tt></a>(idx)</td>
-<td>Get a time series from the formatted file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.list_records" title="flopy.utils.formattedfile.FormattedLayerFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
-<td>Print a list of all of the records in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.plot" title="flopy.utils.formattedfile.FormattedLayerFile.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([axes,&nbsp;kstpkper,&nbsp;totim,&nbsp;mflay,&nbsp;...])</td>
-<td>Plot 3-D model output data in a specific location</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.formattedfile.FormattedLayerFile.to_shapefile" title="flopy.utils.formattedfile.FormattedLayerFile.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;kstpkper,&nbsp;totim,&nbsp;...])</td>
-<td>Export model output data to a shapefile at a specific location  in LayerFile instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.formattedfile.FormattedLayerFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.formattedfile.FormattedLayerFile.close" title="Permalink to this definition">¶</a></dt>
@@ -862,6 +773,9 @@ will be written</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="flopy_io.html"
                         title="previous chapter">flopy.utils.flopy_io Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mflistfile.html"
+                        title="next chapter">flopy.utils.mflistfile Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -889,9 +803,12 @@ will be written</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="mflistfile.html" title="flopy.utils.mflistfile Module"
+             >next</a> |</li>
+        <li class="right" >
           <a href="flopy_io.html" title="flopy.utils.flopy_io Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

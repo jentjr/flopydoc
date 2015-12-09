@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.plot.crosssection Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.plot.crosssection Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.plot.plotutil Module" href="plotutil.html" />
+    <link rel="prev" title="flopy.plot.map Module" href="map.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="plotutil.html" title="flopy.plot.plotutil Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -111,54 +119,6 @@ indicates clockwise rotation.  Angles are in degrees.</p>
 then these will be calculated based on grid, coordinates, and rotation.</p>
 </div></blockquote>
 </td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.contour_array" title="flopy.plot.crosssection.ModelCrossSection.contour_array"><tt class="xref py py-obj docutils literal"><span class="pre">contour_array</span></tt></a>(a[,&nbsp;masked_values,&nbsp;head])</td>
-<td>Contour a three-dimensional array.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.get_extent" title="flopy.plot.crosssection.ModelCrossSection.get_extent"><tt class="xref py py-obj docutils literal"><span class="pre">get_extent</span></tt></a>()</td>
-<td>Get the extent of the rotated and offset grid</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.get_grid_line_collection" title="flopy.plot.crosssection.ModelCrossSection.get_grid_line_collection"><tt class="xref py py-obj docutils literal"><span class="pre">get_grid_line_collection</span></tt></a>(**kwargs)</td>
-<td>Get a LineCollection of the grid</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.get_grid_patch_collection" title="flopy.plot.crosssection.ModelCrossSection.get_grid_patch_collection"><tt class="xref py py-obj docutils literal"><span class="pre">get_grid_patch_collection</span></tt></a>(zpts,&nbsp;plotarray,&nbsp;...)</td>
-<td>Get a PatchCollection of plotarray in unmasked cells</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.plot_array" title="flopy.plot.crosssection.ModelCrossSection.plot_array"><tt class="xref py py-obj docutils literal"><span class="pre">plot_array</span></tt></a>(a[,&nbsp;masked_values,&nbsp;head])</td>
-<td>Plot a three-dimensional array as a patch collection.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.plot_bc" title="flopy.plot.crosssection.ModelCrossSection.plot_bc"><tt class="xref py py-obj docutils literal"><span class="pre">plot_bc</span></tt></a>([ftype,&nbsp;package,&nbsp;kper,&nbsp;color,&nbsp;head])</td>
-<td>Plot boundary conditions locations for a specific boundary</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.plot_discharge" title="flopy.plot.crosssection.ModelCrossSection.plot_discharge"><tt class="xref py py-obj docutils literal"><span class="pre">plot_discharge</span></tt></a>(frf,&nbsp;fff[,&nbsp;flf,&nbsp;head,&nbsp;kstep,&nbsp;...])</td>
-<td>Use quiver to plot vectors.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.plot_fill_between" title="flopy.plot.crosssection.ModelCrossSection.plot_fill_between"><tt class="xref py py-obj docutils literal"><span class="pre">plot_fill_between</span></tt></a>(a[,&nbsp;colors,&nbsp;...])</td>
-<td>Plot a three-dimensional array as lines.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.plot_grid" title="flopy.plot.crosssection.ModelCrossSection.plot_grid"><tt class="xref py py-obj docutils literal"><span class="pre">plot_grid</span></tt></a>(**kwargs)</td>
-<td>Plot the grid lines.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.plot_ibound" title="flopy.plot.crosssection.ModelCrossSection.plot_ibound"><tt class="xref py py-obj docutils literal"><span class="pre">plot_ibound</span></tt></a>([ibound,&nbsp;color_noflow,&nbsp;...])</td>
-<td>Make a plot of ibound.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.plot_surface" title="flopy.plot.crosssection.ModelCrossSection.plot_surface"><tt class="xref py py-obj docutils literal"><span class="pre">plot_surface</span></tt></a>(a[,&nbsp;masked_values])</td>
-<td>Plot a two- or three-dimensional array as line(s).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.set_zcentergrid" title="flopy.plot.crosssection.ModelCrossSection.set_zcentergrid"><tt class="xref py py-obj docutils literal"><span class="pre">set_zcentergrid</span></tt></a>(vs)</td>
-<td>Get an array of z elevations at the center of a cell that is based</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.plot.crosssection.ModelCrossSection.set_zpts" title="flopy.plot.crosssection.ModelCrossSection.set_zpts"><tt class="xref py py-obj docutils literal"><span class="pre">set_zpts</span></tt></a>(vs)</td>
-<td>Get an array of z elevations based on minimum of cell elevation</td>
 </tr>
 </tbody>
 </table>
@@ -337,7 +297,7 @@ patches that conform to water-level elevations.</p>
 
 <dl class="method">
 <dt id="flopy.plot.crosssection.ModelCrossSection.plot_discharge">
-<tt class="descname">plot_discharge</tt><big>(</big><em>frf</em>, <em>fff</em>, <em>flf=None</em>, <em>head=None</em>, <em>kstep=1</em>, <em>hstep=1</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_discharge" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot_discharge</tt><big>(</big><em>frf</em>, <em>fff</em>, <em>flf=None</em>, <em>head=None</em>, <em>kstep=1</em>, <em>hstep=1</em>, <em>normalize=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.crosssection.ModelCrossSection.plot_discharge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use quiver to plot vectors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -367,6 +327,12 @@ conditions in order to calculated saturated thickness.</p>
 <p><strong>hstep</strong> : int</p>
 <blockquote>
 <div><p>horizontal frequency to plot. (Default is 1.)</p>
+</div></blockquote>
+<p><strong>normalize</strong> : bool</p>
+<blockquote>
+<div><p>boolean flag used to determine if discharge vectors should
+be normalized using the magnitude of the specific discharge in each
+cell. (default is False)</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : dictionary</p>
 <blockquote>
@@ -563,6 +529,12 @@ on minimum of cell top elevation (self.elev) or passed vs numpy.ndarray</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="map.html"
+                        title="previous chapter">flopy.plot.map Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plotutil.html"
+                        title="next chapter">flopy.plot.plotutil Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -589,7 +561,13 @@ on minimum of cell top elevation (self.elev) or passed vs numpy.ndarray</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="plotutil.html" title="flopy.plot.plotutil Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

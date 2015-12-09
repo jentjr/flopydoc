@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.datafile Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.utils.datafile Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.binaryfile Module" href="binaryfile.html" />
+    <link rel="prev" title="flopy.modflow.mfsms Module" href="mfsms.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfsms.html" title="flopy.modflow.mfsms Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,24 +76,6 @@ abstract classes that should not be directly accessed.</p>
 <dt id="flopy.utils.datafile.Header">
 <em class="property">class </em><tt class="descclassname">flopy.utils.datafile.</tt><tt class="descname">Header</tt><big>(</big><em>filetype=None</em>, <em>precision='single'</em><big>)</big><a class="headerlink" href="#flopy.utils.datafile.Header" title="Permalink to this definition">¶</a></dt>
 <dd><p>The header class is an abstract base class to create headers for MODFLOW files</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.datafile.Header.get_dtype" title="flopy.utils.datafile.Header.get_dtype"><tt class="xref py py-obj docutils literal"><span class="pre">get_dtype</span></tt></a>()</td>
-<td>Return the dtype</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.datafile.Header.get_names" title="flopy.utils.datafile.Header.get_names"><tt class="xref py py-obj docutils literal"><span class="pre">get_names</span></tt></a>()</td>
-<td>Return the dtype names</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.datafile.Header.get_values" title="flopy.utils.datafile.Header.get_values"><tt class="xref py py-obj docutils literal"><span class="pre">get_values</span></tt></a>()</td>
-<td>Return the header values</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.datafile.Header.get_dtype">
 <tt class="descname">get_dtype</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.datafile.Header.get_dtype" title="Permalink to this definition">¶</a></dt>
@@ -111,39 +101,6 @@ abstract classes that should not be directly accessed.</p>
 <em class="property">class </em><tt class="descclassname">flopy.utils.datafile.</tt><tt class="descname">LayerFile</tt><big>(</big><em>filename</em>, <em>precision</em>, <em>verbose</em>, <em>kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.datafile.LayerFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>The LayerFile class is the abstract base class from which specific derived
 classes are formed.  LayerFile This class should not be instantiated directly.</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.close" title="flopy.utils.datafile.LayerFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
-<td>Close the file handle.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.get_alldata" title="flopy.utils.datafile.LayerFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([mflay,&nbsp;nodata])</td>
-<td>Get all of the data from the file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.get_data" title="flopy.utils.datafile.LayerFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([kstpkper,&nbsp;idx,&nbsp;totim,&nbsp;mflay])</td>
-<td>Get data from the file for the specified conditions.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.get_kstpkper" title="flopy.utils.datafile.LayerFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
-<td>Get a list of unique stress periods and time steps in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.get_times" title="flopy.utils.datafile.LayerFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
-<td>Get a list of unique times in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.list_records" title="flopy.utils.datafile.LayerFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
-<td>Print a list of all of the records in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.plot" title="flopy.utils.datafile.LayerFile.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([axes,&nbsp;kstpkper,&nbsp;totim,&nbsp;mflay,&nbsp;...])</td>
-<td>Plot 3-D model output data in a specific location</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.datafile.LayerFile.to_shapefile" title="flopy.utils.datafile.LayerFile.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;kstpkper,&nbsp;totim,&nbsp;...])</td>
-<td>Export model output data to a shapefile at a specific location  in LayerFile instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.datafile.LayerFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.datafile.LayerFile.close" title="Permalink to this definition">¶</a></dt>
@@ -411,6 +368,12 @@ will be written</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfsms.html"
+                        title="previous chapter">flopy.modflow.mfsms Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="binaryfile.html"
+                        title="next chapter">flopy.utils.binaryfile Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -437,7 +400,13 @@ will be written</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfsms.html" title="flopy.modflow.mfsms Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

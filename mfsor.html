@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfsor Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.modflow.mfsor Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfstr Module" href="mfstr.html" />
+    <link rel="prev" title="flopy.modflow.mfsms Module" href="mfsms.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfstr.html" title="flopy.modflow.mfstr Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfsms.html" title="flopy.modflow.mfsms Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -62,37 +70,102 @@
             
   <div class="section" id="flopy-modflow-mfsor-module">
 <h1>flopy.modflow.mfsor Module<a class="headerlink" href="#flopy-modflow-mfsor-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfsor"></span><dl class="class">
+<span class="target" id="module-flopy.modflow.mfsor"></span><p>mfsor module.  Contains the ModflowSor class. Note that the user can access
+the ModflowSor class as <cite>flopy.modflow.ModflowSor</cite>.</p>
+<p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/nrp/gwsoftware/modflow2000/Guide/sor.htm">Online
+MODFLOW Guide</a>.</p>
+<dl class="class">
 <dt id="flopy.modflow.mfsor.ModflowSor">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mfsor.</tt><tt class="descname">ModflowSor</tt><big>(</big><em>model</em>, <em>mxiter=200</em>, <em>accl=1</em>, <em>hclose=1e-05</em>, <em>iprsor=0</em>, <em>extension='sor'</em>, <em>unitnumber=26</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Slice-successive overrelaxation package class</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<dd><p>MODFLOW Slice-successive overrelaxation Package Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfsor.ModflowSor.load" title="flopy.modflow.mfsor.ModflowSor.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;ext_unit_dict])</td>
-<td>Load an existing package.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfsor.ModflowSor.plot" title="flopy.modflow.mfsor.ModflowSor.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
-<td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfsor.ModflowSor.to_shapefile" title="flopy.modflow.mfsor.ModflowSor.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
-<td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfsor.ModflowSor.write_file" title="flopy.modflow.mfsor.ModflowSor.write_file"><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt></a>()</td>
-<td>Write the package input file.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type :class:flopy.modflow.mf.Modflow) to which this package will be added.</p>
+</div></blockquote>
+<p><strong>mxiter</strong> : integer</p>
+<blockquote>
+<div><p>The maximum number of iterations allowed in a time step. (default is 200)</p>
+</div></blockquote>
+<p><strong>accl</strong> : float</p>
+<blockquote>
+<div><p>The acceleration variable, which must be greater than zero
+and is generally between 1. and 2. (default is 1)</p>
+</div></blockquote>
+<p><strong>hclose</strong> : float &gt; 0</p>
+<blockquote>
+<div><p>The head change criterion for convergence. When the maximum absolute value of head change from all nodes
+during an iteration is less than or equal to HCLOSE, iteration stops. (default is 1e-5)</p>
+</div></blockquote>
+<p><strong>iprsor</strong> : integer &gt; 0</p>
+<blockquote>
+<div><p>the printout interval for SOR. IPRSOR, if equal to zero, is changed to 999.
+The maximum head change (positive or negative) is printed for each iteration of
+a time step whenever the time step is an even multiple of IPRSOR. This printout
+also occurs at the end of each stress period regardless of the value of IPRSOR.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;sor&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><p>File unit number (default is 26).</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sor</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowSor</span><span class="p">(</span><span class="n">ml</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modflow.mfsor.ModflowSor.check">
+<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check package data for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a sting is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfsor.ModflowSor.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor.load" title="Permalink to this definition">¶</a></dt>
@@ -136,7 +209,7 @@ constructed using the function
 <dl class="method">
 <dt id="flopy.modflow.mfsor.ModflowSor.plot">
 <tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 package input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -159,10 +232,11 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 all layers will be included. (default is None)</p>
 </dd>
 <dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
 </dd>
 <dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">mflist dictionary key. (default is None)</p>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -188,10 +262,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsor.ModflowSor.to_shapefile">
 <tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor.to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
-<dd>attribute for each layer in each data array</dd>
-</dl>
+<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
+Adds an attribute for each layer in each data array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -218,7 +290,15 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsor.ModflowSor.write_file">
 <tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor.write_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write the package input file.</p>
+<dd><p>Write the package file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -231,6 +311,12 @@ a list of matplotlib.pyplot.axis are returned.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfsms.html"
+                        title="previous chapter">flopy.modflow.mfsms Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfstr.html"
+                        title="next chapter">flopy.modflow.mfstr Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -257,7 +343,13 @@ a list of matplotlib.pyplot.axis are returned.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfstr.html" title="flopy.modflow.mfstr Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfsms.html" title="flopy.modflow.mfsms Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.binaryhydmodfile Module" href="binaryhydmodfile.html" />
+    <link rel="prev" title="flopy.utils.datafile Module" href="datafile.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="datafile.html" title="flopy.utils.datafile Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -118,42 +126,6 @@ the corresponding data array.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">ddnobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="mf">100.</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.close" title="flopy.utils.binaryfile.HeadFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
-<td>Close the file handle.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_alldata" title="flopy.utils.binaryfile.HeadFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([mflay,&nbsp;nodata])</td>
-<td>Get all of the data from the file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_data" title="flopy.utils.binaryfile.HeadFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([kstpkper,&nbsp;idx,&nbsp;totim,&nbsp;mflay])</td>
-<td>Get data from the file for the specified conditions.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_kstpkper" title="flopy.utils.binaryfile.HeadFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
-<td>Get a list of unique stress periods and time steps in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_times" title="flopy.utils.binaryfile.HeadFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
-<td>Get a list of unique times in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.get_ts" title="flopy.utils.binaryfile.HeadFile.get_ts"><tt class="xref py py-obj docutils literal"><span class="pre">get_ts</span></tt></a>(idx)</td>
-<td>Get a time series from the binary file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.list_records" title="flopy.utils.binaryfile.HeadFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
-<td>Print a list of all of the records in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.plot" title="flopy.utils.binaryfile.HeadFile.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([axes,&nbsp;kstpkper,&nbsp;totim,&nbsp;mflay,&nbsp;...])</td>
-<td>Plot 3-D model output data in a specific location</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.HeadFile.to_shapefile" title="flopy.utils.binaryfile.HeadFile.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;kstpkper,&nbsp;totim,&nbsp;...])</td>
-<td>Export model output data to a shapefile at a specific location  in LayerFile instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.close" title="Permalink to this definition">¶</a></dt>
@@ -487,42 +459,6 @@ the corresponding data array.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">ucnobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.close" title="flopy.utils.binaryfile.UcnFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
-<td>Close the file handle.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_alldata" title="flopy.utils.binaryfile.UcnFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([mflay,&nbsp;nodata])</td>
-<td>Get all of the data from the file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_data" title="flopy.utils.binaryfile.UcnFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([kstpkper,&nbsp;idx,&nbsp;totim,&nbsp;mflay])</td>
-<td>Get data from the file for the specified conditions.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_kstpkper" title="flopy.utils.binaryfile.UcnFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
-<td>Get a list of unique stress periods and time steps in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_times" title="flopy.utils.binaryfile.UcnFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
-<td>Get a list of unique times in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.get_ts" title="flopy.utils.binaryfile.UcnFile.get_ts"><tt class="xref py py-obj docutils literal"><span class="pre">get_ts</span></tt></a>(idx)</td>
-<td>Get a time series from the binary file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.list_records" title="flopy.utils.binaryfile.UcnFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
-<td>Print a list of all of the records in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.plot" title="flopy.utils.binaryfile.UcnFile.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([axes,&nbsp;kstpkper,&nbsp;totim,&nbsp;mflay,&nbsp;...])</td>
-<td>Plot 3-D model output data in a specific location</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.UcnFile.to_shapefile" title="flopy.utils.binaryfile.UcnFile.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename[,&nbsp;kstpkper,&nbsp;totim,&nbsp;...])</td>
-<td>Export model output data to a shapefile at a specific location  in LayerFile instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.UcnFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.close" title="Permalink to this definition">¶</a></dt>
@@ -843,42 +779,6 @@ will be written</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">cbb</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s">&#39;RIVER LEAKAGE&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.close" title="flopy.utils.binaryfile.CellBudgetFile.close"><tt class="xref py py-obj docutils literal"><span class="pre">close</span></tt></a>()</td>
-<td>Close the file handle</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.create3D" title="flopy.utils.binaryfile.CellBudgetFile.create3D"><tt class="xref py py-obj docutils literal"><span class="pre">create3D</span></tt></a>(data,&nbsp;nlay,&nbsp;nrow,&nbsp;ncol)</td>
-<td>Convert a dictionary of {node: q, ...} into a numpy masked array.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_data" title="flopy.utils.binaryfile.CellBudgetFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([idx,&nbsp;kstpkper,&nbsp;totim,&nbsp;text,&nbsp;...])</td>
-<td>get data from the budget file.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_kstpkper" title="flopy.utils.binaryfile.CellBudgetFile.get_kstpkper"><tt class="xref py py-obj docutils literal"><span class="pre">get_kstpkper</span></tt></a>()</td>
-<td>Get a list of unique stress periods and time steps in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_nrecords" title="flopy.utils.binaryfile.CellBudgetFile.get_nrecords"><tt class="xref py py-obj docutils literal"><span class="pre">get_nrecords</span></tt></a>()</td>
-<td>Return the number of records in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_record" title="flopy.utils.binaryfile.CellBudgetFile.get_record"><tt class="xref py py-obj docutils literal"><span class="pre">get_record</span></tt></a>(idx[,&nbsp;full3D,&nbsp;verbose])</td>
-<td>Get a single data record from the budget file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.get_times" title="flopy.utils.binaryfile.CellBudgetFile.get_times"><tt class="xref py py-obj docutils literal"><span class="pre">get_times</span></tt></a>()</td>
-<td>Get a list of unique times in the file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.list_records" title="flopy.utils.binaryfile.CellBudgetFile.list_records"><tt class="xref py py-obj docutils literal"><span class="pre">list_records</span></tt></a>()</td>
-<td>Print a list of all of the records in the file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.binaryfile.CellBudgetFile.unique_record_names" title="flopy.utils.binaryfile.CellBudgetFile.unique_record_names"><tt class="xref py py-obj docutils literal"><span class="pre">unique_record_names</span></tt></a>()</td>
-<td>Get a list of unique record names in the file</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.close">
 <tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.close" title="Permalink to this definition">¶</a></dt>
@@ -970,6 +870,24 @@ array of size (nlay, nrow, ncol) for those list-style
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_indices">
+<tt class="descname">get_indices</tt><big>(</big><em>text=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of indices for a selected record name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple</p>
+<blockquote class="last">
+<div><p>indices of selected record name in budget file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_kstpkper">
 <tt class="descname">get_kstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique stress periods and time steps in the file</p>
@@ -1034,7 +952,7 @@ array, even for those list-style records writen as part of a
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>record</strong> : a single data record</p>
 <blockquote class="last">
 <div><p>The structure of the returned object depends on the structure of
-the data in the cbb file.</p>
+the data in the cbb file. Compact list data are returned as</p>
 <p>If full3D is True, then this method will return a numpy masked
 array of size (nlay, nrow, ncol) for those list-style
 &#8216;COMPACT BUDGET&#8217; records written by MODFLOW.</p>
@@ -1097,6 +1015,12 @@ array of size (nlay, nrow, ncol) for those list-style
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="datafile.html"
+                        title="previous chapter">flopy.utils.datafile Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="binaryhydmodfile.html"
+                        title="next chapter">flopy.utils.binaryhydmodfile Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -1123,7 +1047,13 @@ array of size (nlay, nrow, ncol) for those list-style
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="datafile.html" title="flopy.utils.datafile Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

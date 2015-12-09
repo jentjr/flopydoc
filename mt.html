@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mt Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.mt3d.mt Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.seawat.swt Module" href="swt.html" />
+    <link rel="prev" title="flopy.modpath.mp Module" href="mp.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="swt.html" title="flopy.seawat.swt Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mp.html" title="flopy.modpath.mp Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -66,33 +74,46 @@
 <dt id="flopy.mt3d.mt.Mt3dList">
 <em class="property">class </em><tt class="descclassname">flopy.mt3d.mt.</tt><tt class="descname">Mt3dList</tt><big>(</big><em>model</em>, <em>extension='list'</em>, <em>listunit=7</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList" title="Permalink to this definition">¶</a></dt>
 <dd><p>List package class</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dList.check">
+<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check package data for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
-<td></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a sting is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dList.load" title="flopy.mt3d.mt.Mt3dList.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(model,&nbsp;pack_type,&nbsp;f[,&nbsp;nper,&nbsp;pop_key_list])</td>
-<td>The load method has not been implemented for this package.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dList.plot" title="flopy.mt3d.mt.Mt3dList.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
-<td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dList.to_shapefile" title="flopy.mt3d.mt.Mt3dList.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
-<td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt>()</td>
-<td></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mt.Mt3dList.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList.load" title="Permalink to this definition">¶</a></dt>
@@ -102,7 +123,7 @@
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dList.plot">
 <tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 package input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -125,10 +146,11 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 all layers will be included. (default is None)</p>
 </dd>
 <dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
 </dd>
 <dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">mflist dictionary key. (default is None)</p>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -154,10 +176,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dList.to_shapefile">
 <tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dList.to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
-<dd>attribute for each layer in each data array</dd>
-</dl>
+<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
+Adds an attribute for each layer in each data array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -185,131 +205,64 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="class">
 <dt id="flopy.mt3d.mt.Mt3dms">
-<em class="property">class </em><tt class="descclassname">flopy.mt3d.mt.</tt><tt class="descname">Mt3dms</tt><big>(</big><em>modelname='mt3dmstest'</em>, <em>namefile_ext='nam'</em>, <em>modflowmodel=None</em>, <em>ftlfilename=None</em>, <em>model_ws=None</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>listunit=7</em>, <em>exe_name='mt3dms.exe'</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms" title="Permalink to this definition">¶</a></dt>
-<dd><p>MT3DMS base class</p>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<em class="property">class </em><tt class="descclassname">flopy.mt3d.mt.</tt><tt class="descname">Mt3dms</tt><big>(</big><em>modelname='mt3dtest'</em>, <em>namefile_ext='nam'</em>, <em>modflowmodel=None</em>, <em>ftlfilename=None</em>, <em>version='mt3dms'</em>, <em>exe_name='mt3dms.exe'</em>, <em>structured=True</em>, <em>listunit=2</em>, <em>model_ws='.'</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>silent=0</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms" title="Permalink to this definition">¶</a></dt>
+<dd><p>MT3DMS Model Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">adv</span></tt></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">btn</span></tt></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">dsp</span></tt></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">gcg</span></tt></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">mf</span></tt></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.name" title="flopy.mt3d.mt.Mt3dms.name"><tt class="xref py py-obj docutils literal"><span class="pre">name</span></tt></a></td>
-<td>Get model name</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">rct</span></tt></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">ssm</span></tt></td>
-<td></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>modelname</strong> : string, optional</p>
+<blockquote>
+<div><p>Name of model.  This string will be used to name the MODFLOW input
+that are created with write_model. (the default is &#8216;modflowtest&#8217;)</p>
+</div></blockquote>
+<p><strong>namefile_ext</strong> : string, optional</p>
+<blockquote>
+<div><p>Extension for the namefile (the default is &#8216;nam&#8217;)</p>
+</div></blockquote>
+<p><strong>version</strong> : string, optional</p>
+<blockquote>
+<div><p>Version of MODFLOW to use (the default is &#8216;mf2005&#8217;).</p>
+</div></blockquote>
+<p><strong>exe_name</strong> : string, optional</p>
+<blockquote>
+<div><p>The name of the executable to use (the default is
+&#8216;mf2005&#8217;).</p>
+</div></blockquote>
+<p><strong>listunit</strong> : integer, optional</p>
+<blockquote>
+<div><p>Unit number for the list file (the default is 2).</p>
+</div></blockquote>
+<p><strong>model_ws</strong> : string, optional</p>
+<blockquote>
+<div><p>model workspace.  Directory name to create model data sets.
+(default is the present working directory).</p>
+</div></blockquote>
+<p><strong>external_path</strong> : string</p>
+<blockquote>
+<div><p>Location for external files (default is None).</p>
+</div></blockquote>
+<p><strong>verbose</strong> : boolean, optional</p>
+<blockquote>
+<div><p>Print additional information to the screen (default is False).</p>
+</div></blockquote>
+<p><strong>load</strong> : boolean, optional</p>
+<blockquote>
+<div><p>(default is True).</p>
+</div></blockquote>
+<p><strong>silent</strong> : integer</p>
+<blockquote class="last">
+<div><p>(default is 0)</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.add_external" title="flopy.mt3d.mt.Mt3dms.add_external"><tt class="xref py py-obj docutils literal"><span class="pre">add_external</span></tt></a>(fname,&nbsp;unit[,&nbsp;binflag])</td>
-<td>Assign an external array so that it will be listed as a DATA or DATA(BINARY) entry in the name file.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.add_package" title="flopy.mt3d.mt.Mt3dms.add_package"><tt class="xref py py-obj docutils literal"><span class="pre">add_package</span></tt></a>(p)</td>
-<td>Add a package.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.add_pop_key_list" title="flopy.mt3d.mt.Mt3dms.add_pop_key_list"><tt class="xref py py-obj docutils literal"><span class="pre">add_pop_key_list</span></tt></a>(key)</td>
-<td>Add a external file unit number to a list that will be used to remove model output (typically binary) files from ext_unit_dict.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.assign_external" title="flopy.mt3d.mt.Mt3dms.assign_external"><tt class="xref py py-obj docutils literal"><span class="pre">assign_external</span></tt></a>(num,&nbsp;prefix)</td>
-<td>Assign external file</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.build_array_name" title="flopy.mt3d.mt.Mt3dms.build_array_name"><tt class="xref py py-obj docutils literal"><span class="pre">build_array_name</span></tt></a>(num,&nbsp;prefix)</td>
-<td>Build array name</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.change_model_ws" title="flopy.mt3d.mt.Mt3dms.change_model_ws"><tt class="xref py py-obj docutils literal"><span class="pre">change_model_ws</span></tt></a>([new_pth])</td>
-<td>Change the model work space.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_name" title="flopy.mt3d.mt.Mt3dms.get_name"><tt class="xref py py-obj docutils literal"><span class="pre">get_name</span></tt></a>()</td>
-<td>Get model name</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_name_file_entries" title="flopy.mt3d.mt.Mt3dms.get_name_file_entries"><tt class="xref py py-obj docutils literal"><span class="pre">get_name_file_entries</span></tt></a>()</td>
-<td>Get a string representation of the name file.</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">get_ncomp</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_package" title="flopy.mt3d.mt.Mt3dms.get_package"><tt class="xref py py-obj docutils literal"><span class="pre">get_package</span></tt></a>(name)</td>
-<td>Get a package.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.get_package_list" title="flopy.mt3d.mt.Mt3dms.get_package_list"><tt class="xref py py-obj docutils literal"><span class="pre">get_package_list</span></tt></a>()</td>
-<td>Get a list of all the package names.</td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getadv</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getbtn</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getdsp</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getgcg</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getmf</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">getrct</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">getssm</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">next_ext_unit</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.plot" title="flopy.mt3d.mt.Mt3dms.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([SelPackList])</td>
-<td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.remove_external" title="flopy.mt3d.mt.Mt3dms.remove_external"><tt class="xref py py-obj docutils literal"><span class="pre">remove_external</span></tt></a>([fname,&nbsp;unit])</td>
-<td>Remove an external file from the model by specifying either the file name or the unit number.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.remove_package" title="flopy.mt3d.mt.Mt3dms.remove_package"><tt class="xref py py-obj docutils literal"><span class="pre">remove_package</span></tt></a>(pname)</td>
-<td>Remove a package from this model</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.run_model" title="flopy.mt3d.mt.Mt3dms.run_model"><tt class="xref py py-obj docutils literal"><span class="pre">run_model</span></tt></a>([silent,&nbsp;pause,&nbsp;report])</td>
-<td>This method will run the model using subprocess.Popen.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.set_exename" title="flopy.mt3d.mt.Mt3dms.set_exename"><tt class="xref py py-obj docutils literal"><span class="pre">set_exename</span></tt></a>(exe_name)</td>
-<td>Set the name of the executable.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.set_name" title="flopy.mt3d.mt.Mt3dms.set_name"><tt class="xref py py-obj docutils literal"><span class="pre">set_name</span></tt></a>(value)</td>
-<td>Set model name</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mt3d.mt.Mt3dms.write_input" title="flopy.mt3d.mt.Mt3dms.write_input"><tt class="xref py py-obj docutils literal"><span class="pre">write_input</span></tt></a>([SelPackList])</td>
-<td>Write the input.</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">write_name_file</span></tt>()</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">mt</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.add_external">
 <tt class="descname">add_external</tt><big>(</big><em>fname</em>, <em>unit</em>, <em>binflag=False</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.add_external" title="Permalink to this definition">¶</a></dt>
@@ -372,50 +325,6 @@ model output (typically binary) files from ext_unit_dict.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.mt3d.mt.Mt3dms.assign_external">
-<tt class="descname">assign_external</tt><big>(</big><em>num</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.assign_external" title="Permalink to this definition">¶</a></dt>
-<dd><p>Assign external file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int</p>
-<blockquote>
-<div><p>array number</p>
-</div></blockquote>
-<p><strong>prefix</strong> : string</p>
-<blockquote class="last">
-<div><p>array prefix</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mt3d.mt.Mt3dms.build_array_name">
-<tt class="descname">build_array_name</tt><big>(</big><em>num</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.build_array_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build array name</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int</p>
-<blockquote>
-<div><p>array number</p>
-</div></blockquote>
-<p><strong>prefix</strong> : string</p>
-<blockquote class="last">
-<div><p>array prefix</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.change_model_ws">
 <tt class="descname">change_model_ws</tt><big>(</big><em>new_pth=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.change_model_ws" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the model work space.</p>
@@ -443,21 +352,43 @@ be used with get_package to pull out individual packages.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.mt3d.mt.Mt3dms.get_name">
-<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.get_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get model name</p>
+<dt id="flopy.mt3d.mt.Mt3dms.check">
+<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check model data for common errors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>name of model</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a string is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
 </div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -509,6 +440,60 @@ be used with get_package to pull out individual packages.</p>
 </table>
 </dd></dl>
 
+<dl class="staticmethod">
+<dt id="flopy.mt3d.mt.Mt3dms.load">
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>version='mt3dms'</em>, <em>exe_name='mt3dms.exe'</em>, <em>verbose=False</em>, <em>model_ws='.'</em>, <em>load_only=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string</p>
+<blockquote>
+<div><p>Full path and name of MT3D name file.</p>
+</div></blockquote>
+<p><strong>version</strong> : string</p>
+<blockquote>
+<div><p>The version of MT3D (mt3dms, or mt3d-usgs)
+(default is mt3dms)</p>
+</div></blockquote>
+<p><strong>exe_name</strong> : string</p>
+<blockquote>
+<div><p>The name of the executable to use if this loaded model is run.
+(default is mt3dms.exe)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Write information on the load process if True.
+(default is False)</p>
+</div></blockquote>
+<p><strong>model_ws</strong> : string</p>
+<blockquote>
+<div><p>The path for the model workspace.
+(default is the current working directory &#8216;.&#8217;)</p>
+</div></blockquote>
+<p><strong>load_only</strong> : list of strings</p>
+<blockquote>
+<div><p>Filetype(s) to load (e.g. [&#8216;btn&#8217;, &#8216;adv&#8217;])
+(default is None, which means that all will be loaded)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mt</strong> : flopy.mt3d.mt.Mt3dms</p>
+<blockquote class="last">
+<div><p>flopy Mt3d model object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">mt</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="flopy.mt3d.mt.Mt3dms.name">
 <tt class="descname">name</tt><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.name" title="Permalink to this definition">¶</a></dt>
@@ -528,9 +513,15 @@ be used with get_package to pull out individual packages.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.next_ext_unit">
+<tt class="descname">next_ext_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.next_ext_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to encapsulate next_ext_unit attribute</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.plot">
 <tt class="descname">plot</tt><big>(</big><em>SelPackList=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 model input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -561,7 +552,7 @@ all layers will be included. (default is None)</p>
 <dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
 </dd>
 <dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">mflist dictionary key. (default is None)</p>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -627,7 +618,7 @@ file name or the unit number.</p>
 
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.run_model">
-<tt class="descname">run_model</tt><big>(</big><em>silent=False</em>, <em>pause=False</em>, <em>report=False</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.run_model" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">run_model</tt><big>(</big><em>silent=False</em>, <em>pause=False</em>, <em>report=False</em>, <em>normal_msg='normal termination'</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.run_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will run the model using subprocess.Popen.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -639,12 +630,17 @@ file name or the unit number.</p>
 </div></blockquote>
 <p><strong>pause</strong> : boolean, optional</p>
 <blockquote>
-<div><p>Pause upon completion (the default is False).</p>
+<div><p>Pause upon completion (default is False).</p>
 </div></blockquote>
 <p><strong>report</strong> : boolean, optional</p>
 <blockquote>
-<div><p>Save stdout lines to a list (buff) which is returned 
-by the method . (the default is False).</p>
+<div><p>Save stdout lines to a list (buff) which is returned
+by the method . (default is False).</p>
+</div></blockquote>
+<p><strong>normal_msg</strong> : str</p>
+<blockquote>
+<div><p>Normal termination message used to determine if the
+run terminated normally. (default is &#8216;normal termination&#8217;)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -658,35 +654,36 @@ by the method . (the default is False).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.mt3d.mt.Mt3dms.set_exename">
-<tt class="descname">set_exename</tt><big>(</big><em>exe_name</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.set_exename" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the name of the executable.</p>
+<dt id="flopy.mt3d.mt.Mt3dms.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>package_names=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper function for writing a shapefile for the model grid.  If
+package_names is not None, then search through the requested packages
+looking for arrays that can be added to the shapefile as attributes</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>exe_name</strong> : name of the executable</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mt3d.mt.Mt3dms.set_name">
-<tt class="descname">set_name</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.set_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set model name</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>value</strong> : str</p>
-<blockquote class="last">
-<div><p>Name to assign to model.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>name of the shapefile to write</p>
 </div></blockquote>
+<p><strong>package_names</strong> : list of package names (e.g. [&#8220;dis&#8221;,&#8221;lpf&#8221;])</p>
+<blockquote>
+<div><p>Packages to export data arrays to shapefile. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">SelPackList</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -703,6 +700,12 @@ by the method . (the default is False).</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.mt3d.mt.Mt3dms.write_name_file">
+<tt class="descname">write_name_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.write_name_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the name file.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -713,6 +716,12 @@ by the method . (the default is False).</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mp.html"
+                        title="previous chapter">flopy.modpath.mp Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="swt.html"
+                        title="next chapter">flopy.seawat.swt Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -739,7 +748,13 @@ by the method . (the default is False).</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="swt.html" title="flopy.seawat.swt Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mp.html" title="flopy.modpath.mp Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

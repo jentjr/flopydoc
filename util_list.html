@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_list Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.utils.util_list Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.plot.map Module" href="map.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -54,7 +54,7 @@
         <li class="right" >
           <a href="map.html" title="flopy.plot.map Module"
              accesskey="N">next</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,13 +68,16 @@
 <span id="flopy-utils-util-list-module"></span><h1>flopy.utils.util_list Module<a class="headerlink" href="#module-flopy.utils.util_list" title="Permalink to this headline">¶</a></h1>
 <dl class="docutils">
 <dt>util_list module.  Contains the mflist class.</dt>
-<dd>This classes encapsulates modflow-style list inputs away
+<dd><p class="first">This classes encapsulates modflow-style list inputs away
 from the individual packages.  The end-user should not need to
-instantiate this class directly.</dd>
+instantiate this class directly.</p>
+<blockquote class="last">
+<div>some more info</div></blockquote>
+</dd>
 </dl>
 <dl class="class">
-<dt id="flopy.utils.util_list.mflist">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_list.</tt><tt class="descname">mflist</tt><big>(</big><em>package</em>, <em>data=None</em>, <em>model=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist" title="Permalink to this definition">¶</a></dt>
+<dt id="flopy.utils.util_list.MfList">
+<em class="property">class </em><tt class="descclassname">flopy.utils.util_list.</tt><tt class="descname">MfList</tt><big>(</big><em>package</em>, <em>data=None</em>, <em>dtype=None</em>, <em>model=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList" title="Permalink to this definition">¶</a></dt>
 <dd><p>a generic object for handling transient boundary condition lists</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -83,7 +86,7 @@ instantiate this class directly.</dd>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : package object</p>
 <blockquote>
 <div><p>The package object (of type <a class="reference internal" href="mbase.html#flopy.mbase.Package" title="flopy.mbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.mbase.Package</span></tt></a>) to which
-this mflist will be added.</p>
+this MfList will be added.</p>
 </div></blockquote>
 <p><strong>data</strong> : varies</p>
 <blockquote class="last">
@@ -124,15 +127,15 @@ this mflist will be added.</p>
 </tbody>
 </table>
 <dl class="method">
-<dt id="flopy.utils.util_list.mflist.get_indices">
-<tt class="descname">get_indices</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.get_indices" title="Permalink to this definition">¶</a></dt>
+<dt id="flopy.utils.util_list.MfList.get_indices">
+<tt class="descname">get_indices</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.get_indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>a helper function for plotting - get all unique indices</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.util_list.mflist.plot">
-<tt class="descname">plot</tt><big>(</big><em>key=None</em>, <em>names=None</em>, <em>kper=0</em>, <em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot stress period boundary condition (mflist) data for a specified
+<dt id="flopy.utils.util_list.MfList.plot">
+<tt class="descname">plot</tt><big>(</big><em>key=None</em>, <em>names=None</em>, <em>kper=0</em>, <em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot stress period boundary condition (MfList) data for a specified
 stress period</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -140,7 +143,7 @@ stress period</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key</strong> : str</p>
 <blockquote>
-<div><p>mflist dictionary key. (default is None)</p>
+<div><p>MfList dictionary key. (default is None)</p>
 </div></blockquote>
 <p><strong>names</strong> : list</p>
 <blockquote>
@@ -224,9 +227,9 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.util_list.mflist.to_array">
-<tt class="descname">to_array</tt><big>(</big><em>kper=0</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.to_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert stress period boundary condition (mflist) data for a
+<dt id="flopy.utils.util_list.MfList.to_array">
+<tt class="descname">to_array</tt><big>(</big><em>kper=0</em>, <em>mask=False</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.to_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert stress period boundary condition (MfList) data for a
 specified stress period to a 3-D numpy array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -236,12 +239,16 @@ specified stress period to a 3-D numpy array</p>
 <blockquote>
 <div><p>MODFLOW zero-based stress period number to return. (default is zero)</p>
 </div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict of numpy.ndarrays</p>
+<p><strong>mask</strong> : boolean</p>
+<blockquote>
+<div><p>return array with np.NaN instead of zero</p>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<p><strong>&#8212;&#8212;&#8212;-</strong></p>
+<p><strong>out</strong> : dict of numpy.ndarrays</p>
 <blockquote class="last">
 <div><p>Dictionary of 3-D numpy arrays containing the stress period data for
-a selected stress period. The dictonary keys are the mflist dtype
+a selected stress period. The dictonary keys are the MfList dtype
 names for the stress period data (&#8216;cond&#8217;, &#8216;flux&#8217;, &#8216;bhead&#8217;, etc.).</p>
 </div></blockquote>
 </td>
@@ -257,9 +264,9 @@ names for the stress period data (&#8216;cond&#8217;, &#8216;flux&#8217;, &#8216
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.util_list.mflist.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>kper=0</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.mflist.to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Export stress period boundary condition (mflist) data for a specified
+<dt id="flopy.utils.util_list.MfList.to_shapefile">
+<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>kper=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export stress period boundary condition (MfList) data for a specified
 stress period</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -271,7 +278,7 @@ stress period</p>
 </div></blockquote>
 <p><strong>kper</strong> : int</p>
 <blockquote>
-<div><p>MODFLOW zero-based stress period number to return. (default is zero)</p>
+<div><p>MODFLOW zero-based stress period number to return. (default is None)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -330,7 +337,7 @@ stress period</p>
         <li class="right" >
           <a href="map.html" title="flopy.plot.map Module"
              >next</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

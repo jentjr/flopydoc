@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.modflow.mfdrn Module" href="mfdrn.html" />
+    <link rel="prev" title="flopy.modflow.mfde4 Module" href="mfde4.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -50,7 +52,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfdrn.html" title="flopy.modflow.mfdrn Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,7 +76,7 @@ the ModflowDis class as <cite>flopy.modflow.ModflowDis</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfdis.ModflowDis">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdis.</tt><tt class="descname">ModflowDis</tt><big>(</big><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdis.</tt><tt class="descname">ModflowDis</tt><big>(</big><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>start_datetime='1/1/1970'</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Discretization Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -108,7 +116,7 @@ this package will be added.</p>
 <div><p>An array of flags indicating whether or not a layer has a Quasi-3D
 confining bed below it. 0 indicates no confining bed, and not zero
 indicates a confining bed. LAYCBD for the bottom layer must be 0. (the
-default is 1)</p>
+default is 0)</p>
 </div></blockquote>
 <p><strong>top</strong> : float or array of floats (nrow, ncol), optional</p>
 <blockquote>
@@ -177,57 +185,46 @@ reasonable to set Top equal to land-surface elevation (the default is
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.check">
+<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check dis package data for zero and negative thicknesses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">add_to_dtype</span></tt>(dtype,&nbsp;field_names,&nbsp;field_types)</td>
-<td></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a sting is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.checklayerthickness" title="flopy.modflow.mfdis.ModflowDis.checklayerthickness"><tt class="xref py py-obj docutils literal"><span class="pre">checklayerthickness</span></tt></a>()</td>
-<td>Check layer thickness.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.get_cell_volumes" title="flopy.modflow.mfdis.ModflowDis.get_cell_volumes"><tt class="xref py py-obj docutils literal"><span class="pre">get_cell_volumes</span></tt></a>()</td>
-<td>Get an array of cell volumes.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.get_lrc" title="flopy.modflow.mfdis.ModflowDis.get_lrc"><tt class="xref py py-obj docutils literal"><span class="pre">get_lrc</span></tt></a>(nodes)</td>
-<td>Get layer, row, column from a list of MODFLOW node numbers.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.get_node" title="flopy.modflow.mfdis.ModflowDis.get_node"><tt class="xref py py-obj docutils literal"><span class="pre">get_node</span></tt></a>(lrc_list)</td>
-<td>Get node number from a list of MODFLOW layer, row, column tuples.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.get_node_coordinates" title="flopy.modflow.mfdis.ModflowDis.get_node_coordinates"><tt class="xref py py-obj docutils literal"><span class="pre">get_node_coordinates</span></tt></a>()</td>
-<td>Get y, x, and z cell centroids.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.getbotm" title="flopy.modflow.mfdis.ModflowDis.getbotm"><tt class="xref py py-obj docutils literal"><span class="pre">getbotm</span></tt></a>([k])</td>
-<td>Get the bottom array.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.gettop" title="flopy.modflow.mfdis.ModflowDis.gettop"><tt class="xref py py-obj docutils literal"><span class="pre">gettop</span></tt></a>()</td>
-<td>Get the top array.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.load" title="flopy.modflow.mfdis.ModflowDis.load"><tt class="xref py py-obj docutils literal"><span class="pre">load</span></tt></a>(f,&nbsp;model[,&nbsp;ext_unit_dict])</td>
-<td>Load an existing package.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.plot" title="flopy.modflow.mfdis.ModflowDis.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>(**kwargs)</td>
-<td>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.read_from_cnf" title="flopy.modflow.mfdis.ModflowDis.read_from_cnf"><tt class="xref py py-obj docutils literal"><span class="pre">read_from_cnf</span></tt></a>(cnf_file_name[,&nbsp;n_per_line])</td>
-<td>Read discretization informatio from an MT3D configuration file.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.to_shapefile" title="flopy.modflow.mfdis.ModflowDis.to_shapefile"><tt class="xref py py-obj docutils literal"><span class="pre">to_shapefile</span></tt></a>(filename,&nbsp;**kwargs)</td>
-<td>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">webdoc</span></tt>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.modflow.mfdis.ModflowDis.write_file" title="flopy.modflow.mfdis.ModflowDis.write_file"><tt class="xref py py-obj docutils literal"><span class="pre">write_file</span></tt></a>()</td>
-<td>Write the file.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.checklayerthickness">
 <tt class="descname">checklayerthickness</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.checklayerthickness" title="Permalink to this definition">¶</a></dt>
@@ -377,7 +374,7 @@ constructed using the function
 <dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.plot">
 <tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (mflist)
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 package input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -400,10 +397,11 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 all layers will be included. (default is None)</p>
 </dd>
 <dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
 </dd>
 <dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">mflist dictionary key. (default is None)</p>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -429,13 +427,13 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.read_from_cnf">
 <tt class="descname">read_from_cnf</tt><big>(</big><em>cnf_file_name</em>, <em>n_per_line=0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.read_from_cnf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read discretization informatio from an MT3D configuration file.</p>
+<dd><p>Read discretization information from an MT3D configuration file.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="flopy.modflow.mfdis.ModflowDis.thickness">
 <tt class="descname">thickness</tt><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.thickness" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a util_3d array of cell thicknesses.</p>
+<dd><p>Get a Util3d array of cell thicknesses.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -449,10 +447,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.to_shapefile">
 <tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).  Adds an</dt>
-<dd>attribute for each layer in each data array</dd>
-</dl>
+<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
+Adds an attribute for each layer in each data array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -479,7 +475,15 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.write_file">
 <tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.write_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write the file.</p>
+<dd><p>Write the package file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -492,6 +496,12 @@ a list of matplotlib.pyplot.axis are returned.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mfde4.html"
+                        title="previous chapter">flopy.modflow.mfde4 Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mfdrn.html"
+                        title="next chapter">flopy.modflow.mfdrn Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -518,7 +528,13 @@ a list of matplotlib.pyplot.axis are returned.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="mfdrn.html" title="flopy.modflow.mfdrn Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

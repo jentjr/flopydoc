@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.2 documentation</title>
+    <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.2',
+        VERSION:     '3.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.2 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.reference Module" href="reference.html" />
     <link rel="prev" title="flopy.utils.mfreadnam Module" href="mfreadnam.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -52,9 +53,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="reference.html" title="flopy.utils.reference Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -100,27 +104,6 @@ endpoint data from a MODPATH 6 ascii endpoint file.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">e1</span> <span class="o">=</span> <span class="n">endobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_alldata" title="flopy.utils.modpathfile.EndpointFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([final])</td>
-<td>get endpoint data from the endpoint file for all endpoints.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_data" title="flopy.utils.modpathfile.EndpointFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([partid,&nbsp;final])</td>
-<td>get endpoint data from the endpoint file for a single particle.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_maxid" title="flopy.utils.modpathfile.EndpointFile.get_maxid"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxid</span></tt></a>()</td>
-<td>Get the maximum endpoint particle id in the file endpoint file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.EndpointFile.get_maxtime" title="flopy.utils.modpathfile.EndpointFile.get_maxtime"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxtime</span></tt></a>()</td>
-<td>Get the maximum time in endpoint file</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_alldata">
 <tt class="descname">get_alldata</tt><big>(</big><em>final=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_alldata" title="Permalink to this definition">¶</a></dt>
@@ -256,27 +239,6 @@ pathline data from a MODPATH 6 ascii pathline file.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">pthobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_alldata" title="flopy.utils.modpathfile.PathlineFile.get_alldata"><tt class="xref py py-obj docutils literal"><span class="pre">get_alldata</span></tt></a>([totim,&nbsp;ge])</td>
-<td>get pathline data from the pathline file for all pathlines and all times.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_data" title="flopy.utils.modpathfile.PathlineFile.get_data"><tt class="xref py py-obj docutils literal"><span class="pre">get_data</span></tt></a>([partid,&nbsp;totim,&nbsp;ge])</td>
-<td>get pathline data from the pathline file for a single pathline.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_maxid" title="flopy.utils.modpathfile.PathlineFile.get_maxid"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxid</span></tt></a>()</td>
-<td>Get the maximum pathline number in the file pathline file</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.utils.modpathfile.PathlineFile.get_maxtime" title="flopy.utils.modpathfile.PathlineFile.get_maxtime"><tt class="xref py py-obj docutils literal"><span class="pre">get_maxtime</span></tt></a>()</td>
-<td>Get the maximum time in pathline file</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="flopy.utils.modpathfile.PathlineFile.get_alldata">
 <tt class="descname">get_alldata</tt><big>(</big><em>totim=None</em>, <em>ge=True</em><big>)</big><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_alldata" title="Permalink to this definition">¶</a></dt>
@@ -408,6 +370,9 @@ pathline partid.</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="mfreadnam.html"
                         title="previous chapter">flopy.utils.mfreadnam Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="reference.html"
+                        title="next chapter">flopy.utils.reference Module</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -435,9 +400,12 @@ pathline partid.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="reference.html" title="flopy.utils.reference Module"
+             >next</a> |</li>
+        <li class="right" >
           <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.2 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
