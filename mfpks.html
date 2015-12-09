@@ -136,46 +136,6 @@ If mutpcg = 3, information will only be printed if convergence fails.
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pks</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPks</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="method">
-<dt id="flopy.modflow.mfpks.ModflowPks.check">
-<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpks.ModflowPks.check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check package data for common errors.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
-of check method output. If a sting is passed a file handle
-is created. If f is None, check method does not write
-results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
-written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
-performed. If level=1, full checks are performed.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfpks.ModflowPks.load">
 <em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpks.ModflowPks.load" title="Permalink to this definition">¶</a></dt>
@@ -212,87 +172,6 @@ constructed using the function
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pks</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPks</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.pks&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.modflow.mfpks.ModflowPks.plot">
-<tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpks.ModflowPks.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
-package input data</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Base file name that will be used to automatically generate file
-names for output image files. Plots will be exported as image
-files if file_name_base is not None. (default is None)</p>
-</dd>
-<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
-</dd>
-<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
-all layers will be included. (default is None)</p>
-</dd>
-<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
-zero)</p>
-</dd>
-<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">MfList dictionary key. (default is None)</p>
-</dd>
-</dl>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
-a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.modflow.mfpks.ModflowPks.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfpks.ModflowPks.to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
-Adds an attribute for each layer in each data array</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
