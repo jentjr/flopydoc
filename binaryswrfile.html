@@ -71,9 +71,74 @@
   <div class="section" id="module-flopy.utils.binaryswrfile">
 <span id="flopy-utils-binaryswrfile-module"></span><h1>flopy.utils.binaryswrfile Module<a class="headerlink" href="#module-flopy.utils.binaryswrfile" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="flopy.utils.binaryswrfile.SwrFile">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrFile</tt><big>(</big><em>filename</em>, <em>swrtype='stage'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR output from MODFLOW SWR Process binary output files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the swr output file</p>
+</div></blockquote>
+<p><strong>swrtype</strong> : str</p>
+<blockquote>
+<div><p>swr data type. Valid data types are &#8216;stage&#8217;, &#8216;reachgroup&#8217;,
+&#8216;qm&#8217;, or &#8216;qaq&#8217;. (default is &#8216;stage&#8217;)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrFile</span><span class="p">(</span><span class="s">&#39;mymodel.swr.stage.bin&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="flopy.utils.binaryswrfile.SwrFile.integer">
+<tt class="descname">integer</tt><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">int32</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.utils.binaryswrfile.SwrFile.real">
+<tt class="descname">real</tt><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.real" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">float64</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrObs">
 <em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrObs</tt><big>(</big><em>filename</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reads binary SWR observations output from MODFLOW SWR Process binary observation files</p>
+<dd><p>Read binary SWR observations output from MODFLOW SWR Process binary observation files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the cell budget file</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="attribute">
 <dt id="flopy.utils.binaryswrfile.SwrObs.integer">
 <tt class="descname">integer</tt><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.integer" title="Permalink to this definition">¶</a></dt>

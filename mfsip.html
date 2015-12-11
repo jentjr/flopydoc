@@ -105,7 +105,7 @@ it is changed to one. (default is 1)</p>
 <p><strong>hclose</strong> : float &gt; 0</p>
 <blockquote>
 <div><p>The head change criterion for convergence. When the maximum absolute value of head change from all nodes
-during an iteration is less than or equal to HCLOSE, iteration stops. (default is 1e-5)</p>
+during an iteration is less than or equal to hclose, iteration stops. (default is 1e-5)</p>
 </div></blockquote>
 <p><strong>ipcalc</strong> : 0 or 1</p>
 <blockquote>
@@ -119,15 +119,15 @@ during an iteration is less than or equal to HCLOSE, iteration stops. (default i
 </div></blockquote>
 <p><strong>wseed</strong> : float &gt; 0</p>
 <blockquote>
-<div><p>The seed for calculating iteration variables. WSEED is always read,
-but is used only if IPCALC is equal to zero. (default is 0)</p>
+<div><p>The seed for calculating iteration variables. wseed is always read,
+but is used only if ipcalc is equal to zero. (default is 0)</p>
 </div></blockquote>
 <p><strong>iprsip</strong> : integer &gt; 0</p>
 <blockquote>
-<div><p>the printout interval for SIP. IPRSIP, if equal to zero, is changed to 999.
+<div><p>the printout interval for sip. iprsip, if equal to zero, is changed to 999.
 The maximum head change (positive or negative) is printed for each iteration of
-a time step whenever the time step is an even multiple of IPRSIP. This printout
-also occurs at the end of each stress period regardless of the value of IPRSIP.
+a time step whenever the time step is an even multiple of iprsip. This printout
+also occurs at the end of each stress period regardless of the value of iprsip.
 (default is 0)</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>

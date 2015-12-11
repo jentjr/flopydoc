@@ -89,20 +89,18 @@ this package will be added.</p>
 </div></blockquote>
 <p><strong>nuztop</strong> : integer</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>used to define which cell in a vertical column that recharge and discharge is simulated.</dt>
-<dd><dl class="first last docutils">
-<dt>1 Recharge to and discharge from only the top model layer. This option assumes land surface is defined</dt>
-<dd><p class="first last">as top of layer 1.</p>
-</dd>
-<dt>2 Recharge to and discharge from the specified layer in variable IUZFBND. This option assumes land</dt>
+<div><p>used to define which cell in a vertical column that recharge and discharge is simulated.
+1   Recharge to and discharge from only the top model layer. This option assumes land surface is defined</p>
+<blockquote>
+<div><p>as top of layer 1.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>2   Recharge to and discharge from the specified layer in variable IUZFBND. This option assumes land</dt>
 <dd><p class="first last">surface is defined as top of layer specified in IUZFBND.</p>
 </dd>
-<dt>3 Recharge to and discharge from the highest active cell in each vertical column. Land surface is</dt>
+<dt>3   Recharge to and discharge from the highest active cell in each vertical column. Land surface is</dt>
 <dd><p class="first last">determined as top of layer specified in IUZFBND. A constant head node intercepts any recharge and
 prevents deeper percolation.</p>
-</dd>
-</dl>
 </dd>
 </dl>
 <p>(default is 1)</p>
@@ -225,16 +223,15 @@ steady-state simulations.</p>
 <p><strong>row_col_iftunit_iuzopt</strong> : list</p>
 <blockquote>
 <div><p>used to specify where information will be printed for each time step. IUZOPT specifies what that information
-will be. IUZOPT is
-1 Prints time, ground-water head, and thickness of unsaturated zone, and cumulative volumes of</p>
-<blockquote>
-<div><p>infiltration, recharge, storage, change in storage and ground-water discharge to land surface.</p>
-</div></blockquote>
+will be. IUZOPT is</p>
 <dl class="docutils">
-<dt>2 Same as option 1 except rates of infiltration, recharge, change in storage, and ground-water discharge</dt>
+<dt>1   Prints time, ground-water head, and thickness of unsaturated zone, and cumulative volumes of</dt>
+<dd><p class="first last">infiltration, recharge, storage, change in storage and ground-water discharge to land surface.</p>
+</dd>
+<dt>2   Same as option 1 except rates of infiltration, recharge, change in storage, and ground-water discharge</dt>
 <dd><p class="first last">also are printed.</p>
 </dd>
-<dt>3 Prints time, ground-water head, thickness of unsaturated zone, followed by a series of depths and</dt>
+<dt>3   Prints time, ground-water head, thickness of unsaturated zone, followed by a series of depths and</dt>
 <dd><p class="first last">water contents in the unsaturated zone.</p>
 </dd>
 </dl>
