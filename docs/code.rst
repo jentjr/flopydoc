@@ -1,14 +1,15 @@
 Flopy Code
 ==========
 
-Base Class
-----------
+Base Classes
+------------
 Contents:
 
 .. toctree::
    :maxdepth: 2
    
    mbase
+   pakbase
 
 Model Classes
 -------------
