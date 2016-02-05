@@ -1,4 +1,5 @@
    flopy.export.netcdf
+   flopy.export.shapefile_utils
    flopy.export.utils
    flopy.modflow.mf
    flopy.modflow.mfaddoutsidefile
@@ -70,8 +71,7 @@
    flopy.seawat.swtvdf
    flopy.seawat.swtvsc
    flopy.utils.binaryfile
-   flopy.utils.binaryhydmodfile
-   flopy.utils.binaryswrfile
+   flopy.utils.check
    flopy.utils.datafile
    flopy.utils.flopy_io
    flopy.utils.formattedfile
@@ -79,6 +79,9 @@
    flopy.utils.mflistfile
    flopy.utils.mfreadnam
    flopy.utils.modpathfile
+   flopy.utils.observationfile
    flopy.utils.reference
+   flopy.utils.swroutputfile
    flopy.utils.util_array
    flopy.utils.util_list
+   flopy.utils.utils_def

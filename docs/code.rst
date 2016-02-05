@@ -131,6 +131,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   check
    datafile
    binaryfile
    binaryhydmodfile
@@ -141,8 +142,12 @@ Contents:
    mflistfile
    mfreadnam
    modpathfile
+   observationfile
+   shapefile_utils
+   swroutputfile
    reference
    util_array
+   utils_def
    util_list
 
 
