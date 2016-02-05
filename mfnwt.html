@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfnwt Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfnwt Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfoc Module" href="mfoc.html" />
     <link rel="prev" title="flopy.modflow.mfmnwi Module" href="mfmnwi.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,15 +68,15 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfnwt-module">
-<h1>flopy.modflow.mfnwt Module<a class="headerlink" href="#flopy-modflow-mfnwt-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfnwt"></span><p>mfnwt module.  Contains the ModflowNwt class. Note that the user can access
+  <div class="section" id="module-flopy.modflow.mfnwt">
+<span id="flopy-modflow-mfnwt-module"></span><h1>flopy.modflow.mfnwt Module<a class="headerlink" href="#module-flopy.modflow.mfnwt" title="Permalink to this headline">¶</a></h1>
+<p>mfnwt module.  Contains the ModflowNwt class. Note that the user can access
 the ModflowNwt class as <cite>flopy.modflow.ModflowNwt</cite>.</p>
 <p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow-nwt/MODFLOW-NWT-Guide/nwt_newton_solver.htm">Online
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfnwt.ModflowNwt">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfnwt.</tt><tt class="descname">ModflowNwt</tt><big>(</big><em>model</em>, <em>headtol=0.0001</em>, <em>fluxtol=500</em>, <em>maxiterout=100</em>, <em>thickfact=1e-05</em>, <em>linmeth=1</em>, <em>iprnwt=0</em>, <em>ibotav=0</em>, <em>options='COMPLEX'</em>, <em>Continue=False</em>, <em>dbtheta=0.4</em>, <em>dbkappa=1e-05</em>, <em>dbgamma=0.0</em>, <em>momfact=0.1</em>, <em>backflg=1</em>, <em>maxbackiter=50</em>, <em>backtol=1.1</em>, <em>backreduce=0.7</em>, <em>maxitinner=50</em>, <em>ilumethod=2</em>, <em>levfill=5</em>, <em>stoptol=1e-10</em>, <em>msdr=15</em>, <em>iacl=2</em>, <em>norder=1</em>, <em>level=5</em>, <em>north=7</em>, <em>iredsys=0</em>, <em>rrctols=0.0</em>, <em>idroptol=1</em>, <em>epsrn=0.0001</em>, <em>hclosexmd=0.0001</em>, <em>mxiterxmd=50</em>, <em>extension='nwt'</em>, <em>unitnumber=32</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfnwt.ModflowNwt" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfnwt.</tt><tt class="descname">ModflowNwt</tt><big>(</big><em>model</em>, <em>headtol=0.01</em>, <em>fluxtol=500</em>, <em>maxiterout=100</em>, <em>thickfact=1e-05</em>, <em>linmeth=1</em>, <em>iprnwt=0</em>, <em>ibotav=0</em>, <em>options='COMPLEX'</em>, <em>Continue=False</em>, <em>dbdtheta=0.4</em>, <em>dbdkappa=1e-05</em>, <em>dbdgamma=0.0</em>, <em>momfact=0.1</em>, <em>backflag=1</em>, <em>maxbackiter=50</em>, <em>backtol=1.1</em>, <em>backreduce=0.7</em>, <em>maxitinner=50</em>, <em>ilumethod=2</em>, <em>levfill=5</em>, <em>stoptol=1e-10</em>, <em>msdr=15</em>, <em>iacl=2</em>, <em>norder=1</em>, <em>level=5</em>, <em>north=7</em>, <em>iredsys=0</em>, <em>rrctols=0.0</em>, <em>idroptol=1</em>, <em>epsrn=0.0001</em>, <em>hclosexmd=0.0001</em>, <em>mxiterxmd=50</em>, <em>extension='nwt'</em>, <em>unitnumber=32</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfnwt.ModflowNwt" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Nwt Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -156,21 +156,21 @@ convergence.
 <div><p>if the model fails to converge during a time step then it will continue to
 solve the following time step. (default is False).</p>
 </div></blockquote>
-<p><strong>dbtheta</strong> : float</p>
+<p><strong>dbdtheta</strong> : float</p>
 <blockquote>
 <div><p>is a coefficient used to reduce the weight applied to the head change between
 nonlinear iterations. dbdtheta is used to control oscillations in head.
 Values range between 0.0 and 1.0, and larger values increase the weight
 (decrease under-relaxation) applied to the head change. (default is 0.4).</p>
 </div></blockquote>
-<p><strong>dbkappa</strong> : float</p>
+<p><strong>dbdkappa</strong> : float</p>
 <blockquote>
 <div><p>is a coefficient used to increase the weight applied to the head change between
 nonlinear iterations. dbdkappa is used to control oscillations in head. Values
 range between 0.0 and 1.0, and larger values increase the weight applied to the
 head change. (default is 1.e-5).</p>
 </div></blockquote>
-<p><strong>dbgamma</strong> : float</p>
+<p><strong>dbdgamma</strong> : float</p>
 <blockquote>
 <div><p>is a factor (used to weight the head change for the previous and current
 iteration. Values range between 0.0 and 1.0, and greater values apply more weight
@@ -183,7 +183,7 @@ more weight to the head change for the current iteration. (default is 0.1).</p>
 </div></blockquote>
 <p><strong>backflag</strong> : int</p>
 <blockquote>
-<div><p>s a flag used to specify whether residual control will be used. A value of 1
+<div><p>is a flag used to specify whether residual control will be used. A value of 1
 indicates that residual control is active and a value of 0 indicates residual
 control is inactive. (default is 1).</p>
 </div></blockquote>
@@ -408,7 +408,7 @@ constructed using the function
         <li class="right" >
           <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

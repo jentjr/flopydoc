@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Flopy Code &mdash; flopy 3.2.3 documentation</title>
+    <title>Flopy Code &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
-    <link rel="next" title="mbase Classes" href="mbase.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="next" title="mbase Class" href="mbase.html" />
     <link rel="prev" title="Ipython Notebooks" href="notebooks.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -52,12 +52,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mbase.html" title="mbase Classes"
+          <a href="mbase.html" title="mbase Class"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="notebooks.html" title="Ipython Notebooks"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,12 +68,13 @@
             
   <div class="section" id="flopy-code">
 <h1>Flopy Code<a class="headerlink" href="#flopy-code" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="base-class">
-<h2>Base Class<a class="headerlink" href="#base-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-classes">
+<h2>Base Classes<a class="headerlink" href="#base-classes" title="Permalink to this headline">¶</a></h2>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mbase.html">mbase Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mbase.html">mbase Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pakbase.html">pakbase Class</a></li>
 </ul>
 </div>
 </div>
@@ -107,9 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mfgmg.html">flopy.modflow.mfgmg Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mflmt.html">flopy.modflow.mflmt Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mflpf.html">flopy.modflow.mflpf Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mfmnw1.html">flopy.modflow.mfmnw1 Module</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="mfmnw1.html">flopy.modflow.mfmnw1 Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfmnw2.html">flopy.modflow.mfmnw2 Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfmnwi.html">flopy.modflow.mfmnwi Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfnwt.html">flopy.modflow.mfnwt Module</a></li>
@@ -189,6 +188,7 @@
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="check.html">flopy.utils.check Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
@@ -199,10 +199,14 @@
 <li class="toctree-l1"><a class="reference internal" href="mflistfile.html">flopy.utils.mflistfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swroutputfile.html">flopy.utils.swroutputfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">flopy.utils.reference Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="util_array.html">flopy.utils.util_array Module</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="utils_def.html">flopy.utils.utils_def Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="util_list.html">flopy.utils.util_list Module</a></li>
 </ul>
 </div>
@@ -250,7 +254,7 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Flopy Code</a><ul>
-<li><a class="reference internal" href="#base-class">Base Class</a></li>
+<li><a class="reference internal" href="#base-classes">Base Classes</a></li>
 <li><a class="reference internal" href="#model-classes">Model Classes</a></li>
 <li><a class="reference internal" href="#modflow-packages">MODFLOW Packages</a></li>
 <li><a class="reference internal" href="#modpath-packages">MODPATH Packages</a></li>
@@ -270,7 +274,7 @@
                         title="previous chapter">Ipython Notebooks</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mbase.html"
-                        title="next chapter">mbase Classes</a></p>
+                        title="next chapter">mbase Class</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -298,12 +302,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mbase.html" title="mbase Classes"
+          <a href="mbase.html" title="mbase Class"
              >next</a> |</li>
         <li class="right" >
           <a href="notebooks.html" title="Ipython Notebooks"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

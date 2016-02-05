@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfdrn Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfdrn Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfevt Module" href="mfevt.html" />
     <link rel="prev" title="flopy.modflow.mfdis Module" href="mfdis.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfdis.html" title="flopy.modflow.mfdis Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,9 +68,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfdrn-module">
-<h1>flopy.modflow.mfdrn Module<a class="headerlink" href="#flopy-modflow-mfdrn-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfdrn"></span><p>mfdrn module.  Contains the ModflowDrn class. Note that the user can access
+  <div class="section" id="module-flopy.modflow.mfdrn">
+<span id="flopy-modflow-mfdrn-module"></span><h1>flopy.modflow.mfdrn Module<a class="headerlink" href="#module-flopy.modflow.mfdrn" title="Permalink to this headline">¶</a></h1>
+<p>mfdrn module.  Contains the ModflowDrn class. Note that the user can access
 the ModflowDrn class as <cite>flopy.modflow.ModflowDrn</cite>.</p>
 <p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?drn.htm">Online
 MODFLOW Guide</a>.</p>
@@ -93,49 +93,41 @@ this package will be added.</p>
 saved. If ipakcb is non-zero cell-by-cell budget data will be saved.
 (default is 0).</p>
 </div></blockquote>
-<p><strong>stress_period_data</strong> : list of boundaries or</p>
+<p><strong>stress_period_data</strong> : list of boundaries, recarrays, or dictionary of</p>
 <blockquote>
-<div><blockquote>
-<div><p>recarray of boundaries or
-dictionary of boundaries</p>
-</div></blockquote>
-<p>Each drain cell is defined through definition of
-layer(int), row(int), column(int), elevation(float), conductance(float)
+<div><p>boundaries.
+Each drain cell is defined through definition of
+layer(int), row(int), column(int), elevation(float),
+conductance(float).
 The simplest form is a dictionary with a lists of boundaries for each
 stress period, where each list of boundaries itself is a list of
 boundaries. Indices of the dictionary are the numbers of the stress
-period. This gives the form of</p>
-<blockquote>
-<div><p>stress_period_data =
-{0: [</p>
-<blockquote>
-<div><p>[lay, row, col, stage, cond],
-[lay, row, col, stage, cond],
-[lay, row, col, stage, cond],
-],</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>1:  [</dt>
-<dd><p class="first last">[lay, row, col, stage, cond],
-[lay, row, col, stage, cond],
-[lay, row, col, stage, cond],
-], ...</p>
-</dd>
-<dt>kper:</dt>
-<dd><p class="first last">[
-[lay, row, col, stage, cond],
-[lay, row, col, stage, cond],
-[lay, row, col, stage, cond],
-]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+period. This gives the form of:</p>
+<div class="highlight-python"><div class="highlight"><pre>stress_period_data =
+{0: [
+    [lay, row, col, stage, cond],
+    [lay, row, col, stage, cond],
+    [lay, row, col, stage, cond],
+    ],
+1:  [
+    [lay, row, col, stage, cond],
+    [lay, row, col, stage, cond],
+    [lay, row, col, stage, cond],
+    ], ...
+kper:
+    [
+    [lay, row, col, stage, cond],
+    [lay, row, col, stage, cond],
+    [lay, row, col, stage, cond],
+    ]
+}
+</pre></div>
+</div>
 <p>Note that if no values are specified for a certain stress period, then
 the list of boundaries for the previous stress period for which values
 were defined is used. Full details of all options to specify
 stress_period_data can be found in the flopy3boundaries Notebook in
-the basic subdirectory of the examples directory</p>
+the basic subdirectory of the examples directory.</p>
 </div></blockquote>
 <p><strong>dtype</strong> : dtype definition</p>
 <blockquote>
@@ -209,7 +201,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfdrn.ModflowDrn.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -231,6 +223,10 @@ or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
 <a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+<p><strong>check</strong> : boolean</p>
+<blockquote>
+<div><p>Check package data for common errors. (default True)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -333,13 +329,20 @@ Adds an attribute for each layer in each data array</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfdrn.ModflowDrn.write_file">
-<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn.write_file" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">write_file</tt><big>(</big><em>check=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdrn.ModflowDrn.write_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the package file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>check</strong> : boolean</p>
+<blockquote>
+<div><p>Check package data for common errors. (default True)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -393,7 +396,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfdis.html" title="flopy.modflow.mfdis Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfwel Module" href="mfwel.html" />
     <link rel="prev" title="flopy.modflow.mfupw Module" href="mfupw.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfupw.html" title="flopy.modflow.mfupw Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,9 +68,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfuzf1-module">
-<h1>flopy.modflow.mfuzf1 Module<a class="headerlink" href="#flopy-modflow-mfuzf1-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfuzf1"></span><p>mfuzf1 module.  Contains the ModflowUzf1 class. Note that the user can access
+  <div class="section" id="module-flopy.modflow.mfuzf1">
+<span id="flopy-modflow-mfuzf1-module"></span><h1>flopy.modflow.mfuzf1 Module<a class="headerlink" href="#module-flopy.modflow.mfuzf1" title="Permalink to this headline">¶</a></h1>
+<p>mfuzf1 module.  Contains the ModflowUzf1 class. Note that the user can access
 the ModflowUzf1 class as <cite>flopy.modflow.ModflowUzf1</cite>.</p>
 <p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/uzf___unsaturated_zone_flow_pa_3.htm">Online
 MODFLOW Guide</a>.</p>
@@ -89,21 +89,22 @@ this package will be added.</p>
 </div></blockquote>
 <p><strong>nuztop</strong> : integer</p>
 <blockquote>
-<div><p>used to define which cell in a vertical column that recharge and discharge is simulated.
-1   Recharge to and discharge from only the top model layer. This option assumes land surface is defined</p>
-<blockquote>
-<div><p>as top of layer 1.</p>
-</div></blockquote>
+<div><p>used to define which cell in a vertical column that recharge and
+discharge is simulated. (default is 1)</p>
 <dl class="docutils">
-<dt>2   Recharge to and discharge from the specified layer in variable IUZFBND. This option assumes land</dt>
-<dd><p class="first last">surface is defined as top of layer specified in IUZFBND.</p>
+<dt>1   Recharge to and discharge from only the top model layer. This</dt>
+<dd><p class="first last">option assumes land surface is defined as top of layer 1.</p>
 </dd>
-<dt>3   Recharge to and discharge from the highest active cell in each vertical column. Land surface is</dt>
-<dd><p class="first last">determined as top of layer specified in IUZFBND. A constant head node intercepts any recharge and
+<dt>2   Recharge to and discharge from the specified layer in variable</dt>
+<dd><p class="first last">IUZFBND. This option assumes land surface is defined as top of layer
+specified in IUZFBND.</p>
+</dd>
+<dt>3   Recharge to and discharge from the highest active cell in each</dt>
+<dd><p class="first last">vertical column. Land surface is determined as top of layer specified
+in IUZFBND. A constant head node intercepts any recharge and
 prevents deeper percolation.</p>
 </dd>
 </dl>
-<p>(default is 1)</p>
 </div></blockquote>
 <p><strong>iuzfopt</strong> : integer</p>
 <blockquote>
@@ -114,138 +115,143 @@ hydraulic conductivity will be specified within either the BCF or LPF Package in
 </div></blockquote>
 <p><strong>irunflg</strong> : integer</p>
 <blockquote>
-<div><p>specifies whether ground water that discharges to land surface will be routed to stream
-segments or lakes as specified in the IRUNBND array (IRUNFLG not equal to zero) or if ground-water
-discharge is removed from the model simulation and accounted for in the ground-water budget as a loss of
-water (IRUNFLG=0). The Streamflow-Routing (SFR2) and(or) the Lake (LAK3) Packages must be active if
-IRUNFLG is not zero.
-(default is 0</p>
+<div><p>specifies whether ground water that discharges to land surface will
+be routed to stream segments or lakes as specified in the IRUNBND
+array (IRUNFLG not equal to zero) or if ground-water discharge is
+removed from the model simulation and accounted for in the
+ground-water budget as a loss of water (IRUNFLG=0). The
+Streamflow-Routing (SFR2) and(or) the Lake (LAK3) Packages must be
+active if IRUNFLG is not zero. (default is 0)</p>
 </div></blockquote>
 <p><strong>ietflg</strong> : integer</p>
 <blockquote>
-<div><p>specifies whether or not evapotranspiration (ET) will be simulated. ET will not be
-simulated if IETFLG is zero, otherwise it will be simulated.
-(default is 0)</p>
+<div><p>specifies whether or not evapotranspiration (ET) will be simulated.
+ET will not be simulated if IETFLG is zero, otherwise it will be
+simulated. (default is 0)</p>
 </div></blockquote>
 <p><strong>iuzfcb1</strong> : integer</p>
 <blockquote>
-<div><p>flag for writing ground-water recharge, ET, and ground-water discharge to land
-surface rates to a separate unformatted file using subroutine UBUDSV. If IUZFCB1&gt;0, it is the unit number
-to which the cell-by-cell rates will be written when &#8216;SAVE BUDGET&#8217; or a non-zero value for ICBCFL is
-specified in Output Control. If IUZFCB1 less than or equal to 0, cell-by-cell rates will not be written to a
-file.
+<div><p>flag for writing ground-water recharge, ET, and ground-water
+discharge to land surface rates to a separate unformatted file using
+subroutine UBUDSV. If IUZFCB1&gt;0, it is the unit number to which the
+cell-by-cell rates will be written when &#8216;SAVE BUDGET&#8217; or a non-zero
+value for ICBCFL is specified in Output Control. If IUZFCB1 less than
+or equal to 0, cell-by-cell rates will not be written to a file.
 (default is 57)</p>
 </div></blockquote>
 <p><strong>iuzfcb2</strong> : integer</p>
 <blockquote>
-<div><p>flag for writing ground-water recharge, ET, and ground-water discharge to land
-surface rates to a separate unformatted file using module UBDSV3. If IUZFCB2&gt;0, it is the unit number to
-which cell-by-cell rates will be written when &#8216;SAVE BUDGET&#8217; or a non-zero value for ICBCFL is specified
-in Output Control. If IUZFCB2 less than or equal to 0, cell-by-cell rates will not be written to file.
+<div><p>flag for writing ground-water recharge, ET, and ground-water
+discharge to land surface rates to a separate unformatted file using
+module UBDSV3. If IUZFCB2&gt;0, it is the unit number to which
+cell-by-cell rates will be written when &#8216;SAVE BUDGET&#8217; or a non-zero
+value for ICBCFL is specified in Output Control. If IUZFCB2 less than
+or equal to 0, cell-by-cell rates will not be written to file.
 (default is 0)</p>
 </div></blockquote>
 <p><strong>ntrail2</strong> : integer</p>
 <blockquote>
-<div><p>equal to the number of trailing waves used to define the water-content profile following a
-decrease in the infiltration rate. The number of trailing waves varies depending on the problem, but a range
-between 10 and 20 is usually adequate. More trailing waves may decrease mass-balance error and will increase
-computational requirements and memory usage.
-(default is 10)</p>
+<div><p>equal to the number of trailing waves used to define the
+water-content profile following a decrease in the infiltration rate.
+The number of trailing waves varies depending on the problem, but a
+range between 10 and 20 is usually adequate. More trailing waves may
+decrease mass-balance error and will increase computational
+requirements and memory usage. (default is 10)</p>
 </div></blockquote>
 <p><strong>nsets</strong> : integer</p>
 <blockquote>
-<div><p>equal to the number of wave sets used to simulate multiple infiltration periods. The number
-of wave sets should be set to 20 for most problems involving time varying infiltration. The total number of
-waves allowed within an unsaturated zone cell is equal to NTRAIL2*NSETS2. An error will occur if the
-number of waves in a cell exceeds this value.
-(default is 20)</p>
+<div><p>equal to the number of wave sets used to simulate multiple
+infiltration periods. The number of wave sets should be set to 20 for
+most problems involving time varying infiltration. The total number of
+waves allowed within an unsaturated zone cell is equal to
+NTRAIL2*NSETS2. An error will occur if the number of waves in a cell
+exceeds this value. (default is 20)</p>
 </div></blockquote>
 <p><strong>nuzgag</strong> : integer</p>
 <blockquote>
-<div><p>equal to the number of cells (one per vertical column) that will be specified for printing
-detailed information on the unsaturated zone water budget and water content. A gage also may be used to print
-the budget summed over all model cells.
-(default is 0)</p>
+<div><p>equal to the number of cells (one per vertical column) that will be
+specified for printing detailed information on the unsaturated zone
+water budget and water content. A gage also may be used to print
+the budget summed over all model cells.  (default is 0)</p>
 </div></blockquote>
 <p><strong>surfdep</strong> : float</p>
 <blockquote>
-<div><p>The average height of undulations, D (Figure 1 in UZF documentation), in the land surface altitude.
-(default is 1.0)</p>
+<div><p>The average height of undulations, D (Figure 1 in UZF documentation),
+in the land surface altitude. (default is 1.0)</p>
 </div></blockquote>
 <p><strong>iuzfbnd</strong> : integer</p>
 <blockquote>
-<div><p>used to define the aerial extent of the active model in which recharge and discharge
-will be simulated.
-(default is 1)</p>
+<div><p>used to define the aerial extent of the active model in which recharge
+and discharge will be simulated. (default is 1)</p>
 </div></blockquote>
 <p><strong>irunbnd</strong> : integer</p>
 <blockquote>
-<div><p>used to define the stream segments within the Streamflow-Routing (SFR2) Package
-or lake numbers in the Lake (LAK3) Package that overland runoff from excess infiltration and ground-water
-discharge to land surface will be added. A positive integer value identifies the stream segment and a negative
-integer value identifies the lake number.
-(default is 0)</p>
+<div><p>used to define the stream segments within the Streamflow-Routing
+(SFR2) Package or lake numbers in the Lake (LAK3) Package that
+overland runoff from excess infiltration and ground-water
+discharge to land surface will be added. A positive integer value
+identifies the stream segment and a negative integer value identifies
+the lake number. (default is 0)</p>
 </div></blockquote>
 <p><strong>vks</strong> : float</p>
 <blockquote>
-<div><p>used to define the saturated vertical hydraulic conductivity of the unsaturated
-zone (LT-1).
-(default is 1.0E-6)</p>
+<div><p>used to define the saturated vertical hydraulic conductivity of the
+unsaturated zone (LT-1). (default is 1.0E-6)</p>
 </div></blockquote>
 <p><strong>eps</strong> : float</p>
 <blockquote>
-<div><p>values for each model cell used to define the Brooks-Corey epsilon of the unsaturated
-zone. Epsilon is used in the relation of water content to hydraulic conductivity (Brooks and Corey, 1966).
+<div><p>values for each model cell used to define the Brooks-Corey epsilon of
+the unsaturated zone. Epsilon is used in the relation of water
+content to hydraulic conductivity (Brooks and Corey, 1966).
 (default is 3.5)</p>
 </div></blockquote>
 <p><strong>thts</strong> : float</p>
 <blockquote>
-<div><p>used to define the saturated water content of the unsaturated zone in units of
-volume of water to total volume (L3L-3).
-(default is 0.35)</p>
+<div><p>used to define the saturated water content of the unsaturated zone in
+units of volume of water to total volume (L3L-3). (default is 0.35)</p>
 </div></blockquote>
 <p><strong>thtr</strong> : float</p>
 <blockquote>
-<div><p>used to define the residual water content for each vertical column of cells in units of volume of water to
-total volume (L3L-3). THTR is the irreducible water content and the unsaturated water content cannot drain
-to water contents less than THTR. This variable is not included unless the key word SPECIFYTHTR is specified.
-(default is 0.15)</p>
+<div><p>used to define the residual water content for each vertical column of
+cells in units of volume of water to total volume (L3L-3). THTR is
+the irreducible water content and the unsaturated water content
+cannot drain to water contents less than THTR. This variable is not
+included unless the key word SPECIFYTHTR is specified. (default is
+0.15)</p>
 </div></blockquote>
 <p><strong>thti</strong> : float</p>
 <blockquote>
-<div><blockquote>
-<div><p>used to define the initial water content for each vertical column of cells in
-units of volume of water at start of simulation to total volume (L3L-3). THTI should not be specified for
-steady-state simulations.</p>
-</div></blockquote>
-<p>(default is 0.20)</p>
+<div><p>used to define the initial water content for each vertical column of
+cells in units of volume of water at start of simulation to total
+volume (L3L-3). THTI should not be specified for steady-state
+simulations. (default is 0.20)</p>
 </div></blockquote>
 <p><strong>row_col_iftunit_iuzopt</strong> : list</p>
 <blockquote>
-<div><p>used to specify where information will be printed for each time step. IUZOPT specifies what that information
-will be. IUZOPT is</p>
+<div><p>used to specify where information will be printed for each time step.
+IUZOPT specifies what that information will be. (default is [])
+IUZOPT is</p>
 <dl class="docutils">
-<dt>1   Prints time, ground-water head, and thickness of unsaturated zone, and cumulative volumes of</dt>
-<dd><p class="first last">infiltration, recharge, storage, change in storage and ground-water discharge to land surface.</p>
+<dt>1   Prints time, ground-water head, and thickness of unsaturated zone,</dt>
+<dd><p class="first last">and cumulative volumes of infiltration, recharge, storage, change
+in storage and ground-water discharge to land surface.</p>
 </dd>
-<dt>2   Same as option 1 except rates of infiltration, recharge, change in storage, and ground-water discharge</dt>
-<dd><p class="first last">also are printed.</p>
+<dt>2   Same as option 1 except rates of infiltration, recharge, change in</dt>
+<dd><p class="first last">storage, and ground-water discharge also are printed.</p>
 </dd>
-<dt>3   Prints time, ground-water head, thickness of unsaturated zone, followed by a series of depths and</dt>
-<dd><p class="first last">water contents in the unsaturated zone.</p>
+<dt>3   Prints time, ground-water head, thickness of unsaturated zone,</dt>
+<dd><p class="first last">followed by a series of depths and water contents in the
+unsaturated zone.</p>
 </dd>
 </dl>
-<p>(default is [])</p>
 </div></blockquote>
 <p><strong>specifythtr</strong> : boolean</p>
 <blockquote>
-<div><p>key word for specifying optional input variable THTR
-(default is 0)</p>
+<div><p>key word for specifying optional input variable THTR (default is 0)</p>
 </div></blockquote>
 <p><strong>specifythti</strong> : boolean</p>
 <blockquote>
-<div><p>key word for specifying optional input variable THTI.
-(default is 0)</p>
+<div><p>key word for specifying optional input variable THTI. (default is 0)</p>
 </div></blockquote>
 <p><strong>nosurfleak</strong> : boolean</p>
 <blockquote>
@@ -254,33 +260,35 @@ will be. IUZOPT is</p>
 </div></blockquote>
 <p><strong>finf</strong> : float</p>
 <blockquote>
-<div><p>used to define the infiltration rates (LT-1) at land surface for each vertical column of cells.
-If FINF is specified as being greater than the vertical hydraulic conductivity then FINF is set equal to the
-vertical unsaturated hydraulic conductivity. Excess water is routed to streams or lakes when IRUNFLG is not
-zero, and if SFR2 or LAK3 is active.
-(default is 1.0E-8)</p>
+<div><p>used to define the infiltration rates (LT-1) at land surface for each
+vertical column of cells. If FINF is specified as being greater than
+the vertical hydraulic conductivity then FINF is set equal to the
+vertical unsaturated hydraulic conductivity. Excess water is routed
+to streams or lakes when IRUNFLG is not zero, and if SFR2 or LAK3 is
+active. (default is 1.0E-8)</p>
 </div></blockquote>
 <p><strong>pet</strong> : float</p>
 <blockquote>
-<div><p>used to define the ET demand rates (L1T-1) within the ET extinction depth interval for each vertical
-column of cells.
-(default is 5.0E-8)</p>
+<div><p>used to define the ET demand rates (L1T-1) within the ET extinction
+depth interval for each vertical column of cells. (default is 5.0E-8)</p>
 </div></blockquote>
 <p><strong>extdp</strong> : float</p>
 <blockquote>
-<div><p>used to define the ET extinction depths.
-The quantity of ET removed from a cell is limited by the volume of water stored in the unsaturated zone
-above the extinction depth. If ground water is within the ET extinction depth, then the rate removed is based
-on a linear decrease in the maximum rate at land surface and zero at the ET extinction depth. The linear
-decrease is the same method used in the Evapotranspiration Package (McDonald and Harbaugh, 1988, chap. 10).
-(default is 15.0)</p>
+<div><p>used to define the ET extinction depths. The quantity of ET removed
+from a cell is limited by the volume of water stored in the
+unsaturated zone above the extinction depth. If ground water is
+within the ET extinction depth, then the rate removed is based
+on a linear decrease in the maximum rate at land surface and zero at
+the ET extinction depth. The linear decrease is the same method used
+in the Evapotranspiration Package (McDonald and Harbaugh, 1988, chap.
+10). (default is 15.0)</p>
 </div></blockquote>
 <p><strong>extwc</strong> : float</p>
 <blockquote>
-<div><p>used to define the extinction water content below which ET cannot be removed from the unsaturated zone.
-EXTWC must have a value between (THTS-Sy) and THTS, where Sy is the specific yield specified in either the
-LPF or BCF Package.
-(default is 0.1)</p>
+<div><p>used to define the extinction water content below which ET cannot be
+removed from the unsaturated zone.  EXTWC must have a value between
+(THTS-Sy) and THTS, where Sy is the specific yield specified in
+either the LPF or BCF Package. (default is 0.1)</p>
 </div></blockquote>
 <p><strong>uzfbud_ext</strong> : list</p>
 <blockquote>
@@ -533,7 +541,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfupw.html" title="flopy.modflow.mfupw Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

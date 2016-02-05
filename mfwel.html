@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfwel Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfwel Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfaddoutsidefile Module" href="mfaddoutsidefile.html" />
     <link rel="prev" title="flopy.modflow.mfuzf1 Module" href="mfuzf1.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfuzf1.html" title="flopy.modflow.mfuzf1 Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,9 +68,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfwel-module">
-<h1>flopy.modflow.mfwel Module<a class="headerlink" href="#flopy-modflow-mfwel-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfwel"></span><p>mfwel module.  Contains the ModflowWel class. Note that the user can access
+  <div class="section" id="module-flopy.modflow.mfwel">
+<span id="flopy-modflow-mfwel-module"></span><h1>flopy.modflow.mfwel Module<a class="headerlink" href="#module-flopy.modflow.mfwel" title="Permalink to this headline">¶</a></h1>
+<p>mfwel module.  Contains the ModflowWel class. Note that the user can access
 the ModflowWel class as <cite>flopy.modflow.ModflowWel</cite>.</p>
 <p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?wel.htm">Online
 MODFLOW Guide</a>.</p>
@@ -93,44 +93,35 @@ this package will be added.</p>
 saved. If ipakcb is non-zero cell-by-cell budget data will be saved.
 (default is 0).</p>
 </div></blockquote>
-<p><strong>stress_period_data</strong> : list of boundaries or</p>
+<p><strong>stress_period_data</strong> : list of boundaries, or recarray of boundaries, or</p>
 <blockquote>
-<div><blockquote>
-<div><p>recarray of boundaries or
-dictionary of boundaries</p>
-</div></blockquote>
-<p>Each well is defined through definition of
+<div><p>dictionary of boundaries
+Each well is defined through definition of
 layer (int), row (int), column (int), flux (float).
 The simplest form is a dictionary with a lists of boundaries for each
 stress period, where each list of boundaries itself is a list of
 boundaries. Indices of the dictionary are the numbers of the stress
-period. This gives the form of</p>
-<blockquote>
-<div><p>stress_period_data =
-{0: [</p>
-<blockquote>
-<div><p>[lay, row, col, flux],
-[lay, row, col, flux],
-[lay, row, col, flux]
-],</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>1:  [</dt>
-<dd><p class="first last">[lay, row, col, flux],
-[lay, row, col, flux],
-[lay, row, col, flux]
-], ...</p>
-</dd>
-<dt>kper:</dt>
-<dd><p class="first last">[
-[lay, row, col, flux],
-[lay, row, col, flux],
-[lay, row, col, flux]
-]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+period. This gives the form of:</p>
+<div class="highlight-python"><div class="highlight"><pre>stress_period_data =
+{0: [
+    [lay, row, col, flux],
+    [lay, row, col, flux],
+    [lay, row, col, flux]
+    ],
+1:  [
+    [lay, row, col, flux],
+    [lay, row, col, flux],
+    [lay, row, col, flux]
+    ], ...
+kper:
+    [
+    [lay, row, col, flux],
+    [lay, row, col, flux],
+    [lay, row, col, flux]
+    ]
+}
+</pre></div>
+</div>
 <p>Note that if the number of lists is smaller than the number of stress
 periods, then the last list of wells will apply until the end of the
 simulation. Full details of all options to specify stress_period_data
@@ -216,7 +207,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfwel.ModflowWel.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfwel.ModflowWel.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfwel.ModflowWel.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -405,7 +396,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfuzf1.html" title="flopy.modflow.mfuzf1 Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

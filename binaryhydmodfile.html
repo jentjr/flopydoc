@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.binaryhydmodfile Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.utils.binaryhydmodfile Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.binaryswrfile Module" href="binaryswrfile.html" />
     <link rel="prev" title="flopy.utils.binaryfile Module" href="binaryfile.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -71,33 +71,18 @@
   <div class="section" id="module-flopy.utils.binaryhydmodfile">
 <span id="flopy-utils-binaryhydmodfile-module"></span><h1>flopy.utils.binaryhydmodfile Module<a class="headerlink" href="#module-flopy.utils.binaryhydmodfile" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="flopy.utils.binaryhydmodfile.HydmodBinaryStatements">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryhydmodfile.</tt><tt class="descname">HydmodBinaryStatements</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class for reading integer, real, double, and character data
-from hydmod output files.</p>
-<dl class="attribute">
-<dt id="flopy.utils.binaryhydmodfile.HydmodBinaryStatements.double">
-<tt class="descname">double</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">float64</span></tt></p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="flopy.utils.binaryhydmodfile.HydmodBinaryStatements.integer">
-<tt class="descname">integer</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements.integer" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">int32</span></tt></p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="flopy.utils.binaryhydmodfile.HydmodBinaryStatements.real">
-<tt class="descname">real</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodBinaryStatements.real" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">float32</span></tt></p>
-</dd></dl>
-
+<dt id="flopy.utils.binaryhydmodfile.HydmodBinaryData">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryhydmodfile.</tt><tt class="descname">HydmodBinaryData</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodBinaryData" title="Permalink to this definition">¶</a></dt>
+<dd><p>The HydmodBinaryData class is a class to that defines the data types for
+integer, floating point, and character data in HYDMOD binary
+files. The HydmodBinaryData class is the super class from which the
+specific derived class HydmodObs is formed.  This class should not be
+instantiated directly.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="flopy.utils.binaryhydmodfile.HydmodObs">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryhydmodfile.</tt><tt class="descname">HydmodObs</tt><big>(</big><em>filename</em>, <em>double=False</em>, <em>slurp=False</em>, <em>verbose=False</em>, <em>hydlbl_len=20</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryhydmodfile.</tt><tt class="descname">HydmodObs</tt><big>(</big><em>filename</em>, <em>verbose=False</em>, <em>hydlbl_len=20</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs" title="Permalink to this definition">¶</a></dt>
 <dd><p>HydmodObs Class - used to read binary MODFLOW HYDMOD package output</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -106,17 +91,6 @@ from hydmod output files.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
 <blockquote>
 <div><p>Name of the hydmod output file</p>
-</div></blockquote>
-<p><strong>double</strong> : boolean</p>
-<blockquote>
-<div><p>If true, set flag used to read a hydmod output file with double precision
-data. If false, set flag used to read hydmod output file with single
-precision data. (default is False)</p>
-</div></blockquote>
-<p><strong>slurp</strong> : boolean</p>
-<blockquote>
-<div><p>If true, HydmodObs will be instantiated to access all data from the hydmod
-output file at once using the .slurp() method. (default is False)</p>
 </div></blockquote>
 <p><strong>verbose</strong> : boolean</p>
 <blockquote>
@@ -134,204 +108,112 @@ extraction.  (default is False)</p>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.double">
-<tt class="descname">double</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">float64</span></tt></p>
-</dd></dl>
-
 <dl class="method">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_hyd_labels">
-<tt class="descname">get_hyd_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_hyd_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the observation labels in a hydmod output file.</p>
+<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>obsname=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the observation file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>obsname</strong> : string</p>
+<blockquote>
+<div><p>The name of the observation to return. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
 <blockquote class="last">
-<div><p>A list of the observation labels in a hydmod output
-file.</p>
+<div><p>Array has size (ntimes, nitems). totim is always returned. nitems
+is 2 if idx or obsname is not None or nobs+1.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HydmodObs</span><span class="p">(</span><span class="s">&#39;model.hyd.bin&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">get_hyd_labels</span><span class="p">()</span>
-</pre></div>
-</div>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_num_items">
-<tt class="descname">get_num_items</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_num_items" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the number of observations locations in a hydmod
-output file.</p>
+<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_nobs">
+<tt class="descname">get_nobs</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of observations in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
 <blockquote class="last">
-<div><p>The number of observations in a hydmod output file.</p>
+<div><p>The number of simulation times (totim) in binary file.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HydmodObs</span><span class="p">(</span><span class="s">&#39;model.hyd.bin&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nitems</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">get_num_items</span><span class="p">()</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_time_gage">
-<tt class="descname">get_time_gage</tt><big>(</big><em>record=None</em>, <em>idx=0</em>, <em>lblstrip=6</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_time_gage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get data for a selected observation location using the
-observation name or observation number.</p>
+<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_obsnames">
+<tt class="descname">get_obsnames</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of observation names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>record</strong> : str</p>
-<blockquote>
-<div><p>observation name. (default is None)</p>
-</div></blockquote>
-<p><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>zero-based observation number. (default is 0)</p>
-</div></blockquote>
-<p><strong>lblstrip</strong> : int</p>
-<blockquote>
-<div><p>number of characters to strip from the beginning of the
-hydmod label. (default is 6)</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gage_record</strong> : numpy array (len(times), 2)</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
 <blockquote class="last">
-<div><p>value for the record for all times saved in the hydmod output file</p>
+<div><p>List of observation names in the binary file. totim is not
+included in the list of observation names.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HydmodObs</span><span class="p">(</span><span class="s">&#39;model.hyd.bin&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">get_time_gage</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="s">&#39;OBS1&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data2</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">get_time_gage</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_time_list">
-<tt class="descname">get_time_list</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_time_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the times stored in a hydmod output file.</p>
+<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
 <blockquote class="last">
-<div><p>A list of times stored in a hydmod output file.</p>
+<div><p>List contains unique simulation times (totim) in binary file.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HydmodObs</span><span class="p">(</span><span class="s">&#39;model.hyd.bin&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">get_time_list</span><span class="p">()</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.get_values">
-<tt class="descname">get_values</tt><big>(</big><em>idx=0</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.get_values" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based time step number to extract from the
-hydmod output file. (default is 0)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time to extract from the hydmod output
-file. (default is None)</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>Simulation time extracted from the hydmod output file.</p>
-</div></blockquote>
-<p><strong>v</strong> : numpy array (nhyd)</p>
-<blockquote>
-<div><p>Simulated values at the specified idx or totim</p>
-</div></blockquote>
-<p><strong>success</strong> : boolean</p>
-<blockquote class="last">
-<div><p>Boolean indicating if the data extraction was successful.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HydmodObs</span><span class="p">(</span><span class="s">&#39;model.hyd.bin&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">success</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.integer">
-<tt class="descname">integer</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.integer" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">int32</span></tt></p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.real">
-<tt class="descname">real</tt><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.real" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">float32</span></tt></p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.binaryhydmodfile.HydmodObs.slurp">
-<tt class="descname">slurp</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryhydmodfile.HydmodObs.slurp" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy structured array (times, nhyd+1)</p>
-<blockquote class="last">
-<div><p>Simulated values for all times in the hydmod output file. The totime for all
-time steps is also included in data.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HydmodObs</span><span class="p">(</span><span class="s">&#39;model.hyd.bin&#39;</span><span class="p">,</span> <span class="n">slurp</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">slurp</span><span class="p">()</span>
-</pre></div>
-</div>
 </dd></dl>
 
 </dd></dl>
@@ -382,7 +264,7 @@ time steps is also included in data.</p>
         <li class="right" >
           <a href="binaryfile.html" title="flopy.utils.binaryfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.gridgen Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.utils.gridgen Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.mflistfile Module" href="mflistfile.html" />
     <link rel="prev" title="flopy.utils.formattedfile Module" href="formattedfile.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -179,6 +179,39 @@ applies.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_center">
+<tt class="descname">get_center</tt><big>(</big><em>nodenumber</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cell center x and y coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodenumber</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>(x, y)</strong> : tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_vertices">
+<tt class="descname">get_vertices</tt><big>(</big><em>nodenumber</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of 5 vertices for the cell.  The first vertex should
+be the same as the last vertex.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodenumber</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>list of vertices</strong> : list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.intersect">
 <tt class="descname">intersect</tt><big>(</big><em>features</em>, <em>featuretype</em>, <em>layer</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.intersect" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -212,7 +245,7 @@ or it can be a list of points, lines, or polygons</p>
 <tt class="descname">plot</tt><big>(</big><em>ax=None</em>, <em>layer=0</em>, <em>edgecolor='k'</em>, <em>facecolor='none'</em>, <em>cmap='Dark2'</em>, <em>a=None</em>, <em>masked_values=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the grid.  This method will plot the grid using the shapefile
 that was created as part of the build method.</p>
-<p>Note that the layer option is not working yet!</p>
+<p>Note that the layer option is not working yet.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -249,9 +282,9 @@ way to do this yet with plot_shapefile.</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : dictionary</p>
 <blockquote>
-<div><p>Keyword arguments that are passed to PatchCollection.set(<a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs).
-Some common kwargs would be &#8216;linewidths&#8217;, &#8216;linestyles&#8217;, &#8216;alpha&#8217;,
-etc.</p>
+<div><p>Keyword arguments that are passed to
+PatchCollection.set(<tt class="docutils literal"><span class="pre">**kwargs</span></tt>).  Some common kwargs would be
+&#8216;linewidths&#8217;, &#8216;linestyles&#8217;, &#8216;alpha&#8217;, etc.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -339,7 +372,7 @@ etc.</p>
         <li class="right" >
           <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

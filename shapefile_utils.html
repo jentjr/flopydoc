@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.export.shapefile_utils Module &mdash; flopy 3.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.swroutputfile Module" href="swroutputfile.html" />
+    <link rel="prev" title="flopy.utils.observationfile Module" href="observationfile.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="observationfile.html" title="flopy.utils.observationfile Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.export.shapefile_utils">
+<span id="flopy-export-shapefile-utils-module"></span><h1>flopy.export.shapefile_utils Module<a class="headerlink" href="#module-flopy.export.shapefile_utils" title="Permalink to this headline">¶</a></h1>
+<p>Module for exporting and importing flopy model attributes</p>
+<dl class="function">
+<dt id="flopy.export.shapefile_utils.model_attributes_to_shapefile">
+<tt class="descclassname">flopy.export.shapefile_utils.</tt><tt class="descname">model_attributes_to_shapefile</tt><big>(</big><em>filename</em>, <em>ml</em>, <em>package_names=None</em>, <em>array_dict=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.export.shapefile_utils.model_attributes_to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper function for writing a shapefile of model data.  If package_names is
+not None, then search through the requested packages looking for arrays that
+can be added to the shapefile as attributes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>name of the shapefile to write</p>
+</div></blockquote>
+<p><strong>ml</strong> : flopy.mbase</p>
+<blockquote>
+<div><p>model instance</p>
+</div></blockquote>
+<p><strong>package_names</strong> : list of package names (e.g. [&#8220;dis&#8221;,&#8221;lpf&#8221;])</p>
+<blockquote>
+<div><p>Packages to export data arrays to shapefile. (default is None)</p>
+</div></blockquote>
+<p><strong>array_dict</strong> : dict of {name:2D array} pairs</p>
+<blockquote>
+<div><p>Additional 2D arrays to add as attributes to the shapefile. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">model_attributes_to_shapefile</span><span class="p">(</span><span class="s">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.shapefile_utils.shape_attr_name">
+<tt class="descclassname">flopy.export.shapefile_utils.</tt><tt class="descname">shape_attr_name</tt><big>(</big><em>name</em>, <em>length=6</em>, <em>keep_layer=False</em><big>)</big><a class="headerlink" href="#flopy.export.shapefile_utils.shape_attr_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for to format an array name to a maximum of 10 characters to conform
+with ESRI shapefile maximum attribute name length</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : string</p>
+<blockquote>
+<div><p>data array name</p>
+</div></blockquote>
+<p><strong>length</strong> : int</p>
+<blockquote>
+<div><p>maximum length of string to return. Value passed to function is overridden
+and set to 10 if keep_layer=True. (default is 6)</p>
+</div></blockquote>
+<p><strong>keep_layer</strong> : bool</p>
+<blockquote>
+<div><p>Boolean that determines if layer number in name should be retained.
+(default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">String</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">shape_attr_name</span><span class="p">(</span><span class="s">&#39;averylongstring&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;averyl&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.shapefile_utils.write_grid_shapefile">
+<tt class="descclassname">flopy.export.shapefile_utils.</tt><tt class="descname">write_grid_shapefile</tt><big>(</big><em>filename</em>, <em>sr</em>, <em>array_dict</em>, <em>nan_val=-1000000000.0</em><big>)</big><a class="headerlink" href="#flopy.export.shapefile_utils.write_grid_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a grid shapefile array_dict attributes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>name of the shapefile to write</p>
+</div></blockquote>
+<p><strong>sr</strong> : spatial reference instance</p>
+<blockquote>
+<div><p>spatial reference object for model grid</p>
+</div></blockquote>
+<p><strong>array_dict</strong> : dict</p>
+<blockquote>
+<div><p>Dictionary of name and 2D array pairs.  Additional 2D arrays to add as
+attributes to the grid shapefile.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.shapefile_utils.write_gridlines_shapefile">
+<tt class="descclassname">flopy.export.shapefile_utils.</tt><tt class="descname">write_gridlines_shapefile</tt><big>(</big><em>filename</em>, <em>sr</em><big>)</big><a class="headerlink" href="#flopy.export.shapefile_utils.write_gridlines_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a polyline shapefile of the grid lines - a lightweight alternative
+to polygons.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>name of the shapefile to write</p>
+</div></blockquote>
+<p><strong>sr</strong> : spatial reference</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="observationfile.html"
+                        title="previous chapter">flopy.utils.observationfile Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="swroutputfile.html"
+                        title="next chapter">flopy.utils.swroutputfile Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="observationfile.html" title="flopy.utils.observationfile Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_list Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.utils.util_list Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.plot.map Module" href="map.html" />
+    <link rel="prev" title="flopy.utils.utils_def Module" href="utils_def.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -54,7 +55,10 @@
         <li class="right" >
           <a href="map.html" title="flopy.plot.map Module"
              accesskey="N">next</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="utils_def.html" title="flopy.utils.utils_def Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -85,7 +89,7 @@ instantiate this class directly.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : package object</p>
 <blockquote>
-<div><p>The package object (of type <a class="reference internal" href="mbase.html#flopy.mbase.Package" title="flopy.mbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.mbase.Package</span></tt></a>) to which
+<div><p>The package object (of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.pakbase.Package</span></tt></a>) to which
 this MfList will be added.</p>
 </div></blockquote>
 <p><strong>data</strong> : varies</p>
@@ -126,10 +130,40 @@ this MfList will be added.</p>
 </tr>
 </tbody>
 </table>
+<dl class="classmethod">
+<dt id="flopy.utils.util_list.MfList.from_4d">
+<em class="property">classmethod </em><tt class="descname">from_4d</tt><big>(</big><em>model</em>, <em>pak_name</em>, <em>m4ds</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.from_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>construct an MfList instance from a dict of
+(attribute_name,masked 4D ndarray
+Parameters
+&#8212;&#8212;&#8212;-</p>
+<blockquote>
+<div>model : mbase dervied type
+pak_name : str package name (e.g GHB)
+m4ds : {attibute name:4d masked numpy.ndarray}</div></blockquote>
+<blockquote>
+<div>MfList instance</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.utils.util_list.MfList.get_indices">
 <tt class="descname">get_indices</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.get_indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>a helper function for plotting - get all unique indices</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data">
+<em class="property">static </em><tt class="descname">masked4D_arrays_to_stress_period_data</tt><big>(</big><em>dtype</em>, <em>m4ds</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>convert a dictionary of 4-dim masked arrays to</dt>
+<dd>a stress_period_data style dict of recarray</dd>
+</dl>
+<blockquote>
+<div><p>dtype : numpy dtype</p>
+<p>m4ds : dict {name:masked numpy 4-dim ndarray}</p>
+</div></blockquote>
+<blockquote>
+<div>dict {kper:recarray}</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -305,6 +339,9 @@ stress period</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="utils_def.html"
+                        title="previous chapter">flopy.utils.utils_def Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="map.html"
                         title="next chapter">flopy.plot.map Module</a></p>
@@ -337,7 +374,10 @@ stress period</p>
         <li class="right" >
           <a href="map.html" title="flopy.plot.map Module"
              >next</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li class="right" >
+          <a href="utils_def.html" title="flopy.utils.utils_def Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

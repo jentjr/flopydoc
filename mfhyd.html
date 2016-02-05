@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfhyd Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfhyd Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfghb Module" href="mfghb.html" />
     <link rel="prev" title="flopy.modflow.mfhfb Module" href="mfhfb.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfhfb.html" title="flopy.modflow.mfhfb Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -120,18 +120,16 @@ origin at the lower left corner of the model grid. yl s the coordinate of
 the hydrograph point in model units of length measured parallel to model
 columns, with the origin at the lower left corner of the model grid.
 hydlbl is used to form a label for the hydrograph.</p>
-<dl class="docutils">
-<dt>The simplest form is a list of lists. For example, if nhyd=3 this gives the form of</dt>
-<dd><p class="first">obsdata =
-[</p>
-<blockquote>
-<div><p>[pckg, arr, intyp, klay, xl, yl, hydlbl],
-[pckg, arr, intyp, klay, xl, yl, hydlbl],
-[pckg, arr, intyp, klay, xl, yl, hydlbl]</p>
-</div></blockquote>
-<p class="last">]</p>
-</dd>
-</dl>
+<p>The simplest form is a list of lists. For example, if nhyd=3 this
+gives the form of:</p>
+<div class="highlight-python"><div class="highlight"><pre>obsdata =
+[
+    [pckg, arr, intyp, klay, xl, yl, hydlbl],
+    [pckg, arr, intyp, klay, xl, yl, hydlbl],
+    [pckg, arr, intyp, klay, xl, yl, hydlbl]
+]
+</pre></div>
+</div>
 </div></blockquote>
 <p><strong>extension</strong> : list string</p>
 <blockquote>
@@ -253,7 +251,7 @@ constructed using the function
         <li class="right" >
           <a href="mfhfb.html" title="flopy.modflow.mfhfb Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

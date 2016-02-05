@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfhfb Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfhfb Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfhyd Module" href="mfhyd.html" />
     <link rel="prev" title="flopy.modflow.mfevt Module" href="mfevt.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfevt.html" title="flopy.modflow.mfevt Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowHfb class as <cite>flopy.modflow.ModflowHfb</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfhfb.ModflowHfb">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfhfb.</tt><tt class="descname">ModflowHfb</tt><big>(</big><em>model</em>, <em>nphfb=0</em>, <em>mxfb=0</em>, <em>nhfbnp=0</em>, <em>hfb_data=None</em>, <em>nacthfb=0</em>, <em>no_print=False</em>, <em>options=None</em>, <em>extension='hfb'</em>, <em>unitnumber=17</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfhfb.ModflowHfb" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfhfb.</tt><tt class="descname">ModflowHfb</tt><big>(</big><em>model</em>, <em>nphfb=0</em>, <em>mxfb=0</em>, <em>nhfbnp=0</em>, <em>hfb_data=None</em>, <em>nacthfb=0</em>, <em>no_print=False</em>, <em>options=None</em>, <em>extension='hfb'</em>, <em>unitnumber=29</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfhfb.ModflowHfb" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW HFB6 - Horizontal Flow Barrier Package</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -107,27 +107,22 @@ layer_row_column_data (default is 0).</p>
 </div></blockquote>
 <p><strong>hfb_data</strong> : list of records</p>
 <blockquote>
-<div><p>In its most general form, this is a list of horizontal-flow 
+<div><p>In its most general form, this is a list of horizontal-flow
 barrier records. A barrier is conceptualized as being located on 
 the boundary between two adjacent finite difference cells in the 
 same layer. The innermost list is the layer, row1, column1, row2, 
 column2, and hydrologic characteristics for a single hfb between
 the cells. The hydraulic characteristic is the barrier hydraulic 
 conductivity divided by the width of the horizontal-flow barrier.
-This gives the form of</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>hfb_data = [</dt>
-<dd><blockquote class="first">
-<div><p>[lay, row1, col1, row2, col2, hydchr],
-[lay, row1, col1, row2, col2, hydchr],
-[lay, row1, col1, row2, col2, hydchr],</p>
-</div></blockquote>
-<p class="last">].</p>
-</dd>
-</dl>
-</div></blockquote>
-<p>(default is None).</p>
+(default is None).
+This gives the form of:</p>
+<div class="highlight-python"><div class="highlight"><pre>hfb_data = [
+            [lay, row1, col1, row2, col2, hydchr],
+            [lay, row1, col1, row2, col2, hydchr],
+            [lay, row1, col1, row2, col2, hydchr],
+           ].
+</pre></div>
+</div>
 </div></blockquote>
 <p><strong>nacthfb</strong> : int</p>
 <blockquote>
@@ -413,7 +408,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfevt.html" title="flopy.modflow.mfevt Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

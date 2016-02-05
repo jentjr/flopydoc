@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfoc88 Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfoc88 Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfpbc Module" href="mfpbc.html" />
     <link rel="prev" title="flopy.modflow.mfoc Module" href="mfoc.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfoc.html" title="flopy.modflow.mfoc Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -131,16 +131,15 @@ ddsv is the output flag for drawdown save.
 </div></blockquote>
 <p><strong>words</strong> : list of instructions</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>Can be specified as a 2d list of the following form:</dt>
-<dd><p class="first last">[[per,stp,&#8217;head&#8217;,&#8217;drawdown&#8217;,&#8217;budget&#8217;,&#8217;pbudget&#8217;, &#8216;phead&#8217;]]</p>
-</dd>
-</dl>
+<div><p>Can be specified as a 2d list of the following form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[[</span><span class="n">per</span><span class="p">,</span><span class="n">stp</span><span class="p">,</span><span class="s">&#39;head&#39;</span><span class="p">,</span><span class="s">&#39;drawdown&#39;</span><span class="p">,</span><span class="s">&#39;budget&#39;</span><span class="p">,</span><span class="s">&#39;pbudget&#39;</span><span class="p">,</span> <span class="s">&#39;phead&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
 <p>In this 2d form, phead, pbudget will print the head and budget.
-Words can also be a 1d list of data items, such as</p>
-<blockquote>
-<div><p>[&#8216;head&#8217;,&#8217;drawdown&#8217;,&#8217;budget&#8217;].</p>
-</div></blockquote>
+Words can also be a 1d list of data items, such as:</p>
+<div class="highlight-python"><div class="highlight"><pre>[&#39;head&#39;,&#39;drawdown&#39;,&#39;budget&#39;].
+</pre></div>
+</div>
 <p>With a 1d list, the save_head_every option is used to determine the
 output frequency.
 (default is None).</p>
@@ -304,7 +303,7 @@ constructed using the function
         <li class="right" >
           <a href="mfoc.html" title="flopy.modflow.mfoc Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

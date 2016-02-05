@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfdrn Module" href="mfdrn.html" />
     <link rel="prev" title="flopy.modflow.mfde4 Module" href="mfde4.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowDis class as <cite>flopy.modflow.ModflowDis</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfdis.ModflowDis">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdis.</tt><tt class="descname">ModflowDis</tt><big>(</big><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>start_datetime='1/1/1970'</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfdis.</tt><tt class="descname">ModflowDis</tt><big>(</big><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Discretization Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -160,8 +160,31 @@ reasonable to set Top equal to land-surface elevation (the default is
 <div><p>Filename extension (default is &#8216;dis&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote class="last">
+<blockquote>
 <div><p>File unit number (default is 11).</p>
+</div></blockquote>
+<p><strong>xul</strong> : float</p>
+<blockquote>
+<div><p>x coordinate of upper left corner of the grid, default is None</p>
+</div></blockquote>
+<p><strong>yul</strong> : float</p>
+<blockquote>
+<div><p>y coordinate of upper left corner of the grid, default is None</p>
+</div></blockquote>
+<p><strong>rotation</strong> : float</p>
+<blockquote>
+<div><p>clockwise rotation (in degrees) of the grid about the upper left
+corner. default is 0.0</p>
+</div></blockquote>
+<p><strong>proj4_str</strong> : str</p>
+<blockquote>
+<div><p>PROJ4 string that defines the xul-yul coordinate system
+(.e.g. &#8216;+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs &#8216;).
+Can be an EPSG code (e.g. &#8216;EPSG:4326&#8217;). Default is &#8216;EPSG:4326&#8217;</p>
+</div></blockquote>
+<p><strong>start_dateteim</strong> : str</p>
+<blockquote class="last">
+<div><p>starting datetime of the simulation. default is &#8216;1/1/1970&#8217;</p>
 </div></blockquote>
 </td>
 </tr>
@@ -330,7 +353,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfdis.ModflowDis.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -352,6 +375,10 @@ or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
 <a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></tt></a>.</p>
+</div></blockquote>
+<p><strong>check</strong> : boolean</p>
+<blockquote>
+<div><p>Check package data for common errors. (default True)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -474,13 +501,20 @@ Adds an attribute for each layer in each data array</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.write_file">
-<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.write_file" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">write_file</tt><big>(</big><em>check=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.write_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the package file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>check</strong> : boolean</p>
+<blockquote>
+<div><p>Check package data for common errors. (default True)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -534,7 +568,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

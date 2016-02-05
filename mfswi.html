@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfswi Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfswi Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfswi2 Module" href="mfswi2.html" />
     <link rel="prev" title="flopy.modflow.mfsub Module" href="mfsub.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfsub.html" title="flopy.modflow.mfsub Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,9 +68,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfswi-module">
-<h1>flopy.modflow.mfswi Module<a class="headerlink" href="#flopy-modflow-mfswi-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfswi"></span><dl class="class">
+  <div class="section" id="module-flopy.modflow.mfswi">
+<span id="flopy-modflow-mfswi-module"></span><h1>flopy.modflow.mfswi Module<a class="headerlink" href="#module-flopy.modflow.mfswi" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
 <dt id="flopy.modflow.mfswi.ModflowSwi">
 <em class="property">class </em><tt class="descclassname">flopy.modflow.mfswi.</tt><tt class="descname">ModflowSwi</tt><big>(</big><em>model</em>, <em>npln=1</em>, <em>istrat=1</em>, <em>iswizt=53</em>, <em>nprn=1</em>, <em>toeslope=0.05</em>, <em>tipslope=0.05</em>, <em>zetamin=0.005</em>, <em>delzeta=0.05</em>, <em>nu=0.025</em>, <em>zeta=[]</em>, <em>ssz=[]</em>, <em>isource=0</em>, <em>extension='swi'</em>, <em>fname_output='swi.zta'</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfswi.ModflowSwi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Salt Water Intrusion (SWI) package class</p>
@@ -98,8 +98,8 @@ minus one. (default is 1).</p>
 </div></blockquote>
 <p><strong>nprn</strong> : int</p>
 <blockquote>
-<div><p>Number of steps between ZETA recordings; ZETA is recorded every NPRN steps.
-(default is 1)</p>
+<div><p>Number of steps between ZETA recordings; ZETA is recorded every NPRN
+steps. (default is 1)</p>
 </div></blockquote>
 <p><strong>toeslope</strong> : float</p>
 <blockquote>
@@ -111,7 +111,8 @@ minus one. (default is 1).</p>
 </div></blockquote>
 <p><strong>zetamin</strong> : float</p>
 <blockquote>
-<div><p>Minimum elevation of a plane before it is removed from a cell. (default is 0.005)</p>
+<div><p>Minimum elevation of a plane before it is removed from a cell.
+(default is 0.005)</p>
 </div></blockquote>
 <p><strong>delzeta</strong> : float</p>
 <blockquote>
@@ -120,12 +121,14 @@ minus one. (default is 1).</p>
 </div></blockquote>
 <p><strong>nu</strong> : float or array of floats</p>
 <blockquote>
-<div><p>if istart = 1, density of each zone (nsrf + 1 values). if istrat = 0, density along
-top of layer, each surface, and bottom of layer (nsrf + 2 values). (default is 0.025)</p>
+<div><p>if istart = 1, density of each zone (nsrf + 1 values). if istrat = 0,
+density along top of layer, each surface, and bottom of layer
+(nsrf + 2 values). (default is 0.025)</p>
 </div></blockquote>
-<p><strong>zeta</strong> : list of floats or list of array of floats [(nlay, nrow, ncol), (nlay, nrow, ncol)]</p>
+<p><strong>zeta</strong> : list of floats or list of array of floats</p>
 <blockquote>
-<div><p>initial elevations of the active surfaces. (default is 0.)</p>
+<div><p>[(nlay, nrow, ncol), (nlay, nrow, ncol)]
+initial elevations of the active surfaces. (default is 0.)</p>
 </div></blockquote>
 <p><strong>ssz</strong> : float or array of floats (nlay, nrow, ncol)</p>
 <blockquote>
@@ -133,26 +136,20 @@ top of layer, each surface, and bottom of layer (nsrf + 2 values). (default is 0
 </div></blockquote>
 <p><strong>isource</strong> : integer or array of integers (nlay, nrow, ncol)</p>
 <blockquote>
-<div><p>Source type of any external sources or sinks, specified with any outside package
-(i.e. WEL Package, RCH Package, GHB Package). (default is 0).</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>If ISOURCE &gt; 0 sources and sinks have the same fluid density as the zone</dt>
-<dd><p class="first last">ISOURCE. If such a zone is not present in the cell, sources and sinks
-have the same fluid density as the active zone at the top of the aquifer.</p>
-</dd>
-<dt>If ISOURCE = 0 sources and sinks have the same fluid density as the active</dt>
-<dd><p class="first last">zone at the top of the aquifer.</p>
-</dd>
-<dt>If ISOURCE &lt; 0 sources have the same fluid density as the zone with a</dt>
-<dd><p class="first last">number equal to the absolute value of ISOURCE. Sinks have the same
-fluid density as the active zone at the top of the aquifer. This
-option is useful for the modeling of the ocean bottom where infiltrating
-water is salt, yet exfiltrating water is of the same type as the water
-at the top of the aquifer.</p>
-</dd>
-</dl>
-</div></blockquote>
+<div><p>Source type of any external sources or sinks, specified with any
+outside package.
+(i.e. WEL Package, RCH Package, GHB Package). (default is 0).
+If ISOURCE &gt; 0 sources and sinks have the same fluid density as the
+zone ISOURCE. If such a zone is not present in the cell, sources and
+sinks have the same fluid density as the active zone at the top of
+the aquifer. If ISOURCE = 0 sources and sinks have the same fluid
+density as the active zone at the top of the aquifer. If ISOURCE &lt; 0
+sources have the same fluid density as the zone with a number equal
+to the absolute value of ISOURCE. Sinks have the same fluid density
+as the active zone at the top of the aquifer. This option is useful
+for the modeling of the ocean bottom where infiltrating water is
+salt, yet exfiltrating water is of the same type as the water at the
+top of the aquifer.</p>
 </div></blockquote>
 <p><strong>extension</strong> : str</p>
 <blockquote>
@@ -386,7 +383,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfsub.html" title="flopy.modflow.mfsub Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

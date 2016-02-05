@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfpcg Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfpcg Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfpcgn Module" href="mfpcgn.html" />
     <link rel="prev" title="flopy.modflow.mfpbc Module" href="mfpbc.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfpbc.html" title="flopy.modflow.mfpbc Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,9 +68,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfpcg-module">
-<h1>flopy.modflow.mfpcg Module<a class="headerlink" href="#flopy-modflow-mfpcg-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfpcg"></span><p>mfpcg module.  Contains the ModflowPcg class. Note that the user can access
+  <div class="section" id="module-flopy.modflow.mfpcg">
+<span id="flopy-modflow-mfpcg-module"></span><h1>flopy.modflow.mfpcg Module<a class="headerlink" href="#module-flopy.modflow.mfpcg" title="Permalink to this headline">¶</a></h1>
+<p>mfpcg module.  Contains the ModflowPcg class. Note that the user can access
 the ModflowPcg class as <cite>flopy.modflow.ModflowPcg</cite>.</p>
 <p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow-nwt/MODFLOW-NWT-Guide/pcg.htm">Online
 MODFLOW Guide</a>.</p>
@@ -127,7 +127,8 @@ is generally insensitive to this parameter. (default is 2).</p>
 </div></blockquote>
 <p><strong>mutpcg</strong> : int</p>
 <blockquote>
-<div><p>If mutpcg = 0, tables of maximum head change and residual will be printed each iteration.
+<div><p>If mutpcg = 0, tables of maximum head change and residual will be
+printed each iteration.
 If mutpcg = 1, only the total number of iterations will be printed.
 If mutpcg = 2, no information will be printed.
 If mutpcg = 3, information will only be printed if convergence fails.
@@ -143,18 +144,12 @@ If mutpcg = 3, information will only be printed if convergence fails.
 </div></blockquote>
 <p><strong>ihcofadd</strong> : int</p>
 <blockquote>
-<div><p>is a flag that determines what happens to an active cell that is surrounded by dry cells.
-(default is 0).</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>ihcofadd=0, cell converts to dry regardless of HCOF value. This is the default,</dt>
-<dd><p class="first last">which is the way PCG2 worked prior to the addition of this option.</p>
-</dd>
-<dt>ihcofadd&lt;&gt;0, cell converts to dry only if HCOF has no head-dependent stresses or</dt>
-<dd><p class="first last">storage terms</p>
-</dd>
-</dl>
-</div></blockquote>
+<div><p>is a flag that determines what happens to an active cell that is
+surrounded by dry cells.  (default is 0). If ihcofadd=0, cell
+converts to dry regardless of HCOF value. This is the default, which
+is the way PCG2 worked prior to the addition of this option. If
+ihcofadd&lt;&gt;0, cell converts to dry only if HCOF has no head-dependent
+stresses or storage terms.</p>
 </div></blockquote>
 <p><strong>extension</strong> : list string</p>
 <blockquote>
@@ -276,7 +271,7 @@ constructed using the function
         <li class="right" >
           <a href="mfpbc.html" title="flopy.modflow.mfpbc Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

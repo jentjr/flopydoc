@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfstr Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfstr Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfsub Module" href="mfsub.html" />
     <link rel="prev" title="flopy.modflow.mfsor Module" href="mfsor.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfsor.html" title="flopy.modflow.mfsor Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -161,33 +161,27 @@ appropriately set.</p>
 <p>The simplest form is a dictionary with a lists of boundaries for each
 stress period, where each list of boundaries itself is a list of
 boundaries. Indices of the dictionary are the numbers of the stress
-period. For example, if mxacts=3 this gives the form of</p>
-<blockquote>
-<div><p>stress_period_data =
-{0: [</p>
-<blockquote>
-<div><p>[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
-[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
-[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough]]
-],</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>1:  [</dt>
-<dd><p class="first last">[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
-[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
-[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough]]
-], ...</p>
-</dd>
-<dt>kper:</dt>
-<dd><p class="first last">[
-[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
-[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
-[lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough]]
-]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+period. For example, if mxacts=3 this gives the form of:</p>
+<div class="highlight-python"><div class="highlight"><pre>stress_period_data =
+{0: [
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough]]
+    ],
+1:  [
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough]]
+    ], ...
+kper:
+    [
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough],
+    [lay, row, col, seg, reach, flow, stage, cond, sbot, stop, width, slope, rough]]
+    ]
+}
+</pre></div>
+</div>
 </div></blockquote>
 <p><strong>segment_data</strong> : dictionary of str segment data</p>
 <blockquote>
@@ -215,30 +209,25 @@ column in the dataset [10].</p>
 <p>The simplest form is a dictionary with a lists of boundaries for each
 stress period, where each list of boundaries itself is a list of
 boundaries. Indices of the dictionary are the numbers of the stress
-period. For example, if nss=2 and ntrib&gt;0 and/or ndiv&gt;0 this gives the form of</p>
-<blockquote>
-<div><p>segment_data =
-{0: [</p>
-<blockquote>
-<div><p>[itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
-[itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
-],</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>1:  [</dt>
-<dd><p class="first last">[itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
-[itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
-], ...</p>
-</dd>
-<dt>kper:</dt>
-<dd><p class="first last">[
-[itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
-[itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
-]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+period. For example, if nss=2 and ntrib&gt;0 and/or ndiv&gt;0 this gives the
+form of:</p>
+<div class="highlight-python"><div class="highlight"><pre>segment_data =
+{0: [
+    [itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
+    [itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
+    ],
+1:  [
+    [itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
+    [itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
+    ], ...
+kper:
+    [
+    [itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
+    [itrib1, itrib2, itrib3, itrib4, itrib5, itrib6, itrib7, itrib8, itrib9, itrib10, iupseg],
+    ]
+}
+</pre></div>
+</div>
 </div></blockquote>
 <p><strong>options</strong> : list of strings</p>
 <blockquote>
@@ -498,7 +487,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfsor.html" title="flopy.modflow.mfsor Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modpath.mp Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modpath.mp Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.mt3d.mt Module" href="mt.html" />
     <link rel="prev" title="flopy.modflow.mf Module" href="mf.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mf.html" title="flopy.modflow.mf Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-modpath-mp-module"></span><h1>flopy.modpath.mp Module<a class="headerlink" href="#module-flopy.modpath.mp" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modpath.mp.Modpath">
-<em class="property">class </em><tt class="descclassname">flopy.modpath.mp.</tt><tt class="descname">Modpath</tt><big>(</big><em>modelname='modpathtest'</em>, <em>simfile_ext='mpsim'</em>, <em>namefile_ext='mpnam'</em>, <em>exe_name='mp6.exe'</em>, <em>modflowmodel=None</em>, <em>dis_file=None</em>, <em>dis_unit=87</em>, <em>head_file=None</em>, <em>budget_file=None</em>, <em>model_ws=None</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>listunit=7</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.modpath.mp.</tt><tt class="descname">Modpath</tt><big>(</big><em>modelname='modpathtest'</em>, <em>simfile_ext='mpsim'</em>, <em>namefile_ext='mpnam'</em>, <em>version='modpath'</em>, <em>exe_name='mp6.exe'</em>, <em>modflowmodel=None</em>, <em>dis_file=None</em>, <em>dis_unit=87</em>, <em>head_file=None</em>, <em>budget_file=None</em>, <em>model_ws=None</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>listunit=7</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modpath base class</p>
 <dl class="method">
 <dt id="flopy.modpath.mp.Modpath.add_external">
@@ -137,7 +137,7 @@ model output (typically binary) files from ext_unit_dict.</p>
 
 <dl class="method">
 <dt id="flopy.modpath.mp.Modpath.change_model_ws">
-<tt class="descname">change_model_ws</tt><big>(</big><em>new_pth=None</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.change_model_ws" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">change_model_ws</tt><big>(</big><em>new_pth=None</em>, <em>reset_external=False</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.change_model_ws" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the model work space.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -203,6 +203,24 @@ performed. If level=1, full checks are performed.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modpath.mp.Modpath.get_free_format">
+<tt class="descname">get_free_format</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.get_free_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the free format flag for the model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : bool</p>
+<blockquote class="last">
+<div><p>Free format flag for the model</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modpath.mp.Modpath.get_name_file_entries">
 <tt class="descname">get_name_file_entries</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.get_name_file_entries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a string representation of the name file.</p>
@@ -224,7 +242,7 @@ performed. If level=1, full checks are performed.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pp</strong> : Package object</p>
 <blockquote class="last">
-<div><p>Package object of type <a class="reference internal" href="mbase.html#flopy.mbase.Package" title="flopy.mbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.mbase.Package</span></tt></a></p>
+<div><p>Package object of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.pakbase.Package</span></tt></a></p>
 </div></blockquote>
 </td>
 </tr>
@@ -300,7 +318,8 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 all layers will be included. (default is None)</p>
 </dd>
 <dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+<dd><p class="first last">MODFLOW zero-based stress period number to return.
+(default is zero)</p>
 </dd>
 <dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
@@ -405,6 +424,24 @@ run terminated normally. (default is &#8216;normal termination&#8217;)</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modpath.mp.Modpath.set_free_format">
+<tt class="descname">set_free_format</tt><big>(</big><em>value=True</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.set_free_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the free format flag for the model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>value</strong> : bool</p>
+<blockquote class="last">
+<div><p>Boolean value to set free format flag for model. (default is True)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modpath.mp.Modpath.to_shapefile">
 <tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>package_names=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper function for writing a shapefile for the model grid.  If
@@ -439,7 +476,7 @@ looking for arrays that can be added to the shapefile as attributes</p>
 
 <dl class="method">
 <dt id="flopy.modpath.mp.Modpath.write_input">
-<tt class="descname">write_input</tt><big>(</big><em>SelPackList=False</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.write_input" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">write_input</tt><big>(</big><em>SelPackList=False</em>, <em>check=False</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.Modpath.write_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the input.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -513,7 +550,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modpath.mp.ModpathList.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.ModpathList.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em><big>)</big><a class="headerlink" href="#flopy.modpath.mp.ModpathList.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -646,7 +683,7 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mf.html" title="flopy.modflow.mf Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfsip Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfsip Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfsms Module" href="mfsms.html" />
     <link rel="prev" title="flopy.modflow.mfsfr2 Module" href="mfsfr2.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfsfr2.html" title="flopy.modflow.mfsfr2 Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,9 +68,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="flopy-modflow-mfsip-module">
-<h1>flopy.modflow.mfsip Module<a class="headerlink" href="#flopy-modflow-mfsip-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-flopy.modflow.mfsip"></span><p>mfsip module.  Contains the ModflowSip class. Note that the user can access
+  <div class="section" id="module-flopy.modflow.mfsip">
+<span id="flopy-modflow-mfsip-module"></span><h1>flopy.modflow.mfsip Module<a class="headerlink" href="#module-flopy.modflow.mfsip" title="Permalink to this headline">¶</a></h1>
+<p>mfsip module.  Contains the ModflowSip class. Note that the user can access
 the ModflowSip class as <cite>flopy.modflow.ModflowSip</cite>.</p>
 <p>Additional information for this MODFLOW package can be found at the <a class="reference external" href="http://water.usgs.gov/ogw/modflow/MODFLOW-2005-Guide/index.html?sip.htm">Online
 MODFLOW Guide</a>.</p>
@@ -84,12 +84,14 @@ MODFLOW Guide</a>.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><p>The model object (of type :class:flopy.modflow.mf.Modflow) to which this package will be added.</p>
+<div><p>The model object (of type :class:flopy.modflow.mf.Modflow) to which
+this package will be added.</p>
 </div></blockquote>
 <p><strong>mxiter</strong> : integer</p>
 <blockquote>
-<div><p>The maximum number of times through the iteration loop in one time step in an attempt to solve the
-system of finite-difference equations. (default is 200)</p>
+<div><p>The maximum number of times through the iteration loop in one time
+step in an attempt to solve the system of finite-difference equations.
+(default is 200)</p>
 </div></blockquote>
 <p><strong>nparm</strong> : integer</p>
 <blockquote>
@@ -104,18 +106,16 @@ it is changed to one. (default is 1)</p>
 </div></blockquote>
 <p><strong>hclose</strong> : float &gt; 0</p>
 <blockquote>
-<div><p>The head change criterion for convergence. When the maximum absolute value of head change from all nodes
-during an iteration is less than or equal to hclose, iteration stops. (default is 1e-5)</p>
+<div><p>The head change criterion for convergence. When the maximum absolute
+value of head change from all nodes during an iteration is less than
+or equal to hclose, iteration stops. (default is 1e-5)</p>
 </div></blockquote>
 <p><strong>ipcalc</strong> : 0 or 1</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>A flag indicating where the seed for calculating iteration variables will come from.</dt>
-<dd><p class="first last">0 is the seed entered by the user will be used.
-1 is the seed will be calculated at the start of the simulation from problem variables.</p>
-</dd>
-</dl>
-<p>(default is 0)</p>
+<div><p>A flag indicating where the seed for calculating iteration variables
+will come from. 0 is the seed entered by the user will be used.
+1 is the seed will be calculated at the start of the simulation from
+problem variables. (default is 0)</p>
 </div></blockquote>
 <p><strong>wseed</strong> : float &gt; 0</p>
 <blockquote>
@@ -124,11 +124,11 @@ but is used only if ipcalc is equal to zero. (default is 0)</p>
 </div></blockquote>
 <p><strong>iprsip</strong> : integer &gt; 0</p>
 <blockquote>
-<div><p>the printout interval for sip. iprsip, if equal to zero, is changed to 999.
-The maximum head change (positive or negative) is printed for each iteration of
-a time step whenever the time step is an even multiple of iprsip. This printout
-also occurs at the end of each stress period regardless of the value of iprsip.
-(default is 0)</p>
+<div><p>the printout interval for sip. iprsip, if equal to zero, is changed
+to 999. The maximum head change (positive or negative) is printed for
+each iteration of a time step whenever the time step is an even
+multiple of iprsip. This printout also occurs at the end of each
+stress period regardless of the value of iprsip. (default is 0)</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
@@ -250,7 +250,7 @@ constructed using the function
         <li class="right" >
           <a href="mfsfr2.html" title="flopy.modflow.mfsfr2 Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

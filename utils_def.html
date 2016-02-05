@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.utils_def Module &mdash; flopy 3.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.util_list Module" href="util_list.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="util_list.html" title="flopy.utils.util_list Module"
+             accesskey="N">next</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.utils.utils_def">
+<span id="flopy-utils-utils-def-module"></span><h1>flopy.utils.utils_def Module<a class="headerlink" href="#module-flopy.utils.utils_def" title="Permalink to this headline">¶</a></h1>
+<p>Generic classes and utility functions</p>
+<dl class="class">
+<dt id="flopy.utils.utils_def.FlopyBinaryData">
+<em class="property">class </em><tt class="descclassname">flopy.utils.utils_def.</tt><tt class="descname">FlopyBinaryData</tt><a class="headerlink" href="#flopy.utils.utils_def.FlopyBinaryData" title="Permalink to this definition">¶</a></dt>
+<dd><p>The FlopyBinaryData class is a class to that defines the data types for
+integer, floating point, and character data in MODFLOW binary
+files. The FlopyBinaryData class is the super class from which the
+specific derived classes are formed.  This class should not be
+instantiated directly.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.utils_def.totim_to_datetime">
+<tt class="descclassname">flopy.utils.utils_def.</tt><tt class="descname">totim_to_datetime</tt><big>(</big><em>totim</em>, <em>start='1-1-1970'</em>, <em>timeunit='D'</em><big>)</big><a class="headerlink" href="#flopy.utils.utils_def.totim_to_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>totim</strong> : list or numpy array</p>
+<p><strong>start</strong> : str</p>
+<blockquote>
+<div><p>Starting date for simulation. (default is 1-1-1970).</p>
+</div></blockquote>
+<p><strong>timeunit</strong> : string</p>
+<blockquote>
+<div><p>time unit of the simulation time. Valid values are &#8216;S&#8217;econds,
+&#8216;M&#8217;inutes, &#8216;H&#8217;ours, &#8216;D&#8217;ays, &#8216;Y&#8217;ears. (default is &#8216;D&#8217;).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>datetime object calculated from start and totim values</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="util_list.html"
+                        title="next chapter">flopy.utils.util_list Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="util_list.html" title="flopy.utils.util_list Module"
+             >next</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

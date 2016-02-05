@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_array Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.utils.util_array Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="prev" title="flopy.utils.reference Module" href="reference.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -54,7 +54,7 @@
         <li class="right" >
           <a href="reference.html" title="flopy.utils.reference Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -274,6 +274,26 @@ the ext_filename is reset to value.</p>
 <dd><p>parse self.__value into a dict{kper:Util2d}</p>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="flopy.utils.util_array.Transient2d.from_4d">
+<em class="property">classmethod </em><tt class="descname">from_4d</tt><big>(</big><em>model</em>, <em>pak_name</em>, <em>m4ds</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d.from_4d" title="Permalink to this definition">¶</a></dt>
+<dd><p>construct a Transient2d instance from a
+dict(name: (masked) 4d numpy.ndarray
+Parameters
+&#8212;&#8212;&#8212;-</p>
+<blockquote>
+<div><p>model : flopy.mbase derived type
+pak_name : str package name (e.g. RCH)
+m4ds : dict(name,(masked) 4d numpy.ndarray)</p>
+<blockquote>
+<div>each ndarray must have shape (nper,1,nrow,ncol).
+if an entire (nrow,ncol) slice is np.NaN, then
+that kper is skipped.</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div>Transient2d instance</div></blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.utils.util_array.Transient2d.get_kper_entry">
 <tt class="descname">get_kper_entry</tt><big>(</big><em>kper</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d.get_kper_entry" title="Permalink to this definition">¶</a></dt>
@@ -396,7 +416,7 @@ a list of matplotlib.pyplot.axis is returned.</p>
 
 <dl class="class">
 <dt id="flopy.utils.util_array.Util2d">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">Util2d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">Util2d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>how=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Util2d class for handling 2-D model arrays</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -488,15 +508,29 @@ written internally to the model input file.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col width="4%" />
+<col width="96%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Util2d.get_file_entry" title="flopy.utils.util_array.Util2d.get_file_entry"><tt class="xref py py-obj docutils literal"><span class="pre">get_file_entry</span></tt></a>()</td>
-<td>this is the entry point for getting an</td>
+<tr class="row-odd"><td>how</td>
+<td>(str) the str flag to control how the array is written to the model input files e.g. &#8220;constant&#8221;,&#8221;internal&#8221;,&#8221;external&#8221;,&#8221;openclose&#8221;</td>
+</tr>
+<tr class="row-even"><td>format</td>
+<td>(ArrayFormat object) controls the ASCII representation of the numeric array</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>get_file_entry</td>
+<td>(string) get the model input file string including the control record</td>
 </tr>
 </tbody>
 </table>
@@ -528,27 +562,6 @@ a (possibly wrapped format) array from a file
 made static to support the load functionality
 this routine now supports fixed format arrays where the numbers
 may touch.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.util_array.Util2d.get_control_record">
-<tt class="descname">get_control_record</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.get_control_record" title="Permalink to this definition">¶</a></dt>
-<dd><p>get the modflow control record</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.util_array.Util2d.get_file_array">
-<tt class="descname">get_file_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.get_file_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>increments locat and update model instance if needed.
-if the value is a constant, or a string, or external, 
-return an empty string</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.utils.util_array.Util2d.get_file_entry">
-<tt class="descname">get_file_entry</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.get_file_entry" title="Permalink to this definition">¶</a></dt>
-<dd><p>this is the entry point for getting an
-input file entry for this object</p>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -984,7 +997,7 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
         <li class="right" >
           <a href="reference.html" title="flopy.utils.reference Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

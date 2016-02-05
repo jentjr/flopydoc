@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.export.netcdf Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.export.netcdf Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.export.utils Module" href="utils.html" />
     <link rel="prev" title="flopy.plot.plotutil Module" href="plotutil.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="plotutil.html" title="flopy.plot.plotutil Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -140,7 +140,7 @@ written to the screen. echo (bool): a flag to force screen output</p>
 
 <dl class="class">
 <dt id="flopy.export.netcdf.NetCdf">
-<em class="property">class </em><tt class="descclassname">flopy.export.netcdf.</tt><tt class="descname">NetCdf</tt><big>(</big><em>output_filename</em>, <em>model</em>, <em>time_values=None</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.export.netcdf.</tt><tt class="descname">NetCdf</tt><big>(</big><em>output_filename</em>, <em>model</em>, <em>time_values=None</em>, <em>verbose=None</em>, <em>logger=None</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Support for writing a netCDF4 compliant file from a flopy model</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -166,14 +166,31 @@ will be used</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>this class relies heavily on the ModflowDis object,
-including these attributes:</p>
-<blockquote>
-<div>lenuni
-itmuni
-start_datetime
-sr (SpatialReference)</div></blockquote>
-<p>make sure these attributes have meaningful values</p>
+<p>This class relies heavily on the ModflowDis object,
+including these attributes: lenuni, itmuni, start_datetime, sr
+(SpatialReference).  Make sure these attributes have meaningful values.</p>
+<dl class="method">
+<dt id="flopy.export.netcdf.NetCdf.add_global_attributes">
+<tt class="descname">add_global_attributes</tt><big>(</big><em>attr_dict</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.add_global_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>add global attribute to an initialized file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>attr_dict</strong> : dict(attribute name, attribute value)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>Exception of self.nc is None (initialize_file()</strong></p>
+<p class="last"><strong>has not been called)</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.create_variable">
 <tt class="descname">create_variable</tt><big>(</big><em>name</em>, <em>attributes</em>, <em>precision_str='f4'</em>, <em>dimensions=('time'</em>, <em>'layer'</em>, <em>'y'</em>, <em>'x')</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.create_variable" title="Permalink to this definition">¶</a></dt>
@@ -211,6 +228,43 @@ default : (&#8220;time&#8221;,&#8221;layer&#8221;,&#8221;x&#8221;,&#8221;y&#8221
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.export.netcdf.NetCdf.difference">
+<tt class="descname">difference</tt><big>(</big><em>other</em>, <em>minuend='self'</em>, <em>mask_zero_diff=True</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.difference" title="Permalink to this definition">¶</a></dt>
+<dd><p>make a new NetCDF instance that is the difference with another
+netcdf file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>other</strong> : either an str filename of a netcdf file or</p>
+<blockquote>
+<div><p>a netCDF4 instance</p>
+</div></blockquote>
+<p><strong>minuend</strong> : (optional) the order of the difference operation.</p>
+<blockquote>
+<div><p>Default is self (e.g. self - other).  Can be &#8220;self&#8221; or &#8220;other&#8221;</p>
+</div></blockquote>
+<p><strong>mask_zero_diff</strong> : bool flag to mask differences that are zero.  If</p>
+<blockquote>
+<div><p>True, positions in the difference array that are zero will be set
+to self.fillvalue</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">net NetCDF instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>assumes the current NetCDF instance has been populated.  The
+variable names and dimensions between the two files must match
+exactly. The name of the new .nc file is
+&lt;self.output_filename&gt;.diff.nc.  The masks from both self and
+other are carried through to the new instance</p>
 </dd></dl>
 
 <dl class="method">
@@ -294,7 +348,7 @@ needed for the netcdf file</p>
         <li class="right" >
           <a href="plotutil.html" title="flopy.plot.plotutil Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

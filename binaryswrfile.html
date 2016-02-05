@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.binaryswrfile Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.utils.binaryswrfile Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.flopy_io Module" href="flopy_io.html" />
     <link rel="prev" title="flopy.utils.binaryhydmodfile Module" href="binaryhydmodfile.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -71,9 +71,492 @@
   <div class="section" id="module-flopy.utils.binaryswrfile">
 <span id="flopy-utils-binaryswrfile-module"></span><h1>flopy.utils.binaryswrfile Module<a class="headerlink" href="#module-flopy.utils.binaryswrfile" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="flopy.utils.binaryswrfile.SwrBinaryData">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrBinaryData</tt><big>(</big><em>precision='double'</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBinaryData" title="Permalink to this definition">¶</a></dt>
+<dd><p>The SwrBinaryData class is a class to that defines the data types for
+integer, floating point, and character data in SWR Process binary
+files. The SwrBinaryDat class is the super class from which the
+specific derived classes SwrObs and SwrFile are formed.  This class
+should not be instantiated directly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>precision</strong> : string</p>
+<blockquote class="last">
+<div><p>precision is the precision of the floating point data in the file.
+(default is &#8216;double&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryswrfile.SwrBudget">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrBudget</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR budget output from MODFLOW SWR Process binary output files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the swr budget output file</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.bud&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_connectivity">
+<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get connectivity data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+&#8216;flow&#8217;</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kswrkstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the swr time step, time step, and stress period 
+(kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
+values. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (nitems).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kswrkstpkper and totim are None, will return the last entry</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_kswrkstpkper">
+<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods, time steps, and swr time steps
+in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kswr, kstp, kper combinations in binary file.
+kswr, kstp, and kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_nrecords">
+<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of records in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrBudget.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from a swr binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+(budget) to retrieve. (default is 0)</p>
+</div></blockquote>
+<p><strong>iconn</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based connection number for reach (irch) to retrieve
+qm data. iconn is only used if qm data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based layer number for reach (irch) to retrieve
+qaq data . klay is only used if qaq data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based structure number for reach (irch) to retrieve
+structure data . isrt is only used if structure data is being read.
+(default is 0)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems).  The first column in the
+data array will contain time (totim). nitems is 2 for stage
+data, 15 for budget data, 3 for qm data, and 11 for qaq
+data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The irec, iconn, and klay values must be zero-based.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryswrfile.SwrExchange">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrExchange</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR surface-water groundwater exchange output from MODFLOW SWR Process binary output files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the swr surface-water groundwater exchange output file</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.qaq&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_connectivity">
+<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get connectivity data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+&#8216;flow&#8217;</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kswrkstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the swr time step, time step, and stress period 
+(kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
+values. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (nitems).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kswrkstpkper and totim are None, will return the last entry</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_kswrkstpkper">
+<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods, time steps, and swr time steps
+in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kswr, kstp, kper combinations in binary file.
+kswr, kstp, and kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_nrecords">
+<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of records in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrExchange.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from a swr binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+(budget) to retrieve. (default is 0)</p>
+</div></blockquote>
+<p><strong>iconn</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based connection number for reach (irch) to retrieve
+qm data. iconn is only used if qm data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based layer number for reach (irch) to retrieve
+qaq data . klay is only used if qaq data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based structure number for reach (irch) to retrieve
+structure data . isrt is only used if structure data is being read.
+(default is 0)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems).  The first column in the
+data array will contain time (totim). nitems is 2 for stage
+data, 15 for budget data, 3 for qm data, and 11 for qaq
+data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The irec, iconn, and klay values must be zero-based.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrFile">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrFile</tt><big>(</big><em>filename</em>, <em>swrtype='stage'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read binary SWR output from MODFLOW SWR Process binary output files</p>
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrFile</tt><big>(</big><em>filename</em>, <em>swrtype='stage'</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR output from MODFLOW SWR Process binary output files
+The SwrFile class is the super class from which specific derived
+classes are formed.  This class should not be instantiated directly</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -84,8 +567,12 @@
 </div></blockquote>
 <p><strong>swrtype</strong> : str</p>
 <blockquote>
-<div><p>swr data type. Valid data types are &#8216;stage&#8217;, &#8216;reachgroup&#8217;,
-&#8216;qm&#8217;, or &#8216;qaq&#8217;. (default is &#8216;stage&#8217;)</p>
+<div><p>swr data type. Valid data types are &#8216;stage&#8217;, &#8216;budget&#8217;,
+&#8216;flow&#8217;, &#8216;exchange&#8217;, or &#8216;structure&#8217;. (default is &#8216;stage&#8217;)</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -100,24 +587,440 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrFile</span><span class="p">(</span><span class="s">&#39;mymodel.swr.stage.bin&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="attribute">
-<dt id="flopy.utils.binaryswrfile.SwrFile.integer">
-<tt class="descname">integer</tt><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.integer" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">int32</span></tt></p>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_connectivity">
+<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get connectivity data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+&#8216;flow&#8217;</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="flopy.utils.binaryswrfile.SwrFile.real">
-<tt class="descname">real</tt><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.real" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">float64</span></tt></p>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kswrkstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the swr time step, time step, and stress period 
+(kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
+values. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (nitems).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kswrkstpkper and totim are None, will return the last entry</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_kswrkstpkper">
+<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods, time steps, and swr time steps
+in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kswr, kstp, kper combinations in binary file.
+kswr, kstp, and kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_nrecords">
+<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of records in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFile.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from a swr binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+(budget) to retrieve. (default is 0)</p>
+</div></blockquote>
+<p><strong>iconn</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based connection number for reach (irch) to retrieve
+qm data. iconn is only used if qm data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based layer number for reach (irch) to retrieve
+qaq data . klay is only used if qaq data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based structure number for reach (irch) to retrieve
+structure data . isrt is only used if structure data is being read.
+(default is 0)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems).  The first column in the
+data array will contain time (totim). nitems is 2 for stage
+data, 15 for budget data, 3 for qm data, and 11 for qaq
+data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The irec, iconn, and klay values must be zero-based.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryswrfile.SwrFlow">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrFlow</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR flow output from MODFLOW SWR Process binary output files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the swr flow output file</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.flow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_connectivity">
+<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get connectivity data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+&#8216;flow&#8217;</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kswrkstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the swr time step, time step, and stress period 
+(kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
+values. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (nitems).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kswrkstpkper and totim are None, will return the last entry</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_kswrkstpkper">
+<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods, time steps, and swr time steps
+in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kswr, kstp, kper combinations in binary file.
+kswr, kstp, and kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_nrecords">
+<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of records in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrFlow.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from a swr binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+(budget) to retrieve. (default is 0)</p>
+</div></blockquote>
+<p><strong>iconn</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based connection number for reach (irch) to retrieve
+qm data. iconn is only used if qm data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based layer number for reach (irch) to retrieve
+qaq data . klay is only used if qaq data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based structure number for reach (irch) to retrieve
+structure data . isrt is only used if structure data is being read.
+(default is 0)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems).  The first column in the
+data array will contain time (totim). nitems is 2 for stage
+data, 15 for budget data, 3 for qm data, and 11 for qaq
+data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The irec, iconn, and klay values must be zero-based.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrObs">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrObs</tt><big>(</big><em>filename</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read binary SWR observations output from MODFLOW SWR Process binary observation files</p>
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrObs</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR observations output from MODFLOW SWR Process binary
+observation files</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -125,6 +1028,10 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
 <blockquote>
 <div><p>Name of the cell budget file</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -139,16 +1046,571 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="attribute">
-<dt id="flopy.utils.binaryswrfile.SwrObs.integer">
-<tt class="descname">integer</tt><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.integer" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">int32</span></tt></p>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrObs.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>obsname=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the observation file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>obsname</strong> : string</p>
+<blockquote>
+<div><p>The name of the observation to return. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems). totim is always returned. nitems
+is 2 if idx or obsname is not None or nobs+1.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data.</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="flopy.utils.binaryswrfile.SwrObs.real">
-<tt class="descname">real</tt><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.real" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">float64</span></tt></p>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrObs.get_nobs">
+<tt class="descname">get_nobs</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of observations in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrObs.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrObs.get_obsnames">
+<tt class="descname">get_obsnames</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of observation names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of observation names in the binary file. totim is not
+included in the list of observation names.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrObs.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryswrfile.SwrStage">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrStage</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR stage output from MODFLOW SWR Process binary output files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the swr stage output file</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.stg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_connectivity">
+<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get connectivity data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+&#8216;flow&#8217;</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kswrkstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the swr time step, time step, and stress period 
+(kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
+values. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (nitems).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kswrkstpkper and totim are None, will return the last entry</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_kswrkstpkper">
+<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods, time steps, and swr time steps
+in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kswr, kstp, kper combinations in binary file.
+kswr, kstp, and kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_nrecords">
+<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of records in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStage.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from a swr binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+(budget) to retrieve. (default is 0)</p>
+</div></blockquote>
+<p><strong>iconn</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based connection number for reach (irch) to retrieve
+qm data. iconn is only used if qm data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based layer number for reach (irch) to retrieve
+qaq data . klay is only used if qaq data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based structure number for reach (irch) to retrieve
+structure data . isrt is only used if structure data is being read.
+(default is 0)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems).  The first column in the
+data array will contain time (totim). nitems is 2 for stage
+data, 15 for budget data, 3 for qm data, and 11 for qaq
+data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The irec, iconn, and klay values must be zero-based.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.binaryswrfile.SwrStructure">
+<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrStructure</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR structure output from MODFLOW SWR Process binary output
+files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the swr structure output file</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.str&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_connectivity">
+<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get connectivity data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+&#8216;flow&#8217;</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+(default is None)</p>
+</div></blockquote>
+<p><strong>kswrkstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the swr time step, time step, and stress period 
+(kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
+values. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (nitems).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kswrkstpkper and totim are None, will return the last entry</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_kswrkstpkper">
+<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods, time steps, and swr time steps
+in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
+<blockquote class="last">
+<div><p>List of unique kswr, kstp, kper combinations in binary file.
+kswr, kstp, and kper values are zero-based.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_nrecords">
+<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of records in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_record_names">
+<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique record names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryswrfile.SwrStructure.get_ts">
+<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from a swr binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+(budget) to retrieve. (default is 0)</p>
+</div></blockquote>
+<p><strong>iconn</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based connection number for reach (irch) to retrieve
+qm data. iconn is only used if qm data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based layer number for reach (irch) to retrieve
+qaq data . klay is only used if qaq data is being read.
+(default is 0)</p>
+</div></blockquote>
+<p><strong>klay</strong> : int</p>
+<blockquote>
+<div><p>is the zero-based structure number for reach (irch) to retrieve
+structure data . isrt is only used if structure data is being read.
+(default is 0)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems).  The first column in the
+data array will contain time (totim). nitems is 2 for stage
+data, 15 for budget data, 3 for qm data, and 11 for qaq
+data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The irec, iconn, and klay values must be zero-based.</p>
 </dd></dl>
 
 </dd></dl>
@@ -199,7 +1661,7 @@
         <li class="right" >
           <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html" />
     <link rel="prev" title="flopy.modflow.mfriv Module" href="mfriv.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfriv.html" title="flopy.modflow.mfriv Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,8 +72,8 @@
 <span id="flopy-modflow-mfsfr2-module"></span><h1>flopy.modflow.mfsfr2 Module<a class="headerlink" href="#module-flopy.modflow.mfsfr2" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfsfr2.</tt><tt class="descname">ModflowSfr2</tt><big>(</big><em>model</em>, <em>nstrm=0</em>, <em>nss=0</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=128390.4</em>, <em>dleak=0.0001</em>, <em>istcb1=50</em>, <em>istcb2=66</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=1</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unitnumber=14</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8216;Streamflow-Routing (SFR2) Package Class&#8217;</p>
+<em class="property">class </em><tt class="descclassname">flopy.modflow.mfsfr2.</tt><tt class="descname">ModflowSfr2</tt><big>(</big><em>model</em>, <em>nstrm=2</em>, <em>nss=0</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=128390.4</em>, <em>dleak=0.0001</em>, <em>istcb1=50</em>, <em>istcb2=66</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=1</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unitnumber=17</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Streamflow-Routing (SFR2) Package Class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -144,13 +144,12 @@ each reach will be saved to a file whenever the cell-by-cell budget has been spe
 <p><strong>isfropt</strong> : integer</p>
 <blockquote>
 <div><p>An integer value that defines the format of the input data and whether or not unsaturated flow is simulated
-beneath streams. Values of ISFROPT are defined as follows:
-0   No vertical unsaturated flow beneath streams. Streambed elevations, stream slope, streambed thickness,</p>
-<blockquote>
-<div><p>and streambed hydraulic conductivity are read for each stress period using variables defined in Items 6b
-and 6c; the optional variables in Item 2 are not used.</p>
-</div></blockquote>
+beneath streams. Values of ISFROPT are defined as follows</p>
 <dl class="docutils">
+<dt>0   No vertical unsaturated flow beneath streams. Streambed elevations, stream slope, streambed thickness,</dt>
+<dd><p class="first last">and streambed hydraulic conductivity are read for each stress period using variables defined in Items 6b
+and 6c; the optional variables in Item 2 are not used.</p>
+</dd>
 <dt>1   No vertical unsaturated flow beneath streams. Streambed elevation, stream slope, streambed thickness,</dt>
 <dd><p class="first last">and streambed hydraulic conductivity are read for each reach only once at the beginning of the simulation
 using optional variables defined in Item 2; Items 6b and 6c are used to define stream width and depth for
@@ -306,7 +305,7 @@ this stress period will not be printed.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
 <blockquote>
 <div><p>String defining file name or file handle for summary file
-of check method output. If a sting is passed a file handle
+of check method output. If a string is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
 </div></blockquote>
@@ -431,6 +430,14 @@ a list of matplotlib.pyplot.axis are returned.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.renumber_segments">
+<tt class="descname">renumber_segments</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.renumber_segments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renumber segments so that segment numbering is continuous and always increases
+in the downstream direction. Experience suggests that this can substantially speed
+convergence for some models using the NWT solver.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.to_shapefile">
 <tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
@@ -539,78 +546,12 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.check.slope">
-<tt class="descname">slope</tt><big>(</big><em>minimum_slope=0.0001</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.check.slope" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">slope</tt><big>(</big><em>minimum_slope=0.0001</em>, <em>maximum_slope=1.0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.check.slope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that streambed slopes are greater than or equal to a specified minimum value.
 Low slope values can cause &#8220;backup&#8221; or unrealistic stream stages with icalc options
 where stage is computed.</p>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.modflow.mfsfr2.parse_1c">
-<tt class="descclassname">flopy.modflow.mfsfr2.</tt><tt class="descname">parse_1c</tt><big>(</big><em>line</em>, <em>reachinput</em>, <em>transroute</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.parse_1c" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parse Data Set 1c for SFR2 package.
-See <a class="reference external" href="http://water.usgs.gov/nrp/gwsoftware/modflow2000/MFDOC/index.html?sfr.htm">http://water.usgs.gov/nrp/gwsoftware/modflow2000/MFDOC/index.html?sfr.htm</a> for more info</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>line</strong> : str</p>
-<blockquote>
-<div><p>line read from SFR package input file</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of length 13 containing all variables for Data Set 6a</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.modflow.mfsfr2.parse_6a">
-<tt class="descclassname">flopy.modflow.mfsfr2.</tt><tt class="descname">parse_6a</tt><big>(</big><em>line</em>, <em>option</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.parse_6a" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parse Data Set 6a for SFR2 package.
-See <a class="reference external" href="http://water.usgs.gov/nrp/gwsoftware/modflow2000/MFDOC/index.html?sfr.htm">http://water.usgs.gov/nrp/gwsoftware/modflow2000/MFDOC/index.html?sfr.htm</a> for more info</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>line</strong> : str</p>
-<blockquote>
-<div><p>line read from SFR package input file</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of length 13 containing all variables for Data Set 6a</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.modflow.mfsfr2.parse_6bc">
-<tt class="descclassname">flopy.modflow.mfsfr2.</tt><tt class="descname">parse_6bc</tt><big>(</big><em>line</em>, <em>icalc</em>, <em>nstrm</em>, <em>isfropt</em>, <em>reachinput</em>, <em>per=0</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfsfr2.parse_6bc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parse Data Set 6b for SFR2 package.
-See <a class="reference external" href="http://water.usgs.gov/nrp/gwsoftware/modflow2000/MFDOC/index.html?sfr.htm">http://water.usgs.gov/nrp/gwsoftware/modflow2000/MFDOC/index.html?sfr.htm</a> for more info</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>line</strong> : str</p>
-<blockquote>
-<div><p>line read from SFR package input file</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of length 9 containing all variables for Data Set 6b</p>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -659,7 +600,7 @@ See <a class="reference external" href="http://water.usgs.gov/nrp/gwsoftware/mod
         <li class="right" >
           <a href="mfriv.html" title="flopy.modflow.mfriv Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

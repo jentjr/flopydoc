@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.reference Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.utils.reference Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.util_array Module" href="util_array.html" />
-    <link rel="prev" title="flopy.utils.modpathfile Module" href="modpathfile.html" />
+    <link rel="prev" title="flopy.utils.swroutputfile Module" href="swroutputfile.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -56,9 +56,9 @@
           <a href="util_array.html" title="flopy.utils.util_array Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
+          <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -73,17 +73,17 @@
 <p>Module spatial referencing for flopy model objects</p>
 <dl class="class">
 <dt id="flopy.utils.reference.SpatialReference">
-<em class="property">class </em><tt class="descclassname">flopy.utils.reference.</tt><tt class="descname">SpatialReference</tt><big>(</big><em>delr</em>, <em>delc</em>, <em>lenuni</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>proj4_str='EPSG:4326'</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">flopy.utils.reference.</tt><tt class="descname">SpatialReference</tt><big>(</big><em>delr=1.0</em>, <em>delc=1.0</em>, <em>lenuni=1</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>proj4_str='EPSG:4326'</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>a simple class to locate the model grid in x-y space</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>delr</strong> : Util2d</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>delr</strong> : numpy ndarray</p>
 <blockquote>
 <div><p>the model discretization delr vector</p>
 </div></blockquote>
-<p><strong>delc</strong> : Util2d</p>
+<p><strong>delc</strong> : numpy ndarray</p>
 <blockquote>
 <div><p>the model discretization delc vector</p>
 </div></blockquote>
@@ -111,11 +111,15 @@
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>xul and yul can be explicitly (re)set after SpatialReference
+instantiation, but only before any of the other attributes and methods are
+accessed</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="68%" />
-<col width="32%" />
+<col width="21%" />
+<col width="79%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>xedge</td>
@@ -141,18 +145,6 @@
 </tr>
 <tr class="row-even"><td>ycentergrid</td>
 <td>(ndarray) numpy meshgrid of row centers</td>
-</tr>
-<tr class="row-odd"><td>Note:</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>xul and yul can be explicitly (re)set after SpatialReference instantiation, but only before</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>any of the other attributes and methods are accessed</td>
-<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -180,9 +172,8 @@ coordinate for every column in the grid in model space - not offset or rotated.<
 <dt id="flopy.utils.reference.SpatialReference.get_xedge_array">
 <tt class="descname">get_xedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_xedge_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell edge x
-coordinates for every column in the grid in model space - not offset or rotated.</p>
-<blockquote>
-<div>Array is of size (ncol + 1)</div></blockquote>
+coordinates for every column in the grid in model space - not offset
+or rotated.  Array is of size (ncol + 1)</p>
 </dd></dl>
 
 <dl class="method">
@@ -196,9 +187,44 @@ coordinate for every row in the grid in model space - not offset of rotated.</p>
 <dt id="flopy.utils.reference.SpatialReference.get_yedge_array">
 <tt class="descname">get_yedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_yedge_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell edge y
-coordinates for every row in the grid in model space - not offset or rotated.</p>
+coordinates for every row in the grid in model space - not offset or
+rotated. Array is of size (nrow + 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.interpolate">
+<tt class="descname">interpolate</tt><big>(</big><em>a</em>, <em>xi</em>, <em>method='nearest'</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the griddata method to interpolate values from an array onto the
+points defined in xi.  For any values outside of the grid, use
+&#8216;nearest&#8217; to find a value for them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
 <blockquote>
-<div>Array is of size (nrow + 1)</div></blockquote>
+<div><p>array to interpolate from.  It must be of size nrow, ncol</p>
+</div></blockquote>
+<p><strong>xi</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>array containing x and y point coordinates of size (npts, 2). xi
+also works with broadcasting so that if a is a 2d array, then
+xi can be passed in as (xgrid, ygrid).</p>
+</div></blockquote>
+<p><strong>method</strong> : {&#8216;linear&#8217;, &#8216;nearest&#8217;, &#8216;cubic&#8217;}</p>
+<blockquote>
+<div><p>method to use for interpolation (default is &#8216;nearest&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>b</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array of size (npts)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -232,8 +258,8 @@ degrees.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="modpathfile.html"
-                        title="previous chapter">flopy.utils.modpathfile Module</a></p>
+  <p class="topless"><a href="swroutputfile.html"
+                        title="previous chapter">flopy.utils.swroutputfile Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="util_array.html"
                         title="next chapter">flopy.utils.util_array Module</a></p>
@@ -267,9 +293,9 @@ degrees.</p>
           <a href="util_array.html" title="flopy.utils.util_array Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
+          <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>

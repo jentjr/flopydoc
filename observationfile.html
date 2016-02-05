@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.observationfile Module &mdash; flopy 3.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.export.shapefile_utils Module" href="shapefile_utils.html" />
+    <link rel="prev" title="flopy.utils.modpathfile Module" href="modpathfile.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shapefile_utils.html" title="flopy.export.shapefile_utils Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
+          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-flopy.utils.observationfile">
+<span id="flopy-utils-observationfile-module"></span><h1>flopy.utils.observationfile Module<a class="headerlink" href="#module-flopy.utils.observationfile" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.utils.observationfile.HydmodObs">
+<em class="property">class </em><tt class="descclassname">flopy.utils.observationfile.</tt><tt class="descname">HydmodObs</tt><big>(</big><em>filename</em>, <em>verbose=False</em>, <em>hydlbl_len=20</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs" title="Permalink to this definition">¶</a></dt>
+<dd><p>HydmodObs Class - used to read binary MODFLOW HYDMOD package output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Name of the hydmod output file</p>
+</div></blockquote>
+<p><strong>verbose</strong> : boolean</p>
+<blockquote>
+<div><p>If true, print additional information to to the screen during the
+extraction.  (default is False)</p>
+</div></blockquote>
+<p><strong>hydlbl_len</strong> : int</p>
+<blockquote>
+<div><p>Length of hydmod labels. (default is 20)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.utils.observationfile.HydmodObs.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the observation file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, data for all simulation times
+are returned. (default is None)</p>
+</div></blockquote>
+<p><strong>obsname</strong> : string</p>
+<blockquote>
+<div><p>The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time to return. If idx is None and totim are None,
+data for all simulation times are returned. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems). totim is always returned. nitems
+is 2 if idx or obsname is not None or nobs+1.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.HydmodObs.get_dataframe">
+<tt class="descname">get_dataframe</tt><big>(</big><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframe with the incremental and cumulative water budget
+items in the hydmod file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
+<blockquote>
+<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</div></blockquote>
+<p><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, a dataframe with all simulation
+times is  returned. (default is None)</p>
+</div></blockquote>
+<p><strong>obsname</strong> : string</p>
+<blockquote>
+<div><p>The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time to return. If idx is None and totim are None,
+a dataframe with all simulation times is returned.
+(default is None)</p>
+</div></blockquote>
+<p><strong>timeunit</strong> : string</p>
+<blockquote>
+<div><p>time unit of the simulation time. Valid values are &#8216;S&#8217;econds,
+&#8216;M&#8217;inutes, &#8216;H&#8217;ours, &#8216;D&#8217;ays, &#8216;Y&#8217;ears. (default is &#8216;D&#8217;).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : pandas dataframe</p>
+<blockquote class="last">
+<div><p>Pandas dataframe of selected data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data as a dataframe.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.HydmodObs.get_nobs">
+<tt class="descname">get_nobs</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of observations in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.HydmodObs.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.HydmodObs.get_obsnames">
+<tt class="descname">get_obsnames</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of observation names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of observation names in the binary file. totim is not
+included in the list of observation names.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.HydmodObs.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.observationfile.SwrObs">
+<em class="property">class </em><tt class="descclassname">flopy.utils.observationfile.</tt><tt class="descname">SwrObs</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read binary SWR observations output from MODFLOW SWR Process
+observation files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the cell budget file</p>
+</div></blockquote>
+<p><strong>precision</strong> : string</p>
+<blockquote>
+<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;double&#8217;.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.observationfile.SwrObs.get_data">
+<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the observation file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, data for all simulation times
+are returned. (default is None)</p>
+</div></blockquote>
+<p><strong>obsname</strong> : string</p>
+<blockquote>
+<div><p>The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time to return. If idx is None and totim are None,
+data for all simulation times are returned. (default is None)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, nitems). totim is always returned. nitems
+is 2 if idx or obsname is not None or nobs+1.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.SwrObs.get_dataframe">
+<tt class="descname">get_dataframe</tt><big>(</big><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframe with the incremental and cumulative water budget
+items in the hydmod file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
+<blockquote>
+<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</div></blockquote>
+<p><strong>idx</strong> : int</p>
+<blockquote>
+<div><p>The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, a dataframe with all simulation
+times is  returned. (default is None)</p>
+</div></blockquote>
+<p><strong>obsname</strong> : string</p>
+<blockquote>
+<div><p>The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time to return. If idx is None and totim are None,
+a dataframe with all simulation times is returned.
+(default is None)</p>
+</div></blockquote>
+<p><strong>timeunit</strong> : string</p>
+<blockquote>
+<div><p>time unit of the simulation time. Valid values are &#8216;S&#8217;econds,
+&#8216;M&#8217;inutes, &#8216;H&#8217;ours, &#8216;D&#8217;ays, &#8216;Y&#8217;ears. (default is &#8216;D&#8217;).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : pandas dataframe</p>
+<blockquote class="last">
+<div><p>Pandas dataframe of selected data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data as a dataframe.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.SwrObs.get_nobs">
+<tt class="descname">get_nobs</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of observations in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
+<blockquote class="last">
+<div><p>A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=&#8217;flow&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.SwrObs.get_ntimes">
+<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.SwrObs.get_obsnames">
+<tt class="descname">get_obsnames</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of observation names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of observation names in the binary file. totim is not
+included in the list of observation names.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.SwrObs.get_times">
+<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
+<blockquote class="last">
+<div><p>List contains unique simulation times (totim) in binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.observationfile.get_selection">
+<tt class="descclassname">flopy.utils.observationfile.</tt><tt class="descname">get_selection</tt><big>(</big><em>data</em>, <em>names</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.get_selection" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
+<blockquote>
+<div><p>recarray of data to make a selection from</p>
+</div></blockquote>
+<p><strong>names</strong> : string or list of strings</p>
+<blockquote>
+<div><p>column names to return</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarry</p>
+<blockquote class="last">
+<div><p>recarray with selection</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modpathfile.html"
+                        title="previous chapter">flopy.utils.modpathfile Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="shapefile_utils.html"
+                        title="next chapter">flopy.export.shapefile_utils Module</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shapefile_utils.html" title="flopy.export.shapefile_utils Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
+             >previous</a> |</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
+          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

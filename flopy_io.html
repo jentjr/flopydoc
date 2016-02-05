@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.flopy_io Module &mdash; flopy 3.2.3 documentation</title>
+    <title>flopy.utils.flopy_io Module &mdash; flopy 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.3',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.3 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.formattedfile Module" href="formattedfile.html" />
     <link rel="prev" title="flopy.utils.binaryswrfile Module" href="binaryswrfile.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -70,146 +70,38 @@
             
   <div class="section" id="module-flopy.utils.flopy_io">
 <span id="flopy-utils-flopy-io-module"></span><h1>flopy.utils.flopy_io Module<a class="headerlink" href="#module-flopy.utils.flopy_io" title="Permalink to this headline">¶</a></h1>
-<p>Module for exporting and importing flopy model attributes</p>
+<p>Module for input/output utilities</p>
+<dl class="function">
+<dt id="flopy.utils.flopy_io.flux_to_wel">
+<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">flux_to_wel</tt><big>(</big><em>cbc_file</em>, <em>text</em>, <em>precision='single'</em>, <em>model=None</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.flux_to_wel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert flux in a binary cell budget file to a wel instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>cbc_file</strong> : (str) cell budget file name</p>
+<p><strong>text</strong> : (str) text string of the desired flux type (e.g. &#8220;drains&#8221;)</p>
+<p><strong>precision</strong> : (optional str) precision of the cell budget file</p>
+<p><strong>model</strong> : (optional) BaseModel instance.  If passed, a new ModflowWel</p>
+<blockquote>
+<div><p>instance will be added to model</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool flag passed to CellBudgetFile</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">flopy.modflow.ModflowWel instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="function">
 <dt id="flopy.utils.flopy_io.line_parse">
 <tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">line_parse</tt><big>(</big><em>line</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.line_parse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a line of text into to a list of values.  This handles the
 case where a free formatted MODFLOW input file may have commas in
 it.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.utils.flopy_io.model_attributes_to_shapefile">
-<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">model_attributes_to_shapefile</tt><big>(</big><em>filename</em>, <em>ml</em>, <em>package_names=None</em>, <em>array_dict=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.model_attributes_to_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wrapper function for writing a shapefile of model data.  If package_names is
-not None, then search through the requested packages looking for arrays that
-can be added to the shapefile as attributes</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
-<p><strong>ml</strong> : flopy.mbase</p>
-<blockquote>
-<div><p>model instance</p>
-</div></blockquote>
-<p><strong>package_names</strong> : list of package names (e.g. [&#8220;dis&#8221;,&#8221;lpf&#8221;])</p>
-<blockquote>
-<div><p>Packages to export data arrays to shapefile. (default is None)</p>
-</div></blockquote>
-<p><strong>array_dict</strong> : dict of {name:2D array} pairs</p>
-<blockquote>
-<div><p>Additional 2D arrays to add as attributes to the shapefile. (default is None)</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">model_attributes_to_shapefile</span><span class="p">(</span><span class="s">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.utils.flopy_io.shape_attr_name">
-<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">shape_attr_name</tt><big>(</big><em>name</em>, <em>length=6</em>, <em>keep_layer=False</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.shape_attr_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function for to format an array name to a maximum of 10 characters to conform
-with ESRI shapefile maximum attribute name length</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : string</p>
-<blockquote>
-<div><p>data array name</p>
-</div></blockquote>
-<p><strong>length</strong> : int</p>
-<blockquote>
-<div><p>maximum length of string to return. Value passed to function is overridden
-and set to 10 if keep_layer=True. (default is 6)</p>
-</div></blockquote>
-<p><strong>keep_layer</strong> : bool</p>
-<blockquote>
-<div><p>Boolean that determines if layer number in name should be retained.
-(default is False)</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">String</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">shape_attr_name</span><span class="p">(</span><span class="s">&#39;averylongstring&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;averyl&#39;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.utils.flopy_io.write_grid_shapefile">
-<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">write_grid_shapefile</tt><big>(</big><em>filename</em>, <em>sr</em>, <em>array_dict</em>, <em>nan_val=-1000000000.0</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.write_grid_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write a grid shapefile array_dict attributes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
-<p><strong>sr</strong> : spatial reference instance</p>
-<blockquote>
-<div><p>spatial reference object for model grid</p>
-</div></blockquote>
-<p><strong>array_dict</strong> : dict</p>
-<blockquote>
-<div><p>Dictionary of name and 2D array pairs.  Additional 2D arrays to add as
-attributes to the grid shapefile.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.utils.flopy_io.write_gridlines_shapefile">
-<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">write_gridlines_shapefile</tt><big>(</big><em>filename</em>, <em>sr</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.write_gridlines_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write a polyline shapefile of the grid lines - a lightweight alternative
-to polygons.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
-<p><strong>sr</strong> : spatial reference</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -258,7 +150,7 @@ to polygons.</p>
         <li class="right" >
           <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
           <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
