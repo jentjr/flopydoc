@@ -254,7 +254,7 @@ top of the aquifer.</p>
 </div></blockquote>
 <p><strong>obslrc</strong> : list of lists</p>
 <blockquote>
-<div><p>[layer, row, column] lists for nobs observations.</p>
+<div><p>zero-based [layer, row, column] lists for nobs observations.</p>
 </div></blockquote>
 <p><strong>naux</strong> : int</p>
 <blockquote>
@@ -449,13 +449,20 @@ Adds an attribute for each layer in each data array</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfswi2.ModflowSwi2.write_file">
-<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2.write_file" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">write_file</tt><big>(</big><em>check=True</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2.write_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the package file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>check</strong> : boolean</p>
+<blockquote>
+<div><p>Check package data for common errors. (default True)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -514,7 +521,7 @@ Adds an attribute for each layer in each data array</p>
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012, Mark Bakker, Vincent Post, Joseph Hughes, Christian Langevin, Alain Frances, Jeremy White, Mike Fienen, Jeff Starn.
+      Last updated on Feb 13, 2016.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
