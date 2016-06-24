@@ -12,10 +12,12 @@
    flopy.modflow.mfdisu
    flopy.modflow.mfdrn
    flopy.modflow.mfevt
+   flopy.modflow.mfgage
    flopy.modflow.mfghb
    flopy.modflow.mfgmg
    flopy.modflow.mfhfb
    flopy.modflow.mfhyd
+   flopy.modflow.mflak
    flopy.modflow.mflmt
    flopy.modflow.mflpf
    flopy.modflow.mfmlt
@@ -85,3 +87,4 @@
    flopy.utils.util_array
    flopy.utils.util_list
    flopy.utils.utils_def
+   flopy.utils.zonbud_utils
