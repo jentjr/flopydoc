@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfoutput Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.modflow.mfoutput Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,16 +23,16 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -40,7 +40,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -49,32 +49,32 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.modflow.mfoutput">
 <span id="flopy-modflow-mfoutput-module"></span><h1>flopy.modflow.mfoutput Module<a class="headerlink" href="#module-flopy.modflow.mfoutput" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfoutput.BinaryFileAsArray">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfoutput.</tt><tt class="descname">BinaryFileAsArray</tt><big>(</big><em>model</em>, <em>fname=None</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>mask_values=None</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoutput.BinaryFileAsArray" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfoutput.</code><code class="descname">BinaryFileAsArray</code><span class="sig-paren">(</span><em>model</em>, <em>fname=None</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>mask_values=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfoutput.BinaryFileAsArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>An array-like object for accessing head and drawdown information in
 MODFLOW output files.</p>
 <p>TODO: SET THIS UP TO BE EITHER ASCII OR BINARY?</p>
 <dl class="attribute">
 <dt id="flopy.modflow.mfoutput.BinaryFileAsArray.shape">
-<tt class="descname">shape</tt><a class="headerlink" href="#flopy.modflow.mfoutput.BinaryFileAsArray.shape" title="Permalink to this definition">¶</a></dt>
+<code class="descname">shape</code><a class="headerlink" href="#flopy.modflow.mfoutput.BinaryFileAsArray.shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return shape of array.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="flopy.modflow.mfoutput.BinaryFileAsArray.times">
-<tt class="descname">times</tt><a class="headerlink" href="#flopy.modflow.mfoutput.BinaryFileAsArray.times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">times</code><a class="headerlink" href="#flopy.modflow.mfoutput.BinaryFileAsArray.times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of times.</p>
 </dd></dl>
 
@@ -82,7 +82,7 @@ MODFLOW output files.</p>
 
 <dl class="class">
 <dt id="flopy.modflow.mfoutput.ModflowOutput">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfoutput.</tt><tt class="descname">ModflowOutput</tt><big>(</big><em>m</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfoutput.ModflowOutput" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfoutput.</code><code class="descname">ModflowOutput</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfoutput.ModflowOutput" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper class for processing MODFLOW output</p>
 </dd></dl>
 
@@ -92,9 +92,9 @@ MODFLOW output files.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -102,16 +102,13 @@ MODFLOW output files.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -120,12 +117,12 @@ MODFLOW output files.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

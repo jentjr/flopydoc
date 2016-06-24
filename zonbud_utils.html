@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.zonbud_utils Module &mdash; flopy 3.2.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.plot.map Module" href="map.html" />
+    <link rel="prev" title="flopy.utils.util_list Module" href="util_list.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body role="document">
+<div class="header" role="banner">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="util_list.html" title="flopy.utils.util_list Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-flopy.utils.zonbud_utils">
+<span id="flopy-utils-zonbud-utils-module"></span><h1>flopy.utils.zonbud_utils Module<a class="headerlink" href="#module-flopy.utils.zonbud_utils" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="flopy.utils.zonbud_utils.run_zonbud">
+<code class="descclassname">flopy.utils.zonbud_utils.</code><code class="descname">run_zonbud</code><span class="sig-paren">(</span><em>zonbud_exe='zonbud.exe'</em>, <em>listingfile='zonbudtest csv'</em>, <em>cbcfile='zonbudtest.cbc'</em>, <em>title='ZoneBudget Test'</em>, <em>zonefile='izone'</em>, <em>budget_option='A'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud_utils.run_zonbud" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><dl class="docutils">
+<dt>zonbud_exe</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>name of the ZoneBudget executable</dd>
+<dt>listingfile</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>name of the listing file/output format</dd>
+<dt>cbcfile</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>name of the cell-by-cell budget file</dd>
+<dt>title</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>title to be printed in the listing file</dd>
+<dt>zonefile</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>name of the input zone array file</dd>
+<dt>budget_option</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>option for specifying when budgets are calculated</dd>
+</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nlay</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;GWBasins.zon&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">lay</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlay</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">write_zonfile</span><span class="p">(</span><span class="n">zon</span><span class="p">,</span> <span class="s1">&#39;GWBasins_zb2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">run_zonbud</span><span class="p">(</span><span class="n">zonefile</span><span class="o">=</span><span class="s1">&#39;GWBasins_zb2&#39;</span><span class="p">,</span> <span class="n">cbcfile</span><span class="o">=</span><span class="s1">r&#39;model</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>as.cbc&#8217;)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.zonbud_utils.write_zonfile">
+<code class="descclassname">flopy.utils.zonbud_utils.</code><code class="descname">write_zonfile</code><span class="sig-paren">(</span><em>izone</em>, <em>outfile</em>, <em>iprn=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud_utils.write_zonfile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>izone</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array of ints (nlay, nrow, ncol)</span><dd>integer-array of zone numbers</dd>
+<dt>outfile: str</dt>
+<dd>Name of the output ZoneBudget array file</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nlay</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;GWBasins.zon&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">lay</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlay</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">write_zonfile</span><span class="p">(</span><span class="n">zon</span><span class="p">,</span> <span class="s1">&#39;GWBasins_zb2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="util_list.html"
+                        title="previous chapter">flopy.utils.util_list Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="map.html"
+                        title="next chapter">flopy.plot.map Module</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="util_list.html" title="flopy.utils.util_list Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

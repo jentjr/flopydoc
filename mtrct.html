@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mtrct Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.mt3d.mtrct Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.mt3d.mtssm Module" href="mtssm.html" />
     <link rel="prev" title="flopy.mt3d.mtphc Module" href="mtphc.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,25 +58,164 @@
         <li class="right" >
           <a href="mtphc.html" title="flopy.mt3d.mtphc Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.mt3d.mtrct">
 <span id="flopy-mt3d-mtrct-module"></span><h1>flopy.mt3d.mtrct Module<a class="headerlink" href="#module-flopy.mt3d.mtrct" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtrct.Mt3dRct">
-<em class="property">class </em><tt class="descclassname">flopy.mt3d.mtrct.</tt><tt class="descname">Mt3dRct</tt><big>(</big><em>model</em>, <em>isothm=0</em>, <em>ireact=0</em>, <em>igetsc=1</em>, <em>rhob=1800.0</em>, <em>prsity2=0.1</em>, <em>srconc=0.0</em>, <em>sp1=0.0</em>, <em>sp2=0.0</em>, <em>rc1=0.0</em>, <em>rc2=0.0</em>, <em>extension='rct'</em>, <em>unitnumber=None</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct" title="Permalink to this definition">¶</a></dt>
-<dd><p>Chemical reaction package class</p>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mtrct.</code><code class="descname">Mt3dRct</code><span class="sig-paren">(</span><em>model</em>, <em>isothm=0</em>, <em>ireact=0</em>, <em>igetsc=1</em>, <em>rhob=None</em>, <em>prsity2=None</em>, <em>srconc=None</em>, <em>sp1=None</em>, <em>sp2=None</em>, <em>rc1=None</em>, <em>rc2=None</em>, <em>extension='rct'</em>, <em>unitnumber=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chemical reaction package class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>isothm</strong> : int</p>
+<blockquote>
+<div><p>isothm is a flag indicating which type of sorption (or dual-domain mass
+transfer) is simulated: isothm = 0, no sorption is simulated;
+isothm = 1, linear isotherm (equilibrium-controlled); isothm = 2,
+Freundlich isotherm (equilibrium-controlled); isothm = 3, Langmuir
+isotherm (equilibrium-controlled); isothm = 4, first-order kinetic
+sorption (nonequilibrium); isothm = 5, dual-domain mass transfer
+(without sorption); isothm = 6, dual-domain mass transfer
+(with sorption). (default is 0).</p>
+</div></blockquote>
+<p><strong>ireact</strong> : int</p>
+<blockquote>
+<div><p>ireact is a flag indicating which type of kinetic rate reaction is
+simulated: ireact = 0, no kinetic rate reaction is simulated;
+ireact = 1, first-order irreversible reaction. Note that this reaction
+package is not intended for modeling chemical reactions between
+species. An add-on reaction package developed specifically for that
+purpose may be used. (default is 0).</p>
+</div></blockquote>
+<p><strong>igetsc</strong> : int</p>
+<blockquote>
+<div><p>igetsc is an integer flag indicating whether the initial concentration
+for the nonequilibrium sorbed or immobile phase of all species should
+be read when nonequilibrium sorption (isothm = 4) or dual-domain mass
+transfer (isothm = 5 or 6) is simulated: igetsc = 0, the initial
+concentration for the sorbed or immobile phase is not read. By default,
+the sorbed phase is assumed to be in equilibrium with the dissolved
+phase (isothm = 4), and the immobile domain is assumed to have zero
+concentration (isothm = 5 or 6). igetsc &gt; 0, the initial concentration
+for the sorbed phase or immobile liquid phase of all species will be
+read. (default is 1).</p>
+</div></blockquote>
+<p><strong>rhob</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>rhob is the bulk density of the aquifer medium (unit, ML-3). rhob is
+used if isothm = 1, 2, 3, 4, or 6. If rhob is not user-specified and
+isothem is not 5 then rhob is set to 1.8e3. (default is None)</p>
+</div></blockquote>
+<p><strong>prsity2</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>prsity2 is the porosity of the immobile domain (the ratio of pore
+spaces filled with immobile fluids over the bulk volume of the aquifer
+medium) when the simulation is intended to represent a dual-domain
+system. prsity2 is used if isothm = 5 or 6. If prsity2 is not user-
+specified and isothm = 5 or 6 then prsity2 is set to 0.1.
+(default is None)</p>
+</div></blockquote>
+<p><strong>srconc</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>srconc is the user-specified initial concentration for the sorbed phase
+of the first species if isothm = 4 (unit, MM-1). Note that for
+equilibrium-controlled sorption, the initial concentration for the
+sorbed phase cannot be specified. srconc is the user-specified initial
+concentration of the first species for the immobile liquid phase if
+isothm = 5 or 6 (unit, ML-3). If srconc is not user-specified and
+isothm = 4, 5, or 6 then srconc is set to 0. (default is None).</p>
+</div></blockquote>
+<p><strong>sp1</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>sp1 is the first sorption parameter for the first species. The use of
+sp1 depends on the type of sorption selected (the value of isothm).
+For linear sorption (isothm = 1) and nonequilibrium sorption (isothm =
+4), sp1 is the distribution coefficient (Kd) (unit, L3M-1). For
+Freundlich sorption (isothm = 2), sp1 is the Freundlich equilibrium
+constant (Kf) (the unit depends on the Freundlich exponent a). For
+Langmuir sorption (isothm = 3), sp1 is the Langmuir equilibrium
+constant (Kl) (unit, L3M-1 ). For dual-domain mass transfer without
+sorption (isothm = 5), sp1 is not used, but still must be entered. For
+dual-domain mass transfer with sorption (isothm = 6), sp1 is also the
+distribution coefficient (Kd) (unit, L3M-1). If sp1 is not specified
+and isothm &gt; 0 then sp1 is set to 0. (default is None).</p>
+</div></blockquote>
+<p><strong>sp2</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>sp2 is the second sorption or dual-domain model parameter for the first
+species. The use of sp2 depends on the type of sorption or dual-domain
+model selected. For linear sorption (isothm = 1), sp2 is read but not
+used. For Freundlich sorption (isothm = 2), sp2 is the Freundlich
+exponent a. For Langmuir sorption (isothm = 3), sp2 is the total
+concentration of the sorption sites available ( S ) (unit, MM-1). For
+nonequilibrium sorption (isothm = 4), sp2 is the first-order mass
+transfer rate between the dissolved and sorbed phases (unit, T-1). For
+dual-domain mass transfer (isothm = 5 or 6), sp2 is the first-order
+mass transfer rate between the two domains (unit, T-1). If sp2 is not
+specified and isothm &gt; 0 then sp2 is set to 0. (default is None).</p>
+</div></blockquote>
+<p><strong>rc1</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>rc1 is the first-order reaction rate for the dissolved (liquid) phase
+for the first species (unit, T-1). rc1 is not used ireact = 0. If a
+dual-domain system is simulated, the reaction rates for the liquid
+phase in the mobile and immobile domains are assumed to be equal. If
+rc1 is not specified and ireact &gt; 0 then rc1 is set to 0.
+(default is None).</p>
+</div></blockquote>
+<p><strong>rc2</strong> : float or array of floats (nlay, nrow, ncol)</p>
+<blockquote>
+<div><p>rc2 is the first-order reaction rate for the sorbed phase for the first
+species (unit, T-1). rc2 is not used ireact = 0. If a dual-domain
+system is simulated, the reaction rates for the sorbed phase in the
+mobile and immobile domains are assumed to be equal. Generally, if the
+reaction is radioactive decay, rc2 should be set equal to rc1, while
+for biodegradation, rc2 may be different from rc1. Note that rc2 is
+read but not used, if no sorption is included in the simulation. If
+rc2 is not specified and ireact &gt; 0 then rc2 is set to 0.
+(default is None).</p>
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is &#8216;rct&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>File unit number. If file unit number is None then an unused unit</dt>
+<dd><p class="first last">number if used. (default is None).</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rct</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dRct</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="flopy.mt3d.mtrct.Mt3dRct.check">
-<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check package data for common errors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -107,8 +246,8 @@ performed. If level=1, full checks are performed.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -116,13 +255,68 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtrct.Mt3dRct.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>The load method has not been implemented for this package.</p>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
+<blockquote>
+<div><p>File to load.</p>
+</div></blockquote>
+<p><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
+which this package will be added.</p>
+</div></blockquote>
+<p><strong>nlay</strong> : int</p>
+<blockquote>
+<div><p>Number of model layers in the reaction package. If nlay is not
+specified, the number of layers in the passed model object is
+used. (default is None).</p>
+</div></blockquote>
+<p><strong>nrow</strong> : int</p>
+<blockquote>
+<div><p>Number of model rows in the reaction package. If nrow is not
+specified, the number of rows in the passed model object is
+used. (default is None).</p>
+</div></blockquote>
+<p><strong>ncol</strong> : int</p>
+<blockquote>
+<div><p>Number of model columns in the reaction package. If nlay is not
+specified, the number of columns in the passed model object is
+used. (default is None).</p>
+</div></blockquote>
+<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
+<blockquote>
+<div><p>If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>rct</strong> :  Mt3dRct object</p>
+<blockquote class="last">
+<div><p>Mt3dRct object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rct</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dRct</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.rct&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.mt3d.mtrct.Mt3dRct.plot">
-<tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 package input data</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -132,25 +326,25 @@ package input data</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+<dt>file_extension</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is &#8216;png&#8217;)</p>
 </dd>
-<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+<dt>kper</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
 zero)</p>
 </dd>
-<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -166,8 +360,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -175,7 +369,7 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="method">
 <dt id="flopy.mt3d.mtrct.Mt3dRct.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
 Adds an attribute for each layer in each data array</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -194,16 +388,16 @@ Adds an attribute for each layer in each data array</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.mt3d.mtrct.Mt3dRct.write_file">
-<tt class="descname">write_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.write_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.write_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the package file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -223,7 +417,7 @@ Adds an attribute for each layer in each data array</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="mtphc.html"
@@ -231,7 +425,7 @@ Adds an attribute for each layer in each data array</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mtssm.html"
                         title="next chapter">flopy.mt3d.mtssm Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -239,16 +433,13 @@ Adds an attribute for each layer in each data array</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -263,13 +454,13 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mtphc.html" title="flopy.mt3d.mtphc Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

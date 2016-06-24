@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_list Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.util_list Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.plot.map Module" href="map.html" />
+    <link rel="next" title="flopy.utils.zonbud_utils Module" href="zonbud_utils.html" />
     <link rel="prev" title="flopy.utils.utils_def Module" href="utils_def.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -53,20 +53,20 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="map.html" title="flopy.plot.map Module"
+          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="utils_def.html" title="flopy.utils.utils_def Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.util_list">
 <span id="flopy-utils-util-list-module"></span><h1>flopy.utils.util_list Module<a class="headerlink" href="#module-flopy.utils.util_list" title="Permalink to this headline">¶</a></h1>
@@ -81,7 +81,7 @@ instantiate this class directly.</p>
 </dl>
 <dl class="class">
 <dt id="flopy.utils.util_list.MfList">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_list.</tt><tt class="descname">MfList</tt><big>(</big><em>package</em>, <em>data=None</em>, <em>dtype=None</em>, <em>model=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.util_list.</code><code class="descname">MfList</code><span class="sig-paren">(</span><em>package</em>, <em>data=None</em>, <em>dtype=None</em>, <em>model=None</em>, <em>list_free_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList" title="Permalink to this definition">¶</a></dt>
 <dd><p>a generic object for handling transient boundary condition lists</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -89,7 +89,7 @@ instantiate this class directly.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : package object</p>
 <blockquote>
-<div><p>The package object (of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.pakbase.Package</span></tt></a>) to which
+<div><p>The package object (of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><code class="xref py py-class docutils literal"><span class="pre">flopy.pakbase.Package</span></code></a>) to which
 this MfList will be added.</p>
 </div></blockquote>
 <p><strong>data</strong> : varies</p>
@@ -132,7 +132,7 @@ this MfList will be added.</p>
 </table>
 <dl class="classmethod">
 <dt id="flopy.utils.util_list.MfList.from_4d">
-<em class="property">classmethod </em><tt class="descname">from_4d</tt><big>(</big><em>model</em>, <em>pak_name</em>, <em>m4ds</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.from_4d" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_4d</code><span class="sig-paren">(</span><em>model</em>, <em>pak_name</em>, <em>m4ds</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.from_4d" title="Permalink to this definition">¶</a></dt>
 <dd><p>construct an MfList instance from a dict of
 (attribute_name,masked 4D ndarray
 Parameters
@@ -147,13 +147,13 @@ m4ds : {attibute name:4d masked numpy.ndarray}</div></blockquote>
 
 <dl class="method">
 <dt id="flopy.utils.util_list.MfList.get_indices">
-<tt class="descname">get_indices</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.get_indices" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_indices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.get_indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>a helper function for plotting - get all unique indices</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data">
-<em class="property">static </em><tt class="descname">masked4D_arrays_to_stress_period_data</tt><big>(</big><em>dtype</em>, <em>m4ds</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">masked4D_arrays_to_stress_period_data</code><span class="sig-paren">(</span><em>dtype</em>, <em>m4ds</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>convert a dictionary of 4-dim masked arrays to</dt>
 <dd>a stress_period_data style dict of recarray</dd>
@@ -168,7 +168,7 @@ m4ds : {attibute name:4d masked numpy.ndarray}</div></blockquote>
 
 <dl class="method">
 <dt id="flopy.utils.util_list.MfList.plot">
-<tt class="descname">plot</tt><big>(</big><em>key=None</em>, <em>names=None</em>, <em>kper=0</em>, <em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>key=None</em>, <em>names=None</em>, <em>kper=0</em>, <em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot stress period boundary condition (MfList) data for a specified
 stress period</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -206,38 +206,38 @@ all layers will be included. (default is None)</p>
 <p><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
-<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+<dt>axes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span><dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
 (default is None)</p>
 </dd>
-<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+<dt>pcolor</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
 </dd>
-<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a color bar will be added to
+<dt>colorbar</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
 </dd>
-<dt>inactive <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a black overlay in inactive
+<dt>inactive</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a black overlay in inactive
 cells in a layer will be displayed. (default is True)</p>
 </dd>
-<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+<dt>contour</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
 plot will be plotted. (default is False)</p>
 </dd>
-<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+<dt>clabel</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
 will be plotted. Only used if contour=True. (default is False)</p>
 </dd>
-<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+<dt>grid</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if the model grid will be plotted
 on the figure. (default is False)</p>
 </dd>
-<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+<dt>masked_values</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -253,8 +253,8 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">stress_period_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="p">,</span> <span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -262,7 +262,7 @@ a list of matplotlib.pyplot.axis is returned.</p>
 
 <dl class="method">
 <dt id="flopy.utils.util_list.MfList.to_array">
-<tt class="descname">to_array</tt><big>(</big><em>kper=0</em>, <em>mask=False</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.to_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_array</code><span class="sig-paren">(</span><em>kper=0</em>, <em>mask=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.to_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert stress period boundary condition (MfList) data for a
 specified stress period to a 3-D numpy array</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -290,8 +290,8 @@ names for the stress period data (&#8216;cond&#8217;, &#8216;flux&#8217;, &#8216
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">stress_period_data</span><span class="o">.</span><span class="n">to_array</span><span class="p">(</span><span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -299,7 +299,7 @@ names for the stress period data (&#8216;cond&#8217;, &#8216;flux&#8217;, &#8216
 
 <dl class="method">
 <dt id="flopy.utils.util_list.MfList.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>kper=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_list.MfList.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em>, <em>kper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export stress period boundary condition (MfList) data for a specified
 stress period</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -322,9 +322,9 @@ stress period</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">,</span> <span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">,</span> <span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -337,15 +337,15 @@ stress period</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="utils_def.html"
                         title="previous chapter">flopy.utils.utils_def Module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="map.html"
-                        title="next chapter">flopy.plot.map Module</a></p>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="zonbud_utils.html"
+                        title="next chapter">flopy.utils.zonbud_utils Module</a></p>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -353,16 +353,13 @@ stress period</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -372,18 +369,18 @@ stress period</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="map.html" title="flopy.plot.map Module"
+          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
              >next</a> |</li>
         <li class="right" >
           <a href="utils_def.html" title="flopy.utils.utils_def Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

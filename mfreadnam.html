@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.mfreadnam Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.mfreadnam Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.modpathfile Module" href="modpathfile.html" />
     <link rel="prev" title="flopy.utils.mflistfile Module" href="mflistfile.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,15 +58,15 @@
         <li class="right" >
           <a href="mflistfile.html" title="flopy.utils.mflistfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.mfreadnam">
 <span id="flopy-utils-mfreadnam-module"></span><h1>flopy.utils.mfreadnam Module<a class="headerlink" href="#module-flopy.utils.mfreadnam" title="Permalink to this headline">¶</a></h1>
@@ -76,7 +76,7 @@ the NamData class as <cite>flopy.modflow.NamData</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.utils.mfreadnam.NamData">
-<em class="property">class </em><tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">NamData</tt><big>(</big><em>pkgtype</em>, <em>name</em>, <em>handle</em>, <em>packages</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.NamData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.mfreadnam.</code><code class="descname">NamData</code><span class="sig-paren">(</span><em>pkgtype</em>, <em>name</em>, <em>handle</em>, <em>packages</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfreadnam.NamData" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Namefile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -99,7 +99,7 @@ of supported packages. This dictionary is also passed in as packages.</p>
 <p><strong>packages</strong> : dictionary</p>
 <blockquote class="last">
 <div><p>Dictionary of package objects as defined in the
-<cite>mfnam_packages</cite> attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>.</p>
+<cite>mfnam_packages</cite> attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -130,7 +130,7 @@ of supported packages. This dictionary is also passed in as packages.</p>
 
 <dl class="function">
 <dt id="flopy.utils.mfreadnam.getfiletypeunit">
-<tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">getfiletypeunit</tt><big>(</big><em>nf</em>, <em>filetype</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.getfiletypeunit" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.mfreadnam.</code><code class="descname">getfiletypeunit</code><span class="sig-paren">(</span><em>nf</em>, <em>filetype</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfreadnam.getfiletypeunit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method to return unit number of a package from a NamData instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -149,7 +149,7 @@ of supported packages. This dictionary is also passed in as packages.</p>
 
 <dl class="function">
 <dt id="flopy.utils.mfreadnam.parsenamefile">
-<tt class="descclassname">flopy.utils.mfreadnam.</tt><tt class="descname">parsenamefile</tt><big>(</big><em>namfilename</em>, <em>packages</em>, <em>verbose=True</em><big>)</big><a class="headerlink" href="#flopy.utils.mfreadnam.parsenamefile" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.mfreadnam.</code><code class="descname">parsenamefile</code><span class="sig-paren">(</span><em>namfilename</em>, <em>packages</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfreadnam.parsenamefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to parse the nam file and return a dictionary with types,
 names, units and handles</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -163,7 +163,7 @@ names, units and handles</p>
 <p><strong>packages</strong> : dictionary</p>
 <blockquote>
 <div><p>Dictionary of package objects as defined in the <cite>mfnam_packages</cite>
-attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>.</p>
+attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : logical</p>
 <blockquote>
@@ -174,7 +174,7 @@ attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflo
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ext_unit_dict</strong> : dictionary</p>
 <blockquote class="last">
 <div><p>For each file listed in the name file, a
-<a class="reference internal" href="#flopy.utils.mfreadnam.NamData" title="flopy.utils.mfreadnam.NamData"><tt class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.NamData</span></tt></a> instance
+<a class="reference internal" href="#flopy.utils.mfreadnam.NamData" title="flopy.utils.mfreadnam.NamData"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.NamData</span></code></a> instance
 is stored in the ext_unit_dict dictionary keyed by unit number</p>
 </div></blockquote>
 </td>
@@ -189,7 +189,7 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="mflistfile.html"
@@ -197,7 +197,7 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="modpathfile.html"
                         title="next chapter">flopy.utils.modpathfile Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -205,16 +205,13 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -229,13 +226,13 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
         <li class="right" >
           <a href="mflistfile.html" title="flopy.utils.mflistfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.gridgen Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.gridgen Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.mflistfile Module" href="mflistfile.html" />
     <link rel="prev" title="flopy.utils.formattedfile Module" href="formattedfile.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,21 +58,21 @@
         <li class="right" >
           <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.gridgen">
 <span id="flopy-utils-gridgen-module"></span><h1>flopy.utils.gridgen Module<a class="headerlink" href="#module-flopy.utils.gridgen" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.utils.gridgen.Gridgen">
-<em class="property">class </em><tt class="descclassname">flopy.utils.gridgen.</tt><tt class="descname">Gridgen</tt><big>(</big><em>dis</em>, <em>model_ws='.'</em>, <em>exe_name='gridgen'</em>, <em>surface_interpolation='replicate'</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.gridgen.</code><code class="descname">Gridgen</code><span class="sig-paren">(</span><em>dis</em>, <em>model_ws='.'</em>, <em>exe_name='gridgen'</em>, <em>surface_interpolation='replicate'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to work with the gridgen program to create layered quadtree grids.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -82,17 +82,29 @@
 <blockquote>
 <div><p>Flopy discretization object</p>
 </div></blockquote>
+<p><strong>model_ws</strong> : str</p>
+<blockquote>
+<div><p>workspace location for creating gridgen files (default is &#8216;.&#8217;)</p>
+</div></blockquote>
 <p><strong>exe_name</strong> : str</p>
-<blockquote class="last">
+<blockquote>
 <div><p>path and name of the gridgen program. (default is gridgen)</p>
+</div></blockquote>
+<p><strong>surface_interpolation</strong> : str</p>
+<blockquote class="last">
+<div><p>Default gridgen method for interpolating elevations.  Valid options
+include &#8216;replicate&#8217; (default) and &#8216;interpolate&#8217;</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>For the surface elevations, the top of a layer uses the same surface as
+the bottom of the overlying layer.</p>
 <dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.add_active_domain">
-<tt class="descname">add_active_domain</tt><big>(</big><em>feature</em>, <em>layers</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.add_active_domain" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_active_domain</code><span class="sig-paren">(</span><em>feature</em>, <em>layers</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.add_active_domain" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -118,7 +130,7 @@ applies.</p>
 
 <dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.add_refinement_features">
-<tt class="descname">add_refinement_features</tt><big>(</big><em>features</em>, <em>featuretype</em>, <em>level</em>, <em>layers</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.add_refinement_features" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_refinement_features</code><span class="sig-paren">(</span><em>features</em>, <em>featuretype</em>, <em>level</em>, <em>layers</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.add_refinement_features" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -152,13 +164,21 @@ applies.</p>
 
 <dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.build">
-<tt class="descname">build</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.build" title="Permalink to this definition">¶</a></dt>
+<code class="descname">build</code><span class="sig-paren">(</span><em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.build" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the quadtree grid</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>If true, print the results of the gridgen command to the terminal
+(default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -166,7 +186,7 @@ applies.</p>
 
 <dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.export">
-<tt class="descname">export</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.export" title="Permalink to this definition">¶</a></dt>
+<code class="descname">export</code><span class="sig-paren">(</span><em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.export" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export the quadtree grid to shapefiles, usgdata, and vtk</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -180,7 +200,7 @@ applies.</p>
 
 <dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.get_center">
-<tt class="descname">get_center</tt><big>(</big><em>nodenumber</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_center" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_center</code><span class="sig-paren">(</span><em>nodenumber</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the cell center x and y coordinates</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -195,8 +215,26 @@ applies.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_nod_recarray">
+<code class="descname">get_nod_recarray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_nod_recarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the qtg.nod file and return as a numpy recarray</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>node_ra</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Recarray representation of the node file</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.get_vertices">
-<tt class="descname">get_vertices</tt><big>(</big><em>nodenumber</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_vertices" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_vertices</code><span class="sig-paren">(</span><em>nodenumber</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_vertices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of 5 vertices for the cell.  The first vertex should
 be the same as the last vertex.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -213,7 +251,7 @@ be the same as the last vertex.</p>
 
 <dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.intersect">
-<tt class="descname">intersect</tt><big>(</big><em>features</em>, <em>featuretype</em>, <em>layer</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.intersect" title="Permalink to this definition">¶</a></dt>
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>features</em>, <em>featuretype</em>, <em>layer</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.intersect" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -245,7 +283,7 @@ or it can be a list of points, lines, or polygons</p>
 
 <dl class="method">
 <dt id="flopy.utils.gridgen.Gridgen.plot">
-<tt class="descname">plot</tt><big>(</big><em>ax=None</em>, <em>layer=0</em>, <em>edgecolor='k'</em>, <em>facecolor='none'</em>, <em>cmap='Dark2'</em>, <em>a=None</em>, <em>masked_values=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>ax=None</em>, <em>layer=0</em>, <em>edgecolor='k'</em>, <em>facecolor='none'</em>, <em>cmap='Dark2'</em>, <em>a=None</em>, <em>masked_values=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the grid.  This method will plot the grid using the shapefile
 that was created as part of the build method.</p>
 <p>Note that the layer option is not working yet.</p>
@@ -286,7 +324,7 @@ way to do this yet with plot_shapefile.</p>
 <p><strong>kwargs</strong> : dictionary</p>
 <blockquote>
 <div><p>Keyword arguments that are passed to
-PatchCollection.set(<tt class="docutils literal"><span class="pre">**kwargs</span></tt>).  Some common kwargs would be
+PatchCollection.set(<code class="docutils literal"><span class="pre">**kwargs</span></code>).  Some common kwargs would be
 &#8216;linewidths&#8217;, &#8216;linestyles&#8217;, &#8216;alpha&#8217;, etc.</p>
 </div></blockquote>
 </td>
@@ -298,11 +336,44 @@ PatchCollection.set(<tt class="docutils literal"><span class="pre">**kwargs</spa
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.set_surface_interpolation">
+<code class="descname">set_surface_interpolation</code><span class="sig-paren">(</span><em>isurf</em>, <em>type</em>, <em>elev=None</em>, <em>elev_extent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.set_surface_interpolation" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>isurf</strong> : int</p>
+<blockquote>
+<div><p>surface number where 0 is top and nlay + 1 is bottom</p>
+</div></blockquote>
+<p><strong>type</strong> : str</p>
+<blockquote>
+<div><p>Must be &#8216;INTERPOLATE&#8217;, &#8216;REPLICATE&#8217; or &#8216;ASCIIGRID&#8217;.</p>
+</div></blockquote>
+<p><strong>elev</strong> : numpy.ndarray of shape (nr, nc) or str</p>
+<blockquote>
+<div><p>Array that is used as an asciigrid.  If elev is a string, then
+it is assumed to be the name of the asciigrid.</p>
+</div></blockquote>
+<p><strong>elev_extent</strong> : list-like</p>
+<blockquote>
+<div><p>list of xmin, xmax, ymin, ymax extents of the elev grid.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="function">
 <dt id="flopy.utils.gridgen.features_to_shapefile">
-<tt class="descclassname">flopy.utils.gridgen.</tt><tt class="descname">features_to_shapefile</tt><big>(</big><em>features</em>, <em>featuretype</em>, <em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.gridgen.features_to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.gridgen.</code><code class="descname">features_to_shapefile</code><span class="sig-paren">(</span><em>features</em>, <em>featuretype</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.features_to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a shapefile for the features of type featuretype.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -335,7 +406,7 @@ PatchCollection.set(<tt class="docutils literal"><span class="pre">**kwargs</spa
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="formattedfile.html"
@@ -343,7 +414,7 @@ PatchCollection.set(<tt class="docutils literal"><span class="pre">**kwargs</spa
   <h4>Next topic</h4>
   <p class="topless"><a href="mflistfile.html"
                         title="next chapter">flopy.utils.mflistfile Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -351,16 +422,13 @@ PatchCollection.set(<tt class="docutils literal"><span class="pre">**kwargs</spa
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -375,13 +443,13 @@ PatchCollection.set(<tt class="docutils literal"><span class="pre">**kwargs</spa
         <li class="right" >
           <a href="formattedfile.html" title="flopy.utils.formattedfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

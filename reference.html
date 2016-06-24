@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.reference Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.reference Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.util_array Module" href="util_array.html" />
     <link rel="prev" title="flopy.utils.swroutputfile Module" href="swroutputfile.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,22 +58,22 @@
         <li class="right" >
           <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.reference">
 <span id="flopy-utils-reference-module"></span><h1>flopy.utils.reference Module<a class="headerlink" href="#module-flopy.utils.reference" title="Permalink to this headline">¶</a></h1>
 <p>Module spatial referencing for flopy model objects</p>
 <dl class="class">
 <dt id="flopy.utils.reference.SpatialReference">
-<em class="property">class </em><tt class="descclassname">flopy.utils.reference.</tt><tt class="descname">SpatialReference</tt><big>(</big><em>delr=1.0</em>, <em>delc=1.0</em>, <em>lenuni=1</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>proj4_str='EPSG:4326'</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">SpatialReference</code><span class="sig-paren">(</span><em>delr=1.0</em>, <em>delc=1.0</em>, <em>lenuni=1</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>proj4_str='EPSG:4326'</em>, <em>units=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>a simple class to locate the model grid in x-y space</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -150,27 +150,27 @@ accessed</p>
 </table>
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_extent">
-<tt class="descname">get_extent</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_extent" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_extent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_extent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the extent of the rotated and offset grid</p>
 <p>Return (xmin, xmax, ymin, ymax)</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_grid_lines">
-<tt class="descname">get_grid_lines</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_grid_lines" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_grid_lines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_grid_lines" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the grid lines as a list</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_xcenter_array">
-<tt class="descname">get_xcenter_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_xcenter_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_xcenter_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_xcenter_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell center x
 coordinate for every column in the grid in model space - not offset or rotated.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_xedge_array">
-<tt class="descname">get_xedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_xedge_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_xedge_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_xedge_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell edge x
 coordinates for every column in the grid in model space - not offset
 or rotated.  Array is of size (ncol + 1)</p>
@@ -178,14 +178,14 @@ or rotated.  Array is of size (ncol + 1)</p>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_ycenter_array">
-<tt class="descname">get_ycenter_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_ycenter_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ycenter_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_ycenter_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell center x
 coordinate for every row in the grid in model space - not offset of rotated.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_yedge_array">
-<tt class="descname">get_yedge_array</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_yedge_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_yedge_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_yedge_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell edge y
 coordinates for every row in the grid in model space - not offset or
 rotated. Array is of size (nrow + 1)</p>
@@ -193,7 +193,7 @@ rotated. Array is of size (nrow + 1)</p>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.interpolate">
-<tt class="descname">interpolate</tt><big>(</big><em>a</em>, <em>xi</em>, <em>method='nearest'</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.interpolate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">interpolate</code><span class="sig-paren">(</span><em>a</em>, <em>xi</em>, <em>method='nearest'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.interpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the griddata method to interpolate values from an array onto the
 points defined in xi.  For any values outside of the grid, use
 &#8216;nearest&#8217; to find a value for them.</p>
@@ -229,7 +229,7 @@ xi can be passed in as (xgrid, ygrid).</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReference.rotate">
-<em class="property">static </em><tt class="descname">rotate</tt><big>(</big><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.rotate" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given x and y array-like values calculate the rotation about an
 arbitrary origin and then return the rotated coordinates.  theta is in
 degrees.</p>
@@ -237,13 +237,13 @@ degrees.</p>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.set_spatialreference">
-<tt class="descname">set_spatialreference</tt><big>(</big><em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.set_spatialreference" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.set_spatialreference" title="Permalink to this definition">¶</a></dt>
 <dd><p>set spatial reference - can be called from model instance</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.write_gridSpec">
-<tt class="descname">write_gridSpec</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.reference.SpatialReference.write_gridSpec" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_gridSpec</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.write_gridSpec" title="Permalink to this definition">¶</a></dt>
 <dd><p>write a PEST-style grid specification file</p>
 </dd></dl>
 
@@ -255,7 +255,7 @@ degrees.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="swroutputfile.html"
@@ -263,7 +263,7 @@ degrees.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="util_array.html"
                         title="next chapter">flopy.utils.util_array Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -271,16 +271,13 @@ degrees.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -295,13 +292,13 @@ degrees.</p>
         <li class="right" >
           <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

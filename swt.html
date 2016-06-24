@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.seawat.swt Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.seawat.swt Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfbas Module" href="mfbas.html" />
     <link rel="prev" title="flopy.mt3d.mt Module" href="mt.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,25 +58,81 @@
         <li class="right" >
           <a href="mt.html" title="flopy.mt3d.mt Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.seawat.swt">
 <span id="flopy-seawat-swt-module"></span><h1>flopy.seawat.swt Module<a class="headerlink" href="#module-flopy.seawat.swt" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.seawat.swt.Seawat">
-<em class="property">class </em><tt class="descclassname">flopy.seawat.swt.</tt><tt class="descname">Seawat</tt><big>(</big><em>modelname='mt3dmstest'</em>, <em>namefile_ext='nam'</em>, <em>modflowmodel=None</em>, <em>mt3dmsmodel=None</em>, <em>version='seawat'</em>, <em>exe_name='swt_v4.exe'</em>, <em>model_ws=None</em>, <em>verbose=False</em>, <em>external_path=None</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat" title="Permalink to this definition">¶</a></dt>
-<dd><p>SEAWAT base class</p>
+<em class="property">class </em><code class="descclassname">flopy.seawat.swt.</code><code class="descname">Seawat</code><span class="sig-paren">(</span><em>modelname='swttest'</em>, <em>namefile_ext='nam'</em>, <em>modflowmodel=None</em>, <em>mt3dmodel=None</em>, <em>version='seawat'</em>, <em>exe_name='swt_v4'</em>, <em>structured=True</em>, <em>listunit=2</em>, <em>model_ws='.'</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>silent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat" title="Permalink to this definition">¶</a></dt>
+<dd><p>SEAWAT Model Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>modelname</strong> : string, optional</p>
+<blockquote>
+<div><p>Name of model.  This string will be used to name the SEAWAT input
+that are created with write_model. (the default is &#8216;swttest&#8217;)</p>
+</div></blockquote>
+<p><strong>namefile_ext</strong> : string, optional</p>
+<blockquote>
+<div><p>Extension for the namefile (the default is &#8216;nam&#8217;)</p>
+</div></blockquote>
+<p><strong>version</strong> : string, optional</p>
+<blockquote>
+<div><p>Version of SEAWAT to use (the default is &#8216;seawat&#8217;).</p>
+</div></blockquote>
+<p><strong>exe_name</strong> : string, optional</p>
+<blockquote>
+<div><p>The name of the executable to use (the default is
+&#8216;swt_v4.exe&#8217;).</p>
+</div></blockquote>
+<p><strong>listunit</strong> : integer, optional</p>
+<blockquote>
+<div><p>Unit number for the list file (the default is 2).</p>
+</div></blockquote>
+<p><strong>model_ws</strong> : string, optional</p>
+<blockquote>
+<div><p>model workspace.  Directory name to create model data sets.
+(default is the present working directory).</p>
+</div></blockquote>
+<p><strong>external_path</strong> : string</p>
+<blockquote>
+<div><p>Location for external files (default is None).</p>
+</div></blockquote>
+<p><strong>verbose</strong> : boolean, optional</p>
+<blockquote>
+<div><p>Print additional information to the screen (default is False).</p>
+</div></blockquote>
+<p><strong>load</strong> : boolean, optional</p>
+<blockquote>
+<div><p>(default is True).</p>
+</div></blockquote>
+<p><strong>silent</strong> : integer</p>
+<blockquote class="last">
+<div><p>(default is 0)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">seawat</span><span class="o">.</span><span class="n">swt</span><span class="o">.</span><span class="n">Seawat</span><span class="p">()</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.add_external">
-<tt class="descname">add_external</tt><big>(</big><em>fname</em>, <em>unit</em>, <em>binflag=False</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.add_external" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_external</code><span class="sig-paren">(</span><em>fname</em>, <em>unit</em>, <em>binflag=False</em>, <em>output=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.add_external" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign an external array so that it will be listed as a DATA or
 DATA(BINARY) entry in the name file.  This will allow an outside
 file package to refer to it.</p>
@@ -104,7 +160,7 @@ file package to refer to it.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.add_package">
-<tt class="descname">add_package</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.add_package" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_package</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.add_package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -118,7 +174,7 @@ file package to refer to it.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.add_pop_key_list">
-<tt class="descname">add_pop_key_list</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.add_pop_key_list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_pop_key_list</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.add_pop_key_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a external file unit number to a list that will be used to remove
 model output (typically binary) files from ext_unit_dict.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -136,35 +192,8 @@ model output (typically binary) files from ext_unit_dict.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.seawat.swt.Seawat.change_model_ws">
-<tt class="descname">change_model_ws</tt><big>(</big><em>new_pth=None</em>, <em>reset_external=False</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.change_model_ws" title="Permalink to this definition">¶</a></dt>
-<dd><p>Change the model work space.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>new_pth</strong> : str</p>
-<blockquote>
-<div><p>Location of new model workspace.  If this path does not exist,
-it will be created. (default is None, which will be assigned to
-the present working directory).</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>val</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>Can be used to see what packages are in the model, and can then
-be used with get_package to pull out individual packages.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.seawat.swt.Seawat.check">
-<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check model data for common errors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -195,40 +224,22 @@ performed. If level=1, full checks are performed.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.seawat.swt.Seawat.get_free_format">
-<tt class="descname">get_free_format</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.get_free_format" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the free format flag for the model</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : bool</p>
-<blockquote class="last">
-<div><p>Free format flag for the model</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.seawat.swt.Seawat.get_name_file_entries">
-<tt class="descname">get_name_file_entries</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.get_name_file_entries" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_name_file_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.get_name_file_entries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a string representation of the name file.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.get_package">
-<tt class="descname">get_package</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.get_package" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.get_package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -242,7 +253,7 @@ performed. If level=1, full checks are performed.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pp</strong> : Package object</p>
 <blockquote class="last">
-<div><p>Package object of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><tt class="xref py py-class docutils literal"><span class="pre">flopy.pakbase.Package</span></tt></a></p>
+<div><p>Package object of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><code class="xref py py-class docutils literal"><span class="pre">flopy.pakbase.Package</span></code></a></p>
 </div></blockquote>
 </td>
 </tr>
@@ -252,7 +263,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.get_package_list">
-<tt class="descname">get_package_list</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.get_package_list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_package_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.get_package_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of all the package names.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -269,9 +280,63 @@ be used with get_package to pull out individual packages.</p>
 </table>
 </dd></dl>
 
+<dl class="staticmethod">
+<dt id="flopy.seawat.swt.Seawat.load">
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>version='seawat'</em>, <em>exe_name='swt_v4'</em>, <em>verbose=False</em>, <em>model_ws='.'</em>, <em>load_only=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an existing model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string</p>
+<blockquote>
+<div><p>Full path and name of SEAWAT name file.</p>
+</div></blockquote>
+<p><strong>version</strong> : string</p>
+<blockquote>
+<div><p>The version of SEAWAT (seawat)
+(default is seawat)</p>
+</div></blockquote>
+<p><strong>exe_name</strong> : string</p>
+<blockquote>
+<div><p>The name of the executable to use if this loaded model is run.
+(default is swt_v4.exe)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Write information on the load process if True.
+(default is False)</p>
+</div></blockquote>
+<p><strong>model_ws</strong> : string</p>
+<blockquote>
+<div><p>The path for the model workspace.
+(default is the current working directory &#8216;.&#8217;)</p>
+</div></blockquote>
+<p><strong>load_only</strong> : list of strings</p>
+<blockquote>
+<div><p>Filetype(s) to load (e.g. [&#8216;lpf&#8217;, &#8216;adv&#8217;])
+(default is None, which means that all will be loaded)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>m</strong> : flopy.seawat.swt.Seawat</p>
+<blockquote class="last">
+<div><p>flopy Seawat model object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">seawat</span><span class="o">.</span><span class="n">swt</span><span class="o">.</span><span class="n">Seawat</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="flopy.seawat.swt.Seawat.name">
-<tt class="descname">name</tt><a class="headerlink" href="#flopy.seawat.swt.Seawat.name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">name</code><a class="headerlink" href="#flopy.seawat.swt.Seawat.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get model name</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -289,13 +354,13 @@ be used with get_package to pull out individual packages.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.next_ext_unit">
-<tt class="descname">next_ext_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.next_ext_unit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">next_ext_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.next_ext_unit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to encapsulate next_ext_unit attribute</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.plot">
-<tt class="descname">plot</tt><big>(</big><em>SelPackList=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>SelPackList=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 model input data</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -310,25 +375,25 @@ are plotted. (default is None)</p>
 <p><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+<dt>file_extension</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is &#8216;png&#8217;)</p>
 </dd>
-<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return.
+<dt>kper</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return.
 (default is zero)</p>
 </dd>
-<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -344,8 +409,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -353,7 +418,7 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.remove_external">
-<tt class="descname">remove_external</tt><big>(</big><em>fname=None</em>, <em>unit=None</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.remove_external" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_external</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.remove_external" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove an external file from the model by specifying either the
 file name or the unit number.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -376,7 +441,7 @@ file name or the unit number.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.remove_package">
-<tt class="descname">remove_package</tt><big>(</big><em>pname</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.remove_package" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_package</code><span class="sig-paren">(</span><em>pname</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.remove_package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a package from this model</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -394,7 +459,7 @@ file name or the unit number.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.run_model">
-<tt class="descname">run_model</tt><big>(</big><em>silent=False</em>, <em>pause=False</em>, <em>report=False</em>, <em>normal_msg='normal termination'</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.run_model" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run_model</code><span class="sig-paren">(</span><em>silent=False</em>, <em>pause=False</em>, <em>report=False</em>, <em>normal_msg='normal termination'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.run_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will run the model using subprocess.Popen.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -430,26 +495,8 @@ run terminated normally. (default is &#8216;normal termination&#8217;)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.seawat.swt.Seawat.set_free_format">
-<tt class="descname">set_free_format</tt><big>(</big><em>value=True</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.set_free_format" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the free format flag for the model instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>value</strong> : bool</p>
-<blockquote class="last">
-<div><p>Boolean value to set free format flag for model. (default is True)</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.seawat.swt.Seawat.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>package_names=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em>, <em>package_names=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper function for writing a shapefile for the model grid.  If
 package_names is not None, then search through the requested packages
 looking for arrays that can be added to the shapefile as attributes</p>
@@ -473,16 +520,16 @@ looking for arrays that can be added to the shapefile as attributes</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">SelPackList</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">SelPackList</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.write_input">
-<tt class="descname">write_input</tt><big>(</big><em>SelPackList=False</em>, <em>check=False</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.write_input" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_input</code><span class="sig-paren">(</span><em>SelPackList=False</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.write_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the input.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -496,7 +543,7 @@ looking for arrays that can be added to the shapefile as attributes</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.Seawat.write_name_file">
-<tt class="descname">write_name_file</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.seawat.swt.Seawat.write_name_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_name_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.Seawat.write_name_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the name file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -512,11 +559,11 @@ looking for arrays that can be added to the shapefile as attributes</p>
 
 <dl class="class">
 <dt id="flopy.seawat.swt.SeawatList">
-<em class="property">class </em><tt class="descclassname">flopy.seawat.swt.</tt><tt class="descname">SeawatList</tt><big>(</big><em>model</em>, <em>extension='list'</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.SeawatList" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.seawat.swt.</code><code class="descname">SeawatList</code><span class="sig-paren">(</span><em>model</em>, <em>extension='list'</em>, <em>listunit=7</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.SeawatList" title="Permalink to this definition">¶</a></dt>
 <dd><p>List Package class</p>
 <dl class="method">
 <dt id="flopy.seawat.swt.SeawatList.check">
-<tt class="descname">check</tt><big>(</big><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.SeawatList.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.SeawatList.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check package data for common errors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -547,22 +594,22 @@ performed. If level=1, full checks are performed.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;model.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="method">
 <dt id="flopy.seawat.swt.SeawatList.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.SeawatList.load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.SeawatList.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.SeawatList.plot">
-<tt class="descname">plot</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.SeawatList.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.SeawatList.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
 package input data</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -572,25 +619,25 @@ package input data</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+<dt>file_extension</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is &#8216;png&#8217;)</p>
 </dd>
-<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+<dt>kper</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
 zero)</p>
 </dd>
-<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -606,8 +653,8 @@ a list of matplotlib.pyplot.axis are returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -615,7 +662,7 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
 <dl class="method">
 <dt id="flopy.seawat.swt.SeawatList.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.seawat.swt.SeawatList.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swt.SeawatList.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
 Adds an attribute for each layer in each data array</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -634,9 +681,9 @@ Adds an attribute for each layer in each data array</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -649,7 +696,7 @@ Adds an attribute for each layer in each data array</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="mt.html"
@@ -657,7 +704,7 @@ Adds an attribute for each layer in each data array</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mfbas.html"
                         title="next chapter">flopy.modflow.mfbas Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -665,16 +712,13 @@ Adds an attribute for each layer in each data array</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -689,13 +733,13 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mt.html" title="flopy.mt3d.mt Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

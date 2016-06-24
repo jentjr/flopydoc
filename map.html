@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.plot.map Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.plot.map Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.plot.crosssection Module" href="crosssection.html" />
-    <link rel="prev" title="flopy.utils.util_list Module" href="util_list.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+    <link rel="prev" title="flopy.utils.zonbud_utils Module" href="zonbud_utils.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,23 +56,23 @@
           <a href="crosssection.html" title="flopy.plot.crosssection Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="util_list.html" title="flopy.utils.util_list Module"
+          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.plot.map">
 <span id="flopy-plot-map-module"></span><h1>flopy.plot.map Module<a class="headerlink" href="#module-flopy.plot.map" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.plot.map.ModelMap">
-<em class="property">class </em><tt class="descclassname">flopy.plot.map.</tt><tt class="descname">ModelMap</tt><big>(</big><em>sr=None</em>, <em>ax=None</em>, <em>model=None</em>, <em>dis=None</em>, <em>layer=0</em>, <em>extent=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=None</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.plot.map.</code><code class="descname">ModelMap</code><span class="sig-paren">(</span><em>sr=None</em>, <em>ax=None</em>, <em>model=None</em>, <em>dis=None</em>, <em>layer=0</em>, <em>extent=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to create a map of the model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -132,7 +132,7 @@ arguments are provided, then it puts the lower-left-hand corner of the
 grid at (0, 0).</p>
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.contour_array">
-<tt class="descname">contour_array</tt><big>(</big><em>a</em>, <em>masked_values=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.contour_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">contour_array</code><span class="sig-paren">(</span><em>a</em>, <em>masked_values=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.contour_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Contour an array.  If the array is three-dimensional, then the method
 will contour the layer tied to this class (self.layer).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -162,13 +162,13 @@ will contour the layer tied to this class (self.layer).</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.get_grid_line_collection">
-<tt class="descname">get_grid_line_collection</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.get_grid_line_collection" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_grid_line_collection</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.get_grid_line_collection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a LineCollection of the grid</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_array">
-<tt class="descname">plot_array</tt><big>(</big><em>a</em>, <em>masked_values=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_array</code><span class="sig-paren">(</span><em>a</em>, <em>masked_values=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot an array.  If the array is three-dimensional, then the method
 will plot the layer tied to this class (self.layer).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -198,7 +198,7 @@ will plot the layer tied to this class (self.layer).</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_bc">
-<tt class="descname">plot_bc</tt><big>(</big><em>ftype=None</em>, <em>package=None</em>, <em>kper=0</em>, <em>color=None</em>, <em>plotAll=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_bc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_bc</code><span class="sig-paren">(</span><em>ftype=None</em>, <em>package=None</em>, <em>kper=0</em>, <em>color=None</em>, <em>plotAll=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_bc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot boundary conditions locations for a specific boundary
 type from a flopy model</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -241,8 +241,35 @@ layers will be plotted on the current ModelMap layer.
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.plot.map.ModelMap.plot_cvfd">
+<code class="descname">plot_cvfd</code><span class="sig-paren">(</span><em>verts</em>, <em>iverts</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_cvfd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a cvfd grid.  The vertices must be in the same coordinates as
+the rotated and offset grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verts</strong> : ndarray</p>
+<blockquote>
+<div><p>2d array of x and y points.</p>
+</div></blockquote>
+<p><strong>iverts</strong> : list of lists</p>
+<blockquote>
+<div><p>should be of len(ncells) with a list of vertex number for each cell</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : dictionary</p>
+<blockquote class="last">
+<div><p>Keyword arguments passed to plotutil.plot_shapefile()</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_discharge">
-<tt class="descname">plot_discharge</tt><big>(</big><em>frf</em>, <em>fff</em>, <em>dis=None</em>, <em>flf=None</em>, <em>head=None</em>, <em>istep=1</em>, <em>jstep=1</em>, <em>normalize=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_discharge" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_discharge</code><span class="sig-paren">(</span><em>frf</em>, <em>fff</em>, <em>dis=None</em>, <em>flf=None</em>, <em>head=None</em>, <em>istep=1</em>, <em>jstep=1</em>, <em>normalize=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_discharge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use quiver to plot vectors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -297,7 +324,7 @@ cell. (default is False)</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_endpoint">
-<tt class="descname">plot_endpoint</tt><big>(</big><em>ep</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_endpoint" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_endpoint</code><span class="sig-paren">(</span><em>ep</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_endpoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the MODPATH endpoints.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -330,7 +357,7 @@ the colorbar size will be set using shrink.</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_grid">
-<tt class="descname">plot_grid</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_grid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_grid</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the grid lines.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -351,7 +378,7 @@ the colorbar size will be set using shrink.</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_ibound">
-<tt class="descname">plot_ibound</tt><big>(</big><em>ibound=None</em>, <em>color_noflow='black'</em>, <em>color_ch='blue'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_ibound" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_ibound</code><span class="sig-paren">(</span><em>ibound=None</em>, <em>color_noflow='black'</em>, <em>color_ch='blue'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_ibound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a plot of ibound.  If not specified, then pull ibound from the
 self.ml</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -381,7 +408,7 @@ self.ml</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_inactive">
-<tt class="descname">plot_inactive</tt><big>(</big><em>ibound=None</em>, <em>color_noflow='black'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_inactive" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_inactive</code><span class="sig-paren">(</span><em>ibound=None</em>, <em>color_noflow='black'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_inactive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a plot of inactive cells.  If not specified, then pull ibound from the
 self.ml</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -407,7 +434,7 @@ self.ml</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_pathline">
-<tt class="descname">plot_pathline</tt><big>(</big><em>pl</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_pathline" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_pathline</code><span class="sig-paren">(</span><em>pl</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_pathline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the MODPATH pathlines.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -436,7 +463,7 @@ pathlines are output for all layers</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_shapefile">
-<tt class="descname">plot_shapefile</tt><big>(</big><em>shp</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_shapefile</code><span class="sig-paren">(</span><em>shp</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot a shapefile.  The shapefile must be in the same coordinates as
 the rotated and offset grid.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -465,15 +492,15 @@ the rotated and offset grid.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="util_list.html"
-                        title="previous chapter">flopy.utils.util_list Module</a></p>
+  <p class="topless"><a href="zonbud_utils.html"
+                        title="previous chapter">flopy.utils.zonbud_utils Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="crosssection.html"
                         title="next chapter">flopy.plot.crosssection Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -481,16 +508,13 @@ the rotated and offset grid.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -503,15 +527,15 @@ the rotated and offset grid.</p>
           <a href="crosssection.html" title="flopy.plot.crosssection Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="util_list.html" title="flopy.utils.util_list Module"
+          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

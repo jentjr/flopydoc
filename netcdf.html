@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.export.netcdf Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.export.netcdf Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.export.utils Module" href="utils.html" />
     <link rel="prev" title="flopy.plot.plotutil Module" href="plotutil.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,21 +58,21 @@
         <li class="right" >
           <a href="plotutil.html" title="flopy.plot.plotutil Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.export.netcdf">
 <span id="flopy-export-netcdf-module"></span><h1>flopy.export.netcdf Module<a class="headerlink" href="#module-flopy.export.netcdf" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.export.netcdf.Logger">
-<em class="property">class </em><tt class="descclassname">flopy.export.netcdf.</tt><tt class="descname">Logger</tt><big>(</big><em>filename</em>, <em>echo=False</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.Logger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.export.netcdf.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>filename</em>, <em>echo=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.Logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Basic class for logging events during the linear analysis calculations
 if filename is passed, then an file handle is opened</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -102,7 +102,7 @@ written to the screen. echo (bool): a flag to force screen output</p>
 </table>
 <dl class="method">
 <dt id="flopy.export.netcdf.Logger.log">
-<tt class="descname">log</tt><big>(</big><em>phrase</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.Logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log</code><span class="sig-paren">(</span><em>phrase</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.Logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>log something that happened</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -120,7 +120,7 @@ written to the screen. echo (bool): a flag to force screen output</p>
 
 <dl class="method">
 <dt id="flopy.export.netcdf.Logger.warn">
-<tt class="descname">warn</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.Logger.warn" title="Permalink to this definition">¶</a></dt>
+<code class="descname">warn</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.Logger.warn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a warning to the log file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -140,7 +140,7 @@ written to the screen. echo (bool): a flag to force screen output</p>
 
 <dl class="class">
 <dt id="flopy.export.netcdf.NetCdf">
-<em class="property">class </em><tt class="descclassname">flopy.export.netcdf.</tt><tt class="descname">NetCdf</tt><big>(</big><em>output_filename</em>, <em>model</em>, <em>time_values=None</em>, <em>verbose=None</em>, <em>logger=None</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.export.netcdf.</code><code class="descname">NetCdf</code><span class="sig-paren">(</span><em>output_filename</em>, <em>model</em>, <em>time_values=None</em>, <em>verbose=None</em>, <em>logger=None</em>, <em>forgive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Support for writing a netCDF4 compliant file from a flopy model</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -158,8 +158,13 @@ the file.  If None, the perlen array of ModflowDis
 will be used</p>
 </div></blockquote>
 <p><strong>verbose</strong> : if True, stdout is verbose.  If str, then a log file</p>
-<blockquote class="last">
+<blockquote>
 <div><p>is written to the verbose file</p>
+</div></blockquote>
+<p><strong>forgive: what to do if a duplicate variable name is being created.  If</strong></p>
+<blockquote class="last">
+<div><p>True, then the newly requested var is skipped.  If False, then
+an exception is raised.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -171,7 +176,7 @@ including these attributes: lenuni, itmuni, start_datetime, sr
 (SpatialReference).  Make sure these attributes have meaningful values.</p>
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.add_global_attributes">
-<tt class="descname">add_global_attributes</tt><big>(</big><em>attr_dict</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.add_global_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_global_attributes</code><span class="sig-paren">(</span><em>attr_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.add_global_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>add global attribute to an initialized file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -193,7 +198,7 @@ including these attributes: lenuni, itmuni, start_datetime, sr
 
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.create_variable">
-<tt class="descname">create_variable</tt><big>(</big><em>name</em>, <em>attributes</em>, <em>precision_str='f4'</em>, <em>dimensions=('time'</em>, <em>'layer'</em>, <em>'y'</em>, <em>'x')</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.create_variable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_variable</code><span class="sig-paren">(</span><em>name</em>, <em>attributes</em>, <em>precision_str='f4'</em>, <em>dimensions=('time'</em>, <em>'layer'</em>, <em>'y'</em>, <em>'x')</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.create_variable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new variable in the netcdf object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -232,7 +237,7 @@ default : (&#8220;time&#8221;,&#8221;layer&#8221;,&#8221;x&#8221;,&#8221;y&#8221
 
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.difference">
-<tt class="descname">difference</tt><big>(</big><em>other</em>, <em>minuend='self'</em>, <em>mask_zero_diff=True</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.difference" title="Permalink to this definition">¶</a></dt>
+<code class="descname">difference</code><span class="sig-paren">(</span><em>other</em>, <em>minuend='self'</em>, <em>mask_zero_diff=True</em>, <em>onlydiff=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.difference" title="Permalink to this definition">¶</a></dt>
 <dd><p>make a new NetCDF instance that is the difference with another
 netcdf file</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -252,6 +257,7 @@ netcdf file</p>
 <div><p>True, positions in the difference array that are zero will be set
 to self.fillvalue</p>
 </div></blockquote>
+<p><strong>only_diff</strong> : bool flag to only add non-zero diffs to output file</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">net NetCDF instance</p>
@@ -269,7 +275,7 @@ other are carried through to the new instance</p>
 
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.initialize_file">
-<tt class="descname">initialize_file</tt><big>(</big><em>time_values=None</em><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.initialize_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_file</code><span class="sig-paren">(</span><em>time_values=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.initialize_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>initialize the netcdf instance, including global attributes,
 dimensions, and grid information</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -289,14 +295,14 @@ self.model.dis.perlen and self.start_datetime</p>
 
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.initialize_geometry">
-<tt class="descname">initialize_geometry</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.initialize_geometry" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_geometry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.initialize_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>initialize the geometric information
 needed for the netcdf file</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.write">
-<tt class="descname">write</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.export.netcdf.NetCdf.write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>write the nc object to disk</p>
 </dd></dl>
 
@@ -308,7 +314,7 @@ needed for the netcdf file</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="plotutil.html"
@@ -316,7 +322,7 @@ needed for the netcdf file</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="utils.html"
                         title="next chapter">flopy.export.utils Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -324,16 +330,13 @@ needed for the netcdf file</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -348,13 +351,13 @@ needed for the netcdf file</p>
         <li class="right" >
           <a href="plotutil.html" title="flopy.plot.plotutil Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

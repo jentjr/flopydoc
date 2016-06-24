@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfparbc Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.modflow.mfparbc Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,16 +23,16 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -40,7 +40,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -49,14 +49,14 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.modflow.mfparbc">
 <span id="flopy-modflow-mfparbc-module"></span><h1>flopy.modflow.mfparbc Module<a class="headerlink" href="#module-flopy.modflow.mfparbc" title="Permalink to this headline">¶</a></h1>
@@ -64,7 +64,7 @@
 the ModflowParBc class as <cite>flopy.modflow.ModflowParBc</cite>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfparbc.ModflowParBc">
-<em class="property">class </em><tt class="descclassname">flopy.modflow.mfparbc.</tt><tt class="descname">ModflowParBc</tt><big>(</big><em>bc_parms</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfparbc.</code><code class="descname">ModflowParBc</code><span class="sig-paren">(</span><em>bc_parms</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for loading boundary condition parameter data for MODFLOW packages
 that use list data (WEL, GHB, DRN, etc.). This Class is also used to
 create hfb6 data from hfb parameters. Class also includes methods to
@@ -75,13 +75,13 @@ Parameter values are converted to native values in Flopy and the
 connection to &#8220;parameters&#8221; is thus nonexistent.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfparbc.ModflowParBc.get">
-<tt class="descname">get</tt><big>(</big><em>fkey</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.get" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get</code><span class="sig-paren">(</span><em>fkey</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>overload get to return a value from the bc_parms dictionary</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfparbc.ModflowParBc.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f</em>, <em>npar</em>, <em>dt</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>npar</em>, <em>dt</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load bc property parameters from an existing bc package
 that uses list data (e.g. WEL, RIV, etc.).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -112,7 +112,7 @@ that uses list data (e.g. WEL, RIV, etc.).</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfparbc.ModflowParBc.loadarray">
-<em class="property">static </em><tt class="descname">loadarray</tt><big>(</big><em>f</em>, <em>npar</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.loadarray" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">loadarray</code><span class="sig-paren">(</span><em>f</em>, <em>npar</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.loadarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load bc property parameters from an existing bc package
 that uses array data (e.g. RCH, EVT).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -139,7 +139,7 @@ that uses array data (e.g. RCH, EVT).</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfparbc.ModflowParBc.parameter_bcfill">
-<em class="property">static </em><tt class="descname">parameter_bcfill</tt><big>(</big><em>model</em>, <em>shape</em>, <em>parm_dict</em>, <em>pak_parms</em><big>)</big><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.parameter_bcfill" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parameter_bcfill</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>parm_dict</em>, <em>pak_parms</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.parameter_bcfill" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fill an array with parameters using zone, mult, and pval data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -147,7 +147,7 @@ that uses array data (e.g. RCH, EVT).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
 </div></blockquote>
 <p><strong>shape</strong> : tuple</p>
@@ -187,9 +187,9 @@ parameter data.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -197,16 +197,13 @@ parameter data.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -215,12 +212,12 @@ parameter data.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

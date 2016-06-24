@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_array Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.util_array Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,18 +23,18 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="prev" title="flopy.utils.reference Module" href="reference.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -42,7 +42,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -54,15 +54,15 @@
         <li class="right" >
           <a href="reference.html" title="flopy.utils.reference Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.util_array">
 <span id="flopy-utils-util-array-module"></span><h1>flopy.utils.util_array Module<a class="headerlink" href="#module-flopy.utils.util_array" title="Permalink to this headline">¶</a></h1>
@@ -74,7 +74,7 @@ instantiate these classes directly.</dd>
 </dl>
 <dl class="class">
 <dt id="flopy.utils.util_array.ArrayFormat">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">ArrayFormat</tt><big>(</big><em>u2d</em>, <em>python=None</em>, <em>fortran=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.util_array.</code><code class="descname">ArrayFormat</code><span class="sig-paren">(</span><em>u2d</em>, <em>python=None</em>, <em>fortran=None</em>, <em>array_free_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArrayFormat class for handling various output format types for both
 MODFLOW and flopy</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -137,7 +137,7 @@ MODFLOW and flopy</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor"><tt class="xref py py-obj docutils literal"><span class="pre">decode_fortran_descriptor</span></tt></a>(fd)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor"><code class="xref py py-obj docutils literal"><span class="pre">decode_fortran_descriptor</span></code></a>(fd)</td>
 <td>Decode fortran descriptor</td>
 </tr>
 </tbody>
@@ -155,7 +155,7 @@ MODFLOW and flopy</p>
 </table>
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor">
-<em class="property">static </em><tt class="descname">decode_fortran_descriptor</tt><big>(</big><em>fd</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">decode_fortran_descriptor</code><span class="sig-paren">(</span><em>fd</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode fortran descriptor</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -173,7 +173,7 @@ MODFLOW and flopy</p>
 
 <dl class="class">
 <dt id="flopy.utils.util_array.Transient2d">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">Transient2d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.util_array.</code><code class="descname">Transient2d</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>array_free_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transient2d class for handling time-dependent 2-D model arrays.
 just a thin wrapper around Util2d</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -182,7 +182,7 @@ just a thin wrapper around Util2d</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
 </div></blockquote>
 <p><strong>shape</strong> : length 2 tuple</p>
@@ -263,20 +263,20 @@ the ext_filename is reset to value.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Transient2d.get_kper_entry" title="flopy.utils.util_array.Transient2d.get_kper_entry"><tt class="xref py py-obj docutils literal"><span class="pre">get_kper_entry</span></tt></a>(kper)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Transient2d.get_kper_entry" title="flopy.utils.util_array.Transient2d.get_kper_entry"><code class="xref py py-obj docutils literal"><span class="pre">get_kper_entry</span></code></a>(kper)</td>
 <td>get the file entry info for a given kper</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="flopy.utils.util_array.Transient2d.build_transient_sequence">
-<tt class="descname">build_transient_sequence</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d.build_transient_sequence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">build_transient_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient2d.build_transient_sequence" title="Permalink to this definition">¶</a></dt>
 <dd><p>parse self.__value into a dict{kper:Util2d}</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="flopy.utils.util_array.Transient2d.from_4d">
-<em class="property">classmethod </em><tt class="descname">from_4d</tt><big>(</big><em>model</em>, <em>pak_name</em>, <em>m4ds</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d.from_4d" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_4d</code><span class="sig-paren">(</span><em>model</em>, <em>pak_name</em>, <em>m4ds</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient2d.from_4d" title="Permalink to this definition">¶</a></dt>
 <dd><p>construct a Transient2d instance from a
 dict(name: (masked) 4d numpy.ndarray
 Parameters
@@ -296,14 +296,14 @@ that kper is skipped.</div></blockquote>
 
 <dl class="method">
 <dt id="flopy.utils.util_array.Transient2d.get_kper_entry">
-<tt class="descname">get_kper_entry</tt><big>(</big><em>kper</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d.get_kper_entry" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_kper_entry</code><span class="sig-paren">(</span><em>kper</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient2d.get_kper_entry" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the file entry info for a given kper
 returns (itmp,file entry string from Util2d)</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.util_array.Transient2d.plot">
-<tt class="descname">plot</tt><big>(</big><em>filename_base=None</em>, <em>file_extension=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>filename_base=None</em>, <em>file_extension=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient2d.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot transient 2-D model input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -323,41 +323,41 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 <p><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
-<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+<dt>axes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span><dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
 (default is None)</p>
 </dd>
-<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+<dt>pcolor</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
 </dd>
-<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a color bar will be added to
+<dt>colorbar</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
 </dd>
-<dt>inactive <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a black overlay in inactive
+<dt>inactive</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a black overlay in inactive
 cells in a layer will be displayed. (default is True)</p>
 </dd>
-<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+<dt>contour</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
 plot will be plotted. (default is False)</p>
 </dd>
-<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+<dt>clabel</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
 will be plotted. Only used if contour=True. (default is False)</p>
 </dd>
-<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+<dt>grid</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if the model grid will be plotted
 on the figure. (default is False)</p>
 </dd>
-<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+<dt>masked_values</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
-<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">MODFLOW zero-based stress period number to return. If
+<dt>kper</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MODFLOW zero-based stress period number to return. If
 kper=&#8217;all&#8217; then data for all stress period will be
 extracted. (default is zero).</p>
 </dd>
@@ -375,8 +375,8 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">rch</span><span class="o">.</span><span class="n">rech</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -384,7 +384,7 @@ a list of matplotlib.pyplot.axis is returned.</p>
 
 <dl class="method">
 <dt id="flopy.utils.util_array.Transient2d.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Transient2d.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient2d.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Export transient 2D data to a shapefile (as polygons). Adds an</dt>
 <dd>attribute for each unique Util2d instance in self.data</dd>
@@ -405,9 +405,9 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">rch</span><span class="o">.</span><span class="n">rech</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s">&#39;test_rech.shp&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">rch</span><span class="o">.</span><span class="n">rech</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s1">&#39;test_rech.shp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -415,8 +415,120 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="flopy.utils.util_array.Transient3d">
+<em class="property">class </em><code class="descclassname">flopy.utils.util_array.</code><code class="descname">Transient3d</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>array_free_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transient3d class for handling time-dependent 3-D model arrays.
+just a thin wrapper around Util3d</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
+<blockquote>
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+this package will be added.</p>
+</div></blockquote>
+<p><strong>shape</strong> : length 3 tuple</p>
+<blockquote>
+<div><p>shape of the 3-D transient arrays, typically (nlay,nrow,ncol)</p>
+</div></blockquote>
+<p><strong>dtype</strong> : [np.int,np.float32,np.bool]</p>
+<blockquote>
+<div><p>the type of the data</p>
+</div></blockquote>
+<p><strong>value</strong> : variable</p>
+<blockquote>
+<div><p>the data to be assigned to the 3-D arrays. Typically a dict
+of {kper:value}, where kper is the zero-based stress period
+to assign a value to.  Value should be cast-able to Util2d instance
+can be a scalar, list, or ndarray is the array value is constant in
+time.</p>
+</div></blockquote>
+<p><strong>name</strong> : string</p>
+<blockquote>
+<div><p>name of the property, used for writing comments to input files and
+for forming external files names (if needed)</p>
+</div></blockquote>
+<p><strong>fmtin</strong> : string</p>
+<blockquote>
+<div><p>modflow fmtin variable (optional).  (the default is None)</p>
+</div></blockquote>
+<p><strong>cnstnt</strong> : string</p>
+<blockquote>
+<div><p>modflow cnstnt variable (optional) (the default is 1.0)</p>
+</div></blockquote>
+<p><strong>iprn</strong> : int</p>
+<blockquote>
+<div><p>modflow iprn variable (optional) (the default is -1)</p>
+</div></blockquote>
+<p><strong>locat</strong> : int</p>
+<blockquote>
+<div><p>modflow locat variable (optional) (the default is None).  If the model
+instance does not support free format and the
+external flag is not set and the value is a simple scalar,
+then locat must be explicitly passed as it is the unit number</p>
+<blockquote>
+<div><p>to read the array from</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>ext_filename</strong> : string</p>
+<blockquote>
+<div><p>the external filename to write the array representation to
+(optional) (the default is None) .
+If type(value) is a string and is an accessible filename,
+the ext_filename is reset to value.</p>
+</div></blockquote>
+<p><strong>bin</strong> : bool</p>
+<blockquote class="last">
+<div><p>flag to control writing external arrays as binary (optional)
+(the default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>transient_3ds</td>
+<td>(dict{kper:Util3d}) the transient sequence of Util3d objects</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Transient3d.get_kper_entry" title="flopy.utils.util_array.Transient3d.get_kper_entry"><code class="xref py py-obj docutils literal"><span class="pre">get_kper_entry</span></code></a>(kper)</td>
+<td>get the file entry info for a given kper</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.utils.util_array.Transient3d.build_transient_sequence">
+<code class="descname">build_transient_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient3d.build_transient_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse self.__value into a dict{kper:Util3d}</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_array.Transient3d.get_kper_entry">
+<code class="descname">get_kper_entry</code><span class="sig-paren">(</span><em>kper</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Transient3d.get_kper_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the file entry info for a given kper
+returns (itmp,file entry string from Util3d)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="flopy.utils.util_array.Util2d">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">Util2d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>how=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.util_array.</code><code class="descname">Util2d</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>how=None</em>, <em>array_free_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Util2d class for handling 2-D model arrays</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -424,7 +536,7 @@ a list of matplotlib.pyplot.axis is returned.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
 </div></blockquote>
 <p><strong>shape</strong> : lenght 3 tuple</p>
@@ -503,7 +615,7 @@ written internally to the model input file.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Util2d.array" title="flopy.utils.util_array.Util2d.array"><tt class="xref py py-obj docutils literal"><span class="pre">array</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Util2d.array" title="flopy.utils.util_array.Util2d.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a></td>
 <td>Get the COPY of array representation of value attribute with the effects of the control record multiplier applied.</td>
 </tr>
 </tbody>
@@ -536,7 +648,7 @@ written internally to the model input file.</p>
 </table>
 <dl class="attribute">
 <dt id="flopy.utils.util_array.Util2d.array">
-<tt class="descname">array</tt><a class="headerlink" href="#flopy.utils.util_array.Util2d.array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">array</code><a class="headerlink" href="#flopy.utils.util_array.Util2d.array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the COPY of array representation of value attribute with the
 effects of the control record multiplier applied.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -555,7 +667,7 @@ effects of the control record multiplier applied.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.array2string">
-<em class="property">static </em><tt class="descname">array2string</tt><big>(</big><em>shape</em>, <em>data</em>, <em>fortran_format='(FREE)'</em>, <em>python_format=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.array2string" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">array2string</code><span class="sig-paren">(</span><em>shape</em>, <em>data</em>, <em>fortran_format='(FREE)'</em>, <em>python_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.array2string" title="Permalink to this definition">¶</a></dt>
 <dd><p>return a string representation of
 a (possibly wrapped format) array from a file
 (self.__value) and casts to the proper type (self.dtype)
@@ -566,7 +678,7 @@ may touch.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load">
-<em class="property">static </em><tt class="descname">load</tt><big>(</big><em>f_handle</em>, <em>model</em>, <em>shape</em>, <em>dtype</em>, <em>name</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f_handle</em>, <em>model</em>, <em>shape</em>, <em>dtype</em>, <em>name</em>, <em>ext_unit_dict=None</em>, <em>array_free_format=None</em>, <em>array_format='modflow'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>functionality to load Util2d instance from an existing
 model input file.
 external and internal record types must be fully loaded
@@ -576,7 +688,7 @@ ext_unit_dict has been initialized from the NAM file</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load_txt">
-<em class="property">static </em><tt class="descname">load_txt</tt><big>(</big><em>shape</em>, <em>file_in</em>, <em>dtype</em>, <em>fmtin</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_txt" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load_txt</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em>, <em>fmtin</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_txt" title="Permalink to this definition">¶</a></dt>
 <dd><p>load a (possibly wrapped format) array from a file
 (self.__value) and casts to the proper type (self.dtype)
 made static to support the load functionality 
@@ -586,7 +698,7 @@ may touch.</p>
 
 <dl class="attribute">
 <dt id="flopy.utils.util_array.Util2d.model_file_path">
-<tt class="descname">model_file_path</tt><a class="headerlink" href="#flopy.utils.util_array.Util2d.model_file_path" title="Permalink to this definition">¶</a></dt>
+<code class="descname">model_file_path</code><a class="headerlink" href="#flopy.utils.util_array.Util2d.model_file_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>where the model expects the file to be</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -600,7 +712,7 @@ may touch.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.parse_control_record">
-<em class="property">static </em><tt class="descname">parse_control_record</tt><big>(</big><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;type 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_control_record</code><span class="sig-paren">(</span><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;type 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses a control record when reading an existing file
 rectifies fixed to free format
 current_unit (optional) indicates the unit number of the file being parsed</p>
@@ -608,14 +720,14 @@ current_unit (optional) indicates the unit number of the file being parsed</p>
 
 <dl class="method">
 <dt id="flopy.utils.util_array.Util2d.parse_value">
-<tt class="descname">parse_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parse_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses and casts the raw value into an acceptable format for __value
 lot of defense here, so we can make assumptions later</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.util_array.Util2d.plot">
-<tt class="descname">plot</tt><big>(</big><em>title=None</em>, <em>filename_base=None</em>, <em>file_extension=None</em>, <em>fignum=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>title=None</em>, <em>filename_base=None</em>, <em>file_extension=None</em>, <em>fignum=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot 2-D model input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -640,38 +752,38 @@ if filename_base is not None. (default is &#8216;png&#8217;)</p>
 <p><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
-<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+<dt>axes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span><dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
 (default is None)</p>
 </dd>
-<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+<dt>pcolor</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
 </dd>
-<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a color bar will be added to
+<dt>colorbar</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
 </dd>
-<dt>inactive <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a black overlay in inactive
+<dt>inactive</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a black overlay in inactive
 cells in a layer will be displayed. (default is True)</p>
 </dd>
-<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+<dt>contour</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
 plot will be plotted. (default is False)</p>
 </dd>
-<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+<dt>clabel</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
 will be plotted. Only used if contour=True. (default is False)</p>
 </dd>
-<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+<dt>grid</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if the model grid will be plotted
 on the figure. (default is False)</p>
 </dd>
-<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+<dt>masked_values</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -687,8 +799,8 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -696,7 +808,7 @@ a list of matplotlib.pyplot.axis is returned.</p>
 
 <dl class="attribute">
 <dt id="flopy.utils.util_array.Util2d.python_file_path">
-<tt class="descname">python_file_path</tt><a class="headerlink" href="#flopy.utils.util_array.Util2d.python_file_path" title="Permalink to this definition">¶</a></dt>
+<code class="descname">python_file_path</code><a class="headerlink" href="#flopy.utils.util_array.Util2d.python_file_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>where python is going to write the file
 Returns
 &#8212;&#8212;-</p>
@@ -706,7 +818,7 @@ Returns
 
 <dl class="attribute">
 <dt id="flopy.utils.util_array.Util2d.string">
-<tt class="descname">string</tt><a class="headerlink" href="#flopy.utils.util_array.Util2d.string" title="Permalink to this definition">¶</a></dt>
+<code class="descname">string</code><a class="headerlink" href="#flopy.utils.util_array.Util2d.string" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the string representation of value attribute</p>
 <dl class="docutils">
 <dt>Note:</dt>
@@ -717,7 +829,7 @@ record multiplier - this method is used primarily for writing model input files<
 
 <dl class="method">
 <dt id="flopy.utils.util_array.Util2d.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util2d.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export 2-D model data to a shapefile (as polygons) of self.array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -735,9 +847,9 @@ record multiplier - this method is used primarily for writing model input files<
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s">&#39;test_top.shp&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s1">&#39;test_top.shp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -746,7 +858,7 @@ record multiplier - this method is used primarily for writing model input files<
 
 <dl class="class">
 <dt id="flopy.utils.util_array.Util3d">
-<em class="property">class </em><tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">Util3d</tt><big>(</big><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>locat=None</em>, <em>ext_unit_dict=None</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util3d" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.util_array.</code><code class="descname">Util3d</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>locat=None</em>, <em>ext_unit_dict=None</em>, <em>array_free_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util3d" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Util3d class for handling 3-D model arrays.  just a thin wrapper around</dt>
 <dd>Util2d</dd>
@@ -757,7 +869,7 @@ record multiplier - this method is used primarily for writing model input files<
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><tt class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></tt></a>) to which
+<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
 </div></blockquote>
 <p><strong>shape</strong> : length 3 tuple</p>
@@ -839,7 +951,7 @@ ext_filename is reset to value.</p>
 </table>
 <dl class="method">
 <dt id="flopy.utils.util_array.Util3d.plot">
-<tt class="descname">plot</tt><big>(</big><em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>fignum=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util3d.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>fignum=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util3d.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot 3-D model input data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -864,38 +976,38 @@ all layers will be included. (default is None)</p>
 <p><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
-<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+<dt>axes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span><dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
 (default is None)</p>
 </dd>
-<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+<dt>pcolor</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
 </dd>
-<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a color bar will be added to
+<dt>colorbar</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
 </dd>
-<dt>inactive <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if a black overlay in inactive
+<dt>inactive</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a black overlay in inactive
 cells in a layer will be displayed. (default is True)</p>
 </dd>
-<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+<dt>contour</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
 plot will be plotted. (default is False)</p>
 </dd>
-<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+<dt>clabel</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
 will be plotted. Only used if contour=True. (default is False)</p>
 </dd>
-<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+<dt>grid</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if the model grid will be plotted
 on the figure. (default is False)</p>
 </dd>
-<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+<dt>masked_values</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -911,8 +1023,8 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">hk</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -920,7 +1032,7 @@ a list of matplotlib.pyplot.axis is returned.</p>
 
 <dl class="method">
 <dt id="flopy.utils.util_array.Util3d.to_shapefile">
-<tt class="descname">to_shapefile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.Util3d.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util3d.to_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Export 3-D model data to shapefile (polygons).  Adds an</dt>
 <dd>attribute for each Util2d in self.u2ds</dd>
@@ -941,9 +1053,9 @@ a list of matplotlib.pyplot.axis is returned.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;test.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">hk</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s">&#39;test_hk.shp&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">hk</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -952,7 +1064,7 @@ a list of matplotlib.pyplot.axis is returned.</p>
 
 <dl class="function">
 <dt id="flopy.utils.util_array.read1d">
-<tt class="descclassname">flopy.utils.util_array.</tt><tt class="descname">read1d</tt><big>(</big><em>f</em>, <em>a</em><big>)</big><a class="headerlink" href="#flopy.utils.util_array.read1d" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.util_array.</code><code class="descname">read1d</code><span class="sig-paren">(</span><em>f</em>, <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.read1d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fill the 1d array, a, with the correct number of values.  Required in
 case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
 </dd></dl>
@@ -963,12 +1075,12 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="reference.html"
                         title="previous chapter">flopy.utils.reference Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -976,16 +1088,13 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -997,13 +1106,13 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
         <li class="right" >
           <a href="reference.html" title="flopy.utils.reference Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

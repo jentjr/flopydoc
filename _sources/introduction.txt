@@ -45,6 +45,7 @@ FloPy is developed by a team of MODFLOW users that have switched over to using P
 
 with contributions from:
 
+* Andy Leaf
 * Jason Belino
 * Kolja Rotzoll
 * and others

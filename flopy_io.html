@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.flopy_io Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.flopy_io Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.formattedfile Module" href="formattedfile.html" />
     <link rel="prev" title="flopy.utils.binaryswrfile Module" href="binaryswrfile.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,22 +58,22 @@
         <li class="right" >
           <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.flopy_io">
 <span id="flopy-utils-flopy-io-module"></span><h1>flopy.utils.flopy_io Module<a class="headerlink" href="#module-flopy.utils.flopy_io" title="Permalink to this headline">¶</a></h1>
 <p>Module for input/output utilities</p>
 <dl class="function">
 <dt id="flopy.utils.flopy_io.flux_to_wel">
-<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">flux_to_wel</tt><big>(</big><em>cbc_file</em>, <em>text</em>, <em>precision='single'</em>, <em>model=None</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.flux_to_wel" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.flopy_io.</code><code class="descname">flux_to_wel</code><span class="sig-paren">(</span><em>cbc_file</em>, <em>text</em>, <em>precision='single'</em>, <em>model=None</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.flopy_io.flux_to_wel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert flux in a binary cell budget file to a wel instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -98,10 +98,92 @@
 
 <dl class="function">
 <dt id="flopy.utils.flopy_io.line_parse">
-<tt class="descclassname">flopy.utils.flopy_io.</tt><tt class="descname">line_parse</tt><big>(</big><em>line</em><big>)</big><a class="headerlink" href="#flopy.utils.flopy_io.line_parse" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.flopy_io.</code><code class="descname">line_parse</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.flopy_io.line_parse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a line of text into to a list of values.  This handles the
 case where a free formatted MODFLOW input file may have commas in
 it.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.flopy_io.read_fixed_var">
+<code class="descclassname">flopy.utils.flopy_io.</code><code class="descname">read_fixed_var</code><span class="sig-paren">(</span><em>line</em>, <em>ncol=1</em>, <em>length=10</em>, <em>ipos=None</em>, <em>free=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.flopy_io.read_fixed_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a fixed format line using user provided data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>line</strong> : str</p>
+<blockquote>
+<div><p>text string to parse.</p>
+</div></blockquote>
+<p><strong>ncol</strong> : int</p>
+<blockquote>
+<div><p>number of columns to parse from line. (default is 1)</p>
+</div></blockquote>
+<p><strong>length</strong> : int</p>
+<blockquote>
+<div><p>length of each column for fixed column widths. (default is 10)</p>
+</div></blockquote>
+<p><strong>ipos</strong> : list, int, or numpy array</p>
+<blockquote>
+<div><p>user-provided column widths. (default is None)</p>
+</div></blockquote>
+<p><strong>free</strong> : bool</p>
+<blockquote>
+<div><p>boolean indicating if sting is free format. ncol, length, and
+ipos are not used if free is True. (default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>padded list containing data parsed from the passed text string</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.flopy_io.write_fixed_var">
+<code class="descclassname">flopy.utils.flopy_io.</code><code class="descname">write_fixed_var</code><span class="sig-paren">(</span><em>v</em>, <em>length=10</em>, <em>ipos=None</em>, <em>free=False</em>, <em>comment=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.flopy_io.write_fixed_var" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>v</strong> : list, int, float, bool, or numpy array</p>
+<blockquote>
+<div><p>list, int, float, bool, or numpy array containing the data to be
+written to a string.</p>
+</div></blockquote>
+<p><strong>length</strong> : int</p>
+<blockquote>
+<div><p>length of each column for fixed column widths. (default is 10)</p>
+</div></blockquote>
+<p><strong>ipos</strong> : list, int, or numpy array</p>
+<blockquote>
+<div><p>user-provided column widths. (default is None)</p>
+</div></blockquote>
+<p><strong>free</strong> : bool</p>
+<blockquote>
+<div><p>boolean indicating if a free format string should be generated.
+length and ipos are not used if free is True. (default is False)</p>
+</div></blockquote>
+<p><strong>comment</strong> : str</p>
+<blockquote>
+<div><p>comment string to add to the end of the string</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : str</p>
+<blockquote class="last">
+<div><p>fixed or free format string generated using user-provided data</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -110,7 +192,7 @@ it.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="binaryswrfile.html"
@@ -118,7 +200,7 @@ it.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="formattedfile.html"
                         title="next chapter">flopy.utils.formattedfile Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -126,16 +208,13 @@ it.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -150,13 +229,13 @@ it.</p>
         <li class="right" >
           <a href="binaryswrfile.html" title="flopy.utils.binaryswrfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

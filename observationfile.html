@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.observationfile Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.observationfile Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.export.shapefile_utils Module" href="shapefile_utils.html" />
     <link rel="prev" title="flopy.utils.modpathfile Module" href="modpathfile.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,21 +58,21 @@
         <li class="right" >
           <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.observationfile">
 <span id="flopy-utils-observationfile-module"></span><h1>flopy.utils.observationfile Module<a class="headerlink" href="#module-flopy.utils.observationfile" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.utils.observationfile.HydmodObs">
-<em class="property">class </em><tt class="descclassname">flopy.utils.observationfile.</tt><tt class="descname">HydmodObs</tt><big>(</big><em>filename</em>, <em>verbose=False</em>, <em>hydlbl_len=20</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.observationfile.</code><code class="descname">HydmodObs</code><span class="sig-paren">(</span><em>filename</em>, <em>verbose=False</em>, <em>hydlbl_len=20</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs" title="Permalink to this definition">¶</a></dt>
 <dd><p>HydmodObs Class - used to read binary MODFLOW HYDMOD package output</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -100,7 +100,7 @@ extraction.  (default is False)</p>
 </table>
 <dl class="method">
 <dt id="flopy.utils.observationfile.HydmodObs.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the observation file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -137,7 +137,7 @@ is 2 if idx or obsname is not None or nobs+1.</p>
 <p>If both idx and obsname are None, will return all of the observation
 data.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -145,7 +145,7 @@ data.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.HydmodObs.get_dataframe">
-<tt class="descname">get_dataframe</tt><big>(</big><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_dataframe</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframe with the incremental and cumulative water budget
 items in the hydmod file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -193,7 +193,7 @@ a dataframe with all simulation times is returned.
 <p>If both idx and obsname are None, will return all of the observation
 data as a dataframe.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -201,7 +201,7 @@ data as a dataframe.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.HydmodObs.get_nobs">
-<tt class="descname">get_nobs</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_nobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of observations in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -221,7 +221,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.HydmodObs.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -239,7 +239,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.HydmodObs.get_obsnames">
-<tt class="descname">get_obsnames</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_obsnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of observation names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -258,7 +258,7 @@ included in the list of observation names.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.HydmodObs.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.HydmodObs.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -278,7 +278,7 @@ included in the list of observation names.</p>
 
 <dl class="class">
 <dt id="flopy.utils.observationfile.SwrObs">
-<em class="property">class </em><tt class="descclassname">flopy.utils.observationfile.</tt><tt class="descname">SwrObs</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.observationfile.</code><code class="descname">SwrObs</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.SwrObs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR observations output from MODFLOW SWR Process
 observation files</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -302,13 +302,13 @@ observation files</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.observationfile.SwrObs.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the observation file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -345,7 +345,7 @@ is 2 if idx or obsname is not None or nobs+1.</p>
 <p>If both idx and obsname are None, will return all of the observation
 data.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -353,7 +353,7 @@ data.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.SwrObs.get_dataframe">
-<tt class="descname">get_dataframe</tt><big>(</big><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_dataframe</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframe with the incremental and cumulative water budget
 items in the hydmod file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -401,7 +401,7 @@ a dataframe with all simulation times is returned.
 <p>If both idx and obsname are None, will return all of the observation
 data as a dataframe.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -409,7 +409,7 @@ data as a dataframe.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.SwrObs.get_nobs">
-<tt class="descname">get_nobs</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_nobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of observations in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -429,7 +429,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.SwrObs.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -447,7 +447,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.SwrObs.get_obsnames">
-<tt class="descname">get_obsnames</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_obsnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of observation names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -466,7 +466,7 @@ included in the list of observation names.</p>
 
 <dl class="method">
 <dt id="flopy.utils.observationfile.SwrObs.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.SwrObs.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -486,7 +486,7 @@ included in the list of observation names.</p>
 
 <dl class="function">
 <dt id="flopy.utils.observationfile.get_selection">
-<tt class="descclassname">flopy.utils.observationfile.</tt><tt class="descname">get_selection</tt><big>(</big><em>data</em>, <em>names</em><big>)</big><a class="headerlink" href="#flopy.utils.observationfile.get_selection" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.observationfile.</code><code class="descname">get_selection</code><span class="sig-paren">(</span><em>data</em>, <em>names</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.get_selection" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -517,7 +517,7 @@ included in the list of observation names.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="modpathfile.html"
@@ -525,7 +525,7 @@ included in the list of observation names.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="shapefile_utils.html"
                         title="next chapter">flopy.export.shapefile_utils Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -533,16 +533,13 @@ included in the list of observation names.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -557,13 +554,13 @@ included in the list of observation names.</p>
         <li class="right" >
           <a href="modpathfile.html" title="flopy.utils.modpathfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

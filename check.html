@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.check Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.check Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.datafile Module" href="datafile.html" />
-    <link rel="prev" title="flopy.modflow.mfsms Module" href="mfsms.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+    <link rel="prev" title="flopy.modflow.mfdisu Module" href="mfdisu.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,23 +56,23 @@
           <a href="datafile.html" title="flopy.utils.datafile Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mfsms.html" title="flopy.modflow.mfsms Module"
+          <a href="mfdisu.html" title="flopy.modflow.mfdisu Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.check">
 <span id="flopy-utils-check-module"></span><h1>flopy.utils.check Module<a class="headerlink" href="#module-flopy.utils.check" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.utils.check.check">
-<em class="property">class </em><tt class="descclassname">flopy.utils.check.</tt><tt class="descname">check</tt><big>(</big><em>package</em>, <em>f=None</em>, <em>verbose=True</em>, <em>level=1</em>, <em>property_threshold_values={}</em><big>)</big><a class="headerlink" href="#flopy.utils.check.check" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.check.</code><code class="descname">check</code><span class="sig-paren">(</span><em>package</em>, <em>f=None</em>, <em>verbose=True</em>, <em>level=1</em>, <em>property_threshold_values={}</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check package for common errors</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -95,27 +95,27 @@ performed. If level=1, full checks are performed.</p>
 <p><strong>property_threshold_values</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>hk <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">Reasonable minimum/maximum hydraulic conductivity value; values below this will be flagged.
+<dt>hk</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span><dd><p class="first last">Reasonable minimum/maximum hydraulic conductivity value; values below this will be flagged.
 Default is (1e-11, 1e5), after Bear, 1972 (see <a class="reference external" href="https://en.wikipedia.org/wiki/Hydraulic_conductivity">https://en.wikipedia.org/wiki/Hydraulic_conductivity</a>)
 and Schwartz and Zhang (2003, Table 4.4).</p>
 </dd>
-<dt>vka <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">Reasonable minimum/maximum hydraulic conductivity value;
+<dt>vka</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span><dd><p class="first last">Reasonable minimum/maximum hydraulic conductivity value;
 Default is (1e-11, 1e5), after Bear, 1972 (see <a class="reference external" href="https://en.wikipedia.org/wiki/Hydraulic_conductivity">https://en.wikipedia.org/wiki/Hydraulic_conductivity</a>)
 and Schwartz and Zhang (2003, Table 4.4).</p>
 </dd>
-<dt>vkcb <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">Reasonable minimum/maximum hydraulic conductivity value for quasi-3D confining bed;
+<dt>vkcb</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span><dd><p class="first last">Reasonable minimum/maximum hydraulic conductivity value for quasi-3D confining bed;
 Default is (1e-11, 1e5), after Bear, 1972 (see <a class="reference external" href="https://en.wikipedia.org/wiki/Hydraulic_conductivity">https://en.wikipedia.org/wiki/Hydraulic_conductivity</a>)
 and Schwartz and Zhang (2003, Table 4.4).</p>
 </dd>
-<dt>sy <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">Reasonable minimum/maximum specific yield values;
+<dt>sy</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span><dd><p class="first last">Reasonable minimum/maximum specific yield values;
 Default is (0.01,0.5) after Anderson, Woessner and Hunt (2015, Table 5.2).</p>
 </dd>
-<dt>sy <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">Reasonable minimum/maximum specific storage values;
+<dt>sy</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span><dd><p class="first last">Reasonable minimum/maximum specific storage values;
 Default is (3.3e-6, 2e-2) after Anderson, Woessner and Hunt (2015, Table 5.2).</p>
 </dd>
 </dl>
@@ -137,13 +137,13 @@ Default is (3.3e-6, 2e-2) after Anderson, Woessner and Hunt (2015, Table 5.2).</
 Schwartz, F.W. and Zhang, H., 2003. Fundamentals of Groundwater, Wiley, 583 p.</p>
 <dl class="method">
 <dt id="flopy.utils.check.check.append_passed">
-<tt class="descname">append_passed</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#flopy.utils.check.check.append_passed" title="Permalink to this definition">¶</a></dt>
+<code class="descname">append_passed</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.check.append_passed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a check to the passed list if it isn&#8217;t already in there.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.check.check.get_active">
-<tt class="descname">get_active</tt><big>(</big><em>include_cbd=False</em><big>)</big><a class="headerlink" href="#flopy.utils.check.check.get_active" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_active</code><span class="sig-paren">(</span><em>include_cbd=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.check.get_active" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean array of active cells for the model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -168,7 +168,7 @@ in the DIS module (includes quasi 3-D confining beds). Default False.</p>
 
 <dl class="method">
 <dt id="flopy.utils.check.check.isvalid">
-<tt class="descname">isvalid</tt><big>(</big><em>inds</em><big>)</big><a class="headerlink" href="#flopy.utils.check.check.isvalid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isvalid</code><span class="sig-paren">(</span><em>inds</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.check.isvalid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check that indices are valid for model grid</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -192,20 +192,20 @@ in the DIS module (includes quasi 3-D confining beds). Default False.</p>
 
 <dl class="method">
 <dt id="flopy.utils.check.check.remove_passed">
-<tt class="descname">remove_passed</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#flopy.utils.check.check.remove_passed" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_passed</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.check.remove_passed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a check to the passed list if it failed in any stress period.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.check.check.stress_period_data_values">
-<tt class="descname">stress_period_data_values</tt><big>(</big><em>stress_period_data</em>, <em>criteria</em>, <em>col=None</em>, <em>error_name=''</em>, <em>error_type='Warning'</em><big>)</big><a class="headerlink" href="#flopy.utils.check.check.stress_period_data_values" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stress_period_data_values</code><span class="sig-paren">(</span><em>stress_period_data</em>, <em>criteria</em>, <em>col=None</em>, <em>error_name=''</em>, <em>error_type='Warning'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.check.stress_period_data_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>If criteria contains any true values, return the error_type, package name, k,i,j indicies,
 values, and description of error for each row in stress_period_data where criteria=True.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.check.check.values">
-<tt class="descname">values</tt><big>(</big><em>a</em>, <em>criteria</em>, <em>error_name=''</em>, <em>error_type='Warning'</em><big>)</big><a class="headerlink" href="#flopy.utils.check.check.values" title="Permalink to this definition">¶</a></dt>
+<code class="descname">values</code><span class="sig-paren">(</span><em>a</em>, <em>criteria</em>, <em>error_name=''</em>, <em>error_type='Warning'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.check.values" title="Permalink to this definition">¶</a></dt>
 <dd><p>If criteria contains any true values, return the error_type, package name, indices,
 array values, and description of error for each True value in criteria.</p>
 </dd></dl>
@@ -214,14 +214,14 @@ array values, and description of error for each True value in criteria.</p>
 
 <dl class="function">
 <dt id="flopy.utils.check.fields_view">
-<tt class="descclassname">flopy.utils.check.</tt><tt class="descname">fields_view</tt><big>(</big><em>arr</em>, <em>fields</em><big>)</big><a class="headerlink" href="#flopy.utils.check.fields_view" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.check.</code><code class="descname">fields_view</code><span class="sig-paren">(</span><em>arr</em>, <em>fields</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.fields_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>creates view of array that only contains the fields in fields.
 <a class="reference external" href="http://stackoverflow.com/questions/15182381/how-to-return-a-view-of-several-columns-in-numpy-structured-array">http://stackoverflow.com/questions/15182381/how-to-return-a-view-of-several-columns-in-numpy-structured-array</a></p>
 </dd></dl>
 
 <dl class="function">
 <dt id="flopy.utils.check.get_neighbors">
-<tt class="descclassname">flopy.utils.check.</tt><tt class="descname">get_neighbors</tt><big>(</big><em>a</em><big>)</big><a class="headerlink" href="#flopy.utils.check.get_neighbors" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.utils.check.</code><code class="descname">get_neighbors</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.check.get_neighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the 6 neighboring values for each value in a.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -251,15 +251,15 @@ Nan is returned for values at edges.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="mfsms.html"
-                        title="previous chapter">flopy.modflow.mfsms Module</a></p>
+  <p class="topless"><a href="mfdisu.html"
+                        title="previous chapter">flopy.modflow.mfdisu Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="datafile.html"
                         title="next chapter">flopy.utils.datafile Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -267,16 +267,13 @@ Nan is returned for values at edges.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -289,15 +286,15 @@ Nan is returned for values at edges.</p>
           <a href="datafile.html" title="flopy.utils.datafile Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="mfsms.html" title="flopy.modflow.mfsms Module"
+          <a href="mfdisu.html" title="flopy.modflow.mfdisu Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

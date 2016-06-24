@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.binaryswrfile Module &mdash; flopy 3.2.4 documentation</title>
+    <title>flopy.utils.binaryswrfile Module &mdash; flopy 3.2.5 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.4',
+        VERSION:     '3.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,19 +23,19 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.4 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.flopy_io Module" href="flopy_io.html" />
     <link rel="prev" title="flopy.utils.binaryhydmodfile Module" href="binaryhydmodfile.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
 
   </head>
-  <body>
-<div class="header">
+  <body role="document">
+<div class="header" role="banner">
   <div class="logo">
     <a href="index.html">
       <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -58,21 +58,21 @@
         <li class="right" >
           <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-flopy.utils.binaryswrfile">
 <span id="flopy-utils-binaryswrfile-module"></span><h1>flopy.utils.binaryswrfile Module<a class="headerlink" href="#module-flopy.utils.binaryswrfile" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrBinaryData">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrBinaryData</tt><big>(</big><em>precision='double'</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBinaryData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrBinaryData</code><span class="sig-paren">(</span><em>precision='double'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBinaryData" title="Permalink to this definition">¶</a></dt>
 <dd><p>The SwrBinaryData class is a class to that defines the data types for
 integer, floating point, and character data in SWR Process binary
 files. The SwrBinaryDat class is the super class from which the
@@ -95,7 +95,7 @@ should not be instantiated directly.</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrBudget">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrBudget</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrBudget</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR budget output from MODFLOW SWR Process binary output files</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -118,13 +118,13 @@ should not be instantiated directly.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.bud&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.bud&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_connectivity">
-<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_connectivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get connectivity data from the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -143,7 +143,7 @@ should not be instantiated directly.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -180,7 +180,7 @@ values. (default is None)</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_kswrkstpkper">
-<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_kswrkstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique stress periods, time steps, and swr time steps
 in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -200,7 +200,7 @@ kswr, kstp, and kper values are zero-based.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_nrecords">
-<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nrecords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_nrecords" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of records in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -220,7 +220,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_record_names">
-<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -256,7 +256,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -274,7 +274,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrBudget.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_ts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrBudget.get_ts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a time series from a swr binary file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -324,7 +324,7 @@ data.</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrExchange">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrExchange</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrExchange</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR surface-water groundwater exchange output from MODFLOW SWR Process binary output files</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -347,13 +347,13 @@ data.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.qaq&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.qaq&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_connectivity">
-<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_connectivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get connectivity data from the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -372,7 +372,7 @@ data.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -409,7 +409,7 @@ values. (default is None)</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_kswrkstpkper">
-<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_kswrkstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique stress periods, time steps, and swr time steps
 in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -429,7 +429,7 @@ kswr, kstp, and kper values are zero-based.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_nrecords">
-<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nrecords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_nrecords" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of records in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -449,7 +449,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -467,7 +467,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_record_names">
-<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_record_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -485,7 +485,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -503,7 +503,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrExchange.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_ts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrExchange.get_ts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a time series from a swr binary file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -553,7 +553,7 @@ data.</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrFile">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrFile</tt><big>(</big><em>filename</em>, <em>swrtype='stage'</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrFile</code><span class="sig-paren">(</span><em>filename</em>, <em>swrtype='stage'</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR output from MODFLOW SWR Process binary output files
 The SwrFile class is the super class from which specific derived
 classes are formed.  This class should not be instantiated directly</p>
@@ -583,13 +583,13 @@ classes are formed.  This class should not be instantiated directly</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrFile</span><span class="p">(</span><span class="s">&#39;mymodel.swr.stage.bin&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrFile</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.stage.bin&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_connectivity">
-<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_connectivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get connectivity data from the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -608,7 +608,7 @@ classes are formed.  This class should not be instantiated directly</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -645,7 +645,7 @@ values. (default is None)</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_kswrkstpkper">
-<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_kswrkstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique stress periods, time steps, and swr time steps
 in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -665,7 +665,7 @@ kswr, kstp, and kper values are zero-based.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_nrecords">
-<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nrecords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_nrecords" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of records in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -685,7 +685,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -703,7 +703,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_record_names">
-<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_record_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -721,7 +721,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -739,7 +739,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFile.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFile.get_ts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a time series from a swr binary file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -789,7 +789,7 @@ data.</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrFlow">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrFlow</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrFlow</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR flow output from MODFLOW SWR Process binary output files</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -812,13 +812,13 @@ data.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.flow&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.flow&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_connectivity">
-<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_connectivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get connectivity data from the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -837,7 +837,7 @@ data.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -874,7 +874,7 @@ values. (default is None)</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_kswrkstpkper">
-<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_kswrkstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique stress periods, time steps, and swr time steps
 in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -894,7 +894,7 @@ kswr, kstp, and kper values are zero-based.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_nrecords">
-<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nrecords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_nrecords" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of records in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -914,7 +914,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -932,7 +932,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_record_names">
-<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_record_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -950,7 +950,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -968,7 +968,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrFlow.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_ts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrFlow.get_ts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a time series from a swr binary file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1018,7 +1018,7 @@ data.</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrObs">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrObs</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrObs</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR observations output from MODFLOW SWR Process binary
 observation files</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1042,13 +1042,13 @@ observation files</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrObs.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>obsname=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>obsname=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the observation file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1081,7 +1081,7 @@ data.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrObs.get_nobs">
-<tt class="descname">get_nobs</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_nobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of observations in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1101,7 +1101,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrObs.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1119,7 +1119,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrObs.get_obsnames">
-<tt class="descname">get_obsnames</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_obsnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_obsnames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of observation names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1138,7 +1138,7 @@ included in the list of observation names.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrObs.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrObs.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1158,7 +1158,7 @@ included in the list of observation names.</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrStage">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrStage</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrStage</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR stage output from MODFLOW SWR Process binary output files</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1181,13 +1181,13 @@ included in the list of observation names.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.stg&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.stg&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_connectivity">
-<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_connectivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get connectivity data from the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1206,7 +1206,7 @@ included in the list of observation names.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1243,7 +1243,7 @@ values. (default is None)</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_kswrkstpkper">
-<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_kswrkstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique stress periods, time steps, and swr time steps
 in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1263,7 +1263,7 @@ kswr, kstp, and kper values are zero-based.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_nrecords">
-<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nrecords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_nrecords" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of records in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1283,7 +1283,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1301,7 +1301,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_record_names">
-<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_record_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1319,7 +1319,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1337,7 +1337,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStage.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_ts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStage.get_ts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a time series from a swr binary file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1387,7 +1387,7 @@ data.</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryswrfile.SwrStructure">
-<em class="property">class </em><tt class="descclassname">flopy.utils.binaryswrfile.</tt><tt class="descname">SwrStructure</tt><big>(</big><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryswrfile.</code><code class="descname">SwrStructure</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read binary SWR structure output from MODFLOW SWR Process binary output
 files</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1411,13 +1411,13 @@ files</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s">&#39;mymodel.swr.str&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.str&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_connectivity">
-<tt class="descname">get_connectivity</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_connectivity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_connectivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get connectivity data from the file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1436,7 +1436,7 @@ files</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_data">
-<tt class="descname">get_data</tt><big>(</big><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kswrkstpkper=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get data from the file for the specified conditions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1473,7 +1473,7 @@ values. (default is None)</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_kswrkstpkper">
-<tt class="descname">get_kswrkstpkper</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_kswrkstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_kswrkstpkper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique stress periods, time steps, and swr time steps
 in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1493,7 +1493,7 @@ kswr, kstp, and kper values are zero-based.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_nrecords">
-<tt class="descname">get_nrecords</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_nrecords" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_nrecords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_nrecords" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of records in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1513,7 +1513,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_ntimes">
-<tt class="descname">get_ntimes</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_ntimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1531,7 +1531,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_record_names">
-<tt class="descname">get_record_names</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_record_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1549,7 +1549,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_times">
-<tt class="descname">get_times</tt><big>(</big><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_times" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique times in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1567,7 +1567,7 @@ swrtype=&#8217;flow&#8217;.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryswrfile.SwrStructure.get_ts">
-<tt class="descname">get_ts</tt><big>(</big><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><big>)</big><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_ts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>irec=0</em>, <em>iconn=0</em>, <em>klay=0</em>, <em>istr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryswrfile.SwrStructure.get_ts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a time series from a swr binary file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1621,7 +1621,7 @@ data.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="binaryhydmodfile.html"
@@ -1629,7 +1629,7 @@ data.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="flopy_io.html"
                         title="next chapter">flopy.utils.flopy_io Module</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -1637,16 +1637,13 @@ data.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -1661,13 +1658,13 @@ data.</p>
         <li class="right" >
           <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
              >previous</a> |</li>
-        <li><a href="index.html">flopy 3.2.4 documentation</a> &raquo;</li>
-          <li><a href="code.html" >Flopy Code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      Last updated on Feb 13, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+      Last updated on Jun 24, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>
