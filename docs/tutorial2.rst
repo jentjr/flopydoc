@@ -138,21 +138,20 @@ Output Control
 Here we create the output control package object, which is of the type `flopy.modflow.ModflowOc <mfoc.html>`__.::
 
     # Output control
-    words = ['head','drawdown','budget', 'phead', 'pbudget']
-    save_head_every = 1
-    oc = flopy.modflow.ModflowOc(mf, words=words, save_head_every=save_head_every)
+    spd = {(0, 0): ['print head', 'save head', 'print budget', 'save budget']}
+    oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd)
 
 
 Running the Modeling
 --------------------
 
-Run the model with run_model2, which returns a success flag and the stream of output. With run_model2, we have some finer control, that allows us to suppress the output.::
+Run the model with the run_model method, which returns a success flag and the stream of output. With run_model, we have some finer control, that allows us to suppress the output.::
 
     # Write the model input files
     mf.write_input()
 
     # Run the model
-    success, mfoutput = mf.run_model(silent=True, pause=False)
+    success, mfoutput = mf.run_model(silent=True, pause=False, report=True)
     if not success:
         raise Exception('MODFLOW did not terminate normally.')
 
