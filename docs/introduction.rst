@@ -15,7 +15,7 @@ To install FloPy3 type:
 
 To update FloPy3 type:
 
-    pip install flopy --update
+    pip install flopy --upgrade
 
 To uninstall FloPy3 type:
 
