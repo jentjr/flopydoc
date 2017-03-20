@@ -39,11 +39,15 @@ git checkout -b gh-pages remotes/origin/gh-pages
 
   * At this point, the directory structure should match the directory structure that was used to create the documentation.  Changes can now be made to flopydoc.git by editing the files in that folder and running the following command from flopydoc.git/docs
 
-    make html
+```
+make html
+```
 
 or
 
-    sphinx-build -nW -b html -d ../../flopydoc-doc/doctrees . ../../flopydoc-doc/html
+```
+sphinx-build -nW -b html -d ../../flopydoc-doc/doctrees . ../../flopydoc-doc/html
+```
 
 This second option is less forgiving and will stop at the first error or warning.
 
@@ -52,13 +56,19 @@ This second option is less forgiving and will stop at the first error or warning
 
   * Now that the html pages are updated, you need to commit the changes and then push them.  Do the following commands from the \flopy3doc\flopydoc-doc\html directory using:
 
-    git add .
-    
-    git commit -m "rebuilt docs"
-    
-    git push origin gh-pages
 
-    or run all these commands at once: git add .; git commit -m "rebuilt docs"; git push origin gh-pages
+```
+git add .
+git commit -m "rebuilt docs"
+git push origin gh-pages
+```
+
+    or run all these commands at once:
+
+```
+git add .; git commit -m "rebuilt docs"; git push origin gh-pages
+```
+
 
   * If you have made any changes to the rst files, then you should also commit and push those too.  Those are stored on the master branch of flopydoc.
 
