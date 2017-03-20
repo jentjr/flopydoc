@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.mt3d.mtdsp Module" href="mtdsp.html" />
     <link rel="prev" title="flopy.mt3d.mtadv Module" href="mtadv.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the Mt3dBtn class as <cite>flopy.mt3d.Mt3dBtn</cite>.</p>
 User&#8217;s Manual.</p>
 <dl class="class">
 <dt id="flopy.mt3d.mtbtn.Mt3dBtn">
-<em class="property">class </em><code class="descclassname">flopy.mt3d.mtbtn.</code><code class="descname">Mt3dBtn</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=1</em>, <em>mcomp=1</em>, <em>tunit='D'</em>, <em>lunit='M'</em>, <em>munit='KG'</em>, <em>laycon=None</em>, <em>delr=None</em>, <em>delc=None</em>, <em>htop=None</em>, <em>dz=None</em>, <em>prsity=0.3</em>, <em>icbund=1</em>, <em>sconc=0.0</em>, <em>cinact=1e+30</em>, <em>thkmin=0.01</em>, <em>ifmtcn=0</em>, <em>ifmtnp=0</em>, <em>ifmtrf=0</em>, <em>ifmtdp=0</em>, <em>savucn=True</em>, <em>nprs=0</em>, <em>timprs=None</em>, <em>obs=None</em>, <em>nprobs=1</em>, <em>chkmas=True</em>, <em>nprmas=1</em>, <em>perlen=None</em>, <em>nstp=None</em>, <em>tsmult=None</em>, <em>ssflag=None</em>, <em>dt0=0</em>, <em>mxstrn=50000</em>, <em>ttsmult=1.0</em>, <em>ttsmax=0</em>, <em>species_names=None</em>, <em>extension='btn'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mtbtn.</code><code class="descname">Mt3dBtn</code><span class="sig-paren">(</span><em>model</em>, <em>MFStyleArr=False</em>, <em>DRYCell=False</em>, <em>Legacy99Stor=False</em>, <em>FTLPrint=False</em>, <em>NoWetDryPrint=False</em>, <em>OmitDryBud=False</em>, <em>AltWTSorb=False</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=1</em>, <em>mcomp=1</em>, <em>tunit='D'</em>, <em>lunit='M'</em>, <em>munit='KG'</em>, <em>laycon=None</em>, <em>delr=None</em>, <em>delc=None</em>, <em>htop=None</em>, <em>dz=None</em>, <em>prsity=0.3</em>, <em>icbund=1</em>, <em>sconc=0.0</em>, <em>cinact=1e+30</em>, <em>thkmin=0.01</em>, <em>ifmtcn=0</em>, <em>ifmtnp=0</em>, <em>ifmtrf=0</em>, <em>ifmtdp=0</em>, <em>savucn=True</em>, <em>nprs=0</em>, <em>timprs=None</em>, <em>obs=None</em>, <em>nprobs=1</em>, <em>chkmas=True</em>, <em>nprmas=1</em>, <em>perlen=None</em>, <em>nstp=None</em>, <em>tsmult=None</em>, <em>ssflag=None</em>, <em>dt0=0</em>, <em>mxstrn=50000</em>, <em>ttsmult=1.0</em>, <em>ttsmax=0</em>, <em>species_names=None</em>, <em>extension='btn'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Basic Transport Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -86,6 +86,44 @@ User&#8217;s Manual.</p>
 <blockquote>
 <div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
+</div></blockquote>
+<p><strong>MFStyleArr</strong> : str</p>
+<blockquote>
+<div><p>Specifies whether or not to read arrays using the MODFLOW array reader
+format or the original MT3DMS array reader</p>
+</div></blockquote>
+<p><strong>DRYCell</strong> : str</p>
+<blockquote>
+<div><p>Specifies whether or not to route mass through dry cells.  When MF-NWT
+is used to generate the flow-transport link file, this is a distinct
+possibility.</p>
+</div></blockquote>
+<p><strong>Legacy99Stor</strong> : str</p>
+<blockquote>
+<div><p>Specifies whether or not to use the storage formulation used in MT3DMS</p>
+</div></blockquote>
+<p><strong>FTLPrint</strong> : str</p>
+<blockquote>
+<div><p>Specifies if flow-transport link terms (cell-by-cell flows) should be
+echoed to the MT3D-USGS listing file.</p>
+</div></blockquote>
+<p><strong>NoWetDryPrint</strong> : str</p>
+<blockquote>
+<div><p>Specifies whether or not to suppress wet/dry messaging in the MT3D-USGS
+listing file.</p>
+</div></blockquote>
+<p><strong>OmitDryBudg</strong> : str</p>
+<blockquote>
+<div><p>Specifies whether or not to include the mass flux terms through dry
+cells in the mass budget written to the listing file.</p>
+</div></blockquote>
+<p><strong>AltWTSorb</strong> : str</p>
+<blockquote>
+<div><p>Specifies whether or not to use the MT3DMS formulation (this keyword
+omitted) for the solid phase, whereby the entire cell thickness is
+available for interacting with the aqueous phase, even though the
+aqueous phase may only occupy a portion of the cell&#8217;s thickness.  When
+used, only the saturated portion of the cell is available for sorbing</p>
 </div></blockquote>
 <p><strong>ncomp</strong> : int</p>
 <blockquote>
@@ -237,8 +275,19 @@ multiplier TTSMULT &gt; 1.0. (default is 0).</p>
 <div><p>A list of names for every species in the simulation.</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Filename extension (default is &#8216;btn&#8217;)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
+<blockquote class="last">
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -436,6 +485,29 @@ Adds an attribute for each layer in each data array</p>
 
 </dd></dl>
 
+<dl class="function">
+<dt id="flopy.mt3d.mtbtn.read1d_fixed">
+<code class="descclassname">flopy.mt3d.mtbtn.</code><code class="descname">read1d_fixed</code><span class="sig-paren">(</span><em>f</em>, <em>a</em>, <em>nvalperline=8</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.read1d_fixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a 10 real value array (such as TIMPRS) and return it
+as a.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : file handle</p>
+<p><strong>a</strong> : np.ndarray</p>
+<blockquote>
+<div><p>array to fill</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>a</strong> : np.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -479,12 +551,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

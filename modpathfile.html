@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.observationfile Module" href="observationfile.html" />
     <link rel="prev" title="flopy.utils.mfreadnam Module" href="mfreadnam.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -97,7 +97,7 @@ important classes that can be accessed by the user.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The EndpointeFile class provides simple ways to retrieve MODPATH 6
+<p>The EndpointFile class provides simple ways to retrieve MODPATH 6
 endpoint data from a MODPATH 6 ascii endpoint file.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
@@ -107,23 +107,15 @@ endpoint data from a MODPATH 6 ascii endpoint file.</p>
 </div>
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_alldata">
-<code class="descname">get_alldata</code><span class="sig-paren">(</span><em>final=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_alldata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_alldata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get endpoint data from the endpoint file for all endpoints.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>final</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used determine if the initial or final endpoint
-time should be returned, Default is True</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
 <blockquote class="last">
-<div><p>A numpy recarray with the final or initial (final=False)
-x, y, z, time, k, and particleid for endpoint partid.</p>
+<div><p>A numpy recarray with the endpoint particle data</p>
 </div></blockquote>
 </td>
 </tr>
@@ -139,7 +131,7 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_data">
-<code class="descname">get_data</code><span class="sig-paren">(</span><em>partid=0</em>, <em>final=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>partid=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get endpoint data from the endpoint file for a single particle.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -147,19 +139,15 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>partid</strong> : int</p>
 <blockquote>
-<div><p>The zero-based particle id.  The first record is record 0.</p>
-</div></blockquote>
-<p><strong>final</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used determine if the initial or final endpoint
-time should be returned, Default is True</p>
+<div><p>The zero-based particle id.  The first record is record 0.
+(default is 0)</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
 <blockquote class="last">
-<div><p>A numpy recarray with the final or initial (final=False)
-x, y, z, time, k, and particleid for endpoint partid.</p>
+<div><p>A numpy recarray with the endpoint particle data for
+endpoint partid.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -174,6 +162,31 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.modpathfile.EndpointFile.get_destination_endpoint_data">
+<code class="descname">get_destination_endpoint_data</code><span class="sig-paren">(</span><em>dest_cells</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_destination_endpoint_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get endpoint data for set of destination cells.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dest_cells</strong> : list or array of tuples</p>
+<blockquote>
+<div><p>(k, i, j) of each destination cell (zero-based)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>epdest</strong> : np.recarray</p>
+<blockquote class="last">
+<div><p>Slice of endpoint data array (e.g. EndpointFile.get_alldata)
+containing only data with final k,i,j in dest_cells.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_maxid">
 <code class="descname">get_maxid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_maxid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the maximum endpoint particle id in the file endpoint file</p>
@@ -183,7 +196,7 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
 <blockquote class="last">
-<div><p>Maximum enpoint particle id.</p>
+<div><p>Maximum endpoint particle id.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -194,7 +207,7 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_maxtime">
 <code class="descname">get_maxtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_maxtime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the maximum time in endpoint file</p>
+<dd><p>Get the maximum time in the endpoint file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -207,6 +220,46 @@ x, y, z, time, k, and particleid for endpoint partid.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.EndpointFile.get_maxtraveltime">
+<code class="descname">get_maxtraveltime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_maxtraveltime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the maximum travel time in the endpoint file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<blockquote class="last">
+<div><p>Maximum endpoint travel time.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.EndpointFile.write_shapefile">
+<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>endpoint_data=None</em>, <em>shpname='endpoings.shp'</em>, <em>direction='ending'</em>, <em>sr=None</em>, <em>epsg=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write particle starting / ending locations to shapefile.</p>
+<dl class="docutils">
+<dt>endpoint_data</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">np.recarry</span><dd>Record array of same form as that returned by EndpointFile.get_alldata.
+(if none, EndpointFile.get_alldata() is exported).</dd>
+<dt>shpname</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>File path for shapefile</dd>
+<dt>direction</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>String defining if starting or ending particle locations should be
+considered. (default is &#8216;ending&#8217;)</dd>
+<dt>sr</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">flopy.utils.reference.SpatialReference instance</span><dd>Used to scale and rotate Global x,y,z values in MODPATH Endpoint file</dd>
+<dt>epsg</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd>EPSG code for writing projection (.prj) file. If this is not supplied,
+the proj4 string or epgs code associated with sr will be used.</dd>
+</dl>
+<p>kwargs : keyword arguments to flopy.export.shapefile_utils.recarray2shp</p>
 </dd></dl>
 
 </dd></dl>
@@ -323,6 +376,31 @@ pathline partid.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.modpathfile.PathlineFile.get_destination_pathline_data">
+<code class="descname">get_destination_pathline_data</code><span class="sig-paren">(</span><em>dest_cells</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_destination_pathline_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pathline data for set of destination cells.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dest_cells</strong> : list or array of tuples</p>
+<blockquote>
+<div><p>(k, i, j) of each destination cell (zero-based)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pthldest</strong> : np.recarray</p>
+<blockquote class="last">
+<div><p>Slice of pathline data array (e.g. PathlineFile._data)
+containing only pathlines with final k,i,j in dest_cells.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.modpathfile.PathlineFile.get_maxid">
 <code class="descname">get_maxid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_maxid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the maximum pathline number in the file pathline file</p>
@@ -356,6 +434,34 @@ pathline partid.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.PathlineFile.write_shapefile">
+<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>pathline_data=None</em>, <em>one_per_particle=True</em>, <em>direction='ending'</em>, <em>shpname='endpoings.shp'</em>, <em>sr=None</em>, <em>epsg=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write pathlines to shapefile.</p>
+<dl class="docutils">
+<dt>pathline_data</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">np.recarry</span><dd>Record array of same form as that returned by EndpointFile.get_alldata.
+(if none, EndpointFile.get_alldata() is exported).</dd>
+<dt>one_per_particle</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">boolean (default True)</span><dd>True writes a single LineString with a single set of attribute data for each
+particle. False writes a record/geometry for each pathline segment
+(each row in the PathLine file). This option can be used to visualize
+attribute information (time, model layer, etc.) across a pathline in a GIS.</dd>
+<dt>direction</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>String defining if starting or ending particle locations should be
+included in shapefile attribute information. Only used if one_per_particle=False.
+(default is &#8216;ending&#8217;)</dd>
+<dt>shpname</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>File path for shapefile</dd>
+<dt>sr</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">flopy.utils.reference.SpatialReference instance</span><dd>Used to scale and rotate Global x,y,z values in MODPATH Endpoint file</dd>
+<dt>epsg</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd>EPSG code for writing projection (.prj) file. If this is not supplied,
+the proj4 string or epgs code associated with sr will be used.</dd>
+</dl>
+<p>kwargs : keyword arguments to flopy.export.shapefile_utils.recarray2shp</p>
 </dd></dl>
 
 </dd></dl>
@@ -403,12 +509,12 @@ pathline partid.</p>
         <li class="right" >
           <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

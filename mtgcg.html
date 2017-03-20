@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mtgcg Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.mt3d.mtgcg Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.mt3d.mtphc Module" href="mtphc.html" />
+    <link rel="next" title="flopy.mt3d.mtlkt Module" href="mtlkt.html" />
     <link rel="prev" title="flopy.mt3d.mtdsp Module" href="mtdsp.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -53,12 +53,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mtphc.html" title="flopy.mt3d.mtphc Module"
+          <a href="mtlkt.html" title="flopy.mt3d.mtlkt Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-mt3d-mtgcg-module"></span><h1>flopy.mt3d.mtgcg Module<a class="headerlink" href="#module-flopy.mt3d.mtgcg" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtgcg.Mt3dGcg">
-<em class="property">class </em><code class="descclassname">flopy.mt3d.mtgcg.</code><code class="descname">Mt3dGcg</code><span class="sig-paren">(</span><em>model</em>, <em>mxiter=1</em>, <em>iter1=50</em>, <em>isolve=3</em>, <em>ncrs=0</em>, <em>accl=1</em>, <em>cclose=1e-05</em>, <em>iprgcg=0</em>, <em>extension='gcg'</em>, <em>unitnumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mtgcg.</code><code class="descname">Mt3dGcg</code><span class="sig-paren">(</span><em>model</em>, <em>mxiter=1</em>, <em>iter1=50</em>, <em>isolve=3</em>, <em>ncrs=0</em>, <em>accl=1</em>, <em>cclose=1e-05</em>, <em>iprgcg=0</em>, <em>extension='gcg'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtgcg.Mt3dGcg" title="Permalink to this definition">¶</a></dt>
 <dd><p>MT3DMS Generalized Conjugate Gradient Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -136,8 +136,15 @@ end of each stress period.
 <div><p>Filename extension (default is &#8216;gcg&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 35).</p>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -341,8 +348,8 @@ Adds an attribute for each layer in each data array</p>
   <p class="topless"><a href="mtdsp.html"
                         title="previous chapter">flopy.mt3d.mtdsp Module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="mtphc.html"
-                        title="next chapter">flopy.mt3d.mtphc Module</a></p>
+  <p class="topless"><a href="mtlkt.html"
+                        title="next chapter">flopy.mt3d.mtlkt Module</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -367,17 +374,17 @@ Adds an attribute for each layer in each data array</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mtphc.html" title="flopy.mt3d.mtphc Module"
+          <a href="mtlkt.html" title="flopy.mt3d.mtlkt Module"
              >next</a> |</li>
         <li class="right" >
           <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

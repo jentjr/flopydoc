@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfhyd Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfhyd Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfgage Module" href="mfgage.html" />
-    <link rel="prev" title="flopy.modflow.mfhfb Module" href="mfhfb.html" />
+    <link rel="prev" title="flopy.modflow.mfhob Module" href="mfhob.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -56,9 +56,9 @@
           <a href="mfgage.html" title="flopy.modflow.mfgage Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mfhfb.html" title="flopy.modflow.mfhfb Module"
+          <a href="mfhob.html" title="flopy.modflow.mfhob Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowHyd class as <cite>flopy.modflow.ModflowHyd</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfhyd.ModflowHyd">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfhyd.</code><code class="descname">ModflowHyd</code><span class="sig-paren">(</span><em>model, nhyd=1, ihydun=1, hydnoh=-999.0, obsdata=[['BAS', 'HD', 'I', 1, 0.0, 0.0, 'HOBS1']], extension=['hyd', 'hyd.bin'], unit_number=36</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfhyd.ModflowHyd" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfhyd.</code><code class="descname">ModflowHyd</code><span class="sig-paren">(</span><em>model, nhyd=1, ihydun=None, hydnoh=-999.0, obsdata=[['BAS', 'HD', 'I', 1, 0.0, 0.0, 'HOBS1']], extension=['hyd', 'hyd.bin'], unitnumber=None, filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfhyd.ModflowHyd" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW HYDMOD (HYD) Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -107,19 +107,35 @@ is located may be a no-flow cell. (default is -999.)</p>
 <div><p>Each row of obsdata includes data defining pckg (3 character string),
 arr (2 characater string), intyp (1 character string) klay (int),
 xl (float), yl (float), hydlbl (14 character string) for each observation.</p>
-<p>pckg is a 3-character flag to indicate which package is to be addressed by
-hydmod for the hydrograph of each observation point. arr is a text code
-indicating which model data value is to be accessed for the hydrograph of
-each observation point. intyp is a 1-character value to indicate how the
-data from the specified feature are to be accessed; The two options are
-&#8216;I&#8217; for interpolated value or &#8216;C&#8217; for cell value (intyp must be &#8216;C&#8217; for
-STR and SFR Package hydrographs. klay is the layer sequence number of the
-array to be addressed by HYDMOD. xl is the coordinate of the hydrograph
-point in model units of length measured parallel to model rows, with the
-origin at the lower left corner of the model grid. yl s the coordinate of
-the hydrograph point in model units of length measured parallel to model
-columns, with the origin at the lower left corner of the model grid.
-hydlbl is used to form a label for the hydrograph.</p>
+<dl class="docutils">
+<dt>pckg</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">is a 3-character flag to indicate which package is to be addressed by
+hydmod for the hydrograph of each observation point.</p>
+</dd>
+<dt>arr</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">is a text code indicating which model data value is to be accessed for the hydrograph of
+each observation point.</p>
+</dd>
+<dt>intyp</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">is a 1-character value to indicate how the data from the specified feature
+are to be accessed; The two options are &#8216;I&#8217; for interpolated value or &#8216;C&#8217;
+for cell value (intyp must be &#8216;C&#8217; for STR and SFR Package hydrographs.</p>
+</dd>
+<dt>klay</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">is the layer sequence number (one-based) of the array to be addressed by HYDMOD.</p>
+</dd>
+<dt>xl</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">is the coordinate of the hydrograph point in model units of length measured
+parallel to model rows, with the origin at the lower left corner of the model grid.</p>
+</dd>
+<dt>yl</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">is the coordinate of the hydrograph point in model units of length measured parallel to model
+columns, with the origin at the lower left corner of the model grid.</p>
+</dd>
+<dt>hydlbl</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">is used to form a label for the hydrograph.</p>
+</dd>
+</dl>
 <p>The simplest form is a list of lists. For example, if nhyd=3 this
 gives the form of:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">obsdata</span> <span class="o">=</span>
@@ -136,8 +152,20 @@ gives the form of:</p>
 <div><p>Filename extension (default is [&#8216;hyd&#8217;, &#8216;hyd.bin&#8217;])</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 36).</p>
+<div><p>Filenames to use for the package and the output files. If
+filenames=None the package name will be created using the model name
+and package extension and the hydmod output name will be created using
+the model name and .hyd.bin extension (for example,
+modflowtest.hyd.bin). If a single string is passed the package will be
+set to the string and hydmod output name will be created using the
+model name and .hyd.bin extension. To define the names for all package
+files (input and output) the length of the list of strings should be 2.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -214,8 +242,8 @@ constructed using the function
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="mfhfb.html"
-                        title="previous chapter">flopy.modflow.mfhfb Module</a></p>
+  <p class="topless"><a href="mfhob.html"
+                        title="previous chapter">flopy.modflow.mfhob Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mfgage.html"
                         title="next chapter">flopy.modflow.mfgage Module</a></p>
@@ -246,14 +274,14 @@ constructed using the function
           <a href="mfgage.html" title="flopy.modflow.mfgage Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="mfhfb.html" title="flopy.modflow.mfhfb Module"
+          <a href="mfhob.html" title="flopy.modflow.mfhob Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

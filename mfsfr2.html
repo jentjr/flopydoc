@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html" />
     <link rel="prev" title="flopy.modflow.mfriv Module" href="mfriv.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfriv.html" title="flopy.modflow.mfriv Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-modflow-mfsfr2-module"></span><h1>flopy.modflow.mfsfr2 Module<a class="headerlink" href="#module-flopy.modflow.mfsfr2" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfsfr2.</code><code class="descname">ModflowSfr2</code><span class="sig-paren">(</span><em>model</em>, <em>nstrm=2</em>, <em>nss=1</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=128390.4</em>, <em>dleak=0.0001</em>, <em>istcb1=50</em>, <em>istcb2=66</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=1</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unitnumber=17</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfsfr2.</code><code class="descname">ModflowSfr2</code><span class="sig-paren">(</span><em>model</em>, <em>nstrm=2</em>, <em>nss=1</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=128390.4</em>, <em>dleak=0.0001</em>, <em>ipakcb=None</em>, <em>istcb2=None</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=1</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unit_number=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Streamflow-Routing (SFR2) Package Class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -123,14 +123,12 @@ in MODFLOW is given by Harbaugh and others (2000, p. 10).</p>
 reach and active model cell. Value is in units of length. Usually a value of 0.0001 is sufficient when units
 of feet or meters are used in model.</p>
 </div></blockquote>
-<p><strong>istcsb1</strong> : integer</p>
+<p><strong>ipakcb</strong> : integer</p>
 <blockquote>
-<div><p>An integer value used as a flag for writing stream-aquifer leakage values. If ISTCB1 &gt; 0, unformatted leakage
-between each stream reach and corresponding model cell will be saved to a file whenever the cell-by-cell budget
-has been specified in Output Control (see Harbaugh and others, 2000, pages 52-55). If ISTCB1 = 0, leakage values
-will not be printed or saved. If ISTCB1 &lt; 0, all information on inflows and outflows from each reach; on stream
-depth, width, and streambed conductance; and on head difference and gradient across the streambed will be
-printed in the main listing file whenever a cell-by-cell budget has been specified in Output Control.</p>
+<div><p>An integer value used as a flag for writing stream-aquifer leakage values. If ipakcb &gt; 0, unformatted leakage
+between each stream reach and corresponding model cell will be saved to the main cell-by-cell budget file whenever
+when a cell-by-cell budget has been specified in Output Control (see Harbaugh and others, 2000, pages 52-55).
+If ipakcb = 0, leakage values will not be printed or saved. Printing to the listing file (ipakcb &lt; 0) is not supported.</p>
 </div></blockquote>
 <p><strong>istcsb2</strong> : integer</p>
 <blockquote>
@@ -139,7 +137,8 @@ outflows from each reach; on stream depth, width, and streambed conductance; and
 gradient across the streambed. If ISTCB2 &gt; 0, then ISTCB2 also represents the unit number to which all
 information for each stream reach will be saved to a separate file when a cell-by-cell budget has been
 specified in Output Control. If ISTCB2 &lt; 0, it is the unit number to which unformatted streamflow out of
-each reach will be saved to a file whenever the cell-by-cell budget has been specified in Output Control.</p>
+each reach will be saved to a file whenever the cell-by-cell budget has been specified in Output Control.
+Unformatted output will be saved to &lt;model name&gt;.sfq.</p>
 </div></blockquote>
 <p><strong>isfropt</strong> : integer</p>
 <blockquote>
@@ -258,11 +257,24 @@ this stress period will not be printed.</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
-<div><p>Filename extension (default is &#8216;mnw2&#8217;)</p>
+<div><p>Filename extension (default is &#8216;sfr&#8217;)</p>
 </div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
+<p><strong>unit_number</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 34).</p>
+<div><p>Filenames to use for the package and the output files. If
+filenames=None the package name will be created using the model name
+and package extension and the cbc output and sfr output name will be
+created using the model name and .cbc the .sfr.bin/.sfr.out extensions
+(for example, modflowtest.cbc, and modflowtest.sfr.bin), if ipakcbc and
+istcb2 are numbers greater than zero. If a single string is passed the
+package name will be set to the string and other uzf output files will
+be set to the model name with the appropriate output file extensions.
+To define the names for all package files (input and output) the
+length of the list of strings should be 3. Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -523,7 +535,7 @@ performed. If level=1, full checks are performed.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.check.elevations">
 <code class="descname">elevations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.elevations" title="Permalink to this definition">¶</a></dt>
-<dd><p>checks for multiple SFR reaches in one cell; and whether more than one reach has Cond &gt; 0</p>
+<dd><p>checks streambed elevations for downstream rises and inconsistencies with model grid</p>
 </dd></dl>
 
 <dl class="method">
@@ -597,12 +609,12 @@ where stage is computed.</p>
         <li class="right" >
           <a href="mfriv.html" title="flopy.modflow.mfriv Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

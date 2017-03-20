@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfstr Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfstr Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfsub Module" href="mfsub.html" />
     <link rel="prev" title="flopy.modflow.mfsor Module" href="mfsor.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfsor.html" title="flopy.modflow.mfsor Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowStr class as <cite>flopy.modflow.ModflowStr</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfstr.ModflowStr">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfstr.</code><code class="descname">ModflowStr</code><span class="sig-paren">(</span><em>model</em>, <em>mxacts=0</em>, <em>nss=0</em>, <em>ntrib=0</em>, <em>ndiv=0</em>, <em>icalc=0</em>, <em>const=86400.0</em>, <em>ipakcb=0</em>, <em>dtype=None</em>, <em>stress_period_data=None</em>, <em>segment_data=None</em>, <em>extension='str'</em>, <em>unitnumber=118</em>, <em>options=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfstr.ModflowStr" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfstr.</code><code class="descname">ModflowStr</code><span class="sig-paren">(</span><em>model</em>, <em>mxacts=0</em>, <em>nss=0</em>, <em>ntrib=0</em>, <em>ndiv=0</em>, <em>icalc=0</em>, <em>const=86400.0</em>, <em>ipakcb=None</em>, <em>istcb2=None</em>, <em>dtype=None</em>, <em>stress_period_data=None</em>, <em>segment_data=None</em>, <em>extension='str'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>options=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfstr.ModflowStr" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Stream Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -126,6 +126,13 @@ days in the simulation. If ICALC is 0, const can be any real value.
 <div><p>A flag that is used to determine if cell-by-cell budget data should be
 saved. If ipakcb is non-zero cell-by-cell budget data will be saved.
 (default is 0).</p>
+</div></blockquote>
+<p><strong>istcb2</strong> : int</p>
+<blockquote>
+<div><p>A flag that is used flag and a unit number for the option to store
+streamflow out of each reach in an unformatted (binary) file.
+If istcb2 is greater than zero streamflow data will be saved.
+(default is None).</p>
 </div></blockquote>
 <p><strong>dtype</strong> : tuple, list, or numpy array of numpy dtypes</p>
 <blockquote>
@@ -238,8 +245,22 @@ form of:</p>
 <div><p>Filename extension (default is &#8216;str&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 118).</p>
+<div><p>Filenames to use for the package and the output files. If
+filenames=None the package name will be created using the model name
+and package extension and the cbc output and sfr output name will be
+created using the model name and .cbc the .sfr.bin/.sfr.out extensions
+(for example, modflowtest.cbc, and modflowtest.sfr.bin), if ipakcbc and
+istcb2 are numbers greater than zero. If a single string is passed
+the package will be set to the string and cbc and sf routput names
+will be created using the model name and .cbc and .sfr.bin/.sfr.out
+extensions, if ipakcbc and istcb2 are numbers greater than zero. To
+define the names for all package files (input and output) the length
+of the list of strings should be 3. Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -484,12 +505,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfsor.html" title="flopy.modflow.mfsor Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

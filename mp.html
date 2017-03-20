@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modpath.mp Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modpath.mp Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.mt3d.mt Module" href="mt.html" />
     <link rel="prev" title="flopy.modflow.mf Module" href="mf.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mf.html" title="flopy.modflow.mf Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -74,6 +74,24 @@
 <dt id="flopy.modpath.mp.Modpath">
 <em class="property">class </em><code class="descclassname">flopy.modpath.mp.</code><code class="descname">Modpath</code><span class="sig-paren">(</span><em>modelname='modpathtest'</em>, <em>simfile_ext='mpsim'</em>, <em>namefile_ext='mpnam'</em>, <em>version='modpath'</em>, <em>exe_name='mp6.exe'</em>, <em>modflowmodel=None</em>, <em>dis_file=None</em>, <em>dis_unit=87</em>, <em>head_file=None</em>, <em>budget_file=None</em>, <em>model_ws=None</em>, <em>external_path=None</em>, <em>verbose=False</em>, <em>load=True</em>, <em>listunit=7</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modpath base class</p>
+<dl class="method">
+<dt id="flopy.modpath.mp.Modpath.add_existing_package">
+<code class="descname">add_existing_package</code><span class="sig-paren">(</span><em>filename</em>, <em>ptype=None</em>, <em>copy_to_model_ws=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.add_existing_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an existing package to a model instance.
+Parameters
+&#8212;&#8212;&#8212;-
+filename : str</p>
+<blockquote>
+<div>the name of the file to add as a package</div></blockquote>
+<dl class="docutils">
+<dt>ptype</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">optional</span><dd>the model package type (e.g. &#8220;lpf&#8221;, &#8220;wel&#8221;, etc).  If None,
+then the file extension of the filename arg is used</dd>
+<dt>copy_to_model_ws</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd>flag to copy the package file into the model_ws directory.</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modpath.mp.Modpath.add_external">
 <code class="descname">add_external</code><span class="sig-paren">(</span><em>fname</em>, <em>unit</em>, <em>binflag=False</em>, <em>output=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.add_external" title="Permalink to this definition">¶</a></dt>
@@ -95,6 +113,71 @@ file package to refer to it.</p>
 <p><strong>binflag</strong> : boolean</p>
 <blockquote class="last">
 <div><p>binary or not. (default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp.Modpath.add_output">
+<code class="descname">add_output</code><span class="sig-paren">(</span><em>fname</em>, <em>unit</em>, <em>binflag=False</em>, <em>package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.add_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign an external array so that it will be listed as a DATA or
+DATA(BINARY) entry in the name file.  This will allow an outside
+file package to refer to it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of external array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote>
+<div><p>unit number of external array</p>
+</div></blockquote>
+<p><strong>binflag</strong> : boolean</p>
+<blockquote class="last">
+<div><p>binary or not. (default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp.Modpath.add_output_file">
+<code class="descname">add_output_file</code><span class="sig-paren">(</span><em>unit</em>, <em>fname=None</em>, <em>extension='cbc'</em>, <em>binflag=True</em>, <em>package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.add_output_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an ascii or binary output file file for a package</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>unit</strong> : int</p>
+<blockquote>
+<div><p>unit number of external array</p>
+</div></blockquote>
+<p><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of external array. (default is None)</p>
+</div></blockquote>
+<p><strong>extension</strong> : str</p>
+<blockquote>
+<div><p>extension to use for the cell-by-cell file. Only used if fname
+is None. (default is cbc)</p>
+</div></blockquote>
+<p><strong>binflag</strong> : bool</p>
+<blockquote>
+<div><p>boolean flag indicating if the output file is a binary file.
+Default is True</p>
+</div></blockquote>
+<p><strong>package</strong> : str</p>
+<blockquote class="last">
+<div><p>string that defines the package the output file is attached to.
+Default is None</p>
 </div></blockquote>
 </td>
 </tr>
@@ -204,7 +287,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="method">
 <dt id="flopy.modpath.mp.Modpath.create_mpsim">
-<code class="descname">create_mpsim</code><span class="sig-paren">(</span><em>simtype='pathline'</em>, <em>trackdir='forward'</em>, <em>packages='WEL'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.create_mpsim" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_mpsim</code><span class="sig-paren">(</span><em>simtype='pathline'</em>, <em>trackdir='forward'</em>, <em>packages='WEL'</em>, <em>start_time=0</em>, <em>default_ifaces=None</em>, <em>ParticleColumnCount=4</em>, <em>ParticleRowCount=4</em>, <em>MinRow=0</em>, <em>MinColumn=0</em>, <em>MaxRow=None</em>, <em>MaxColumn=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.create_mpsim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a MODPATH simulation file using available MODFLOW boundary
 package data.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -229,8 +312,35 @@ Available trackdir&#8217;s are &#8216;backward&#8217; and &#8216;forward&#8217;.
 <p><strong>packages</strong> : str or list of strings</p>
 <blockquote>
 <div><p>Keyword defining the modflow packages used to create initial
-particle locations. Supported packages are &#8216;WEL&#8217; and &#8216;RCH&#8217;.
-(default is &#8216;WEL&#8217;)</p>
+particle locations. Supported packages are &#8216;WEL&#8217;, &#8216;MNW2&#8217; and &#8216;RCH&#8217;.
+(default is &#8216;WEL&#8217;).</p>
+</div></blockquote>
+<p><strong>start_time</strong> : float or tuple</p>
+<blockquote>
+<div><p>Sets the value of MODPATH reference time relative to MODFLOW time.
+float : value of MODFLOW simulation time at which to start the particle tracking simulation.</p>
+<blockquote>
+<div><p>Sets the value of MODPATH ReferenceTimeOption to 1.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>tuple</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(period, step, time fraction) MODFLOW stress period, time step and fraction</span><dd><p class="first last">between 0 and 1 at which to start the particle tracking simulation.
+Sets the value of MODPATH ReferenceTimeOption to 2.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>default_ifaces</strong> : list</p>
+<blockquote>
+<div><p>List of cell faces (1-6; see MODPATH6 manual, fig. 7) on which to start particles.
+(default is None, meaning ifaces will vary depending on packages argument above)</p>
+</div></blockquote>
+<p><strong>ParticleRowCount</strong> : int</p>
+<blockquote>
+<div><p>Rows of particles to start on each cell index face (iface).</p>
+</div></blockquote>
+<p><strong>ParticleColumnCount</strong> : int</p>
+<blockquote>
+<div><p>Columns of particles to start on each cell index face (iface).</p>
 </div></blockquote>
 </td>
 </tr>
@@ -245,6 +355,52 @@ particle locations. Supported packages are &#8216;WEL&#8217; and &#8216;RCH&#821
 <dt id="flopy.modpath.mp.Modpath.get_name_file_entries">
 <code class="descname">get_name_file_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.get_name_file_entries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a string representation of the name file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp.Modpath.get_output">
+<code class="descname">get_output</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an output file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp.Modpath.get_output_attribute">
+<code class="descname">get_output_attribute</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em>, <em>attr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.get_output_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a attribute for an output file from the model by specifying either
+the file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -390,6 +546,29 @@ file name or the unit number.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modpath.mp.Modpath.remove_output">
+<code class="descname">remove_output</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.remove_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an output file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modpath.mp.Modpath.remove_package">
 <code class="descname">remove_package</code><span class="sig-paren">(</span><em>pname</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.remove_package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a package from this model</p>
@@ -438,6 +617,30 @@ run terminated normally. (default is &#8216;normal termination&#8217;)</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(success, buff)</p>
 <p><strong>success</strong> : boolean</p>
 <p class="last"><strong>buff</strong> : list of lines of stdout</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp.Modpath.set_output_attribute">
+<code class="descname">set_output_attribute</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em>, <em>attr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.Modpath.set_output_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a variable in an output file from the model by specifying either
+the file name or the unit number and a dictionary with attributes
+to change.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -553,7 +756,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="method">
 <dt id="flopy.modpath.mp.ModpathList.load">
-<code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.ModpathList.load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em>, <em>unitnumber=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp.ModpathList.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -683,12 +886,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mf.html" title="flopy.modflow.mf Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

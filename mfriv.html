@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfriv Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfriv Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfsfr2 Module" href="mfsfr2.html" />
     <link rel="prev" title="flopy.modflow.mfrch Module" href="mfrch.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfrch.html" title="flopy.modflow.mfrch Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowRiv class as <cite>flopy.modflow.ModflowRiv</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfriv.ModflowRiv">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfriv.</code><code class="descname">ModflowRiv</code><span class="sig-paren">(</span><em>model</em>, <em>ipakcb=0</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='riv'</em>, <em>unitnumber=18</em>, <em>options=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfriv.ModflowRiv" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfriv.</code><code class="descname">ModflowRiv</code><span class="sig-paren">(</span><em>model</em>, <em>ipakcb=None</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='riv'</em>, <em>options=None</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfriv.ModflowRiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW River Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -129,9 +129,10 @@ simulation. Full details of all options to specify stress_period_data
 can be found in the flopy3 boundaries Notebook in the basic
 subdirectory of the examples directory.</p>
 </div></blockquote>
-<p><strong>options</strong> : list of strings</p>
+<p><strong>dtype</strong> : custom datatype of stress_period_data.</p>
 <blockquote>
-<div><p>Package options. (default is None).</p>
+<div><p>(default is None)
+If None the default river datatype will be applied.</p>
 </div></blockquote>
 <p><strong>naux</strong> : int</p>
 <blockquote>
@@ -141,9 +142,26 @@ subdirectory of the examples directory.</p>
 <blockquote>
 <div><p>Filename extension (default is &#8216;riv&#8217;)</p>
 </div></blockquote>
+<p><strong>options</strong> : list of strings</p>
+<blockquote>
+<div><p>Package options. (default is None).</p>
+</div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 18).</p>
+<div><p>Filenames to use for the package and the output files. If
+filenames=None the package name will be created using the model name
+and package extension and the cbc output name will be created using
+the model name and .cbc extension (for example, modflowtest.cbc),
+if ipakcbc is a number greater than zero. If a single string is passed
+the package will be set to the string and cbc output names will be
+created using the model name and .cbc extension, if ipakcbc is a
+number greater than zero. To define the names for all package files
+(input and output) the length of the list of strings should be 2.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -411,12 +429,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfrch.html" title="flopy.modflow.mfrch Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

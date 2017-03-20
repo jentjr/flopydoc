@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mtssm Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.mt3d.mtssm Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.mt3d.mttob Module" href="mttob.html" />
-    <link rel="prev" title="flopy.mt3d.mtrct Module" href="mtrct.html" />
+    <link rel="prev" title="flopy.mt3d.mtsft Module" href="mtsft.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -56,9 +56,9 @@
           <a href="mttob.html" title="flopy.mt3d.mttob Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mtrct.html" title="flopy.mt3d.mtrct Module"
+          <a href="mtsft.html" title="flopy.mt3d.mtsft Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-mt3d-mtssm-module"></span><h1>flopy.mt3d.mtssm Module<a class="headerlink" href="#module-flopy.mt3d.mtssm" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtssm.Mt3dSsm">
-<em class="property">class </em><code class="descclassname">flopy.mt3d.mtssm.</code><code class="descname">Mt3dSsm</code><span class="sig-paren">(</span><em>model</em>, <em>crch=None</em>, <em>cevt=None</em>, <em>mxss=None</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='ssm'</em>, <em>unitnumber=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtssm.Mt3dSsm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mtssm.</code><code class="descname">Mt3dSsm</code><span class="sig-paren">(</span><em>model</em>, <em>crch=None</em>, <em>cevt=None</em>, <em>mxss=None</em>, <em>stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='ssm'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtssm.Mt3dSsm" title="Permalink to this definition">¶</a></dt>
 <dd><p>MT3DMS Source and Sink Mixing Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -83,28 +83,40 @@
 <div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to which
 this package will be added.</p>
 </div></blockquote>
-<p><strong>crch</strong> : array of floats</p>
+<p><strong>crch</strong> : Transient2d, scalar, array of floats, or dictionary</p>
 <blockquote>
-<div><p>CRCH is the concentration of recharge flux for a particular species.
+<div><p>CRCH is the concentration of recharge for species 1.
 If the recharge flux is positive, it acts as a source whose
 concentration can be specified as desired. If the recharge flux is
 negative, it acts as a sink (discharge) whose concentration is always
 set equal to the concentration of groundwater at the cell where
 discharge occurs. Note that the location and flow rate of
 recharge/discharge are obtained from the flow model directly through
-the unformatted flow-transport link file.</p>
+the unformatted flow-transport link file.  crch can be specified as
+an array, if the array is constant for the entire simulation.  If
+crch changes by stress period, then the user must provide a
+dictionary, where the key is the stress period number (zero based) and
+the value is the recharge array.  The recharge concentration
+can be specified for additional species by passing additional
+arguments to the Mt3dSsm constructor.  For example, to specify the
+recharge concentration for species two one could use
+crch2={0: 0., 1: 10*np.ones((nlay, nrow, ncol), dtype=np.float)} as
+and additional keyword argument that is passed to Mt3dSsm when making
+the ssm object.</p>
 </div></blockquote>
-<p><strong>cevt</strong> : array of floats</p>
+<p><strong>cevt</strong> : Transient2d, scalar, array of floats, or dictionary</p>
 <blockquote>
-<div><p>is the concentration of evapotranspiration flux for a particular
-species. Evapotranspiration is the only type of sink whose
+<div><p>is the concentration of evapotranspiration flux for species 1.
+Evapotranspiration is the only type of sink whose
 concentration may be specified externally. Note that the
 concentration of a sink cannot be greater than that of the aquifer at
 the sink cell. Thus, if the sink concentration is specified greater
 than that of the aquifer, it is automatically set equal to the
 concentration of the aquifer. Also note that the location and flow
 rate of evapotranspiration are obtained from the flow model directly
-through the unformatted flow-transport link file.</p>
+through the unformatted flow-transport link file.  For multi-species
+simulations, see crch for a description of how to specify
+additional concentrations arrays for each species.</p>
 </div></blockquote>
 <p><strong>stress_period_data</strong> : dictionary</p>
 <blockquote>
@@ -176,8 +188,15 @@ default) then the dtype will be automatically constructed.</p>
 <div><p>Filename extension (default is &#8216;ssm&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 34).</p>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -397,8 +416,8 @@ Adds an attribute for each layer in each data array</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="mtrct.html"
-                        title="previous chapter">flopy.mt3d.mtrct Module</a></p>
+  <p class="topless"><a href="mtsft.html"
+                        title="previous chapter">flopy.mt3d.mtsft Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mttob.html"
                         title="next chapter">flopy.mt3d.mttob Module</a></p>
@@ -429,14 +448,14 @@ Adds an attribute for each layer in each data array</p>
           <a href="mttob.html" title="flopy.mt3d.mttob Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="mtrct.html" title="flopy.mt3d.mtrct Module"
+          <a href="mtsft.html" title="flopy.mt3d.mtsft Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

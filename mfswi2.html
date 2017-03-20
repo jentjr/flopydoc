@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfswi2 Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfswi2 Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfswr1 Module" href="mfswr1.html" />
-    <link rel="prev" title="flopy.modflow.mfswi Module" href="mfswi.html" />
+    <link rel="prev" title="flopy.modflow.mfsub Module" href="mfsub.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -56,9 +56,9 @@
           <a href="mfswr1.html" title="flopy.modflow.mfswr1 Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mfswi.html" title="flopy.modflow.mfswi Module"
+          <a href="mfsub.html" title="flopy.modflow.mfsub Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowSwi2 class as <cite>flopy.modflow.ModflowSwi2</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfswi2.ModflowSwi2">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfswi2.</code><code class="descname">ModflowSwi2</code><span class="sig-paren">(</span><em>model, nsrf=1, istrat=1, nobs=0, iswizt=55, ipakcb=53, iswiobs=0, options=None, nsolver=1, iprsol=0, mutsol=3, solver2params={'npcond': 1, 'rclose': 0.0001, 'mxiter': 100, 'relax': 1.0, 'zclose': 0.001, 'iter1': 20, 'dampt': 1.0, 'nbpol': 2, 'damp': 1.0}, toeslope=0.05, tipslope=0.05, alpha=None, beta=0.1, nadptmx=1, nadptmn=1, adptfct=1.0, nu=0.025, zeta=[0.0], ssz=0.25, isource=0, obsnam=[], obslrc=[], extension=['swi2', 'zta'], unit_number=29, npln=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfswi2.</code><code class="descname">ModflowSwi2</code><span class="sig-paren">(</span><em>model, nsrf=1, istrat=1, nobs=0, iswizt=None, ipakcb=None, iswiobs=0, options=None, nsolver=1, iprsol=0, mutsol=3, solver2params={'damp': 1.0, 'zclose': 0.001, 'npcond': 1, 'mxiter': 100, 'dampt': 1.0, 'rclose': 0.0001, 'nbpol': 2, 'relax': 1.0, 'iter1': 20}, toeslope=0.05, tipslope=0.05, alpha=None, beta=0.1, nadptmx=1, nadptmn=1, adptfct=1.0, nu=0.025, zeta=[0.0], ssz=0.25, isource=0, obsnam=None, obslrc=None, npln=None, extension='swi2', unitnumber=None, filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW SWI2 Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -96,20 +96,15 @@ minus one. (default is 1).</p>
 <blockquote>
 <div><p>flag indicating the density distribution. (default is 1).</p>
 </div></blockquote>
-<p><strong>nobs</strong> : int</p>
-<blockquote>
-<div><p>number of observation locations. (default is 0).</p>
-</div></blockquote>
 <p><strong>iswizt</strong> : int</p>
 <blockquote>
-<div><p>unit number for zeta output. (default is 55).</p>
+<div><p>unit number for zeta output. (default is None).</p>
 </div></blockquote>
 <p><strong>ipakcb</strong> : int</p>
 <blockquote>
 <div><p>A flag that is used to determine if cell-by-cell budget data should be
 saved. If ipakcb is non-zero cell-by-cell budget data will be saved.
-(default is 0).
-unit number for SWI2 Package budget output. (default is 56).</p>
+(default is None).</p>
 </div></blockquote>
 <p><strong>iswiobs</strong> : int</p>
 <blockquote>
@@ -259,21 +254,28 @@ top of the aquifer.</p>
 <blockquote>
 <div><p>zero-based [layer, row, column] lists for nobs observations.</p>
 </div></blockquote>
-<p><strong>naux</strong> : int</p>
+<p><strong>extension</strong> : string</p>
 <blockquote>
-<div><p>number of auxiliary variables</p>
+<div><p>Filename extension (default is &#8216;swi2&#8217;)</p>
 </div></blockquote>
-<p><strong>extension</strong> : list string</p>
+<p><strong>npln</strong> : int</p>
 <blockquote>
-<div><p>Filename extension (default is [&#8216;swi2&#8217;, &#8216;zta&#8217;, &#8216;swb&#8217;])</p>
+<div><p>Deprecated - use nsrf instead.</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
 <blockquote>
-<div><p>File unit number (default is 29).</p>
+<div><p>File unit number (default is None).</p>
 </div></blockquote>
-<p><strong>npln</strong> : int</p>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>Deprecated - use nsrf instead.</p>
+<div><p>Filenames to use for the package and the zeta, cbc, obs output files.
+If filenames=None the package name will be created using the model name
+and package extension and the output file names will be created using
+the model name and output extensions. If a single string is passed the
+package will be set to the string and output names will be created
+using the model name and zeta, cbc, and observation extensions. To
+define the names for all package files (input and output) the length
+of the list of strings should be 4. Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -482,8 +484,8 @@ Adds an attribute for each layer in each data array</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="mfswi.html"
-                        title="previous chapter">flopy.modflow.mfswi Module</a></p>
+  <p class="topless"><a href="mfsub.html"
+                        title="previous chapter">flopy.modflow.mfsub Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="mfswr1.html"
                         title="next chapter">flopy.modflow.mfswr1 Module</a></p>
@@ -514,14 +516,14 @@ Adds an attribute for each layer in each data array</p>
           <a href="mfswr1.html" title="flopy.modflow.mfswr1 Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="mfswi.html" title="flopy.modflow.mfswi Module"
+          <a href="mfsub.html" title="flopy.modflow.mfsub Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

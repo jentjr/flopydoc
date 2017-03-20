@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.postprocessing Module &mdash; flopy 3.2.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.export.shapefile_utils Module" href="shapefile_utils.html" />
+    <link rel="prev" title="flopy.utils.observationfile Module" href="observationfile.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body role="document">
+<div class="header" role="banner">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shapefile_utils.html" title="flopy.export.shapefile_utils Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="observationfile.html" title="flopy.utils.observationfile Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-flopy.utils.postprocessing">
+<span id="flopy-utils-postprocessing-module"></span><h1>flopy.utils.postprocessing Module<a class="headerlink" href="#module-flopy.utils.postprocessing" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="flopy.utils.postprocessing.get_transmissivities">
+<code class="descclassname">flopy.utils.postprocessing.</code><code class="descname">get_transmissivities</code><span class="sig-paren">(</span><em>heads</em>, <em>m</em>, <em>r=None</em>, <em>c=None</em>, <em>x=None</em>, <em>y=None</em>, <em>sctop=None</em>, <em>scbot=None</em>, <em>nodata=-999</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.postprocessing.get_transmissivities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes transmissivity in each model layer at specified locations and open intervals.
+A saturated thickness is determined for each row, column or x, y location supplied,
+based on the open interval (sctop, scbot), if supplied, otherwise the layer tops and bottoms
+and the water table are used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 2D array</p>
+<blockquote>
+<div><p>numpy array of shape nlay by n locations</p>
+</div></blockquote>
+<p><strong>m</strong> : flopy.modflow.Modflow object</p>
+<blockquote>
+<div><p>Must have dis, sr, and lpf or upw packages.</p>
+</div></blockquote>
+<p><strong>r</strong> : 1D array-like of ints, of length n locations</p>
+<blockquote>
+<div><p>row indices (optional; alternately specify x, y)</p>
+</div></blockquote>
+<p><strong>c</strong> : 1D array-like of ints, of length n locations</p>
+<blockquote>
+<div><p>column indicies (optional; alternately specify x, y)</p>
+</div></blockquote>
+<p><strong>x</strong> : 1D array-like of floats, of length n locations</p>
+<blockquote>
+<div><p>x locations in real world coordinates (optional)</p>
+</div></blockquote>
+<p><strong>y</strong> : 1D array-like of floats, of length n locations</p>
+<blockquote>
+<div><p>y locations in real world coordinates (optional)</p>
+</div></blockquote>
+<p><strong>sctop</strong> : 1D array-like of floats, of length n locations</p>
+<blockquote>
+<div><p>open interval tops (optional; default is model top)</p>
+</div></blockquote>
+<p><strong>scbot</strong> : 1D array-like of floats, of length n locations</p>
+<blockquote>
+<div><p>open interval bottoms (optional; default is model bottom)</p>
+</div></blockquote>
+<p><strong>nodata</strong> : numeric</p>
+<blockquote>
+<div><p>optional; locations where heads=nodata will be assigned T=0</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>T</strong> : 2D array of same shape as heads (nlay x n locations)</p>
+<blockquote class="last">
+<div><p>Transmissivities in each layer at each location</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="observationfile.html"
+                        title="previous chapter">flopy.utils.observationfile Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="shapefile_utils.html"
+                        title="next chapter">flopy.export.shapefile_utils Module</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shapefile_utils.html" title="flopy.export.shapefile_utils Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="observationfile.html" title="flopy.utils.observationfile Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Last updated on Mar 20, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

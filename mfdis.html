@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfdrn Module" href="mfdrn.html" />
     <link rel="prev" title="flopy.modflow.mfde4 Module" href="mfde4.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowDis class as <cite>flopy.modflow.ModflowDis</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfdis.ModflowDis">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfdis.</code><code class="descname">ModflowDis</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=11</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>proj4_str=None</em>, <em>start_datetime=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfdis.</code><code class="descname">ModflowDis</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=1</em>, <em>nrow=2</em>, <em>ncol=2</em>, <em>nper=1</em>, <em>delr=1.0</em>, <em>delc=1.0</em>, <em>laycbd=0</em>, <em>top=1</em>, <em>botm=0</em>, <em>perlen=1</em>, <em>nstp=1</em>, <em>tsmult=1</em>, <em>steady=True</em>, <em>itmuni=4</em>, <em>lenuni=2</em>, <em>extension='dis'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>proj4_str=None</em>, <em>start_datetime=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Discretization Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -161,7 +161,14 @@ reasonable to set Top equal to land-surface elevation (the default is
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
 <blockquote>
-<div><p>File unit number (default is 11).</p>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
+<blockquote>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 <p><strong>xul</strong> : float</p>
 <blockquote>
@@ -269,6 +276,57 @@ performed. If level=1, full checks are performed.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_final_totim">
+<code class="descname">get_final_totim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_final_totim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the totim at the end of the simulation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">totim: float</p>
+<blockquote class="last">
+<div><p>maximum simulation totim</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_kstp_kper_toffset">
+<code class="descname">get_kstp_kper_toffset</code><span class="sig-paren">(</span><em>t=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_kstp_kper_toffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the stress period, time step, and time offset from passed time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>t</strong> : float</p>
+<blockquote>
+<div><p>totim to return the stress period, time step, and toffset for
+based on time discretization data. Default is 0.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>kstp</strong> : int</p>
+<blockquote>
+<div><p>time step in stress period corresponding to passed totim</p>
+</div></blockquote>
+<p><strong>kper</strong> : int</p>
+<blockquote>
+<div><p>stress period corresponding to passed totim</p>
+</div></blockquote>
+<p><strong>toffset</strong> : float</p>
+<blockquote class="last">
+<div><p>time offset of passed totim from the beginning of kper</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.get_lrc">
 <code class="descname">get_lrc</code><span class="sig-paren">(</span><em>nodes</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_lrc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get layer, row, column from a list of MODFLOW node numbers.</p>
@@ -315,6 +373,54 @@ performed. If level=1, full checks are performed.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>y</strong> : list of cell y-centroids</p>
 <p><strong>x</strong> : list of cell x-centroids</p>
 <p class="last"><strong>z</strong> : array of floats (nlay, nrow, ncol)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_totim">
+<code class="descname">get_totim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_totim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the totim at the end of each time step</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">totim: numpy array</p>
+<blockquote class="last">
+<div><p>numpy array with simulation totim at the end of each time step</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfdis.ModflowDis.get_totim_from_kper_toffset">
+<code class="descname">get_totim_from_kper_toffset</code><span class="sig-paren">(</span><em>kper=0</em>, <em>toffset=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.get_totim_from_kper_toffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get totim from a passed kper and time offset from the beginning
+of a stress period</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kper</strong> : int</p>
+<blockquote>
+<div><p>stress period. Default is 0</p>
+</div></blockquote>
+<p><strong>toffset</strong> : float</p>
+<blockquote>
+<div><p>time offset relative to the beginning of kper</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>t</strong> : float</p>
+<blockquote class="last">
+<div><p>totim to return the stress period, time step, and toffset for
+based on time discretization data. Default is 0.</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -522,6 +628,27 @@ Adds an attribute for each layer in each data array</p>
 
 </dd></dl>
 
+<dl class="function">
+<dt id="flopy.modflow.mfdis.get_layer">
+<code class="descclassname">flopy.modflow.mfdis.</code><code class="descname">get_layer</code><span class="sig-paren">(</span><em>dis</em>, <em>i</em>, <em>j</em>, <em>elev</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.get_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the layer for an elevation at an i, j location.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dis</strong> : flopy.modflow.ModflowDis object</p>
+<p><strong>i</strong> : row index (zero-based)</p>
+<p><strong>j</strong> : column index</p>
+<p><strong>elev</strong> : elevation (in same units as model)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>k</strong> : zero-based layer index</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -565,12 +692,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfde4.html" title="flopy.modflow.mfde4 Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

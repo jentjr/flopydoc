@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_array Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.utils.util_array Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="prev" title="flopy.utils.reference Module" href="reference.html" />
+    <link rel="prev" title="flopy.utils.sfroutputfile Module" href="sfroutputfile.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -52,9 +52,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="reference.html" title="flopy.utils.reference Module"
+          <a href="sfroutputfile.html" title="flopy.utils.sfroutputfile Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -687,6 +687,16 @@ ext_unit_dict has been initialized from the NAM file</p>
 </dd></dl>
 
 <dl class="staticmethod">
+<dt id="flopy.utils.util_array.Util2d.load_block">
+<em class="property">static </em><code class="descname">load_block</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a (possibly wrapped format) array from a mt3d block
+(self.__value) and casts to the proper type (self.dtype)
+made static to support the load functionality
+this routine now supports fixed format arrays where the numbers
+may touch.</p>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load_txt">
 <em class="property">static </em><code class="descname">load_txt</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em>, <em>fmtin</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_txt" title="Permalink to this definition">¶</a></dt>
 <dd><p>load a (possibly wrapped format) array from a file
@@ -712,7 +722,7 @@ may touch.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.parse_control_record">
-<em class="property">static </em><code class="descname">parse_control_record</code><span class="sig-paren">(</span><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;type 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_control_record</code><span class="sig-paren">(</span><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;class 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses a control record when reading an existing file
 rectifies fixed to free format
 current_unit (optional) indicates the unit number of the file being parsed</p>
@@ -926,14 +936,14 @@ ext_filename is reset to value.</p>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
-<col width="8%" />
-<col width="92%" />
+<col width="10%" />
+<col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>array</td>
-<td>(np.ndarray) the array representation of the 3-D object</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Util3d.array" title="flopy.utils.util_array.Util3d.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a></td>
+<td>Return a numpy array of the 3D shape.</td>
 </tr>
 </tbody>
 </table>
@@ -949,6 +959,13 @@ ext_filename is reset to value.</p>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="flopy.utils.util_array.Util3d.array">
+<code class="descname">array</code><a class="headerlink" href="#flopy.utils.util_array.Util3d.array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy array of the 3D shape.  If an unstructured model, then
+return an array of size nodes.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.utils.util_array.Util3d.plot">
 <code class="descname">plot</code><span class="sig-paren">(</span><em>filename_base=None</em>, <em>file_extension=None</em>, <em>mflay=None</em>, <em>fignum=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util3d.plot" title="Permalink to this definition">¶</a></dt>
@@ -1078,8 +1095,8 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="reference.html"
-                        title="previous chapter">flopy.utils.reference Module</a></p>
+  <p class="topless"><a href="sfroutputfile.html"
+                        title="previous chapter">flopy.utils.sfroutputfile Module</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -1104,14 +1121,14 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="reference.html" title="flopy.utils.reference Module"
+          <a href="sfroutputfile.html" title="flopy.utils.sfroutputfile Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>mbase Class &mdash; flopy 3.2.5 documentation</title>
+    <title>mbase Class &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="pakbase Class" href="pakbase.html" />
     <link rel="prev" title="Flopy Code" href="code.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="code.html" title="Flopy Code"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -102,6 +102,24 @@ to the current working directory.</p>
 </tbody>
 </table>
 <dl class="method">
+<dt id="flopy.mbase.BaseModel.add_existing_package">
+<code class="descname">add_existing_package</code><span class="sig-paren">(</span><em>filename</em>, <em>ptype=None</em>, <em>copy_to_model_ws=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.add_existing_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an existing package to a model instance.
+Parameters
+&#8212;&#8212;&#8212;-
+filename : str</p>
+<blockquote>
+<div>the name of the file to add as a package</div></blockquote>
+<dl class="docutils">
+<dt>ptype</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">optional</span><dd>the model package type (e.g. &#8220;lpf&#8221;, &#8220;wel&#8221;, etc).  If None,
+then the file extension of the filename arg is used</dd>
+<dt>copy_to_model_ws</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd>flag to copy the package file into the model_ws directory.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.mbase.BaseModel.add_external">
 <code class="descname">add_external</code><span class="sig-paren">(</span><em>fname</em>, <em>unit</em>, <em>binflag=False</em>, <em>output=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.add_external" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign an external array so that it will be listed as a DATA or
@@ -122,6 +140,71 @@ file package to refer to it.</p>
 <p><strong>binflag</strong> : boolean</p>
 <blockquote class="last">
 <div><p>binary or not. (default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.add_output">
+<code class="descname">add_output</code><span class="sig-paren">(</span><em>fname</em>, <em>unit</em>, <em>binflag=False</em>, <em>package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.add_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign an external array so that it will be listed as a DATA or
+DATA(BINARY) entry in the name file.  This will allow an outside
+file package to refer to it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of external array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote>
+<div><p>unit number of external array</p>
+</div></blockquote>
+<p><strong>binflag</strong> : boolean</p>
+<blockquote class="last">
+<div><p>binary or not. (default is False)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.add_output_file">
+<code class="descname">add_output_file</code><span class="sig-paren">(</span><em>unit</em>, <em>fname=None</em>, <em>extension='cbc'</em>, <em>binflag=True</em>, <em>package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.add_output_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an ascii or binary output file file for a package</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>unit</strong> : int</p>
+<blockquote>
+<div><p>unit number of external array</p>
+</div></blockquote>
+<p><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of external array. (default is None)</p>
+</div></blockquote>
+<p><strong>extension</strong> : str</p>
+<blockquote>
+<div><p>extension to use for the cell-by-cell file. Only used if fname
+is None. (default is cbc)</p>
+</div></blockquote>
+<p><strong>binflag</strong> : bool</p>
+<blockquote>
+<div><p>boolean flag indicating if the output file is a binary file.
+Default is True</p>
+</div></blockquote>
+<p><strong>package</strong> : str</p>
+<blockquote class="last">
+<div><p>string that defines the package the output file is attached to.
+Default is None</p>
 </div></blockquote>
 </td>
 </tr>
@@ -233,6 +316,52 @@ performed. If level=1, full checks are performed.</p>
 <dt id="flopy.mbase.BaseModel.get_name_file_entries">
 <code class="descname">get_name_file_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.get_name_file_entries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a string representation of the name file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.get_output">
+<code class="descname">get_output</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an output file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.get_output_attribute">
+<code class="descname">get_output_attribute</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em>, <em>attr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.get_output_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a attribute for an output file from the model by specifying either
+the file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -384,6 +513,29 @@ file name or the unit number.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.mbase.BaseModel.remove_output">
+<code class="descname">remove_output</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.remove_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an output file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.mbase.BaseModel.remove_package">
 <code class="descname">remove_package</code><span class="sig-paren">(</span><em>pname</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.remove_package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a package from this model</p>
@@ -432,6 +584,30 @@ run terminated normally. (default is &#8216;normal termination&#8217;)</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(success, buff)</p>
 <p><strong>success</strong> : boolean</p>
 <p class="last"><strong>buff</strong> : list of lines of stdout</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mbase.BaseModel.set_output_attribute">
+<code class="descname">set_output_attribute</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em>, <em>attr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mbase.BaseModel.set_output_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a variable in an output file from the model by specifying either
+the file name or the unit number and a dictionary with attributes
+to change.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>filename of output array</p>
+</div></blockquote>
+<p><strong>unit</strong> : int</p>
+<blockquote class="last">
+<div><p>unit number of output array</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -536,12 +712,12 @@ looking for arrays that can be added to the shapefile as attributes</p>
         <li class="right" >
           <a href="code.html" title="Flopy Code"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

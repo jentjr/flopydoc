@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mflpf Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mflpf Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfmnw1 Module" href="mfmnw1.html" />
     <link rel="prev" title="flopy.modflow.mflmt Module" href="mflmt.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mflmt.html" title="flopy.modflow.mflmt Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowLpf class as <cite>flopy.modflow.ModflowLpf</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mflpf.ModflowLpf">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mflpf.</code><code class="descname">ModflowLpf</code><span class="sig-paren">(</span><em>model</em>, <em>laytyp=0</em>, <em>layavg=0</em>, <em>chani=1.0</em>, <em>layvka=0</em>, <em>laywet=0</em>, <em>ipakcb=53</em>, <em>hdry=-1e+30</em>, <em>iwdflg=0</em>, <em>wetfct=0.1</em>, <em>iwetit=1</em>, <em>ihdwet=0</em>, <em>hk=1.0</em>, <em>hani=1.0</em>, <em>vka=1.0</em>, <em>ss=1e-05</em>, <em>sy=0.15</em>, <em>vkcb=0.0</em>, <em>wetdry=-0.01</em>, <em>storagecoefficient=False</em>, <em>constantcv=False</em>, <em>thickstrt=False</em>, <em>nocvcorrection=False</em>, <em>novfc=False</em>, <em>extension='lpf'</em>, <em>unitnumber=15</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mflpf.</code><code class="descname">ModflowLpf</code><span class="sig-paren">(</span><em>model</em>, <em>laytyp=0</em>, <em>layavg=0</em>, <em>chani=1.0</em>, <em>layvka=0</em>, <em>laywet=0</em>, <em>ipakcb=None</em>, <em>hdry=-1e+30</em>, <em>iwdflg=0</em>, <em>wetfct=0.1</em>, <em>iwetit=1</em>, <em>ihdwet=0</em>, <em>hk=1.0</em>, <em>hani=1.0</em>, <em>vka=1.0</em>, <em>ss=1e-05</em>, <em>sy=0.15</em>, <em>vkcb=0.0</em>, <em>wetdry=-0.01</em>, <em>storagecoefficient=False</em>, <em>constantcv=False</em>, <em>thickstrt=False</em>, <em>nocvcorrection=False</em>, <em>novfc=False</em>, <em>extension='lpf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Layer Property Flow Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -233,8 +233,21 @@ conductance correction described on p. 5-18 of that report.
 <div><p>Filename extension (default is &#8216;lpf&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 15).</p>
+<div><p>Filenames to use for the package and the output files. If
+filenames=None the package name will be created using the model name
+and package extension and the cbc output name will be created using
+the model name and .cbc extension (for example, modflowtest.cbc),
+if ipakcbc is a number greater than zero. If a single string is passed
+the package will be set to the string and cbc output name will be
+created using the model name and .cbc extension, if ipakcbc is a
+number greater than zero. To define the names for all package files
+(input and output) the length of the list of strings should be 2.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -480,12 +493,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mflmt.html" title="flopy.modflow.mflmt Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

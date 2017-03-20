@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfnwt Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfnwt Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfoc Module" href="mfoc.html" />
     <link rel="prev" title="flopy.modflow.mfmnwi Module" href="mfmnwi.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowNwt class as <cite>flopy.modflow.ModflowNwt</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfnwt.ModflowNwt">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfnwt.</code><code class="descname">ModflowNwt</code><span class="sig-paren">(</span><em>model</em>, <em>headtol=0.01</em>, <em>fluxtol=500</em>, <em>maxiterout=100</em>, <em>thickfact=1e-05</em>, <em>linmeth=1</em>, <em>iprnwt=0</em>, <em>ibotav=0</em>, <em>options='COMPLEX'</em>, <em>Continue=False</em>, <em>dbdtheta=0.4</em>, <em>dbdkappa=1e-05</em>, <em>dbdgamma=0.0</em>, <em>momfact=0.1</em>, <em>backflag=1</em>, <em>maxbackiter=50</em>, <em>backtol=1.1</em>, <em>backreduce=0.7</em>, <em>maxitinner=50</em>, <em>ilumethod=2</em>, <em>levfill=5</em>, <em>stoptol=1e-10</em>, <em>msdr=15</em>, <em>iacl=2</em>, <em>norder=1</em>, <em>level=5</em>, <em>north=7</em>, <em>iredsys=0</em>, <em>rrctols=0.0</em>, <em>idroptol=1</em>, <em>epsrn=0.0001</em>, <em>hclosexmd=0.0001</em>, <em>mxiterxmd=50</em>, <em>extension='nwt'</em>, <em>unitnumber=32</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfnwt.ModflowNwt" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfnwt.</code><code class="descname">ModflowNwt</code><span class="sig-paren">(</span><em>model</em>, <em>headtol=0.01</em>, <em>fluxtol=500</em>, <em>maxiterout=100</em>, <em>thickfact=1e-05</em>, <em>linmeth=1</em>, <em>iprnwt=0</em>, <em>ibotav=0</em>, <em>options='COMPLEX'</em>, <em>Continue=False</em>, <em>dbdtheta=0.4</em>, <em>dbdkappa=1e-05</em>, <em>dbdgamma=0.0</em>, <em>momfact=0.1</em>, <em>backflag=1</em>, <em>maxbackiter=50</em>, <em>backtol=1.1</em>, <em>backreduce=0.7</em>, <em>maxitinner=50</em>, <em>ilumethod=2</em>, <em>levfill=5</em>, <em>stoptol=1e-10</em>, <em>msdr=15</em>, <em>iacl=2</em>, <em>norder=1</em>, <em>level=5</em>, <em>north=7</em>, <em>iredsys=0</em>, <em>rrctols=0.0</em>, <em>idroptol=1</em>, <em>epsrn=0.0001</em>, <em>hclosexmd=0.0001</em>, <em>mxiterxmd=50</em>, <em>extension='nwt'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfnwt.ModflowNwt" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Nwt Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -295,8 +295,15 @@ use drop tolerance, 1-use drop tolerance. (default is 1).</p>
 <div><p>Filename extension (default is &#8216;nwt&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 32).</p>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -407,12 +414,12 @@ constructed using the function
         <li class="right" >
           <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

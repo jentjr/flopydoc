@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfpks Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfpks Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -49,7 +49,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -64,7 +64,7 @@
 the ModflowPks class as <cite>flopy.modflow.ModflowPks</cite>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfpks.ModflowPks">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfpks.</code><code class="descname">ModflowPks</code><span class="sig-paren">(</span><em>model</em>, <em>mxiter=100</em>, <em>innerit=50</em>, <em>isolver=1</em>, <em>npc=2</em>, <em>iscl=0</em>, <em>iord=0</em>, <em>ncoresm=1</em>, <em>ncoresv=1</em>, <em>damp=1.0</em>, <em>dampt=1.0</em>, <em>relax=0.97</em>, <em>ifill=0</em>, <em>droptol=0.0</em>, <em>hclose=0.001</em>, <em>rclose=0.1</em>, <em>l2norm=None</em>, <em>iprpks=0</em>, <em>mutpks=3</em>, <em>mpi=False</em>, <em>partopt=0</em>, <em>novlapimpsol=1</em>, <em>stenimpsol=2</em>, <em>verbose=0</em>, <em>partdata=None</em>, <em>extension='pks'</em>, <em>unitnumber=27</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfpks.ModflowPks" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfpks.</code><code class="descname">ModflowPks</code><span class="sig-paren">(</span><em>model</em>, <em>mxiter=100</em>, <em>innerit=50</em>, <em>isolver=1</em>, <em>npc=2</em>, <em>iscl=0</em>, <em>iord=0</em>, <em>ncoresm=1</em>, <em>ncoresv=1</em>, <em>damp=1.0</em>, <em>dampt=1.0</em>, <em>relax=0.97</em>, <em>ifill=0</em>, <em>droptol=0.0</em>, <em>hclose=0.001</em>, <em>rclose=0.1</em>, <em>l2norm=None</em>, <em>iprpks=0</em>, <em>mutpks=3</em>, <em>mpi=False</em>, <em>partopt=0</em>, <em>novlapimpsol=1</em>, <em>stenimpsol=2</em>, <em>verbose=0</em>, <em>partdata=None</em>, <em>extension='pks'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfpks.ModflowPks" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Pks Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -123,8 +123,15 @@ If mutpcg = 3, information will only be printed if convergence fails.
 <div><p>Filename extension (default is &#8216;pks&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote class="last">
+<blockquote>
 <div><p>File unit number (default is 27).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
+<blockquote class="last">
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -223,11 +230,11 @@ constructed using the function
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

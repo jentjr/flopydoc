@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.seawat.swtvsc Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.seawat.swtvsc Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfbct Module" href="mfbct.html" />
     <link rel="prev" title="flopy.seawat.swtvdf Module" href="swtvdf.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-seawat-swtvsc-module"></span><h1>flopy.seawat.swtvsc Module<a class="headerlink" href="#module-flopy.seawat.swtvsc" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.seawat.swtvsc.SeawatVsc">
-<em class="property">class </em><code class="descclassname">flopy.seawat.swtvsc.</code><code class="descname">SeawatVsc</code><span class="sig-paren">(</span><em>model</em>, <em>mt3dmuflg=-1</em>, <em>viscmin=0.0</em>, <em>viscmax=0.0</em>, <em>viscref=0.0008904</em>, <em>nsmueos=0</em>, <em>mutempopt=2</em>, <em>mtmuspec=1</em>, <em>dmudc=1.923e-06</em>, <em>cmuref=0.0</em>, <em>mtmutempspec=1</em>, <em>amucoeff=None</em>, <em>invisc=-1</em>, <em>visc=-1</em>, <em>extension='vsc'</em>, <em>unitnumber=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swtvsc.SeawatVsc" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.seawat.swtvsc.</code><code class="descname">SeawatVsc</code><span class="sig-paren">(</span><em>model</em>, <em>mt3dmuflg=-1</em>, <em>viscmin=0.0</em>, <em>viscmax=0.0</em>, <em>viscref=0.0008904</em>, <em>nsmueos=0</em>, <em>mutempopt=2</em>, <em>mtmuspec=1</em>, <em>dmudc=1.923e-06</em>, <em>cmuref=0.0</em>, <em>mtmutempspec=1</em>, <em>amucoeff=None</em>, <em>invisc=-1</em>, <em>visc=-1</em>, <em>extension='vsc'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swtvsc.SeawatVsc" title="Permalink to this definition">¶</a></dt>
 <dd><p>SEAWAT Viscosity Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -148,15 +148,19 @@ The size of the AMUCOEFF array in item 3e is 2 (MUNCOEFF = 2).
 If NSMUEOS and MUTEMPOPT are both set to zero, all fluid viscosities
 are set to VISCREF.</p>
 </div></blockquote>
-<p><strong>mtmuspec</strong> : int</p>
+<p><strong>mtmuspec</strong> : int, or list of ints (of size nsmueos) if nsmueos &gt; 1</p>
 <blockquote>
 <div><p>is the MT3DMS species number corresponding to the adjacent DMUDC and
 CMUREF.</p>
 </div></blockquote>
-<p><strong>dmudc</strong> : float</p>
+<p><strong>dmudc</strong> : float, or list of floats (of size nsmueos) if nsmueos &gt; 1</p>
 <blockquote>
 <div><p>is the slope of the linear equation that relates fluid viscosity to
 solute concentration.</p>
+</div></blockquote>
+<p><strong>cmuref</strong> : float, or list of floats (of size nsmueos) if nsmueos &gt; 1</p>
+<blockquote>
+<div><p>is the reference concentration.</p>
 </div></blockquote>
 <p><strong>mtmuspectemp</strong> : int</p>
 <blockquote>
@@ -443,12 +447,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

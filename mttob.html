@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mttob Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.mt3d.mttob Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.seawat.swtvdf Module" href="swtvdf.html" />
+    <link rel="next" title="flopy.mt3d.mtuzt Module" href="mtuzt.html" />
     <link rel="prev" title="flopy.mt3d.mtssm Module" href="mtssm.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -53,12 +53,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
+          <a href="mtuzt.html" title="flopy.mt3d.mtuzt Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="mtssm.html" title="flopy.mt3d.mtssm Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-mt3d-mttob-module"></span><h1>flopy.mt3d.mttob Module<a class="headerlink" href="#module-flopy.mt3d.mttob" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mttob.Mt3dTob">
-<em class="property">class </em><code class="descclassname">flopy.mt3d.mttob.</code><code class="descname">Mt3dTob</code><span class="sig-paren">(</span><em>model</em>, <em>outnam='tob_output'</em>, <em>CScale=1.0</em>, <em>FluxGroups=[]</em>, <em>FScale=1.0</em>, <em>iOutFlux=0</em>, <em>extension='tob'</em>, <em>unitnumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mttob.Mt3dTob" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mttob.</code><code class="descname">Mt3dTob</code><span class="sig-paren">(</span><em>model</em>, <em>outnam='tob_output'</em>, <em>CScale=1.0</em>, <em>FluxGroups=[]</em>, <em>FScale=1.0</em>, <em>iOutFlux=0</em>, <em>extension='tob'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mttob.Mt3dTob" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transport Observation package class</p>
 <dl class="method">
 <dt id="flopy.mt3d.mttob.Mt3dTob.check">
@@ -116,7 +116,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="method">
 <dt id="flopy.mt3d.mttob.Mt3dTob.load">
-<code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mttob.Mt3dTob.load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em>, <em>unitnumber=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mttob.Mt3dTob.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -229,8 +229,8 @@ Adds an attribute for each layer in each data array</p>
   <p class="topless"><a href="mtssm.html"
                         title="previous chapter">flopy.mt3d.mtssm Module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="swtvdf.html"
-                        title="next chapter">flopy.seawat.swtvdf Module</a></p>
+  <p class="topless"><a href="mtuzt.html"
+                        title="next chapter">flopy.mt3d.mtuzt Module</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -255,17 +255,17 @@ Adds an attribute for each layer in each data array</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="swtvdf.html" title="flopy.seawat.swtvdf Module"
+          <a href="mtuzt.html" title="flopy.mt3d.mtuzt Module"
              >next</a> |</li>
         <li class="right" >
           <a href="mtssm.html" title="flopy.mt3d.mtssm Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

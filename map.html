@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.plot.map Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.plot.map Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.plot.crosssection Module" href="crosssection.html" />
-    <link rel="prev" title="flopy.utils.zonbud_utils Module" href="zonbud_utils.html" />
+    <link rel="prev" title="flopy.utils.zonbud Module" href="zonbud.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -56,9 +56,9 @@
           <a href="crosssection.html" title="flopy.plot.crosssection Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
+          <a href="zonbud.html" title="flopy.utils.zonbud Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-plot-map-module"></span><h1>flopy.plot.map Module<a class="headerlink" href="#module-flopy.plot.map" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.plot.map.ModelMap">
-<em class="property">class </em><code class="descclassname">flopy.plot.map.</code><code class="descname">ModelMap</code><span class="sig-paren">(</span><em>sr=None</em>, <em>ax=None</em>, <em>model=None</em>, <em>dis=None</em>, <em>layer=0</em>, <em>extent=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.plot.map.</code><code class="descname">ModelMap</code><span class="sig-paren">(</span><em>sr=None</em>, <em>ax=None</em>, <em>model=None</em>, <em>dis=None</em>, <em>layer=0</em>, <em>extent=None</em>, <em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to create a map of the model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -161,9 +161,37 @@ will contour the layer tied to this class (self.layer).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.plot.map.ModelMap.get_grid_line_collection">
-<code class="descname">get_grid_line_collection</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.get_grid_line_collection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a LineCollection of the grid</p>
+<dt id="flopy.plot.map.ModelMap.contour_array_cvfd">
+<code class="descname">contour_array_cvfd</code><span class="sig-paren">(</span><em>vertc</em>, <em>a</em>, <em>masked_values=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.contour_array_cvfd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contour an array.  If the array is three-dimensional, then the method
+will contour the layer tied to this class (self.layer).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vertc</strong> : np.ndarray</p>
+<blockquote>
+<div><p>Array with of size (nc, 2) with centroid location of cvfd</p>
+</div></blockquote>
+<p><strong>a</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Array to plot.</p>
+</div></blockquote>
+<p><strong>masked_values</strong> : iterable of floats, ints</p>
+<blockquote>
+<div><p>Values to mask.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dictionary</p>
+<blockquote>
+<div><p>keyword arguments passed to matplotlib.pyplot.pcolormesh</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>contour_set</strong> : matplotlib.pyplot.contour</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -259,7 +287,7 @@ the rotated and offset grid.</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : dictionary</p>
 <blockquote class="last">
-<div><p>Keyword arguments passed to plotutil.plot_shapefile()</p>
+<div><p>Keyword arguments passed to plotutil.plot_cvfd()</p>
 </div></blockquote>
 </td>
 </tr>
@@ -324,7 +352,7 @@ cell. (default is False)</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_endpoint">
-<code class="descname">plot_endpoint</code><span class="sig-paren">(</span><em>ep</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_endpoint" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_endpoint</code><span class="sig-paren">(</span><em>ep</em>, <em>direction='ending'</em>, <em>selection=None</em>, <em>selection_direction=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_endpoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the MODPATH endpoints.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -332,15 +360,33 @@ cell. (default is False)</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ep</strong> : rec array</p>
 <blockquote>
-<div><p>rec array is data returned from modpathfile EndpointFile
-get_data() or get_alldata() methods. Data in rec array
-is &#8216;x&#8217;, &#8216;y&#8217;, &#8216;z&#8217;, &#8216;time&#8217;, &#8216;k&#8217;, and &#8216;particleid&#8217;.</p>
+<div><p>A numpy recarray with the endpoint particle data from the
+MODPATH 6 endpoint file</p>
 </div></blockquote>
-<p><strong>kwargs</strong> : layer, ax, c, s, colorbar, colorbar_label, shrink. The</p>
+<p><strong>direction</strong> : str</p>
+<blockquote>
+<div><p>String defining if starting or ending particle locations should be
+considered. (default is &#8216;ending&#8217;)</p>
+</div></blockquote>
+<p><strong>selection</strong> : tuple</p>
+<blockquote>
+<div><p>tuple that defines the zero-base layer, row, column location
+(l, r, c) to use to make a selection of particle endpoints.
+The selection could be a well location to determine capture zone
+for the well. If selection is None, all particle endpoints for
+the user-sepcified direction will be plotted. (default is None)</p>
+</div></blockquote>
+<p><strong>selection_direction</strong> : str</p>
+<blockquote>
+<div><p>String defining is a selection should be made on starting or
+ending particle locations. If selection is not None and
+selection_direction is None, the selection direction will be set
+to the opposite of direction. (default is None)</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : ax, c, s or size, colorbar, colorbar_label, shrink. The</p>
 <blockquote>
 <div><p>remaining kwargs are passed into the matplotlib scatter
-method. If layer=&#8217;all&#8217;, endpoints are output for all layers.
-If colorbar is True a colorbar will be added to the plot.
+method. If colorbar is True a colorbar will be added to the plot.
 If colorbar_label is passed in and colorbar is True then
 colorbar_label will be passed to the colorbar set_label()
 method. If shrink is passed in and colorbar is True then
@@ -409,8 +455,8 @@ self.ml</p>
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_inactive">
 <code class="descname">plot_inactive</code><span class="sig-paren">(</span><em>ibound=None</em>, <em>color_noflow='black'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_inactive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make a plot of inactive cells.  If not specified, then pull ibound from the
-self.ml</p>
+<dd><p>Make a plot of inactive cells.  If not specified, then pull ibound
+from the self.ml</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -434,7 +480,7 @@ self.ml</p>
 
 <dl class="method">
 <dt id="flopy.plot.map.ModelMap.plot_pathline">
-<code class="descname">plot_pathline</code><span class="sig-paren">(</span><em>pl</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_pathline" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_pathline</code><span class="sig-paren">(</span><em>pl</em>, <em>travel_time=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_pathline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the MODPATH pathlines.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -446,6 +492,18 @@ self.ml</p>
 modpathfile PathlineFile get_data() or get_alldata()
 methods. Data in rec array is &#8216;x&#8217;, &#8216;y&#8217;, &#8216;z&#8217;, &#8216;time&#8217;,
 &#8216;k&#8217;, and &#8216;particleid&#8217;.</p>
+</div></blockquote>
+<p><strong>travel_time: float or str</strong></p>
+<blockquote>
+<div><p>travel_time is a travel time selection for the displayed
+pathlines. If a float is passed then pathlines with times
+less than or equal to the passed time are plotted. If a
+string is passed a variety logical constraints can be added
+in front of a time value to select pathlines for a select
+period of time. Valid logical constraints are &lt;=, &lt;, &gt;=, and
+&gt;. For example, to select all pathlines less than 10000 days
+travel_time=&#8217;&lt; 10000&#8217; would be passed to plot_pathline.
+(default is None)</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : layer, ax, colors.  The remaining kwargs are passed</p>
 <blockquote>
@@ -495,8 +553,8 @@ the rotated and offset grid.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="zonbud_utils.html"
-                        title="previous chapter">flopy.utils.zonbud_utils Module</a></p>
+  <p class="topless"><a href="zonbud.html"
+                        title="previous chapter">flopy.utils.zonbud Module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="crosssection.html"
                         title="next chapter">flopy.plot.crosssection Module</a></p>
@@ -527,14 +585,14 @@ the rotated and offset grid.</p>
           <a href="crosssection.html" title="flopy.plot.crosssection Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
+          <a href="zonbud.html" title="flopy.utils.zonbud Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

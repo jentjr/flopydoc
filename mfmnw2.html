@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfmnw2 Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfmnw2 Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfmnwi Module" href="mfmnwi.html" />
     <link rel="prev" title="flopy.modflow.mfmnw1 Module" href="mfmnw1.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfmnw1.html" title="flopy.modflow.mfmnw1 Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -429,6 +429,40 @@ specified previously on this line. Sign (positive or negative) is ignored.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="flopy.modflow.mfmnw2.Mnw.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check mnw object for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
+<blockquote>
+<div><p>String defining file name or file handle for summary file
+of check method output. If a string is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote>
+<div><p>Boolean flag used to determine if check method results are
+written to the screen</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>chk</strong> : flopy.utils.check object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfmnw2.Mnw.get_item2_names">
 <em class="property">static </em><code class="descname">get_item2_names</code><span class="sig-paren">(</span><em>mnw2obj=None</em>, <em>node_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.get_item2_names" title="Permalink to this definition">¶</a></dt>
@@ -458,7 +492,7 @@ to assign (upon load) or retain (upon write) in reach_data array.</p>
 
 <dl class="class">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfmnw2.</code><code class="descname">ModflowMnw2</code><span class="sig-paren">(</span><em>model</em>, <em>mnwmax=0</em>, <em>nodtot=None</em>, <em>iwl2cb=0</em>, <em>mnwprnt=0</em>, <em>aux=[]</em>, <em>node_data=None</em>, <em>mnw=None</em>, <em>stress_period_data=None</em>, <em>itmp=[]</em>, <em>extension='mnw2'</em>, <em>unitnumber=34</em>, <em>gwt=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfmnw2.</code><code class="descname">ModflowMnw2</code><span class="sig-paren">(</span><em>model</em>, <em>mnwmax=0</em>, <em>nodtot=None</em>, <em>ipakcb=0</em>, <em>mnwprnt=0</em>, <em>aux=[]</em>, <em>node_data=None</em>, <em>mnw=None</em>, <em>stress_period_data=None</em>, <em>itmp=[]</em>, <em>extension='mnw2'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>gwt=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multi-Node Well 2 Package Class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -485,20 +519,20 @@ If this is a desired option, then it can be implemented by specifying a negative
 &#8220;MNWMAX&#8221;&#8211;the first value listed in Record 1 (Line 1) of the MNW2 input data file.
 If this is done, then the code will assume that the very next value on that line
 will be the desired value of &#8220;NODTOT&#8221;. The model will then reset &#8220;MNWMAX&#8221; to its absolute value.
-The value of &#8220;IWL2CB&#8221; will become the third value on that line, etc.</p>
+The value of &#8220;ipakcb&#8221; will become the third value on that line, etc.</p>
 </div></blockquote>
-<p><strong>iwl2cb</strong> : int</p>
+<p><strong>ipakcb</strong> : int</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>is a flag and a unit number:</dt>
 <dd><dl class="first docutils">
-<dt>if IWL2CB &gt; 0, then it is the unit number to which MNW cell-by-cell flow terms</dt>
+<dt>if ipakcb &gt; 0, then it is the unit number to which MNW cell-by-cell flow terms</dt>
 <dd><p class="first last">will be recorded whenever cell-by-cell budget data are written to a file
 (as determined by the outputcontrol options of MODFLOW).</p>
 </dd>
 </dl>
-<p>if IWL2CB = 0, then MNW cell-by-cell flow terms will not be printed or recorded.
-if IWL2CB &lt; 0, then well injection or withdrawal rates and water levels in the well</p>
+<p>if ipakcb = 0, then MNW cell-by-cell flow terms will not be printed or recorded.
+if ipakcb &lt; 0, then well injection or withdrawal rates and water levels in the well</p>
 <blockquote class="last">
 <div><p>and its multiple cells will be printed in the main MODFLOW listing (output) file
 whenever cell-by-cell budget data are written to a file
@@ -563,7 +597,20 @@ previous stress period and dataset 4 is skipped.</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
 <blockquote>
-<div><p>File unit number (default is 34).</p>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
+<blockquote>
+<div><p>Filenames to use for the package and the output files. If
+filenames=None the package name will be created using the model name
+and package extension and the cbc output name will be created using
+the model name and .cbc extension (for example, modflowtest.cbc),
+if ipakcbc is a number greater than zero. If a single string is passed
+the package will be set to the string and cbc output names will be
+created using the model name and .cbc extension, if ipakcbc is a
+number greater than zero. To define the names for all package files
+(input and output) the length of the list of strings should be 2.
+Default is None.</p>
 </div></blockquote>
 <p><strong>gwt</strong> : boolean</p>
 <blockquote class="last">
@@ -582,7 +629,7 @@ previous stress period and dataset 4 is skipped.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check package data for common errors.</p>
+<dd><p>Check mnw2 package data for common errors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -590,7 +637,7 @@ previous stress period and dataset 4 is skipped.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
 <blockquote>
 <div><p>String defining file name or file handle for summary file
-of check method output. If a sting is passed a file handle
+of check method output. If a string is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
 </div></blockquote>
@@ -614,9 +661,30 @@ performed. If level=1, full checks are performed.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">mnw2</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfmnw2.ModflowMnw2.get_allnode_data">
+<code class="descname">get_allnode_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.get_allnode_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a version of the node_data array that has all MNW2 nodes listed explicitly.
+For example, MNWs with open intervals encompassing multiple layers would have a row
+entry for each layer. Ztop and zbotm values indicate the top and bottom elevations of the node
+(these are the same as the layer top and bottom if the node fully penetrates that layer).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>allnode_data</strong> : np.recarray</p>
+<blockquote class="last">
+<div><p>Numpy record array of same form as node_data, except each row represents only one node.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -732,7 +800,7 @@ Adds an attribute for each layer in each data array</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.write_file">
-<code class="descname">write_file</code><span class="sig-paren">(</span><em>filename=None</em>, <em>float_format='{:.2f}'</em>, <em>use_tables=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.write_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_file</code><span class="sig-paren">(</span><em>filename=None</em>, <em>float_format=' {:15.7E}'</em>, <em>use_tables=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.write_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the package file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -744,14 +812,6 @@ Adds an attribute for each layer in each data array</p>
 </table>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.modflow.mfmnw2.line_parse">
-<code class="descclassname">flopy.modflow.mfmnw2.</code><code class="descname">line_parse</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.line_parse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert a line of text into to a list of values.  This handles the
-case where a free formatted MODFLOW input file may have commas in
-it.</p>
 </dd></dl>
 
 </div>
@@ -797,12 +857,12 @@ it.</p>
         <li class="right" >
           <a href="mfmnw1.html" title="flopy.modflow.mfmnw1 Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

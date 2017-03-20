@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.plot.plotutil Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.plot.plotutil Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.export.netcdf Module" href="netcdf.html" />
     <link rel="prev" title="flopy.plot.crosssection Module" href="crosssection.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="crosssection.html" title="flopy.plot.crosssection Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -335,8 +335,8 @@ grid.</p>
 
 <dl class="function">
 <dt id="flopy.plot.plotutil.plot_cvfd">
-<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">plot_cvfd</code><span class="sig-paren">(</span><em>verts</em>, <em>iverts</em>, <em>ax=None</em>, <em>cmap='Dark2'</em>, <em>edgecolor='scaled'</em>, <em>facecolor='scaled'</em>, <em>a=None</em>, <em>masked_values=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.plot_cvfd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generic function for plotting a control volume finite different grid of
+<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">plot_cvfd</code><span class="sig-paren">(</span><em>verts</em>, <em>iverts</em>, <em>ax=None</em>, <em>layer=0</em>, <em>cmap='Dark2'</em>, <em>edgecolor='scaled'</em>, <em>facecolor='scaled'</em>, <em>a=None</em>, <em>masked_values=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.plot_cvfd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic function for plotting a control volume finite difference grid of
 information.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -349,6 +349,15 @@ information.</p>
 <p><strong>iverts</strong> : list of lists</p>
 <blockquote>
 <div><p>should be of len(ncells) with a list of vertex number for each cell</p>
+</div></blockquote>
+<p><strong>ax</strong> : matplotlib.pylot axis</p>
+<blockquote>
+<div><p>matplotlib.pyplot axis instance. Default is None</p>
+</div></blockquote>
+<p><strong>layer</strong> : int</p>
+<blockquote>
+<div><p>layer to extract. Used in combination to the optional ncpl
+parameter. Default is 0</p>
 </div></blockquote>
 <p><strong>linewidth</strong> : float</p>
 <blockquote>
@@ -390,7 +399,7 @@ Some common kwargs would be &#8216;linewidths&#8217;, &#8216;linestyles&#8217;, 
 
 <dl class="function">
 <dt id="flopy.plot.plotutil.plot_shapefile">
-<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">plot_shapefile</code><span class="sig-paren">(</span><em>shp</em>, <em>ax=None</em>, <em>radius=500.0</em>, <em>cmap='Dark2'</em>, <em>edgecolor='scaled'</em>, <em>facecolor='scaled'</em>, <em>a=None</em>, <em>masked_values=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.plot_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">plot_shapefile</code><span class="sig-paren">(</span><em>shp</em>, <em>ax=None</em>, <em>radius=500.0</em>, <em>cmap='Dark2'</em>, <em>edgecolor='scaled'</em>, <em>facecolor='scaled'</em>, <em>a=None</em>, <em>masked_values=None</em>, <em>idx=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.plot_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generic function for plotting a shapefile.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -427,6 +436,11 @@ Some common kwargs would be &#8216;linewidths&#8217;, &#8216;linestyles&#8217;, 
 <p><strong>masked_values</strong> : iterable of floats, ints</p>
 <blockquote>
 <div><p>Values to mask.</p>
+</div></blockquote>
+<p><strong>idx</strong> : iterable int</p>
+<blockquote>
+<div><p>A list or array that contains shape numbers to include in the
+patch collection.  Return all shapes if not specified.</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : dictionary</p>
 <blockquote>
@@ -548,7 +562,7 @@ shapefiles.</p>
 
 <dl class="function">
 <dt id="flopy.plot.plotutil.shapefile_to_patch_collection">
-<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">shapefile_to_patch_collection</code><span class="sig-paren">(</span><em>shp</em>, <em>radius=500.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.shapefile_to_patch_collection" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">shapefile_to_patch_collection</code><span class="sig-paren">(</span><em>shp</em>, <em>radius=500.0</em>, <em>idx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.shapefile_to_patch_collection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a patch collection from the shapes in a shapefile</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -559,8 +573,19 @@ shapefiles.</p>
 <div><p>Name of the shapefile to convert to a PatchCollection.</p>
 </div></blockquote>
 <p><strong>radius</strong> : float</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Radius of circle for points in the shapefile.  (Default is 500.)</p>
+</div></blockquote>
+<p><strong>idx</strong> : iterable int</p>
+<blockquote>
+<div><p>A list or array that contains shape numbers to include in the
+patch collection.  Return all shapes if not specified.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pc</strong> : matplotlib.collections.PatchCollection</p>
+<blockquote class="last">
+<div><p>Patch collection of shapes in the shapefile</p>
 </div></blockquote>
 </td>
 </tr>
@@ -611,12 +636,12 @@ shapefiles.</p>
         <li class="right" >
           <a href="crosssection.html" title="flopy.plot.crosssection Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

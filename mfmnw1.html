@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfmnw1 Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfmnw1 Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfmnw2 Module" href="mfmnw2.html" />
     <link rel="prev" title="flopy.modflow.mflpf Module" href="mflpf.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mflpf.html" title="flopy.modflow.mflpf Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-modflow-mfmnw1-module"></span><h1>flopy.modflow.mfmnw1 Module<a class="headerlink" href="#module-flopy.modflow.mfmnw1" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfmnw1.ModflowMnw1">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfmnw1.</code><code class="descname">ModflowMnw1</code><span class="sig-paren">(</span><em>model</em>, <em>mxmnw=0</em>, <em>ipakcb=0</em>, <em>iwelpt=0</em>, <em>nomoiter=0</em>, <em>kspref=1</em>, <em>wel1_bynode_qsum=None</em>, <em>itmp=0</em>, <em>lay_row_col_qdes_mn_multi=None</em>, <em>mnwname=None</em>, <em>extension='mnw1'</em>, <em>unitnumber=33</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw1.ModflowMnw1" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfmnw1.</code><code class="descname">ModflowMnw1</code><span class="sig-paren">(</span><em>model</em>, <em>mxmnw=0</em>, <em>ipakcb=None</em>, <em>iwelpt=0</em>, <em>nomoiter=0</em>, <em>kspref=1</em>, <em>wel1_bynode_qsum=None</em>, <em>itmp=0</em>, <em>lay_row_col_qdes_mn_multi=None</em>, <em>mnwname=None</em>, <em>extension='mnw1'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw1.ModflowMnw1" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Multi-Node Well 1 Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -133,8 +133,14 @@ auxilary output, e.g. [[&#8216;test.ByNode&#8217;,92,&#8217;ALLTIME&#8217;]]</p>
 <div><p>Filename extension (default is &#8216;mnw1&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
-<blockquote class="last">
+<blockquote>
 <div><p>File unit number (default is 33).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : string or list of strings</p>
+<blockquote class="last">
+<div><p>File name of the package (with extension) or a list with the filename
+of the package and the cell-by-cell budget file for ipakcb. Default
+is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -194,7 +200,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfmnw1.ModflowMnw1.load">
-<code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw1.ModflowMnw1.load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em>, <em>unitnumber=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw1.ModflowMnw1.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The load method has not been implemented for this package.</p>
 </dd></dl>
 
@@ -338,12 +344,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mflpf.html" title="flopy.modflow.mflpf Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.mt3d.mtadv Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.mt3d.mtadv Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.mt3d.mtbtn Module" href="mtbtn.html" />
     <link rel="prev" title="flopy.modpath.mpsim Module" href="mpsim.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mpsim.html" title="flopy.modpath.mpsim Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -72,7 +72,7 @@
 <span id="flopy-mt3d-mtadv-module"></span><h1>flopy.mt3d.mtadv Module<a class="headerlink" href="#module-flopy.mt3d.mtadv" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtadv.Mt3dAdv">
-<em class="property">class </em><code class="descclassname">flopy.mt3d.mtadv.</code><code class="descname">Mt3dAdv</code><span class="sig-paren">(</span><em>model</em>, <em>mixelm=3</em>, <em>percel=0.75</em>, <em>mxpart=800000</em>, <em>nadvfd=1</em>, <em>itrack=3</em>, <em>wd=0.5</em>, <em>dceps=1e-05</em>, <em>nplane=2</em>, <em>npl=10</em>, <em>nph=40</em>, <em>npmin=5</em>, <em>npmax=80</em>, <em>nlsink=0</em>, <em>npsink=15</em>, <em>dchmoc=0.0001</em>, <em>extension='adv'</em>, <em>unitnumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtadv.Mt3dAdv" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mtadv.</code><code class="descname">Mt3dAdv</code><span class="sig-paren">(</span><em>model</em>, <em>mixelm=3</em>, <em>percel=0.75</em>, <em>mxpart=800000</em>, <em>nadvfd=1</em>, <em>itrack=3</em>, <em>wd=0.5</em>, <em>dceps=1e-05</em>, <em>nplane=2</em>, <em>npl=10</em>, <em>nph=40</em>, <em>npmin=5</em>, <em>npmax=80</em>, <em>nlsink=0</em>, <em>npsink=15</em>, <em>dchmoc=0.0001</em>, <em>extension='adv'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtadv.Mt3dAdv" title="Permalink to this definition">¶</a></dt>
 <dd><p>MT3DMS Advection Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -242,8 +242,15 @@ Concentration Gradient is less than or equal to DCHMOC.</p>
 <div><p>Filename extension (default is &#8216;adv&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 32).</p>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -478,12 +485,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mpsim.html" title="flopy.modpath.mpsim Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

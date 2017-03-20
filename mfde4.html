@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfde4 Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfde4 Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfdis Module" href="mfdis.html" />
     <link rel="prev" title="flopy.modflow.mfchd Module" href="mfchd.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfchd.html" title="flopy.modflow.mfchd Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowDe4 class as <cite>flopy.modflow.ModflowDe4</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfde4.ModflowDe4">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfde4.</code><code class="descname">ModflowDe4</code><span class="sig-paren">(</span><em>model</em>, <em>itmx=50</em>, <em>mxup=0</em>, <em>mxlow=0</em>, <em>mxbw=0</em>, <em>ifreq=3</em>, <em>mutd4=0</em>, <em>accl=1.0</em>, <em>hclose=1e-05</em>, <em>iprd4=1</em>, <em>extension='de4'</em>, <em>unitnumber=28</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfde4.ModflowDe4" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfde4.</code><code class="descname">ModflowDe4</code><span class="sig-paren">(</span><em>model</em>, <em>itmx=50</em>, <em>mxup=0</em>, <em>mxlow=0</em>, <em>mxbw=0</em>, <em>ifreq=3</em>, <em>mutd4=0</em>, <em>accl=1.0</em>, <em>hclose=1e-05</em>, <em>iprd4=1</em>, <em>extension='de4'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfde4.ModflowDe4" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW DE4 - Direct Solver Package</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -170,8 +170,15 @@ even if not iterating (default is 1).</p>
 <div><p>Filename extension (default is &#8216;de4&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 28).</p>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -282,12 +289,12 @@ constructed using the function
         <li class="right" >
           <a href="mfchd.html" title="flopy.modflow.mfchd Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

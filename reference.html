@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.reference Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.utils.reference Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.util_array Module" href="util_array.html" />
     <link rel="prev" title="flopy.utils.swroutputfile Module" href="swroutputfile.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -53,12 +52,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="util_array.html" title="flopy.utils.util_array Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
           <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -73,19 +69,21 @@
 <p>Module spatial referencing for flopy model objects</p>
 <dl class="class">
 <dt id="flopy.utils.reference.SpatialReference">
-<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">SpatialReference</code><span class="sig-paren">(</span><em>delr=1.0</em>, <em>delc=1.0</em>, <em>lenuni=1</em>, <em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em>, <em>proj4_str='EPSG:4326'</em>, <em>units=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
-<dd><p>a simple class to locate the model grid in x-y space</p>
+<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">SpatialReference</code><span class="sig-paren">(</span><em>delr=array([]</em>, <em>dtype=float64)</em>, <em>delc=array([]</em>, <em>dtype=float64)</em>, <em>lenuni=1</em>, <em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>proj4_str='EPSG:4326'</em>, <em>epsg=None</em>, <em>units=None</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>a class to locate a structured model grid in x-y space</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>delr</strong> : numpy ndarray</p>
 <blockquote>
-<div><p>the model discretization delr vector</p>
+<div><p>the model discretization delr vector
+(An array of spacings along a row)</p>
 </div></blockquote>
 <p><strong>delc</strong> : numpy ndarray</p>
 <blockquote>
-<div><p>the model discretization delc vector</p>
+<div><p>the model discretization delc vector
+(An array of spacings along a column)</p>
 </div></blockquote>
 <p><strong>lenuni</strong> : int</p>
 <blockquote>
@@ -93,19 +91,48 @@
 </div></blockquote>
 <p><strong>xul</strong> : float</p>
 <blockquote>
-<div><p>the x coordinate of the upper left corner of the grid</p>
+<div><p>the x coordinate of the upper left corner of the grid
+Enter either xul and yul or xll and yll.</p>
 </div></blockquote>
 <p><strong>yul</strong> : float</p>
 <blockquote>
-<div><p>the y coordinate of the upper left corner of the grid</p>
+<div><p>the y coordinate of the upper left corner of the grid
+Enter either xul and yul or xll and yll.</p>
+</div></blockquote>
+<p><strong>xll</strong> : float</p>
+<blockquote>
+<div><p>the x coordinate of the lower left corner of the grid
+Enter either xul and yul or xll and yll.</p>
+</div></blockquote>
+<p><strong>yll</strong> : float</p>
+<blockquote>
+<div><p>the y coordinate of the lower left corner of the grid
+Enter either xul and yul or xll and yll.</p>
 </div></blockquote>
 <p><strong>rotation</strong> : float</p>
 <blockquote>
 <div><p>the counter-clockwise rotation (in degrees) of the grid</p>
 </div></blockquote>
 <p><strong>proj4_str: str</strong></p>
+<blockquote>
+<div><p>a PROJ4 string that identifies the grid in space. warning: case
+sensitive!</p>
+</div></blockquote>
+<p><strong>units</strong> : string</p>
+<blockquote>
+<div><p>Units for the grid.  Must be either feet or meters</p>
+</div></blockquote>
+<p><strong>epsg</strong> : int</p>
+<blockquote>
+<div><p>EPSG code that identifies the grid in space. Can be used in lieu of
+proj4. PROJ4 attribute will auto-populate if there is an internet
+connection(via get_proj4 method).
+See <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a> or spatialreference.org</p>
+</div></blockquote>
+<p><strong>length_multiplier</strong> : float</p>
 <blockquote class="last">
-<div><p>a PROJ4 string that identifies the grid in space. warning: case sensitive!</p>
+<div><p>multiplier to convert model units to spatial reference units.
+delr and delc above will be multiplied by this value. (default=1.)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -116,6 +143,17 @@
 instantiation, but only before any of the other attributes and methods are
 accessed</p>
 <p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.reference.SpatialReference.vertices" title="flopy.utils.reference.SpatialReference.vertices"><code class="xref py py-obj docutils literal"><span class="pre">vertices</span></code></a></td>
+<td>Returns a list of vertices for</td>
+</tr>
+</tbody>
+</table>
 <table border="1" class="docutils">
 <colgroup>
 <col width="21%" />
@@ -148,6 +186,37 @@ accessed</p>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="flopy.utils.reference.SpatialReference.bounds">
+<code class="descname">bounds</code><a class="headerlink" href="#flopy.utils.reference.SpatialReference.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bounding box in shapely order.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.contour_array">
+<code class="descname">contour_array</code><span class="sig-paren">(</span><em>ax</em>, <em>a</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.contour_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a QuadMesh plot of the specified array using pcolormesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.axes.Axes</p>
+<blockquote>
+<div><p>ax to add the contours</p>
+</div></blockquote>
+<p><strong>a</strong> : np.ndarray</p>
+<blockquote>
+<div><p>array to contour</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>contour_set</strong> : ContourSet</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_extent">
 <code class="descname">get_extent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_extent" title="Permalink to this definition">¶</a></dt>
@@ -156,9 +225,50 @@ accessed</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.get_grid_line_collection">
+<code class="descname">get_grid_line_collection</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_grid_line_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a LineCollection of the grid</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_grid_lines">
 <code class="descname">get_grid_lines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_grid_lines" title="Permalink to this definition">¶</a></dt>
-<dd><p>get the grid lines as a list</p>
+<dd><p>Get the grid lines as a list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.get_grid_map_plotter">
+<code class="descname">get_grid_map_plotter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_grid_map_plotter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a QuadMesh plotting object for this grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.get_rc">
+<code class="descname">get_rc</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_rc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the row and column of a point or sequence of points
+in real-world coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : scalar or sequence of x coordinates</p>
+<p><strong>y</strong> : scalar or sequence of y coordinates</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>r</strong> : row or sequence of rows (zero-based)</p>
+<p class="last"><strong>c</strong> : column or sequence of columns (zero-based)</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -227,6 +337,22 @@ xi can be passed in as (xgrid, ygrid).</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.plot_array">
+<code class="descname">plot_array</code><span class="sig-paren">(</span><em>a</em>, <em>ax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.plot_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a QuadMesh plot of the specified array using pcolormesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>a</strong> : np.ndarray</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReference.rotate">
 <em class="property">static </em><code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.rotate" title="Permalink to this definition">¶</a></dt>
@@ -237,8 +363,21 @@ degrees.</p>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.set_spatialreference">
-<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>rotation=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.set_spatialreference" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.set_spatialreference" title="Permalink to this definition">¶</a></dt>
 <dd><p>set spatial reference - can be called from model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values, apply rotation, scale and offset,
+to convert them from model coordinates to real-world coordinates.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.utils.reference.SpatialReference.vertices">
+<code class="descname">vertices</code><a class="headerlink" href="#flopy.utils.reference.SpatialReference.vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of vertices for</p>
 </dd></dl>
 
 <dl class="method">
@@ -247,6 +386,483 @@ degrees.</p>
 <dd><p>write a PEST-style grid specification file</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.write_shapefile">
+<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>filename='grid.shp'</em>, <em>epsg=None</em>, <em>prj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.write_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a shapefile of the grid with just the row and column attributes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured">
+<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">SpatialReferenceUnstructured</code><span class="sig-paren">(</span><em>xc</em>, <em>yc</em>, <em>verts</em>, <em>iverts</em>, <em>ncpl</em>, <em>layered=True</em>, <em>lenuni=1</em>, <em>proj4_str='EPSG:4326'</em>, <em>epsg=None</em>, <em>units=None</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured" title="Permalink to this definition">¶</a></dt>
+<dd><p>a class to locate an unstructured model grid in x-y space</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verts</strong> : ndarray</p>
+<blockquote>
+<div><p>2d array of x and y points.</p>
+</div></blockquote>
+<p><strong>iverts</strong> : list of lists</p>
+<blockquote>
+<div><p>should be of len(ncells) with a list of vertex numbers for each cell</p>
+</div></blockquote>
+<p><strong>ncpl</strong> : ndarray</p>
+<blockquote>
+<div><p>array containing the number of cells per layer.  ncpl.sum() must be
+equal to the total number of cells in the grid.</p>
+</div></blockquote>
+<p><strong>layered</strong> : boolean</p>
+<blockquote>
+<div><p>flag to indicated that the grid is layered.  In this case, the vertices
+define the grid for single layer, and all layers use this same grid.
+In this case the ncpl value for each layer must equal len(iverts).
+If not layered, then verts and iverts are specified for all cells and
+all layers in the grid.  In this case, npcl.sum() must equal
+len(iverts).</p>
+</div></blockquote>
+<p><strong>lenuni</strong> : int</p>
+<blockquote>
+<div><p>the length units flag from the discretization package</p>
+</div></blockquote>
+<p><strong>proj4_str: str</strong></p>
+<blockquote>
+<div><p>a PROJ4 string that identifies the grid in space. warning: case
+sensitive!</p>
+</div></blockquote>
+<p><strong>units</strong> : string</p>
+<blockquote>
+<div><p>Units for the grid.  Must be either feet or meters</p>
+</div></blockquote>
+<p><strong>epsg</strong> : int</p>
+<blockquote>
+<div><p>EPSG code that identifies the grid in space. Can be used in lieu of
+proj4. PROJ4 attribute will auto-populate if there is an internet
+connection(via get_proj4 method).
+See <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a> or spatialreference.org</p>
+</div></blockquote>
+<p><strong>length_multiplier</strong> : float</p>
+<blockquote class="last">
+<div><p>multiplier to convert model units to spatial reference units.
+delr and delc above will be multiplied by this value. (default=1.)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>xcenter</td>
+<td>(ndarray) array of x cell centers</td>
+</tr>
+<tr class="row-even"><td>ycenter</td>
+<td>(ndarray) array of y cell centers</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.bounds">
+<code class="descname">bounds</code><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bounding box in shapely order.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.contour_array">
+<code class="descname">contour_array</code><span class="sig-paren">(</span><em>ax</em>, <em>a</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.contour_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a QuadMesh plot of the specified array using pcolormesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.axes.Axes</p>
+<blockquote>
+<div><p>ax to add the contours</p>
+</div></blockquote>
+<p><strong>a</strong> : np.ndarray</p>
+<blockquote>
+<div><p>array to contour</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>contour_set</strong> : ContourSet</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.from_argus_export">
+<em class="property">classmethod </em><code class="descname">from_argus_export</code><span class="sig-paren">(</span><em>fname</em>, <em>nlay=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.from_argus_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new SpatialReferenceUnstructured grid from an Argus One
+Trimesh file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
+<blockquote>
+<div><p>File name</p>
+</div></blockquote>
+<p><strong>nlay</strong> : int</p>
+<blockquote>
+<div><p>Number of layers to create</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>sru</strong> : flopy.utils.reference.SpatialReferenceUnstructured</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.from_gridspec">
+<em class="property">classmethod </em><code class="descname">from_gridspec</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.from_gridspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new SpatialReferenceUnstructured grid from an PEST
+grid specification file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
+<blockquote>
+<div><p>File name for grid specification file</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>sru</strong> : flopy.utils.reference.SpatialReferenceUnstructured</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_extent">
+<code class="descname">get_extent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the extent of the grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>extent</strong> : tuple</p>
+<blockquote class="last">
+<div><p>min and max grid coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_grid_line_collection">
+<code class="descname">get_grid_line_collection</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_grid_line_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a patch collection of the grid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_grid_lines">
+<code class="descname">get_grid_lines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_grid_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the grid lines as a list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_grid_map_plotter">
+<code class="descname">get_grid_map_plotter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_grid_map_plotter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a QuadMesh plotting object for this grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_rc">
+<code class="descname">get_rc</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_rc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the row and column of a point or sequence of points
+in real-world coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : scalar or sequence of x coordinates</p>
+<p><strong>y</strong> : scalar or sequence of y coordinates</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>r</strong> : row or sequence of rows (zero-based)</p>
+<p class="last"><strong>c</strong> : column or sequence of columns (zero-based)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_xcenter_array">
+<code class="descname">get_xcenter_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_xcenter_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell center x
+coordinate for every cell in the grid in model space - not offset or
+rotated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_xedge_array">
+<code class="descname">get_xedge_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_xedge_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell edge x
+coordinates for every column in the grid in model space - not offset
+or rotated.  Array is of size (ncol + 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_ycenter_array">
+<code class="descname">get_ycenter_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_ycenter_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell center x
+coordinate for every cell in the grid in model space - not offset of
+rotated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_yedge_array">
+<code class="descname">get_yedge_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_yedge_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy one-dimensional float array that has the cell edge y
+coordinates for every row in the grid in model space - not offset or
+rotated. Array is of size (nrow + 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.interpolate">
+<code class="descname">interpolate</code><span class="sig-paren">(</span><em>a</em>, <em>xi</em>, <em>method='nearest'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the griddata method to interpolate values from an array onto the
+points defined in xi.  For any values outside of the grid, use
+&#8216;nearest&#8217; to find a value for them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>array to interpolate from.  It must be of size nrow, ncol</p>
+</div></blockquote>
+<p><strong>xi</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>array containing x and y point coordinates of size (npts, 2). xi
+also works with broadcasting so that if a is a 2d array, then
+xi can be passed in as (xgrid, ygrid).</p>
+</div></blockquote>
+<p><strong>method</strong> : {&#8216;linear&#8217;, &#8216;nearest&#8217;, &#8216;cubic&#8217;}</p>
+<blockquote>
+<div><p>method to use for interpolation (default is &#8216;nearest&#8217;)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>b</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array of size (npts)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.plot_array">
+<code class="descname">plot_array</code><span class="sig-paren">(</span><em>a</em>, <em>ax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.plot_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a QuadMesh plot of the specified array using patches</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>a</strong> : np.ndarray</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values calculate the rotation about an
+arbitrary origin and then return the rotated coordinates.  theta is in
+degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.set_spatialreference">
+<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.set_spatialreference" title="Permalink to this definition">¶</a></dt>
+<dd><p>set spatial reference - can be called from model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values, apply rotation, scale and offset,
+to convert them from model coordinates to real-world coordinates.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.vertices">
+<code class="descname">vertices</code><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of vertices for</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.write_gridSpec">
+<code class="descname">write_gridSpec</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.write_gridSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a PEST-style grid specification file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote class="last">
+<div><p>filename for grid specification file</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.write_shapefile">
+<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>filename='grid.shp'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.write_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write shapefile of the grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote class="last">
+<div><p>filename for shapefile</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.reference.epsgRef">
+<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">epsgRef</code><a class="headerlink" href="#flopy.utils.reference.epsgRef" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a local database of projection file text referenced by epsg code.
+The database is located in the site packages folder in epsgref.py, which
+contains a dictionary, prj, of projection file text keyed by epsg value.</p>
+<dl class="method">
+<dt id="flopy.utils.reference.epsgRef.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>epsg</em>, <em>prj</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.epsgRef.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an epsg code to epsgref.py</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.epsgRef.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>epsg</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.epsgRef.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>removes an epsg entry from epsgref.py</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.reference.get_spatialreference">
+<code class="descclassname">flopy.utils.reference.</code><code class="descname">get_spatialreference</code><span class="sig-paren">(</span><em>epsg</em>, <em>text='esriwkt'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.get_spatialreference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets text for given epsg code and text format from spatialreference.org
+Fetches the reference text using the url:</p>
+<blockquote>
+<div><a class="reference external" href="http://spatialreference.org/ref/epsg">http://spatialreference.org/ref/epsg</a>/&lt;epsg code&gt;/&lt;text&gt;/</div></blockquote>
+<p>See: <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>epsg</strong> : int</p>
+<blockquote>
+<div><p>epsg code for coordinate system</p>
+</div></blockquote>
+<p><strong>text</strong> : str</p>
+<blockquote>
+<div><p>string added to url</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>url</strong> : str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.reference.getprj">
+<code class="descclassname">flopy.utils.reference.</code><code class="descname">getprj</code><span class="sig-paren">(</span><em>epsg</em>, <em>addlocalreference=True</em>, <em>text='esriwkt'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.getprj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets projection file (.prj) text for given epsg code from spatialreference.org
+See: <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>epsg</strong> : int</p>
+<blockquote>
+<div><p>epsg code for coordinate system</p>
+</div></blockquote>
+<p><strong>addlocalreference</strong> : boolean</p>
+<blockquote>
+<div><p>adds the projection file text associated with epsg to a local
+database, epsgref.py, located in site-packages.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>prj</strong> : str</p>
+<blockquote class="last">
+<div><p>text for a projection (<a href="#id1"><span class="problematic" id="id2">*</span></a>.prj) file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.reference.getproj4">
+<code class="descclassname">flopy.utils.reference.</code><code class="descname">getproj4</code><span class="sig-paren">(</span><em>epsg</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.getproj4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets projection file (.prj) text for given epsg code from
+spatialreference.org. See: <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>epsg</strong> : int</p>
+<blockquote>
+<div><p>epsg code for coordinate system</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>prj</strong> : str</p>
+<blockquote class="last">
+<div><p>text for a projection (<a href="#id3"><span class="problematic" id="id4">*</span></a>.prj) file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -260,9 +876,6 @@ degrees.</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="swroutputfile.html"
                         title="previous chapter">flopy.utils.swroutputfile Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="util_array.html"
-                        title="next chapter">flopy.utils.util_array Module</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -287,17 +900,14 @@ degrees.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="util_array.html" title="flopy.utils.util_array Module"
-             >next</a> |</li>
-        <li class="right" >
           <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

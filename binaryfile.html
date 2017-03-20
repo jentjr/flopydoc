@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.utils.binaryhydmodfile Module" href="binaryhydmodfile.html" />
     <link rel="prev" title="flopy.utils.datafile Module" href="datafile.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="datafile.html" title="flopy.utils.datafile Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -79,7 +79,7 @@ important classes that can be accessed by the user.</p>
 </ul>
 <dl class="class">
 <dt id="flopy.utils.binaryfile.HeadFile">
-<em class="property">class </em><code class="descclassname">flopy.utils.binaryfile.</code><code class="descname">HeadFile</code><span class="sig-paren">(</span><em>filename</em>, <em>text='head'</em>, <em>precision='single'</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryfile.</code><code class="descname">HeadFile</code><span class="sig-paren">(</span><em>filename</em>, <em>text='head'</em>, <em>precision='auto'</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>HeadFile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -95,7 +95,7 @@ important classes that can be accessed by the user.</p>
 </div></blockquote>
 <p><strong>precision</strong> : string</p>
 <blockquote>
-<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;single&#8217;.</p>
+<div><p>&#8216;auto&#8217;, &#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;auto&#8217;.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -417,7 +417,7 @@ will be written</p>
 
 <dl class="class">
 <dt id="flopy.utils.binaryfile.UcnFile">
-<em class="property">class </em><code class="descclassname">flopy.utils.binaryfile.</code><code class="descname">UcnFile</code><span class="sig-paren">(</span><em>filename</em>, <em>text='concentration'</em>, <em>precision='single'</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryfile.</code><code class="descname">UcnFile</code><span class="sig-paren">(</span><em>filename</em>, <em>text='concentration'</em>, <em>precision='auto'</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>UcnFile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -433,7 +433,7 @@ will be written</p>
 </div></blockquote>
 <p><strong>precision</strong> : string</p>
 <blockquote>
-<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;single&#8217;.</p>
+<div><p>&#8216;auto&#8217;, &#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;auto&#8217;.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -818,7 +818,7 @@ full3D keyword for get_data.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_data">
-<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>text=None</em>, <em>verbose=False</em>, <em>full3D=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>text=None</em>, <em>paknam=None</em>, <em>full3D=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>get data from the budget file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -841,11 +841,6 @@ The kstp and kper values are zero based.</p>
 <blockquote>
 <div><p>The text identifier for the record.  Examples include
 &#8216;RIVER LEAKAGE&#8217;, &#8216;STORAGE&#8217;, &#8216;FLOW RIGHT FACE&#8217;, etc.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : boolean</p>
-<blockquote>
-<div><p>If true, print additional information to to the screen during the
-extraction.  (Default is False).</p>
 </div></blockquote>
 <p><strong>full3D</strong> : boolean</p>
 <blockquote>
@@ -926,7 +921,7 @@ kper values are zero-based.</p>
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_record">
-<code class="descname">get_record</code><span class="sig-paren">(</span><em>idx</em>, <em>full3D=False</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_record" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_record</code><span class="sig-paren">(</span><em>idx</em>, <em>full3D=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a single data record from the budget file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -935,11 +930,6 @@ kper values are zero-based.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
 <blockquote>
 <div><p>The zero-based record number.  The first record is record 0.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : boolean</p>
-<blockquote>
-<div><p>If true, print additional information to to the screen during the
-extraction.  (Default is False).</p>
 </div></blockquote>
 <p><strong>full3D</strong> : boolean</p>
 <blockquote>
@@ -982,14 +972,26 @@ array of size (nlay, nrow, ncol) for those list-style
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.binaryfile.CellBudgetFile.list_records">
-<code class="descname">list_records</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.list_records" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print a list of all of the records in the file</p>
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_unique_package_names">
+<code class="descname">get_unique_package_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_unique_package_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique package names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>List of unique package names in the binary file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.utils.binaryfile.CellBudgetFile.unique_record_names">
-<code class="descname">unique_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.unique_record_names" title="Permalink to this definition">¶</a></dt>
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_unique_record_names">
+<code class="descname">get_unique_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_unique_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1003,6 +1005,24 @@ array of size (nlay, nrow, ncol) for those list-style
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.list_records">
+<code class="descname">list_records</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.list_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of all of the records in the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.list_unique_packages">
+<code class="descname">list_unique_packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.list_unique_packages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of unique package names</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.list_unique_records">
+<code class="descname">list_unique_records</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.list_unique_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of unique record names</p>
 </dd></dl>
 
 </dd></dl>
@@ -1050,12 +1070,12 @@ array of size (nlay, nrow, ncol) for those list-style
         <li class="right" >
           <a href="datafile.html" title="flopy.utils.datafile Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

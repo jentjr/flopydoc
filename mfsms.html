@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfsms Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfsms Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfsor Module" href="mfsor.html" />
     <link rel="prev" title="flopy.modflow.mfsip Module" href="mfsip.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfsip.html" title="flopy.modflow.mfsip Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -75,7 +75,7 @@ Contains the ModflowSms class. Note that the user can access
 the ModflowSms class as <cite>flopy.modflow.ModflowSms</cite>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfsms.ModflowSms">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfsms.</code><code class="descname">ModflowSms</code><span class="sig-paren">(</span><em>model</em>, <em>hclose=0.0001</em>, <em>hiclose=0.0001</em>, <em>mxiter=100</em>, <em>iter1=20</em>, <em>iprsms=2</em>, <em>nonlinmeth=0</em>, <em>linmeth=2</em>, <em>theta=0.7</em>, <em>akappa=0.1</em>, <em>gamma=0.2</em>, <em>amomentum=0.001</em>, <em>numtrack=20</em>, <em>btol=10000.0</em>, <em>breduc=0.2</em>, <em>reslim=100.0</em>, <em>iacl=2</em>, <em>norder=0</em>, <em>level=7</em>, <em>north=2</em>, <em>iredsys=0</em>, <em>rrctol=0.0</em>, <em>idroptol=0</em>, <em>epsrn=0.001</em>, <em>clin='bcgs'</em>, <em>ipc=3</em>, <em>iscl=0</em>, <em>iord=0</em>, <em>rclosepcgu=0.1</em>, <em>relaxpcgu=1.0</em>, <em>extension='sms'</em>, <em>unitnumber=32</em>, <em>options=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsms.ModflowSms" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfsms.</code><code class="descname">ModflowSms</code><span class="sig-paren">(</span><em>model</em>, <em>hclose=0.0001</em>, <em>hiclose=0.0001</em>, <em>mxiter=100</em>, <em>iter1=20</em>, <em>iprsms=2</em>, <em>nonlinmeth=0</em>, <em>linmeth=2</em>, <em>theta=0.7</em>, <em>akappa=0.1</em>, <em>gamma=0.2</em>, <em>amomentum=0.001</em>, <em>numtrack=20</em>, <em>btol=10000.0</em>, <em>breduc=0.2</em>, <em>reslim=100.0</em>, <em>iacl=2</em>, <em>norder=0</em>, <em>level=7</em>, <em>north=2</em>, <em>iredsys=0</em>, <em>rrctol=0.0</em>, <em>idroptol=0</em>, <em>epsrn=0.001</em>, <em>clin='bcgs'</em>, <em>ipc=3</em>, <em>iscl=0</em>, <em>iord=0</em>, <em>rclosepcgu=0.1</em>, <em>relaxpcgu=1.0</em>, <em>extension='sms'</em>, <em>options=None</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsms.ModflowSms" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Basic Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -335,8 +335,15 @@ default value of 0.97 will be assigned to RELAXPCGU.</p>
 <div><p>File extension (default is &#8216;sms&#8217;.</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int, optional</p>
+<blockquote>
+<div><p>FORTRAN unit number for this package (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>FORTRAN unit number for this package (default is 32).</p>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a
+single string is passed the package will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -447,12 +454,12 @@ constructed using the function
         <li class="right" >
           <a href="mfsip.html" title="flopy.modflow.mfsip Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

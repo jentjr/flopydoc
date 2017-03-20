@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.zonbud Module &mdash; flopy 3.2.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.plot.map Module" href="map.html" />
+    <link rel="prev" title="flopy.utils.util_list Module" href="util_list.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body role="document">
+<div class="header" role="banner">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="util_list.html" title="flopy.utils.util_list Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-flopy.utils.zonbud">
+<span id="flopy-utils-zonbud-module"></span><h1>flopy.utils.zonbud Module<a class="headerlink" href="#module-flopy.utils.zonbud" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.utils.zonbud.ZoneBudget">
+<em class="property">class </em><code class="descclassname">flopy.utils.zonbud.</code><code class="descname">ZoneBudget</code><span class="sig-paren">(</span><em>cbc_file</em>, <em>z</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>aliases=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget" title="Permalink to this definition">¶</a></dt>
+<dd><p>ZoneBudget class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>cbc_file</strong> : str or CellBudgetFile object</p>
+<blockquote>
+<div><p>The file name or CellBudgetFile object for which budgets will be
+computed.</p>
+</div></blockquote>
+<p><strong>z</strong> : ndarray</p>
+<blockquote>
+<div><p>The array containing to zones to be used.</p>
+</div></blockquote>
+<p><strong>kstpkper</strong> : tuple of ints</p>
+<blockquote>
+<div><p>A tuple containing the time step and stress period (kstp, kper).
+The kstp and kper values are zero based.</p>
+</div></blockquote>
+<p><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>The simulation time.</p>
+</div></blockquote>
+<p><strong>aliases</strong> : dict</p>
+<blockquote>
+<div><p>A dictionary with key, value pairs of zones and aliases. Replaces
+the corresponding record and field names with the aliases provided.
+NOTE: When using this option in conjunction with a list of zones,
+the zone(s) passed may either be all strings (aliases), all
+integers, or mixed.</p>
+</div></blockquote>
+<p><strong>Example usage:</strong></p>
+<p><strong>&gt;&gt;&gt; from flopy.utils.zonbud import ZoneBudget, read_zbarray</strong></p>
+<p><strong>&gt;&gt;&gt; zon = read_zbarray(&#8216;zone_input_file&#8217;)</strong></p>
+<p><strong>&gt;&gt;&gt; zb = ZoneBudget(&#8216;zonebudtest.cbc&#8217;, zon, kstpkper=(0, 0))</strong></p>
+<p><strong>&gt;&gt;&gt; zb.to_csv(&#8216;zonebudtest.csv&#8217;)</strong></p>
+<p class="last"><strong>&gt;&gt;&gt; zb_mgd = zb * 7.48052 / 1000000</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.utils.zonbud.ZoneBudget.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a deepcopy of the object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.zonbud.ZoneBudget.get_budget">
+<code class="descname">get_budget</code><span class="sig-paren">(</span><em>names=None</em>, <em>zones=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.get_budget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of zonebudget record arrays.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : list of strings</p>
+<blockquote>
+<div><p>A list of strings containing the names of the records desired.</p>
+</div></blockquote>
+<p><strong>zones</strong> : list of ints or strings</p>
+<blockquote>
+<div><p>A list of integer zone numbers or zone names desired.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>budget_list</strong> : list of reecord arrays</p>
+<blockquote>
+<div><p>A list of the zonebudget record arrays.</p>
+</div></blockquote>
+<p>Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CONSTANT_HEAD_IN&#39;</span><span class="p">,</span> <span class="s1">&#39;RIVER_LEAKAGE_OUT&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zones</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ZONE_1&#39;</span><span class="p">,</span> <span class="s1">&#39;ZONE_2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bud</span> <span class="o">=</span> <span class="n">zb</span><span class="o">.</span><span class="n">get_budget</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">zones</span><span class="o">=</span><span class="n">zones</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.zonbud.ZoneBudget.get_dataframes">
+<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime=None</em>, <em>timeunit='D'</em>, <em>index_key='totim'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframes.
+Parameters
+&#8212;&#8212;&#8212;-</p>
+<dl class="docutils">
+<dt>start_datetime</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>Datetime string indicating the time at which the simulation starts.</dd>
+<dt>timeunit</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>String that indicates the time units used in the model.</dd>
+<dt>index_key</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd>Indicates the fields to be used (in addition to &#8220;record&#8221;) in the
+resulting DataFrame multi-index.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>df</strong> : Pandas DataFrame</p>
+<blockquote>
+<div><p>Pandas DataFrame with the budget information.</p>
+</div></blockquote>
+<p>Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">flopy.utils.zonbud</span> <span class="k">import</span> <span class="n">ZoneBudget</span><span class="p">,</span> <span class="n">read_zbarray</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zon</span> <span class="o">=</span> <span class="n">read_zbarray</span><span class="p">(</span><span class="s1">&#39;zone_input_file&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">zb</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.zonbud.ZoneBudget.get_record_names">
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of water budget record names in the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote>
+<div><p>List of unique text names in the binary file.</p>
+</div></blockquote>
+<p>Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">recnames</span> <span class="o">=</span> <span class="n">zb</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.zonbud.ZoneBudget.to_csv">
+<code class="descname">to_csv</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the budget record arrays to a formatted
+comma-separated values file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>The name of the output comma-separated values file.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.zonbud.sort_tuple">
+<code class="descclassname">flopy.utils.zonbud.</code><code class="descname">sort_tuple</code><span class="sig-paren">(</span><em>tup</em>, <em>n=2</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.sort_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort a tuple by the first n values
+:param tup:
+:param n:
+:return:</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.zonbud.write_zbarray">
+<code class="descclassname">flopy.utils.zonbud.</code><code class="descname">write_zbarray</code><span class="sig-paren">(</span><em>fname</em>, <em>X</em>, <em>fmtin=None</em>, <em>iprn=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.write_zbarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a numpy array in a format readable by the zonebudget program executable.</p>
+<p>File format:
+line 1: nlay, nrow, ncol
+line 2: INTERNAL (format)
+line 3: begin data
+.
+.
+.</p>
+<p>example from NACP:
+19 250 500
+INTERNAL      (10I8)</p>
+<blockquote>
+<div>199     199     199     199     199     199     199     199     199     199
+199     199     199     199     199     199     199     199     199     199
+...</div></blockquote>
+<dl class="docutils">
+<dt>INTERNAL      (10I8)</dt>
+<dd>199     199     199     199     199     199     199     199     199     199
+199     199     199     199     199     199     199     199     199     199
+...</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array</p>
+<blockquote>
+<div><p>The array of zones to be written.</p>
+</div></blockquote>
+<p><strong>fname</strong> :  str</p>
+<blockquote>
+<div><p>The path and name of the file to be written.</p>
+</div></blockquote>
+<p><strong>width</strong> : int</p>
+<blockquote class="last">
+<div><p>The number of values to write to each line.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="util_list.html"
+                        title="previous chapter">flopy.utils.util_list Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="map.html"
+                        title="next chapter">flopy.plot.map Module</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map.html" title="flopy.plot.map Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="util_list.html" title="flopy.utils.util_list Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Last updated on Mar 20, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

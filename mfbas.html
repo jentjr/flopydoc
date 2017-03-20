@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfbas Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfbas Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfbcf Module" href="mfbcf.html" />
     <link rel="prev" title="flopy.seawat.swt Module" href="swt.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="swt.html" title="flopy.seawat.swt Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowBas class as <cite>flopy.modflow.ModflowBas</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfbas.ModflowBas">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfbas.</code><code class="descname">ModflowBas</code><span class="sig-paren">(</span><em>model</em>, <em>ibound=1</em>, <em>strt=1.0</em>, <em>ifrefm=True</em>, <em>ixsec=False</em>, <em>ichflg=False</em>, <em>stoper=None</em>, <em>hnoflo=-999.99</em>, <em>extension='bas'</em>, <em>unitnumber=13</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfbas.ModflowBas" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfbas.</code><code class="descname">ModflowBas</code><span class="sig-paren">(</span><em>model</em>, <em>ibound=1</em>, <em>strt=1.0</em>, <em>ifrefm=True</em>, <em>ixsec=False</em>, <em>ichflg=False</em>, <em>stoper=None</em>, <em>hnoflo=-999.99</em>, <em>extension='bas'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfbas.ModflowBas" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Basic Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -94,6 +94,11 @@ this package will be added.</p>
 <p><strong>strt</strong> : array of floats, optional</p>
 <blockquote>
 <div><p>An array of starting heads (the default is 1.0).</p>
+</div></blockquote>
+<p><strong>ifrefm</strong> : bool, optional</p>
+<blockquote>
+<div><p>Indication if data should be read using free format (the default is 
+True).</p>
 </div></blockquote>
 <p><strong>ixsec</strong> : bool, optional</p>
 <blockquote>
@@ -118,11 +123,18 @@ will unless the budget percent discrepancy is greater than stoper
 </div></blockquote>
 <p><strong>extension</strong> : str, optional</p>
 <blockquote>
-<div><p>File extension (default is &#8216;bas&#8217;.</p>
+<div><p>File extension (default is &#8216;bas&#8217;).</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int, optional</p>
+<blockquote>
+<div><p>FORTRAN unit number for this package (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>FORTRAN unit number for this package (default is 13).</p>
+<div><p>Filenames to use for the package. If filenames=None the package name
+will be created using the model name and package extension. If a single
+string is passed the package name will be set to the string.
+Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -392,12 +404,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="swt.html" title="flopy.seawat.swt Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tutorial 2: Unconfined Transient Flow Model &mdash; flopy 3.2.5 documentation</title>
+    <title>Tutorial 2: Unconfined Transient Flow Model &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Tutorials" href="tutorials.html" />
     <link rel="next" title="Ipython Notebooks" href="notebooks.html" />
     <link rel="prev" title="Tutorial 1: Confined Steady-State Flow Model" href="tutorial1.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="tutorial1.html" title="Tutorial 1: Confined Steady-State Flow Model"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="tutorials.html" accesskey="U">Tutorials</a> &raquo;</li> 
       </ul>
     </div>  
@@ -198,21 +198,20 @@
 <h3>Output Control<a class="headerlink" href="#output-control" title="Permalink to this headline">¶</a></h3>
 <p>Here we create the output control package object, which is of the type <a class="reference external" href="mfoc.html">flopy.modflow.ModflowOc</a>.:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Output control</span>
-<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">,</span><span class="s1">&#39;drawdown&#39;</span><span class="p">,</span><span class="s1">&#39;budget&#39;</span><span class="p">,</span> <span class="s1">&#39;phead&#39;</span><span class="p">,</span> <span class="s1">&#39;pbudget&#39;</span><span class="p">]</span>
-<span class="n">save_head_every</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">words</span><span class="o">=</span><span class="n">words</span><span class="p">,</span> <span class="n">save_head_every</span><span class="o">=</span><span class="n">save_head_every</span><span class="p">)</span>
+<span class="n">spd</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="p">[</span><span class="s1">&#39;print head&#39;</span><span class="p">,</span> <span class="s1">&#39;save head&#39;</span><span class="p">,</span> <span class="s1">&#39;print budget&#39;</span><span class="p">,</span> <span class="s1">&#39;save budget&#39;</span><span class="p">]}</span>
+<span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">spd</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="running-the-modeling">
 <h2>Running the Modeling<a class="headerlink" href="#running-the-modeling" title="Permalink to this headline">¶</a></h2>
-<p>Run the model with run_model2, which returns a success flag and the stream of output. With run_model2, we have some finer control, that allows us to suppress the output.:</p>
+<p>Run the model with the run_model method, which returns a success flag and the stream of output. With run_model, we have some finer control, that allows us to suppress the output.:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Write the model input files</span>
 <span class="n">mf</span><span class="o">.</span><span class="n">write_input</span><span class="p">()</span>
 
 <span class="c1"># Run the model</span>
-<span class="n">success</span><span class="p">,</span> <span class="n">mfoutput</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">run_model</span><span class="p">(</span><span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">success</span><span class="p">,</span> <span class="n">mfoutput</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">run_model</span><span class="p">(</span><span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;MODFLOW did not terminate normally.&#39;</span><span class="p">)</span>
 </pre></div>
@@ -370,12 +369,12 @@
         <li class="right" >
           <a href="tutorial1.html" title="Tutorial 1: Confined Steady-State Flow Model"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="tutorials.html" >Tutorials</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

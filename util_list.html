@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.utils.util_list Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.utils.util_list Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.zonbud_utils Module" href="zonbud_utils.html" />
+    <link rel="next" title="flopy.utils.zonbud Module" href="zonbud.html" />
     <link rel="prev" title="flopy.utils.utils_def Module" href="utils_def.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -53,12 +53,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
+          <a href="zonbud.html" title="flopy.utils.zonbud Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="utils_def.html" title="flopy.utils.utils_def Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -130,6 +130,38 @@ this MfList will be added.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="flopy.utils.util_list.MfList.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>append the recarrays from one MfList to another
+Parameters
+&#8212;&#8212;&#8212;-</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>other: variable: an item that can be cast in to an MfList</dt>
+<dd>that corresponds with self</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div>dict of {kper:recarray}</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.util_list.MfList.drop">
+<code class="descname">drop</code><span class="sig-paren">(</span><em>fields</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop fields from an MfList</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fields</strong> : list or set of field names to drop</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dropped</strong> : MfList without the dropped fields</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="flopy.utils.util_list.MfList.from_4d">
 <em class="property">classmethod </em><code class="descname">from_4d</code><span class="sig-paren">(</span><em>model</em>, <em>pak_name</em>, <em>m4ds</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.from_4d" title="Permalink to this definition">¶</a></dt>
@@ -343,8 +375,8 @@ stress period</p>
   <p class="topless"><a href="utils_def.html"
                         title="previous chapter">flopy.utils.utils_def Module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="zonbud_utils.html"
-                        title="next chapter">flopy.utils.zonbud_utils Module</a></p>
+  <p class="topless"><a href="zonbud.html"
+                        title="next chapter">flopy.utils.zonbud Module</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -369,17 +401,17 @@ stress period</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="zonbud_utils.html" title="flopy.utils.zonbud_utils Module"
+          <a href="zonbud.html" title="flopy.utils.zonbud Module"
              >next</a> |</li>
         <li class="right" >
           <a href="utils_def.html" title="flopy.utils.utils_def Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

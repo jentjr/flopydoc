@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.5 documentation</title>
+    <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.6 documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.5',
+        VERSION:     '3.2.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.5 documentation" href="index.html" />
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
     <link rel="up" title="Flopy Code" href="code.html" />
     <link rel="next" title="flopy.modflow.mfwel Module" href="mfwel.html" />
     <link rel="prev" title="flopy.modflow.mfupw Module" href="mfupw.html" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="mfupw.html" title="flopy.modflow.mfupw Module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ the ModflowUzf1 class as <cite>flopy.modflow.ModflowUzf1</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>iuzfcb1=57</em>, <em>iuzfcb2=0</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>nuzgag=0</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>row_col_iftunit_iuzopt=[]</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>uzfbud_ext=[]</em>, <em>extension='uzf'</em>, <em>unitnumber=19</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>ipakcb=None</em>, <em>iuzfcb2=None</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>nuzgag=0</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>uzgag=None</em>, <em>extension='uzf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Unsaturated Zone Flow 1 Boundary Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -129,13 +129,13 @@ active if IRUNFLG is not zero. (default is 0)</p>
 ET will not be simulated if IETFLG is zero, otherwise it will be
 simulated. (default is 0)</p>
 </div></blockquote>
-<p><strong>iuzfcb1</strong> : integer</p>
+<p><strong>ipakcb</strong> : integer</p>
 <blockquote>
 <div><p>flag for writing ground-water recharge, ET, and ground-water
 discharge to land surface rates to a separate unformatted file using
-subroutine UBUDSV. If IUZFCB1&gt;0, it is the unit number to which the
+subroutine UBUDSV. If ipakcb&gt;0, it is the unit number to which the
 cell-by-cell rates will be written when &#8216;SAVE BUDGET&#8217; or a non-zero
-value for ICBCFL is specified in Output Control. If IUZFCB1 less than
+value for ICBCFL is specified in Output Control. If ipakcb less than
 or equal to 0, cell-by-cell rates will not be written to a file.
 (default is 57)</p>
 </div></blockquote>
@@ -229,7 +229,8 @@ simulations. (default is 0.20)</p>
 <p><strong>row_col_iftunit_iuzopt</strong> : list</p>
 <blockquote>
 <div><p>used to specify where information will be printed for each time step.
-IUZOPT specifies what that information will be. (default is [])
+row and col are zero-based. IUZOPT specifies what that information
+will be. (default is [])
 IUZOPT is</p>
 <dl class="docutils">
 <dt>1   Prints time, ground-water head, and thickness of unsaturated zone,</dt>
@@ -300,8 +301,25 @@ either the LPF or BCF Package. (default is 0.1)</p>
 <div><p>Filename extension (default is &#8216;uzf&#8217;)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
 <blockquote class="last">
-<div><p>File unit number (default is 19).</p>
+<div><p>Filenames to use for the package and the output files. If
+filenames=None the package name will be created using the model name
+and package extension and the cbc output, uzf output, and uzf
+observation names will be created using the model name and .cbc,
+uzfcb2.bin, and  .uzf#.out extensions (for example, modflowtest.cbc,
+and modflowtest.uzfcd2.bin), if ipakcbc, iuzfcb2, and len(uzgag) are
+numbers greater than zero. For uzf observations the file extension is
+created using the uzf observation file unit number (for example, for
+uzf observations written to unit 123 the file extension would be
+.uzf123.out). If a single string is passed the package name will be
+set to the string and other uzf output files will be set to the model
+name with the appropriate output file extensions. To define the names
+for all package files (input and output) the length of the list of
+strings should be 3 + len(uzgag). Default is None.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -357,7 +375,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -538,12 +556,12 @@ Adds an attribute for each layer in each data array</p>
         <li class="right" >
           <a href="mfupw.html" title="flopy.modflow.mfupw Module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.5 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jun 24, 2016.
+      Last updated on Mar 20, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>

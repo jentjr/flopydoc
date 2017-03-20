@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flopy.utils.sfroutputfile Module &mdash; flopy 3.2.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.2.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
+    <link rel="up" title="Flopy Code" href="code.html" />
+    <link rel="next" title="flopy.utils.util_array Module" href="util_array.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body role="document">
+<div class="header" role="banner">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="util_array.html" title="flopy.utils.util_array Module"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-flopy.utils.sfroutputfile">
+<span id="flopy-utils-sfroutputfile-module"></span><h1>flopy.utils.sfroutputfile Module<a class="headerlink" href="#module-flopy.utils.sfroutputfile" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.utils.sfroutputfile.SfrFile">
+<em class="property">class </em><code class="descclassname">flopy.utils.sfroutputfile.</code><code class="descname">SfrFile</code><span class="sig-paren">(</span><em>filename</em>, <em>geometries=None</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.sfroutputfile.SfrFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read SFR package results from text file (ISTCB2 &gt; 0)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
+<blockquote>
+<div><p>Name of the sfr output file</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>Write information to the screen.  Default is False.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sfq</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SfrFile</span><span class="p">(</span><span class="s1">&#39;mymodel.sfq&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.sfroutputfile.SfrFile.get_dataframe">
+<code class="descname">get_dataframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.sfroutputfile.SfrFile.get_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the whole text file into a pandas dataframe.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.utils.sfroutputfile.SfrFile.get_nstrm">
+<em class="property">static </em><code class="descname">get_nstrm</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.sfroutputfile.SfrFile.get_nstrm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of SFR cells from the results dataframe.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.sfroutputfile.SfrFile.get_results">
+<code class="descname">get_results</code><span class="sig-paren">(</span><em>segment</em>, <em>reach</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.sfroutputfile.SfrFile.get_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get results for a single reach or sequence of segments and reaches.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>segment</strong> : int or sequence of ints</p>
+<blockquote>
+<div><p>Segment number for each location.</p>
+</div></blockquote>
+<p><strong>reach</strong> : int or sequence of ints</p>
+<blockquote>
+<div><p>Reach number for each location</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>results</strong> : dataframe</p>
+<blockquote class="last">
+<div><p>Dataframe of same format as SfrFile.df, but subset to input locations.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.sfroutputfile.SfrFile.get_skiprows">
+<code class="descname">get_skiprows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.sfroutputfile.SfrFile.get_skiprows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of rows to skip at the top.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.sfroutputfile.SfrFile.get_times">
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.sfroutputfile.SfrFile.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the stress period/timestep headers.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="util_array.html"
+                        title="next chapter">flopy.utils.util_array Module</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="util_array.html" title="flopy.utils.util_array Module"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Last updated on Mar 20, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>
