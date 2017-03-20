@@ -12,10 +12,13 @@
    flopy.modflow.mfdisu
    flopy.modflow.mfdrn
    flopy.modflow.mfevt
+   flopy.modflow.mffhb
+   flopy.modflow.mfflwob
    flopy.modflow.mfgage
    flopy.modflow.mfghb
    flopy.modflow.mfgmg
    flopy.modflow.mfhfb
+   flopy.modflow.mfhob
    flopy.modflow.mfhyd
    flopy.modflow.mflak
    flopy.modflow.mflmt
@@ -26,7 +29,6 @@
    flopy.modflow.mfmnwi
    flopy.modflow.mfnwt
    flopy.modflow.mfoc
-   flopy.modflow.mfoc88
    flopy.modflow.mfoutput
    flopy.modflow.mfpar
    flopy.modflow.mfparbc
@@ -43,7 +45,6 @@
    flopy.modflow.mfsor
    flopy.modflow.mfstr
    flopy.modflow.mfsub
-   flopy.modflow.mfswi
    flopy.modflow.mfswi2
    flopy.modflow.mfswr1
    flopy.modflow.mfswt
@@ -57,12 +58,16 @@
    flopy.mt3d.mt
    flopy.mt3d.mtadv
    flopy.mt3d.mtbtn
+   flopy.mt3d.mtcts
    flopy.mt3d.mtdsp
    flopy.mt3d.mtgcg
+   flopy.mt3d.mtlkt
    flopy.mt3d.mtphc
    flopy.mt3d.mtrct
+   flopy.mt3d.mtsft
    flopy.mt3d.mtssm
    flopy.mt3d.mttob
+   flopy.mt3d.mtuzt
    flopy.pest.params
    flopy.pest.templatewriter
    flopy.pest.tplarray
@@ -77,14 +82,18 @@
    flopy.utils.datafile
    flopy.utils.flopy_io
    flopy.utils.formattedfile
+   flopy.utils.geometry
    flopy.utils.gridgen
+   flopy.utils.mfgrdfile
    flopy.utils.mflistfile
    flopy.utils.mfreadnam
    flopy.utils.modpathfile
    flopy.utils.observationfile
+   flopy.utils.postprocessing
    flopy.utils.reference
+   flopy.utils.sfroutputfile
    flopy.utils.swroutputfile
    flopy.utils.util_array
    flopy.utils.util_list
    flopy.utils.utils_def
-   flopy.utils.zonbud_utils
+   flopy.utils.zonbud

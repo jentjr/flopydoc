@@ -7,11 +7,11 @@ flopy modules and create the sphinx autodoc rst (restructured text) files.
 
 import os
 
-#print current working directory
-print os.getcwd()
+# print current working directory
+print(os.getcwd())
 
-#look through the following subdirectories, and grab all of the
-#modules that should be added to the sphinx documentation.
+# look through the following subdirectories, and grab all of the
+# modules that should be added to the sphinx documentation.
 flopypth = os.path.join('..', '..', '..', 'flopy3.git', 'flopy')
 pthlist = ['export', 'modflow', 'modpath', 'mt3d', 'pest', 'plot', 'seawat',
            'utils']
@@ -27,7 +27,7 @@ for pth in pthlist:
         if '.py' in filename:
             prefix = filename.strip().split('.')[0]
             nm = 'flopy.' + pth + '.' + prefix
-            print nm
+            print (nm)
             namelist.append(nm)
 
 

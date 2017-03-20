@@ -29,6 +29,17 @@ To update your version of FloPy3 with the bleeding edge code from the git reposi
 
     pip install git+https://github.com/modflowpy/flopy.git --update
 
+
+FloPy Resources
+===============
+
+`Version history <https://github.com/modflowpy/flopy/blob/develop/docs/supported_packages.md>`_
+
+`Supported packages <https://github.com/modflowpy/flopy/blob/develop/docs/supported_packages.md>`_
+
+`Model checking capabilities <https://github.com/modflowpy/flopy/blob/develop/docs/model_checks.md>`_
+
+
 FloPy Development Team
 ======================
 
@@ -39,13 +50,14 @@ FloPy is developed by a team of MODFLOW users that have switched over to using P
 * Chris Langevin
 * Joe Hughes
 * Jeremy White
+* Andy Leaf
+* Eric Morway
 * Alain Frances
 * Mike Fienen
 * Jeff Starn
 
 with contributions from:
 
-* Andy Leaf
 * Jason Belino
 * Kolja Rotzoll
 * and others
