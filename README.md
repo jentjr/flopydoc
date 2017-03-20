@@ -17,7 +17,9 @@ For anyone who is inclined to build this documentation on your own, it can be do
 
   * Everything here assumes that the flopy version 3 repository has been cloned to a folder called flopy3.git.  From a working folder, this can be created using the following command:
 
+```
 git clone git@github.com:modflowpy/flopy3.git
+```
 
   * Now create a new folder at the same level as flopy3.git.  Call this folder flopy3doc.
 
@@ -27,15 +29,21 @@ git clone git@github.com:modflowpy/flopydoc.git
 
   * Also create another folder in flopy3doc called flopydoc-doc by executing:
 
+```
 mkdir flopydoc-doc
+```
 
   * Now change into flopydoc-doc and checkout the flopy documentation into an html folder:
 
+```
 git clone git@github.com:modflowpy/flopydoc.git html
+```
 
   * Upon checkout into the html folder, the master branch will be selected (type git branch to confirm).  This needs to be changed to the gh-branch:
 
+```
 git checkout -b gh-pages remotes/origin/gh-pages
+```
 
   * At this point, the directory structure should match the directory structure that was used to create the documentation.  Changes can now be made to flopydoc.git by editing the files in that folder and running the following command from flopydoc.git/docs
 
