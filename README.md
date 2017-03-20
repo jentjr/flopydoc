@@ -63,7 +63,7 @@ git commit -m "rebuilt docs"
 git push origin gh-pages
 ```
 
-    or run all these commands at once:
+or run all these commands at once:
 
 ```
 git add .; git commit -m "rebuilt docs"; git push origin gh-pages
