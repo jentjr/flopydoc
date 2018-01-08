@@ -109,7 +109,7 @@ The key to creating Flopy transient boundary packages is recognizing that the bo
     print 'Adding ', len(bound_sp2), 'GHBs for stress period 2.'
 
     # We do not need to add a dictionary entry for stress period 3.
-    # Flopy will automatically take the list from stess period 2 and apply it
+    # Flopy will automatically take the list from stress period 2 and apply it
     # to the end of the simulation, if necessary
     stress_period_data = {0: bound_sp1, 1: bound_sp2}
 
@@ -165,69 +165,77 @@ Once again, we can read heads from the MODFLOW binary output file, using the `fl
 
 Using these methods, we can create head plots and hydrographs from the model results.::
 
-    # Imports
-    import matplotlib.pyplot as plt
-    import flopy.utils.binaryfile as bf
+   # Imports
+   import matplotlib.pyplot as plt
+   import flopy.utils.binaryfile as bf
 
-    # Create the headfile object
-    headobj = bf.HeadFile(modelname+'.hds')
-    times = headobj.get_times()
+   # Create the headfile and budget file objects
+   headobj = bf.HeadFile(modelname+'.hds')
+   times = headobj.get_times()
+   cbb = bf.CellBudgetFile(modelname+'.cbc')
 
-    # Setup contour parameters
-    levels = np.arange(1, 10, 1)
-    extent = (delr/2., Lx - delr/2., delc/2., Ly - delc/2.)
-    print 'Levels: ', levels
-    print 'Extent: ', extent
+   # Setup contour parameters
+   levels = np.linspace(0, 10, 11)
+   extent = (delr/2., Lx - delr/2., delc/2., Ly - delc/2.)
+   print('Levels: ', levels)
+   print('Extent: ', extent)
 
-    # Well point
-    wpt = ((float(ncol/2)-0.5)*delr, (float(nrow/2-1)+0.5)*delc)
-    wpt = (450., 550.)
+   # Well point
+   wpt = ((float(ncol/2)-0.5)*delr, (float(nrow/2-1)+0.5)*delc)
+   wpt = (450., 550.)
 
-    # Make the plots
-    mytimes = [1.0, 101.0, 201.0]
-    for iplot, time in enumerate(mytimes):
-        print '*****Processing time: ', time
-        head = headobj.get_data(totim=time)
-        #Print statistics
-        print 'Head statistics'
-        print '  min: ', head.min()
-        print '  max: ', head.max()
-        print '  std: ', head.std()
+   # Make the plots
+   mytimes = [1.0, 101.0, 201.0]
+   for iplot, time in enumerate(mytimes):
+       print('*****Processing time: ', time)
+       head = headobj.get_data(totim=time)
+       #Print statistics
+       print('Head statistics')
+       print('  min: ', head.min())
+       print('  max: ', head.max())
+       print('  std: ', head.std())
 
-        #Create the plot
-        #plt.subplot(1, len(mytimes), iplot + 1, aspect='equal')
-        plt.subplot(1, 1, 1, aspect='equal')
-        plt.title('stress period ' + str(iplot + 1))
-        plt.imshow(head[0, :, :], extent=extent, cmap='BrBG', vmin=0., vmax=10.)
-        plt.colorbar()
-        CS = plt.contour(np.flipud(head[0, :, :]), levels=levels, extent=extent,
-                         zorder=10)
-        plt.clabel(CS, inline=1, fontsize=10, fmt='%1.1f', zorder=11)
-        mfc = 'None'
-        if (iplot+1) == len(mytimes):
-            mfc='black'
-        plt.plot(wpt[0], wpt[1], lw=0, marker='o', markersize=8,
-                 markeredgewidth=0.5,
-                 markeredgecolor='black', markerfacecolor=mfc, zorder=9)
-        plt.text(wpt[0]+25, wpt[1]-25, 'well', size=12, zorder=12)
-        plt.show()
+       # Extract flow right face and flow front face
+       frf = cbb.get_data(text='FLOW RIGHT FACE', totim=time)[0]
+       fff = cbb.get_data(text='FLOW FRONT FACE', totim=time)[0]
 
-    plt.show()
+       #Create the plot
+       #plt.subplot(1, len(mytimes), iplot + 1, aspect='equal')
+       plt.subplot(1, 1, 1, aspect='equal')
+       plt.title('stress period ' + str(iplot + 1))
 
+
+       modelmap = flopy.plot.ModelMap(model=mf, layer=0)
+       qm = modelmap.plot_ibound()
+       lc = modelmap.plot_grid()
+       qm = modelmap.plot_bc('GHB', alpha=0.5)
+       cs = modelmap.contour_array(head, levels=levels)
+       plt.clabel(cs, inline=1, fontsize=10, fmt='%1.1f', zorder=11)
+       quiver = modelmap.plot_discharge(frf, fff, head=head)
+
+
+       mfc = 'None'
+       if (iplot+1) == len(mytimes):
+           mfc='black'
+       plt.plot(wpt[0], wpt[1], lw=0, marker='o', markersize=8,
+                markeredgewidth=0.5,
+                markeredgecolor='black', markerfacecolor=mfc, zorder=9)
+       plt.text(wpt[0]+25, wpt[1]-25, 'well', size=12, zorder=12)
+       plt.savefig('tutorial2-{}.png'.format(iplot))
 
 If everything has worked properly, you should see the following head contours.
 
-.. figure:: _static/tutorial2fig1.png
+.. figure:: _static/tutorial2-0.png
    :alt: head contours for stress period 1
    :scale: 100 %
    :align: center
 
-.. figure:: _static/tutorial2fig2.png
+.. figure:: _static/tutorial2-1.png
    :alt: head contours for stress period 2
    :scale: 100 %
    :align: center
 
-.. figure:: _static/tutorial2fig3.png
+.. figure:: _static/tutorial2-2.png
    :alt: head contours for stress period 3
    :scale: 100 %
    :align: center
@@ -238,17 +246,17 @@ Plot Head Versus Time
 Make a plot of head versus time by extracting the binary heads from the headobj::
 
     # Plot the head versus time
-    idx = (0, nrow/2 - 1, ncol/2 - 1)
-    ts = headobj.get_ts(idx)
-    plt.subplot(1, 1, 1)
-    ttl = 'Head at cell ({0},{1},{2})'.format(idx[0] + 1, idx[1] + 1, idx[2] + 1)
-    plt.title(ttl)
-    plt.xlabel('time')
-    plt.ylabel('head')
-    plt.plot(ts[:, 0], ts[:, 1])
-    plt.show()
+   idx = (0, int(nrow/2) - 1, int(ncol/2) - 1)
+   ts = headobj.get_ts(idx)
+   plt.subplot(1, 1, 1)
+   ttl = 'Head at cell ({0},{1},{2})'.format(idx[0] + 1, idx[1] + 1, idx[2] + 1)
+   plt.title(ttl)
+   plt.xlabel('time')
+   plt.ylabel('head')
+   plt.plot(ts[:, 0], ts[:, 1], 'bo-')
+   plt.savefig('tutorial2-ts.png')
 
-.. figure:: _static/tutorial2fig4.png
+.. figure:: _static/tutorial2-ts.png
    :alt: head contours in first layer
    :scale: 100 %
    :align: center

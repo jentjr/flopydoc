@@ -73,6 +73,54 @@ Contents:
    mfwel
    mfaddoutsidefile
 
+MODFLOW 6 Packages
+------------------
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   mfbase
+   mfmodel
+   mfpackage
+   mfsimulation
+   mfgnc
+   mfgwfchd
+   mfgwfdis
+   mfgwfdisu
+   mfgwfdisv
+   mfgwfdrn
+   mfgwfevt
+   mfgwfevta
+   mfgwfghb
+   mfgwfgnc
+   mfgwfgwf
+   mfgwfhfb
+   mfgwfic
+   mfgwflak
+   mfgwfmaw
+   mfgwfmvr
+   mfgwfnam
+   mfgwfnpf
+   mfgwfoc
+   mfgwfrch
+   mfgwfrcha
+   mfgwfriv
+   mfgwfsfr
+   mfgwfsto
+   mfgwfuzf
+   mfgwfwel
+   mfims
+   mfmvr
+   mfnam
+   mftdis
+   mfutlobs
+   mfutllaktab
+   mfutltas
+   mfutlts
+
+
 MODPATH Packages
 ----------------
 
@@ -103,6 +151,7 @@ Contents:
    mtssm
    mttob
    mtuzt
+   mtcts
 
 SEAWAT Packages
 ---------------
@@ -138,6 +187,7 @@ Contents:
    :maxdepth: 2
 
    check
+   cvfdutil
    datafile
    binaryfile
    binaryhydmodfile
@@ -146,8 +196,10 @@ Contents:
    formattedfile
    geometry
    gridgen
+   lgrutil
    mflistfile
    mfreadnam
+   mfgrdfile
    modpathfile
    observationfile
    postprocessing
@@ -180,9 +232,11 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   metadata
    netcdf
    shapefile_utils
    utils
+   vtk
 
 
 PEST Utilities

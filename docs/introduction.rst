@@ -33,7 +33,7 @@ To update your version of FloPy3 with the bleeding edge code from the git reposi
 FloPy Resources
 ===============
 
-`Version history <https://github.com/modflowpy/flopy/blob/develop/docs/supported_packages.md>`_
+`Version history <https://github.com/modflowpy/flopy/blob/develop/docs/version_changes.md>`_
 
 `Supported packages <https://github.com/modflowpy/flopy/blob/develop/docs/supported_packages.md>`_
 
@@ -51,15 +51,22 @@ FloPy is developed by a team of MODFLOW users that have switched over to using P
 * Joe Hughes
 * Jeremy White
 * Andy Leaf
+* Scott Paulinski
 * Eric Morway
-* Alain Frances
-* Mike Fienen
 * Jeff Starn
+* Mike Fienen
 
 with contributions from:
 
 * Jason Belino
 * Kolja Rotzoll
+* Alain Frances
 * and others
 
 Feel free to contact one of us if you would like to participate in FloPy development.  We could use the help!
+
+
+How to Cite
+===========
+
+`Bakker, M., Post, V., Langevin, C. D., Hughes, J. D., White, J. T., Starn, J. J. and Fienen, M. N., 2016, Scripting MODFLOW Model Development Using Python and FloPy: Groundwater, v. 54, p. 733–739, doi:10.1111/gwat.12413. <http://dx.doi.org/10.1111/gwat.12413>`_

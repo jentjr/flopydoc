@@ -82,7 +82,7 @@ Layer-Property Flow Package
 Details on the flopy LPF class are at: `flopy.modflow.mflpf <mflpf.html>`__.  Values of 10. are assigned for the horizontal and vertical hydraulic conductivity::
 
     # Add LPF package to the MODFLOW model
-    lpf = flopy.modflow.ModflowLpf(mf, hk=10., vka=10.)
+    lpf = flopy.modflow.ModflowLpf(mf, hk=10., vka=10., ipakcb=53)
 
 Because we did not specify a value for laytyp, Flopy will use the default value of 0, which means that this model will be confined.
 
@@ -92,7 +92,10 @@ Output Control
 Details on the flopy OC class are at: `flopy.modflow.mfoc <mfoc.html>`__.  Here we can use the default OC settings by specifying the following::
 
     # Add OC package to the MODFLOW model
-    oc = flopy.modflow.ModflowOc(mf)
+    spd = {(0, 0): ['print head', 'print budget', 'save head', 'save budget']}
+    oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True)
+
+The stress period dictionary is used to set what output is saved for the corresponding stress period and time step.  In this case, the tuple (0, 0) means that stress period 1 and time step 1 for MODFLOW will have output saved.  Head and budgets will be printed and head and budget information will be saved.
 
 Preconditioned Conjugate Gradient Package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -133,11 +136,39 @@ Now that we have successfully built and run our MODFLOW model, we can look at th
     levels = np.arange(1,10,1)
     extent = (delr/2., Lx - delr/2., Ly - delc/2., delc/2.)
     plt.contour(head[0, :, :], levels=levels, extent=extent)
-    plt.show()
+    plt.savefig('tutorial1a.png')
 
 If everything has worked properly, you should see the following head contours.
 
-.. figure:: _static/tutorial1fig1.png
+.. figure:: _static/tutorial1a.png
    :alt: head contours in first layer
    :scale: 100 %
    :align: left
+
+Flopy also has some pre-canned plotting capabilities can can be accessed using the ModelMap class.  The following code shows how to use the modelmap class to plot boundary conditions (IBOUND), plot the grid, plot head contours, and plot vectors::
+
+   fig = plt.figure(figsize=(10,10))
+   ax = fig.add_subplot(1, 1, 1, aspect='equal')
+
+   hds = bf.HeadFile(modelname+'.hds')
+   times = hds.get_times()
+   head = hds.get_data(totim=times[-1])
+   levels = np.linspace(0, 10, 11)
+
+   cbb = bf.CellBudgetFile(modelname+'.cbc')
+   kstpkper_list = cbb.get_kstpkper()
+   frf = cbb.get_data(text='FLOW RIGHT FACE', totim=times[-1])[0]
+   fff = cbb.get_data(text='FLOW FRONT FACE', totim=times[-1])[0]
+
+   modelmap = flopy.plot.ModelMap(model=mf, layer=0)
+   qm = modelmap.plot_ibound()
+   lc = modelmap.plot_grid()
+   cs = modelmap.contour_array(head, levels=levels)
+   quiver = modelmap.plot_discharge(frf, fff, head=head)
+   plt.savefig('tutorial1b.png')
+
+.. figure:: _static/tutorial1b.png
+   :alt: head contours in first layer
+   :scale: 100 %
+   :align: left
+

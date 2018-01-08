@@ -1,6 +1,8 @@
+   flopy.export.metadata
    flopy.export.netcdf
    flopy.export.shapefile_utils
    flopy.export.utils
+   flopy.export.vtk
    flopy.modflow.mf
    flopy.modflow.mfaddoutsidefile
    flopy.modflow.mfbas
@@ -29,7 +31,6 @@
    flopy.modflow.mfmnwi
    flopy.modflow.mfnwt
    flopy.modflow.mfoc
-   flopy.modflow.mfoutput
    flopy.modflow.mfpar
    flopy.modflow.mfparbc
    flopy.modflow.mfpbc
@@ -79,11 +80,13 @@
    flopy.seawat.swtvsc
    flopy.utils.binaryfile
    flopy.utils.check
+   flopy.utils.cvfdutil
    flopy.utils.datafile
    flopy.utils.flopy_io
    flopy.utils.formattedfile
    flopy.utils.geometry
    flopy.utils.gridgen
+   flopy.utils.lgrutil
    flopy.utils.mfgrdfile
    flopy.utils.mflistfile
    flopy.utils.mfreadnam
@@ -97,3 +100,41 @@
    flopy.utils.util_list
    flopy.utils.utils_def
    flopy.utils.zonbud
+   flopy.mf6.mfbase
+   flopy.mf6.mfmodel
+   flopy.mf6.mfpackage
+   flopy.mf6.mfsimulation
+   flopy.mf6/modflow.mfgnc
+   flopy.mf6/modflow.mfgwfchd
+   flopy.mf6/modflow.mfgwfdis
+   flopy.mf6/modflow.mfgwfdisu
+   flopy.mf6/modflow.mfgwfdisv
+   flopy.mf6/modflow.mfgwfdrn
+   flopy.mf6/modflow.mfgwfevt
+   flopy.mf6/modflow.mfgwfevta
+   flopy.mf6/modflow.mfgwfghb
+   flopy.mf6/modflow.mfgwfgnc
+   flopy.mf6/modflow.mfgwfgwf
+   flopy.mf6/modflow.mfgwfhfb
+   flopy.mf6/modflow.mfgwfic
+   flopy.mf6/modflow.mfgwflak
+   flopy.mf6/modflow.mfgwfmaw
+   flopy.mf6/modflow.mfgwfmvr
+   flopy.mf6/modflow.mfgwfnam
+   flopy.mf6/modflow.mfgwfnpf
+   flopy.mf6/modflow.mfgwfoc
+   flopy.mf6/modflow.mfgwfrch
+   flopy.mf6/modflow.mfgwfrcha
+   flopy.mf6/modflow.mfgwfriv
+   flopy.mf6/modflow.mfgwfsfr
+   flopy.mf6/modflow.mfgwfsto
+   flopy.mf6/modflow.mfgwfuzf
+   flopy.mf6/modflow.mfgwfwel
+   flopy.mf6/modflow.mfims
+   flopy.mf6/modflow.mfmvr
+   flopy.mf6/modflow.mfnam
+   flopy.mf6/modflow.mftdis
+   flopy.mf6/modflow.mfutllaktab
+   flopy.mf6/modflow.mfutlobs
+   flopy.mf6/modflow.mfutltas
+   flopy.mf6/modflow.mfutlts
