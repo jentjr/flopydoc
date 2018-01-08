@@ -1,75 +1,221 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.utils.reference Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="prev" title="flopy.utils.swroutputfile Module" href="swroutputfile.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.utils.reference Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="prev" title="flopy.utils.swroutputfile Module" href="swroutputfile.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="check.html">flopy.utils.check Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gridgen.html">flopy.utils.gridgen Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lgrutil.html">flopy.utils.lgrutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflistfile.html">flopy.utils.mflistfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swroutputfile.html">flopy.utils.swroutputfile Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.reference Module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sfroutputfile.html">flopy.utils.sfroutputfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_array.html">flopy.utils.util_array Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils_def.html">flopy.utils.utils_def Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_list.html">flopy.utils.util_list Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zonbud.html">flopy.utils.zonbud Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.utils.reference Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/reference.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.utils.reference">
 <span id="flopy-utils-reference-module"></span><h1>flopy.utils.reference Module<a class="headerlink" href="#module-flopy.utils.reference" title="Permalink to this headline">¶</a></h1>
 <p>Module spatial referencing for flopy model objects</p>
 <dl class="class">
 <dt id="flopy.utils.reference.SpatialReference">
-<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">SpatialReference</code><span class="sig-paren">(</span><em>delr=array([]</em>, <em>dtype=float64)</em>, <em>delc=array([]</em>, <em>dtype=float64)</em>, <em>lenuni=1</em>, <em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>proj4_str='EPSG:4326'</em>, <em>epsg=None</em>, <em>units=None</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">SpatialReference</code><span class="sig-paren">(</span><em>delr=array([]</em>, <em>dtype=float64)</em>, <em>delc=array([]</em>, <em>dtype=float64)</em>, <em>lenuni=2</em>, <em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>proj4_str=None</em>, <em>epsg=None</em>, <em>prj=None</em>, <em>units=None</em>, <em>length_multiplier=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>a class to locate a structured model grid in x-y space</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -87,7 +233,8 @@
 </div></blockquote>
 <p><strong>lenuni</strong> : int</p>
 <blockquote>
-<div><p>the length units flag from the discretization package</p>
+<div><p>the length units flag from the discretization package
+(default 2)</p>
 </div></blockquote>
 <p><strong>xul</strong> : float</p>
 <blockquote>
@@ -218,6 +365,132 @@ accessed</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.export_array">
+<code class="descname">export_array</code><span class="sig-paren">(</span><em>filename</em>, <em>a</em>, <em>nodata=-9999</em>, <em>fieldname='value'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.export_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a numpy array to Arc Ascii grid 
+or shapefile with the model reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Path of output file. Export format is determined by
+file extention.
+‘.asc’  Arc Ascii grid
+‘.tif’  GeoTIFF (requries rasterio package)
+‘.shp’  Shapefile</p>
+</div></blockquote>
+<p><strong>a</strong> : 2D numpy.ndarray</p>
+<blockquote>
+<div><p>Array to export</p>
+</div></blockquote>
+<p><strong>nodata</strong> : scalar</p>
+<blockquote>
+<div><p>Value to assign to np.nan entries (default -9999)</p>
+</div></blockquote>
+<p><strong>fieldname</strong> : str</p>
+<blockquote>
+<div><p>Attribute field name for array values (shapefile export only).
+(default ‘values’)</p>
+</div></blockquote>
+<p><strong>kwargs:</strong></p>
+<blockquote class="last">
+<div><p>keyword arguments to np.savetxt (ascii) 
+rasterio.open (GeoTIFF)
+or flopy.export.shapefile_utils.write_grid_shapefile2</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Rotated grids will be either be unrotated prior to export,
+using scipy.ndimage.rotate (Arc Ascii format) or rotation will be
+included in their transform property (GeoTiff format). In either case
+the pixels will be displayed in the (unrotated) projected geographic coordinate system,
+so the pixels will no longer align exactly with the model grid
+(as displayed from a shapefile, for example). A key difference between
+Arc Ascii and GeoTiff (besides disk usage) is that the
+unrotated Arc Ascii will have a different grid size, whereas the GeoTiff
+will have the same number of rows and pixels as the original.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.export_array_contours">
+<code class="descname">export_array_contours</code><span class="sig-paren">(</span><em>filename</em>, <em>a</em>, <em>fieldname='level'</em>, <em>interval=None</em>, <em>levels=None</em>, <em>maxlevels=1000</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.export_array_contours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contour an array using matplotlib; write shapefile of contours.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Path of output file with ‘.shp’ extention.</p>
+</div></blockquote>
+<p><strong>a</strong> : 2D numpy array</p>
+<blockquote>
+<div><p>Array to contour</p>
+</div></blockquote>
+<p class="last"><strong>**kwargs</strong> : key-word arguments to flopy.export.shapefile_utils.recarray2shp</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.export_contours">
+<code class="descname">export_contours</code><span class="sig-paren">(</span><em>filename</em>, <em>contours</em>, <em>fieldname='level'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.export_contours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert matplotlib contour plot object to shapefile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>path of output shapefile</p>
+</div></blockquote>
+<p><strong>contours</strong> : matplotlib.contour.QuadContourSet or list of them</p>
+<blockquote>
+<div><p>(object returned by matplotlib.pyplot.contour)</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : key-word arguments to flopy.export.shapefile_utils.recarray2shp</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>df</strong> : dataframe of shapefile contents</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.get_2d_vertex_connectivity">
+<code class="descname">get_2d_vertex_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_2d_vertex_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the cell 2d vertices array and the iverts index array.  These
+are the same form as the ones used to instantiate an unstructured
+spatial reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>verts</strong> : ndarray</p>
+<blockquote>
+<div><p>array of x and y coordinates for the grid vertices</p>
+</div></blockquote>
+<p><strong>iverts</strong> : list</p>
+<blockquote class="last">
+<div><p>a list with a list of vertex indices for each cell in clockwise
+order starting with the upper left corner</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_extent">
 <code class="descname">get_extent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_extent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the extent of the rotated and offset grid</p>
@@ -272,6 +545,12 @@ in real-world coordinates.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.reference.SpatialReference.get_vertices">
+<code class="descname">get_vertices</code><span class="sig-paren">(</span><em>i</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get vertices for a single cell or sequence if i, j locations.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.get_xcenter_array">
 <code class="descname">get_xcenter_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.get_xcenter_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell center x
@@ -306,7 +585,7 @@ rotated. Array is of size (nrow + 1)</p>
 <code class="descname">interpolate</code><span class="sig-paren">(</span><em>a</em>, <em>xi</em>, <em>method='nearest'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.interpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the griddata method to interpolate values from an array onto the
 points defined in xi.  For any values outside of the grid, use
-&#8216;nearest&#8217; to find a value for them.</p>
+‘nearest’ to find a value for them.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -321,9 +600,9 @@ points defined in xi.  For any values outside of the grid, use
 also works with broadcasting so that if a is a 2d array, then
 xi can be passed in as (xgrid, ygrid).</p>
 </div></blockquote>
-<p><strong>method</strong> : {&#8216;linear&#8217;, &#8216;nearest&#8217;, &#8216;cubic&#8217;}</p>
+<p><strong>method</strong> : {‘linear’, ‘nearest’, ‘cubic’}</p>
 <blockquote>
-<div><p>method to use for interpolation (default is &#8216;nearest&#8217;)</p>
+<div><p>method to use for interpolation (default is ‘nearest’)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -337,9 +616,26 @@ xi can be passed in as (xgrid, ygrid).</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="flopy.utils.reference.SpatialReference.length_multiplier">
+<code class="descname">length_multiplier</code><a class="headerlink" href="#flopy.utils.reference.SpatialReference.length_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to identify multiplier for converting from
+model units to sr units, defaulting to 1.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.utils.reference.SpatialReference.load">
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>namefile=None</em>, <em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to load spatial reference information from
+the following files (in order):
+1) usgs.model.reference
+2) NAM file (header comment)
+3) SpatialReference.default dictionary</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.plot_array">
-<code class="descname">plot_array</code><span class="sig-paren">(</span><em>a</em>, <em>ax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.plot_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot_array</code><span class="sig-paren">(</span><em>a</em>, <em>ax=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.plot_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a QuadMesh plot of the specified array using pcolormesh</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -354,6 +650,13 @@ xi can be passed in as (xgrid, ygrid).</p>
 </dd></dl>
 
 <dl class="staticmethod">
+<dt id="flopy.utils.reference.SpatialReference.read_usgs_model_reference_file">
+<em class="property">static </em><code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>read spatial reference info from the usgs.model.reference file
+<a class="reference external" href="https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html">https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html</a></p>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReference.rotate">
 <em class="property">static </em><code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given x and y array-like values calculate the rotation about an
@@ -363,13 +666,13 @@ degrees.</p>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.set_spatialreference">
-<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.set_spatialreference" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.set_spatialreference" title="Permalink to this definition">¶</a></dt>
 <dd><p>set spatial reference - can be called from model instance</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReference.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.transform" title="Permalink to this definition">¶</a></dt>
+<code class="descname">transform</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>inverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given x and y array-like values, apply rotation, scale and offset,
 to convert them from model coordinates to real-world coordinates.</p>
 </dd></dl>
@@ -499,6 +802,107 @@ delr and delc above will be multiplied by this value. (default=1.)</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.export_array">
+<code class="descname">export_array</code><span class="sig-paren">(</span><em>filename</em>, <em>a</em>, <em>nodata=-9999</em>, <em>fieldname='value'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.export_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a numpy array to Arc Ascii grid 
+or shapefile with the model reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Path of output file. Export format is determined by
+file extention.
+‘.asc’  Arc Ascii grid
+‘.tif’  GeoTIFF (requries rasterio package)
+‘.shp’  Shapefile</p>
+</div></blockquote>
+<p><strong>a</strong> : 2D numpy.ndarray</p>
+<blockquote>
+<div><p>Array to export</p>
+</div></blockquote>
+<p><strong>nodata</strong> : scalar</p>
+<blockquote>
+<div><p>Value to assign to np.nan entries (default -9999)</p>
+</div></blockquote>
+<p><strong>fieldname</strong> : str</p>
+<blockquote>
+<div><p>Attribute field name for array values (shapefile export only).
+(default ‘values’)</p>
+</div></blockquote>
+<p><strong>kwargs:</strong></p>
+<blockquote class="last">
+<div><p>keyword arguments to np.savetxt (ascii) 
+rasterio.open (GeoTIFF)
+or flopy.export.shapefile_utils.write_grid_shapefile2</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Rotated grids will be either be unrotated prior to export,
+using scipy.ndimage.rotate (Arc Ascii format) or rotation will be
+included in their transform property (GeoTiff format). In either case
+the pixels will be displayed in the (unrotated) projected geographic coordinate system,
+so the pixels will no longer align exactly with the model grid
+(as displayed from a shapefile, for example). A key difference between
+Arc Ascii and GeoTiff (besides disk usage) is that the
+unrotated Arc Ascii will have a different grid size, whereas the GeoTiff
+will have the same number of rows and pixels as the original.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.export_array_contours">
+<code class="descname">export_array_contours</code><span class="sig-paren">(</span><em>filename</em>, <em>a</em>, <em>fieldname='level'</em>, <em>interval=None</em>, <em>levels=None</em>, <em>maxlevels=1000</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.export_array_contours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contour an array using matplotlib; write shapefile of contours.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Path of output file with ‘.shp’ extention.</p>
+</div></blockquote>
+<p><strong>a</strong> : 2D numpy array</p>
+<blockquote>
+<div><p>Array to contour</p>
+</div></blockquote>
+<p class="last"><strong>**kwargs</strong> : key-word arguments to flopy.export.shapefile_utils.recarray2shp</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.export_contours">
+<code class="descname">export_contours</code><span class="sig-paren">(</span><em>filename</em>, <em>contours</em>, <em>fieldname='level'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.export_contours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert matplotlib contour plot object to shapefile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>path of output shapefile</p>
+</div></blockquote>
+<p><strong>contours</strong> : matplotlib.contour.QuadContourSet or list of them</p>
+<blockquote>
+<div><p>(object returned by matplotlib.pyplot.contour)</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : key-word arguments to flopy.export.shapefile_utils.recarray2shp</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>df</strong> : dataframe of shapefile contents</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.from_argus_export">
 <em class="property">classmethod </em><code class="descname">from_argus_export</code><span class="sig-paren">(</span><em>fname</em>, <em>nlay=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.from_argus_export" title="Permalink to this definition">¶</a></dt>
@@ -541,6 +945,31 @@ grid specification file</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>sru</strong> : flopy.utils.reference.SpatialReferenceUnstructured</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_2d_vertex_connectivity">
+<code class="descname">get_2d_vertex_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_2d_vertex_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the cell 2d vertices array and the iverts index array.  These
+are the same form as the ones used to instantiate an unstructured
+spatial reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>verts</strong> : ndarray</p>
+<blockquote>
+<div><p>array of x and y coordinates for the grid vertices</p>
+</div></blockquote>
+<p><strong>iverts</strong> : list</p>
+<blockquote class="last">
+<div><p>a list with a list of vertex indices for each cell in clockwise
+order starting with the upper left corner</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -613,6 +1042,12 @@ in real-world coordinates.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_vertices">
+<code class="descname">get_vertices</code><span class="sig-paren">(</span><em>i</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get vertices for a single cell or sequence if i, j locations.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.get_xcenter_array">
 <code class="descname">get_xcenter_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.get_xcenter_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a numpy one-dimensional float array that has the cell center x
@@ -649,7 +1084,7 @@ rotated. Array is of size (nrow + 1)</p>
 <code class="descname">interpolate</code><span class="sig-paren">(</span><em>a</em>, <em>xi</em>, <em>method='nearest'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.interpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the griddata method to interpolate values from an array onto the
 points defined in xi.  For any values outside of the grid, use
-&#8216;nearest&#8217; to find a value for them.</p>
+‘nearest’ to find a value for them.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -664,9 +1099,9 @@ points defined in xi.  For any values outside of the grid, use
 also works with broadcasting so that if a is a 2d array, then
 xi can be passed in as (xgrid, ygrid).</p>
 </div></blockquote>
-<p><strong>method</strong> : {&#8216;linear&#8217;, &#8216;nearest&#8217;, &#8216;cubic&#8217;}</p>
+<p><strong>method</strong> : {‘linear’, ‘nearest’, ‘cubic’}</p>
 <blockquote>
-<div><p>method to use for interpolation (default is &#8216;nearest&#8217;)</p>
+<div><p>method to use for interpolation (default is ‘nearest’)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -678,6 +1113,23 @@ xi can be passed in as (xgrid, ygrid).</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.length_multiplier">
+<code class="descname">length_multiplier</code><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.length_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to identify multiplier for converting from
+model units to sr units, defaulting to 1.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>namefile=None</em>, <em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to load spatial reference information from
+the following files (in order):
+1) usgs.model.reference
+2) NAM file (header comment)
+3) SpatialReference.default dictionary</p>
 </dd></dl>
 
 <dl class="method">
@@ -697,6 +1149,13 @@ xi can be passed in as (xgrid, ygrid).</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.reference.SpatialReferenceUnstructured.read_usgs_model_reference_file">
+<code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>read spatial reference info from the usgs.model.reference file
+<a class="reference external" href="https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html">https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html</a></p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.rotate">
 <code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given x and y array-like values calculate the rotation about an
@@ -706,13 +1165,13 @@ degrees.</p>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.set_spatialreference">
-<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em>, <em>length_multiplier=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.set_spatialreference" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_spatialreference</code><span class="sig-paren">(</span><em>xul=None</em>, <em>yul=None</em>, <em>xll=None</em>, <em>yll=None</em>, <em>rotation=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.set_spatialreference" title="Permalink to this definition">¶</a></dt>
 <dd><p>set spatial reference - can be called from model instance</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.transform" title="Permalink to this definition">¶</a></dt>
+<code class="descname">transform</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>inverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given x and y array-like values, apply rotation, scale and offset,
 to convert them from model coordinates to real-world coordinates.</p>
 </dd></dl>
@@ -757,6 +1216,40 @@ to convert them from model coordinates to real-world coordinates.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.reference.TemporalReference">
+<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">TemporalReference</code><span class="sig-paren">(</span><em>itmuni=4</em>, <em>start_datetime=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.TemporalReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>For now, just a container to hold start time and time units files
+outside of DIS package.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.reference.crs">
+<em class="property">class </em><code class="descclassname">flopy.utils.reference.</code><code class="descname">crs</code><span class="sig-paren">(</span><em>prj=None</em>, <em>esri_wkt=None</em>, <em>epsg=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.crs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Container to parse and store coordinate reference system parameters,
+and translate between different formats.</p>
+<dl class="attribute">
+<dt id="flopy.utils.reference.crs.crs">
+<code class="descname">crs</code><a class="headerlink" href="#flopy.utils.reference.crs.crs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict mapping crs attibutes to proj4 parameters</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.utils.reference.crs.grid_mapping_attribs">
+<code class="descname">grid_mapping_attribs</code><a class="headerlink" href="#flopy.utils.reference.crs.grid_mapping_attribs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map parameters for CF Grid Mappings
+<a class="reference external" href="http://cfconventions.org/cf-conventions/v1.6.0">http://cfconventions.org/cf-conventions/v1.6.0</a>
+/cf-conventions.html#appendix-grid-mappings</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.utils.reference.crs.proj4">
+<code class="descname">proj4</code><a class="headerlink" href="#flopy.utils.reference.crs.proj4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not implemented yet</p>
 </dd></dl>
 
 </dd></dl>
@@ -868,47 +1361,73 @@ spatialreference.org. See: <a class="reference external" href="https://www.epsg-
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="swroutputfile.html" class="btn btn-neutral" title="flopy.utils.swroutputfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="swroutputfile.html"
-                        title="previous chapter">flopy.utils.swroutputfile Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="swroutputfile.html" title="flopy.utils.swroutputfile Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

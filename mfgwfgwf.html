@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.mf6.modflow.mfgwfgwf Module &mdash; flopy 3.2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mf6.modflow.mfgwfhfb Module" href="mfgwfhfb.html"/>
+        <link rel="prev" title="flopy.mf6.modflow.mfgwfgnc Module" href="mfgwfgnc.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbase.html">flopy.mf6.mfbase Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmodel.html">flopy.mf6.mfmodel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisv.html">flopy.mf6.modflow.mfgwfdisv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdrn.html">flopy.mf6.modflow.mfgwfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevt.html">flopy.mf6.modflow.mfgwfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevta.html">flopy.mf6.modflow.mfgwfevta Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfghb.html">flopy.mf6.modflow.mfgwfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgnc.html">flopy.mf6.modflow.mfgwfgnc Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.modflow.mfgwfgwf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfhfb.html">flopy.mf6.modflow.mfgwfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfic.html">flopy.mf6.modflow.mfgwfic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwflak.html">flopy.mf6.modflow.mfgwflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmaw.html">flopy.mf6.modflow.mfgwfmaw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmvr.html">flopy.mf6.modflow.mfgwfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnam.html">flopy.mf6.modflow.mfgwfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnpf.html">flopy.mf6.modflow.mfgwfnpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfoc.html">flopy.mf6.modflow.mfgwfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrch.html">flopy.mf6.modflow.mfgwfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrcha.html">flopy.mf6.modflow.mfgwfrcha Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfriv.html">flopy.mf6.modflow.mfgwfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsfr.html">flopy.mf6.modflow.mfgwfsfr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsto.html">flopy.mf6.modflow.mfgwfsto Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfuzf.html">flopy.mf6.modflow.mfgwfuzf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfwel.html">flopy.mf6.modflow.mfgwfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfims.html">flopy.mf6.modflow.mfims Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmvr.html">flopy.mf6.modflow.mfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnam.html">flopy.mf6.modflow.mfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mftdis.html">flopy.mf6.modflow.mftdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlobs.html">flopy.mf6.modflow.mfutlobs Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutllaktab.html">flopy.mf6.modflow.mfutllaktab Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutltas.html">flopy.mf6.modflow.mfutltas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.mf6.modflow.mfgwfgwf Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfgwfgwf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.mf6.modflow.mfgwfgwf">
+<span id="flopy-mf6-modflow-mfgwfgwf-module"></span><h1>flopy.mf6.modflow.mfgwfgwf Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfgwf" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf">
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfgwf.</code><code class="descname">ModflowGwfgwf</code><span class="sig-paren">(</span><em>simulation</em>, <em>add_to_package_list=True</em>, <em>exgtype=None</em>, <em>exgmnamea=None</em>, <em>exgmnameb=None</em>, <em>auxiliary=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>cell_averaging=None</em>, <em>cvoptions=None</em>, <em>newton=None</em>, <em>gnc_filerecord=None</em>, <em>mvr_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>nexg=None</em>, <em>gwfgwfrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf" title="Permalink to this definition">¶</a></dt>
+<dd><p>ModflowGwfgwf defines a gwfgwf package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>exgtype</strong> : &lt;string&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li>is the exchange type (GWF-GWF or GWF-GWT).</li>
+</ul>
+</div></blockquote>
+<p><strong>exgmnamea</strong> : &lt;string&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li>is the name of the first model that is part of this exchange.</li>
+</ul>
+</div></blockquote>
+<p><strong>exgmnameb</strong> : &lt;string&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li>is the name of the second model that is part of this exchange.</li>
+</ul>
+</div></blockquote>
+<p><strong>auxiliary</strong> : [string]</p>
+<blockquote>
+<div><ul class="simple">
+<li>auxiliary (string) an array of auxiliary variable names. There is no
+limit on the number of auxiliary variables that can be provided. Most
+auxiliary variables will not be used by the GWF-GWF Exchange, but
+they will be available for use by other parts of the program. If an
+auxiliary variable with the name “ANGLDEGX” is found, then this
+information will be used as the angle (provided in degrees) between
+the connection face normal and the x axis. Additional information on
+“ANGLDEGX” is provided in the description of the DISU Package. If an
+auxiliary variable with the name “CDIST” is found, then this
+information will be used as the straight-line connection distance
+between the two cell centers. CDIST is required if specific discharge
+is calculated for either of the groundwater models.</li>
+</ul>
+</div></blockquote>
+<p><strong>print_input</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>print_input (boolean) keyword to indicate that the list of exchange
+entries will be echoed to the listing file immediately after it is
+read.</li>
+</ul>
+</div></blockquote>
+<p><strong>print_flows</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>print_flows (boolean) keyword to indicate that the list of exchange
+flow rates will be printed to the listing file for every stress
+period in which “SAVE BUDGET” is specified in Output Control.</li>
+</ul>
+</div></blockquote>
+<p><strong>save_flows</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>save_flows (boolean) keyword to indicate that cell-by-cell flow terms
+will be written to the budget file for each model provided that the
+Output Control for the models are set up with the “BUDGET SAVE FILE”
+option.</li>
+</ul>
+</div></blockquote>
+<p><strong>cell_averaging</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>cell_averaging (string) is a keyword and text keyword to indicate the
+method that will be used for calculating the conductance for
+horizontal cell connections. The text value for CELL_AVERAGING can be
+“HARMONIC”, “LOGARITHMIC”, or “AMT-LMK”, which means “arithmetic-mean
+thickness and logarithmic-mean hydraulic conductivity”. If the user
+does not specify a value for CELL_AVERAGING, then the harmonic-mean
+method will be used.</li>
+</ul>
+</div></blockquote>
+<p><strong>cvoptions</strong> : [dewatered]</p>
+<blockquote>
+<div><ul class="simple">
+<li>dewatered (string) If the DEWATERED keyword is specified, then the
+vertical conductance is calculated using only the saturated thickness
+and properties of the overlying cell if the head in the underlying
+cell is below its top.</li>
+</ul>
+</div></blockquote>
+<p><strong>newton</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>newton (boolean) keyword that activates the Newton-Raphson
+formulation for groundwater flow between connected, convertible
+groundwater cells. Cells will not dry when this option is used.</li>
+</ul>
+</div></blockquote>
+<p><strong>gnc_filerecord</strong> : [gnc6_filename]</p>
+<blockquote>
+<div><ul class="simple">
+<li>gnc6_filename (string) is the file name for ghost node correction
+input file. Information for the ghost nodes are provided in the file
+provided with these keywords. The format for specifying the ghost
+nodes is the same as described for the GNC Package of the GWF Model.
+This includes specifying OPTIONS, DIMENSIONS, and GNCDATA blocks. The
+order of the ghost nodes must follow the same order as the order of
+the cells in the EXCHANGEDATA block. For the GNCDATA, noden and all
+of the nodej values are assumed to be located in model 1, and nodem
+is assumed to be in model 2.</li>
+</ul>
+</div></blockquote>
+<p><strong>mvr_filerecord</strong> : [mvr6_filename]</p>
+<blockquote>
+<div><ul class="simple">
+<li>mvr6_filename (string) is the file name of the water mover input file
+to apply to this exchange. Information for the water mover are
+provided in the file provided with these keywords. The format for
+specifying the water mover information is the same as described for
+the Water Mover (MVR) Package of the GWF Model, with two exceptions.
+First, in the PACKAGES block, the model name must be included as a
+separate string before each package. Second, the appropriate model
+name must be included before package name 1 and package name 2 in the
+BEGIN PERIOD block. This allows providers and receivers to be located
+in both models listed as part of this exchange.</li>
+</ul>
+</div></blockquote>
+<p><strong>obs_filerecord</strong> : [obs6_filename]</p>
+<blockquote>
+<div><ul class="simple">
+<li>obs6_filename (string) is the file name of the observations input
+file for this exchange. See the “Observation utility” section for
+instructions for preparing observation input files. Table
+ref{table:obstype} lists observation type(s) supported by the GWF-GWF
+package.</li>
+</ul>
+</div></blockquote>
+<p><strong>nexg</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>nexg (integer) keyword and integer value specifying the number of
+GWF-GWF exchanges.</li>
+</ul>
+</div></blockquote>
+<p><strong>gwfgwfrecarray</strong> : [cellidm1, cellidm2, ihc, cl1, cl2, hwva, aux]</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>cellidm1 ((integer, …)) is the cellid of the cell in model 1 as
+specified in the simulation name file. For a structured grid that
+uses the DIS input file, CELLIDM1 is the layer, row, and column
+numbers of the cell. For a grid that uses the DISV input file,
+CELLIDM1 is the layer number and CELL2D number for the two cells. If
+the model uses the unstructured discretization (DISU) input file,
+then CELLIDM1 is the node number for the cell.</li>
+<li>cellidm2 ((integer, …)) is the cellid of the cell in model 2 as
+specified in the simulation name file. For a structured grid that
+uses the DIS input file, CELLIDM2 is the layer, row, and column
+numbers of the cell. For a grid that uses the DISV input file,
+CELLIDM2 is the layer number and CELL2D number for the two cells. If
+the model uses the unstructured discretization (DISU) input file,
+then CELLIDM2 is the node number for the cell.</li>
+<li>ihc (integer) is an integer flag indicating the direction between
+node n and all of its m connections. If IHC = 0 then the connection
+is vertical. If IHC = 1 then the connection is horizontal. If IHC = 2
+then the connection is horizontal for a vertically staggered grid.</li>
+<li>cl1 (double) is the distance between the center of cell 1 and the its
+shared face with cell 2.</li>
+<li>cl2 (double) is the distance between the center of cell 1 and the its
+shared face with cell 2.</li>
+<li>hwva (double) is the horizontal width of the flow connection between
+cell 1 and cell 2 if IHC <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0, or it is the area perpendicular
+to flow of the vertical connection between cell 1 and cell 2 if IHC =
+0.</li>
+<li>aux (double) represents the values of the auxiliary variables for
+each GWFGWF Exchange. The values of auxiliary variables must be
+present for each exchange. The values must be specified in the order
+of the auxiliary variables specified in the OPTIONS block.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf.get_package">
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfgwfhfb.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfgwfhfb Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfgwfgnc.html" class="btn btn-neutral" title="flopy.mf6.modflow.mfgwfgnc Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

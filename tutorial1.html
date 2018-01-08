@@ -1,72 +1,190 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Tutorial 1: Confined Steady-State Flow Model &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Tutorials" href="tutorials.html" />
-    <link rel="next" title="Tutorial 2: Unconfined Transient Flow Model" href="tutorial2.html" />
-    <link rel="prev" title="Tutorials" href="tutorials.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial 1: Confined Steady-State Flow Model &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Tutorials" href="tutorials.html"/>
+        <link rel="next" title="Tutorial 2: Unconfined Transient Flow Model" href="tutorial2.html"/>
+        <link rel="prev" title="Tutorials" href="tutorials.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="tutorial2.html" title="Tutorial 2: Unconfined Transient Flow Model"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="tutorials.html" title="Tutorials"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="tutorials.html" accesskey="U">Tutorials</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tutorial 1: Confined Steady-State Flow Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-modflow-model">Creating the MODFLOW Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#discretization">Discretization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basic-package">Basic Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layer-property-flow-package">Layer-Property Flow Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-control">Output Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preconditioned-conjugate-gradient-package">Preconditioned Conjugate Gradient Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-the-modflow-data-files">Writing the MODFLOW Data Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-modeling">Running the Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-processing-the-results">Post-Processing the Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial2.html">Tutorial 2: Unconfined Transient Flow Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Flopy Code</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
+        
+      <li>Tutorial 1: Confined Steady-State Flow Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tutorial1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="tutorial-1-confined-steady-state-flow-model">
 <h1>Tutorial 1: Confined Steady-State Flow Model<a class="headerlink" href="#tutorial-1-confined-steady-state-flow-model" title="Permalink to this headline">¶</a></h1>
@@ -77,7 +195,7 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">flopy</span>
 </pre></div>
 </div>
-<p>However, you may have a custom version of flopy, or maybe flopy hasn&#8217;t been officially &#8220;installed&#8221;.  In this case, you can tell python where flopy is by adding the flopy path to sys.path.  In this case, we use the following commands to set the path correctly:</p>
+<p>However, you may have a custom version of flopy, or maybe flopy hasn’t been officially “installed”.  In this case, you can tell python where flopy is by adding the flopy path to sys.path.  In this case, we use the following commands to set the path correctly:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -102,7 +220,7 @@
 <span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span> <span class="n">exe_name</span><span class="o">=</span><span class="s1">&#39;mf2005&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Next, let&#8217;s proceed by defining our model domain and creating a MODFLOW grid to span the domain:</p>
+<p>Next, let’s proceed by defining our model domain and creating a MODFLOW grid to span the domain:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Model domain and grid definition</span>
 <span class="n">Lx</span> <span class="o">=</span> <span class="mf">1000.</span>
 <span class="n">Ly</span> <span class="o">=</span> <span class="mf">1000.</span>
@@ -143,7 +261,7 @@
 <h3>Layer-Property Flow Package<a class="headerlink" href="#layer-property-flow-package" title="Permalink to this headline">¶</a></h3>
 <p>Details on the flopy LPF class are at: <a class="reference external" href="mflpf.html">flopy.modflow.mflpf</a>.  Values of 10. are assigned for the horizontal and vertical hydraulic conductivity:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add LPF package to the MODFLOW model</span>
-<span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">hk</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">vka</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span>
+<span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">hk</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">vka</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">ipakcb</span><span class="o">=</span><span class="mi">53</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Because we did not specify a value for laytyp, Flopy will use the default value of 0, which means that this model will be confined.</p>
@@ -152,9 +270,11 @@
 <h3>Output Control<a class="headerlink" href="#output-control" title="Permalink to this headline">¶</a></h3>
 <p>Details on the flopy OC class are at: <a class="reference external" href="mfoc.html">flopy.modflow.mfoc</a>.  Here we can use the default OC settings by specifying the following:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add OC package to the MODFLOW model</span>
-<span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">spd</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="p">[</span><span class="s1">&#39;print head&#39;</span><span class="p">,</span> <span class="s1">&#39;print budget&#39;</span><span class="p">,</span> <span class="s1">&#39;save head&#39;</span><span class="p">,</span> <span class="s1">&#39;save budget&#39;</span><span class="p">]}</span>
+<span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">spd</span><span class="p">,</span> <span class="n">compact</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The stress period dictionary is used to set what output is saved for the corresponding stress period and time step.  In this case, the tuple (0, 0) means that stress period 1 and time step 1 for MODFLOW will have output saved.  Head and budgets will be printed and head and budget information will be saved.</p>
 </div>
 <div class="section" id="preconditioned-conjugate-gradient-package">
 <h3>Preconditioned Conjugate Gradient Package<a class="headerlink" href="#preconditioned-conjugate-gradient-package" title="Permalink to this headline">¶</a></h3>
@@ -175,7 +295,7 @@
 </div>
 <div class="section" id="running-the-modeling">
 <h2>Running the Modeling<a class="headerlink" href="#running-the-modeling" title="Permalink to this headline">¶</a></h2>
-<p>Flopy can also be used to run the model.  The model object (mf in this example) has an attached method that will run the model.  For this to work, the MODFLOW program must be located somewhere within the system path, or within the working directory.  In this example, we have specified that the name of the executable program is &#8216;mf2005&#8217;.  Issue the following to run the model:</p>
+<p>Flopy can also be used to run the model.  The model object (mf in this example) has an attached method that will run the model.  For this to work, the MODFLOW program must be located somewhere within the system path, or within the working directory.  In this example, we have specified that the name of the executable program is ‘mf2005’.  Issue the following to run the model:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Run the MODFLOW model</span>
 <span class="n">success</span><span class="p">,</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">run_model</span><span class="p">()</span>
 </pre></div>
@@ -193,83 +313,111 @@
 <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">delr</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">Lx</span> <span class="o">-</span> <span class="n">delr</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">Ly</span> <span class="o">-</span> <span class="n">delc</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">delc</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;tutorial1a.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If everything has worked properly, you should see the following head contours.</p>
 <div class="figure align-left">
-<a class="reference internal image-reference" href="_static/tutorial1fig1.png"><img alt="head contours in first layer" src="_static/tutorial1fig1.png" /></a>
+<a class="reference internal image-reference" href="_static/tutorial1a.png"><img alt="head contours in first layer" src="_static/tutorial1a.png" /></a>
+</div>
+<p>Flopy also has some pre-canned plotting capabilities can can be accessed using the ModelMap class.  The following code shows how to use the modelmap class to plot boundary conditions (IBOUND), plot the grid, plot head contours, and plot vectors:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">hds</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="n">modelname</span><span class="o">+</span><span class="s1">&#39;.hds&#39;</span><span class="p">)</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">hds</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+<span class="n">head</span> <span class="o">=</span> <span class="n">hds</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="n">cbb</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">CellBudgetFile</span><span class="p">(</span><span class="n">modelname</span><span class="o">+</span><span class="s1">&#39;.cbc&#39;</span><span class="p">)</span>
+<span class="n">kstpkper_list</span> <span class="o">=</span> <span class="n">cbb</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+<span class="n">frf</span> <span class="o">=</span> <span class="n">cbb</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;FLOW RIGHT FACE&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fff</span> <span class="o">=</span> <span class="n">cbb</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;FLOW FRONT FACE&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">modelmap</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">ModelMap</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">mf</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">qm</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">plot_ibound</span><span class="p">()</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">plot_grid</span><span class="p">()</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">contour_array</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">)</span>
+<span class="n">quiver</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">plot_discharge</span><span class="p">(</span><span class="n">frf</span><span class="p">,</span> <span class="n">fff</span><span class="p">,</span> <span class="n">head</span><span class="o">=</span><span class="n">head</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;tutorial1b.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="_static/tutorial1b.png"><img alt="head contours in first layer" src="_static/tutorial1b.png" /></a>
 </div>
 </div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Tutorial 1: Confined Steady-State Flow Model</a><ul>
-<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
-<li><a class="reference internal" href="#creating-the-modflow-model">Creating the MODFLOW Model</a><ul>
-<li><a class="reference internal" href="#discretization">Discretization</a></li>
-<li><a class="reference internal" href="#basic-package">Basic Package</a></li>
-<li><a class="reference internal" href="#layer-property-flow-package">Layer-Property Flow Package</a></li>
-<li><a class="reference internal" href="#output-control">Output Control</a></li>
-<li><a class="reference internal" href="#preconditioned-conjugate-gradient-package">Preconditioned Conjugate Gradient Package</a></li>
-<li><a class="reference internal" href="#writing-the-modflow-data-files">Writing the MODFLOW Data Files</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#running-the-modeling">Running the Modeling</a></li>
-<li><a class="reference internal" href="#post-processing-the-results">Post-Processing the Results</a></li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial2.html" class="btn btn-neutral float-right" title="Tutorial 2: Unconfined Transient Flow Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tutorials.html" class="btn btn-neutral" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="tutorials.html"
-                        title="previous chapter">Tutorials</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="tutorial2.html"
-                        title="next chapter">Tutorial 2: Unconfined Transient Flow Model</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="tutorial2.html" title="Tutorial 2: Unconfined Transient Flow Model"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="tutorials.html" title="Tutorials"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="tutorials.html" >Tutorials</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

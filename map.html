@@ -1,72 +1,191 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.plot.map Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.plot.crosssection Module" href="crosssection.html" />
-    <link rel="prev" title="flopy.utils.zonbud Module" href="zonbud.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.plot.map Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.plot.crosssection Module" href="crosssection.html"/>
+        <link rel="prev" title="flopy.utils.zonbud Module" href="zonbud.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="crosssection.html" title="flopy.plot.crosssection Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="zonbud.html" title="flopy.utils.zonbud Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.plot.map Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crosssection.html">flopy.plot.crosssection Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotutil.html">flopy.plot.plotutil Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.plot.map Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/map.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.plot.map">
 <span id="flopy-plot-map-module"></span><h1>flopy.plot.map Module<a class="headerlink" href="#module-flopy.plot.map" title="Permalink to this headline">¶</a></h1>
@@ -235,7 +354,7 @@ type from a flopy model</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ftype</strong> : string</p>
 <blockquote>
-<div><p>Package name string (&#8216;WEL&#8217;, &#8216;GHB&#8217;, etc.). (Default is None)</p>
+<div><p>Package name string (‘WEL’, ‘GHB’, etc.). (Default is None)</p>
 </div></blockquote>
 <p><strong>package</strong> : flopy.modflow.Modflow package class instance</p>
 <blockquote>
@@ -305,19 +424,19 @@ the rotated and offset grid.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>frf</strong> : numpy.ndarray</p>
 <blockquote>
-<div><p>MODFLOW&#8217;s &#8216;flow right face&#8217;</p>
+<div><p>MODFLOW’s ‘flow right face’</p>
 </div></blockquote>
 <p><strong>fff</strong> : numpy.ndarray</p>
 <blockquote>
-<div><p>MODFLOW&#8217;s &#8216;flow front face&#8217;</p>
+<div><p>MODFLOW’s ‘flow front face’</p>
 </div></blockquote>
 <p><strong>flf</strong> : numpy.ndarray</p>
 <blockquote>
-<div><p>MODFLOW&#8217;s &#8216;flow lower face&#8217; (Default is None.)</p>
+<div><p>MODFLOW’s ‘flow lower face’ (Default is None.)</p>
 </div></blockquote>
 <p><strong>head</strong> : numpy.ndarray</p>
 <blockquote>
-<div><p>MODFLOW&#8217;s head array.  If not provided, then will assume confined
+<div><p>MODFLOW’s head array.  If not provided, then will assume confined
 conditions in order to calculated saturated thickness.</p>
 </div></blockquote>
 <p><strong>istep</strong> : int</p>
@@ -366,7 +485,7 @@ MODPATH 6 endpoint file</p>
 <p><strong>direction</strong> : str</p>
 <blockquote>
 <div><p>String defining if starting or ending particle locations should be
-considered. (default is &#8216;ending&#8217;)</p>
+considered. (default is ‘ending’)</p>
 </div></blockquote>
 <p><strong>selection</strong> : tuple</p>
 <blockquote>
@@ -433,15 +552,15 @@ self.ml</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray</p>
 <blockquote>
-<div><p>ibound array to plot.  (Default is ibound in &#8216;BAS6&#8217; package.)</p>
+<div><p>ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
 </div></blockquote>
 <p><strong>color_noflow</strong> : string</p>
 <blockquote>
-<div><p>(Default is &#8216;black&#8217;)</p>
+<div><p>(Default is ‘black’)</p>
 </div></blockquote>
 <p><strong>color_ch</strong> : string</p>
 <blockquote>
-<div><p>Color for constant heads (Default is &#8216;blue&#8217;.)</p>
+<div><p>Color for constant heads (Default is ‘blue’.)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -463,11 +582,11 @@ from the self.ml</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray</p>
 <blockquote>
-<div><p>ibound array to plot.  (Default is ibound in &#8216;BAS6&#8217; package.)</p>
+<div><p>ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
 </div></blockquote>
 <p><strong>color_noflow</strong> : string</p>
 <blockquote>
-<div><p>(Default is &#8216;black&#8217;)</p>
+<div><p>(Default is ‘black’)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -490,8 +609,8 @@ from the self.ml</p>
 <blockquote>
 <div><p>rec array or list of rec arrays is data returned from
 modpathfile PathlineFile get_data() or get_alldata()
-methods. Data in rec array is &#8216;x&#8217;, &#8216;y&#8217;, &#8216;z&#8217;, &#8216;time&#8217;,
-&#8216;k&#8217;, and &#8216;particleid&#8217;.</p>
+methods. Data in rec array is ‘x’, ‘y’, ‘z’, ‘time’,
+‘k’, and ‘particleid’.</p>
 </div></blockquote>
 <p><strong>travel_time: float or str</strong></p>
 <blockquote>
@@ -502,12 +621,12 @@ string is passed a variety logical constraints can be added
 in front of a time value to select pathlines for a select
 period of time. Valid logical constraints are &lt;=, &lt;, &gt;=, and
 &gt;. For example, to select all pathlines less than 10000 days
-travel_time=&#8217;&lt; 10000&#8217; would be passed to plot_pathline.
+travel_time=’&lt; 10000’ would be passed to plot_pathline.
 (default is None)</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : layer, ax, colors.  The remaining kwargs are passed</p>
 <blockquote>
-<div><p>into the LineCollection constructor. If layer=&#8217;all&#8217;,
+<div><p>into the LineCollection constructor. If layer=’all’,
 pathlines are output for all layers</p>
 </div></blockquote>
 </td>
@@ -547,53 +666,75 @@ the rotated and offset grid.</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="crosssection.html" class="btn btn-neutral float-right" title="flopy.plot.crosssection Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="zonbud.html" class="btn btn-neutral" title="flopy.utils.zonbud Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="zonbud.html"
-                        title="previous chapter">flopy.utils.zonbud Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="crosssection.html"
-                        title="next chapter">flopy.plot.crosssection Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="crosssection.html" title="flopy.plot.crosssection Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="zonbud.html" title="flopy.utils.zonbud Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

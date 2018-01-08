@@ -1,78 +1,235 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html" />
-    <link rel="prev" title="flopy.modflow.mfriv Module" href="mfriv.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html"/>
+        <link rel="prev" title="flopy.modflow.mfriv Module" href="mfriv.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfsip.html" title="flopy.modflow.mfsip Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfriv.html" title="flopy.modflow.mfriv Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbas.html">flopy.modflow.mfbas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfbcf.html">flopy.modflow.mfbcf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfchd.html">flopy.modflow.mfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhfb.html">flopy.modflow.mfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhob.html">flopy.modflow.mfhob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhyd.html">flopy.modflow.mfhyd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgage.html">flopy.modflow.mfgage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfghb.html">flopy.modflow.mfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgmg.html">flopy.modflow.mfgmg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflak.html">flopy.modflow.mflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflmt.html">flopy.modflow.mflmt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflpf.html">flopy.modflow.mflpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnw1.html">flopy.modflow.mfmnw1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnw2.html">flopy.modflow.mfmnw2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnwi.html">flopy.modflow.mfmnwi Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnwt.html">flopy.modflow.mfnwt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfoc.html">flopy.modflow.mfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpbc.html">flopy.modflow.mfpbc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcg.html">flopy.modflow.mfpcg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcgn.html">flopy.modflow.mfpcgn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfrch.html">flopy.modflow.mfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfriv.html">flopy.modflow.mfriv Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.modflow.mfsfr2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsip.html">flopy.modflow.mfsip Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsms.html">flopy.modflow.mfsms Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsor.html">flopy.modflow.mfsor Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfstr.html">flopy.modflow.mfstr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsub.html">flopy.modflow.mfsub Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswi2.html">flopy.modflow.mfswi2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswr1.html">flopy.modflow.mfswr1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswt.html">flopy.modflow.mfswt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfupw.html">flopy.modflow.mfupw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfuzf1.html">flopy.modflow.mfuzf1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfwel.html">flopy.modflow.mfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfaddoutsidefile.html">flopy.modflow.mfaddoutsidefile Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.modflow.mfsfr2 Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfsfr2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.modflow.mfsfr2">
 <span id="flopy-modflow-mfsfr2-module"></span><h1>flopy.modflow.mfsfr2 Module<a class="headerlink" href="#module-flopy.modflow.mfsfr2" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfsfr2.</code><code class="descname">ModflowSfr2</code><span class="sig-paren">(</span><em>model</em>, <em>nstrm=2</em>, <em>nss=1</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=128390.4</em>, <em>dleak=0.0001</em>, <em>ipakcb=None</em>, <em>istcb2=None</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=1</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unit_number=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfsfr2.</code><code class="descname">ModflowSfr2</code><span class="sig-paren">(</span><em>model</em>, <em>nstrm=-2</em>, <em>nss=1</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=None</em>, <em>dleak=0.0001</em>, <em>ipakcb=None</em>, <em>istcb2=None</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=0</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>irdflag=0</em>, <em>iptflag=0</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unit_number=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Streamflow-Routing (SFR2) Package Class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -80,7 +237,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><p>The model object (of type :class:&#8217;flopy.modflow.mf.Modflow&#8217;) to which
+<div><p>The model object (of type :class:’flopy.modflow.mf.Modflow’) to which
 this package will be added.</p>
 </div></blockquote>
 <p><strong>nstrm</strong> : integer</p>
@@ -91,7 +248,8 @@ lines of data to be included in Item 2, described below. When NSTRM is specified
 it is also used as a flag for changing the format of the data input, for simulating unsaturated flow beneath
 streams, and (or) for simulating transient streamflow routing (for MODFLOW-2005 simulations only), depending
 on the values specified for variables ISFROPT and IRTFLG, as described below. When NSTRM is negative, NSFRPAR
-must be set to zero, which means that parameters cannot be specified.</p>
+must be set to zero, which means that parameters cannot be specified. 
+By default, nstrm is set to negative.</p>
 </div></blockquote>
 <p><strong>nss</strong> : integer</p>
 <blockquote>
@@ -111,8 +269,8 @@ when NSTRM is negative.</p>
 <p><strong>const</strong> : float</p>
 <blockquote>
 <div><p>A real value (or conversion factor) used in calculating stream depth for stream reach. If stream depth is
-not calculated using Manning&#8217;s equation for any stream segment (that is, ICALC does not equal 1 or 2), then
-a value of zero can be entered. If Manning&#8217;s equation is used, a constant of 1.486 is used for flow units of
+not calculated using Manning’s equation for any stream segment (that is, ICALC does not equal 1 or 2), then
+a value of zero can be entered. If Manning’s equation is used, a constant of 1.486 is used for flow units of
 cubic feet per second, and a constant of 1.0 is used for units of cubic meters per second. The constant must
 be multiplied by 86,400 when using time units of days in the simulation. An explanation of time units used
 in MODFLOW is given by Harbaugh and others (2000, p. 10).</p>
@@ -233,6 +391,12 @@ simulations (and would need to be converted to whatever units are being used in 
 <div><p>Numpy record array of length equal to nss, with columns for each variable entered in items 6a, 6b and 6c
 (see SFR package input instructions). Segment numbers are one-based.</p>
 </div></blockquote>
+<p><strong>dataset_5</strong> : dict of lists</p>
+<blockquote>
+<div><p>Optional; will be built automatically from segment_data unless specified.
+Dict of lists, with key for each stress period. Each list contains the variables [itmp, irdflag, iptflag].
+(see SFR documentation for more details):</p>
+</div></blockquote>
 <p><strong>itmp</strong> : list of integers (len = NPER)</p>
 <blockquote>
 <div><p>For each stress period, an integer value for reusing or reading stream segment data that can change each
@@ -242,22 +406,22 @@ defined in Item 6 below for a number of segments equal to the value of ITMP. If 
 data not defined in Item 4 will be reused from the last stress period (Item 6 is not read for the current
 stress period). ITMP must be defined &gt;= 0 for the first stress period of a simulation.</p>
 </div></blockquote>
-<p><strong>irdflag</strong> : list of integers (len = NPER)</p>
+<p><strong>irdflag</strong> : int or list of integers (len = NPER)</p>
 <blockquote>
 <div><p>For each stress period, an integer value for printing input data specified for this stress period.
 If IRDFLG = 0, input data for this stress period will be printed. If IRDFLG &gt; 0, then input data for this
 stress period will not be printed.</p>
 </div></blockquote>
-<p><strong>iptflag</strong> : list of integers (len = NPER)</p>
+<p><strong>iptflag</strong> : int or list of integers (len = NPER)</p>
 <blockquote>
 <div><p>For each stress period, an integer value for printing streamflow-routing results during this stress period.
-If IPTFLG = 0, or whenever the variable ICBCFL or &#8220;Save Budget&#8221; is specified in Output Control, the results
+If IPTFLG = 0, or whenever the variable ICBCFL or “Save Budget” is specified in Output Control, the results
 for specified time steps during this stress period will be printed. If IPTFLG &gt; 0, then the results during
 this stress period will not be printed.</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
-<div><p>Filename extension (default is &#8216;sfr&#8217;)</p>
+<div><p>Filename extension (default is ‘sfr’)</p>
 </div></blockquote>
 <p><strong>unit_number</strong> : int</p>
 <blockquote>
@@ -284,7 +448,7 @@ length of the list of strings should be 3. Default is None.</p>
 <p>Parameters are not supported in FloPy.</p>
 <p>MODFLOW-OWHM is not supported.</p>
 <p>The Ground-Water Transport (GWT) process is not supported.</p>
-<p>Limitations on which features are supported...</p>
+<p>Limitations on which features are supported…</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
@@ -306,6 +470,40 @@ length of the list of strings should be 3. Default is None.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.assign_layers">
+<code class="descname">assign_layers</code><span class="sig-paren">(</span><em>adjust_botms=False</em>, <em>pad=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.assign_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns the appropriate layer for each SFR reach,
+based on cell bottoms at location of reach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>adjust_botms</strong> : bool</p>
+<blockquote>
+<div><p>Streambed bottom elevations below the model bottom
+will cause an error in MODFLOW. If True, adjust
+bottom elevations in lowest layer of the model
+so they are at least pad distance below any co-located
+streambed elevations.</p>
+</div></blockquote>
+<p><strong>pad</strong> : scalar</p>
+<blockquote class="last">
+<div><p>Minimum distance below streambed bottom to set
+any conflicting model bottom elevations.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Streambed bottom = strtop - strthick
+This routine updates the elevations in the botm array
+of the flopy.model.ModflowDis instance. To produce a 
+new DIS package file, model.write() or flopy.model.ModflowDis.write()
+must be run.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.check" title="Permalink to this definition">¶</a></dt>
@@ -346,6 +544,27 @@ performed. If level=1, full checks are performed.</p>
 </div>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.dataset_5">
+<code class="descname">dataset_5</code><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.dataset_5" title="Permalink to this definition">¶</a></dt>
+<dd><p>auto-update itmp so it is consistent with segment_data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.export_linkages">
+<code class="descname">export_linkages</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.export_linkages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export linework shapefile showing all routing connections between SFR reaches.
+A length field containing the distance between connected reaches
+can be used to filter for the longest connections in a GIS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.export_outlets">
+<code class="descname">export_outlets</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.export_outlets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export point shapefile showing locations where streamflow is leaving
+the model (outset=0).</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.get_outlets">
 <code class="descname">get_outlets</code><span class="sig-paren">(</span><em>level=0</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.get_outlets" title="Permalink to this definition">¶</a></dt>
@@ -353,18 +572,38 @@ performed. If level=1, full checks are performed.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="flopy.modflow.mfsfr2.ModflowSfr2.get_outreaches">
-<code class="descname">get_outreaches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.get_outreaches" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine the outreach for each SFR reach (requires a reachID column in reach_data).
-Uses the segment routing specified for the first stress period to route reaches between segments.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.get_slopes">
-<code class="descname">get_slopes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.get_slopes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_slopes</code><span class="sig-paren">(</span><em>default_slope=0.001</em>, <em>minimum_slope=0.0001</em>, <em>maximum_slope=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.get_slopes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute slopes by reach using values in strtop (streambed top) and rchlen (reach length)
 columns of reach_data. The slope for a reach n is computed as strtop(n+1) - strtop(n) / rchlen(n).
-Slopes for outlet reaches are assumed to be equal to slope of previous reach.</p>
+Slopes for outlet reaches are set equal to a default value (default_slope).
+Populates the slope column in reach_data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>default_slope</strong> : float</p>
+<blockquote>
+<div><p>Slope value applied to outlet reaches (where water leaves the model).
+Default value is 0.001</p>
+</div></blockquote>
+<p><strong>minimum_slope</strong> : float</p>
+<blockquote>
+<div><p>Assigned to reaches with computed slopes less than this value.
+This ensures that the Manning’s equation won’t produce unreasonable values of stage
+(in other words, that stage is consistent with assumption that
+streamflow is primarily drive by the streambed gradient).
+Default value is 0.0001.</p>
+</div></blockquote>
+<p><strong>maximum_slope</strong> : float</p>
+<blockquote class="last">
+<div><p>Assigned to reaches with computed slopes more than this value.
+Default value is 1.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -400,25 +639,25 @@ package input data</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
 </dd>
-<dt>mflay</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
 zero)</p>
 </dd>
-<dt>key</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -442,11 +681,49 @@ a list of matplotlib.pyplot.axis are returned.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.plot_path">
+<code class="descname">plot_path</code><span class="sig-paren">(</span><em>start_seg=None</em>, <em>end_seg=0</em>, <em>plot_segment_lines=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.plot_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a profile of streambed elevation and model top 
+along a path of segments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_seg</strong> : int</p>
+<blockquote>
+<div><p>Number of first segment in path.</p>
+</div></blockquote>
+<p><strong>end_seg</strong> : int</p>
+<blockquote>
+<div><p>Number of last segment in path (defaults to 0/outlet).</p>
+</div></blockquote>
+<p><strong>plot_segment_lines</strong> : bool</p>
+<blockquote>
+<div><p>Controls plotting of segment end locations along profile.
+(default True)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>ax</strong> : matplotlib.axes._subplots.AxesSubplot object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.renumber_segments">
 <code class="descname">renumber_segments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.renumber_segments" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renumber segments so that segment numbering is continuous and always increases
-in the downstream direction. Experience suggests that this can substantially speed
-convergence for some models using the NWT solver.</p>
+in the downstream direction. This may speed convergence of the NWT solver 
+in some situations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.set_outreaches">
+<code class="descname">set_outreaches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.set_outreaches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the outreach for each SFR reach (requires a reachID column in reach_data).
+Uses the segment routing specified for the first stress period to route reaches between segments.</p>
 </dd></dl>
 
 <dl class="method">
@@ -520,7 +797,7 @@ performed. If level=1, full checks are performed.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Daniel Feinstein&#8217;s top 10 SFR problems (7/16/2014):
+<p>Daniel Feinstein’s top 10 SFR problems (7/16/2014):
 1) cell gaps btw adjacent reaches in a single segment
 2) cell gaps btw routed segments. possibly because of re-entry problems at domain edge
 3) adjacent reaches with STOP sloping the wrong way
@@ -534,8 +811,14 @@ performed. If level=1, full checks are performed.</p>
 <p>Also after running the model they will want to check for backwater effects.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.check.elevations">
-<code class="descname">elevations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.elevations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">elevations</code><span class="sig-paren">(</span><em>min_strtop=-10</em>, <em>max_strtop=15000</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.elevations" title="Permalink to this definition">¶</a></dt>
 <dd><p>checks streambed elevations for downstream rises and inconsistencies with model grid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfsfr2.check.for_nans">
+<code class="descname">for_nans</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.for_nans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for nans in reach or segment data</p>
 </dd></dl>
 
 <dl class="method">
@@ -560,7 +843,7 @@ performed. If level=1, full checks are performed.</p>
 <dt id="flopy.modflow.mfsfr2.check.slope">
 <code class="descname">slope</code><span class="sig-paren">(</span><em>minimum_slope=0.0001</em>, <em>maximum_slope=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.slope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that streambed slopes are greater than or equal to a specified minimum value.
-Low slope values can cause &#8220;backup&#8221; or unrealistic stream stages with icalc options
+Low slope values can cause “backup” or unrealistic stream stages with icalc options
 where stage is computed.</p>
 </dd></dl>
 
@@ -569,53 +852,75 @@ where stage is computed.</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfsip.html" class="btn btn-neutral float-right" title="flopy.modflow.mfsip Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfriv.html" class="btn btn-neutral" title="flopy.modflow.mfriv Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfriv.html"
-                        title="previous chapter">flopy.modflow.mfriv Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfsip.html"
-                        title="next chapter">flopy.modflow.mfsip Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfsip.html" title="flopy.modflow.mfsip Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfriv.html" title="flopy.modflow.mfriv Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

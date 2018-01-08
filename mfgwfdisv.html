@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.mf6.modflow.mfgwfdisv Module &mdash; flopy 3.2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mf6.modflow.mfgwfdrn Module" href="mfgwfdrn.html"/>
+        <link rel="prev" title="flopy.mf6.modflow.mfgwfdisu Module" href="mfgwfdisu.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbase.html">flopy.mf6.mfbase Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmodel.html">flopy.mf6.mfmodel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.modflow.mfgwfdisv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdrn.html">flopy.mf6.modflow.mfgwfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevt.html">flopy.mf6.modflow.mfgwfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevta.html">flopy.mf6.modflow.mfgwfevta Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfghb.html">flopy.mf6.modflow.mfgwfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgnc.html">flopy.mf6.modflow.mfgwfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgwf.html">flopy.mf6.modflow.mfgwfgwf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfhfb.html">flopy.mf6.modflow.mfgwfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfic.html">flopy.mf6.modflow.mfgwfic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwflak.html">flopy.mf6.modflow.mfgwflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmaw.html">flopy.mf6.modflow.mfgwfmaw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmvr.html">flopy.mf6.modflow.mfgwfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnam.html">flopy.mf6.modflow.mfgwfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnpf.html">flopy.mf6.modflow.mfgwfnpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfoc.html">flopy.mf6.modflow.mfgwfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrch.html">flopy.mf6.modflow.mfgwfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrcha.html">flopy.mf6.modflow.mfgwfrcha Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfriv.html">flopy.mf6.modflow.mfgwfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsfr.html">flopy.mf6.modflow.mfgwfsfr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsto.html">flopy.mf6.modflow.mfgwfsto Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfuzf.html">flopy.mf6.modflow.mfgwfuzf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfwel.html">flopy.mf6.modflow.mfgwfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfims.html">flopy.mf6.modflow.mfims Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmvr.html">flopy.mf6.modflow.mfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnam.html">flopy.mf6.modflow.mfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mftdis.html">flopy.mf6.modflow.mftdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlobs.html">flopy.mf6.modflow.mfutlobs Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutllaktab.html">flopy.mf6.modflow.mfutllaktab Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutltas.html">flopy.mf6.modflow.mfutltas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.mf6.modflow.mfgwfdisv Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfgwfdisv.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.mf6.modflow.mfgwfdisv">
+<span id="flopy-mf6-modflow-mfgwfdisv-module"></span><h1>flopy.mf6.modflow.mfgwfdisv Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfdisv" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.mf6.modflow.mfgwfdisv.ModflowGwfdisv">
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfdisv.</code><code class="descname">ModflowGwfdisv</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>length_units=None</em>, <em>nogrb=None</em>, <em>xorigin=None</em>, <em>yorigin=None</em>, <em>angrot=None</em>, <em>nlay=None</em>, <em>ncpl=None</em>, <em>nvert=None</em>, <em>top=None</em>, <em>botm=None</em>, <em>idomain=None</em>, <em>verticesrecarray=None</em>, <em>cell2drecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfdisv.ModflowGwfdisv" title="Permalink to this definition">¶</a></dt>
+<dd><p>ModflowGwfdisv defines a disv package within a gwf6 model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>length_units</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>length_units (string) is the length units used for this model. Values
+can be “FEET”, “METERS”, or “CENTIMETERS”. If not specified, the
+default is “UNKNOWN”.</li>
+</ul>
+</div></blockquote>
+<p><strong>nogrb</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>nogrb (boolean) keyword to deactivate writing of the binary grid
+file.</li>
+</ul>
+</div></blockquote>
+<p><strong>xorigin</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>xorigin (double) x-position of the origin used for model grid
+vertices. This value should be provided in a real-world coordinate
+system. A default value of zero is assigned if not specified. The
+value for XORIGIN does not affect the model simulation, but it is
+written to the binary grid file so that postprocessors can locate the
+grid in space.</li>
+</ul>
+</div></blockquote>
+<p><strong>yorigin</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>yorigin (double) y-position of the origin used for model grid
+vertices. This value should be provided in a real-world coordinate
+system. If not specified, then a default value equal to zero is used.
+The value for YORIGIN does not affect the model simulation, but it is
+written to the binary grid file so that postprocessors can locate the
+grid in space.</li>
+</ul>
+</div></blockquote>
+<p><strong>angrot</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>angrot (double) counter-clockwise rotation angle (in degrees) of the
+model grid coordinate system relative to a real-world coordinate
+system. If not specified, then a default value of 0.0 is assigned.
+The value for ANGROT does not affect the model simulation, but it is
+written to the binary grid file so that postprocessors can locate the
+grid in space.</li>
+</ul>
+</div></blockquote>
+<p><strong>nlay</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>nlay (integer) is the number of layers in the model grid.</li>
+</ul>
+</div></blockquote>
+<p><strong>ncpl</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>ncpl (integer) is the number of cells per layer. This is a constant
+value for the grid and it applies to all layers.</li>
+</ul>
+</div></blockquote>
+<p><strong>nvert</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>nvert (integer) is the total number of (x, y) vertex pairs used to
+characterize the horizontal configuration of the model grid.</li>
+</ul>
+</div></blockquote>
+<p><strong>top</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>top (double) is the top elevation for each cell in the top model
+layer.</li>
+</ul>
+</div></blockquote>
+<p><strong>botm</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>botm (double) is the bottom elevation for each cell.</li>
+</ul>
+</div></blockquote>
+<p><strong>idomain</strong> : [integer]</p>
+<blockquote>
+<div><ul class="simple">
+<li>idomain (integer) is an optional array that characterizes the
+existence status of a cell. If the IDOMAIN array is not specified,
+then all model cells exist within the solution. If the IDOMAIN value
+for a cell is 0, the cell does not exist in the simulation. Input and
+output values will be read and written for the cell, but internal to
+the program, the cell is excluded from the solution. If the IDOMAIN
+value for a cell is 1, the cell exists in the simulation. If the
+IDOMAIN value for a cell is -1, the cell does not exist in the
+simulation. Furthermore, the first existing cell above will be
+connected to the first existing cell below. This type of cell is
+referred to as a “vertical pass through” cell.</li>
+</ul>
+</div></blockquote>
+<p><strong>verticesrecarray</strong> : [iv, xv, yv]</p>
+<blockquote>
+<div><ul class="simple">
+<li>iv (integer) is the vertex number. Records in the VERTICES block must
+be listed in consecutive order from 1 to NVERT.</li>
+<li>xv (double) is the x-coordinate for the vertex.</li>
+<li>yv (double) is the y-coordinate for the vertex.</li>
+</ul>
+</div></blockquote>
+<p><strong>cell2drecarray</strong> : [icell2d, xc, yc, ncvert, icvert]</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>icell2d (integer) is the CELL2D number. Records in the CELL2D block
+must be listed in consecutive order from 1 to NCPL.</li>
+<li>xc (double) is the x-coordinate for the cell center.</li>
+<li>yc (double) is the y-coordinate for the cell center.</li>
+<li>ncvert (integer) is the number of vertices required to define the
+cell. There may be a different number of vertices for each cell.</li>
+<li>icvert (integer) is an array of integer values containing vertex
+numbers (in the VERTICES block) used to define the cell. Vertices
+must be listed in clockwise order. Cells that are connected must
+share vertices.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfgwfdisv.ModflowGwfdisv.get_package">
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfdisv.ModflowGwfdisv.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfgwfdrn.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfgwfdrn Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfgwfdisu.html" class="btn btn-neutral" title="flopy.mf6.modflow.mfgwfdisu Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

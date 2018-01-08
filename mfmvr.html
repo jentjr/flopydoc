@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.mf6.modflow.mfmvr Module &mdash; flopy 3.2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mf6.modflow.mfnam Module" href="mfnam.html"/>
+        <link rel="prev" title="flopy.mf6.modflow.mfims Module" href="mfims.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbase.html">flopy.mf6.mfbase Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmodel.html">flopy.mf6.mfmodel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisv.html">flopy.mf6.modflow.mfgwfdisv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdrn.html">flopy.mf6.modflow.mfgwfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevt.html">flopy.mf6.modflow.mfgwfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevta.html">flopy.mf6.modflow.mfgwfevta Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfghb.html">flopy.mf6.modflow.mfgwfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgnc.html">flopy.mf6.modflow.mfgwfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgwf.html">flopy.mf6.modflow.mfgwfgwf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfhfb.html">flopy.mf6.modflow.mfgwfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfic.html">flopy.mf6.modflow.mfgwfic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwflak.html">flopy.mf6.modflow.mfgwflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmaw.html">flopy.mf6.modflow.mfgwfmaw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmvr.html">flopy.mf6.modflow.mfgwfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnam.html">flopy.mf6.modflow.mfgwfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnpf.html">flopy.mf6.modflow.mfgwfnpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfoc.html">flopy.mf6.modflow.mfgwfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrch.html">flopy.mf6.modflow.mfgwfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrcha.html">flopy.mf6.modflow.mfgwfrcha Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfriv.html">flopy.mf6.modflow.mfgwfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsfr.html">flopy.mf6.modflow.mfgwfsfr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsto.html">flopy.mf6.modflow.mfgwfsto Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfuzf.html">flopy.mf6.modflow.mfgwfuzf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfwel.html">flopy.mf6.modflow.mfgwfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfims.html">flopy.mf6.modflow.mfims Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.modflow.mfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnam.html">flopy.mf6.modflow.mfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mftdis.html">flopy.mf6.modflow.mftdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlobs.html">flopy.mf6.modflow.mfutlobs Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutllaktab.html">flopy.mf6.modflow.mfutllaktab Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutltas.html">flopy.mf6.modflow.mfutltas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.mf6.modflow.mfmvr Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfmvr.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.mf6.modflow.mfmvr">
+<span id="flopy-mf6-modflow-mfmvr-module"></span><h1>flopy.mf6.modflow.mfmvr Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfmvr" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.mf6.modflow.mfmvr.ModflowMvr">
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfmvr.</code><code class="descname">ModflowMvr</code><span class="sig-paren">(</span><em>simulation</em>, <em>add_to_package_list=True</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>modelnames=None</em>, <em>budget_filerecord=None</em>, <em>maxmvr=None</em>, <em>maxpackages=None</em>, <em>packagesrecarray=None</em>, <em>periodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfmvr.ModflowMvr" title="Permalink to this definition">¶</a></dt>
+<dd><p>ModflowMvr defines a mvr package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>print_input</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>print_input (boolean) keyword to indicate that the list of MVR
+information will be written to the listing file immediately after it
+is read.</li>
+</ul>
+</div></blockquote>
+<p><strong>print_flows</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>print_flows (boolean) keyword to indicate that the list of MVR flow
+rates will be printed to the listing file for every stress period
+time step in which “BUDGET PRINT” is specified in Output Control. If
+there is no Output Control option and “PRINT_FLOWS” is specified,
+then flow rates are printed for the last time step of each stress
+period.</li>
+</ul>
+</div></blockquote>
+<p><strong>modelnames</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>modelnames (boolean) keyword to indicate that all package names will
+be preceded by the model name for the package. Model names are
+required when the Mover Package is used with a GWF-GWF Exchange. The
+MODELNAME keyword should not be used for a Mover Package that is for
+a single GWF Model.</li>
+</ul>
+</div></blockquote>
+<p><strong>budget_filerecord</strong> : [budgetfile]</p>
+<blockquote>
+<div><ul class="simple">
+<li>budgetfile (string) name of the output file to write budget
+information.</li>
+</ul>
+</div></blockquote>
+<p><strong>maxmvr</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>maxmvr (integer) integer value specifying the maximum number of water
+mover entries that will specified for any stress period.</li>
+</ul>
+</div></blockquote>
+<p><strong>maxpackages</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>maxpackages (integer) integer value specifying the number of unique
+packages that are included in this water mover input file.</li>
+</ul>
+</div></blockquote>
+<p><strong>packagesrecarray</strong> : [mname, pname]</p>
+<blockquote>
+<div><ul class="simple">
+<li>mname (string) name of model containing the package.</li>
+<li>pname (string) is the name of a package that may be included in a
+subsequent stress period block.</li>
+</ul>
+</div></blockquote>
+<p><strong>periodrecarray</strong> : [mname1, pname1, id1, mname2, pname2, id2, mvrtype, value]</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>mname1 (string) name of model containing the package, PNAME1.</li>
+<li>pname1 (string) is the package name for the provider. The package
+PNAME1 must be designated to provide water through the MVR Package by
+specifying the keyword “MOVER” in its OPTIONS block.</li>
+<li>id1 (integer) is the identifier for the provider. This is the well
+number, reach number, lake number, etc.</li>
+<li>mname2 (string) name of model containing the package, PNAME2.</li>
+<li>pname2 (string) is the package name for the receiver. The package
+PNAME2 must be designated to receive water from the MVR Package by
+specifying the keyword “MOVER” in its OPTIONS block.</li>
+<li>id2 (integer) is the identifier for the receiver. This is the well
+number, reach number, lake number, etc.</li>
+<li>mvrtype (string) is the character string signifying the method for
+determining how much water will be moved. Supported values are
+“FACTOR” “EXCESS” “THRESHOLD” and “UPTO”. These four options
+determine how the receiver flow rate, <img class="math" src="_images/math/f34bdb0cdef7eb44f6d5addb6c350053b2be3d56.png" alt="Q_R"/>, is calculated.
+These options are based the options available in the SFR2 Package for
+diverting stream flow.</li>
+<li>value (double) is the value to be used in the equation for
+calculating the amount of water to move. For the “FACTOR” option,
+VALUE is the <img class="math" src="_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> factor. For the remaining options, VALUE
+is the specified flow rate, <img class="math" src="_images/math/7fa25a029122d6b9ead3f9ac25eeb08db5f2c390.png" alt="Q_S"/>.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfmvr.ModflowMvr.get_package">
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfmvr.ModflowMvr.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfnam.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfnam Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfims.html" class="btn btn-neutral" title="flopy.mf6.modflow.mfims Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,72 +1,229 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.modflow.mfriv Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfsfr2 Module" href="mfsfr2.html" />
-    <link rel="prev" title="flopy.modflow.mfrch Module" href="mfrch.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.modflow.mfriv Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfsfr2 Module" href="mfsfr2.html"/>
+        <link rel="prev" title="flopy.modflow.mfrch Module" href="mfrch.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfsfr2.html" title="flopy.modflow.mfsfr2 Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfrch.html" title="flopy.modflow.mfrch Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbas.html">flopy.modflow.mfbas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfbcf.html">flopy.modflow.mfbcf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfchd.html">flopy.modflow.mfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhfb.html">flopy.modflow.mfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhob.html">flopy.modflow.mfhob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhyd.html">flopy.modflow.mfhyd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgage.html">flopy.modflow.mfgage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfghb.html">flopy.modflow.mfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgmg.html">flopy.modflow.mfgmg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflak.html">flopy.modflow.mflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflmt.html">flopy.modflow.mflmt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflpf.html">flopy.modflow.mflpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnw1.html">flopy.modflow.mfmnw1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnw2.html">flopy.modflow.mfmnw2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnwi.html">flopy.modflow.mfmnwi Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnwt.html">flopy.modflow.mfnwt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfoc.html">flopy.modflow.mfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpbc.html">flopy.modflow.mfpbc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcg.html">flopy.modflow.mfpcg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcgn.html">flopy.modflow.mfpcgn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfrch.html">flopy.modflow.mfrch Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.modflow.mfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsfr2.html">flopy.modflow.mfsfr2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsip.html">flopy.modflow.mfsip Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsms.html">flopy.modflow.mfsms Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsor.html">flopy.modflow.mfsor Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfstr.html">flopy.modflow.mfstr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsub.html">flopy.modflow.mfsub Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswi2.html">flopy.modflow.mfswi2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswr1.html">flopy.modflow.mfswr1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswt.html">flopy.modflow.mfswt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfupw.html">flopy.modflow.mfupw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfuzf1.html">flopy.modflow.mfuzf1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfwel.html">flopy.modflow.mfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfaddoutsidefile.html">flopy.modflow.mfaddoutsidefile Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.modflow.mfriv Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfriv.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.modflow.mfriv">
 <span id="flopy-modflow-mfriv-module"></span><h1>flopy.modflow.mfriv Module<a class="headerlink" href="#module-flopy.modflow.mfriv" title="Permalink to this headline">¶</a></h1>
@@ -140,7 +297,7 @@ If None the default river datatype will be applied.</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
-<div><p>Filename extension (default is &#8216;riv&#8217;)</p>
+<div><p>Filename extension (default is ‘riv’)</p>
 </div></blockquote>
 <p><strong>options</strong> : list of strings</p>
 <blockquote>
@@ -294,25 +451,25 @@ package input data</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
 </dd>
-<dt>mflay</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
 zero)</p>
 </dd>
-<dt>key</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -389,53 +546,75 @@ Adds an attribute for each layer in each data array</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfsfr2.html" class="btn btn-neutral float-right" title="flopy.modflow.mfsfr2 Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfrch.html" class="btn btn-neutral" title="flopy.modflow.mfrch Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfrch.html"
-                        title="previous chapter">flopy.modflow.mfrch Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfsfr2.html"
-                        title="next chapter">flopy.modflow.mfsfr2 Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfsfr2.html" title="flopy.modflow.mfsfr2 Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfrch.html" title="flopy.modflow.mfrch Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

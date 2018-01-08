@@ -1,72 +1,229 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfwel Module" href="mfwel.html" />
-    <link rel="prev" title="flopy.modflow.mfupw Module" href="mfupw.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfwel Module" href="mfwel.html"/>
+        <link rel="prev" title="flopy.modflow.mfupw Module" href="mfupw.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfwel.html" title="flopy.modflow.mfwel Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfupw.html" title="flopy.modflow.mfupw Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbas.html">flopy.modflow.mfbas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfbcf.html">flopy.modflow.mfbcf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfchd.html">flopy.modflow.mfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhfb.html">flopy.modflow.mfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhob.html">flopy.modflow.mfhob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhyd.html">flopy.modflow.mfhyd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgage.html">flopy.modflow.mfgage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfghb.html">flopy.modflow.mfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgmg.html">flopy.modflow.mfgmg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflak.html">flopy.modflow.mflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflmt.html">flopy.modflow.mflmt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflpf.html">flopy.modflow.mflpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnw1.html">flopy.modflow.mfmnw1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnw2.html">flopy.modflow.mfmnw2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnwi.html">flopy.modflow.mfmnwi Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnwt.html">flopy.modflow.mfnwt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfoc.html">flopy.modflow.mfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpbc.html">flopy.modflow.mfpbc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcg.html">flopy.modflow.mfpcg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcgn.html">flopy.modflow.mfpcgn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfrch.html">flopy.modflow.mfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfriv.html">flopy.modflow.mfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsfr2.html">flopy.modflow.mfsfr2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsip.html">flopy.modflow.mfsip Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsms.html">flopy.modflow.mfsms Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsor.html">flopy.modflow.mfsor Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfstr.html">flopy.modflow.mfstr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsub.html">flopy.modflow.mfsub Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswi2.html">flopy.modflow.mfswi2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswr1.html">flopy.modflow.mfswr1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswt.html">flopy.modflow.mfswt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfupw.html">flopy.modflow.mfupw Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.modflow.mfuzf1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfwel.html">flopy.modflow.mfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfaddoutsidefile.html">flopy.modflow.mfaddoutsidefile Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.modflow.mfuzf1 Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfuzf1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.modflow.mfuzf1">
 <span id="flopy-modflow-mfuzf1-module"></span><h1>flopy.modflow.mfuzf1 Module<a class="headerlink" href="#module-flopy.modflow.mfuzf1" title="Permalink to this headline">¶</a></h1>
@@ -76,22 +233,24 @@ the ModflowUzf1 class as <cite>flopy.modflow.ModflowUzf1</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>ipakcb=None</em>, <em>iuzfcb2=None</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>nuzgag=0</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>uzgag=None</em>, <em>extension='uzf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
-<dd><p>MODFLOW Unsaturated Zone Flow 1 Boundary Package Class.</p>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>ipakcb=None</em>, <em>iuzfcb2=None</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>nuzgag=0</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>nwt_11_fmt=False</em>, <em>specifysurfk=False</em>, <em>rejectsurfk=False</em>, <em>seepsurfk=False</em>, <em>etsquare=None</em>, <em>netflux=None</em>, <em>uzgag=None</em>, <em>extension='uzf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>MODFLOW Unsaturated Zone Flow 1 Boundary Package Class.</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
+<div><blockquote>
 <div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
 </div></blockquote>
-<p><strong>nuztop</strong> : integer</p>
-<blockquote>
-<div><p>used to define which cell in a vertical column that recharge and
-discharge is simulated. (default is 1)</p>
 <dl class="docutils">
+<dt>nuztop <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first">used to define which cell in a vertical column that recharge and
+discharge is simulated. (default is 1)</p>
+<dl class="last docutils">
 <dt>1   Recharge to and discharge from only the top model layer. This</dt>
 <dd><p class="first last">option assumes land surface is defined as top of layer 1.</p>
 </dd>
@@ -105,134 +264,117 @@ in IUZFBND. A constant head node intercepts any recharge and
 prevents deeper percolation.</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>iuzfopt</strong> : integer</p>
-<blockquote>
-<div><p>equal to 1 or 2. A value of 1 indicates that the vertical hydraulic conductivity will be
+</dd>
+<dt>iuzfopt <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">equal to 1 or 2. A value of 1 indicates that the vertical hydraulic conductivity will be
 specified within the UZF1 Package input file using array VKS. A value of 2 indicates that the vertical
 hydraulic conductivity will be specified within either the BCF or LPF Package input file.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>irunflg</strong> : integer</p>
-<blockquote>
-<div><p>specifies whether ground water that discharges to land surface will
+</dd>
+<dt>irunflg <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">specifies whether ground water that discharges to land surface will
 be routed to stream segments or lakes as specified in the IRUNBND
 array (IRUNFLG not equal to zero) or if ground-water discharge is
 removed from the model simulation and accounted for in the
 ground-water budget as a loss of water (IRUNFLG=0). The
 Streamflow-Routing (SFR2) and(or) the Lake (LAK3) Packages must be
 active if IRUNFLG is not zero. (default is 0)</p>
-</div></blockquote>
-<p><strong>ietflg</strong> : integer</p>
-<blockquote>
-<div><p>specifies whether or not evapotranspiration (ET) will be simulated.
+</dd>
+<dt>ietflg <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">specifies whether or not evapotranspiration (ET) will be simulated.
 ET will not be simulated if IETFLG is zero, otherwise it will be
 simulated. (default is 0)</p>
-</div></blockquote>
-<p><strong>ipakcb</strong> : integer</p>
-<blockquote>
-<div><p>flag for writing ground-water recharge, ET, and ground-water
+</dd>
+<dt>ipakcb <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">flag for writing ground-water recharge, ET, and ground-water
 discharge to land surface rates to a separate unformatted file using
 subroutine UBUDSV. If ipakcb&gt;0, it is the unit number to which the
-cell-by-cell rates will be written when &#8216;SAVE BUDGET&#8217; or a non-zero
+cell-by-cell rates will be written when ‘SAVE BUDGET’ or a non-zero
 value for ICBCFL is specified in Output Control. If ipakcb less than
 or equal to 0, cell-by-cell rates will not be written to a file.
 (default is 57)</p>
-</div></blockquote>
-<p><strong>iuzfcb2</strong> : integer</p>
-<blockquote>
-<div><p>flag for writing ground-water recharge, ET, and ground-water
+</dd>
+<dt>iuzfcb2 <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">flag for writing ground-water recharge, ET, and ground-water
 discharge to land surface rates to a separate unformatted file using
 module UBDSV3. If IUZFCB2&gt;0, it is the unit number to which
-cell-by-cell rates will be written when &#8216;SAVE BUDGET&#8217; or a non-zero
+cell-by-cell rates will be written when ‘SAVE BUDGET’ or a non-zero
 value for ICBCFL is specified in Output Control. If IUZFCB2 less than
 or equal to 0, cell-by-cell rates will not be written to file.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>ntrail2</strong> : integer</p>
-<blockquote>
-<div><p>equal to the number of trailing waves used to define the
+</dd>
+<dt>ntrail2 <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">equal to the number of trailing waves used to define the
 water-content profile following a decrease in the infiltration rate.
 The number of trailing waves varies depending on the problem, but a
 range between 10 and 20 is usually adequate. More trailing waves may
 decrease mass-balance error and will increase computational
 requirements and memory usage. (default is 10)</p>
-</div></blockquote>
-<p><strong>nsets</strong> : integer</p>
-<blockquote>
-<div><p>equal to the number of wave sets used to simulate multiple
+</dd>
+<dt>nsets <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">equal to the number of wave sets used to simulate multiple
 infiltration periods. The number of wave sets should be set to 20 for
 most problems involving time varying infiltration. The total number of
 waves allowed within an unsaturated zone cell is equal to
 NTRAIL2*NSETS2. An error will occur if the number of waves in a cell
 exceeds this value. (default is 20)</p>
-</div></blockquote>
-<p><strong>nuzgag</strong> : integer</p>
-<blockquote>
-<div><p>equal to the number of cells (one per vertical column) that will be
+</dd>
+<dt>nuzgag <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">equal to the number of cells (one per vertical column) that will be
 specified for printing detailed information on the unsaturated zone
 water budget and water content. A gage also may be used to print
 the budget summed over all model cells.  (default is 0)</p>
-</div></blockquote>
-<p><strong>surfdep</strong> : float</p>
-<blockquote>
-<div><p>The average height of undulations, D (Figure 1 in UZF documentation),
+</dd>
+<dt>surfdep <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The average height of undulations, D (Figure 1 in UZF documentation),
 in the land surface altitude. (default is 1.0)</p>
-</div></blockquote>
-<p><strong>iuzfbnd</strong> : integer</p>
-<blockquote>
-<div><p>used to define the aerial extent of the active model in which recharge
+</dd>
+<dt>iuzfbnd <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">used to define the aerial extent of the active model in which recharge
 and discharge will be simulated. (default is 1)</p>
-</div></blockquote>
-<p><strong>irunbnd</strong> : integer</p>
-<blockquote>
-<div><p>used to define the stream segments within the Streamflow-Routing
+</dd>
+<dt>irunbnd <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">used to define the stream segments within the Streamflow-Routing
 (SFR2) Package or lake numbers in the Lake (LAK3) Package that
 overland runoff from excess infiltration and ground-water
 discharge to land surface will be added. A positive integer value
 identifies the stream segment and a negative integer value identifies
 the lake number. (default is 0)</p>
-</div></blockquote>
-<p><strong>vks</strong> : float</p>
-<blockquote>
-<div><p>used to define the saturated vertical hydraulic conductivity of the
+</dd>
+<dt>vks <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the saturated vertical hydraulic conductivity of the
 unsaturated zone (LT-1). (default is 1.0E-6)</p>
-</div></blockquote>
-<p><strong>eps</strong> : float</p>
-<blockquote>
-<div><p>values for each model cell used to define the Brooks-Corey epsilon of
+</dd>
+<dt>eps <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">values for each model cell used to define the Brooks-Corey epsilon of
 the unsaturated zone. Epsilon is used in the relation of water
 content to hydraulic conductivity (Brooks and Corey, 1966).
 (default is 3.5)</p>
-</div></blockquote>
-<p><strong>thts</strong> : float</p>
-<blockquote>
-<div><p>used to define the saturated water content of the unsaturated zone in
+</dd>
+<dt>thts <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the saturated water content of the unsaturated zone in
 units of volume of water to total volume (L3L-3). (default is 0.35)</p>
-</div></blockquote>
-<p><strong>thtr</strong> : float</p>
-<blockquote>
-<div><p>used to define the residual water content for each vertical column of
+</dd>
+<dt>thtr <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the residual water content for each vertical column of
 cells in units of volume of water to total volume (L3L-3). THTR is
 the irreducible water content and the unsaturated water content
 cannot drain to water contents less than THTR. This variable is not
 included unless the key word SPECIFYTHTR is specified. (default is
 0.15)</p>
-</div></blockquote>
-<p><strong>thti</strong> : float</p>
-<blockquote>
-<div><p>used to define the initial water content for each vertical column of
+</dd>
+<dt>thti <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the initial water content for each vertical column of
 cells in units of volume of water at start of simulation to total
 volume (L3L-3). THTI should not be specified for steady-state
 simulations. (default is 0.20)</p>
-</div></blockquote>
-<p><strong>row_col_iftunit_iuzopt</strong> : list</p>
-<blockquote>
-<div><p>used to specify where information will be printed for each time step.
+</dd>
+<dt>row_col_iftunit_iuzopt <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first">used to specify where information will be printed for each time step.
 row and col are zero-based. IUZOPT specifies what that information
 will be. (default is [])
 IUZOPT is</p>
-<dl class="docutils">
+<dl class="last docutils">
 <dt>1   Prints time, ground-water head, and thickness of unsaturated zone,</dt>
 <dd><p class="first last">and cumulative volumes of infiltration, recharge, storage, change
 in storage and ground-water discharge to land surface.</p>
@@ -245,37 +387,83 @@ in storage and ground-water discharge to land surface.</p>
 unsaturated zone.</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>specifythtr</strong> : boolean</p>
-<blockquote>
-<div><p>key word for specifying optional input variable THTR (default is 0)</p>
-</div></blockquote>
-<p><strong>specifythti</strong> : boolean</p>
-<blockquote>
-<div><p>key word for specifying optional input variable THTI. (default is 0)</p>
-</div></blockquote>
-<p><strong>nosurfleak</strong> : boolean</p>
-<blockquote>
-<div><p>key word for inactivating calculation of surface leakage.
+</dd>
+<dt>specifythtr <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">key word for specifying optional input variable THTR (default is 0)</p>
+</dd>
+<dt>specifythti <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">key word for specifying optional input variable THTI. (default is 0)</p>
+</dd>
+<dt>nosurfleak <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">key word for inactivating calculation of surface leakage.
 (default is 0)</p>
+</dd>
+<dt>specifysurfk <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+An optional character variable. When SPECIFYSURFK is specified, 
+the variable SURFK is specfied in Data Set 4b.</p>
+</dd>
+<dt>rejectsurfk <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+An optional character variable. When REJECTSURFK is specified, 
+SURFK instead of VKS is used for calculating rejected infiltration. 
+REJECTSURFK only is included if SPECIFYSURFK is included.</p>
+</dd>
+<dt>seepsurfk <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+An optional character variable. When SEEPSURFK is specified, 
+SURFK instead of VKS is used for calculating surface leakage. 
+SEEPSURFK only is included if SPECIFYSURFK is included.</p>
+</dd>
+<dt>etsquare <span class="classifier-delimiter">:</span> <span class="classifier">float (smoothfact)</span></dt>
+<dd><p class="first">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later)
+An optional character variable. When ETSQUARE is specified, 
+groundwater ET is simulated using a constant potential ET rate, 
+and is smoothed over a specified smoothing interval. 
+This option is recommended only when using the NWT solver.</p>
+<p class="last">etsquare is activated in flopy by specifying a real value
+for smoothfact (default is None).
+For example, if the interval factor (smoothfact) 
+is specified as smoothfact=0.1 (recommended), 
+then the smoothing inerval will be calculated as: 
+SMOOTHINT = 0.1*EXTDP and  is applied over the range for groundwater head (h):
+*   h &lt; CELTOP-EXTDP, ET is zero;
+*   CELTOP-EXTDP &lt; h &lt; CELTOP-EXTDP+SMOOTHINT, ET is smoothed;
+CELTOP-EXTDP+SMOOTHINT &lt; h, ET is equal to potential ET.</p>
+</dd>
+<dt>netflux <span class="classifier-delimiter">:</span> <span class="classifier">list of [Unitrech (int), Unitdis (int)]</span></dt>
+<dd><p class="first">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+An optional character variable. When NETFLUX is specified, 
+the sum of recharge (L3/T) and the sum of discharge (L3/T) is written 
+to separate unformatted files using module UBDSV3.</p>
+<p class="last">netflux is activated in flopy by specifying a list for 
+Unitrech and Unitdis (default is None). 
+Unitrech and Unitdis are the unit numbers to which these values 
+are written when “SAVE BUDGET” is specified in Output Control. 
+Values written to Unitrech are the sum of recharge values 
+for the UZF, SFR2, and LAK packages, and values written to Unitdis 
+are the sum of discharge values for the UZF, SFR2, and LAK packages. 
+Values are averaged over the period between output times.</p>
+</dd>
+</dl>
 </div></blockquote>
-<p><strong>finf</strong> : float</p>
-<blockquote>
-<div><p>used to define the infiltration rates (LT-1) at land surface for each
+<p><strong>[NETFLUX unitrech unitdis]</strong></p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>finf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the infiltration rates (LT-1) at land surface for each
 vertical column of cells. If FINF is specified as being greater than
 the vertical hydraulic conductivity then FINF is set equal to the
 vertical unsaturated hydraulic conductivity. Excess water is routed
 to streams or lakes when IRUNFLG is not zero, and if SFR2 or LAK3 is
 active. (default is 1.0E-8)</p>
-</div></blockquote>
-<p><strong>pet</strong> : float</p>
-<blockquote>
-<div><p>used to define the ET demand rates (L1T-1) within the ET extinction
+</dd>
+<dt>pet <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the ET demand rates (L1T-1) within the ET extinction
 depth interval for each vertical column of cells. (default is 5.0E-8)</p>
-</div></blockquote>
-<p><strong>extdp</strong> : float</p>
-<blockquote>
-<div><p>used to define the ET extinction depths. The quantity of ET removed
+</dd>
+<dt>extdp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the ET extinction depths. The quantity of ET removed
 from a cell is limited by the volume of water stored in the
 unsaturated zone above the extinction depth. If ground water is
 within the ET extinction depth, then the rate removed is based
@@ -283,30 +471,25 @@ on a linear decrease in the maximum rate at land surface and zero at
 the ET extinction depth. The linear decrease is the same method used
 in the Evapotranspiration Package (McDonald and Harbaugh, 1988, chap.
 10). (default is 15.0)</p>
-</div></blockquote>
-<p><strong>extwc</strong> : float</p>
-<blockquote>
-<div><p>used to define the extinction water content below which ET cannot be
+</dd>
+<dt>extwc <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">used to define the extinction water content below which ET cannot be
 removed from the unsaturated zone.  EXTWC must have a value between
 (THTS-Sy) and THTS, where Sy is the specific yield specified in
 either the LPF or BCF Package. (default is 0.1)</p>
-</div></blockquote>
-<p><strong>uzfbud_ext</strong> : list</p>
-<blockquote>
-<div><p>appears to be used for sequential naming of budget output files
+</dd>
+<dt>uzfbud_ext <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">appears to be used for sequential naming of budget output files
 (default is [])</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is &#8216;uzf&#8217;)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt>extension <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘uzf’)</p>
+</dd>
+<dt>unitnumber <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt>filenames <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the cbc output, uzf output, and uzf
 observation names will be created using the model name and .cbc,
@@ -320,6 +503,8 @@ set to the string and other uzf output files will be set to the model
 name with the appropriate output file extensions. To define the names
 for all package files (input and output) the length of the list of
 strings should be 3 + len(uzgag). Default is None.</p>
+</dd>
+</dl>
 </div></blockquote>
 </td>
 </tr>
@@ -428,25 +613,25 @@ package input data</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
 </dd>
-<dt>mflay</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
 zero)</p>
 </dd>
-<dt>key</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -499,7 +684,7 @@ Adds an attribute for each layer in each data array</p>
 
 <dl class="method">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1.write_file">
-<code class="descname">write_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.write_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_file</code><span class="sig-paren">(</span><em>f=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.write_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the package file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -516,53 +701,75 @@ Adds an attribute for each layer in each data array</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfwel.html" class="btn btn-neutral float-right" title="flopy.modflow.mfwel Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfupw.html" class="btn btn-neutral" title="flopy.modflow.mfupw Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfupw.html"
-                        title="previous chapter">flopy.modflow.mfupw Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfwel.html"
-                        title="next chapter">flopy.modflow.mfwel Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfwel.html" title="flopy.modflow.mfwel Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfupw.html" title="flopy.modflow.mfupw Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

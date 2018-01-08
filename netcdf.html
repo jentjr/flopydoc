@@ -1,72 +1,193 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.export.netcdf Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.export.utils Module" href="utils.html" />
-    <link rel="prev" title="flopy.plot.plotutil Module" href="plotutil.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.export.netcdf Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.export.utils Module" href="utils.html"/>
+        <link rel="prev" title="flopy.export.metadata Module" href="metadata.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="utils.html" title="flopy.export.utils Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="plotutil.html" title="flopy.plot.plotutil Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="metadata.html">flopy.export.metadata Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.export.netcdf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html">flopy.export.utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vtk.html">flopy.export.vtk Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.export.netcdf Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/netcdf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.export.netcdf">
 <span id="flopy-export-netcdf-module"></span><h1>flopy.export.netcdf Module<a class="headerlink" href="#module-flopy.export.netcdf" title="Permalink to this headline">¶</a></h1>
@@ -140,7 +261,7 @@ written to the screen. echo (bool): a flag to force screen output</p>
 
 <dl class="class">
 <dt id="flopy.export.netcdf.NetCdf">
-<em class="property">class </em><code class="descclassname">flopy.export.netcdf.</code><code class="descname">NetCdf</code><span class="sig-paren">(</span><em>output_filename</em>, <em>model</em>, <em>time_values=None</em>, <em>verbose=None</em>, <em>logger=None</em>, <em>forgive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.export.netcdf.</code><code class="descname">NetCdf</code><span class="sig-paren">(</span><em>output_filename</em>, <em>model</em>, <em>time_values=None</em>, <em>z_positive='up'</em>, <em>verbose=None</em>, <em>prj=None</em>, <em>logger=None</em>, <em>forgive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Support for writing a netCDF4 compliant file from a flopy model</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -156,6 +277,11 @@ written to the screen. echo (bool): a flag to force screen output</p>
 <div><p>if not None, the constructor will initialize
 the file.  If None, the perlen array of ModflowDis
 will be used</p>
+</div></blockquote>
+<p><strong>z_positive</strong> : str (‘up’ or ‘down’)</p>
+<blockquote>
+<div><p>Positive direction of vertical coordinates written to NetCDF file.
+(default ‘down’)</p>
 </div></blockquote>
 <p><strong>verbose</strong> : if True, stdout is verbose.  If str, then a log file</p>
 <blockquote>
@@ -197,6 +323,21 @@ including these attributes: lenuni, itmuni, start_datetime, sr
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.export.netcdf.NetCdf.add_sciencebase_metadata">
+<code class="descname">add_sciencebase_metadata</code><span class="sig-paren">(</span><em>id</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.add_sciencebase_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add metadata from ScienceBase using the
+flopy.export.metadata.acdd class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>metadata</strong> : flopy.export.metadata.acdd object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.create_variable">
 <code class="descname">create_variable</code><span class="sig-paren">(</span><em>name</em>, <em>attributes</em>, <em>precision_str='f4'</em>, <em>dimensions=('time'</em>, <em>'layer'</em>, <em>'y'</em>, <em>'x')</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.create_variable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new variable in the netcdf object</p>
@@ -219,7 +360,7 @@ including these attributes: lenuni, itmuni, start_datetime, sr
 <p><strong>dimensions</strong> : tuple</p>
 <blockquote>
 <div><p>which dimensions the variable applies to
-default : (&#8220;time&#8221;,&#8221;layer&#8221;,&#8221;x&#8221;,&#8221;y&#8221;)</p>
+default : (“time”,”layer”,”x”,”y”)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -250,7 +391,7 @@ netcdf file</p>
 </div></blockquote>
 <p><strong>minuend</strong> : (optional) the order of the difference operation.</p>
 <blockquote>
-<div><p>Default is self (e.g. self - other).  Can be &#8220;self&#8221; or &#8220;other&#8221;</p>
+<div><p>Default is self (e.g. self - other).  Can be “self” or “other”</p>
 </div></blockquote>
 <p><strong>mask_zero_diff</strong> : bool flag to mask differences that are zero.  If</p>
 <blockquote>
@@ -271,6 +412,18 @@ variable names and dimensions between the two files must match
 exactly. The name of the new .nc file is
 &lt;self.output_filename&gt;.diff.nc.  The masks from both self and
 other are carried through to the new instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.export.netcdf.NetCdf.get_longnames_from_docstrings">
+<code class="descname">get_longnames_from_docstrings</code><span class="sig-paren">(</span><em>outfile='longnames.json'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.get_longnames_from_docstrings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is experimental.</p>
+<p>Scrape Flopy module docstrings and return docstrings for parameters
+included in the list of variables added to NetCdf object. Create
+a dictionary of longnames keyed by the NetCdf variable names; make each
+longname from the first sentence of the docstring for that parameter.</p>
+<p>One major limitation is that variables from mflists often aren’t described
+in the docstrings.</p>
 </dd></dl>
 
 <dl class="method">
@@ -311,53 +464,75 @@ needed for the netcdf file</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utils.html" class="btn btn-neutral float-right" title="flopy.export.utils Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="metadata.html" class="btn btn-neutral" title="flopy.export.metadata Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="plotutil.html"
-                        title="previous chapter">flopy.plot.plotutil Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="utils.html"
-                        title="next chapter">flopy.export.utils Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="utils.html" title="flopy.export.utils Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="plotutil.html" title="flopy.plot.plotutil Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

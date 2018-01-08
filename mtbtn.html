@@ -1,79 +1,207 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.mt3d.mtdsp Module" href="mtdsp.html" />
-    <link rel="prev" title="flopy.mt3d.mtadv Module" href="mtadv.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mt3d.mtdsp Module" href="mtdsp.html"/>
+        <link rel="prev" title="flopy.mt3d.mtadv Module" href="mtadv.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mtadv.html">flopy.mt3d.mtadv Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mt3d.mtbtn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtdsp.html">flopy.mt3d.mtdsp Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtgcg.html">flopy.mt3d.mtgcg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlkt.html">flopy.mt3d.mtlkt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtphc.html">flopy.mt3d.mtphc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtrct.html">flopy.mt3d.mtrct Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtsft.html">flopy.mt3d.mtsft Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtssm.html">flopy.mt3d.mtssm Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mttob.html">flopy.mt3d.mttob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtuzt.html">flopy.mt3d.mtuzt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtcts.html">flopy.mt3d.mtcts Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.mt3d.mtbtn Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mtbtn.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.mt3d.mtbtn">
 <span id="flopy-mt3d-mtbtn-module"></span><h1>flopy.mt3d.mtbtn Module<a class="headerlink" href="#module-flopy.mt3d.mtbtn" title="Permalink to this headline">¶</a></h1>
 <p>mtbtn module. Contains the Mt3dBtn class. Note that the user can access
 the Mt3dBtn class as <cite>flopy.mt3d.Mt3dBtn</cite>.</p>
 <p>Additional information for this MT3DMS package can be found in the MT3DMS
-User&#8217;s Manual.</p>
+User’s Manual.</p>
 <dl class="class">
 <dt id="flopy.mt3d.mtbtn.Mt3dBtn">
 <em class="property">class </em><code class="descclassname">flopy.mt3d.mtbtn.</code><code class="descname">Mt3dBtn</code><span class="sig-paren">(</span><em>model</em>, <em>MFStyleArr=False</em>, <em>DRYCell=False</em>, <em>Legacy99Stor=False</em>, <em>FTLPrint=False</em>, <em>NoWetDryPrint=False</em>, <em>OmitDryBud=False</em>, <em>AltWTSorb=False</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=1</em>, <em>mcomp=1</em>, <em>tunit='D'</em>, <em>lunit='M'</em>, <em>munit='KG'</em>, <em>laycon=None</em>, <em>delr=None</em>, <em>delc=None</em>, <em>htop=None</em>, <em>dz=None</em>, <em>prsity=0.3</em>, <em>icbund=1</em>, <em>sconc=0.0</em>, <em>cinact=1e+30</em>, <em>thkmin=0.01</em>, <em>ifmtcn=0</em>, <em>ifmtnp=0</em>, <em>ifmtrf=0</em>, <em>ifmtdp=0</em>, <em>savucn=True</em>, <em>nprs=0</em>, <em>timprs=None</em>, <em>obs=None</em>, <em>nprobs=1</em>, <em>chkmas=True</em>, <em>nprmas=1</em>, <em>perlen=None</em>, <em>nstp=None</em>, <em>tsmult=None</em>, <em>ssflag=None</em>, <em>dt0=0</em>, <em>mxstrn=50000</em>, <em>ttsmult=1.0</em>, <em>ttsmax=0</em>, <em>species_names=None</em>, <em>extension='btn'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn" title="Permalink to this definition">¶</a></dt>
@@ -122,7 +250,7 @@ cells in the mass budget written to the listing file.</p>
 <div><p>Specifies whether or not to use the MT3DMS formulation (this keyword
 omitted) for the solid phase, whereby the entire cell thickness is
 available for interacting with the aqueous phase, even though the
-aqueous phase may only occupy a portion of the cell&#8217;s thickness.  When
+aqueous phase may only occupy a portion of the cell’s thickness.  When
 used, only the saturated portion of the cell is available for sorbing</p>
 </div></blockquote>
 <p><strong>ncomp</strong> : int</p>
@@ -132,22 +260,22 @@ None, will be changed to 1 if sconc is single value)</p>
 </div></blockquote>
 <p><strong>mcomp</strong> : int</p>
 <blockquote>
-<div><p>The total number of &#8216;mobile&#8217; species (default is 1). mcomp must be
+<div><p>The total number of ‘mobile’ species (default is 1). mcomp must be
 equal or less than ncomp.</p>
 </div></blockquote>
 <p><strong>tunit</strong> : str</p>
 <blockquote>
-<div><p>The name of unit for time (default is &#8216;D&#8217;, for &#8216;days&#8217;). Used for
+<div><p>The name of unit for time (default is ‘D’, for ‘days’). Used for
 identification purposes only.</p>
 </div></blockquote>
 <p><strong>lunit</strong> : str</p>
 <blockquote>
-<div><p>The name of unit for length (default is &#8216;M&#8217;, for &#8216;meters&#8217;). Used for
+<div><p>The name of unit for length (default is ‘M’, for ‘meters’). Used for
 identification purposes only.</p>
 </div></blockquote>
 <p><strong>munit</strong> : str</p>
 <blockquote>
-<div><p>The name of unit for mass (default is &#8216;KG&#8217;, for &#8216;kilograms&#8217;). Used for
+<div><p>The name of unit for mass (default is ‘KG’, for ‘kilograms’). Used for
 identification purposes only.</p>
 </div></blockquote>
 <p><strong>prsity</strong> : float or array of floats (nlay, nrow, ncol)</p>
@@ -165,10 +293,12 @@ concentration cell; If icbund &lt; 0, the cell is a constant-concentration
 cell; If icbund &gt; 0, the cell is an active concentration cell where the
 concentration value will be calculated. (default is 1).</p>
 </div></blockquote>
-<p><strong>sconc</strong> : float, array of (nlay, nrow, ncol), or filename, or a list (length</p>
+<p><strong>sconc</strong> : float, array of (nlay, nrow, ncol), or filename</p>
 <blockquote>
-<div><p>ncomp) of these for multi-species simulations
-The starting concentration for the solute transport simulation.</p>
+<div><p>sconc is the starting concentration for the first species.  To specify
+starting concentrations for other species in a multi-species
+simulation, include additional keywords, such as sconc2, sconc3, and
+so forth.</p>
 </div></blockquote>
 <p><strong>cinact</strong> : float</p>
 <blockquote>
@@ -276,7 +406,7 @@ multiplier TTSMULT &gt; 1.0. (default is 0).</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
-<div><p>Filename extension (default is &#8216;btn&#8217;)</p>
+<div><p>Filename extension (default is ‘btn’)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
 <blockquote>
@@ -394,25 +524,25 @@ package input data</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
 </dd>
-<dt>mflay</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
 zero)</p>
 </dd>
-<dt>key</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -511,53 +641,75 @@ as a.</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mtdsp.html" class="btn btn-neutral float-right" title="flopy.mt3d.mtdsp Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mtadv.html" class="btn btn-neutral" title="flopy.mt3d.mtadv Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mtadv.html"
-                        title="previous chapter">flopy.mt3d.mtadv Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mtdsp.html"
-                        title="next chapter">flopy.mt3d.mtdsp Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mtdsp.html" title="flopy.mt3d.mtdsp Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mtadv.html" title="flopy.mt3d.mtadv Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

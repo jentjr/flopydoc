@@ -1,72 +1,213 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.binaryhydmodfile Module" href="binaryhydmodfile.html" />
-    <link rel="prev" title="flopy.utils.datafile Module" href="datafile.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.utils.binaryhydmodfile Module" href="binaryhydmodfile.html"/>
+        <link rel="prev" title="flopy.utils.datafile Module" href="datafile.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="datafile.html" title="flopy.utils.datafile Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="check.html">flopy.utils.check Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.binaryfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gridgen.html">flopy.utils.gridgen Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lgrutil.html">flopy.utils.lgrutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflistfile.html">flopy.utils.mflistfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swroutputfile.html">flopy.utils.swroutputfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html">flopy.utils.reference Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sfroutputfile.html">flopy.utils.sfroutputfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_array.html">flopy.utils.util_array Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils_def.html">flopy.utils.utils_def Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_list.html">flopy.utils.util_list Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zonbud.html">flopy.utils.zonbud Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.utils.binaryfile Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryfile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.utils.binaryfile">
 <span id="flopy-utils-binaryfile-module"></span><h1>flopy.utils.binaryfile Module<a class="headerlink" href="#module-flopy.utils.binaryfile" title="Permalink to this headline">¶</a></h1>
@@ -91,11 +232,11 @@ important classes that can be accessed by the user.</p>
 </div></blockquote>
 <p><strong>text</strong> : string</p>
 <blockquote>
-<div><p>Name of the text string in the head file.  Default is &#8216;head&#8217;</p>
+<div><p>Name of the text string in the head file.  Default is ‘head’</p>
 </div></blockquote>
 <p><strong>precision</strong> : string</p>
 <blockquote>
-<div><p>&#8216;auto&#8217;, &#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;auto&#8217;.</p>
+<div><p>‘auto’, ‘single’ or ‘double’.  Default is ‘auto’.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -203,7 +344,30 @@ all layers will be included. (Default is None.)</p>
 <p class="rubric">Notes</p>
 <p>if both kstpkper and totim are None, will return the last entry
 Examples
-&#8212;&#8212;&#8211;</p>
+——–</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadFile.get_databytes">
+<code class="descname">get_databytes</code><span class="sig-paren">(</span><em>header</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadFile.get_databytes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>header</strong> : datafile.Header</p>
+<blockquote>
+<div><p>header object</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>databytes</strong> : int</p>
+<blockquote class="last">
+<div><p>size of the data array, in bytes, following the header</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -254,7 +418,7 @@ kper values are presently zero-based.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
 <blockquote>
 <div><p>idx can be (layer, row, column) or it can be a list in the form
-[(layer, row, column), (layer, row, column), ...].  The layer,
+[(layer, row, column), (layer, row, column), …].  The layer,
 row, and column values must be zero based.</p>
 </div></blockquote>
 </td>
@@ -318,33 +482,33 @@ files if file_name_base is not None. (default is None)</p>
 <p><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>pcolor</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
 </dd>
-<dt>colorbar</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a color bar will be added to
+<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
 </dd>
-<dt>contour</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
 plot will be plotted. (default is False)</p>
 </dd>
-<dt>clabel</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
 will be plotted. Only used if contour=True. (default is False)</p>
 </dd>
-<dt>grid</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if the model grid will be plotted
+<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if the model grid will be plotted
 on the figure. (default is False)</p>
 </dd>
-<dt>masked_values</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">List of unique values to be excluded from the plot.</p>
+<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
-<dt>file_extension</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -395,7 +559,7 @@ will be written</p>
 </div></blockquote>
 <p><strong>attrib_name</strong> : str</p>
 <blockquote>
-<div><p>Base name of attribute columns. (default is &#8216;lf_data&#8217;)</p>
+<div><p>Base name of attribute columns. (default is ‘lf_data’)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -429,11 +593,11 @@ will be written</p>
 </div></blockquote>
 <p><strong>text</strong> : string</p>
 <blockquote>
-<div><p>Name of the text string in the ucn file.  Default is &#8216;CONCENTRATION&#8217;</p>
+<div><p>Name of the text string in the ucn file.  Default is ‘CONCENTRATION’</p>
 </div></blockquote>
 <p><strong>precision</strong> : string</p>
 <blockquote>
-<div><p>&#8216;auto&#8217;, &#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;auto&#8217;.</p>
+<div><p>‘auto’, ‘single’ or ‘double’.  Default is ‘auto’.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -536,7 +700,30 @@ all layers will be included. (Default is None.)</p>
 <p class="rubric">Notes</p>
 <p>if both kstpkper and totim are None, will return the last entry
 Examples
-&#8212;&#8212;&#8211;</p>
+——–</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.UcnFile.get_databytes">
+<code class="descname">get_databytes</code><span class="sig-paren">(</span><em>header</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.UcnFile.get_databytes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>header</strong> : datafile.Header</p>
+<blockquote>
+<div><p>header object</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>databytes</strong> : int</p>
+<blockquote class="last">
+<div><p>size of the data array, in bytes, following the header</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -587,7 +774,7 @@ kper values are presently zero-based.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
 <blockquote>
 <div><p>idx can be (layer, row, column) or it can be a list in the form
-[(layer, row, column), (layer, row, column), ...].  The layer,
+[(layer, row, column), (layer, row, column), …].  The layer,
 row, and column values must be zero based.</p>
 </div></blockquote>
 </td>
@@ -651,33 +838,33 @@ files if file_name_base is not None. (default is None)</p>
 <p><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>pcolor</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
 </dd>
-<dt>colorbar</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if a color bar will be added to
+<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a color bar will be added to
 the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
 (default is False)</p>
 </dd>
-<dt>contour</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
 plot will be plotted. (default is False)</p>
 </dd>
-<dt>clabel</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
 will be plotted. Only used if contour=True. (default is False)</p>
 </dd>
-<dt>grid</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Boolean used to determine if the model grid will be plotted
+<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if the model grid will be plotted
 on the figure. (default is False)</p>
 </dd>
-<dt>masked_values</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">List of unique values to be excluded from the plot.</p>
+<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
-<dt>file_extension</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -728,7 +915,7 @@ will be written</p>
 </div></blockquote>
 <p><strong>attrib_name</strong> : str</p>
 <blockquote>
-<div><p>Base name of attribute columns. (default is &#8216;lf_data&#8217;)</p>
+<div><p>Base name of attribute columns. (default is ‘lf_data’)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -762,7 +949,7 @@ will be written</p>
 </div></blockquote>
 <p><strong>precision</strong> : string</p>
 <blockquote>
-<div><p>&#8216;single&#8217; or &#8216;double&#8217;.  Default is &#8216;single&#8217;.</p>
+<div><p>‘single’ or ‘double’.  Default is ‘single’.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool</p>
 <blockquote class="last">
@@ -788,9 +975,9 @@ will be written</p>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.create3D">
 <code class="descname">create3D</code><span class="sig-paren">(</span><em>data</em>, <em>nlay</em>, <em>nrow</em>, <em>ncol</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.create3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert a dictionary of {node: q, ...} into a numpy masked array.
+<dd><p>Convert a dictionary of {node: q, …} into a numpy masked array.
 In most cases this should not be called directly by the user unless
-you know what you&#8217;re doing.  Instead, it is used as part of the
+you know what you’re doing.  Instead, it is used as part of the
 full3D keyword for get_data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -840,13 +1027,13 @@ The kstp and kper values are zero based.</p>
 <p><strong>text</strong> : str</p>
 <blockquote>
 <div><p>The text identifier for the record.  Examples include
-&#8216;RIVER LEAKAGE&#8217;, &#8216;STORAGE&#8217;, &#8216;FLOW RIGHT FACE&#8217;, etc.</p>
+‘RIVER LEAKAGE’, ‘STORAGE’, ‘FLOW RIGHT FACE’, etc.</p>
 </div></blockquote>
 <p><strong>full3D</strong> : boolean</p>
 <blockquote>
 <div><p>If true, then return the record as a three dimensional numpy
 array, even for those list-style records writen as part of a
-&#8216;COMPACT BUDGET&#8217; MODFLOW budget file.  (Default is False.)</p>
+‘COMPACT BUDGET’ MODFLOW budget file.  (Default is False.)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -856,7 +1043,7 @@ array, even for those list-style records writen as part of a
 depends on the structure of the data in the cbb file.</p>
 <p>If full3D is True, then this method will return a numpy masked
 array of size (nlay, nrow, ncol) for those list-style
-&#8216;COMPACT BUDGET&#8217; records written by MODFLOW.</p>
+‘COMPACT BUDGET’ records written by MODFLOW.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -935,7 +1122,7 @@ kper values are zero-based.</p>
 <blockquote>
 <div><p>If true, then return the record as a three dimensional numpy
 array, even for those list-style records writen as part of a
-&#8216;COMPACT BUDGET&#8217; MODFLOW budget file.  (Default is False.)</p>
+‘COMPACT BUDGET’ MODFLOW budget file.  (Default is False.)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -945,7 +1132,39 @@ array, even for those list-style records writen as part of a
 the data in the cbb file. Compact list data are returned as</p>
 <p>If full3D is True, then this method will return a numpy masked
 array of size (nlay, nrow, ncol) for those list-style
-&#8216;COMPACT BUDGET&#8217; records written by MODFLOW.</p>
+‘COMPACT BUDGET’ records written by MODFLOW.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_residual">
+<code class="descname">get_residual</code><span class="sig-paren">(</span><em>totim</em>, <em>scaled=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_residual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array the size of the model grid containing the flow residual
+calculated from the budget terms.  Residual will not be correct unless
+all flow terms are written to the budget file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>totim</strong> : float</p>
+<blockquote>
+<div><p>Simulation time for which to calculate the residual.  This value
+must be precise, so it is best to get it from the get_times
+method.</p>
+</div></blockquote>
+<p><strong>scaled</strong> : bool</p>
+<blockquote>
+<div><p>If True, then divide the residual by the total cell inflow</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>residual</strong> : np.ndarray</p>
+<blockquote class="last">
+<div><p>The flow residual for the cell of shape (nlay, nrow, ncol)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -969,6 +1188,45 @@ array of size (nlay, nrow, ncol) for those list-style
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_ts">
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>idx</em>, <em>text=None</em>, <em>times=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from the binary budget file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
+<blockquote>
+<div><p>idx can be (layer, row, column) or it can be a list in the form
+[(layer, row, column), (layer, row, column), …].  The layer,
+row, and column values must be zero based.</p>
+</div></blockquote>
+<p><strong>text</strong> : str</p>
+<blockquote>
+<div><p>The text identifier for the record.  Examples include
+‘RIVER LEAKAGE’, ‘STORAGE’, ‘FLOW RIGHT FACE’, etc.</p>
+</div></blockquote>
+<p><strong>times</strong> : iterable of floats</p>
+<blockquote>
+<div><p>List of times to from which to get time series.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>Array has size (ntimes, ncells + 1).  The first column in the
+data array will contain time (totim).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The layer, row, and column values must be zero-based, and must be
+within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j &lt; ncol</p>
 </dd></dl>
 
 <dl class="method">
@@ -1030,53 +1288,75 @@ array of size (nlay, nrow, ncol) for those list-style
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryhydmodfile.html" class="btn btn-neutral float-right" title="flopy.utils.binaryhydmodfile Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="datafile.html" class="btn btn-neutral" title="flopy.utils.datafile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="datafile.html"
-                        title="previous chapter">flopy.utils.datafile Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="binaryhydmodfile.html"
-                        title="next chapter">flopy.utils.binaryhydmodfile Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="binaryhydmodfile.html" title="flopy.utils.binaryhydmodfile Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="datafile.html" title="flopy.utils.datafile Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

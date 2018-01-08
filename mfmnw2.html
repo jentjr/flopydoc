@@ -1,72 +1,229 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.modflow.mfmnw2 Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.modflow.mfmnwi Module" href="mfmnwi.html" />
-    <link rel="prev" title="flopy.modflow.mfmnw1 Module" href="mfmnw1.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.modflow.mfmnw2 Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfmnwi Module" href="mfmnwi.html"/>
+        <link rel="prev" title="flopy.modflow.mfmnw1 Module" href="mfmnw1.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfmnw1.html" title="flopy.modflow.mfmnw1 Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbas.html">flopy.modflow.mfbas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfbcf.html">flopy.modflow.mfbcf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfchd.html">flopy.modflow.mfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhfb.html">flopy.modflow.mfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhob.html">flopy.modflow.mfhob Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfhyd.html">flopy.modflow.mfhyd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgage.html">flopy.modflow.mfgage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfghb.html">flopy.modflow.mfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgmg.html">flopy.modflow.mfgmg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflak.html">flopy.modflow.mflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflmt.html">flopy.modflow.mflmt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflpf.html">flopy.modflow.mflpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnw1.html">flopy.modflow.mfmnw1 Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.modflow.mfmnw2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmnwi.html">flopy.modflow.mfmnwi Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnwt.html">flopy.modflow.mfnwt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfoc.html">flopy.modflow.mfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpbc.html">flopy.modflow.mfpbc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcg.html">flopy.modflow.mfpcg Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpcgn.html">flopy.modflow.mfpcgn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfrch.html">flopy.modflow.mfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfriv.html">flopy.modflow.mfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsfr2.html">flopy.modflow.mfsfr2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsip.html">flopy.modflow.mfsip Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsms.html">flopy.modflow.mfsms Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsor.html">flopy.modflow.mfsor Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfstr.html">flopy.modflow.mfstr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsub.html">flopy.modflow.mfsub Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswi2.html">flopy.modflow.mfswi2 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswr1.html">flopy.modflow.mfswr1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfswt.html">flopy.modflow.mfswt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfupw.html">flopy.modflow.mfupw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfuzf1.html">flopy.modflow.mfuzf1 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfwel.html">flopy.modflow.mfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfaddoutsidefile.html">flopy.modflow.mfaddoutsidefile Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.modflow.mfmnw2 Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfmnw2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.modflow.mfmnw2">
 <span id="flopy-modflow-mfmnw2-module"></span><h1>flopy.modflow.mfmnw2 Module<a class="headerlink" href="#module-flopy.modflow.mfmnw2" title="Permalink to this headline">¶</a></h1>
@@ -122,7 +279,7 @@ from Rskin and Kskin. User must define Rw, Rskin, and Kskin in dataset 2c or 2d.
 <dd><p class="first last">(hWELL = hn + AQn + BQn + CQnP). A is determined by the model from the value of Rw.
 User must define Rw, B, C, and P in dataset 2c or 2d. A value of P = 2.0 is suggested
 if no other data are available (the model allows 1.0 &lt;= P &lt;= 3.5).
-Entering a value of C = 0 will result in a &#8220;linear&#8221; model
+Entering a value of C = 0 will result in a “linear” model
 in which the value of B is entered directly
 (rather than entering properties of the skin, as with the SKIN option).</p>
 </dd>
@@ -185,11 +342,11 @@ If PUMPCAP does not equal 0, it must be set to an integer value of between 1 and
 </div></blockquote>
 <p><strong>rw</strong> : float</p>
 <blockquote>
-<div><p>radius of the well (losstype == &#8216;THEIM&#8217;, &#8216;SKIN&#8217;, or &#8216;GENERAL&#8217;)</p>
+<div><p>radius of the well (losstype == ‘THEIM’, ‘SKIN’, or ‘GENERAL’)</p>
 </div></blockquote>
 <p><strong>rskin</strong> : float</p>
 <blockquote>
-<div><p>radius to the outer limit of the skin (losstype == &#8216;SKIN&#8217;)</p>
+<div><p>radius to the outer limit of the skin (losstype == ‘SKIN’)</p>
 </div></blockquote>
 <p><strong>kskin</strong> : float</p>
 <blockquote>
@@ -198,22 +355,22 @@ If PUMPCAP does not equal 0, it must be set to an integer value of between 1 and
 <p><strong>B</strong> : float</p>
 <blockquote>
 <div><p>coefficient of the well-loss eqn. (eqn. 2 in MNW2 documentation)
-(losstype == &#8216;GENERAL&#8217;)</p>
+(losstype == ‘GENERAL’)</p>
 </div></blockquote>
 <p><strong>C</strong> : float</p>
 <blockquote>
 <div><p>coefficient of the well-loss eqn. (eqn. 2 in MNW2 documentation)
-(losstype == &#8216;GENERAL&#8217;)</p>
+(losstype == ‘GENERAL’)</p>
 </div></blockquote>
 <p><strong>P</strong> : float</p>
 <blockquote>
 <div><p>coefficient of the well-loss eqn. (eqn. 2 in MNW2 documentation)
-(losstype == &#8216;GENERAL&#8217;)</p>
+(losstype == ‘GENERAL’)</p>
 </div></blockquote>
 <p><strong>cwc</strong> : float</p>
 <blockquote>
 <div><p>cell-to-well conductance.
-(losstype == &#8216;SPECIFYcwc&#8217;)</p>
+(losstype == ‘SPECIFYcwc’)</p>
 </div></blockquote>
 <p><strong>pp</strong> : float</p>
 <blockquote>
@@ -254,20 +411,20 @@ See MNW2 input instructions for more details.</p>
 <dl class="docutils">
 <dt>Columns are:</dt>
 <dd><dl class="first docutils">
-<dt>k</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">layer index of well (zero-based)</p>
+<dt>k <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">layer index of well (zero-based)</p>
 </dd>
-<dt>i</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">row index of well (zero-based)</p>
+<dt>i <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">row index of well (zero-based)</p>
 </dd>
-<dt>j</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">column index of well (zero-based)</p>
+<dt>j <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">column index of well (zero-based)</p>
 </dd>
-<dt>ztop</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">top elevation of open intervals of vertical well.</p>
+<dt>ztop <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">top elevation of open intervals of vertical well.</p>
 </dd>
-<dt>zbotm</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">bottom elevation of open intervals of vertical well.</p>
+<dt>zbotm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">bottom elevation of open intervals of vertical well.</p>
 </dd>
 </dl>
 <p class="last">wellid : str
@@ -308,11 +465,11 @@ A blank stress_period_data template can be created via the Mnw.get_empty_stress_
 Columns are:</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>per</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">stress period</p>
+<dt>per <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">stress period</p>
 </dd>
-<dt>qdes</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">is the actual (or maximum desired, if constraints are to be applied) volumetric pumping rate
+<dt>qdes <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the actual (or maximum desired, if constraints are to be applied) volumetric pumping rate
 (negative for withdrawal or positive for injection) at the well (L3/T). Qdes should be
 set to 0 for nonpumping wells. If constraints are applied, then the calculated volumetric withdrawal
 or injection rate may be adjusted to range from 0 to Qdes and is not allowed
@@ -322,16 +479,16 @@ Qdes represents the maximum operating discharge for the pump; in subsequent stre
 any different negative values of Qdes are ignored, although values are subject to
 adjustment for CapMult. If Qdes &gt;= 0.0, then pump-capacity adjustments are not applied.</p>
 </dd>
-<dt>capmult</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">is a flag and multiplier for implementing head-capacity relations during a given stress period.
+<dt>capmult <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a flag and multiplier for implementing head-capacity relations during a given stress period.
 Only specify if PUMPCAP &gt; 0 for this well. If CapMult &lt;= 0, then head-capacity relations
 are ignored for this stress period. If CapMult = 1.0, then head-capacity relations defined
 in datasets 2g and 2h are used. If CapMult equals any other positive value (for example, 0.6 or 1.1),
 then head-capacity relations are used but adjusted and shifted by multiplying
 the discharge value indicated by the head-capacity curve by the value of CapMult.</p>
 </dd>
-<dt>cprime</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">is the concentration in the injected fluid. Only specify if Qdes &gt; 0 and GWT process is active.</p>
+<dt>cprime <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the concentration in the injected fluid. Only specify if Qdes &gt; 0 and GWT process is active.</p>
 </dd>
 </dl>
 <p>hlim : float
@@ -500,7 +657,7 @@ to assign (upon load) or retain (upon write) in reach_data array.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><p>The model object (of type :class:&#8217;flopy.modflow.mf.Modflow&#8217;) to which
+<div><p>The model object (of type :class:’flopy.modflow.mf.Modflow’) to which
 this package will be added.</p>
 </div></blockquote>
 <p><strong>mnwmax</strong> : int</p>
@@ -516,10 +673,10 @@ as required for allocation of arrays. However, if a large number of horizontal w
 are being simulated, or possibly for other reasons, this default estimate proves to be inadequate,
 a new input option has been added to allow the user to directly specify a value for NODTOT.
 If this is a desired option, then it can be implemented by specifying a negative value for
-&#8220;MNWMAX&#8221;&#8211;the first value listed in Record 1 (Line 1) of the MNW2 input data file.
+“MNWMAX”–the first value listed in Record 1 (Line 1) of the MNW2 input data file.
 If this is done, then the code will assume that the very next value on that line
-will be the desired value of &#8220;NODTOT&#8221;. The model will then reset &#8220;MNWMAX&#8221; to its absolute value.
-The value of &#8220;ipakcb&#8221; will become the third value on that line, etc.</p>
+will be the desired value of “NODTOT”. The model will then reset “MNWMAX” to its absolute value.
+The value of “ipakcb” will become the third value on that line, etc.</p>
 </div></blockquote>
 <p><strong>ipakcb</strong> : int</p>
 <blockquote>
@@ -551,11 +708,11 @@ up to a maximum level of detail corresponding with MNWPRNT = 2.
 </div></blockquote>
 <p><strong>aux</strong> : list of strings</p>
 <blockquote>
-<div><p>(listed as &#8220;OPTION&#8221; in MNW2 input instructions)
-is an optional list of character values in the style of &#8220;AUXILIARY abc&#8221; or &#8220;AUX abc&#8221;
-where &#8220;abc&#8221; is the name of an auxiliary parameter to be read for each multi-node well
+<div><p>(listed as “OPTION” in MNW2 input instructions)
+is an optional list of character values in the style of “AUXILIARY abc” or “AUX abc”
+where “abc” is the name of an auxiliary parameter to be read for each multi-node well
 as part of dataset 4a. Up to 20 parameters can be specified,
-each of which must be preceded by &#8220;AUXILIARY&#8221; or &#8220;AUX.&#8221;
+each of which must be preceded by “AUXILIARY” or “AUX.”
 These parameters will not be used by the MNW2 Package,
 but they will be available for use by other packages.
 (default is None)</p>
@@ -575,7 +732,7 @@ is constructed from the tables.</p>
 <blockquote>
 <div><p>master dictionary of record arrays (keyed by stress period) containing transient input
 for multi-node wells. Format is the same as stress period data for individual Mnw objects,
-except the &#8216;per&#8217; column is replaced by &#8216;wellid&#8217; (containing wellid for each MNW).
+except the ‘per’ column is replaced by ‘wellid’ (containing wellid for each MNW).
 See Mnw class documentation for more information.</p>
 </div></blockquote>
 <p><strong>itmp</strong> : list of ints</p>
@@ -593,7 +750,7 @@ previous stress period and dataset 4 is skipped.</p>
 </div></blockquote>
 <p><strong>extension</strong> : string</p>
 <blockquote>
-<div><p>Filename extension (default is &#8216;mnw2&#8217;)</p>
+<div><p>Filename extension (default is ‘mnw2’)</p>
 </div></blockquote>
 <p><strong>unitnumber</strong> : int</p>
 <blockquote>
@@ -729,25 +886,25 @@ package input data</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>filename_base</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Base file name that will be used to automatically generate file
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
 </dd>
-<dt>file_extension</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
-if filename_base is not None. (default is &#8216;png&#8217;)</p>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
 </dd>
-<dt>mflay</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
 </dd>
-<dt>kper</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
 zero)</p>
 </dd>
-<dt>key</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">MfList dictionary key. (default is None)</p>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -817,53 +974,75 @@ Adds an attribute for each layer in each data array</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfmnwi.html" class="btn btn-neutral float-right" title="flopy.modflow.mfmnwi Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfmnw1.html" class="btn btn-neutral" title="flopy.modflow.mfmnw1 Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfmnw1.html"
-                        title="previous chapter">flopy.modflow.mfmnw1 Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfmnwi.html"
-                        title="next chapter">flopy.modflow.mfmnwi Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfmnwi.html" title="flopy.modflow.mfmnwi Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfmnw1.html" title="flopy.modflow.mfmnw1 Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

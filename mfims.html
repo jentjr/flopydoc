@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.mf6.modflow.mfims Module &mdash; flopy 3.2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mf6.modflow.mfmvr Module" href="mfmvr.html"/>
+        <link rel="prev" title="flopy.mf6.modflow.mfgwfwel Module" href="mfgwfwel.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbase.html">flopy.mf6.mfbase Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmodel.html">flopy.mf6.mfmodel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisv.html">flopy.mf6.modflow.mfgwfdisv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdrn.html">flopy.mf6.modflow.mfgwfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevt.html">flopy.mf6.modflow.mfgwfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevta.html">flopy.mf6.modflow.mfgwfevta Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfghb.html">flopy.mf6.modflow.mfgwfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgnc.html">flopy.mf6.modflow.mfgwfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgwf.html">flopy.mf6.modflow.mfgwfgwf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfhfb.html">flopy.mf6.modflow.mfgwfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfic.html">flopy.mf6.modflow.mfgwfic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwflak.html">flopy.mf6.modflow.mfgwflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmaw.html">flopy.mf6.modflow.mfgwfmaw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmvr.html">flopy.mf6.modflow.mfgwfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnam.html">flopy.mf6.modflow.mfgwfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnpf.html">flopy.mf6.modflow.mfgwfnpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfoc.html">flopy.mf6.modflow.mfgwfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrch.html">flopy.mf6.modflow.mfgwfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrcha.html">flopy.mf6.modflow.mfgwfrcha Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfriv.html">flopy.mf6.modflow.mfgwfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsfr.html">flopy.mf6.modflow.mfgwfsfr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsto.html">flopy.mf6.modflow.mfgwfsto Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfuzf.html">flopy.mf6.modflow.mfgwfuzf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfwel.html">flopy.mf6.modflow.mfgwfwel Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.modflow.mfims Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmvr.html">flopy.mf6.modflow.mfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnam.html">flopy.mf6.modflow.mfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mftdis.html">flopy.mf6.modflow.mftdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlobs.html">flopy.mf6.modflow.mfutlobs Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutllaktab.html">flopy.mf6.modflow.mfutllaktab Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutltas.html">flopy.mf6.modflow.mfutltas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.mf6.modflow.mfims Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfims.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.mf6.modflow.mfims">
+<span id="flopy-mf6-modflow-mfims-module"></span><h1>flopy.mf6.modflow.mfims Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfims" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.mf6.modflow.mfims.ModflowIms">
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfims.</code><code class="descname">ModflowIms</code><span class="sig-paren">(</span><em>simulation</em>, <em>add_to_package_list=True</em>, <em>print_option=None</em>, <em>complexity=None</em>, <em>csv_output_filerecord=None</em>, <em>outer_hclose=None</em>, <em>outer_maximum=None</em>, <em>under_relaxation=None</em>, <em>under_relaxation_theta=None</em>, <em>under_relaxation_kappa=None</em>, <em>under_relaxation_gamma=None</em>, <em>under_relaxation_momentum=None</em>, <em>backtracking_number=None</em>, <em>backtracking_tolerance=None</em>, <em>backtracking_reduction_factor=None</em>, <em>backtracking_residual_limit=None</em>, <em>inner_maximum=None</em>, <em>inner_hclose=None</em>, <em>rcloserecord=None</em>, <em>linear_acceleration=None</em>, <em>relaxation_factor=None</em>, <em>preconditioner_levels=None</em>, <em>preconditioner_drop_tolerance=None</em>, <em>number_orthogonalizations=None</em>, <em>scaling_method=None</em>, <em>reordering_method=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfims.ModflowIms" title="Permalink to this definition">¶</a></dt>
+<dd><p>ModflowIms defines a ims package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>print_option</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>print_option (string) is a flag that controls printing of convergence
+information from the solver. NONE means print nothing. SUMMARY means
+print only the total number of iterations and nonlinear residual
+reduction summaries. ALL means print linear matrix solver convergence
+information to the solution listing file and model specific linear
+matrix solver convergence information to each model listing file in
+addition to SUMMARY information. NONE is default if PRINT_OPTION is
+not specified.</li>
+</ul>
+</div></blockquote>
+<p><strong>complexity</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>complexity (string) is an optional keyword that defines default non-
+linear and linear solver parameters. SIMPLE - indicates that default
+solver input values will be defined that work well for nearly linear
+models. This would be used for models that do not include nonlinear
+stress packages and models that are either confined or consist of a
+single unconfined layer that is thick enough to contain the water
+table within a single layer. MODERATE - indicates that default solver
+input values will be defined that work well for moderately nonlinear
+models. This would be used for models that include nonlinear stress
+packages and models that consist of one or more unconfined layers.
+The MODERATE option should be used when the SIMPLE option does not
+result in successful convergence. COMPLEX - indicates that default
+solver input values will be defined that work well for highly
+nonlinear models. This would be used for models that include
+nonlinear stress packages and models that consist of one or more
+unconfined layers representing complex geology and surface-
+water/groundwater interaction. The COMPLEX option should be used when
+the MODERATE option does not result in successful convergence. Non-
+linear and linear solver parameters assigned using a specified
+complexity can be modified in the NONLINEAR and LINEAR blocks. If the
+COMPLEXITY option is not specified, NONLINEAR and LINEAR variables
+will be assigned the simple complexity values.</li>
+</ul>
+</div></blockquote>
+<p><strong>csv_output_filerecord</strong> : [csvfile]</p>
+<blockquote>
+<div><ul class="simple">
+<li>csvfile (string) name of the ascii comma separated values output file
+to write solver convergence information. If PRINT_OPTION is NONE or
+SUMMARY, comma separated values output includes maximum head change
+convergence information at the end of each outer iteration for each
+time step. If PRINT_OPTION is ALL, comma separated values output
+includes maximum head change and maximum residual convergence
+information for the solution and each model (if the solution includes
+more than one model) and linear acceleration information for each
+inner iteration.</li>
+</ul>
+</div></blockquote>
+<p><strong>outer_hclose</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>outer_hclose (double) real value defining the head change criterion
+for convergence of the outer (nonlinear) iterations, in units of
+length. When the maximum absolute value of the head change at all
+nodes during an iteration is less than or equal to OUTER_HCLOSE,
+iteration stops. Commonly, OUTER_HCLOSE equals 0.01.</li>
+</ul>
+</div></blockquote>
+<p><strong>outer_maximum</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>outer_maximum (integer) integer value defining the maximum number of
+outer (nonlinear) iterations – that is, calls to the solution
+routine. For a linear problem OUTER_MAXIMUM should be 1.</li>
+</ul>
+</div></blockquote>
+<p><strong>under_relaxation</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>under_relaxation (string) is an optional keyword that defines the
+nonlinear under-relaxation schemes used. By default under-relaxation
+is not used. NONE - under-relaxation is not used. SIMPLE - Simple
+under-relaxation scheme with a fixed relaxation factor is used.
+COOLEY - Cooley under-relaxation scheme is used. DBD - delta-bar-
+delta under-relaxation is used. Note that the under-relaxation
+schemes are used in conjunction with problems that use the Newton-
+Raphson formulation, however, experience has indicated that the
+Cooley under-relaxation and damping work well also for the Picard
+scheme with the wet/dry options of MODFLOW 6.</li>
+</ul>
+</div></blockquote>
+<p><strong>under_relaxation_theta</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>under_relaxation_theta (double) real value defining the reduction
+factor for the learning rate (under-relaxation term) of the delta-
+bar-delta algorithm. The value of UNDER_RELAXATION_THETA is between
+zero and one. If the change in the variable (head) is of opposite
+sign to that of the previous iteration, the under-relaxation term is
+reduced by a factor of UNDER_RELAXATION_THETA. The value usually
+ranges from 0.3 to 0.9; a value of 0.7 works well for most problems.
+UNDER_RELAXATION_THETA only needs to be specified if UNDER_RELAXATION
+is DBD.</li>
+</ul>
+</div></blockquote>
+<p><strong>under_relaxation_kappa</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>under_relaxation_kappa (double) real value defining the increment for
+the learning rate (under-relaxation term) of the delta-bar-delta
+algorithm. The value of UNDER_RELAXATION_kappa is between zero and
+one. If the change in the variable (head) is of the same sign to that
+of the previous iteration, the under-relaxation term is increased by
+an increment of UNDER_RELAXATION_KAPPA. The value usually ranges from
+0.03 to 0.3; a value of 0.1 works well for most problems.
+UNDER_RELAXATION_KAPPA only needs to be specified if UNDER_RELAXATION
+is DBD.</li>
+</ul>
+</div></blockquote>
+<p><strong>under_relaxation_gamma</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>under_relaxation_gamma (double) real value defining the history or
+memory term factor of the delta-bar-delta algorithm.
+UNDER_RELAXATION_GAMMA is between zero and 1 but cannot be equal to
+one. When UNDER_RELAXATION_GAMMA is zero, only the most recent
+history (previous iteration value) is maintained. As
+UNDER_RELAXATION_GAMMA is increased, past history of iteration
+changes has greater influence on the memory term. The memory term is
+maintained as an exponential average of past changes. Retaining some
+past history can overcome granular behavior in the calculated
+function surface and therefore helps to overcome cyclic patterns of
+non-convergence. The value usually ranges from 0.1 to 0.3; a value of
+0.2 works well for most problems. UNDER_RELAXATION_GAMMA only needs
+to be specified if UNDER_RELAXATION is not NONE.</li>
+</ul>
+</div></blockquote>
+<p><strong>under_relaxation_momentum</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>under_relaxation_momentum (double) real value defining the fraction
+of past history changes that is added as a momentum term to the step
+change for a nonlinear iteration. The value of
+UNDER_RELAXATION_MOMENTUM is between zero and one. A large momentum
+term should only be used when small learning rates are expected.
+Small amounts of the momentum term help convergence. The value
+usually ranges from 0.0001 to 0.1; a value of 0.001 works well for
+most problems. UNDER_RELAXATION_MOMENTUM only needs to be specified
+if UNDER_RELAXATION is DBD.</li>
+</ul>
+</div></blockquote>
+<p><strong>backtracking_number</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>backtracking_number (integer) integer value defining the maximum
+number of backtracking iterations allowed for residual reduction
+computations. If BACKTRACKING_NUMBER = 0 then the backtracking
+iterations are omitted. The value usually ranges from 2 to 20; a
+value of 10 works well for most problems.</li>
+</ul>
+</div></blockquote>
+<p><strong>backtracking_tolerance</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>backtracking_tolerance (double) real value defining the tolerance for
+residual change that is allowed for residual reduction computations.
+BACKTRACKING_TOLERANCE should not be less than one to avoid getting
+stuck in local minima. A large value serves to check for extreme
+residual increases, while a low value serves to control step size
+more severely. The value usually ranges from 1.0 to 10:math:<cite>^6</cite>; a
+value of 10:math:<cite>^4</cite> works well for most problems but lower values
+like 1.1 may be required for harder problems. BACKTRACKING_TOLERANCE
+only needs to be specified if BACKTRACKING_NUMBER is greater than
+zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>backtracking_reduction_factor</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>backtracking_reduction_factor (double) real value defining the
+reduction in step size used for residual reduction computations. The
+value of BACKTRACKING_REDUCTION_FACTOR is between zero and one. The
+value usually ranges from 0.1 to 0.3; a value of 0.2 works well for
+most problems. BACKTRACKING_REDUCTION_FACTOR only needs to be
+specified if BACKTRACKING_NUMBER is greater than zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>backtracking_residual_limit</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>backtracking_residual_limit (double) real value defining the limit to
+which the residual is reduced with backtracking. If the residual is
+smaller than BACKTRACKING_RESIDUAL_LIMIT, then further backtracking
+is not performed. A value of 100 is suitable for large problems and
+residual reduction to smaller values may only slow down computations.
+BACKTRACKING_RESIDUAL_LIMIT only needs to be specified if
+BACKTRACKING_NUMBER is greater than zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>inner_maximum</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>inner_maximum (integer) integer value defining the maximum number of
+inner (linear) iterations. The number typically depends on the
+characteristics of the matrix solution scheme being used. For
+nonlinear problems, INNER_MAXIMUM usually ranges from 60 to 600; a
+value of 100 will be sufficient for most linear problems.</li>
+</ul>
+</div></blockquote>
+<p><strong>inner_hclose</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>inner_hclose (double) real value defining the head change criterion
+for convergence of the inner (linear) iterations, in units of length.
+When the maximum absolute value of the head change at all nodes
+during an iteration is less than or equal to INNER_HCLOSE, the matrix
+solver assumes convergence. Commonly, INNER_HCLOSE is set an order of
+magnitude less than the OUTER_HCLOSE value specified for the
+NONLINEAR block.</li>
+</ul>
+</div></blockquote>
+<p><strong>rcloserecord</strong> : [inner_rclose, rclose_option]</p>
+<blockquote>
+<div><ul class="simple">
+<li>inner_rclose (double) real value that defines the flow residual
+tolerance for convergence of the IMS linear solver and specific flow
+residual criteria used. This value represents the maximum allowable
+residual at any single node. Value is in units of length cubed per
+time, and must be consistent with mf length and time units. Usually a
+value of <img class="math" src="_images/math/a2696a85db0edf6a4c19dd6c70f8c682d46db696.png" alt="1.0 \times 10^{-1}"/> is sufficient for the flow-
+residual criteria when meters and seconds are the defined mf length
+and time.</li>
+<li>rclose_option (string) an optional keyword that defines the specific
+flow residual criterion used. STRICT–an optional keyword that is
+used to specify that INNER_RCLOSE represents a infinity-Norm
+(absolute convergence criteria) and that the head and flow
+convergence criteria must be met on the first inner iteration (this
+criteria is equivalent to the criteria used by the MODFLOW-2005 PCG
+package~citep{hill1990preconditioned}). L2NORM_RCLOSE–an optional
+keyword that is used to specify that INNER_RCLOSE represents a L-2
+Norm closure criteria instead of a infinity-Norm (absolute
+convergence criteria). When L2NORM_RCLOSE is specified, a reasonable
+initial INNER_RCLOSE value is 0.1 times the number of active cells
+when meters and seconds are the defined mf length and time.
+RELATIVE_RCLOSE–an optional keyword that is used to specify that
+INNER_RCLOSE represents a relative L-2 Norm reduction closure
+criteria instead of a infinity-Norm (absolute convergence criteria).
+When RELATIVE_RCLOSE is specified, a reasonable initial INNER_RCLOSE
+value is <img class="math" src="_images/math/8dde956265d72c91e68a171edf794579a3a3dee2.png" alt="1.0 \times 10^{-4}"/> and convergence is achieved for
+a given inner (linear) iteration when <img class="math" src="_images/math/cd2b009c57b6c94d981e7462a4331f1625ea9f19.png" alt="\Delta h \le"/>
+INNER_HCLOSE and the current L-2 Norm is <img class="math" src="_images/math/671cf21691fd6f03157bda736f8d4910c1261519.png" alt="\le"/> the product of
+the RELATIVE_RCLOSE and the initial L-2 Norm for the current inner
+(linear) iteration. If RCLOSE_OPTION is not specified, an absolute
+residual (infinity-norm) criterion is used.</li>
+</ul>
+</div></blockquote>
+<p><strong>linear_acceleration</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>linear_acceleration (string) a keyword that defines the linear
+acceleration method used by the default IMS linear solvers. CG -
+preconditioned conjugate gradient method. BICGSTAB - preconditioned
+bi-conjugate gradient stabilized method.</li>
+</ul>
+</div></blockquote>
+<p><strong>relaxation_factor</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>relaxation_factor (double) optional real value that defines the
+relaxation factor used by the incomplete LU factorization
+preconditioners (MILU(0) and MILUT). RELAXATION_FACTOR is unitless
+and should be greater than or equal to 0.0 and less than or equal to
+1.0. RELAXATION_FACTOR values of about 1.0 are commonly used, and
+experience suggests that convergence can be optimized in some cases
+with relax values of 0.97. A RELAXATION_FACTOR value of 0.0 will
+result in either ILU(0) or ILUT preconditioning (depending on the
+value specified for PRECONDITIONER_LEVELS and/or
+PRECONDITIONER_DROP_TOLERANCE). By default, RELAXATION_FACTOR is
+zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>preconditioner_levels</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>preconditioner_levels (integer) optional integer value defining the
+level of fill for ILU decomposition used in the ILUT and MILUT
+preconditioners. Higher levels of fill provide more robustness but
+also require more memory. For optimal performance, it is suggested
+that a large level of fill be applied (7 or 8) with use of a drop
+tolerance. Specification of a PRECONDITIONER_LEVELS value greater
+than zero results in use of the ILUT preconditioner. By default,
+PRECONDITIONER_LEVELS is zero and the zero-fill incomplete LU
+factorization preconditioners (ILU(0) and MILU(0)) are used.</li>
+</ul>
+</div></blockquote>
+<p><strong>preconditioner_drop_tolerance</strong> : double</p>
+<blockquote>
+<div><ul class="simple">
+<li>preconditioner_drop_tolerance (double) optional real value that
+defines the drop tolerance used to drop preconditioner terms based on
+the magnitude of matrix entries in the ILUT and MILUT
+preconditioners. A value of <img class="math" src="_images/math/63d33c3be2d9bfe05259d5d493805c3598eaa518.png" alt="10^{-4}"/> works well for most
+problems. By default, PRECONDITIONER_DROP_TOLERANCE is zero and the
+zero-fill incomplete LU factorization preconditioners (ILU(0) and
+MILU(0)) are used.</li>
+</ul>
+</div></blockquote>
+<p><strong>number_orthogonalizations</strong> : integer</p>
+<blockquote>
+<div><ul class="simple">
+<li>number_orthogonalizations (integer) optional integer value defining
+the interval used to explicitly recalculate the residual of the flow
+equation using the solver coefficient matrix, the latest head
+estimates, and the right hand side. For problems that benefit from
+explicit recalculation of the residual, a number between 4 and 10 is
+appropriate. By default, NUMBER_ORTHOGONALIZATIONS is zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>scaling_method</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>scaling_method (string) an optional keyword that defines the matrix
+scaling approach used. By default, matrix scaling is not applied.
+NONE - no matrix scaling applied. DIAGONAL - symmetric matrix scaling
+using the POLCG preconditioner scaling method in Hill (1992). L2NORM
+- symmetric matrix scaling using the L2 norm.</li>
+</ul>
+</div></blockquote>
+<p><strong>reordering_method</strong> : string</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>reordering_method (string) an optional keyword that defines the
+matrix reordering approach used. By default, matrix reordering is not
+applied. NONE - original ordering. RCM - reverse Cuthill McKee
+ordering. MD - minimum degree ordering.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfims.ModflowIms.get_package">
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfims.ModflowIms.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfmvr.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfmvr Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfgwfwel.html" class="btn btn-neutral" title="flopy.mf6.modflow.mfgwfwel Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

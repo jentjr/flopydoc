@@ -1,72 +1,213 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.utils.gridgen Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.mfgrdfile Module" href="mfgrdfile.html" />
-    <link rel="prev" title="flopy.utils.geometry Module" href="geometry.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.utils.gridgen Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.utils.lgrutil Module" href="lgrutil.html"/>
+        <link rel="prev" title="flopy.utils.geometry Module" href="geometry.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfgrdfile.html" title="flopy.utils.mfgrdfile Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="geometry.html" title="flopy.utils.geometry Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="check.html">flopy.utils.check Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.gridgen Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lgrutil.html">flopy.utils.lgrutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mflistfile.html">flopy.utils.mflistfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swroutputfile.html">flopy.utils.swroutputfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html">flopy.utils.reference Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sfroutputfile.html">flopy.utils.sfroutputfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_array.html">flopy.utils.util_array Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils_def.html">flopy.utils.utils_def Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_list.html">flopy.utils.util_list Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zonbud.html">flopy.utils.zonbud Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.utils.gridgen Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/gridgen.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.utils.gridgen">
 <span id="flopy-utils-gridgen-module"></span><h1>flopy.utils.gridgen Module<a class="headerlink" href="#module-flopy.utils.gridgen" title="Permalink to this headline">¶</a></h1>
@@ -84,7 +225,7 @@
 </div></blockquote>
 <p><strong>model_ws</strong> : str</p>
 <blockquote>
-<div><p>workspace location for creating gridgen files (default is &#8216;.&#8217;)</p>
+<div><p>workspace location for creating gridgen files (default is ‘.’)</p>
 </div></blockquote>
 <p><strong>exe_name</strong> : str</p>
 <blockquote>
@@ -93,7 +234,7 @@
 <p><strong>surface_interpolation</strong> : str</p>
 <blockquote class="last">
 <div><p>Default gridgen method for interpolating elevations.  Valid options
-include &#8216;replicate&#8217; (default) and &#8216;interpolate&#8217;</p>
+include ‘replicate’ (default) and ‘interpolate’</p>
 </div></blockquote>
 </td>
 </tr>
@@ -142,7 +283,7 @@ or it can be a list of points, lines, or polygons</p>
 </div></blockquote>
 <p><strong>featuretype</strong> : str</p>
 <blockquote>
-<div><p>Must be either &#8216;point&#8217;, &#8216;line&#8217;, or &#8216;polygon&#8217;</p>
+<div><p>Must be either ‘point’, ‘line’, or ‘polygon’</p>
 </div></blockquote>
 <p><strong>level</strong> : int</p>
 <blockquote>
@@ -263,7 +404,7 @@ or it can be a list of points, lines, or polygons</p>
 </div></blockquote>
 <p><strong>featuretype</strong> : str</p>
 <blockquote>
-<div><p>Must be either &#8216;point&#8217;, &#8216;line&#8217;, or &#8216;polygon&#8217;</p>
+<div><p>Must be either ‘point’, ‘line’, or ‘polygon’</p>
 </div></blockquote>
 <p><strong>layer</strong> : int</p>
 <blockquote>
@@ -302,15 +443,15 @@ If there is not a current axis then a new one will be created.</p>
 </div></blockquote>
 <p><strong>cmap</strong> : string</p>
 <blockquote>
-<div><p>Name of colormap to use for polygon shading (default is &#8216;Dark2&#8217;)</p>
+<div><p>Name of colormap to use for polygon shading (default is ‘Dark2’)</p>
 </div></blockquote>
 <p><strong>edgecolor</strong> : string</p>
 <blockquote>
-<div><p>Color name.  (Default is &#8216;scaled&#8217; to scale the edge colors.)</p>
+<div><p>Color name.  (Default is ‘scaled’ to scale the edge colors.)</p>
 </div></blockquote>
 <p><strong>facecolor</strong> : string</p>
 <blockquote>
-<div><p>Color name.  (Default is &#8216;scaled&#8217; to scale the face colors.)</p>
+<div><p>Color name.  (Default is ‘scaled’ to scale the face colors.)</p>
 </div></blockquote>
 <p><strong>a</strong> : numpy.ndarray</p>
 <blockquote>
@@ -324,7 +465,7 @@ If there is not a current axis then a new one will be created.</p>
 <blockquote>
 <div><p>Keyword arguments that are passed to
 PatchCollection.set(<code class="docutils literal"><span class="pre">**kwargs</span></code>).  Some common kwargs would be
-&#8216;linewidths&#8217;, &#8216;linestyles&#8217;, &#8216;alpha&#8217;, etc.</p>
+‘linewidths’, ‘linestyles’, ‘alpha’, etc.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -348,7 +489,7 @@ PatchCollection.set(<code class="docutils literal"><span class="pre">**kwargs</s
 </div></blockquote>
 <p><strong>type</strong> : str</p>
 <blockquote>
-<div><p>Must be &#8216;INTERPOLATE&#8217;, &#8216;REPLICATE&#8217; or &#8216;ASCIIGRID&#8217;.</p>
+<div><p>Must be ‘INTERPOLATE’, ‘REPLICATE’ or ‘ASCIIGRID’.</p>
 </div></blockquote>
 <p><strong>elev</strong> : numpy.ndarray of shape (nr, nc) or str</p>
 <blockquote>
@@ -362,6 +503,46 @@ it is assumed to be the name of the asciigrid.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.to_disu6">
+<code class="descname">to_disu6</code><span class="sig-paren">(</span><em>fname</em>, <em>writevertices=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.to_disu6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a MODFLOW 6 DISU file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote>
+<div><p>name of file to write</p>
+</div></blockquote>
+<p><strong>writevertices</strong> : bool</p>
+<blockquote class="last">
+<div><p>include vertices in the DISU file. (default is True)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.to_disv6">
+<code class="descname">to_disv6</code><span class="sig-paren">(</span><em>fname</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.to_disv6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a MODFLOW 6 DISV file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<blockquote class="last">
+<div><p>name of file to write</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -384,7 +565,7 @@ it is assumed to be the name of the asciigrid.</p>
 </div></blockquote>
 <p><strong>featuretype</strong> : str</p>
 <blockquote>
-<div><p>Must be &#8216;point&#8217;, &#8216;line&#8217;, or &#8216;polygon&#8217;</p>
+<div><p>Must be ‘point’, ‘line’, or ‘polygon’</p>
 </div></blockquote>
 <p><strong>filename</strong> : string</p>
 <blockquote>
@@ -399,56 +580,85 @@ it is assumed to be the name of the asciigrid.</p>
 </table>
 </dd></dl>
 
+<dl class="function">
+<dt id="flopy.utils.gridgen.read1d">
+<code class="descclassname">flopy.utils.gridgen.</code><code class="descname">read1d</code><span class="sig-paren">(</span><em>f</em>, <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.read1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quick file to array reader for reading gridgen output.  Much faster
+than the read1d function in util_array</p>
+</dd></dl>
+
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lgrutil.html" class="btn btn-neutral float-right" title="flopy.utils.lgrutil Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="geometry.html" class="btn btn-neutral" title="flopy.utils.geometry Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="geometry.html"
-                        title="previous chapter">flopy.utils.geometry Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfgrdfile.html"
-                        title="next chapter">flopy.utils.mfgrdfile Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfgrdfile.html" title="flopy.utils.mfgrdfile Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="geometry.html" title="flopy.utils.geometry Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

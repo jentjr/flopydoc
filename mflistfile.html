@@ -1,72 +1,213 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>flopy.utils.mflistfile Module &mdash; flopy 3.2.6 documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.2.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="flopy 3.2.6 documentation" href="index.html" />
-    <link rel="up" title="Flopy Code" href="code.html" />
-    <link rel="next" title="flopy.utils.mfreadnam Module" href="mfreadnam.html" />
-    <link rel="prev" title="flopy.utils.mfgrdfile Module" href="mfgrdfile.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.utils.mflistfile Module &mdash; flopy 3.2.8 documentation</title>
+  
 
-  </head>
-  <body role="document">
-<div class="header" role="banner">
-  <div class="logo">
-    <a href="index.html">
-      <img class="logo" src="_static/flopylogo.png" alt="Logo"/>
-    </a>
-  </div>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.utils.mfreadnam Module" href="mfreadnam.html"/>
+        <link rel="prev" title="flopy.utils.lgrutil Module" href="lgrutil.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="mfgrdfile.html" title="flopy.utils.mfgrdfile Module"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>  
+          
+        </div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="check.html">flopy.utils.check Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gridgen.html">flopy.utils.gridgen Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lgrutil.html">flopy.utils.lgrutil Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.mflistfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swroutputfile.html">flopy.utils.swroutputfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html">flopy.utils.reference Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sfroutputfile.html">flopy.utils.sfroutputfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_array.html">flopy.utils.util_array Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils_def.html">flopy.utils.utils_def Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util_list.html">flopy.utils.util_list Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zonbud.html">flopy.utils.zonbud Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.utils.mflistfile Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mflistfile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-flopy.utils.mflistfile">
 <span id="flopy-utils-mflistfile-module"></span><h1>flopy.utils.mflistfile Module<a class="headerlink" href="#module-flopy.utils.mflistfile" title="Permalink to this headline">¶</a></h1>
@@ -91,7 +232,7 @@ recarrays, which can then be easily plotted.</p>
 </div></blockquote>
 <p><strong>timeunit</strong> : str</p>
 <blockquote class="last">
-<div><p>the time unit to return in the recarray. (default is &#8216;days&#8217;)</p>
+<div><p>the time unit to return in the recarray. (default is ‘days’)</p>
 </div></blockquote>
 </td>
 </tr>
@@ -208,8 +349,8 @@ returned. (default is False).</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
 <blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
-&#8216;value&#8217;, &#8216;name&#8217;.</p>
+<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+‘value’, ‘name’.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -231,7 +372,7 @@ returned. (default is False).</p>
 
 <dl class="method">
 <dt id="flopy.utils.mflistfile.ListBudget.get_dataframes">
-<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>diff=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
 items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -315,6 +456,34 @@ kper values are zero-based.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.ListBudget.get_model_runtime">
+<code class="descname">get_model_runtime</code><span class="sig-paren">(</span><em>units='seconds'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.ListBudget.get_model_runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the elapsed runtime of the model from the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+(default is ‘seconds’)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -494,8 +663,8 @@ returned. (default is False).</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
 <blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
-&#8216;value&#8217;, &#8216;name&#8217;.</p>
+<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+‘value’, ‘name’.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -517,7 +686,7 @@ returned. (default is False).</p>
 
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfListBudget.get_dataframes">
-<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>diff=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
 items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -601,6 +770,34 @@ kper values are zero-based.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfListBudget.get_model_runtime">
+<code class="descname">get_model_runtime</code><span class="sig-paren">(</span><em>units='seconds'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.MfListBudget.get_model_runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the elapsed runtime of the model from the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+(default is ‘seconds’)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -780,8 +977,8 @@ returned. (default is False).</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
 <blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
-&#8216;value&#8217;, &#8216;name&#8217;.</p>
+<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+‘value’, ‘name’.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -803,7 +1000,7 @@ returned. (default is False).</p>
 
 <dl class="method">
 <dt id="flopy.utils.mflistfile.MfusgListBudget.get_dataframes">
-<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>diff=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
 items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -887,6 +1084,34 @@ kper values are zero-based.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.MfusgListBudget.get_model_runtime">
+<code class="descname">get_model_runtime</code><span class="sig-paren">(</span><em>units='seconds'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.MfusgListBudget.get_model_runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the elapsed runtime of the model from the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+(default is ‘seconds’)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1066,8 +1291,8 @@ returned. (default is False).</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
 <blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
-&#8216;value&#8217;, &#8216;name&#8217;.</p>
+<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+‘value’, ‘name’.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1089,7 +1314,7 @@ returned. (default is False).</p>
 
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwrListBudget.get_dataframes">
-<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>diff=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
 items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1173,6 +1398,34 @@ kper values are zero-based.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.SwrListBudget.get_model_runtime">
+<code class="descname">get_model_runtime</code><span class="sig-paren">(</span><em>units='seconds'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.SwrListBudget.get_model_runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the elapsed runtime of the model from the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+(default is ‘seconds’)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1352,8 +1605,8 @@ returned. (default is False).</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
 <blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are &#8216;index&#8217;,
-&#8216;value&#8217;, &#8216;name&#8217;.</p>
+<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+‘value’, ‘name’.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1375,7 +1628,7 @@ returned. (default is False).</p>
 
 <dl class="method">
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_dataframes">
-<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>diff=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pandas dataframes with the incremental and cumulative water budget
 items in the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1464,6 +1717,34 @@ kper values are zero-based.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.utils.mflistfile.SwtListBudget.get_model_runtime">
+<code class="descname">get_model_runtime</code><span class="sig-paren">(</span><em>units='seconds'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_model_runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the elapsed runtime of the model from the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+(default is ‘seconds’)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.utils.mflistfile.SwtListBudget.get_record_names">
 <code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.SwtListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of water budget record names in the file.</p>
@@ -1537,53 +1818,75 @@ kper values are zero-based.</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfreadnam.html" class="btn btn-neutral float-right" title="flopy.utils.mfreadnam Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lgrutil.html" class="btn btn-neutral" title="flopy.utils.lgrutil Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mfgrdfile.html"
-                        title="previous chapter">flopy.utils.mfgrdfile Module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mfreadnam.html"
-                        title="next chapter">flopy.utils.mfreadnam Module</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="mfreadnam.html" title="flopy.utils.mfreadnam Module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="mfgrdfile.html" title="flopy.utils.mfgrdfile Module"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">flopy 3.2.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="code.html" >Flopy Code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-      Last updated on Mar 20, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

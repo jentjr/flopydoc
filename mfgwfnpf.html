@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.mf6.modflow.mfgwfnpf Module &mdash; flopy 3.2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mf6.modflow.mfgwfoc Module" href="mfgwfoc.html"/>
+        <link rel="prev" title="flopy.mf6.modflow.mfgwfnam Module" href="mfgwfnam.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfbase.html">flopy.mf6.mfbase Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmodel.html">flopy.mf6.mfmodel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdisv.html">flopy.mf6.modflow.mfgwfdisv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfdrn.html">flopy.mf6.modflow.mfgwfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevt.html">flopy.mf6.modflow.mfgwfevt Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfevta.html">flopy.mf6.modflow.mfgwfevta Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfghb.html">flopy.mf6.modflow.mfgwfghb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgnc.html">flopy.mf6.modflow.mfgwfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfgwf.html">flopy.mf6.modflow.mfgwfgwf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfhfb.html">flopy.mf6.modflow.mfgwfhfb Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfic.html">flopy.mf6.modflow.mfgwfic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwflak.html">flopy.mf6.modflow.mfgwflak Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmaw.html">flopy.mf6.modflow.mfgwfmaw Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfmvr.html">flopy.mf6.modflow.mfgwfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfnam.html">flopy.mf6.modflow.mfgwfnam Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.modflow.mfgwfnpf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfoc.html">flopy.mf6.modflow.mfgwfoc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrch.html">flopy.mf6.modflow.mfgwfrch Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfrcha.html">flopy.mf6.modflow.mfgwfrcha Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfriv.html">flopy.mf6.modflow.mfgwfriv Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsfr.html">flopy.mf6.modflow.mfgwfsfr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfsto.html">flopy.mf6.modflow.mfgwfsto Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfuzf.html">flopy.mf6.modflow.mfgwfuzf Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwfwel.html">flopy.mf6.modflow.mfgwfwel Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfims.html">flopy.mf6.modflow.mfims Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfmvr.html">flopy.mf6.modflow.mfmvr Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfnam.html">flopy.mf6.modflow.mfnam Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mftdis.html">flopy.mf6.modflow.mftdis Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlobs.html">flopy.mf6.modflow.mfutlobs Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutllaktab.html">flopy.mf6.modflow.mfutllaktab Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutltas.html">flopy.mf6.modflow.mfutltas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.mf6.modflow.mfgwfnpf Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mfgwfnpf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.mf6.modflow.mfgwfnpf">
+<span id="flopy-mf6-modflow-mfgwfnpf-module"></span><h1>flopy.mf6.modflow.mfgwfnpf Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfnpf" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.mf6.modflow.mfgwfnpf.ModflowGwfnpf">
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfnpf.</code><code class="descname">ModflowGwfnpf</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>save_flows=None</em>, <em>alternative_cell_averaging=None</em>, <em>thickstrt=None</em>, <em>cvoptions=None</em>, <em>perched=None</em>, <em>rewet_record=None</em>, <em>xt3doptions=None</em>, <em>save_specific_discharge=None</em>, <em>icelltype=None</em>, <em>k=None</em>, <em>k22=None</em>, <em>k33=None</em>, <em>angle1=None</em>, <em>angle2=None</em>, <em>angle3=None</em>, <em>wetdry=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfnpf.ModflowGwfnpf" title="Permalink to this definition">¶</a></dt>
+<dd><p>ModflowGwfnpf defines a npf package within a gwf6 model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>save_flows</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>save_flows (boolean) keyword to indicate that cell-by-cell flow terms
+will be written to the file specified with “BUDGET SAVE FILE” in
+Output Control.</li>
+</ul>
+</div></blockquote>
+<p><strong>alternative_cell_averaging</strong> : string</p>
+<blockquote>
+<div><ul class="simple">
+<li>alternative_cell_averaging (string) is a text keyword to indicate
+that an alternative method will be used for calculating the
+conductance for horizontal cell connections. The text value for
+ALTERNATIVE_CELL_AVERAGING can be “LOGARITHMIC”, “AMT-LMK”, or “AMT-
+HMK”. “AMT-LMK” signifies that the conductance will be calculated
+using arithmetic-mean thickness and logarithmic-mean hydraulic
+conductivity. “AMT-HMK” signifies that the conductance will be
+calculated using arithmetic-mean thickness and harmonic-mean
+hydraulic conductivity. If the user does not specify a value for
+ALTERNATIVE_CELL_AVERAGING, then the harmonic-mean method will be
+used. This option cannot be used if the XT3D option is invoked.</li>
+</ul>
+</div></blockquote>
+<p><strong>thickstrt</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>thickstrt (boolean) indicates that cells having a negative ICELLTYPE
+are confined, and their cell thickness for conductance calculations
+will be computed as STRT-BOT rather than TOP-BOT.</li>
+</ul>
+</div></blockquote>
+<p><strong>cvoptions</strong> : [dewatered]</p>
+<blockquote>
+<div><ul class="simple">
+<li>dewatered (string) If the DEWATERED keyword is specified, then the
+vertical conductance is calculated using only the saturated thickness
+and properties of the overlying cell if the head in the underlying
+cell is below its top.</li>
+</ul>
+</div></blockquote>
+<p><strong>perched</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>perched (boolean) keyword to indicate that when a cell is overlying a
+dewatered convertible cell, the head difference used in Darcy’s Law
+is equal to the head in the overlying cell minus the bottom elevation
+of the overlying cell. If not specified, then the default is to use
+the head difference between the two cells.</li>
+</ul>
+</div></blockquote>
+<p><strong>rewet_record</strong> : [wetfct, iwetit, ihdwet]</p>
+<blockquote>
+<div><ul class="simple">
+<li>wetfct (double) is a keyword and factor that is included in the
+calculation of the head that is initially established at a cell when
+that cell is converted from dry to wet.</li>
+<li>iwetit (integer) is a keyword and iteration interval for attempting
+to wet cells. Wetting is attempted every IWETIT iteration. This
+applies to outer iterations and not inner iterations. If IWETIT is
+specified as zero or less, then the value is changed to 1.</li>
+<li>ihdwet (integer) is a keyword and integer flag that determines which
+equation is used to define the initial head at cells that become wet.
+If IHDWET is 0, h = BOT + WETFCT (hm - BOT). If IHDWET is not 0, h =
+BOT + WETFCT (THRESH).</li>
+</ul>
+</div></blockquote>
+<p><strong>xt3doptions</strong> : [rhs]</p>
+<blockquote>
+<div><ul class="simple">
+<li>rhs (string) If the RHS keyword is also included, then the XT3D
+additional terms will be added to the right-hand side. If the RHS
+keyword is excluded, then the XT3D terms will be put into the
+coefficient matrix.</li>
+</ul>
+</div></blockquote>
+<p><strong>save_specific_discharge</strong> : boolean</p>
+<blockquote>
+<div><ul class="simple">
+<li>save_specific_discharge (boolean) keyword to indicate that x, y, and
+z components of specific discharge will be calculated at cell centers
+and written to the cell-by-cell flow file, which is specified with
+“BUDGET SAVE FILE” in Output Control.</li>
+</ul>
+</div></blockquote>
+<p><strong>icelltype</strong> : [integer]</p>
+<blockquote>
+<div><ul class="simple">
+<li>icelltype (integer) flag for each cell that specifies how saturated
+thickness is treated. 0 means saturated thickness is held constant;
+:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>&gt;`0 means saturated thickness varies with computed head when
+head is below the cell top; :math:<a href="#id3"><span class="problematic" id="id4">`</span></a>&lt;<a href="#id5"><span class="problematic" id="id6">`</span></a>0 means saturated thickness
+varies with computed head unless the THICKSTRT option is in effect.
+When THICKSTRT is in effect, a negative value of icelltype indicates
+that saturated thickness will be computed as STRT-BOT and held
+constant.</li>
+</ul>
+</div></blockquote>
+<p><strong>k</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>k (double) is the hydraulic conductivity. For the common case in
+which the user would like to specify the horizontal hydraulic
+conductivity and the vertical hydraulic conductivity, then K should
+be assigned as the horizontal hydraulic conductivity, K33 should be
+assigned as the vertical hydraulic conductivity, and texttt{K22} and
+the three rotation angles should not be specified. When more
+sophisticated anisotropy is required, then K corresponds to the K11
+hydraulic conductivity axis. All included cells (IDOMAIN <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0)
+must have a K value greater than zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>k22</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>k22 (double) is the hydraulic conductivity of the second ellipsoid
+axis; for an unrotated case this is the hydraulic conductivity in the
+y direction. If K22 is not included in the GRIDDATA block, then K22
+is set equal to K. For a regular MODFLOW grid (DIS Package is used)
+in which no rotation angles are specified, K22 is the hydraulic
+conductivity along columns in the y direction. For an unstructured
+DISU grid, the user must assign principal x and y axes and provide
+the angle for each cell face relative to the assigned x direction.
+All included cells (IDOMAIN <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0) must have a K22 value
+greater than zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>k33</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>k33 (double) is the hydraulic conductivity of the third ellipsoid
+axis; for an unrotated case, this is the vertical hydraulic
+conductivity. When anisotropy is applied, K33 corresponds to the K33
+tensor component. All included cells (IDOMAIN <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0) must have
+a K33 value greater than zero.</li>
+</ul>
+</div></blockquote>
+<p><strong>angle1</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>angle1 (double) is a rotation angle of the hydraulic conductivity
+tensor in degrees. The angle represents the first of three sequential
+rotations of the hydraulic conductivity ellipsoid. With the K11, K22,
+and K33 axes of the ellipsoid initially aligned with the x, y, and z
+coordinate axes, respectively, ANGLE1 rotates the ellipsoid about its
+K33 axis (within the x - y plane). A positive value represents
+counter-clockwise rotation when viewed from any point on the positive
+K33 axis, looking toward the center of the ellipsoid. A value of zero
+indicates that the K11 axis lies within the x - z plane. If ANGLE1 is
+not specified, default values of zero are assigned to ANGLE1, ANGLE2,
+and ANGLE3, in which case the K11, K22, and K33 axes are aligned with
+the x, y, and z axes, respectively.</li>
+</ul>
+</div></blockquote>
+<p><strong>angle2</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>angle2 (double) is a rotation angle of the hydraulic conductivity
+tensor in degrees. The angle represents the second of three
+sequential rotations of the hydraulic conductivity ellipsoid.
+Following the rotation by ANGLE1 described above, ANGLE2 rotates the
+ellipsoid about its K22 axis (out of the x - y plane). An array can
+be specified for ANGLE2 only if ANGLE1 is also specified. A positive
+value of ANGLE2 represents clockwise rotation when viewed from any
+point on the positive K22 axis, looking toward the center of the
+ellipsoid. A value of zero indicates that the K11 axis lies within
+the x - y plane. If ANGLE2 is not specified, default values of zero
+are assigned to ANGLE2 and ANGLE3; connections that are not user-
+designated as vertical are assumed to be strictly horizontal (that
+is, to have no z component to their orientation); and connection
+lengths are based on horizontal distances.</li>
+</ul>
+</div></blockquote>
+<p><strong>angle3</strong> : [double]</p>
+<blockquote>
+<div><ul class="simple">
+<li>angle3 (double) is a rotation angle of the hydraulic conductivity
+tensor in degrees. The angle represents the third of three sequential
+rotations of the hydraulic conductivity ellipsoid. Following the
+rotations by ANGLE1 and ANGLE2 described above, ANGLE3 rotates the
+ellipsoid about its K11 axis. An array can be specified for ANGLE3
+only if ANGLE1 and ANGLE2 are also specified. An array must be
+specified for ANGLE3 if ANGLE2 is specified. A positive value of
+ANGLE3 represents clockwise rotation when viewed from any point on
+the positive K11 axis, looking toward the center of the ellipsoid. A
+value of zero indicates that the K22 axis lies within the x - y
+plane.</li>
+</ul>
+</div></blockquote>
+<p><strong>wetdry</strong> : [double]</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>wetdry (double) is a combination of the wetting threshold and a flag
+to indicate which neighboring cells can cause a cell to become wet.
+If WETDRY <img class="math" src="_images/math/863f524a433d6d1e5715f76f12040c654f10d86d.png" alt="&lt;"/> 0, only a cell below a dry cell can cause the
+cell to become wet. If WETDRY <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0, the cell below a dry cell
+and horizontally adjacent cells can cause a cell to become wet. If
+WETDRY is 0, the cell cannot be wetted. The absolute value of WETDRY
+is the wetting threshold. When the sum of BOT and the absolute value
+of WETDRY at a dry cell is equaled or exceeded by the head at an
+adjacent cell, the cell is wetted. WETDRY must be specified if
+“REWET” is specified in the OPTIONS block. If “REWET” is not
+specified in the options block, then WETDRY can be entered, and
+memory will be allocated for it, even though it is not used.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfgwfnpf.ModflowGwfnpf.get_package">
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfnpf.ModflowGwfnpf.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mfgwfoc.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfgwfoc Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mfgwfnam.html" class="btn btn-neutral" title="flopy.mf6.modflow.mfgwfnam Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jan 08, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.8',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
