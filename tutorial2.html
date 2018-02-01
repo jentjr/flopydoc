@@ -204,7 +204,8 @@
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>As shown in the previous tutorial, import flopy using your preferred method, such as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">flopy</span>
 </pre></div>
 </div>
 </div>
@@ -259,7 +260,7 @@
                                <span class="n">top</span><span class="o">=</span><span class="n">ztop</span><span class="p">,</span> <span class="n">botm</span><span class="o">=</span><span class="n">botm</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
                                <span class="n">nper</span><span class="o">=</span><span class="n">nper</span><span class="p">,</span> <span class="n">perlen</span><span class="o">=</span><span class="n">perlen</span><span class="p">,</span> <span class="n">nstp</span><span class="o">=</span><span class="n">nstp</span><span class="p">,</span> <span class="n">steady</span><span class="o">=</span><span class="n">steady</span><span class="p">)</span>
 <span class="n">bas</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowBas</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">ibound</span><span class="o">=</span><span class="n">ibound</span><span class="p">,</span> <span class="n">strt</span><span class="o">=</span><span class="n">strt</span><span class="p">)</span>
-<span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">hk</span><span class="o">=</span><span class="n">hk</span><span class="p">,</span> <span class="n">vka</span><span class="o">=</span><span class="n">vka</span><span class="p">,</span> <span class="n">sy</span><span class="o">=</span><span class="n">sy</span><span class="p">,</span> <span class="n">ss</span><span class="o">=</span><span class="n">ss</span><span class="p">,</span> <span class="n">laytyp</span><span class="o">=</span><span class="n">laytyp</span><span class="p">)</span>
+<span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">hk</span><span class="o">=</span><span class="n">hk</span><span class="p">,</span> <span class="n">vka</span><span class="o">=</span><span class="n">vka</span><span class="p">,</span> <span class="n">sy</span><span class="o">=</span><span class="n">sy</span><span class="p">,</span> <span class="n">ss</span><span class="o">=</span><span class="n">ss</span><span class="p">,</span> <span class="n">laytyp</span><span class="o">=</span><span class="n">laytyp</span><span class="p">,</span> <span class="n">ipakcb</span><span class="o">=</span><span class="mi">53</span><span class="p">)</span>
 <span class="n">pcg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcg</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -272,10 +273,10 @@
 <span class="n">stageleft</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">stageright</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">bound_sp1</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">il</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">nlay</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">il</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlay</span><span class="p">):</span>
     <span class="n">condleft</span> <span class="o">=</span> <span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="n">stageleft</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">*</span> <span class="n">delc</span>
     <span class="n">condright</span> <span class="o">=</span> <span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="n">stageright</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">*</span> <span class="n">delc</span>
-    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
         <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
         <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
 <span class="nb">print</span> <span class="s1">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp1</span><span class="p">),</span> <span class="s1">&#39;GHBs for stress period 1.&#39;</span>
@@ -286,8 +287,8 @@
 <span class="n">condleft</span> <span class="o">=</span> <span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="n">stageleft</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">*</span> <span class="n">delc</span>
 <span class="n">condright</span> <span class="o">=</span> <span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="n">stageright</span> <span class="o">-</span> <span class="n">zbot</span><span class="p">)</span> <span class="o">*</span> <span class="n">delc</span>
 <span class="n">bound_sp2</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">il</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">nlay</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">il</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlay</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
         <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
         <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
 <span class="nb">print</span> <span class="s1">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp2</span><span class="p">),</span> <span class="s1">&#39;GHBs for stress period 2.&#39;</span>
@@ -319,9 +320,16 @@
 <div class="section" id="output-control">
 <h3>Output Control<a class="headerlink" href="#output-control" title="Permalink to this headline">¶</a></h3>
 <p>Here we create the output control package object, which is of the type <a class="reference external" href="mfoc.html">flopy.modflow.ModflowOc</a>.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Output control</span>
-<span class="n">spd</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="p">[</span><span class="s1">&#39;print head&#39;</span><span class="p">,</span> <span class="s1">&#39;save head&#39;</span><span class="p">,</span> <span class="s1">&#39;print budget&#39;</span><span class="p">,</span> <span class="s1">&#39;save budget&#39;</span><span class="p">]}</span>
-<span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">spd</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">stress_period_data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">kper</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nper</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">kstp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nstp</span><span class="p">[</span><span class="n">kper</span><span class="p">]):</span>
+        <span class="n">stress_period_data</span><span class="p">[(</span><span class="n">kper</span><span class="p">,</span> <span class="n">kstp</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;save head&#39;</span><span class="p">,</span>
+                                            <span class="s1">&#39;save drawdown&#39;</span><span class="p">,</span>
+                                            <span class="s1">&#39;save budget&#39;</span><span class="p">,</span>
+                                            <span class="s1">&#39;print head&#39;</span><span class="p">,</span>
+                                            <span class="s1">&#39;print budget&#39;</span><span class="p">]</span>
+<span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">stress_period_data</span><span class="p">,</span>
+                             <span class="n">compact</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -381,7 +389,7 @@
     <span class="n">fff</span> <span class="o">=</span> <span class="n">cbb</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;FLOW FRONT FACE&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">time</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="c1">#Create the plot</span>
-    <span class="c1">#plt.subplot(1, len(mytimes), iplot + 1, aspect=&#39;equal&#39;)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;stress period &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">iplot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
 
@@ -459,7 +467,7 @@
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 01, 2018.
 
     </p>
   </div>

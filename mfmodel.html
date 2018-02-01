@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -227,7 +228,7 @@
 <p>mfmodel module.  Contains the MFModel class</p>
 <dl class="class">
 <dt id="flopy.mf6.mfmodel.MFModel">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfmodel.</code><code class="descname">MFModel</code><span class="sig-paren">(</span><em>simulation</em>, <em>model_type='gwf'</em>, <em>model_name='modflowtest'</em>, <em>model_nam_file=None</em>, <em>ims_file_name=None</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>add_to_simulation=True</em>, <em>structure=None</em>, <em>model_rel_path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.mfmodel.</code><code class="descname">MFModel</code><span class="sig-paren">(</span><em>simulation</em>, <em>model_type='gwf'</em>, <em>model_name='modflowtest'</em>, <em>model_nam_file=None</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>add_to_simulation=True</em>, <em>structure=None</em>, <em>model_rel_path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Model Class.  Represents a single model in a simulation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -307,10 +308,13 @@
 <tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.write" title="flopy.mf6.mfmodel.MFModel.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>([ext_file_action])</td>
 <td>write model to model files</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.set_model_relative_path" title="flopy.mf6.mfmodel.MFModel.set_model_relative_path"><code class="xref py py-obj docutils literal"><span class="pre">set_model_relative_path</span></code></a>(model_ws)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.remove_package" title="flopy.mf6.mfmodel.MFModel.remove_package"><code class="xref py py-obj docutils literal"><span class="pre">remove_package</span></code></a>(package)</td>
+<td>removes a package and all child packages from the model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.set_model_relative_path" title="flopy.mf6.mfmodel.MFModel.set_model_relative_path"><code class="xref py py-obj docutils literal"><span class="pre">set_model_relative_path</span></code></a>(model_ws)</td>
 <td>sets the file path to the model folder relative to the simulation</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.is_valid" title="flopy.mf6.mfmodel.MFModel.is_valid"><code class="xref py py-obj docutils literal"><span class="pre">is_valid</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.is_valid" title="flopy.mf6.mfmodel.MFModel.is_valid"><code class="xref py py-obj docutils literal"><span class="pre">is_valid</span></code></a>()</td>
 <td>checks the validity of the model and all of its packages</td>
 </tr>
 </tbody>
@@ -483,6 +487,24 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.mf6.mfmodel.MFModel.remove_package">
+<code class="descname">remove_package</code><span class="sig-paren">(</span><em>package</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.remove_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>removes a package and all child packages from the model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : MFPackage</p>
+<blockquote class="last">
+<div><p>package to be removed from the model</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.mf6.mfmodel.MFModel.set_model_relative_path">
 <code class="descname">set_model_relative_path</code><span class="sig-paren">(</span><em>model_ws</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.set_model_relative_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>sets the file path to the model folder relative to the simulation
@@ -539,7 +561,7 @@ with relative paths, leaving files defined by absolute paths fixed.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 01, 2018.
 
     </p>
   </div>

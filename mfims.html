@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -232,7 +233,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>print_option</strong> : string</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation</strong> : MFSimulation</p>
+<blockquote>
+<div><p>Simulation that this package is a part of. Package is automatically
+added to simulation when it is initialized.</p>
+</div></blockquote>
+<p><strong>add_to_package_list</strong> : bool</p>
+<blockquote>
+<div><p>Do not set this parameter. It is intended for debugging and internal
+processing purposes only.</p>
+</div></blockquote>
+<p><strong>print_option</strong> : string</p>
 <blockquote>
 <div><ul class="simple">
 <li>print_option (string) is a flag that controls printing of convergence
@@ -557,13 +568,27 @@ using the POLCG preconditioner scaling method in Hill (1992). L2NORM
 </ul>
 </div></blockquote>
 <p><strong>reordering_method</strong> : string</p>
-<blockquote class="last">
+<blockquote>
 <div><ul class="simple">
 <li>reordering_method (string) an optional keyword that defines the
 matrix reordering approach used. By default, matrix reordering is not
 applied. NONE - original ordering. RCM - reverse Cuthill McKee
 ordering. MD - minimum degree ordering.</li>
 </ul>
+</div></blockquote>
+<p><strong>fname</strong> : String</p>
+<blockquote>
+<div><p>File name for this package.</p>
+</div></blockquote>
+<p><strong>pname</strong> : String</p>
+<blockquote>
+<div><p>Package name for this package.</p>
+</div></blockquote>
+<p><strong>parent_file</strong> : MFPackage</p>
+<blockquote class="last">
+<div><p>Parent package file that references this package. Only needed for
+utility packages (mfutl*). For example, mfutllaktab package must have 
+a mfgwflak package parent_file.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -616,7 +641,7 @@ ordering. MD - minimum degree ordering.</li>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 01, 2018.
 
     </p>
   </div>

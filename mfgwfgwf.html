@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -232,7 +233,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>exgtype</strong> : &lt;string&gt;</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation</strong> : MFSimulation</p>
+<blockquote>
+<div><p>Simulation that this package is a part of. Package is automatically
+added to simulation when it is initialized.</p>
+</div></blockquote>
+<p><strong>add_to_package_list</strong> : bool</p>
+<blockquote>
+<div><p>Do not set this parameter. It is intended for debugging and internal
+processing purposes only.</p>
+</div></blockquote>
+<p><strong>exgtype</strong> : &lt;string&gt;</p>
 <blockquote>
 <div><ul class="simple">
 <li>is the exchange type (GWF-GWF or GWF-GWT).</li>
@@ -368,7 +379,7 @@ GWF-GWF exchanges.</li>
 </ul>
 </div></blockquote>
 <p><strong>gwfgwfrecarray</strong> : [cellidm1, cellidm2, ihc, cl1, cl2, hwva, aux]</p>
-<blockquote class="last">
+<blockquote>
 <div><ul class="simple">
 <li>cellidm1 ((integer, …)) is the cellid of the cell in model 1 as
 specified in the simulation name file. For a structured grid that
@@ -401,6 +412,20 @@ each GWFGWF Exchange. The values of auxiliary variables must be
 present for each exchange. The values must be specified in the order
 of the auxiliary variables specified in the OPTIONS block.</li>
 </ul>
+</div></blockquote>
+<p><strong>fname</strong> : String</p>
+<blockquote>
+<div><p>File name for this package.</p>
+</div></blockquote>
+<p><strong>pname</strong> : String</p>
+<blockquote>
+<div><p>Package name for this package.</p>
+</div></blockquote>
+<p><strong>parent_file</strong> : MFPackage</p>
+<blockquote class="last">
+<div><p>Parent package file that references this package. Only needed for
+utility packages (mfutl*). For example, mfutllaktab package must have 
+a mfgwflak package parent_file.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -453,7 +478,7 @@ of the auxiliary variables specified in the OPTIONS block.</li>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 01, 2018.
 
     </p>
   </div>

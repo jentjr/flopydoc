@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -232,7 +233,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>length_units</strong> : string</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
+<blockquote>
+<div><p>Model that this package is a part of.  Package is automatically
+added to model when it is initialized.</p>
+</div></blockquote>
+<p><strong>add_to_package_list</strong> : bool</p>
+<blockquote>
+<div><p>Do not set this parameter. It is intended for debugging and internal
+processing purposes only.</p>
+</div></blockquote>
+<p><strong>length_units</strong> : string</p>
 <blockquote>
 <div><ul class="simple">
 <li>length_units (string) is the length units used for this model. Values
@@ -321,7 +332,7 @@ layer.</li>
 </ul>
 </div></blockquote>
 <p><strong>idomain</strong> : [integer]</p>
-<blockquote class="last">
+<blockquote>
 <div><ul class="simple">
 <li>idomain (integer) is an optional array that characterizes the
 existence status of a cell. If the IDOMAIN array is not specified,
@@ -335,6 +346,20 @@ simulation. Furthermore, the first existing cell above will be
 connected to the first existing cell below. This type of cell is
 referred to as a “vertical pass through” cell.</li>
 </ul>
+</div></blockquote>
+<p><strong>fname</strong> : String</p>
+<blockquote>
+<div><p>File name for this package.</p>
+</div></blockquote>
+<p><strong>pname</strong> : String</p>
+<blockquote>
+<div><p>Package name for this package.</p>
+</div></blockquote>
+<p><strong>parent_file</strong> : MFPackage</p>
+<blockquote class="last">
+<div><p>Parent package file that references this package. Only needed for
+utility packages (mfutl*). For example, mfutllaktab package must have 
+a mfgwflak package parent_file.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -387,7 +412,7 @@ referred to as a “vertical pass through” cell.</li>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 01, 2018.
 
     </p>
   </div>

@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -232,7 +233,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>auxiliary</strong> : [string]</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
+<blockquote>
+<div><p>Model that this package is a part of.  Package is automatically
+added to model when it is initialized.</p>
+</div></blockquote>
+<p><strong>add_to_package_list</strong> : bool</p>
+<blockquote>
+<div><p>Do not set this parameter. It is intended for debugging and internal
+processing purposes only.</p>
+</div></blockquote>
+<p><strong>auxiliary</strong> : [string]</p>
 <blockquote>
 <div><ul class="simple">
 <li>auxiliary (string) defines an array of one or more auxiliary variable
@@ -493,7 +504,7 @@ reach RNO.</li>
 </ul>
 </div></blockquote>
 <p><strong>reachperiodrecarray</strong> : [rno, sfrsetting]</p>
-<blockquote class="last">
+<blockquote>
 <div><ul>
 <li><p class="first">rno (integer) integer value that defines the reach number associated
 with the specified PERIOD data on the line. RNO must be greater than
@@ -525,6 +536,83 @@ the downstream outflow from the upstream reach. By default,
 STATUS is ACTIVE.</li>
 </ul>
 </dd>
+<dt>runoff <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>runoff (string) real or character value that defines the
+volumetric rate of diffuse overland runoff that enters the
+streamflow routing reach. If the Options block includes a
+TIMESERIESFILE entry (see the “Time-Variable Input” section),
+values can be obtained from a time series by entering the
+time-series name in place of a numeric value. By default,
+runoff rates are zero for each reach.</li>
+</ul>
+</dd>
+<dt>diversionrecord <span class="classifier-delimiter">:</span> <span class="classifier">[idv, divrate]</span></dt>
+<dd><ul class="first last simple">
+<li>idv (integer) diversion number.</li>
+<li>divrate (double) real or character value that defines the
+volumetric diversion (DIVFLOW) rate for the streamflow
+routing reach. If the Options block includes a TIMESERIESFILE
+entry (see the “Time-Variable Input” section), values can be
+obtained from a time series by entering the time-series name
+in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>inflow <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>inflow (string) real or character value that defines the
+volumetric inflow rate for the streamflow routing reach. If
+the Options block includes a TIMESERIESFILE entry (see the
+“Time-Variable Input” section), values can be obtained from a
+time series by entering the time-series name in place of a
+numeric value. By default, inflow rates are zero for each
+reach.</li>
+</ul>
+</dd>
+<dt>manning <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>manning (string) real or character value that defines the
+Manning’s roughness coefficient for the reach. MANNING must
+be greater than zero. If the Options block includes a
+TIMESERIESFILE entry (see the “Time-Variable Input” section),
+values can be obtained from a time series by entering the
+time-series name in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>upstream_fraction <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
+<li>upstream_fraction (double) real value that defines the
+fraction of upstream flow (USTRF) from each upstream reach
+that is applied as upstream inflow to the reach. The sum of
+all USTRF values for all reaches connected to the same
+upstream reach must be equal to one.</li>
+</ul>
+</dd>
+<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>evaporation (string) real or character value that defines the
+volumetric rate per unit area of water subtracted by
+evaporation from the streamflow routing reach. A positive
+evaporation rate should be provided. If the Options block
+includes a TIMESERIESFILE entry (see the “Time-Variable
+Input” section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value. By
+default, evaporation rates are zero for each reach.</li>
+</ul>
+</dd>
+<dt>stage <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>stage (string) real or character value that defines the stage
+for the reach. The specified STAGE is only applied if the
+reach uses the simple routing option. If STAGE is not
+specified for reaches that use the simple routing option, the
+specified stage is set to the top of the reach. If the
+Options block includes a TIMESERIESFILE entry (see the “Time-
+Variable Input” section), values can be obtained from a time
+series by entering the time-series name in place of a numeric
+value.</li>
+</ul>
+</dd>
 <dt>rainfall <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
 <li>rainfall (string) real or character value that defines the
@@ -550,87 +638,24 @@ series by entering the time-series name in place of a numeric
 value.</li>
 </ul>
 </dd>
-<dt>inflow <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>inflow (string) real or character value that defines the
-volumetric inflow rate for the streamflow routing reach. If
-the Options block includes a TIMESERIESFILE entry (see the
-“Time-Variable Input” section), values can be obtained from a
-time series by entering the time-series name in place of a
-numeric value. By default, inflow rates are zero for each
-reach.</li>
-</ul>
-</dd>
-<dt>stage <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>stage (string) real or character value that defines the stage
-for the reach. The specified STAGE is only applied if the
-reach uses the simple routing option. If STAGE is not
-specified for reaches that use the simple routing option, the
-specified stage is set to the top of the reach. If the
-Options block includes a TIMESERIESFILE entry (see the “Time-
-Variable Input” section), values can be obtained from a time
-series by entering the time-series name in place of a numeric
-value.</li>
-</ul>
-</dd>
-<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>evaporation (string) real or character value that defines the
-volumetric rate per unit area of water subtracted by
-evaporation from the streamflow routing reach. A positive
-evaporation rate should be provided. If the Options block
-includes a TIMESERIESFILE entry (see the “Time-Variable
-Input” section), values can be obtained from a time series by
-entering the time-series name in place of a numeric value. By
-default, evaporation rates are zero for each reach.</li>
-</ul>
-</dd>
-<dt>runoff <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>runoff (string) real or character value that defines the
-volumetric rate of diffuse overland runoff that enters the
-streamflow routing reach. If the Options block includes a
-TIMESERIESFILE entry (see the “Time-Variable Input” section),
-values can be obtained from a time series by entering the
-time-series name in place of a numeric value. By default,
-runoff rates are zero for each reach.</li>
-</ul>
-</dd>
-<dt>manning <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>manning (string) real or character value that defines the
-Manning’s roughness coefficient for the reach. MANNING must
-be greater than zero. If the Options block includes a
-TIMESERIESFILE entry (see the “Time-Variable Input” section),
-values can be obtained from a time series by entering the
-time-series name in place of a numeric value.</li>
-</ul>
-</dd>
-<dt>diversionrecord <span class="classifier-delimiter">:</span> <span class="classifier">[idv, divrate]</span></dt>
-<dd><ul class="first last simple">
-<li>idv (integer) diversion number.</li>
-<li>divrate (double) real or character value that defines the
-volumetric diversion (DIVFLOW) rate for the streamflow
-routing reach. If the Options block includes a TIMESERIESFILE
-entry (see the “Time-Variable Input” section), values can be
-obtained from a time series by entering the time-series name
-in place of a numeric value.</li>
-</ul>
-</dd>
-<dt>upstream_fraction <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
-<dd><ul class="first last simple">
-<li>upstream_fraction (double) real value that defines the
-fraction of upstream flow (USTRF) from each upstream reach
-that is applied as upstream inflow to the reach. The sum of
-all USTRF values for all reaches connected to the same
-upstream reach must be equal to one.</li>
-</ul>
-</dd>
 </dl>
 </div></blockquote>
 </li>
 </ul>
+</div></blockquote>
+<p><strong>fname</strong> : String</p>
+<blockquote>
+<div><p>File name for this package.</p>
+</div></blockquote>
+<p><strong>pname</strong> : String</p>
+<blockquote>
+<div><p>Package name for this package.</p>
+</div></blockquote>
+<p><strong>parent_file</strong> : MFPackage</p>
+<blockquote class="last">
+<div><p>Parent package file that references this package. Only needed for
+utility packages (mfutl*). For example, mfutllaktab package must have 
+a mfgwflak package parent_file.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -683,7 +708,7 @@ upstream reach must be equal to one.</li>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 01, 2018.
 
     </p>
   </div>

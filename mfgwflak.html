@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -226,13 +227,23 @@
 <span id="flopy-mf6-modflow-mfgwflak-module"></span><h1>flopy.mf6.modflow.mfgwflak Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwflak" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwflak.ModflowGwflak">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwflak.</code><code class="descname">ModflowGwflak</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_stage=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>surfdep=None</em>, <em>time_conversion=None</em>, <em>length_conversion=None</em>, <em>nlakes=None</em>, <em>noutlets=None</em>, <em>ntables=None</em>, <em>lakrecarray_package=None</em>, <em>lakrecarray=None</em>, <em>lake_tablesrecarray=None</em>, <em>outletsrecarray=None</em>, <em>lakeperiodrecarray=None</em>, <em>rate=None</em>, <em>outletperiodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwflak.ModflowGwflak" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwflak.</code><code class="descname">ModflowGwflak</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_stage=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>surfdep=None</em>, <em>time_conversion=None</em>, <em>length_conversion=None</em>, <em>nlakes=None</em>, <em>noutlets=None</em>, <em>ntables=None</em>, <em>lakrecarray_package=None</em>, <em>lakrecarray=None</em>, <em>lake_tablesrecarray=None</em>, <em>outletsrecarray=None</em>, <em>lakeperiodrecarray=None</em>, <em>outletperiodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwflak.ModflowGwflak" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwflak defines a lak package within a gwf6 model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>auxiliary</strong> : [string]</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
+<blockquote>
+<div><p>Model that this package is a part of.  Package is automatically
+added to model when it is initialized.</p>
+</div></blockquote>
+<p><strong>add_to_package_list</strong> : bool</p>
+<blockquote>
+<div><p>Do not set this parameter. It is intended for debugging and internal
+processing purposes only.</p>
+</div></blockquote>
+<p><strong>auxiliary</strong> : [string]</p>
 <blockquote>
 <div><ul class="simple">
 <li>auxiliary (string) defines an array of one or more auxiliary variable
@@ -575,16 +586,6 @@ LAKSETTING string include: STATUS, STAGE, STAGE, EVAPORATION,
 RUNOFFON, WITHDRAWAL, and AUXILIARY.</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>withdrawal <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>withdrawal (string) real or character value that defines the
-maximum withdrawal rate for the lake. Value must be greater
-than or equal to zero. If the Options block includes a
-TIMESERIESFILE entry (see the “Time-Variable Input” section),
-values can be obtained from a time series by entering the
-time-series name in place of a numeric value.</li>
-</ul>
-</dd>
 <dt>status <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
 <li>status (string) keyword option to define lake status. STATUS
@@ -595,11 +596,21 @@ ACTIVE.</li>
 <dt>runoff <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
 <li>runoff (string) real or character value that defines the
-runoff rate for the lake. Value must be greater than or equal
-to zero. If the Options block includes a TIMESERIESFILE entry
-(see the “Time-Variable Input” section), values can be
-obtained from a time series by entering the time-series name
-in place of a numeric value.</li>
+runoff rate <img class="math" src="_images/math/bb1f88afd60ffc24eecdba51f09fbe924e7c0d84.png" alt="(L^3 T^{-1})"/> for the lake. Value must be
+greater than or equal to zero. If the Options block includes
+a TIMESERIESFILE entry (see the “Time-Variable Input”
+section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>evaporation (string) real or character value that defines the
+maximum evaporation rate <img class="math" src="_images/math/0b57859336b798b7e9966b5388947604ddf26b94.png" alt="(LT^{-1})"/> for the lake.
+Value must be greater than or equal to zero. If the Options
+block includes a TIMESERIESFILE entry (see the “Time-Variable
+Input” section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value.</li>
 </ul>
 </dd>
 <dt>auxiliaryrecord <span class="classifier-delimiter">:</span> <span class="classifier">[auxname, auxval]</span></dt>
@@ -626,24 +637,24 @@ values can be obtained from a time series by entering the
 time-series name in place of a numeric value.</li>
 </ul>
 </dd>
-<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>evaporation (string) real or character value that defines the
-maximum evaporation rate for the lake. Value must be greater
-than or equal to zero. If the Options block includes a
-TIMESERIESFILE entry (see the “Time-Variable Input” section),
-values can be obtained from a time series by entering the
-time-series name in place of a numeric value.</li>
-</ul>
-</dd>
 <dt>rainfall <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
 <li>rainfall (string) real or character value that defines the
-rainfall rate for the lake. Value must be greater than or
-equal to zero. If the Options block includes a TIMESERIESFILE
-entry (see the “Time-Variable Input” section), values can be
-obtained from a time series by entering the time-series name
-in place of a numeric value.</li>
+rainfall rate <img class="math" src="_images/math/0b57859336b798b7e9966b5388947604ddf26b94.png" alt="(LT^{-1})"/> for the lake. Value must be
+greater than or equal to zero. If the Options block includes
+a TIMESERIESFILE entry (see the “Time-Variable Input”
+section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>withdrawal <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>withdrawal (string) real or character value that defines the
+maximum withdrawal rate <img class="math" src="_images/math/bb1f88afd60ffc24eecdba51f09fbe924e7c0d84.png" alt="(L^3 T^{-1})"/> for the lake.
+Value must be greater than or equal to zero. If the Options
+block includes a TIMESERIESFILE entry (see the “Time-Variable
+Input” section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value.</li>
 </ul>
 </dd>
 </dl>
@@ -651,22 +662,8 @@ in place of a numeric value.</li>
 </li>
 </ul>
 </div></blockquote>
-<p><strong>rate</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
-<li>rate (string) real or character value that defines the extraction
-rate for the lake outflow. A positive value indicates inflow and a
-negative value indicates outflow from the lake. RATE only applies to
-active (IBOUND <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0) lakes. A specified RATE is only applied
-if COUTTYPE for the OUTLETNO is SPECIFIED. If the Options block
-includes a TIMESERIESFILE entry (see the “Time-Variable Input”
-section), values can be obtained from a time series by entering the
-time-series name in place of a numeric value. By default, the RATE
-for each SPECIFIED lake outlet is zero.</li>
-</ul>
-</div></blockquote>
 <p><strong>outletperiodrecarray</strong> : [outletno, outletsetting]</p>
-<blockquote class="last">
+<blockquote>
 <div><ul>
 <li><p class="first">outletno (integer) integer value that defines the outlet number
 associated with the specified PERIOD data on the line. OUTLETNO must
@@ -677,6 +674,31 @@ keyword and values. Keyword values that can be used to start the
 OUTLETSETTING string include: RATE, INVERT, WIDTH, SLOPE, and ROUGH.</p>
 <blockquote>
 <div><dl class="docutils">
+<dt>invert <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>invert (string) real or character value that defines the
+invert elevation for the lake outlet. A specified INVERT
+value is only used for active lakes if COUTTYPE for lake
+outlet OUTLETNO is not SPECIFIED. If the Options block
+includes a TIMESERIESFILE entry (see the “Time-Variable
+Input” section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>rate <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>rate (string) real or character value that defines the
+extraction rate for the lake outflow. A positive value
+indicates inflow and a negative value indicates outflow from
+the lake. RATE only applies to active (IBOUND <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0)
+lakes. A specified RATE is only applied if COUTTYPE for the
+OUTLETNO is SPECIFIED. If the Options block includes a
+TIMESERIESFILE entry (see the “Time-Variable Input” section),
+values can be obtained from a time series by entering the
+time-series name in place of a numeric value. By default, the
+RATE for each SPECIFIED lake outlet is zero.</li>
+</ul>
+</dd>
 <dt>slope <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
 <li>slope (string) real or character value that defines the bed
@@ -710,35 +732,24 @@ obtained from a time series by entering the time-series name
 in place of a numeric value.</li>
 </ul>
 </dd>
-<dt>rate <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>rate (string) real or character value that defines the
-extraction rate for the lake outflow. A positive value
-indicates inflow and a negative value indicates outflow from
-the lake. RATE only applies to active (IBOUND <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0)
-lakes. A specified RATE is only applied if COUTTYPE for the
-OUTLETNO is SPECIFIED. If the Options block includes a
-TIMESERIESFILE entry (see the “Time-Variable Input” section),
-values can be obtained from a time series by entering the
-time-series name in place of a numeric value. By default, the
-RATE for each SPECIFIED lake outlet is zero.</li>
-</ul>
-</dd>
-<dt>invert <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>invert (string) real or character value that defines the
-invert elevation for the lake outlet. A specified INVERT
-value is only used for active lakes if COUTTYPE for lake
-outlet OUTLETNO is not SPECIFIED. If the Options block
-includes a TIMESERIESFILE entry (see the “Time-Variable
-Input” section), values can be obtained from a time series by
-entering the time-series name in place of a numeric value.</li>
-</ul>
-</dd>
 </dl>
 </div></blockquote>
 </li>
 </ul>
+</div></blockquote>
+<p><strong>fname</strong> : String</p>
+<blockquote>
+<div><p>File name for this package.</p>
+</div></blockquote>
+<p><strong>pname</strong> : String</p>
+<blockquote>
+<div><p>Package name for this package.</p>
+</div></blockquote>
+<p><strong>parent_file</strong> : MFPackage</p>
+<blockquote class="last">
+<div><p>Parent package file that references this package. Only needed for
+utility packages (mfutl*). For example, mfutllaktab package must have 
+a mfgwflak package parent_file.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -791,7 +802,7 @@ entering the time-series name in place of a numeric value.</li>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 01, 2018.
 
     </p>
   </div>
