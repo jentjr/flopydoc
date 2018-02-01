@@ -279,7 +279,7 @@
     <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
         <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
         <span class="n">bound_sp1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
-<span class="nb">print</span> <span class="s1">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp1</span><span class="p">),</span> <span class="s1">&#39;GHBs for stress period 1.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp1</span><span class="p">),</span> <span class="s1">&#39;GHBs for stress period 1.&#39;</span><span class="p">)</span>
 
 <span class="c1"># Make list for stress period 2</span>
 <span class="n">stageleft</span> <span class="o">=</span> <span class="mf">10.</span>
@@ -291,7 +291,7 @@
     <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
         <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stageleft</span><span class="p">,</span> <span class="n">condleft</span><span class="p">])</span>
         <span class="n">bound_sp2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">il</span><span class="p">,</span> <span class="n">ir</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stageright</span><span class="p">,</span> <span class="n">condright</span><span class="p">])</span>
-<span class="nb">print</span> <span class="s1">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp2</span><span class="p">),</span> <span class="s1">&#39;GHBs for stress period 2.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Adding &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_sp2</span><span class="p">),</span> <span class="s1">&#39;GHBs for stress period 2.&#39;</span><span class="p">)</span>
 
 <span class="c1"># We do not need to add a dictionary entry for stress period 3.</span>
 <span class="c1"># Flopy will automatically take the list from stress period 2 and apply it</span>
