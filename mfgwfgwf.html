@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfgwf Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfgwf Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfhfb Module" href="mfgwfhfb.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfgnc Module" href="mfgwfgnc.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -227,7 +227,7 @@
 <span id="flopy-mf6-modflow-mfgwfgwf-module"></span><h1>flopy.mf6.modflow.mfgwfgwf Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfgwf" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfgwf.</code><code class="descname">ModflowGwfgwf</code><span class="sig-paren">(</span><em>simulation</em>, <em>add_to_package_list=True</em>, <em>exgtype=None</em>, <em>exgmnamea=None</em>, <em>exgmnameb=None</em>, <em>auxiliary=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>cell_averaging=None</em>, <em>cvoptions=None</em>, <em>newton=None</em>, <em>gnc_filerecord=None</em>, <em>mvr_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>nexg=None</em>, <em>gwfgwfrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfgwf.</code><code class="descname">ModflowGwfgwf</code><span class="sig-paren">(</span><em>simulation</em>, <em>loading_package=False</em>, <em>exgtype=None</em>, <em>exgmnamea=None</em>, <em>exgmnameb=None</em>, <em>auxiliary=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>cell_averaging=None</em>, <em>cvoptions=None</em>, <em>newton=None</em>, <em>gnc_filerecord=None</em>, <em>mvr_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>nexg=None</em>, <em>exchangedata=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwfgwf defines a gwfgwf package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@
 <div><p>Simulation that this package is a part of. Package is automatically
 added to simulation when it is initialized.</p>
 </div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
+<p><strong>loading_package</strong> : bool</p>
 <blockquote>
 <div><p>Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
@@ -378,7 +378,7 @@ package.</li>
 GWF-GWF exchanges.</li>
 </ul>
 </div></blockquote>
-<p><strong>gwfgwfrecarray</strong> : [cellidm1, cellidm2, ihc, cl1, cl2, hwva, aux]</p>
+<p><strong>exchangedata</strong> : [cellidm1, cellidm2, ihc, cl1, cl2, hwva, aux]</p>
 <blockquote>
 <div><ul class="simple">
 <li>cellidm1 ((integer, …)) is the cellid of the cell in model 1 as
@@ -478,7 +478,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -500,7 +500,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfriv Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfriv Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfsfr Module" href="mfgwfsfr.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfrcha Module" href="mfgwfrcha.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -227,7 +227,7 @@
 <span id="flopy-mf6-modflow-mfgwfriv-module"></span><h1>flopy.mf6.modflow.mfgwfriv Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfriv" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwfriv.ModflowGwfriv">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfriv.</code><code class="descname">ModflowGwfriv</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>auxiliary=None</em>, <em>auxmultname=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>maxbound=None</em>, <em>periodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfriv.ModflowGwfriv" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfriv.</code><code class="descname">ModflowGwfriv</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>auxiliary=None</em>, <em>auxmultname=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>maxbound=None</em>, <em>stress_period_data=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfriv.ModflowGwfriv" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwfriv defines a riv package within a gwf6 model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@
 <div><p>Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
 </div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
+<p><strong>loading_package</strong> : bool</p>
 <blockquote>
 <div><p>Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
@@ -335,7 +335,7 @@ package to store the available, provided, and received water.</li>
 rivers cells that will be specified for use during any stress period.</li>
 </ul>
 </div></blockquote>
-<p><strong>periodrecarray</strong> : [cellid, stage, cond, rbot, aux, boundname]</p>
+<p><strong>stress_period_data</strong> : [cellid, stage, cond, rbot, aux, boundname]</p>
 <blockquote>
 <div><ul class="simple">
 <li>cellid ((integer, …)) is the cell identifier, and depends on the
@@ -435,7 +435,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -457,7 +457,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfwel Module" href="mfwel.html"/>
         <link rel="prev" title="flopy.modflow.mfupw Module" href="mfupw.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -233,24 +234,22 @@ the ModflowUzf1 class as <cite>flopy.modflow.ModflowUzf1</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>ipakcb=None</em>, <em>iuzfcb2=None</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>nuzgag=0</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>nwt_11_fmt=False</em>, <em>specifysurfk=False</em>, <em>rejectsurfk=False</em>, <em>seepsurfk=False</em>, <em>etsquare=None</em>, <em>netflux=None</em>, <em>uzgag=None</em>, <em>extension='uzf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div>MODFLOW Unsaturated Zone Flow 1 Boundary Package Class.</div></blockquote>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>ipakcb=None</em>, <em>iuzfcb2=None</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>nwt_11_fmt=False</em>, <em>specifysurfk=False</em>, <em>rejectsurfk=False</em>, <em>seepsurfk=False</em>, <em>etsquare=None</em>, <em>netflux=None</em>, <em>uzgag=None</em>, <em>extension='uzf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
+<dd><p>MODFLOW Unsaturated Zone Flow 1 Boundary Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
 <blockquote>
-<div><blockquote>
 <div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
 </div></blockquote>
-<dl class="docutils">
-<dt>nuztop <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first">used to define which cell in a vertical column that recharge and
+<p><strong>nuztop</strong> : integer</p>
+<blockquote>
+<div><p>used to define which cell in a vertical column that recharge and
 discharge is simulated. (default is 1)</p>
-<dl class="last docutils">
+<dl class="docutils">
 <dt>1   Recharge to and discharge from only the top model layer. This</dt>
 <dd><p class="first last">option assumes land surface is defined as top of layer 1.</p>
 </dd>
@@ -264,117 +263,127 @@ in IUZFBND. A constant head node intercepts any recharge and
 prevents deeper percolation.</p>
 </dd>
 </dl>
-</dd>
-<dt>iuzfopt <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">equal to 1 or 2. A value of 1 indicates that the vertical hydraulic conductivity will be
+</div></blockquote>
+<p><strong>iuzfopt</strong> : integer</p>
+<blockquote>
+<div><p>equal to 1 or 2. A value of 1 indicates that the vertical hydraulic conductivity will be
 specified within the UZF1 Package input file using array VKS. A value of 2 indicates that the vertical
 hydraulic conductivity will be specified within either the BCF or LPF Package input file.
 (default is 0)</p>
-</dd>
-<dt>irunflg <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">specifies whether ground water that discharges to land surface will
+</div></blockquote>
+<p><strong>irunflg</strong> : integer</p>
+<blockquote>
+<div><p>specifies whether ground water that discharges to land surface will
 be routed to stream segments or lakes as specified in the IRUNBND
 array (IRUNFLG not equal to zero) or if ground-water discharge is
 removed from the model simulation and accounted for in the
 ground-water budget as a loss of water (IRUNFLG=0). The
 Streamflow-Routing (SFR2) and(or) the Lake (LAK3) Packages must be
 active if IRUNFLG is not zero. (default is 0)</p>
-</dd>
-<dt>ietflg <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">specifies whether or not evapotranspiration (ET) will be simulated.
+</div></blockquote>
+<p><strong>ietflg</strong> : integer</p>
+<blockquote>
+<div><p>specifies whether or not evapotranspiration (ET) will be simulated.
 ET will not be simulated if IETFLG is zero, otherwise it will be
 simulated. (default is 0)</p>
-</dd>
-<dt>ipakcb <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">flag for writing ground-water recharge, ET, and ground-water
+</div></blockquote>
+<p><strong>ipakcb</strong> : integer</p>
+<blockquote>
+<div><p>flag for writing ground-water recharge, ET, and ground-water
 discharge to land surface rates to a separate unformatted file using
 subroutine UBUDSV. If ipakcb&gt;0, it is the unit number to which the
 cell-by-cell rates will be written when ‘SAVE BUDGET’ or a non-zero
 value for ICBCFL is specified in Output Control. If ipakcb less than
 or equal to 0, cell-by-cell rates will not be written to a file.
 (default is 57)</p>
-</dd>
-<dt>iuzfcb2 <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">flag for writing ground-water recharge, ET, and ground-water
+</div></blockquote>
+<p><strong>iuzfcb2</strong> : integer</p>
+<blockquote>
+<div><p>flag for writing ground-water recharge, ET, and ground-water
 discharge to land surface rates to a separate unformatted file using
 module UBDSV3. If IUZFCB2&gt;0, it is the unit number to which
 cell-by-cell rates will be written when ‘SAVE BUDGET’ or a non-zero
 value for ICBCFL is specified in Output Control. If IUZFCB2 less than
 or equal to 0, cell-by-cell rates will not be written to file.
 (default is 0)</p>
-</dd>
-<dt>ntrail2 <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">equal to the number of trailing waves used to define the
+</div></blockquote>
+<p><strong>ntrail2</strong> : integer</p>
+<blockquote>
+<div><p>equal to the number of trailing waves used to define the
 water-content profile following a decrease in the infiltration rate.
 The number of trailing waves varies depending on the problem, but a
 range between 10 and 20 is usually adequate. More trailing waves may
 decrease mass-balance error and will increase computational
 requirements and memory usage. (default is 10)</p>
-</dd>
-<dt>nsets <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">equal to the number of wave sets used to simulate multiple
+</div></blockquote>
+<p><strong>nsets</strong> : integer</p>
+<blockquote>
+<div><p>equal to the number of wave sets used to simulate multiple
 infiltration periods. The number of wave sets should be set to 20 for
 most problems involving time varying infiltration. The total number of
 waves allowed within an unsaturated zone cell is equal to
 NTRAIL2*NSETS2. An error will occur if the number of waves in a cell
 exceeds this value. (default is 20)</p>
-</dd>
-<dt>nuzgag <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">equal to the number of cells (one per vertical column) that will be
-specified for printing detailed information on the unsaturated zone
-water budget and water content. A gage also may be used to print
-the budget summed over all model cells.  (default is 0)</p>
-</dd>
-<dt>surfdep <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The average height of undulations, D (Figure 1 in UZF documentation),
+</div></blockquote>
+<p><strong>surfdep</strong> : float</p>
+<blockquote>
+<div><p>The average height of undulations, D (Figure 1 in UZF documentation),
 in the land surface altitude. (default is 1.0)</p>
-</dd>
-<dt>iuzfbnd <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">used to define the aerial extent of the active model in which recharge
+</div></blockquote>
+<p><strong>iuzfbnd</strong> : integer</p>
+<blockquote>
+<div><p>used to define the aerial extent of the active model in which recharge
 and discharge will be simulated. (default is 1)</p>
-</dd>
-<dt>irunbnd <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">used to define the stream segments within the Streamflow-Routing
+</div></blockquote>
+<p><strong>irunbnd</strong> : integer</p>
+<blockquote>
+<div><p>used to define the stream segments within the Streamflow-Routing
 (SFR2) Package or lake numbers in the Lake (LAK3) Package that
 overland runoff from excess infiltration and ground-water
 discharge to land surface will be added. A positive integer value
 identifies the stream segment and a negative integer value identifies
 the lake number. (default is 0)</p>
-</dd>
-<dt>vks <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the saturated vertical hydraulic conductivity of the
+</div></blockquote>
+<p><strong>vks</strong> : float</p>
+<blockquote>
+<div><p>used to define the saturated vertical hydraulic conductivity of the
 unsaturated zone (LT-1). (default is 1.0E-6)</p>
-</dd>
-<dt>eps <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">values for each model cell used to define the Brooks-Corey epsilon of
+</div></blockquote>
+<p><strong>eps</strong> : float</p>
+<blockquote>
+<div><p>values for each model cell used to define the Brooks-Corey epsilon of
 the unsaturated zone. Epsilon is used in the relation of water
 content to hydraulic conductivity (Brooks and Corey, 1966).
 (default is 3.5)</p>
-</dd>
-<dt>thts <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the saturated water content of the unsaturated zone in
+</div></blockquote>
+<p><strong>thts</strong> : float</p>
+<blockquote>
+<div><p>used to define the saturated water content of the unsaturated zone in
 units of volume of water to total volume (L3L-3). (default is 0.35)</p>
-</dd>
-<dt>thtr <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the residual water content for each vertical column of
+</div></blockquote>
+<p><strong>thtr</strong> : float</p>
+<blockquote>
+<div><p>used to define the residual water content for each vertical column of
 cells in units of volume of water to total volume (L3L-3). THTR is
 the irreducible water content and the unsaturated water content
 cannot drain to water contents less than THTR. This variable is not
 included unless the key word SPECIFYTHTR is specified. (default is
 0.15)</p>
-</dd>
-<dt>thti <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the initial water content for each vertical column of
+</div></blockquote>
+<p><strong>thti</strong> : float</p>
+<blockquote>
+<div><p>used to define the initial water content for each vertical column of
 cells in units of volume of water at start of simulation to total
 volume (L3L-3). THTI should not be specified for steady-state
 simulations. (default is 0.20)</p>
-</dd>
-<dt>row_col_iftunit_iuzopt <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first">used to specify where information will be printed for each time step.
+</div></blockquote>
+<p><strong>row_col_iftunit_iuzopt</strong> : list</p>
+<blockquote>
+<div><p>used to specify where information will be printed for each time step.
 row and col are zero-based. IUZOPT specifies what that information
 will be. (default is [])
 IUZOPT is</p>
-<dl class="last docutils">
+<dl class="docutils">
 <dt>1   Prints time, ground-water head, and thickness of unsaturated zone,</dt>
 <dd><p class="first last">and cumulative volumes of infiltration, recharge, storage, change
 in storage and ground-water discharge to land surface.</p>
@@ -387,41 +396,48 @@ in storage and ground-water discharge to land surface.</p>
 unsaturated zone.</p>
 </dd>
 </dl>
-</dd>
-<dt>specifythtr <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">key word for specifying optional input variable THTR (default is 0)</p>
-</dd>
-<dt>specifythti <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">key word for specifying optional input variable THTI. (default is 0)</p>
-</dd>
-<dt>nosurfleak <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">key word for inactivating calculation of surface leakage.
+</div></blockquote>
+<p><strong>specifythtr</strong> : boolean</p>
+<blockquote>
+<div><p>key word for specifying optional input variable THTR (default is 0)</p>
+</div></blockquote>
+<p><strong>specifythti</strong> : boolean</p>
+<blockquote>
+<div><p>key word for specifying optional input variable THTI. (default is 0)</p>
+</div></blockquote>
+<p><strong>nosurfleak</strong> : boolean</p>
+<blockquote>
+<div><p>key word for inactivating calculation of surface leakage.
 (default is 0)</p>
-</dd>
-<dt>specifysurfk <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+</div></blockquote>
+<p><strong>specifysurfk</strong> : boolean</p>
+<blockquote>
+<div><p>(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
 An optional character variable. When SPECIFYSURFK is specified, 
 the variable SURFK is specfied in Data Set 4b.</p>
-</dd>
-<dt>rejectsurfk <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+</div></blockquote>
+<p><strong>rejectsurfk</strong> : boolean</p>
+<blockquote>
+<div><p>(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
 An optional character variable. When REJECTSURFK is specified, 
 SURFK instead of VKS is used for calculating rejected infiltration. 
 REJECTSURFK only is included if SPECIFYSURFK is included.</p>
-</dd>
-<dt>seepsurfk <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+</div></blockquote>
+<p><strong>seepsurfk</strong> : boolean</p>
+<blockquote>
+<div><p>(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
 An optional character variable. When SEEPSURFK is specified, 
 SURFK instead of VKS is used for calculating surface leakage. 
 SEEPSURFK only is included if SPECIFYSURFK is included.</p>
-</dd>
-<dt>etsquare <span class="classifier-delimiter">:</span> <span class="classifier">float (smoothfact)</span></dt>
-<dd><p class="first">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later)
+</div></blockquote>
+<p><strong>etsquare</strong> : float (smoothfact)</p>
+<blockquote>
+<div><p>(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later)
 An optional character variable. When ETSQUARE is specified, 
 groundwater ET is simulated using a constant potential ET rate, 
 and is smoothed over a specified smoothing interval. 
 This option is recommended only when using the NWT solver.</p>
-<p class="last">etsquare is activated in flopy by specifying a real value
+<p>etsquare is activated in flopy by specifying a real value
 for smoothfact (default is None).
 For example, if the interval factor (smoothfact) 
 is specified as smoothfact=0.1 (recommended), 
@@ -430,13 +446,26 @@ SMOOTHINT = 0.1*EXTDP and  is applied over the range for groundwater head (h):
 *   h &lt; CELTOP-EXTDP, ET is zero;
 *   CELTOP-EXTDP &lt; h &lt; CELTOP-EXTDP+SMOOTHINT, ET is smoothed;
 CELTOP-EXTDP+SMOOTHINT &lt; h, ET is equal to potential ET.</p>
-</dd>
-<dt>netflux <span class="classifier-delimiter">:</span> <span class="classifier">list of [Unitrech (int), Unitdis (int)]</span></dt>
-<dd><p class="first">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
+</div></blockquote>
+<p><strong>uzgage</strong> : dict of lists or list of lists</p>
+<blockquote>
+<div><p>Dataset 8 in UZF Package documentation. Each entry in the dict
+is keyed by iftunit.</p>
+<blockquote>
+<div><p>Dict of lists: If iftunit is negative, the list is empty.
+If iftunit is positive, the list includes [IUZROW, IUZCOL, IUZOPT]
+List of lists:
+Lists follow the format described in the documentation:
+[[IUZROW, IUZCOL, IFTUNIT, IUZOPT]] or [[-IFTUNIT]]</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>netflux</strong> : list of [Unitrech (int), Unitdis (int)]</p>
+<blockquote>
+<div><p>(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
 An optional character variable. When NETFLUX is specified, 
 the sum of recharge (L3/T) and the sum of discharge (L3/T) is written 
 to separate unformatted files using module UBDSV3.</p>
-<p class="last">netflux is activated in flopy by specifying a list for 
+<p>netflux is activated in flopy by specifying a list for 
 Unitrech and Unitdis (default is None). 
 Unitrech and Unitdis are the unit numbers to which these values 
 are written when “SAVE BUDGET” is specified in Output Control. 
@@ -444,26 +473,37 @@ Values written to Unitrech are the sum of recharge values
 for the UZF, SFR2, and LAK packages, and values written to Unitdis 
 are the sum of discharge values for the UZF, SFR2, and LAK packages. 
 Values are averaged over the period between output times.</p>
-</dd>
-</dl>
+<p>[NETFLUX unitrech unitdis]</p>
 </div></blockquote>
-<p><strong>[NETFLUX unitrech unitdis]</strong></p>
-<blockquote class="last">
-<div><dl class="docutils">
-<dt>finf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the infiltration rates (LT-1) at land surface for each
+<p><strong>finf</strong> : float, 2-D array, or dict of {kper:value}</p>
+<blockquote>
+<div><p>where kper is the zero-based stress period
+to assign a value to.  Value should be cast-able to Util2d instance
+can be a scalar, list, or ndarray is the array value is constant in
+time.
+Used to define the infiltration rates (LT-1) at land surface for each
 vertical column of cells. If FINF is specified as being greater than
 the vertical hydraulic conductivity then FINF is set equal to the
 vertical unsaturated hydraulic conductivity. Excess water is routed
 to streams or lakes when IRUNFLG is not zero, and if SFR2 or LAK3 is
 active. (default is 1.0E-8)</p>
-</dd>
-<dt>pet <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the ET demand rates (L1T-1) within the ET extinction
+</div></blockquote>
+<p><strong>pet</strong> : float, 2-D array, or dict of {kper:value}</p>
+<blockquote>
+<div><p>where kper is the zero-based stress period
+to assign a value to.  Value should be cast-able to Util2d instance
+can be a scalar, list, or ndarray is the array value is constant in
+time.
+Used to define the ET demand rates (L1T-1) within the ET extinction
 depth interval for each vertical column of cells. (default is 5.0E-8)</p>
-</dd>
-<dt>extdp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the ET extinction depths. The quantity of ET removed
+</div></blockquote>
+<p><strong>extdp</strong> : float, 2-D array, or dict of {kper:value}</p>
+<blockquote>
+<div><p>where kper is the zero-based stress period
+to assign a value to.  Value should be cast-able to Util2d instance
+can be a scalar, list, or ndarray is the array value is constant in
+time.
+Used to define the ET extinction depths. The quantity of ET removed
 from a cell is limited by the volume of water stored in the
 unsaturated zone above the extinction depth. If ground water is
 within the ET extinction depth, then the rate removed is based
@@ -471,25 +511,34 @@ on a linear decrease in the maximum rate at land surface and zero at
 the ET extinction depth. The linear decrease is the same method used
 in the Evapotranspiration Package (McDonald and Harbaugh, 1988, chap.
 10). (default is 15.0)</p>
-</dd>
-<dt>extwc <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">used to define the extinction water content below which ET cannot be
+</div></blockquote>
+<p><strong>extwc</strong> : float, 2-D array, or dict of {kper:value}</p>
+<blockquote>
+<div><p>where kper is the zero-based stress period
+to assign a value to.  Value should be cast-able to Util2d instance
+can be a scalar, list, or ndarray is the array value is constant in
+time.
+Used to define the extinction water content below which ET cannot be
 removed from the unsaturated zone.  EXTWC must have a value between
 (THTS-Sy) and THTS, where Sy is the specific yield specified in
 either the LPF or BCF Package. (default is 0.1)</p>
-</dd>
-<dt>uzfbud_ext <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">appears to be used for sequential naming of budget output files
+</div></blockquote>
+<p><strong>uzfbud_ext</strong> : list</p>
+<blockquote>
+<div><p>appears to be used for sequential naming of budget output files
 (default is [])</p>
-</dd>
-<dt>extension <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">Filename extension (default is ‘uzf’)</p>
-</dd>
-<dt>unitnumber <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">File unit number (default is None).</p>
-</dd>
-<dt>filenames <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
-<dd><p class="first last">Filenames to use for the package and the output files. If
+</div></blockquote>
+<p><strong>extension</strong> : string</p>
+<blockquote>
+<div><p>Filename extension (default is ‘uzf’)</p>
+</div></blockquote>
+<p><strong>unitnumber</strong> : int</p>
+<blockquote>
+<div><p>File unit number (default is None).</p>
+</div></blockquote>
+<p><strong>filenames</strong> : str or list of str</p>
+<blockquote class="last">
+<div><p>Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the cbc output, uzf output, and uzf
 observation names will be created using the model name and .cbc,
@@ -503,8 +552,6 @@ set to the string and other uzf output files will be set to the model
 name with the appropriate output file extensions. To define the names
 for all package files (input and output) the length of the list of
 strings should be 3 + len(uzgag). Default is None.</p>
-</dd>
-</dl>
 </div></blockquote>
 </td>
 </tr>
@@ -518,6 +565,18 @@ strings should be 3 + len(uzgag). Default is None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">uzf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowUzf1</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="96%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>nuzgag</strong></td>
+<td>(integer) equal to the number of cells (one per vertical column) that will be specified for printing detailed information on the unsaturated zone water budget and water content. A gage also may be used to print the budget summed over all model cells.  (default is 0)</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.check" title="Permalink to this definition">¶</a></dt>
@@ -722,7 +781,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -744,7 +803,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

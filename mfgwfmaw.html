@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfmaw Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfmaw Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfmvr Module" href="mfgwfmvr.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwflak Module" href="mfgwflak.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -227,7 +227,7 @@
 <span id="flopy-mf6-modflow-mfgwfmaw-module"></span><h1>flopy.mf6.modflow.mfgwfmaw Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfmaw" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwfmaw.ModflowGwfmaw">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfmaw.</code><code class="descname">ModflowGwfmaw</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_head=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>no_well_storage=None</em>, <em>flowing_wells=None</em>, <em>shutdown_theta=None</em>, <em>shutdown_kappa=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>nmawwells=None</em>, <em>wellrecarray=None</em>, <em>wellconnectionsrecarray=None</em>, <em>wellperiodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfmaw.ModflowGwfmaw" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfmaw.</code><code class="descname">ModflowGwfmaw</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_head=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>no_well_storage=None</em>, <em>flowing_wells=None</em>, <em>shutdown_theta=None</em>, <em>shutdown_kappa=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>nmawwells=None</em>, <em>packagedata=None</em>, <em>connectiondata=None</em>, <em>perioddata=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfmaw.ModflowGwfmaw" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwfmaw defines a maw package within a gwf6 model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@
 <div><p>Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
 </div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
+<p><strong>loading_package</strong> : bool</p>
 <blockquote>
 <div><p>Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
@@ -399,7 +399,7 @@ package to store the available, provided, and received water.</li>
 aquifer wells that will be simulated for all stress periods.</li>
 </ul>
 </div></blockquote>
-<p><strong>wellrecarray</strong> : [wellno, radius, bottom, strt, condeqn, ngwfnodes, aux,</p>
+<p><strong>packagedata</strong> : [wellno, radius, bottom, strt, condeqn, ngwfnodes, aux,</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>boundname]</dt>
@@ -451,10 +451,10 @@ must be enclosed within single quotes.</li>
 </dd>
 </dl>
 </div></blockquote>
-<p><strong>wellconnectionsrecarray</strong> : [wellno, icon, cellid, scrn_top, scrn_bot,</p>
+<p><strong>connectiondata</strong> : [wellno, icon, cellid, scrn_top, scrn_bot, hk_skin,</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>hk_skin, radius_skin]</dt>
+<dt>radius_skin]</dt>
 <dd><ul class="first last simple">
 <li>wellno (integer) integer value that defines the well number
 associated with the specified CONNECTIONDATA data on the line. WELLNO
@@ -496,7 +496,7 @@ greater than RADIUS for the multi-aquifer well.</li>
 </dd>
 </dl>
 </div></blockquote>
-<p><strong>wellperiodrecarray</strong> : [wellno, mawsetting]</p>
+<p><strong>perioddata</strong> : [wellno, mawsetting]</p>
 <blockquote>
 <div><ul>
 <li><p class="first">wellno (integer) integer value that defines the well number
@@ -509,11 +509,17 @@ MAWSETTING string include: STATUS, FLOWING_WELL, RATE, WELL_HEAD,
 HEAD_LIMIT, SHUT_OFF, RATE_SCALING, and AUXILIARY.</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>status <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dt>rate <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
 <dd><ul class="first last simple">
-<li>status (string) keyword option to define well status. STATUS
-can be ACTIVE, INACTIVE, or CONSTANT. By default, STATUS is
-ACTIVE.</li>
+<li>rate (double) is the volumetric pumping rate for the multi-
+aquifer well. A positive value indicates recharge and a
+negative value indicates discharge (pumping). RATE only
+applies to active (IBOUND <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0) multi-aquifer wells.
+If the Options block includes a TIMESERIESFILE entry (see the
+“Time-Variable Input” section), values can be obtained from a
+time series by entering the time-series name in place of a
+numeric value. By default, the RATE for each multi-aquifer
+well is zero.</li>
 </ul>
 </dd>
 <dt>rate_scalingrecord <span class="classifier-delimiter">:</span> <span class="classifier">[pump_elevation, scaling_length]</span></dt>
@@ -546,32 +552,29 @@ occur until the next time step if a well is shutdown to
 reduce oscillations. maxrate must be greater than MINRATE.</li>
 </ul>
 </dd>
-<dt>rate <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dt>auxiliaryrecord <span class="classifier-delimiter">:</span> <span class="classifier">[auxname, auxval]</span></dt>
 <dd><ul class="first last simple">
-<li>rate (double) is the volumetric pumping rate for the multi-
-aquifer well. A positive value indicates recharge and a
-negative value indicates discharge (pumping). RATE only
-applies to active (IBOUND <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0) multi-aquifer wells.
-If the Options block includes a TIMESERIESFILE entry (see the
-“Time-Variable Input” section), values can be obtained from a
-time series by entering the time-series name in place of a
-numeric value. By default, the RATE for each multi-aquifer
-well is zero.</li>
+<li>auxname (string) name for the auxiliary variable to be
+assigned AUXVAL. AUXNAME must match one of the auxiliary
+variable names defined in the OPTIONS block. If AUXNAME does
+not match one of the auxiliary variable names defined in the
+OPTIONS block the data are ignored.</li>
+<li>auxval (double) value for the auxiliary variable. If the
+Options block includes a TIMESERIESFILE entry (see the “Time-
+Variable Input” section), values can be obtained from a time
+series by entering the time-series name in place of a numeric
+value.</li>
 </ul>
 </dd>
-<dt>flowing_wellrecord <span class="classifier-delimiter">:</span> <span class="classifier">[fwelev, fwcond, fwrlen]</span></dt>
+<dt>well_head <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
 <dd><ul class="first last simple">
-<li>fwelev (double) elevation used to determine whether or not
-the well is flowing.</li>
-<li>fwcond (double) conductance used to calculate the discharge
-of a free flowing well. Flow occurs when the head in the well
-is above the well top elevation (FWELEV).</li>
-<li>fwrlen (double) length used to reduce the conductance of the
-flowing well. When the head in the well drops below the well
-top plus the reduction length, then the conductance is
-reduced. This reduction length can be used to improve the
-stability of simulations with flowing wells so that there is
-not an abrupt change in flowing well rates.</li>
+<li>well_head (double) is the head in the multi-aquifer well.
+WELL_HEAD is only applied to constant head (STATUS is
+CONSTANT) and inactive (STATUS is INACTIVE) multi-aquifer
+wells. If the Options block includes a TIMESERIESFILE entry
+(see the “Time-Variable Input” section), values can be
+obtained from a time series by entering the time-series name
+in place of a numeric value.</li>
 </ul>
 </dd>
 <dt>head_limit <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
@@ -590,29 +593,26 @@ HEAD_LIMIT option is recommended. By default, HEAD_LIMIT is
 <a href="#id3"><span class="problematic" id="id4">`</span></a>OFF’.</li>
 </ul>
 </dd>
-<dt>well_head <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dt>flowing_wellrecord <span class="classifier-delimiter">:</span> <span class="classifier">[fwelev, fwcond, fwrlen]</span></dt>
 <dd><ul class="first last simple">
-<li>well_head (double) is the head in the multi-aquifer well.
-WELL_HEAD is only applied to constant head (STATUS is
-CONSTANT) and inactive (STATUS is INACTIVE) multi-aquifer
-wells. If the Options block includes a TIMESERIESFILE entry
-(see the “Time-Variable Input” section), values can be
-obtained from a time series by entering the time-series name
-in place of a numeric value.</li>
+<li>fwelev (double) elevation used to determine whether or not
+the well is flowing.</li>
+<li>fwcond (double) conductance used to calculate the discharge
+of a free flowing well. Flow occurs when the head in the well
+is above the well top elevation (FWELEV).</li>
+<li>fwrlen (double) length used to reduce the conductance of the
+flowing well. When the head in the well drops below the well
+top plus the reduction length, then the conductance is
+reduced. This reduction length can be used to improve the
+stability of simulations with flowing wells so that there is
+not an abrupt change in flowing well rates.</li>
 </ul>
 </dd>
-<dt>auxiliaryrecord <span class="classifier-delimiter">:</span> <span class="classifier">[auxname, auxval]</span></dt>
+<dt>status <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
-<li>auxname (string) name for the auxiliary variable to be
-assigned AUXVAL. AUXNAME must match one of the auxiliary
-variable names defined in the OPTIONS block. If AUXNAME does
-not match one of the auxiliary variable names defined in the
-OPTIONS block the data are ignored.</li>
-<li>auxval (double) value for the auxiliary variable. If the
-Options block includes a TIMESERIESFILE entry (see the “Time-
-Variable Input” section), values can be obtained from a time
-series by entering the time-series name in place of a numeric
-value.</li>
+<li>status (string) keyword option to define well status. STATUS
+can be ACTIVE, INACTIVE, or CONSTANT. By default, STATUS is
+ACTIVE.</li>
 </ul>
 </dd>
 </dl>
@@ -685,7 +685,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -707,7 +707,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfsfr Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfsfr Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfsto Module" href="mfgwfsto.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfriv Module" href="mfgwfriv.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -227,7 +227,7 @@
 <span id="flopy-mf6-modflow-mfgwfsfr-module"></span><h1>flopy.mf6.modflow.mfgwfsfr Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfsfr" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwfsfr.ModflowGwfsfr">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfsfr.</code><code class="descname">ModflowGwfsfr</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_stage=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>maximum_iterations=None</em>, <em>maximum_depth_change=None</em>, <em>unit_conversion=None</em>, <em>nreaches=None</em>, <em>sfrrecarray=None</em>, <em>reach_connectivityrecarray=None</em>, <em>reach_diversionsrecarray=None</em>, <em>reachperiodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfsfr.ModflowGwfsfr" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfsfr.</code><code class="descname">ModflowGwfsfr</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_stage=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>maximum_iterations=None</em>, <em>maximum_depth_change=None</em>, <em>unit_conversion=None</em>, <em>nreaches=None</em>, <em>packagedata=None</em>, <em>connectiondata=None</em>, <em>diversions=None</em>, <em>perioddata=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfsfr.ModflowGwfsfr" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwfsfr defines a sfr package within a gwf6 model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@
 <div><p>Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
 </div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
+<p><strong>loading_package</strong> : bool</p>
 <blockquote>
 <div><p>Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
@@ -377,7 +377,7 @@ multiplied by 86,400 when using time units of days in the simulation.</li>
 reaches. There must be NREACHES entries in the PACKAGEDATA block.</li>
 </ul>
 </div></blockquote>
-<p><strong>sfrrecarray</strong> : [rno, cellid, rlen, rwid, rgrd, rtp, rbth, rhk, man, ncon,</p>
+<p><strong>packagedata</strong> : [rno, cellid, rlen, rwid, rgrd, rtp, rbth, rhk, man, ncon,</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>ustrf, ndv, aux, boundname]</dt>
@@ -438,7 +438,7 @@ enclosed within single quotes.</li>
 </dd>
 </dl>
 </div></blockquote>
-<p><strong>reach_connectivityrecarray</strong> : [rno, ic]</p>
+<p><strong>connectiondata</strong> : [rno, ic]</p>
 <blockquote>
 <div><ul class="simple">
 <li>rno (integer) integer value that defines the reach number associated
@@ -448,16 +448,17 @@ connection information must be specified for every reach or the
 program will terminate with an error. The program will also terminate
 with an error if connection information for a reach is specified more
 than once.</li>
-<li>ic (integer) integer value that defines the reach number of the reach
-connected to the current reach and whether it is connected to the
-upstream or downstream end of the reach. Negative IC numbers indicate
-connected reaches are connected to the downstream end of the current
-reach. Positive IC numbers indicate connected reaches are connected
-to the upstream end of the current reach. The absolute value of IC
-must be greater than zero and less than or equal to NREACHES.</li>
+<li>ic (double_precision) integer value that defines the reach number of
+the reach connected to the current reach and whether it is connected
+to the upstream or downstream end of the reach. Negative IC numbers
+indicate connected reaches are connected to the downstream end of the
+current reach. Positive IC numbers indicate connected reaches are
+connected to the upstream end of the current reach. The absolute
+value of IC must be greater than zero and less than or equal to
+NREACHES.</li>
 </ul>
 </div></blockquote>
-<p><strong>reach_diversionsrecarray</strong> : [rno, idv, iconr, cprior]</p>
+<p><strong>diversions</strong> : [rno, idv, iconr, cprior]</p>
 <blockquote>
 <div><ul class="simple">
 <li>rno (integer) integer value that defines the reach number associated
@@ -503,7 +504,7 @@ will be no flow available for reaches connected to downstream end of
 reach RNO.</li>
 </ul>
 </div></blockquote>
-<p><strong>reachperiodrecarray</strong> : [rno, sfrsetting]</p>
+<p><strong>perioddata</strong> : [rno, sfrsetting]</p>
 <blockquote>
 <div><ul>
 <li><p class="first">rno (integer) integer value that defines the reach number associated
@@ -516,26 +517,6 @@ SFRSETTING string include: STATUS, MANNING, STAGE, INFLOW, RAINFALL,
 EVAPORATION, RUNOFF, DIVERSION, UPSTREAM_FRACTION, and AUXILIARY.</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>status <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>status (string) keyword option to define stream reach status.
-STATUS can be ACTIVE, INACTIVE, or SIMPLE. The SIMPLE STATUS
-option simulates streamflow using a user-specified stage for
-a reach or a stage set to the top of the reach (depth = 0).
-In cases where the simulated leakage calculated using the
-specified stage exceeds the sum of inflows to the reach, the
-stage is set to the top of the reach and leakage is set equal
-to the sum of inflows. Upstream factions should be changed
-using the UPSTREAM_FRACTION SFRSETTING if the status for one
-or more reaches is changed to ACTIVE or INACTIVE. For
-example, if one of two downstream connections for a reach is
-inactivated, the upstream fraction for the active and
-inactive downstream reach should be changed to 1.0 and 0.0,
-respectively, to ensure that the active reach receives all of
-the downstream outflow from the upstream reach. By default,
-STATUS is ACTIVE.</li>
-</ul>
-</dd>
 <dt>runoff <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
 <li>runoff (string) real or character value that defines the
@@ -569,14 +550,15 @@ numeric value. By default, inflow rates are zero for each
 reach.</li>
 </ul>
 </dd>
-<dt>manning <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dt>rainfall <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
-<li>manning (string) real or character value that defines the
-Manning’s roughness coefficient for the reach. MANNING must
-be greater than zero. If the Options block includes a
-TIMESERIESFILE entry (see the “Time-Variable Input” section),
-values can be obtained from a time series by entering the
-time-series name in place of a numeric value.</li>
+<li>rainfall (string) real or character value that defines the
+volumetric rate per unit area of water added by precipitation
+directly on the streamflow routing reach. If the Options
+block includes a TIMESERIESFILE entry (see the “Time-Variable
+Input” section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value. By
+default, rainfall rates are zero for each reach.</li>
 </ul>
 </dd>
 <dt>upstream_fraction <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
@@ -588,16 +570,28 @@ all USTRF values for all reaches connected to the same
 upstream reach must be equal to one.</li>
 </ul>
 </dd>
-<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dt>manning <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
-<li>evaporation (string) real or character value that defines the
-volumetric rate per unit area of water subtracted by
-evaporation from the streamflow routing reach. A positive
-evaporation rate should be provided. If the Options block
-includes a TIMESERIESFILE entry (see the “Time-Variable
-Input” section), values can be obtained from a time series by
-entering the time-series name in place of a numeric value. By
-default, evaporation rates are zero for each reach.</li>
+<li>manning (string) real or character value that defines the
+Manning’s roughness coefficient for the reach. MANNING must
+be greater than zero. If the Options block includes a
+TIMESERIESFILE entry (see the “Time-Variable Input” section),
+values can be obtained from a time series by entering the
+time-series name in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>auxiliaryrecord <span class="classifier-delimiter">:</span> <span class="classifier">[auxname, auxval]</span></dt>
+<dd><ul class="first last simple">
+<li>auxname (string) name for the auxiliary variable to be
+assigned AUXVAL. AUXNAME must match one of the auxiliary
+variable names defined in the OPTIONS block. If AUXNAME does
+not match one of the auxiliary variable names defined in the
+OPTIONS block the data are ignored.</li>
+<li>auxval (double) value for the auxiliary variable. If the
+Options block includes a TIMESERIESFILE entry (see the “Time-
+Variable Input” section), values can be obtained from a time
+series by entering the time-series name in place of a numeric
+value.</li>
 </ul>
 </dd>
 <dt>stage <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
@@ -613,29 +607,36 @@ series by entering the time-series name in place of a numeric
 value.</li>
 </ul>
 </dd>
-<dt>rainfall <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
-<li>rainfall (string) real or character value that defines the
-volumetric rate per unit area of water added by precipitation
-directly on the streamflow routing reach. If the Options
-block includes a TIMESERIESFILE entry (see the “Time-Variable
+<li>evaporation (string) real or character value that defines the
+volumetric rate per unit area of water subtracted by
+evaporation from the streamflow routing reach. A positive
+evaporation rate should be provided. If the Options block
+includes a TIMESERIESFILE entry (see the “Time-Variable
 Input” section), values can be obtained from a time series by
 entering the time-series name in place of a numeric value. By
-default, rainfall rates are zero for each reach.</li>
+default, evaporation rates are zero for each reach.</li>
 </ul>
 </dd>
-<dt>auxiliaryrecord <span class="classifier-delimiter">:</span> <span class="classifier">[auxname, auxval]</span></dt>
+<dt>status <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
-<li>auxname (string) name for the auxiliary variable to be
-assigned AUXVAL. AUXNAME must match one of the auxiliary
-variable names defined in the OPTIONS block. If AUXNAME does
-not match one of the auxiliary variable names defined in the
-OPTIONS block the data are ignored.</li>
-<li>auxval (double) value for the auxiliary variable. If the
-Options block includes a TIMESERIESFILE entry (see the “Time-
-Variable Input” section), values can be obtained from a time
-series by entering the time-series name in place of a numeric
-value.</li>
+<li>status (string) keyword option to define stream reach status.
+STATUS can be ACTIVE, INACTIVE, or SIMPLE. The SIMPLE STATUS
+option simulates streamflow using a user-specified stage for
+a reach or a stage set to the top of the reach (depth = 0).
+In cases where the simulated leakage calculated using the
+specified stage exceeds the sum of inflows to the reach, the
+stage is set to the top of the reach and leakage is set equal
+to the sum of inflows. Upstream factions should be changed
+using the UPSTREAM_FRACTION SFRSETTING if the status for one
+or more reaches is changed to ACTIVE or INACTIVE. For
+example, if one of two downstream connections for a reach is
+inactivated, the upstream fraction for the active and
+inactive downstream reach should be changed to 1.0 and 0.0,
+respectively, to ensure that the active reach receives all of
+the downstream outflow from the upstream reach. By default,
+STATUS is ACTIVE.</li>
 </ul>
 </dd>
 </dl>
@@ -708,7 +709,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -730,7 +731,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

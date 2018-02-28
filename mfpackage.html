@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.mfpackage Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.mfpackage Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.mfsimulation Module" href="mfsimulation.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -255,26 +255,26 @@
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="85%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>block_headers</td>
+<tr class="row-odd"><td><strong>block_headers</strong></td>
 <td>(MFBlockHeaderIO) block header text (BEGIN/END), header variables, comments in the header</td>
 </tr>
-<tr class="row-even"><td>structure</td>
+<tr class="row-even"><td><strong>structure</strong></td>
 <td>(MFBlockStructure) structure describing block</td>
 </tr>
-<tr class="row-odd"><td>path</td>
+<tr class="row-odd"><td><strong>path</strong></td>
 <td>(tuple) unique path to block</td>
 </tr>
-<tr class="row-even"><td>datasets</td>
+<tr class="row-even"><td><strong>datasets</strong></td>
 <td>(OrderDict) dictionary of dataset objects with keys that are the name of the dataset</td>
 </tr>
-<tr class="row-odd"><td>datasets_keyword</td>
+<tr class="row-odd"><td><strong>datasets_keyword</strong></td>
 <td>(dict) dictionary of dataset objects with keys that are key words to identify start of dataset</td>
 </tr>
-<tr class="row-even"><td>enabled</td>
+<tr class="row-even"><td><strong>enabled</strong></td>
 <td>(boolean) block is being used</td>
 </tr>
 </tbody>
@@ -282,20 +282,20 @@
 <p class="rubric">Methods</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="13%" />
-<col width="87%" />
+<col width="16%" />
+<col width="84%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>get_block_header_info</td>
+<tr class="row-odd"><td><strong>get_block_header_info</strong></td>
 <td>((line) static method that parses a line as a block header and returns a MFBlockHeader class representing the block header in that line</td>
 </tr>
-<tr class="row-even"><td>load</td>
+<tr class="row-even"><td><strong>load</strong></td>
 <td>((block_header) loads block from file object.  file object must be advanced to beginning of block before calling</td>
 </tr>
-<tr class="row-odd"><td>write</td>
+<tr class="row-odd"><td><strong>write</strong></td>
 <td>((fd) writes block to a file object</td>
 </tr>
-<tr class="row-even"><td>is_valid</td>
+<tr class="row-even"><td><strong>is_valid</strong></td>
 <td>(()) returns true of the block is valid</td>
 </tr>
 </tbody>
@@ -329,20 +329,20 @@
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="23%" />
+<col width="77%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>name</td>
+<tr class="row-odd"><td><strong>name</strong></td>
 <td>(string) block name</td>
 </tr>
-<tr class="row-even"><td>variable_strings</td>
+<tr class="row-even"><td><strong>variable_strings</strong></td>
 <td>(list) list of strings that appear after the block name</td>
 </tr>
-<tr class="row-odd"><td>comment</td>
+<tr class="row-odd"><td><strong>comment</strong></td>
 <td>(MFComment) comment text in the block header</td>
 </tr>
-<tr class="row-even"><td>data_items</td>
+<tr class="row-even"><td><strong>data_items</strong></td>
 <td>(list) list of MFVariable of the variables contained in this block</td>
 </tr>
 </tbody>
@@ -350,14 +350,14 @@
 <p class="rubric">Methods</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col width="26%" />
+<col width="74%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>write_header</td>
+<tr class="row-odd"><td><strong>write_header</strong></td>
 <td>((fd) writes block header to file object ‘fd’</td>
 </tr>
-<tr class="row-even"><td>write_footer</td>
+<tr class="row-even"><td><strong>write_footer</strong></td>
 <td>((fd) writes block footer to file object ‘fd’</td>
 </tr>
 </tbody>
@@ -366,7 +366,7 @@
 
 <dl class="class">
 <dt id="flopy.mf6.mfpackage.MFPackage">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfpackage.</code><code class="descname">MFPackage</code><span class="sig-paren">(</span><em>model_or_sim</em>, <em>package_type</em>, <em>filename=None</em>, <em>pname=None</em>, <em>add_to_package_list=True</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfpackage.MFPackage" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.mfpackage.</code><code class="descname">MFPackage</code><span class="sig-paren">(</span><em>model_or_sim</em>, <em>package_type</em>, <em>filename=None</em>, <em>pname=None</em>, <em>loading_package=False</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfpackage.MFPackage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides an interface for the user to specify data to build a package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -388,7 +388,7 @@
 <blockquote>
 <div><p>package name</p>
 </div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
+<p><strong>loading_package</strong> : bool</p>
 <blockquote>
 <div><p>whether or not to add this package to the parent container’s package
 list during initialization</p>
@@ -404,20 +404,20 @@ list during initialization</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="12%" />
-<col width="88%" />
+<col width="16%" />
+<col width="84%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>blocks</td>
+<tr class="row-odd"><td><strong>blocks</strong></td>
 <td>(OrderedDict) dictionary of blocks contained in this package by block name</td>
 </tr>
-<tr class="row-even"><td>path</td>
+<tr class="row-even"><td><strong>path</strong></td>
 <td>(tuple) data dictionary path to this package</td>
 </tr>
-<tr class="row-odd"><td>structure</td>
+<tr class="row-odd"><td><strong>structure</strong></td>
 <td>(PackageStructure) describes the blocks and data contain in this package</td>
 </tr>
-<tr class="row-even"><td>dimensions</td>
+<tr class="row-even"><td><strong>dimensions</strong></td>
 <td>(PackageDimension) resolves data dimensions for data within this package</td>
 </tr>
 </tbody>
@@ -425,23 +425,23 @@ list during initialization</p>
 <p class="rubric">Methods</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="6%" />
-<col width="94%" />
+<col width="7%" />
+<col width="93%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>build_mfdata</td>
+<tr class="row-odd"><td><strong>build_mfdata</strong></td>
 <td>((var_name) object) : MFData subclass Returns the appropriate data type object (mfdatalist, mfdataarray, or mfdatascalar) giving that object the appropriate structure (looked up based on var_name) and any data supplied</td>
 </tr>
-<tr class="row-even"><td>load</td>
+<tr class="row-even"><td><strong>load</strong></td>
 <td>((strict) Loads the package from file</td>
 </tr>
-<tr class="row-odd"><td>is_valid</td>
+<tr class="row-odd"><td><strong>is_valid</strong></td>
 <td>(bool) Returns whether or not this package is valid</td>
 </tr>
-<tr class="row-even"><td>write</td>
+<tr class="row-even"><td><strong>write</strong></td>
 <td>Writes the package to a file</td>
 </tr>
-<tr class="row-odd"><td>get_file_path</td>
+<tr class="row-odd"><td><strong>get_file_path</strong></td>
 <td>(string) Returns the package file’s path</td>
 </tr>
 </tbody>
@@ -491,7 +491,7 @@ list during initialization</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -513,7 +513,7 @@ list during initialization</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

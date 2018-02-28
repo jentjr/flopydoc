@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html"/>
         <link rel="prev" title="flopy.modflow.mfriv Module" href="mfriv.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -459,14 +459,14 @@ length of the list of strings should be 3. Default is None.</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="2%" />
-<col width="98%" />
+<col width="3%" />
+<col width="97%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>outlets</td>
+<tr class="row-odd"><td><strong>outlets</strong></td>
 <td>(nested dictionary) Contains the outlet for each SFR segment; format is {per: {segment: outlet}} This attribute is created by the get_outlets() method.</td>
 </tr>
-<tr class="row-even"><td>outsegs</td>
+<tr class="row-even"><td><strong>outsegs</strong></td>
 <td>(dictionary of arrays) Each array is of shape nss rows x maximum of nss columns. The first column contains the SFR segments, the second column contains the outsegs of those segments; the third column the outsegs of the outsegs, and so on, until all outlets have been encountered, or nss is reached. The latter case indicates circular routing. This attribute is created by the get_outlets() method.</td>
 </tr>
 </tbody>
@@ -564,6 +564,31 @@ can be used to filter for the longest connections in a GIS.</p>
 <code class="descname">export_outlets</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.export_outlets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export point shapefile showing locations where streamflow is leaving
 the model (outset=0).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.export_transient_variable">
+<code class="descname">export_transient_variable</code><span class="sig-paren">(</span><em>f</em>, <em>varname</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.export_transient_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export point shapefile showing locations with
+a given segment_data variable applied. For example, segments
+where streamflow is entering or leaving the upstream end of a stream segment (FLOW)
+or where RUNOFF is applied. Cell centroids of the first reach of segments with
+non-zero terms of varname are exported; values of varname are exported by
+stress period in the attribute fields (e.g. flow0, flow1, flow2… for FLOW
+in stress periods 0, 1, 2…</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str, filename</p>
+<p><strong>varname</strong> : str</p>
+<blockquote class="last">
+<div><p>Variable in SFR Package dataset 6a (see SFR package documentation)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -874,7 +899,7 @@ where stage is computed.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -896,7 +921,7 @@ where stage is computed.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

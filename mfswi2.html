@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfswi2 Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.modflow.mfswi2 Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfswr1 Module" href="mfswr1.html"/>
         <link rel="prev" title="flopy.modflow.mfsub Module" href="mfsub.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -233,7 +234,7 @@ the ModflowSwi2 class as <cite>flopy.modflow.ModflowSwi2</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfswi2.ModflowSwi2">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfswi2.</code><code class="descname">ModflowSwi2</code><span class="sig-paren">(</span><em>model, nsrf=1, istrat=1, nobs=0, iswizt=None, ipakcb=None, iswiobs=0, options=None, nsolver=1, iprsol=0, mutsol=3, solver2params={'npcond': 1, 'nbpol': 2, 'damp': 1.0, 'relax': 1.0, 'iter1': 20, 'dampt': 1.0, 'mxiter': 100, 'zclose': 0.001, 'rclose': 0.0001}, toeslope=0.05, tipslope=0.05, alpha=None, beta=0.1, nadptmx=1, nadptmn=1, adptfct=1.0, nu=0.025, zeta=[0.0], ssz=0.25, isource=0, obsnam=None, obslrc=None, npln=None, extension='swi2', unitnumber=None, filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfswi2.</code><code class="descname">ModflowSwi2</code><span class="sig-paren">(</span><em>model, nsrf=1, istrat=1, nobs=0, iswizt=None, ipakcb=None, iswiobs=0, options=None, nsolver=1, iprsol=0, mutsol=3, solver2params={'mxiter': 100, 'iter1': 20, 'npcond': 1, 'zclose': 0.001, 'rclose': 0.0001, 'relax': 1.0, 'nbpol': 2, 'damp': 1.0, 'dampt': 1.0}, toeslope=0.05, tipslope=0.05, alpha=None, beta=0.1, nadptmx=1, nadptmn=1, adptfct=1.0, nu=0.025, zeta=[0.0], ssz=0.25, isource=0, obsnam=None, obslrc=None, npln=None, extension='swi2', unitnumber=None, filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW SWI2 Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -656,7 +657,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Jan 08, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -678,7 +679,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

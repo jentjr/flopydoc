@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.mfmodel Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.mfmodel Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -228,7 +228,7 @@
 <p>mfmodel module.  Contains the MFModel class</p>
 <dl class="class">
 <dt id="flopy.mf6.mfmodel.MFModel">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfmodel.</code><code class="descname">MFModel</code><span class="sig-paren">(</span><em>simulation</em>, <em>model_type='gwf'</em>, <em>model_name='modflowtest'</em>, <em>model_nam_file=None</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>add_to_simulation=True</em>, <em>structure=None</em>, <em>model_rel_path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.mfmodel.</code><code class="descname">MFModel</code><span class="sig-paren">(</span><em>simulation</em>, <em>model_type='gwf6'</em>, <em>modelname='modflowtest'</em>, <em>model_nam_file=None</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>add_to_simulation=True</em>, <em>structure=None</em>, <em>model_rel_path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Model Class.  Represents a single model in a simulation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -242,7 +242,7 @@
 <blockquote>
 <div><p>structure of this type of model</p>
 </div></blockquote>
-<p><strong>model_name</strong> : string</p>
+<p><strong>modelname</strong> : string</p>
 <blockquote>
 <div><p>name of the model</p>
 </div></blockquote>
@@ -277,20 +277,20 @@
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="24%" />
+<col width="76%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>model_name</td>
+<tr class="row-odd"><td><strong>model_name</strong></td>
 <td>(string) name of the model</td>
 </tr>
-<tr class="row-even"><td>exe_name</td>
+<tr class="row-even"><td><strong>exe_name</strong></td>
 <td>(string) model executable name</td>
 </tr>
-<tr class="row-odd"><td>packages</td>
+<tr class="row-odd"><td><strong>packages</strong></td>
 <td>(OrderedDict(MFPackage)) dictionary of model packages</td>
 </tr>
-<tr class="row-even"><td>_name_file_io</td>
+<tr class="row-even"><td><strong>_name_file_io</strong></td>
 <td>(MFNameFile) name file</td>
 </tr>
 </tbody>
@@ -356,7 +356,7 @@
 
 <dl class="classmethod">
 <dt id="flopy.mf6.mfmodel.MFModel.load">
-<em class="property">classmethod </em><code class="descname">load</code><span class="sig-paren">(</span><em>simulation</em>, <em>simulation_data</em>, <em>structure</em>, <em>model_name='NewModel'</em>, <em>model_nam_file='modflowtest.nam'</em>, <em>type='gwf'</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>strict=True</em>, <em>model_rel_path='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">load</code><span class="sig-paren">(</span><em>simulation</em>, <em>simulation_data</em>, <em>structure</em>, <em>modelname='NewModel'</em>, <em>model_nam_file='modflowtest.nam'</em>, <em>type='gwf'</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>strict=True</em>, <em>model_rel_path='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -561,7 +561,7 @@ with relative paths, leaving files defined by absolute paths fixed.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -583,7 +583,7 @@ with relative paths, leaving files defined by absolute paths fixed.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

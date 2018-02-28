@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.mfsimulation Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.mfsimulation Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="prev" title="flopy.mf6.mfpackage Module" href="mfpackage.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -271,29 +271,29 @@ folder.</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="2%" />
-<col width="98%" />
+<col width="3%" />
+<col width="97%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>sim_name</td>
+<tr class="row-odd"><td><strong>sim_name</strong></td>
 <td>(string) name of the simulation</td>
 </tr>
-<tr class="row-even"><td>models</td>
+<tr class="row-even"><td><strong>models</strong></td>
 <td>(OrderedDict) all models in the simulation</td>
 </tr>
-<tr class="row-odd"><td>exchanges</td>
+<tr class="row-odd"><td><strong>exchanges</strong></td>
 <td>(list) all exchange packages in the simulation</td>
 </tr>
-<tr class="row-even"><td>imsfiles</td>
+<tr class="row-even"><td><strong>imsfiles</strong></td>
 <td>(list) all ims packages in the simulation</td>
 </tr>
-<tr class="row-odd"><td>mfdata</td>
+<tr class="row-odd"><td><strong>mfdata</strong></td>
 <td>(OrderedDict) all variables defined in the simulation.  the key for a variable is defined as a tuple.  for “simulation level” packages the tuple starts with the package type, followed by the block name, followed by the variable name (“TDIS”, “DIMENSIONS”, “nper”).  for “model level” packages the tuple starts with the model name, followed by the package name, followed by the block name, followed by the variable name ( “MyModelName”, “DIS6”, “OPTIONS”, “length_units”).</td>
 </tr>
-<tr class="row-even"><td>name_file</td>
+<tr class="row-even"><td><strong>name_file</strong></td>
 <td>(MFPackage) simulation name file</td>
 </tr>
-<tr class="row-odd"><td>tdis_file</td>
+<tr class="row-odd"><td><strong>tdis_file</strong></td>
 <td>simulation tdis file</td>
 </tr>
 </tbody>
@@ -324,23 +324,23 @@ folder.</p>
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="14%" />
-<col width="86%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>set_sim_path</td>
+<tr class="row-odd"><td><strong>set_sim_path</strong></td>
 <td>((path) set the file path to the root simulation folder and updates all model file paths</td>
 </tr>
-<tr class="row-even"><td>add_model</td>
+<tr class="row-even"><td><strong>add_model</strong></td>
 <td>((model) add model to the simulation</td>
 </tr>
-<tr class="row-odd"><td>remove_mode</td>
+<tr class="row-odd"><td><strong>remove_mode</strong></td>
 <td>((model_name) remove model from the simulation</td>
 </tr>
-<tr class="row-even"><td>add_package</td>
+<tr class="row-even"><td><strong>add_package</strong></td>
 <td>((package) adds a simulation package to the simulation</td>
 </tr>
-<tr class="row-odd"><td>remove_package</td>
+<tr class="row-odd"><td><strong>remove_package</strong></td>
 <td>((type) removes package from the simulation</td>
 </tr>
 </tbody>
@@ -735,47 +735,47 @@ paths fixed.</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="81%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>indent_string</td>
+<tr class="row-odd"><td><strong>indent_string</strong></td>
 <td>(string) string used to define how much indent to use (file formatting)</td>
 </tr>
-<tr class="row-even"><td>internal_formatting</td>
+<tr class="row-even"><td><strong>internal_formatting</strong></td>
 <td>(list) list defining string to use for internal formatting</td>
 </tr>
-<tr class="row-odd"><td>external_formatting</td>
+<tr class="row-odd"><td><strong>external_formatting</strong></td>
 <td>(list) list defining string to use for external formatting</td>
 </tr>
-<tr class="row-even"><td>open_close_formatting</td>
+<tr class="row-even"><td><strong>open_close_formatting</strong></td>
 <td>(list) list defining string to use for open/close</td>
 </tr>
-<tr class="row-odd"><td>max_columns_of_data</td>
+<tr class="row-odd"><td><strong>max_columns_of_data</strong></td>
 <td>(int) maximum columns of data before line wraps</td>
 </tr>
-<tr class="row-even"><td>wrap_multidim_arrays</td>
+<tr class="row-even"><td><strong>wrap_multidim_arrays</strong></td>
 <td>(bool) whether to wrap line for multi-dimensional arrays at the end of a row/column/layer</td>
 </tr>
-<tr class="row-odd"><td>float_precision</td>
+<tr class="row-odd"><td><strong>float_precision</strong></td>
 <td>(int) number of decimal points to write for a floating point number</td>
 </tr>
-<tr class="row-even"><td>float_characters</td>
+<tr class="row-even"><td><strong>float_characters</strong></td>
 <td>(int) number of characters a floating point number takes up</td>
 </tr>
-<tr class="row-odd"><td>sci_note_upper_thres</td>
+<tr class="row-odd"><td><strong>sci_note_upper_thres</strong></td>
 <td>(float) numbers greater than this threshold are written in scientific notation</td>
 </tr>
-<tr class="row-even"><td>sci_note_lower_thres</td>
+<tr class="row-even"><td><strong>sci_note_lower_thres</strong></td>
 <td>(float) numbers less than this threshold are written in scientific notation</td>
 </tr>
-<tr class="row-odd"><td>mfpath</td>
+<tr class="row-odd"><td><strong>mfpath</strong></td>
 <td>(MFFileMgmt) file path location information for the simulation</td>
 </tr>
-<tr class="row-even"><td>model_dimensions</td>
+<tr class="row-even"><td><strong>model_dimensions</strong></td>
 <td>(OrderedDict) dictionary containing discretization information for each model</td>
 </tr>
-<tr class="row-odd"><td>mfdata</td>
+<tr class="row-odd"><td><strong>mfdata</strong></td>
 <td>(SimulationDict) custom dictionary containing all model data for the simulation</td>
 </tr>
 </tbody>
@@ -813,23 +813,23 @@ OrderedDict with some additional features described below.</p>
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="9%" />
-<col width="91%" />
+<col width="12%" />
+<col width="88%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>output_keys</td>
+<tr class="row-odd"><td><strong>output_keys</strong></td>
 <td>((print_keys: boolean)) returns a list of output data keys the dictionary supports for output data, print_keys allows those keys to be printed to output.</td>
 </tr>
-<tr class="row-even"><td>input_keys</td>
+<tr class="row-even"><td><strong>input_keys</strong></td>
 <td>(()) prints all input data keys</td>
 </tr>
-<tr class="row-odd"><td>observation_keys</td>
+<tr class="row-odd"><td><strong>observation_keys</strong></td>
 <td>(()) prints observation keys</td>
 </tr>
-<tr class="row-even"><td>plot</td>
+<tr class="row-even"><td><strong>plot</strong></td>
 <td>((key) plots data with key ‘key’ using <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs for plot options</td>
 </tr>
-<tr class="row-odd"><td>shapefile</td>
+<tr class="row-odd"><td><strong>shapefile</strong></td>
 <td>((key) create shapefile from data with key ‘key’ and with additional fields in <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs</td>
 </tr>
 </tbody>
@@ -872,8 +872,9 @@ is raised.</p>
 
 <dl class="method">
 <dt id="flopy.mf6.mfsimulation.SimulationDict.popitem">
-<code class="descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; (k, v), return and remove a (key, value) pair.<a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.popitem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pairs are returned in LIFO order if last is true or FIFO order if false.</p>
+<code class="descname">popitem</code><span class="sig-paren">(</span><em>$self</em>, <em>/</em>, <em>last=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove and return a (key, value) pair from the dictionary.</p>
+<p>Pairs are returned in LIFO order if last is true or FIFO order if false.</p>
 </dd></dl>
 
 <dl class="method">
@@ -905,7 +906,7 @@ is raised.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -927,7 +928,7 @@ is raised.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

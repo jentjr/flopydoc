@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.util_array Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.utils.util_array Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="prev" title="flopy.utils.sfroutputfile Module" href="sfroutputfile.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -244,35 +244,35 @@ MODFLOW and flopy</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="11%" />
-<col width="89%" />
+<col width="16%" />
+<col width="84%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>fortran</td>
+<tr class="row-odd"><td><strong>fortran</strong></td>
 <td>(str) fortran format output descriptor (e.g. (100G15.6)</td>
 </tr>
-<tr class="row-even"><td>py</td>
+<tr class="row-even"><td><strong>py</strong></td>
 <td>(str) python format output descriptor (e.g. “{0:15.6E}”)</td>
 </tr>
-<tr class="row-odd"><td>numpy</td>
+<tr class="row-odd"><td><strong>numpy</strong></td>
 <td>(str) numpy format output descriptor (e.g. “%15.6e”)</td>
 </tr>
-<tr class="row-even"><td>npl</td>
+<tr class="row-even"><td><strong>npl</strong></td>
 <td>(int) number if items per line of output</td>
 </tr>
-<tr class="row-odd"><td>width</td>
+<tr class="row-odd"><td><strong>width</strong></td>
 <td>(int) the width of the formatted numeric output</td>
 </tr>
-<tr class="row-even"><td>decimal</td>
+<tr class="row-even"><td><strong>decimal</strong></td>
 <td>(int) the number of decimal digits in the numeric output</td>
 </tr>
-<tr class="row-odd"><td>format</td>
+<tr class="row-odd"><td><strong>format</strong></td>
 <td>(str) the output format type e.g. I, G, E, etc</td>
 </tr>
-<tr class="row-even"><td>free</td>
+<tr class="row-even"><td><strong>free</strong></td>
 <td>(bool) free format flag</td>
 </tr>
-<tr class="row-odd"><td>binary</td>
+<tr class="row-odd"><td><strong>binary</strong></td>
 <td>(bool) binary format flag</td>
 </tr>
 </tbody>
@@ -291,11 +291,11 @@ MODFLOW and flopy</p>
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="23%" />
-<col width="77%" />
+<col width="26%" />
+<col width="74%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>get_default_numpy_fmt</td>
+<tr class="row-odd"><td><strong>get_default_numpy_fmt</strong></td>
 <td>((dtype) a static method to get a default numpy dtype - used for loading</td>
 </tr>
 </tbody>
@@ -394,11 +394,11 @@ the ext_filename is reset to value.</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="82%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>transient_2ds</td>
+<tr class="row-odd"><td><strong>transient_2ds</strong></td>
 <td>(dict{kper:Util2d}) the transient sequence of Util2d objects</td>
 </tr>
 </tbody>
@@ -637,11 +637,11 @@ the ext_filename is reset to value.</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="82%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>transient_3ds</td>
+<tr class="row-odd"><td><strong>transient_3ds</strong></td>
 <td>(dict{kper:Util3d}) the transient sequence of Util3d objects</td>
 </tr>
 </tbody>
@@ -769,14 +769,14 @@ written internally to the model input file.</p>
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="4%" />
-<col width="96%" />
+<col width="7%" />
+<col width="93%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>how</td>
+<tr class="row-odd"><td><strong>how</strong></td>
 <td>(str) the str flag to control how the array is written to the model input files e.g. “constant”,”internal”,”external”,”openclose”</td>
 </tr>
-<tr class="row-even"><td>format</td>
+<tr class="row-even"><td><strong>format</strong></td>
 <td>(ArrayFormat object) controls the ASCII representation of the numeric array</td>
 </tr>
 </tbody>
@@ -784,11 +784,11 @@ written internally to the model input file.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col width="21%" />
+<col width="79%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>get_file_entry</td>
+<tr class="row-odd"><td><strong>get_file_entry</strong></td>
 <td>(string) get the model input file string including the control record</td>
 </tr>
 </tbody>
@@ -1097,11 +1097,11 @@ ext_filename is reset to value.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="13%" />
-<col width="87%" />
+<col width="16%" />
+<col width="84%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>get_file_entry</td>
+<tr class="row-odd"><td><strong>get_file_entry</strong></td>
 <td>(string) get the model input file string including the control record for the entire 3-D property</td>
 </tr>
 </tbody>
@@ -1255,7 +1255,7 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -1277,7 +1277,7 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

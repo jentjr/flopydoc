@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwflak Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.modflow.mfgwflak Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfmaw Module" href="mfgwfmaw.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfic Module" href="mfgwfic.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -227,7 +227,7 @@
 <span id="flopy-mf6-modflow-mfgwflak-module"></span><h1>flopy.mf6.modflow.mfgwflak Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwflak" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwflak.ModflowGwflak">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwflak.</code><code class="descname">ModflowGwflak</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_stage=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>surfdep=None</em>, <em>time_conversion=None</em>, <em>length_conversion=None</em>, <em>nlakes=None</em>, <em>noutlets=None</em>, <em>ntables=None</em>, <em>lakrecarray_package=None</em>, <em>lakrecarray=None</em>, <em>lake_tablesrecarray=None</em>, <em>outletsrecarray=None</em>, <em>lakeperiodrecarray=None</em>, <em>outletperiodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwflak.ModflowGwflak" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwflak.</code><code class="descname">ModflowGwflak</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>auxiliary=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_stage=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>stage_filerecord=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>surfdep=None</em>, <em>time_conversion=None</em>, <em>length_conversion=None</em>, <em>nlakes=None</em>, <em>noutlets=None</em>, <em>ntables=None</em>, <em>packagedata=None</em>, <em>connectiondata=None</em>, <em>tables=None</em>, <em>outlets=None</em>, <em>lakeperioddata=None</em>, <em>outletperioddata=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwflak.ModflowGwflak" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwflak defines a lak package within a gwf6 model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@
 <div><p>Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
 </div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
+<p><strong>loading_package</strong> : bool</p>
 <blockquote>
 <div><p>Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
@@ -401,7 +401,7 @@ will be used to define the lake stage, volume relation, and surface
 area. If NTABLES is not specified, a default value of zero is used.</li>
 </ul>
 </div></blockquote>
-<p><strong>lakrecarray_package</strong> : [lakeno, strt, nlakeconn, aux, boundname]</p>
+<p><strong>packagedata</strong> : [lakeno, strt, nlakeconn, aux, boundname]</p>
 <blockquote>
 <div><ul class="simple">
 <li>lakeno (integer) integer value that defines the lake number
@@ -430,7 +430,7 @@ BOUNDNAME contains spaces in it, then the entire name must be
 enclosed within single quotes.</li>
 </ul>
 </div></blockquote>
-<p><strong>lakrecarray</strong> : [lakeno, iconn, cellid, claktype, bedleak, belev, telev,</p>
+<p><strong>connectiondata</strong> : [lakeno, iconn, cellid, claktype, bedleak, belev, telev,</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>connlen, connwidth]</dt>
@@ -503,7 +503,7 @@ if CLAKTYPE is VERTICAL, EMBEDDEDH, or EMBEDDEDV.</li>
 </dd>
 </dl>
 </div></blockquote>
-<p><strong>lake_tablesrecarray</strong> : [lakeno, tab6_filename]</p>
+<p><strong>tables</strong> : [lakeno, tab6_filename]</p>
 <blockquote>
 <div><ul class="simple">
 <li>lakeno (integer) integer value that defines the lake number
@@ -523,10 +523,10 @@ included at the LAK package lake table file input instructions
 section.</li>
 </ul>
 </div></blockquote>
-<p><strong>outletsrecarray</strong> : [outletno, lakein, lakeout, couttype, invert, width,</p>
+<p><strong>outlets</strong> : [outletno, lakein, lakeout, couttype, invert, width, rough,</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>rough, slope]</dt>
+<dt>slope]</dt>
 <dd><ul class="first last simple">
 <li>outletno (integer) integer value that defines the outlet number
 associated with the specified OUTLETS data on the line. OUTLETNO must
@@ -573,7 +573,7 @@ entering the time-series name in place of a numeric value.</li>
 </dd>
 </dl>
 </div></blockquote>
-<p><strong>lakeperiodrecarray</strong> : [lakeno, laksetting]</p>
+<p><strong>lakeperioddata</strong> : [lakeno, laksetting]</p>
 <blockquote>
 <div><ul>
 <li><p class="first">lakeno (integer) integer value that defines the lake number
@@ -586,13 +586,6 @@ LAKSETTING string include: STATUS, STAGE, STAGE, EVAPORATION,
 RUNOFFON, WITHDRAWAL, and AUXILIARY.</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>status <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>status (string) keyword option to define lake status. STATUS
-can be ACTIVE, INACTIVE, or CONSTANT. By default, STATUS is
-ACTIVE.</li>
-</ul>
-</dd>
 <dt>runoff <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
 <li>runoff (string) real or character value that defines the
@@ -600,16 +593,6 @@ runoff rate <img class="math" src="_images/math/bb1f88afd60ffc24eecdba51f09fbe92
 greater than or equal to zero. If the Options block includes
 a TIMESERIESFILE entry (see the “Time-Variable Input”
 section), values can be obtained from a time series by
-entering the time-series name in place of a numeric value.</li>
-</ul>
-</dd>
-<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>evaporation (string) real or character value that defines the
-maximum evaporation rate <img class="math" src="_images/math/0b57859336b798b7e9966b5388947604ddf26b94.png" alt="(LT^{-1})"/> for the lake.
-Value must be greater than or equal to zero. If the Options
-block includes a TIMESERIESFILE entry (see the “Time-Variable
-Input” section), values can be obtained from a time series by
 entering the time-series name in place of a numeric value.</li>
 </ul>
 </dd>
@@ -625,16 +608,6 @@ Options block includes a TIMESERIESFILE entry (see the “Time-
 Variable Input” section), values can be obtained from a time
 series by entering the time-series name in place of a numeric
 value.</li>
-</ul>
-</dd>
-<dt>stage <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
-<dd><ul class="first last simple">
-<li>stage (string) real or character value that defines the stage
-for the lake. The specified STAGE is only applied if the lake
-is a constant stage lake. If the Options block includes a
-TIMESERIESFILE entry (see the “Time-Variable Input” section),
-values can be obtained from a time series by entering the
-time-series name in place of a numeric value.</li>
 </ul>
 </dd>
 <dt>rainfall <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
@@ -657,12 +630,39 @@ Input” section), values can be obtained from a time series by
 entering the time-series name in place of a numeric value.</li>
 </ul>
 </dd>
+<dt>stage <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>stage (string) real or character value that defines the stage
+for the lake. The specified STAGE is only applied if the lake
+is a constant stage lake. If the Options block includes a
+TIMESERIESFILE entry (see the “Time-Variable Input” section),
+values can be obtained from a time series by entering the
+time-series name in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>evaporation <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>evaporation (string) real or character value that defines the
+maximum evaporation rate <img class="math" src="_images/math/0b57859336b798b7e9966b5388947604ddf26b94.png" alt="(LT^{-1})"/> for the lake.
+Value must be greater than or equal to zero. If the Options
+block includes a TIMESERIESFILE entry (see the “Time-Variable
+Input” section), values can be obtained from a time series by
+entering the time-series name in place of a numeric value.</li>
+</ul>
+</dd>
+<dt>status <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
+<li>status (string) keyword option to define lake status. STATUS
+can be ACTIVE, INACTIVE, or CONSTANT. By default, STATUS is
+ACTIVE.</li>
+</ul>
+</dd>
 </dl>
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
-<p><strong>outletperiodrecarray</strong> : [outletno, outletsetting]</p>
+<p><strong>outletperioddata</strong> : [outletno, outletsetting]</p>
 <blockquote>
 <div><ul>
 <li><p class="first">outletno (integer) integer value that defines the outlet number
@@ -710,9 +710,9 @@ obtained from a time series by entering the time-series name
 in place of a numeric value.</li>
 </ul>
 </dd>
-<dt>rough <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dt>width <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
-<li>rough (string) real or character value that defines the width
+<li>width (string) real or character value that defines the width
 of the lake outlet. A specified WIDTH value is only used for
 active lakes if COUTTYPE for lake outlet OUTLETNO is not
 SPECIFIED. If the Options block includes a TIMESERIESFILE
@@ -721,9 +721,9 @@ obtained from a time series by entering the time-series name
 in place of a numeric value.</li>
 </ul>
 </dd>
-<dt>width <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dt>rough <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
 <dd><ul class="first last simple">
-<li>width (string) real or character value that defines the width
+<li>rough (string) real or character value that defines the width
 of the lake outlet. A specified WIDTH value is only used for
 active lakes if COUTTYPE for lake outlet OUTLETNO is not
 SPECIFIED. If the Options block includes a TIMESERIESFILE
@@ -802,7 +802,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -824,7 +824,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

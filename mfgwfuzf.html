@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfuzf Module &mdash; flopy 3.2.8 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfuzf Module &mdash; flopy 3.2.9 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.8 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfwel Module" href="mfgwfwel.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfsto Module" href="mfgwfsto.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.8
+                3.2.9
               </div>
             
           
@@ -227,7 +227,7 @@
 <span id="flopy-mf6-modflow-mfgwfuzf-module"></span><h1>flopy.mf6.modflow.mfgwfuzf Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfuzf" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwfuzf.ModflowGwfuzf">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfuzf.</code><code class="descname">ModflowGwfuzf</code><span class="sig-paren">(</span><em>model</em>, <em>add_to_package_list=True</em>, <em>auxiliary=None</em>, <em>auxmultname=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>simulate_et=None</em>, <em>linear_gwet=None</em>, <em>square_gwet=None</em>, <em>simulate_gwseep=None</em>, <em>unsat_etwc=None</em>, <em>unsat_etae=None</em>, <em>nuzfcells=None</em>, <em>ntrailwaves=None</em>, <em>nwavesets=None</em>, <em>uzfrecarray=None</em>, <em>uzfperiodrecarray=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfuzf.ModflowGwfuzf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfuzf.</code><code class="descname">ModflowGwfuzf</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>auxiliary=None</em>, <em>auxmultname=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>budget_filerecord=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>simulate_et=None</em>, <em>linear_gwet=None</em>, <em>square_gwet=None</em>, <em>simulate_gwseep=None</em>, <em>unsat_etwc=None</em>, <em>unsat_etae=None</em>, <em>nuzfcells=None</em>, <em>ntrailwaves=None</em>, <em>nwavesets=None</em>, <em>packagedata=None</em>, <em>perioddata=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfuzf.ModflowGwfuzf" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwfuzf defines a uzf package within a gwf6 model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@
 <div><p>Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
 </div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
+<p><strong>loading_package</strong> : bool</p>
 <blockquote>
 <div><p>Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
@@ -415,7 +415,7 @@ required to resolve variations in water content within the
 unsaturated zone.</li>
 </ul>
 </div></blockquote>
-<p><strong>uzfrecarray</strong> : [iuzno, cellid, landflag, ivertcon, surfdep, vks, thtr, thts,</p>
+<p><strong>packagedata</strong> : [iuzno, cellid, landflag, ivertcon, surfdep, vks, thtr, thts,</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>thti, eps, boundname]</dt>
@@ -457,11 +457,9 @@ enclosed within single quotes.</li>
 </dd>
 </dl>
 </div></blockquote>
-<p><strong>uzfperiodrecarray</strong> : [iuzno, finf, pet, extdp, extwc, ha, hroot, rootact,</p>
+<p><strong>perioddata</strong> : [iuzno, finf, pet, extdp, extwc, ha, hroot, rootact, aux]</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>aux]</dt>
-<dd><ul class="first last simple">
+<div><ul class="simple">
 <li>iuzno (integer) integer value that defines the UZF cell number
 associated with the specified PERIOD data on the line.</li>
 <li>finf (string) real or character value that defines the applied
@@ -526,8 +524,6 @@ time series and the Options block includes a TIMESERIESFILE entry
 a time series by entering the time-series name in place of a numeric
 value.</li>
 </ul>
-</dd>
-</dl>
 </div></blockquote>
 <p><strong>fname</strong> : String</p>
 <blockquote>
@@ -594,7 +590,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 01, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
@@ -616,7 +612,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.8',
+            VERSION:'3.2.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
