@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.mfreadnam Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.mfreadnam Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.mfgrdfile Module" href="mfgrdfile.html"/>
         <link rel="prev" title="flopy.utils.mflistfile Module" href="mflistfile.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -224,47 +226,43 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pkgtype</strong> : string</p>
-<blockquote>
-<div><p>String identifying the type of MODFLOW package. See the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>pkgtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">String identifying the type of MODFLOW package. See the
 mfnam_packages dictionary keys in the model object for a list
 of supported packages. This dictionary is also passed in as packages.</p>
-</div></blockquote>
-<p><strong>name</strong> : string</p>
-<blockquote>
-<div><p>Filename of the package file identified in the name file</p>
-</div></blockquote>
-<p><strong>handle</strong> : file handle</p>
-<blockquote>
-<div><p>File handle referring to the file identified by <cite>name</cite></p>
-</div></blockquote>
-<p><strong>packages</strong> : dictionary</p>
-<blockquote class="last">
-<div><p>Dictionary of package objects as defined in the
-<cite>mfnam_packages</cite> attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>.</p>
-</div></blockquote>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename of the package file identified in the name file</p>
+</dd>
+<dt><strong>handle</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file handle</span></dt>
+<dd><p class="first last">File handle referring to the file identified by <cite>name</cite></p>
+</dd>
+<dt><strong>packages</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Dictionary of package objects as defined in the
+<cite>mfnam_packages</cite> attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="14%" />
-<col width="86%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>filehandle</strong></td>
-<td>(file handle) File handle to the package file. Read from <cite>handle</cite>.</td>
-</tr>
-<tr class="row-even"><td><strong>filename</strong></td>
-<td>(string) Filename of the package file identified in the name file. Read from <cite>name</cite>.</td>
-</tr>
-<tr class="row-odd"><td><strong>filetype</strong></td>
-<td>(string) String identifying the type of MODFLOW package. Read from <cite>pkgtype</cite>.</td>
-</tr>
-<tr class="row-even"><td><strong>package</strong></td>
-<td>(string) Package type. Only assigned if <cite>pkgtype</cite> is found in the keys of <cite>packages</cite></td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filehandle</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file handle</span></dt>
+<dd><p class="first last">File handle to the package file. Read from <cite>handle</cite>.</p>
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename of the package file identified in the name file.
+Read from <cite>name</cite>.</p>
+</dd>
+<dt><strong>filetype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">String identifying the type of MODFLOW package. Read from
+<cite>pkgtype</cite>.</p>
+</dd>
+<dt><strong>package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Package type. Only assigned if <cite>pkgtype</cite> is found in the keys
+of <cite>packages</cite></p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -278,11 +276,18 @@ of supported packages. This dictionary is also passed in as packages.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>nf</strong> : NamData instance</p>
-<p><strong>filetype</strong> : string, name of package seeking information for</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">NamData instance</span></dt>
+<dd></dd>
+<dt><strong>filetype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string, name of package seeking information for</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>cunit</strong> : int, unit number corresponding to the package type</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>cunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, unit number corresponding to the package type</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -292,33 +297,44 @@ of supported packages. This dictionary is also passed in as packages.</p>
 <dl class="function">
 <dt id="flopy.utils.mfreadnam.parsenamefile">
 <code class="descclassname">flopy.utils.mfreadnam.</code><code class="descname">parsenamefile</code><span class="sig-paren">(</span><em>namfilename</em>, <em>packages</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfreadnam.parsenamefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to parse the nam file and return a dictionary with types,
-names, units and handles</p>
+<dd><p>Returns dict from the nam file with NamData keyed by unit number</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>namefilename</strong> : string</p>
-<blockquote>
-<div><p>Name of the MODFLOW namefile to parse.</p>
-</div></blockquote>
-<p><strong>packages</strong> : dictionary</p>
-<blockquote>
-<div><p>Dictionary of package objects as defined in the <cite>mfnam_packages</cite>
-attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : logical</p>
-<blockquote>
-<div><p>Print messages to screen.  Default is True.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>namefilename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the MODFLOW namefile to parse.</p>
+</dd>
+<dt><strong>packages</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Dictionary of package objects as defined in the <cite>mfnam_packages</cite>
+attribute of <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Print messages to screen.  Default is True.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ext_unit_dict</strong> : dictionary</p>
-<blockquote class="last">
-<div><p>For each file listed in the name file, a
-<a class="reference internal" href="#flopy.utils.mfreadnam.NamData" title="flopy.utils.mfreadnam.NamData"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.NamData</span></code></a> instance
-is stored in the ext_unit_dict dictionary keyed by unit number</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>dict or OrderedDict</strong></dt>
+<dd><p class="first last">For each file listed in the name file, a
+<a class="reference internal" href="#flopy.utils.mfreadnam.NamData" title="flopy.utils.mfreadnam.NamData"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.NamData</span></code></a> instance
+is stored in the returned dict keyed by unit number. Prior to Python
+version 3.6 the return object is an OrderedDict to retain the order
+of items in the nam file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>IOError:</strong></dt>
+<dd><p class="first last">If namfilename does not exist in the directory.</p>
+</dd>
+<dt><strong>ValueError:</strong></dt>
+<dd><p class="first last">For lines that cannot be parsed.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -349,7 +365,7 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -371,7 +387,7 @@ is stored in the ext_unit_dict dictionary keyed by unit number</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

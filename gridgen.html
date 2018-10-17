@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.gridgen Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.gridgen Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.lgrutil Module" href="lgrutil.html"/>
         <link rel="prev" title="flopy.utils.geometry Module" href="geometry.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -220,23 +222,21 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dis</strong> : flopy.modflow.ModflowDis</p>
-<blockquote>
-<div><p>Flopy discretization object</p>
-</div></blockquote>
-<p><strong>model_ws</strong> : str</p>
-<blockquote>
-<div><p>workspace location for creating gridgen files (default is ‘.’)</p>
-</div></blockquote>
-<p><strong>exe_name</strong> : str</p>
-<blockquote>
-<div><p>path and name of the gridgen program. (default is gridgen)</p>
-</div></blockquote>
-<p><strong>surface_interpolation</strong> : str</p>
-<blockquote class="last">
-<div><p>Default gridgen method for interpolating elevations.  Valid options
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.ModflowDis</span></dt>
+<dd><p class="first last">Flopy discretization object</p>
+</dd>
+<dt><strong>model_ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">workspace location for creating gridgen files (default is ‘.’)</p>
+</dd>
+<dt><strong>exe_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">path and name of the gridgen program. (default is gridgen)</p>
+</dd>
+<dt><strong>surface_interpolation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Default gridgen method for interpolating elevations.  Valid options
 include ‘replicate’ (default) and ‘interpolate’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -251,19 +251,22 @@ the bottom of the overlying layer.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>feature</strong> : str or list</p>
-<blockquote>
-<div><p>feature can be either a string containing the name of a polygon
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>feature</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">feature can be either a string containing the name of a polygon
 shapefile or it can be a list of polygons</p>
-</div></blockquote>
-<p><strong>layers</strong> : list</p>
-<blockquote>
-<div><p>A list of layers (zero based) for which this active domain
+</dd>
+<dt><strong>layers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">A list of layers (zero based) for which this active domain
 applies.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -277,27 +280,28 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>features</strong> : str or list</p>
-<blockquote>
-<div><p>features can be either a string containing the name of a shapefile
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>features</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">features can be either a string containing the name of a shapefile
 or it can be a list of points, lines, or polygons</p>
-</div></blockquote>
-<p><strong>featuretype</strong> : str</p>
-<blockquote>
-<div><p>Must be either ‘point’, ‘line’, or ‘polygon’</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>The level of refinement for this features</p>
-</div></blockquote>
-<p><strong>layers</strong> : list</p>
-<blockquote>
-<div><p>A list of layers (zero based) for which this refinement features
+</dd>
+<dt><strong>featuretype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be either ‘point’, ‘line’, or ‘polygon’</p>
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The level of refinement for this features</p>
+</dd>
+<dt><strong>layers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">A list of layers (zero based) for which this refinement features
 applies.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -312,14 +316,18 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>If true, print the results of the gridgen command to the terminal
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If true, print the results of the gridgen command to the terminal
 (default is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -334,7 +342,11 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -348,9 +360,17 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodenumber</strong></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nodenumber</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>(x, y)</strong> : tuple</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>(x, y)</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -364,10 +384,11 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>node_ra</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>Recarray representation of the node file with zero-based indexing</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>node_ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Recarray representation of the node file with zero-based indexing</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -383,9 +404,17 @@ be the same as the last vertex.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodenumber</strong></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nodenumber</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>list of vertices</strong> : list</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>list of vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -398,25 +427,25 @@ be the same as the last vertex.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>features</strong> : str or list</p>
-<blockquote>
-<div><p>features can be either a string containing the name of a shapefile
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>features</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">features can be either a string containing the name of a shapefile
 or it can be a list of points, lines, or polygons</p>
-</div></blockquote>
-<p><strong>featuretype</strong> : str</p>
-<blockquote>
-<div><p>Must be either ‘point’, ‘line’, or ‘polygon’</p>
-</div></blockquote>
-<p><strong>layer</strong> : int</p>
-<blockquote>
-<div><p>Layer (zero based) to intersect with.  Zero based.</p>
-</div></blockquote>
+</dd>
+<dt><strong>featuretype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be either ‘point’, ‘line’, or ‘polygon’</p>
+</dd>
+<dt><strong>layer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Layer (zero based) to intersect with.  Zero based.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : np.recarray</p>
-<blockquote class="last">
-<div><p>Recarray of the intersection properties.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>result</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Recarray of the intersection properties.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -433,44 +462,41 @@ that was created as part of the build method.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.pyplot axis</p>
-<blockquote>
-<div><p>The plot axis.  If not provided it, plt.gca() will be used.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot axis</span></dt>
+<dd><p class="first last">The plot axis.  If not provided it, plt.gca() will be used.
 If there is not a current axis then a new one will be created.</p>
-</div></blockquote>
-<p><strong>layer</strong> : int</p>
-<blockquote>
-<div><p>Layer number to plot</p>
-</div></blockquote>
-<p><strong>cmap</strong> : string</p>
-<blockquote>
-<div><p>Name of colormap to use for polygon shading (default is ‘Dark2’)</p>
-</div></blockquote>
-<p><strong>edgecolor</strong> : string</p>
-<blockquote>
-<div><p>Color name.  (Default is ‘scaled’ to scale the edge colors.)</p>
-</div></blockquote>
-<p><strong>facecolor</strong> : string</p>
-<blockquote>
-<div><p>Color name.  (Default is ‘scaled’ to scale the face colors.)</p>
-</div></blockquote>
-<p><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>Keyword arguments that are passed to
-PatchCollection.set(<code class="docutils literal"><span class="pre">**kwargs</span></code>).  Some common kwargs would be
+</dd>
+<dt><strong>layer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Layer number to plot</p>
+</dd>
+<dt><strong>cmap</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of colormap to use for polygon shading (default is ‘Dark2’)</p>
+</dd>
+<dt><strong>edgecolor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Color name.  (Default is ‘scaled’ to scale the edge colors.)</p>
+</dd>
+<dt><strong>facecolor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Color name.  (Default is ‘scaled’ to scale the face colors.)</p>
+</dd>
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Keyword arguments that are passed to
+PatchCollection.set(<code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>).  Some common kwargs would be
 ‘linewidths’, ‘linestyles’, ‘alpha’, etc.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pc</strong> : matplotlib.collections.PatchCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.PatchCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -484,26 +510,27 @@ PatchCollection.set(<code class="docutils literal"><span class="pre">**kwargs</s
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>isurf</strong> : int</p>
-<blockquote>
-<div><p>surface number where 0 is top and nlay + 1 is bottom</p>
-</div></blockquote>
-<p><strong>type</strong> : str</p>
-<blockquote>
-<div><p>Must be ‘INTERPOLATE’, ‘REPLICATE’ or ‘ASCIIGRID’.</p>
-</div></blockquote>
-<p><strong>elev</strong> : numpy.ndarray of shape (nr, nc) or str</p>
-<blockquote>
-<div><p>Array that is used as an asciigrid.  If elev is a string, then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>isurf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">surface number where 0 is top and nlay + 1 is bottom</p>
+</dd>
+<dt><strong>type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be ‘INTERPOLATE’, ‘REPLICATE’ or ‘ASCIIGRID’.</p>
+</dd>
+<dt><strong>elev</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray of shape (nr, nc) or str</span></dt>
+<dd><p class="first last">Array that is used as an asciigrid.  If elev is a string, then
 it is assumed to be the name of the asciigrid.</p>
-</div></blockquote>
-<p><strong>elev_extent</strong> : list-like</p>
-<blockquote>
-<div><p>list of xmin, xmax, ymin, ymax extents of the elev grid.</p>
-</div></blockquote>
+</dd>
+<dt><strong>elev_extent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list-like</span></dt>
+<dd><p class="first last">list of xmin, xmax, ymin, ymax extents of the elev grid.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -518,14 +545,14 @@ it is assumed to be the name of the asciigrid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
-<blockquote>
-<div><p>name of file to write</p>
-</div></blockquote>
-<p><strong>writevertices</strong> : bool</p>
-<blockquote class="last">
-<div><p>include vertices in the DISU file. (default is True)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">name of file to write</p>
+</dd>
+<dt><strong>writevertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">include vertices in the DISU file. (default is True)</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -540,10 +567,11 @@ it is assumed to be the name of the asciigrid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
-<blockquote class="last">
-<div><p>name of file to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">name of file to write</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -560,21 +588,23 @@ it is assumed to be the name of the asciigrid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>features</strong> : list</p>
-<blockquote>
-<div><p>List of point, line, or polygon features</p>
-</div></blockquote>
-<p><strong>featuretype</strong> : str</p>
-<blockquote>
-<div><p>Must be ‘point’, ‘line’, or ‘polygon’</p>
-</div></blockquote>
-<p><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>features</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of point, line, or polygon features</p>
+</dd>
+<dt><strong>featuretype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be ‘point’, ‘line’, or ‘polygon’</p>
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the shapefile to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -612,7 +642,7 @@ than the read1d function in util_array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -634,7 +664,7 @@ than the read1d function in util_array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

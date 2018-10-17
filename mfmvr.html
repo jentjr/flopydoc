@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfmvr Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfmvr Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfnam Module" href="mfnam.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfims Module" href="mfims.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -233,27 +235,24 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation</strong> : MFSimulation</p>
-<blockquote>
-<div><p>Simulation that this package is a part of. Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>simulation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulation</span></dt>
+<dd><p class="first last">Simulation that this package is a part of. Package is automatically
 added to simulation when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>print_input</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_input</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>print_input (boolean) keyword to indicate that the list of MVR
 information will be written to the listing file immediately after it
 is read.</li>
 </ul>
-</div></blockquote>
-<p><strong>print_flows</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_flows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>print_flows (boolean) keyword to indicate that the list of MVR flow
 rates will be printed to the listing file for every stress period
 time step in which “BUDGET PRINT” is specified in Output Control. If
@@ -261,61 +260,71 @@ there is no Output Control option and “PRINT_FLOWS” is specified,
 then flow rates are printed for the last time step of each stress
 period.</li>
 </ul>
-</div></blockquote>
-<p><strong>modelnames</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>modelnames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>modelnames (boolean) keyword to indicate that all package names will
 be preceded by the model name for the package. Model names are
 required when the Mover Package is used with a GWF-GWF Exchange. The
 MODELNAME keyword should not be used for a Mover Package that is for
 a single GWF Model.</li>
 </ul>
-</div></blockquote>
-<p><strong>budget_filerecord</strong> : [budgetfile]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>budget_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[budgetfile]</span></dt>
+<dd><ul class="first last simple">
 <li>budgetfile (string) name of the output file to write budget
 information.</li>
 </ul>
-</div></blockquote>
-<p><strong>maxmvr</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>maxmvr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>maxmvr (integer) integer value specifying the maximum number of water
 mover entries that will specified for any stress period.</li>
 </ul>
-</div></blockquote>
-<p><strong>maxpackages</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>maxpackages</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>maxpackages (integer) integer value specifying the number of unique
 packages that are included in this water mover input file.</li>
 </ul>
-</div></blockquote>
-<p><strong>packages</strong> : [mname, pname]</p>
-<blockquote>
-<div><ul class="simple">
-<li>mname (string) name of model containing the package.</li>
+</dd>
+<dt><strong>packages</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[mname, pname]</span></dt>
+<dd><ul class="first last simple">
+<li>mname (string) name of model containing the package. Model names are
+assigned by the user in the simulation name file.</li>
 <li>pname (string) is the name of a package that may be included in a
-subsequent stress period block.</li>
+subsequent stress period block. The package name is assigned in the
+name file for the GWF Model. Package names are optionally provided in
+the name file. If they are not provided by the user, then packages
+are assigned a default value, which is the package acronym followed
+by a hyphen and the package number. For example, the first Drain
+Package is named DRN-1. The second Drain Package is named DRN-2, and
+so forth.</li>
 </ul>
-</div></blockquote>
-<p><strong>perioddata</strong> : [mname1, pname1, id1, mname2, pname2, id2, mvrtype, value]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>perioddata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[mname1, pname1, id1, mname2, pname2, id2, mvrtype, value]</span></dt>
+<dd><ul class="first last simple">
 <li>mname1 (string) name of model containing the package, PNAME1.</li>
 <li>pname1 (string) is the package name for the provider. The package
 PNAME1 must be designated to provide water through the MVR Package by
 specifying the keyword “MOVER” in its OPTIONS block.</li>
-<li>id1 (integer) is the identifier for the provider. This is the well
-number, reach number, lake number, etc.</li>
+<li>id1 (integer) is the identifier for the provider. For the standard
+boundary packages, the provider identifier is the number of the
+boundary as it is listed in the package input file. (Note that the
+order of these boundaries may change by stress period, which must be
+accounted for in the Mover Package.) So the first well has an
+identifier of one. The second is two, and so forth. For the advanced
+packages, the identifier is the reach number (SFR Package), well
+number (MAW Package), or UZF cell number. For the Lake Package, ID1
+is the lake outlet number. Thus, outflows from a single lake can be
+routed to different streams, for example.</li>
 <li>mname2 (string) name of model containing the package, PNAME2.</li>
 <li>pname2 (string) is the package name for the receiver. The package
 PNAME2 must be designated to receive water from the MVR Package by
 specifying the keyword “MOVER” in its OPTIONS block.</li>
-<li>id2 (integer) is the identifier for the receiver. This is the well
-number, reach number, lake number, etc.</li>
+<li>id2 (integer) is the identifier for the receiver. The receiver
+identifier is the reach number (SFR Package), Lake number (LAK
+Package), well number (MAW Package), or UZF cell number.</li>
 <li>mvrtype (string) is the character string signifying the method for
 determining how much water will be moved. Supported values are
 “FACTOR” “EXCESS” “THRESHOLD” and “UPTO”. These four options
@@ -327,21 +336,19 @@ calculating the amount of water to move. For the “FACTOR” option,
 VALUE is the <img class="math" src="_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> factor. For the remaining options, VALUE
 is the specified flow rate, <img class="math" src="_images/math/7fa25a029122d6b9ead3f9ac25eeb08db5f2c390.png" alt="Q_S"/>.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -354,13 +361,17 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -393,7 +404,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -415,7 +426,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

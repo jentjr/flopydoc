@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mt3d.mtuzt Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mt3d.mtuzt Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mt3d.mtcts Module" href="mtcts.html"/>
         <link rel="prev" title="flopy.mt3d.mttob Module" href="mttob.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mtadv.html">flopy.mt3d.mtadv Module</a></li>
@@ -207,35 +208,31 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>mxuzcon</strong> : int</p>
-<blockquote>
-<div><p>Is the maximum number of UZF1 connections and is equal to the number 
+</dd>
+<dt><strong>mxuzcon</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the maximum number of UZF1 connections and is equal to the number 
 of non-zero entries in the IRNBND array found in the UZF1 input file 
 for MODFLOW.  Keep in mind there is potential for every cell with a 
 non-zero IRNBND entry to pass water to either a lake or stream segment</p>
-</div></blockquote>
-<p><strong>icbcuz</strong> : int</p>
-<blockquote>
-<div><p>Is the unit number to which unsaturated-zone concentration will be 
+</dd>
+<dt><strong>icbcuz</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the unit number to which unsaturated-zone concentration will be 
 written out.</p>
-</div></blockquote>
-<p><strong>iet</strong> : int</p>
-<blockquote>
-<div><p>Is a flag that indicates whether or not ET is being simulated in the 
-UZF1 flow package.  If ET is not being simulated, IET informs FMI 
-package not to look for UZET and GWET arrays in the flow-tranpsort 
-link file.</p>
-</div></blockquote>
-<p><strong>iuzfbnd</strong> : array of ints</p>
-<blockquote>
-<div><p>Specifies which row/column indices variably-saturated transport will 
+</dd>
+<dt><strong>iet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is a flag that indicates whether or not ET is being simulated in the 
+UZF1 flow package (=0 indicates that ET is not being simulated).  
+If ET is not being simulated, IET informs FMI package not to look 
+for UZET and GWET arrays in the flow-tranpsort link file.</p>
+</dd>
+<dt><strong>iuzfbnd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of ints</span></dt>
+<dd><p class="first">Specifies which row/column indices variably-saturated transport will 
 be simulated in.</p>
-<blockquote>
+<blockquote class="last">
 <div><p>&gt;0  indicates variably-saturated transport will be simulated;
 =0  indicates variably-saturated transport will not be simulated;
 &lt;0  Corresponds to IUZFBND &lt; 0 in the UZF1 input package, meaning</p>
@@ -245,27 +242,24 @@ therefore transport through the unsaturated zone is not
 simulated.</p>
 </div></blockquote>
 </div></blockquote>
-</div></blockquote>
-<p><strong>wc</strong> : array of floats</p>
-<blockquote>
-<div><p>Starting water content.  For cells above the water tables, this value 
+</dd>
+<dt><strong>wc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Starting water content.  For cells above the water tables, this value 
 can range between residual and saturated water contents.  In cells 
 below the water table, this value will be eqal to saturated water 
 content (i.e., effective porosity).  For cells containing the water 
 table, a volume average approach needs to be used to calculate an 
 equivalent starting water content.</p>
-</div></blockquote>
-<p><strong>sdh</strong> : array of floats</p>
-<blockquote>
-<div><p>Starting saturated thickness for each cell in the simulation.  For 
+</dd>
+<dt><strong>sdh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Starting saturated thickness for each cell in the simulation.  For 
 cells residing above the starting water table, SDH=0. In completely 
 saturated cells, SDH is equal to total thickness.  For cells 
 containing the water table, SDH equals the water table elevation minus 
 the cell bottom elevation.</p>
-</div></blockquote>
-<p><strong>incuzinf</strong> : int</p>
-<blockquote>
-<div><p>(This value is repeated for each stress period as explained next) A 
+</dd>
+<dt><strong>incuzinf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(This value is repeated for each stress period as explained next) A 
 flag indicating whether an array containing the concentration of 
 infiltrating water (FINF) for each simulated species (ncomp) will be 
 read for the current stress period.  If INCUZINF &gt;= 0, an array 
@@ -281,15 +275,13 @@ saturation is reached in the unsaturated zone and the water table is
 therefore at land surface, the concentration of the runoff will be 
 equal to CUZINF specified next.  The runoff is routed if IRNBND is 
 specified in the MODFLOW simulation.</p>
-</div></blockquote>
-<p><strong>cuzinf</strong> : array of floats</p>
-<blockquote>
-<div><p>Is the concentration of the infiltrating flux for a particular species.
+</dd>
+<dt><strong>cuzinf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Is the concentration of the infiltrating flux for a particular species.
 An array for each species will be read.</p>
-</div></blockquote>
-<p><strong>incuzet</strong> : int</p>
-<blockquote>
-<div><p>(This value is repeated for each stress period as explained next) A 
+</dd>
+<dt><strong>incuzet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(This value is repeated for each stress period as explained next) A 
 flag indicating whether an array containing the concentration of 
 evapotranspiration flux originating from the unsaturated zone will be 
 read for the current stress period.  If INCUZET &gt;= 0, an array 
@@ -301,20 +293,18 @@ is specified for the first stress period, then by default, the
 concentration of negative evapotranspiration flux (sink) is set 
 equal to the aquifer concentration, while the concentration of 
 positive evapotranspiration flux (source) is set to zero.</p>
-</div></blockquote>
-<p><strong>cuzet</strong> : array of floats</p>
-<blockquote>
-<div><p>Is the concentration of ET fluxes originating from the unsaturated 
+</dd>
+<dt><strong>cuzet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Is the concentration of ET fluxes originating from the unsaturated 
 zone.  As a default, this array is set equal to 0 and only overridden 
 if the user specifies INCUZET &gt; 1.  If empirical evidence suggest 
 volatilization of simulated constituents from the unsaturated zone, 
 this may be one mechanism for simulating this process, though it would 
 depend on the amount of simulated ET originating from the unsaturated 
 zone.  An array for each species will be read.</p>
-</div></blockquote>
-<p><strong>incgwet</strong> : int</p>
-<blockquote>
-<div><p>(This value is repeated for each stress period as explained next) Is 
+</dd>
+<dt><strong>incgwet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(This value is repeated for each stress period as explained next) Is 
 a flag indicating whether an array containing the concentration of 
 evapotranspiration flux originating from the saturated zone will be 
 read for the current stress period.  If INCGWET &gt;= 0, an array 
@@ -326,24 +316,20 @@ is specified for the first stress period, then by default, the
 concentration of negative evapotranspiration flux (sink) is set to 
 the aquifer concentration, while the concentration of positive 
 evapotranspiration flux (source) is set to zero.</p>
-</div></blockquote>
-<p><strong>cgwet</strong> : array of floats</p>
-<blockquote>
-<div><p>Is the concentration of ET fluxes originating from the saturated zone. 
+</dd>
+<dt><strong>cgwet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Is the concentration of ET fluxes originating from the saturated zone. 
 As a default, this array is set equal to 0 and only overridden if the 
 user specifies INCUZET &gt; 1.  An array for each species will be read.</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘uzt’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘uzt’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the uzf output name will be created using
 the model name and uzf concentration observation extension
@@ -354,7 +340,8 @@ output name will be created using the model name and .uzcobs.out
 extension, if icbcuz is a number greater than zero. To define the
 names for all package files (input and output) the length of the list
 of strings should be 2. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -362,7 +349,7 @@ of strings should be 2. Default is None.</p>
 <p class="rubric">Notes</p>
 <p>Parameters are not supported in FloPy.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;Keat_UZF_mt.nam&#39;</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">exe_name</span> <span class="o">=</span> <span class="s1">&#39;mt3d-usgs_1.0.00.exe&#39;</span><span class="p">,</span>
@@ -370,6 +357,32 @@ of strings should be 2. Default is None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">uzt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dUzt</span><span class="p">(</span><span class="s1">&#39;Keat_UZF.uzt&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.mt3d.mtuzt.Mt3dUzt.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.mt3d.mtuzt.Mt3dUzt.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.check" title="Permalink to this definition">¶</a></dt>
@@ -378,32 +391,34 @@ of strings should be 2. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -412,41 +427,41 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtuzt.Mt3dUzt.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>uzt</strong> :  Mt3dSsm object</p>
-<blockquote class="last">
-<div><p>Mt3dUzt object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>uzt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Mt3dSsm object</span></dt>
+<dd><p class="first last">Mt3dUzt object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">uzt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dUzt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.uzt&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="p">)</span>
 </pre></div>
@@ -462,9 +477,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -486,20 +501,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -515,19 +532,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -542,7 +563,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -574,7 +599,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -596,7 +621,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

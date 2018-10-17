@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.mfgrdfile Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.mfgrdfile Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.modpathfile Module" href="modpathfile.html"/>
         <link rel="prev" title="flopy.utils.mfreadnam Module" href="mfreadnam.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -212,6 +214,122 @@
             
   <div class="section" id="module-flopy.utils.mfgrdfile">
 <span id="flopy-utils-mfgrdfile-module"></span><h1>flopy.utils.mfgrdfile Module<a class="headerlink" href="#module-flopy.utils.mfgrdfile" title="Permalink to this headline">¶</a></h1>
+<p>Module to read MODFLOW 6 binary grid files (<a href="#id1"><span class="problematic" id="id2">*</span></a>.grb) that define the model
+grid binary output files. The module contains the MfGrdFile class that can
+be accessed by the user.</p>
+<dl class="class">
+<dt id="flopy.utils.mfgrdfile.MfGrdFile">
+<em class="property">class </em><code class="descclassname">flopy.utils.mfgrdfile.</code><code class="descname">MfGrdFile</code><span class="sig-paren">(</span><em>filename</em>, <em>precision='double'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfgrdfile.MfGrdFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>The MfGrdFile class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the MODFLOW 6 binary grid file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The MfGrdFile class provides simple ways to retrieve data from binary
+MODFLOW 6 binary grid files (<a href="#id3"><span class="problematic" id="id4">*</span></a>.grb). The binary grid file contains data
+that can be used for post processing MODFLOW 6 model results.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfGrdFile</span><span class="p">(</span><span class="s1">&#39;test.dis.grb&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.mfgrdfile.MfGrdFile.get_centroids">
+<code class="descname">get_centroids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfgrdfile.MfGrdFile.get_centroids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the centroids for a MODFLOW 6 GWF model that uses the DIS,
+DISV, or DISU discretization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vertc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray</span></dt>
+<dd><p class="first last">Array with x, y pairs of the centroid for every model cell</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfGrdFile</span><span class="p">(</span><span class="s1">&#39;test.dis.grb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vertc</span> <span class="o">=</span> <span class="n">gobj</span><span class="o">.</span><span class="n">get_centroids</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mfgrdfile.MfGrdFile.get_spatialreference">
+<code class="descname">get_spatialreference</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfgrdfile.MfGrdFile.get_spatialreference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the SpatialReference based on the MODFLOW 6 discretization type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">SpatialReference</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfGrdFile</span><span class="p">(</span><span class="s1">&#39;test.dis.grb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span> <span class="o">=</span> <span class="n">gobj</span><span class="o">.</span><span class="n">get_spatialreference</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mfgrdfile.MfGrdFile.get_verts">
+<code class="descname">get_verts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mfgrdfile.MfGrdFile.get_verts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of the vertices that define each model cell and the x, y
+pair for each vertex.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>iverts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of lists</span></dt>
+<dd><p class="first last">List with lists containing the vertex indices for each model cell.</p>
+</dd>
+<dt><strong>verts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray</span></dt>
+<dd><p class="first last">Array with x, y pairs for every vertex used to define the model.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfGrdFile</span><span class="p">(</span><span class="s1">&#39;test.dis.grb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iverts</span><span class="p">,</span> <span class="n">verts</span> <span class="o">=</span> <span class="n">gobj</span><span class="o">.</span><span class="n">get_verts</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -236,7 +354,7 @@
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -258,7 +376,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

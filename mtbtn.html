@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mt3d.mtbtn Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mt3d.mtdsp Module" href="mtdsp.html"/>
         <link rel="prev" title="flopy.mt3d.mtadv Module" href="mtadv.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mtadv.html">flopy.mt3d.mtadv Module</a></li>
@@ -211,225 +212,216 @@ User’s Manual.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>MFStyleArr</strong> : str</p>
-<blockquote>
-<div><p>Specifies whether or not to read arrays using the MODFLOW array reader
+</dd>
+<dt><strong>MFStyleArr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Specifies whether or not to read arrays using the MODFLOW array reader
 format or the original MT3DMS array reader</p>
-</div></blockquote>
-<p><strong>DRYCell</strong> : str</p>
-<blockquote>
-<div><p>Specifies whether or not to route mass through dry cells.  When MF-NWT
+</dd>
+<dt><strong>DRYCell</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Specifies whether or not to route mass through dry cells.  When MF-NWT
 is used to generate the flow-transport link file, this is a distinct
 possibility.</p>
-</div></blockquote>
-<p><strong>Legacy99Stor</strong> : str</p>
-<blockquote>
-<div><p>Specifies whether or not to use the storage formulation used in MT3DMS</p>
-</div></blockquote>
-<p><strong>FTLPrint</strong> : str</p>
-<blockquote>
-<div><p>Specifies if flow-transport link terms (cell-by-cell flows) should be
+</dd>
+<dt><strong>Legacy99Stor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Specifies whether or not to use the storage formulation used in MT3DMS</p>
+</dd>
+<dt><strong>FTLPrint</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Specifies if flow-transport link terms (cell-by-cell flows) should be
 echoed to the MT3D-USGS listing file.</p>
-</div></blockquote>
-<p><strong>NoWetDryPrint</strong> : str</p>
-<blockquote>
-<div><p>Specifies whether or not to suppress wet/dry messaging in the MT3D-USGS
+</dd>
+<dt><strong>NoWetDryPrint</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Specifies whether or not to suppress wet/dry messaging in the MT3D-USGS
 listing file.</p>
-</div></blockquote>
-<p><strong>OmitDryBudg</strong> : str</p>
-<blockquote>
-<div><p>Specifies whether or not to include the mass flux terms through dry
+</dd>
+<dt><strong>OmitDryBudg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Specifies whether or not to include the mass flux terms through dry
 cells in the mass budget written to the listing file.</p>
-</div></blockquote>
-<p><strong>AltWTSorb</strong> : str</p>
-<blockquote>
-<div><p>Specifies whether or not to use the MT3DMS formulation (this keyword
+</dd>
+<dt><strong>AltWTSorb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Specifies whether or not to use the MT3DMS formulation (this keyword
 omitted) for the solid phase, whereby the entire cell thickness is
 available for interacting with the aqueous phase, even though the
 aqueous phase may only occupy a portion of the cell’s thickness.  When
 used, only the saturated portion of the cell is available for sorbing</p>
-</div></blockquote>
-<p><strong>ncomp</strong> : int</p>
-<blockquote>
-<div><p>The total number of chemical species in the simulation. (default is
+</dd>
+<dt><strong>ncomp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The total number of chemical species in the simulation. (default is
 None, will be changed to 1 if sconc is single value)</p>
-</div></blockquote>
-<p><strong>mcomp</strong> : int</p>
-<blockquote>
-<div><p>The total number of ‘mobile’ species (default is 1). mcomp must be
+</dd>
+<dt><strong>mcomp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The total number of ‘mobile’ species (default is 1). mcomp must be
 equal or less than ncomp.</p>
-</div></blockquote>
-<p><strong>tunit</strong> : str</p>
-<blockquote>
-<div><p>The name of unit for time (default is ‘D’, for ‘days’). Used for
+</dd>
+<dt><strong>tunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of unit for time (default is ‘D’, for ‘days’). Used for
 identification purposes only.</p>
-</div></blockquote>
-<p><strong>lunit</strong> : str</p>
-<blockquote>
-<div><p>The name of unit for length (default is ‘M’, for ‘meters’). Used for
+</dd>
+<dt><strong>lunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of unit for length (default is ‘M’, for ‘meters’). Used for
 identification purposes only.</p>
-</div></blockquote>
-<p><strong>munit</strong> : str</p>
-<blockquote>
-<div><p>The name of unit for mass (default is ‘KG’, for ‘kilograms’). Used for
+</dd>
+<dt><strong>munit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of unit for mass (default is ‘KG’, for ‘kilograms’). Used for
 identification purposes only.</p>
-</div></blockquote>
-<p><strong>prsity</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>The effective porosity of the porous medium in a single porosity
+</dd>
+<dt><strong>prsity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">The effective porosity of the porous medium in a single porosity
 system, or the mobile porosity in a dual-porosity medium (the immobile
 porosity is defined through the Chemical Reaction Package. (default is
 0.25).</p>
-</div></blockquote>
-<p><strong>icbund</strong> : int or array of ints (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>The icbund array specifies the boundary condition type for solute
+</dd>
+<dt><strong>icbund</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">The icbund array specifies the boundary condition type for solute
 species (shared by all species). If icbund = 0, the cell is an inactive
 concentration cell; If icbund &lt; 0, the cell is a constant-concentration
 cell; If icbund &gt; 0, the cell is an active concentration cell where the
 concentration value will be calculated. (default is 1).</p>
-</div></blockquote>
-<p><strong>sconc</strong> : float, array of (nlay, nrow, ncol), or filename</p>
-<blockquote>
-<div><p>sconc is the starting concentration for the first species.  To specify
+</dd>
+<dt><strong>sconc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, array of (nlay, nrow, ncol), or filename</span></dt>
+<dd><p class="first last">sconc is the starting concentration for the first species.  To specify
 starting concentrations for other species in a multi-species
 simulation, include additional keywords, such as sconc2, sconc3, and
 so forth.</p>
-</div></blockquote>
-<p><strong>cinact</strong> : float</p>
-<blockquote>
-<div><p>The value for indicating an inactive concentration cell. (default is
+</dd>
+<dt><strong>cinact</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The value for indicating an inactive concentration cell. (default is
 1e30).</p>
-</div></blockquote>
-<p><strong>thkmin</strong> : float</p>
-<blockquote>
-<div><p>The minimum saturated thickness in a cell, expressed as the decimal
+</dd>
+<dt><strong>thkmin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The minimum saturated thickness in a cell, expressed as the decimal
 fraction of its thickness, below which the cell is considered inactive.
 (default is 0.01).</p>
-</div></blockquote>
-<p><strong>ifmtcn</strong> : int</p>
-<blockquote>
-<div><p>A flag/format code indicating how the calculated concentration should
+</dd>
+<dt><strong>ifmtcn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag/format code indicating how the calculated concentration should
 be printed to the standard output text file. Format codes for printing
 are listed in Table 3 of the MT3DMS manual. If ifmtcn &gt; 0 printing is
 in wrap form; ifmtcn &lt; 0 printing is in strip form; if ifmtcn = 0
 concentrations are not printed. (default is 0).</p>
-</div></blockquote>
-<p><strong>ifmtnp</strong> : int</p>
-<blockquote>
-<div><p>A flag/format code indicating how the number of particles should
+</dd>
+<dt><strong>ifmtnp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag/format code indicating how the number of particles should
 be printed to the standard output text file. The convention is
 the same as for ifmtcn. (default is 0).</p>
-</div></blockquote>
-<p><strong>ifmtrf</strong> : int</p>
-<blockquote>
-<div><p>A flag/format code indicating how the calculated retardation factor
+</dd>
+<dt><strong>ifmtrf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag/format code indicating how the calculated retardation factor
 should be printed to the standard output text file. The convention is
 the same as for ifmtcn. (default is 0).</p>
-</div></blockquote>
-<p><strong>ifmtdp</strong> : int</p>
-<blockquote>
-<div><p>A flag/format code indicating how the distance-weighted dispersion
+</dd>
+<dt><strong>ifmtdp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag/format code indicating how the distance-weighted dispersion
 coefficient should be printed to the standard output text file. The
 convention is the same as for ifmtcn. (default is 0).</p>
-</div></blockquote>
-<p><strong>savucn</strong> : bool</p>
-<blockquote>
-<div><p>A logical flag indicating whether the concentration solution should be
+</dd>
+<dt><strong>savucn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">A logical flag indicating whether the concentration solution should be
 saved in an unformatted file. (default is True).</p>
-</div></blockquote>
-<p><strong>nprs</strong> : int</p>
-<blockquote>
-<div><p>A flag indicating (i) the frequency of the output and
+</dd>
+<dt><strong>nprs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag indicating (i) the frequency of the output and
 (ii) whether the output frequency is specified in terms
 of total elapsed simulation time or the transport step number. If
 nprs &gt; 0 results will be saved at the times as specified in timprs;
 if nprs = 0, results will not be saved except at the end of simulation;
 if NPRS &lt; 0, simulation results will be saved whenever the number of
 transport steps is an even multiple of nprs. (default is 0).</p>
-</div></blockquote>
-<p><strong>timprs</strong> : list of floats</p>
-<blockquote>
-<div><p>The total elapsed time at which the simulation results are saved. The
+</dd>
+<dt><strong>timprs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">The total elapsed time at which the simulation results are saved. The
 number of entries in timprs must equal nprs. (default is None).</p>
-</div></blockquote>
-<p><strong>obs: array of int</strong></p>
-<blockquote>
-<div><p>An array with the cell indices (layer, row, column) for which the
+</dd>
+<dt><strong>obs: array of int</strong></dt>
+<dd><p class="first last">An array with the cell indices (layer, row, column) for which the
 concentration is to be printed at every transport step. (default is
 None).  obs indices must be entered as zero-based numbers as a 1 is
 added to them before writing to the btn file.</p>
-</div></blockquote>
-<p><strong>nprobs: int</strong></p>
-<blockquote>
-<div><p>An integer indicating how frequently the concentration at the specified
+</dd>
+<dt><strong>nprobs: int</strong></dt>
+<dd><p class="first last">An integer indicating how frequently the concentration at the specified
 observation points should be saved. (default is 1).</p>
-</div></blockquote>
-<p><strong>chkmas: bool</strong></p>
-<blockquote>
-<div><p>A logical flag indicating whether a one-line summary of mass balance
+</dd>
+<dt><strong>chkmas: bool</strong></dt>
+<dd><p class="first last">A logical flag indicating whether a one-line summary of mass balance
 information should be printed. (default is True).</p>
-</div></blockquote>
-<p><strong>nprmas: int</strong></p>
-<blockquote>
-<div><p>An integer indicating how frequently the mass budget information
+</dd>
+<dt><strong>nprmas: int</strong></dt>
+<dd><p class="first last">An integer indicating how frequently the mass budget information
 should be saved. (default is 1).</p>
-</div></blockquote>
-<p><strong>dt0: float</strong></p>
-<blockquote>
-<div><p>The user-specified initial transport step size within each time-step 
+</dd>
+<dt><strong>dt0: float</strong></dt>
+<dd><p class="first last">The user-specified initial transport step size within each time-step 
 of the flow solution. (default is 0).</p>
-</div></blockquote>
-<p><strong>mxstrn: int</strong></p>
-<blockquote>
-<div><p>The maximum number of transport steps allowed within one time step
+</dd>
+<dt><strong>mxstrn: int</strong></dt>
+<dd><p class="first last">The maximum number of transport steps allowed within one time step
 of the flow solution. (default is 50000).</p>
-</div></blockquote>
-<p><strong>ttsmult: float</strong></p>
-<blockquote>
-<div><p>The multiplier for successive transport steps within a flow time-step
+</dd>
+<dt><strong>ttsmult: float</strong></dt>
+<dd><p class="first last">The multiplier for successive transport steps within a flow time-step
 if the GCG solver is used and the solution option for the advection
 term is the standard finite-difference method. (default is 1.0).</p>
-</div></blockquote>
-<p><strong>ttsmax: float</strong></p>
-<blockquote>
-<div><p>The maximum transport step size allowed when transport step size
+</dd>
+<dt><strong>ttsmax: float</strong></dt>
+<dd><p class="first last">The maximum transport step size allowed when transport step size
 multiplier TTSMULT &gt; 1.0. (default is 0).</p>
-</div></blockquote>
-<p><strong>species_names: list of str</strong></p>
-<blockquote>
-<div><p>A list of names for every species in the simulation.</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘btn’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package. If filenames=None the package name
+</dd>
+<dt><strong>species_names: list of str</strong></dt>
+<dd><p class="first last">A list of names for every species in the simulation.</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘btn’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package. If filenames=None the package name
 will be created using the model name and package extension. If a
 single string is passed the package will be set to the string.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">btn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dBtn</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.mt3d.mtbtn.Mt3dBtn.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.mt3d.mtbtn.Mt3dBtn.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.check" title="Permalink to this definition">¶</a></dt>
@@ -438,32 +430,34 @@ Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -472,41 +466,41 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtbtn.Mt3dBtn.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.Mt3dBtn.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>btn</strong> :  Mt3dBtn object</p>
-<blockquote class="last">
-<div><p>Mt3dBtn object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>btn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Mt3dBtn object</span></dt>
+<dd><p class="first last">Mt3dBtn object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">btn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dBtn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.btn&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="p">)</span>
 </pre></div>
@@ -522,9 +516,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -546,20 +540,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -581,19 +577,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -608,35 +608,16 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.mt3d.mtbtn.read1d_fixed">
-<code class="descclassname">flopy.mt3d.mtbtn.</code><code class="descname">read1d_fixed</code><span class="sig-paren">(</span><em>f</em>, <em>a</em>, <em>nvalperline=8</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtbtn.read1d_fixed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read a 10 real value array (such as TIMPRS) and return it
-as a.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : file handle</p>
-<p><strong>a</strong> : np.ndarray</p>
-<blockquote>
-<div><p>array to fill</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>a</strong> : np.ndarray</p>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -663,7 +644,7 @@ as a.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -685,7 +666,7 @@ as a.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

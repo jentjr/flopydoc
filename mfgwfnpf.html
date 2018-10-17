@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfnpf Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfnpf Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfoc Module" href="mfgwfoc.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfnam Module" href="mfgwfnam.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -233,27 +235,24 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
-<blockquote>
-<div><p>Model that this package is a part of.  Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModel</span></dt>
+<dd><p class="first last">Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>save_flows</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>save_flows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>save_flows (boolean) keyword to indicate that cell-by-cell flow terms
 will be written to the file specified with “BUDGET SAVE FILE” in
 Output Control.</li>
 </ul>
-</div></blockquote>
-<p><strong>alternative_cell_averaging</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>alternative_cell_averaging</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>alternative_cell_averaging (string) is a text keyword to indicate
 that an alternative method will be used for calculating the
 conductance for horizontal cell connections. The text value for
@@ -266,37 +265,33 @@ hydraulic conductivity. If the user does not specify a value for
 ALTERNATIVE_CELL_AVERAGING, then the harmonic-mean method will be
 used. This option cannot be used if the XT3D option is invoked.</li>
 </ul>
-</div></blockquote>
-<p><strong>thickstrt</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>thickstrt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>thickstrt (boolean) indicates that cells having a negative ICELLTYPE
 are confined, and their cell thickness for conductance calculations
 will be computed as STRT-BOT rather than TOP-BOT.</li>
 </ul>
-</div></blockquote>
-<p><strong>cvoptions</strong> : [dewatered]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>cvoptions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[dewatered]</span></dt>
+<dd><ul class="first last simple">
 <li>dewatered (string) If the DEWATERED keyword is specified, then the
 vertical conductance is calculated using only the saturated thickness
 and properties of the overlying cell if the head in the underlying
 cell is below its top.</li>
 </ul>
-</div></blockquote>
-<p><strong>perched</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>perched</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>perched (boolean) keyword to indicate that when a cell is overlying a
 dewatered convertible cell, the head difference used in Darcy’s Law
 is equal to the head in the overlying cell minus the bottom elevation
 of the overlying cell. If not specified, then the default is to use
 the head difference between the two cells.</li>
 </ul>
-</div></blockquote>
-<p><strong>rewet_record</strong> : [wetfct, iwetit, ihdwet]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>rewet_record</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[wetfct, iwetit, ihdwet]</span></dt>
+<dd><ul class="first last simple">
 <li>wetfct (double) is a keyword and factor that is included in the
 calculation of the head that is initially established at a cell when
 that cell is converted from dry to wet.</li>
@@ -309,28 +304,25 @@ equation is used to define the initial head at cells that become wet.
 If IHDWET is 0, h = BOT + WETFCT (hm - BOT). If IHDWET is not 0, h =
 BOT + WETFCT (THRESH).</li>
 </ul>
-</div></blockquote>
-<p><strong>xt3doptions</strong> : [rhs]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>xt3doptions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[rhs]</span></dt>
+<dd><ul class="first last simple">
 <li>rhs (string) If the RHS keyword is also included, then the XT3D
 additional terms will be added to the right-hand side. If the RHS
 keyword is excluded, then the XT3D terms will be put into the
 coefficient matrix.</li>
 </ul>
-</div></blockquote>
-<p><strong>save_specific_discharge</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>save_specific_discharge</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>save_specific_discharge (boolean) keyword to indicate that x, y, and
 z components of specific discharge will be calculated at cell centers
 and written to the cell-by-cell flow file, which is specified with
 “BUDGET SAVE FILE” in Output Control.</li>
 </ul>
-</div></blockquote>
-<p><strong>icelltype</strong> : [integer]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>icelltype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
+<dd><ul class="first last simple">
 <li>icelltype (integer) flag for each cell that specifies how saturated
 thickness is treated. 0 means saturated thickness is held constant;
 :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>&gt;`0 means saturated thickness varies with computed head when
@@ -340,10 +332,9 @@ When THICKSTRT is in effect, a negative value of icelltype indicates
 that saturated thickness will be computed as STRT-BOT and held
 constant.</li>
 </ul>
-</div></blockquote>
-<p><strong>k</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>k (double) is the hydraulic conductivity. For the common case in
 which the user would like to specify the horizontal hydraulic
 conductivity and the vertical hydraulic conductivity, then K should
@@ -354,10 +345,9 @@ sophisticated anisotropy is required, then K corresponds to the K11
 hydraulic conductivity axis. All included cells (IDOMAIN <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0)
 must have a K value greater than zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>k22</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>k22</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>k22 (double) is the hydraulic conductivity of the second ellipsoid
 axis; for an unrotated case this is the hydraulic conductivity in the
 y direction. If K22 is not included in the GRIDDATA block, then K22
@@ -369,20 +359,18 @@ the angle for each cell face relative to the assigned x direction.
 All included cells (IDOMAIN <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0) must have a K22 value
 greater than zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>k33</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>k33</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>k33 (double) is the hydraulic conductivity of the third ellipsoid
 axis; for an unrotated case, this is the vertical hydraulic
 conductivity. When anisotropy is applied, K33 corresponds to the K33
 tensor component. All included cells (IDOMAIN <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0) must have
 a K33 value greater than zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>angle1</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>angle1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>angle1 (double) is a rotation angle of the hydraulic conductivity
 tensor in degrees. The angle represents the first of three sequential
 rotations of the hydraulic conductivity ellipsoid. With the K11, K22,
@@ -396,10 +384,9 @@ not specified, default values of zero are assigned to ANGLE1, ANGLE2,
 and ANGLE3, in which case the K11, K22, and K33 axes are aligned with
 the x, y, and z axes, respectively.</li>
 </ul>
-</div></blockquote>
-<p><strong>angle2</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>angle2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>angle2 (double) is a rotation angle of the hydraulic conductivity
 tensor in degrees. The angle represents the second of three
 sequential rotations of the hydraulic conductivity ellipsoid.
@@ -415,10 +402,9 @@ designated as vertical are assumed to be strictly horizontal (that
 is, to have no z component to their orientation); and connection
 lengths are based on horizontal distances.</li>
 </ul>
-</div></blockquote>
-<p><strong>angle3</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>angle3</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>angle3 (double) is a rotation angle of the hydraulic conductivity
 tensor in degrees. The angle represents the third of three sequential
 rotations of the hydraulic conductivity ellipsoid. Following the
@@ -431,10 +417,9 @@ the positive K11 axis, looking toward the center of the ellipsoid. A
 value of zero indicates that the K22 axis lies within the x - y
 plane.</li>
 </ul>
-</div></blockquote>
-<p><strong>wetdry</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>wetdry</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>wetdry (double) is a combination of the wetting threshold and a flag
 to indicate which neighboring cells can cause a cell to become wet.
 If WETDRY <img class="math" src="_images/math/863f524a433d6d1e5715f76f12040c654f10d86d.png" alt="&lt;"/> 0, only a cell below a dry cell can cause the
@@ -448,21 +433,19 @@ adjacent cell, the cell is wetted. WETDRY must be specified if
 specified in the options block, then WETDRY can be entered, and
 memory will be allocated for it, even though it is not used.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -475,13 +458,17 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -514,7 +501,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -536,7 +523,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

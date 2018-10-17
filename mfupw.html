@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfupw Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfupw Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfuzf1 Module" href="mfuzf1.html"/>
         <link rel="prev" title="flopy.modflow.mfswt Module" href="mfswt.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -151,6 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -240,30 +241,27 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>ipakcb</strong> : int</p>
-<blockquote>
-<div><p>A flag that is used to determine if cell-by-cell budget data should be
+</dd>
+<dt><strong>ipakcb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag that is used to determine if cell-by-cell budget data should be
 saved. If ipakcb is non-zero cell-by-cell budget data will be saved.
-(default is 53)</p>
-</div></blockquote>
-<p><strong>hdry</strong> : float</p>
-<blockquote>
-<div><p>Is the head that is assigned to cells that are converted to dry during
+(default is 0).</p>
+</dd>
+<dt><strong>hdry</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Is the head that is assigned to cells that are converted to dry during
 a simulation. Although this value plays no role in the model
 calculations, it is useful as an indicator when looking at the
 resulting heads that are output from the model. HDRY is thus similar
 to HNOFLO in the Basic Package, which is the value assigned to cells
 that are no-flow cells at the start of a model simulation. (default
 is -1.e30).</p>
-</div></blockquote>
-<p><strong>iphdry</strong> : int</p>
-<blockquote>
-<div><p>iphdry is a flag that indicates whether groundwater head will be set to
+</dd>
+<dt><strong>iphdry</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">iphdry is a flag that indicates whether groundwater head will be set to
 hdry when the groundwater head is less than 0.0001 above the cell bottom
 (units defined by lenuni in the discretization package). If iphdry=0,
 then head will not be set to hdry. If iphdry&gt;0, then head will be set to
@@ -272,27 +270,23 @@ heads for a subsequent simulation, or if the Observation Process is used
 (Harbaugh and others, 2000), then hdry should not be printed to the output
 file for dry cells (that is, the upw package input variable should be set
 as iphdry=0). (default is 0)</p>
-</div></blockquote>
-<p><strong>noparcheck</strong> : bool</p>
-<blockquote>
-<div><p>noparcheck turns off the checking that a value is defined for all cells
+</dd>
+<dt><strong>noparcheck</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">noparcheck turns off the checking that a value is defined for all cells
 when parameters are used to define layer data.</p>
-</div></blockquote>
-<p><strong>laytyp</strong> : int or array of ints (nlay)</p>
-<blockquote>
-<div><p>Layer type (default is 0).</p>
-</div></blockquote>
-<p><strong>layavg</strong> : int or array of ints (nlay)</p>
-<blockquote>
-<div><p>Layer average (default is 0).
+</dd>
+<dt><strong>laytyp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay)</span></dt>
+<dd><p class="first last">Layer type (default is 0).</p>
+</dd>
+<dt><strong>layavg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay)</span></dt>
+<dd><p class="first last">Layer average (default is 0).
 0 is harmonic mean
 1 is logarithmic mean
 2 is arithmetic mean of saturated thickness and logarithmic mean of
 of hydraulic conductivity</p>
-</div></blockquote>
-<p><strong>chani</strong> : float or array of floats (nlay)</p>
-<blockquote>
-<div><p>contains a value for each layer that is a flag or the horizontal
+</dd>
+<dt><strong>chani</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay)</span></dt>
+<dd><p class="first last">contains a value for each layer that is a flag or the horizontal
 anisotropy. If CHANI is less than or equal to 0, then variable HANI
 defines horizontal anisotropy. If CHANI is greater than 0, then CHANI
 is the horizontal anisotropy for the entire layer, and HANI is not
@@ -301,65 +295,54 @@ less than or equal to 0. Use as many records as needed to enter a
 value of CHANI for each layer. The horizontal anisotropy is the ratio
 of the hydraulic conductivity along columns (the Y direction) to the
 hydraulic conductivity along rows (the X direction).</p>
-</div></blockquote>
-<p><strong>layvka</strong> : float or array of floats (nlay)</p>
-<blockquote>
-<div><p>a flag for each layer that indicates whether variable VKA is vertical
+</dd>
+<dt><strong>layvka</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay)</span></dt>
+<dd><p class="first last">a flag for each layer that indicates whether variable VKA is vertical
 hydraulic conductivity or the ratio of horizontal to vertical
 hydraulic conductivity.</p>
-</div></blockquote>
-<p><strong>laywet</strong> : float or array of floats (nlay)</p>
-<blockquote>
-<div><p>contains a flag for each layer that indicates if wetting is active.
+</dd>
+<dt><strong>laywet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay)</span></dt>
+<dd><p class="first last">contains a flag for each layer that indicates if wetting is active.
 laywet should always be zero for the UPW Package because all cells
 initially active are wettable.</p>
-</div></blockquote>
-<p><strong>hk</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>is the hydraulic conductivity along rows. HK is multiplied by
+</dd>
+<dt><strong>hk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">is the hydraulic conductivity along rows. HK is multiplied by
 horizontal anisotropy (see CHANI and HANI) to obtain hydraulic
 conductivity along columns. (default is 1.0).</p>
-</div></blockquote>
-<p><strong>hani</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>is the ratio of hydraulic conductivity along columns to hydraulic
+</dd>
+<dt><strong>hani</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">is the ratio of hydraulic conductivity along columns to hydraulic
 conductivity along rows, where HK of item 10 specifies the hydraulic
 conductivity along rows. Thus, the hydraulic conductivity along
 columns is the product of the values in HK and HANI.
 (default is 1.0).</p>
-</div></blockquote>
-<p><strong>vka</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>is either vertical hydraulic conductivity or the ratio of horizontal
+</dd>
+<dt><strong>vka</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">is either vertical hydraulic conductivity or the ratio of horizontal
 to vertical hydraulic conductivity depending on the value of LAYVKA.
 (default is 1.0).</p>
-</div></blockquote>
-<p><strong>ss</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>is specific storage unless the STORAGECOEFFICIENT option is used.
+</dd>
+<dt><strong>ss</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">is specific storage unless the STORAGECOEFFICIENT option is used.
 When STORAGECOEFFICIENT is used, Ss is confined storage coefficient.
 (default is 1.e-5).</p>
-</div></blockquote>
-<p><strong>sy</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>is specific yield. (default is 0.15).</p>
-</div></blockquote>
-<p><strong>vkcb</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>is the vertical hydraulic conductivity of a Quasi-three-dimensional
+</dd>
+<dt><strong>sy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">is specific yield. (default is 0.15).</p>
+</dd>
+<dt><strong>vkcb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">is the vertical hydraulic conductivity of a Quasi-three-dimensional
 confining bed below a layer. (default is 0.0).</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘upw’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘upw’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the cbc output name will be created using
 the model name and .cbc extension (for example, modflowtest.cbc),
@@ -369,17 +352,44 @@ created using the model name and .cbc extension, if ipakcbc is a
 number greater than zero. To define the names for all package files
 (input and output) the length of the list of strings should be 2.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lpf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLpf</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfupw.ModflowUpw.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfupw.ModflowUpw.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfupw.ModflowUpw.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfupw.ModflowUpw.check" title="Permalink to this definition">¶</a></dt>
@@ -388,32 +398,34 @@ Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -422,45 +434,44 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfupw.ModflowUpw.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfupw.ModflowUpw.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfupw.ModflowUpw.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
-<p><strong>check</strong> : boolean</p>
-<blockquote>
-<div><p>Check package data for common errors. (default True)</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+<dt><strong>check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Check package data for common errors. (default True)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dis</strong> : ModflowUPW object</p>
-<blockquote class="last">
-<div><p>ModflowLpf object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowUPW object</span></dt>
+<dd><p class="first last">ModflowLpf object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">upw</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowUpw</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.upw&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -476,9 +487,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -500,20 +511,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -529,19 +542,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -556,13 +573,17 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>check</strong> : boolean</p>
-<blockquote>
-<div><p>Check package data for common errors. (default True)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Check package data for common errors. (default True)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -595,7 +616,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -617,7 +638,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

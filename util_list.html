@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.util_list Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.util_list Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.zonbud Module" href="zonbud.html"/>
         <link rel="prev" title="flopy.utils.utils_def Module" href="utils_def.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -229,28 +231,23 @@ instantiate this class directly.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : package object</p>
-<blockquote>
-<div><p>The package object (of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><code class="xref py py-class docutils literal"><span class="pre">flopy.pakbase.Package</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">package object</span></dt>
+<dd><p class="first last">The package object (of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.pakbase.Package</span></code></a>) to which
 this MfList will be added.</p>
-</div></blockquote>
-<p><strong>data</strong> : varies</p>
-<blockquote class="last">
-<div><p>the data of the transient list (optional). (the default is None)</p>
-</div></blockquote>
+</dd>
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">varies</span></dt>
+<dd><p class="first last">the data of the transient list (optional). (the default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="14%" />
-<col width="86%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>mxact</strong></td>
-<td>(int) the max number of active bc for any stress period</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>mxact</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">the max number of active bc for any stress period</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -296,12 +293,27 @@ Parameters
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fields</strong> : list or set of field names to drop</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fields</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or set of field names to drop</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dropped</strong> : MfList without the dropped fields</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dropped</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MfList without the dropped fields</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.utils.util_list.MfList.fmt_string">
+<code class="descname">fmt_string</code><a class="headerlink" href="#flopy.utils.util_list.MfList.fmt_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a C-style fmt string for numpy savetxt that corresponds to
+the dtype</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -328,20 +340,22 @@ dataframe containing all stress periods.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>squeeze</strong> : bool</p>
-<blockquote>
-<div><p>Reduce number of columns in dataframe to only include
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>squeeze</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Reduce number of columns in dataframe to only include
 stress periods where a variable changes.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>df</strong> : dataframe</p>
-<blockquote class="last">
-<div><p>Dataframe of shape nrow = ncells, ncol = nvar x nper. If 
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>df</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dataframe</span></dt>
+<dd><p class="first last">Dataframe of shape nrow = ncells, ncol = nvar x nper. If 
 the squeeze option is choosen, nper is the number of 
 stress periods where at least one cells is different, 
 otherwise it is equal to the number of keys in MfList.data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -358,7 +372,7 @@ otherwise it is equal to the number of keys in MfList.data.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data">
-<em class="property">static </em><code class="descname">masked4D_arrays_to_stress_period_data</code><span class="sig-paren">(</span><em>dtype</em>, <em>m4ds</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">masked4D_arrays_to_stress_period_data</code><span class="sig-paren">(</span><em>m4ds</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_list.MfList.masked4D_arrays_to_stress_period_data" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>convert a dictionary of 4-dim masked arrays to</dt>
 <dd>a stress_period_data style dict of recarray</dd>
@@ -380,37 +394,31 @@ stress period</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>key</strong> : str</p>
-<blockquote>
-<div><p>MfList dictionary key. (default is None)</p>
-</div></blockquote>
-<p><strong>names</strong> : list</p>
-<blockquote>
-<div><p>List of names for figure titles. (default is None)</p>
-</div></blockquote>
-<p><strong>kper</strong> : int</p>
-<blockquote>
-<div><p>MODFLOW zero-based stress period number to return. (default is zero)</p>
-</div></blockquote>
-<p><strong>filename_base</strong> : str</p>
-<blockquote>
-<div><p>Base file name that will be used to automatically generate file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>key</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of names for figure titles. (default is None)</p>
+</dd>
+<dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+</dd>
+<dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
-</div></blockquote>
-<p><strong>file_extension</strong> : str</p>
-<blockquote>
-<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+</dd>
+<dt><strong>file_extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is ‘png’)</p>
-</div></blockquote>
-<p><strong>mflay</strong> : int</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
 <dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
@@ -445,20 +453,22 @@ on the figure. (default is False)</p>
 <dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis is returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">stress_period_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="p">,</span> <span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -474,28 +484,29 @@ specified stress period to a 3-D numpy array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kper</strong> : int</p>
-<blockquote>
-<div><p>MODFLOW zero-based stress period number to return. (default is zero)</p>
-</div></blockquote>
-<p><strong>mask</strong> : boolean</p>
-<blockquote>
-<div><p>return array with np.NaN instead of zero</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>———-</strong></p>
-<p><strong>out</strong> : dict of numpy.ndarrays</p>
-<blockquote class="last">
-<div><p>Dictionary of 3-D numpy arrays containing the stress period data for
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is zero)</p>
+</dd>
+<dt><strong>mask</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">return array with np.NaN instead of zero</p>
+</dd>
+<dt><strong>Returns</strong></dt>
+<dd></dd>
+<dt><strong>———-</strong></dt>
+<dd></dd>
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict of numpy.ndarrays</span></dt>
+<dd><p class="first last">Dictionary of 3-D numpy arrays containing the stress period data for
 a selected stress period. The dictonary keys are the MfList dtype
 names for the stress period data (‘cond’, ‘flux’, ‘bhead’, etc.).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">stress_period_data</span><span class="o">.</span><span class="n">to_array</span><span class="p">(</span><span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -511,23 +522,26 @@ stress period</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
-<p><strong>kper</strong> : int</p>
-<blockquote>
-<div><p>MODFLOW zero-based stress period number to return. (default is None)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+<dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">wel</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">,</span> <span class="n">kper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -560,7 +574,7 @@ stress period</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -582,7 +596,7 @@ stress period</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

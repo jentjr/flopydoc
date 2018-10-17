@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.swroutputfile Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.swroutputfile Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.reference Module" href="reference.html"/>
         <link rel="prev" title="flopy.export.shapefile_utils Module" href="shapefile_utils.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -220,24 +222,23 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the swr budget output file</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘double’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the swr budget output file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.bud&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -249,11 +250,12 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nrecord, 3). None is returned if swrtype is not
 ‘flow’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -268,27 +270,27 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kswrkstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the swr time step, time step, and stress period 
+</dd>
+<dt><strong>kswrkstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the swr time step, time step, and stress period 
 (kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
 values. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None)</p>
-</div></blockquote>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (nitems).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (nitems).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -306,11 +308,12 @@ in the file</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kswr, kstp, kper combinations in binary file.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kswr, kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kswr, kstp, kper combinations in binary file.
 kswr, kstp, and kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -325,12 +328,13 @@ kswr, kstp, and kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -345,10 +349,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -363,10 +368,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -381,10 +387,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -399,38 +406,37 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>irec</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based reach (stage, qm, qaq) or reach group number
 (budget) to retrieve. (default is 0)</p>
-</div></blockquote>
-<p><strong>iconn</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based connection number for reach (irch) to retrieve
+</dd>
+<dt><strong>iconn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based connection number for reach (irch) to retrieve
 qm data. iconn is only used if qm data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based layer number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based layer number for reach (irch) to retrieve
 qaq data . klay is only used if qaq data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based structure number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based structure number for reach (irch) to retrieve
 structure data . isrt is only used if structure data is being read.
 (default is 0)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems).  The first column in the
 data array will contain time (totim). nitems is 2 for stage
 data, 15 for budget data, 3 for qm data, and 11 for qaq
 data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -449,24 +455,23 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the swr surface-water groundwater exchange output file</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘double’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the swr surface-water groundwater exchange output file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.qaq&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -478,11 +483,12 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nrecord, 3). None is returned if swrtype is not
 ‘flow’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -497,27 +503,27 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kswrkstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the swr time step, time step, and stress period 
+</dd>
+<dt><strong>kswrkstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the swr time step, time step, and stress period 
 (kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
 values. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None)</p>
-</div></blockquote>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (nitems).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (nitems).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -535,11 +541,12 @@ in the file</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kswr, kstp, kper combinations in binary file.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kswr, kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kswr, kstp, kper combinations in binary file.
 kswr, kstp, and kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -554,12 +561,13 @@ kswr, kstp, and kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -574,10 +582,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -592,10 +601,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -610,10 +620,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -628,38 +639,37 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>irec</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based reach (stage, qm, qaq) or reach group number
 (budget) to retrieve. (default is 0)</p>
-</div></blockquote>
-<p><strong>iconn</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based connection number for reach (irch) to retrieve
+</dd>
+<dt><strong>iconn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based connection number for reach (irch) to retrieve
 qm data. iconn is only used if qm data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based layer number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based layer number for reach (irch) to retrieve
 qaq data . klay is only used if qaq data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based structure number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based structure number for reach (irch) to retrieve
 structure data . isrt is only used if structure data is being read.
 (default is 0)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems).  The first column in the
 data array will contain time (totim). nitems is 2 for stage
 data, 15 for budget data, 3 for qm data, and 11 for qaq
 data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -680,29 +690,27 @@ classes are formed.  This class should not be instantiated directly</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the swr output file</p>
-</div></blockquote>
-<p><strong>swrtype</strong> : str</p>
-<blockquote>
-<div><p>swr data type. Valid data types are ‘stage’, ‘budget’,
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the swr output file</p>
+</dd>
+<dt><strong>swrtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">swr data type. Valid data types are ‘stage’, ‘budget’,
 ‘flow’, ‘exchange’, or ‘structure’. (default is ‘stage’)</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘double’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrFile</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.stage.bin&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -714,11 +722,12 @@ classes are formed.  This class should not be instantiated directly</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nrecord, 3). None is returned if swrtype is not
 ‘flow’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -733,27 +742,27 @@ classes are formed.  This class should not be instantiated directly</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kswrkstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the swr time step, time step, and stress period 
+</dd>
+<dt><strong>kswrkstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the swr time step, time step, and stress period 
 (kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
 values. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None)</p>
-</div></blockquote>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (nitems).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (nitems).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -771,11 +780,12 @@ in the file</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kswr, kstp, kper combinations in binary file.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kswr, kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kswr, kstp, kper combinations in binary file.
 kswr, kstp, and kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -790,12 +800,13 @@ kswr, kstp, and kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -810,10 +821,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -828,10 +840,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -846,10 +859,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -864,38 +878,37 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>irec</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based reach (stage, qm, qaq) or reach group number
 (budget) to retrieve. (default is 0)</p>
-</div></blockquote>
-<p><strong>iconn</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based connection number for reach (irch) to retrieve
+</dd>
+<dt><strong>iconn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based connection number for reach (irch) to retrieve
 qm data. iconn is only used if qm data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based layer number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based layer number for reach (irch) to retrieve
 qaq data . klay is only used if qaq data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based structure number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based structure number for reach (irch) to retrieve
 structure data . isrt is only used if structure data is being read.
 (default is 0)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems).  The first column in the
 data array will contain time (totim). nitems is 2 for stage
 data, 15 for budget data, 3 for qm data, and 11 for qaq
 data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -914,24 +927,23 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the swr flow output file</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘double’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the swr flow output file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.flow&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -943,11 +955,12 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nrecord, 3). None is returned if swrtype is not
 ‘flow’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -962,27 +975,27 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kswrkstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the swr time step, time step, and stress period 
+</dd>
+<dt><strong>kswrkstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the swr time step, time step, and stress period 
 (kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
 values. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None)</p>
-</div></blockquote>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (nitems).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (nitems).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1000,11 +1013,12 @@ in the file</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kswr, kstp, kper combinations in binary file.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kswr, kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kswr, kstp, kper combinations in binary file.
 kswr, kstp, and kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1019,12 +1033,13 @@ kswr, kstp, and kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1039,10 +1054,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1057,10 +1073,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1075,10 +1092,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1093,38 +1111,37 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>irec</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based reach (stage, qm, qaq) or reach group number
 (budget) to retrieve. (default is 0)</p>
-</div></blockquote>
-<p><strong>iconn</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based connection number for reach (irch) to retrieve
+</dd>
+<dt><strong>iconn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based connection number for reach (irch) to retrieve
 qm data. iconn is only used if qm data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based layer number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based layer number for reach (irch) to retrieve
 qaq data . klay is only used if qaq data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based structure number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based structure number for reach (irch) to retrieve
 structure data . isrt is only used if structure data is being read.
 (default is 0)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems).  The first column in the
 data array will contain time (totim). nitems is 2 for stage
 data, 15 for budget data, 3 for qm data, and 11 for qaq
 data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1143,24 +1160,23 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the swr stage output file</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘double’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the swr stage output file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.stg&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1172,11 +1188,12 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nrecord, 3). None is returned if swrtype is not
 ‘flow’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1191,27 +1208,27 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kswrkstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the swr time step, time step, and stress period 
+</dd>
+<dt><strong>kswrkstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the swr time step, time step, and stress period 
 (kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
 values. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None)</p>
-</div></blockquote>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (nitems).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (nitems).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1229,11 +1246,12 @@ in the file</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kswr, kstp, kper combinations in binary file.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kswr, kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kswr, kstp, kper combinations in binary file.
 kswr, kstp, and kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1248,12 +1266,13 @@ kswr, kstp, and kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1268,10 +1287,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1286,10 +1306,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1304,10 +1325,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1322,38 +1344,37 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>irec</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based reach (stage, qm, qaq) or reach group number
 (budget) to retrieve. (default is 0)</p>
-</div></blockquote>
-<p><strong>iconn</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based connection number for reach (irch) to retrieve
+</dd>
+<dt><strong>iconn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based connection number for reach (irch) to retrieve
 qm data. iconn is only used if qm data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based layer number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based layer number for reach (irch) to retrieve
 qaq data . klay is only used if qaq data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based structure number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based structure number for reach (irch) to retrieve
 structure data . isrt is only used if structure data is being read.
 (default is 0)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems).  The first column in the
 data array will contain time (totim). nitems is 2 for stage
 data, 15 for budget data, 3 for qm data, and 11 for qaq
 data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1373,24 +1394,23 @@ files</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the swr structure output file</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘double’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the swr structure output file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stageobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrStage</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.str&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1402,11 +1422,12 @@ files</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nrecord, 3). None is returned if swrtype is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nrecord, 3). None is returned if swrtype is not
 ‘flow’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1421,27 +1442,27 @@ files</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kswrkstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the swr time step, time step, and stress period 
+</dd>
+<dt><strong>kswrkstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the swr time step, time step, and stress period 
 (kswr, kstp, kper). These are zero-based kswr, kstp, and kper 
 values. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None)</p>
-</div></blockquote>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (nitems).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (nitems).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1459,11 +1480,12 @@ in the file</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kswr, kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kswr, kstp, kper combinations in binary file.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kswr, kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kswr, kstp, kper combinations in binary file.
 kswr, kstp, and kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1478,12 +1500,13 @@ kswr, kstp, and kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1498,10 +1521,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1516,10 +1540,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1534,10 +1559,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1552,38 +1578,37 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>irec</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based reach (stage, qm, qaq) or reach group number
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>irec</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based reach (stage, qm, qaq) or reach group number
 (budget) to retrieve. (default is 0)</p>
-</div></blockquote>
-<p><strong>iconn</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based connection number for reach (irch) to retrieve
+</dd>
+<dt><strong>iconn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based connection number for reach (irch) to retrieve
 qm data. iconn is only used if qm data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based layer number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based layer number for reach (irch) to retrieve
 qaq data . klay is only used if qaq data is being read.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>klay</strong> : int</p>
-<blockquote>
-<div><p>is the zero-based structure number for reach (irch) to retrieve
+</dd>
+<dt><strong>klay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the zero-based structure number for reach (irch) to retrieve
 structure data . isrt is only used if structure data is being read.
 (default is 0)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems).  The first column in the
 data array will contain time (totim). nitems is 2 for stage
 data, 15 for budget data, 3 for qm data, and 11 for qaq
 data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1618,7 +1643,7 @@ data.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -1640,7 +1665,7 @@ data.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

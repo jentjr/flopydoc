@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mt3d.mtcts Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mt3d.mtcts Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.seawat.swtvdf Module" href="swtvdf.html"/>
         <link rel="prev" title="flopy.mt3d.mtuzt Module" href="mtuzt.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mtadv.html">flopy.mt3d.mtadv Module</a></li>
@@ -207,43 +208,37 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>mxcts</strong> : int</p>
-<blockquote>
-<div><p>The maximum number of contaminant transport systems implemented in a 
+</dd>
+<dt><strong>mxcts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The maximum number of contaminant transport systems implemented in a 
 simulation.</p>
-</div></blockquote>
-<p><strong>ictsout</strong> : int</p>
-<blockquote>
-<div><p>The unit number on which well-by-well output information is written. 
+</dd>
+<dt><strong>ictsout</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The unit number on which well-by-well output information is written. 
 The default file extension assigned to the output file is TSO</p>
-</div></blockquote>
-<p><strong>mxext</strong> : int</p>
-<blockquote>
-<div><p>The maximum number of extraction wells specified as part of a 
+</dd>
+<dt><strong>mxext</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The maximum number of extraction wells specified as part of a 
 contaminant treatment system</p>
-</div></blockquote>
-<p><strong>mxinj: int</strong></p>
-<blockquote>
-<div><p>The maximum number of injection wells specified as part of a 
+</dd>
+<dt><strong>mxinj: int</strong></dt>
+<dd><p class="first last">The maximum number of injection wells specified as part of a 
 contaminant treatment system</p>
-</div></blockquote>
-<p><strong>mxwel</strong> : int</p>
-<blockquote>
-<div><p>The maximum number of wells in the flow model. MXWEL is recommended 
+</dd>
+<dt><strong>mxwel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The maximum number of wells in the flow model. MXWEL is recommended 
 to be set equal to MXWEL as specified in the WEL file</p>
-</div></blockquote>
-<p><strong>iforce</strong> : int</p>
-<blockquote>
-<div><p>A flag to force concentration in treatment systems to satisfy 
+</dd>
+<dt><strong>iforce</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">A flag to force concentration in treatment systems to satisfy 
 specified concentration/mass values based on the treatment option 
 selected without considering whether treatment is necessary or not. 
 This flag is ignored if ‘no treatment’ option is selected.</p>
-<blockquote>
+<blockquote class="last">
 <div><dl class="docutils">
 <dt>0   Concentration for all injection wells is set to satisfy </dt>
 <dd><p class="first last">treatment levels only if blended concentration exceeds 
@@ -257,34 +252,29 @@ wells inject water with blended concentrations.</p>
 </dd>
 </dl>
 </div></blockquote>
-</div></blockquote>
-<p><strong>ncts</strong> : int</p>
-<blockquote>
-<div><p>The number of contaminant treatment systems.  If NCTS &gt;= 0, 
+</dd>
+<dt><strong>ncts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of contaminant treatment systems.  If NCTS &gt;= 0, 
 NCTS is the number of contaminant treatment systems. If NCTS = -1, 
 treatment system information from the previous stress period is reused 
 for the current stress period.</p>
-</div></blockquote>
-<p><strong>icts</strong> : int</p>
-<blockquote>
-<div><p>The contaminant treatment system index number.</p>
-</div></blockquote>
-<p><strong>next</strong> : int</p>
-<blockquote>
-<div><p>The number of extraction wells for the treatment system number ICTS.</p>
-</div></blockquote>
-<p><strong>ninj</strong> : int</p>
-<blockquote>
-<div><p>The number of injection wells for the treatment system number ICTS.</p>
-</div></blockquote>
-<p><strong>itrtinj</strong> : int</p>
-<blockquote>
-<div><p>Is the level of treatment provided for the treatment system number 
+</dd>
+<dt><strong>icts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The contaminant treatment system index number.</p>
+</dd>
+<dt><strong>next</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of extraction wells for the treatment system number ICTS.</p>
+</dd>
+<dt><strong>ninj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of injection wells for the treatment system number ICTS.</p>
+</dd>
+<dt><strong>itrtinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Is the level of treatment provided for the treatment system number 
 ICTS. Each treatment system blends concentration collected from all 
 extraction wells contributing to the treatment system and assigns a 
 treated concentration to all injection wells associated with that 
 treatment system based on the treatment option selected</p>
-<blockquote>
+<blockquote class="last">
 <div><p>0   no treatment is provided
 1   same level of treatment is provided to all injection wells. 
 2   different level of treatment can be provided to each</p>
@@ -292,25 +282,22 @@ treatment system based on the treatment option selected</p>
 <div><p>individual injection well.</p>
 </div></blockquote>
 </div></blockquote>
-</div></blockquote>
-<p><strong>qincts</strong> : float</p>
-<blockquote>
-<div><p>The external flow entering a treatment system. External flow may be 
+</dd>
+<dt><strong>qincts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The external flow entering a treatment system. External flow may be 
 flow entering a treatment system that is not a part of the model 
 domain but plays an important role in influencing the blended 
 concentration of a treatment system</p>
-</div></blockquote>
-<p><strong>cincts</strong> : float</p>
-<blockquote>
-<div><p>The concentration with which the external flow enters a treatment 
+</dd>
+<dt><strong>cincts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The concentration with which the external flow enters a treatment 
 system</p>
-</div></blockquote>
-<p><strong>ioptinj</strong> : int</p>
-<blockquote>
-<div><p>Is a treatment option. Negative values indicate removal of 
+</dd>
+<dt><strong>ioptinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Is a treatment option. Negative values indicate removal of 
 concentration/mass and positive values indicate addition of 
 concentration/mass.</p>
-<blockquote>
+<blockquote class="last">
 <div><dl class="docutils">
 <dt>1   Percentage concentration/mass addition/removal is performed. </dt>
 <dd><p class="first last">Percentages must be specified as fractions. Example, for 50% 
@@ -333,10 +320,9 @@ option.</p>
 </dd>
 </dl>
 </div></blockquote>
-</div></blockquote>
-<p><strong>cmchginj</strong> : float</p>
-<blockquote>
-<div><p>Is the addition, removal, or specified concentration/mass values set 
+</dd>
+<dt><strong>cmchginj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Is the addition, removal, or specified concentration/mass values set 
 for the treatment system. Concentration/mass is added, removed, or 
 used as specified concentrations depending on the treatment option 
 IOPTINJ.
@@ -344,38 +330,33 @@ Note that concentration/mass values as specified by CMCHGINJ are
 enforced if the option IFORCE is set to 1. If IFORCE is set to 0, 
 then CMCHGINJ is enforced only when the blended concentration exceeds 
 the specified concentration CNTE.</p>
-</div></blockquote>
-<p><strong>cnte</strong> : float</p>
-<blockquote>
-<div><p>The concentration that is not to be exceeded for a treatment system. 
+</dd>
+<dt><strong>cnte</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The concentration that is not to be exceeded for a treatment system. 
 Treatment is applied to blended concentration only if it exceeds 
 CNTE, when IFORCE is set to 0.</p>
-</div></blockquote>
-<p><strong>kinj</strong> : int</p>
-<blockquote>
-<div><p>Layer index for a CTS injection well</p>
-</div></blockquote>
-<p><strong>iinj</strong> : int</p>
-<blockquote>
-<div><p>Row index for a CTS injection well</p>
-</div></blockquote>
-<p><strong>jinj</strong> : int</p>
-<blockquote>
-<div><p>Column index for a CTS injection well</p>
-</div></blockquote>
-<p><strong>iwinj</strong> : int</p>
-<blockquote>
-<div><p>The well index number. This number corresponds to the well number as 
+</dd>
+<dt><strong>kinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Layer index for a CTS injection well</p>
+</dd>
+<dt><strong>iinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Row index for a CTS injection well</p>
+</dd>
+<dt><strong>jinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Column index for a CTS injection well</p>
+</dd>
+<dt><strong>iwinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The well index number. This number corresponds to the well number as 
 it appears in the WEL file of the flow model.</p>
-</div></blockquote>
-<p><strong>qoutcts</strong> : float</p>
-<blockquote class="last">
-<div><p>the flow rate of outflow from a treatment system to an external sink. 
+</dd>
+<dt><strong>qoutcts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">the flow rate of outflow from a treatment system to an external sink. 
 This flow rate must be specified to maintain an overall treatment 
 system mass balance. QOUTCTS must be set equal to total inflow into a 
 treatment system minus total outflow to all injection wells for a 
 treatment system</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -383,12 +364,38 @@ treatment system</p>
 <p class="rubric">Notes</p>
 <p>Parameters are not supported in FloPy.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.mt3d.mtcts.Mt3dCts.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.mt3d.mtcts.Mt3dCts.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.check" title="Permalink to this definition">¶</a></dt>
@@ -397,32 +404,34 @@ treatment system</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -431,47 +440,47 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtcts.Mt3dCts.get_default_CTS_dtype">
-<em class="property">static </em><code class="descname">get_default_CTS_dtype</code><span class="sig-paren">(</span><em>ncomp=1</em>, <em>iforce=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.get_default_CTS_dtype" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_default_CTS_dtype</code><span class="sig-paren">(</span><em>iforce=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.get_default_CTS_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a dtype for the recarray containing the list of cts systems</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtcts.Mt3dCts.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cts</strong> : Mt3dCts object</p>
-<blockquote class="last">
-<div><p>Mt3dCts object</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>cts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Mt3dCts object</span></dt>
+<dd><p class="first last">Mt3dCts object</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -485,9 +494,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -509,20 +518,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -538,19 +549,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -589,7 +604,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -611,7 +626,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

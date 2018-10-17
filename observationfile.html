@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.observationfile Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.observationfile Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,10 +35,10 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.postprocessing Module" href="postprocessing.html"/>
-        <link rel="prev" title="flopy.utils.modpathfile Module" href="modpathfile.html"/> 
+        <link rel="prev" title="flopy.utils.mtlistfile Module" href="mtlistfile.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -220,22 +222,24 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Name of the hydmod output file</p>
-</div></blockquote>
-<p><strong>verbose</strong> : boolean</p>
-<blockquote>
-<div><p>If true, print additional information to to the screen during the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the hydmod output file</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If true, print additional information to to the screen during the
 extraction.  (default is False)</p>
-</div></blockquote>
-<p><strong>hydlbl_len</strong> : int</p>
-<blockquote>
-<div><p>Length of hydmod labels. (default is 20)</p>
-</div></blockquote>
+</dd>
+<dt><strong>hydlbl_len</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length of hydmod labels. (default is 20)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -248,29 +252,29 @@ extraction.  (default is False)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 If idx is None and totim are None, data for all simulation times
 are returned. (default is None)</p>
-</div></blockquote>
-<p><strong>obsname</strong> : string</p>
-<blockquote>
-<div><p>The name of the observation to return. If obsname is None, all
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
 observation data are returned. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time to return. If idx is None and totim are None,
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
 data for all simulation times are returned. (default is None)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems). totim is always returned. nitems
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems). totim is always returned. nitems
 is 2 if idx or obsname is not None or nobs+1.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -279,7 +283,7 @@ is 2 if idx or obsname is not None or nobs+1.</p>
 <p>If both idx and obsname are None, will return all of the observation
 data.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -294,39 +298,37 @@ items in the hydmod file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
-<blockquote>
-<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
 Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
-</div></blockquote>
-<p><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+</dd>
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 If idx is None and totim are None, a dataframe with all simulation
 times is  returned. (default is None)</p>
-</div></blockquote>
-<p><strong>obsname</strong> : string</p>
-<blockquote>
-<div><p>The name of the observation to return. If obsname is None, all
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
 observation data are returned. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time to return. If idx is None and totim are None,
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
 a dataframe with all simulation times is returned.
 (default is None)</p>
-</div></blockquote>
-<p><strong>timeunit</strong> : string</p>
-<blockquote>
-<div><p>time unit of the simulation time. Valid values are ‘S’econds,
+</dd>
+<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">time unit of the simulation time. Valid values are ‘S’econds,
 ‘M’inutes, ‘H’ours, ‘D’ays, ‘Y’ears. (default is ‘D’).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : pandas dataframe</p>
-<blockquote class="last">
-<div><p>Pandas dataframe of selected data.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">pandas dataframe</span></dt>
+<dd><p class="first last">Pandas dataframe of selected data.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -335,7 +337,7 @@ a dataframe with all simulation times is returned.
 <p>If both idx and obsname are None, will return all of the observation
 data as a dataframe.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -349,12 +351,13 @@ data as a dataframe.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -369,10 +372,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -387,11 +391,12 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of observation names in the binary file. totim is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of observation names in the binary file. totim is not
 included in the list of observation names.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -406,10 +411,404 @@ included in the list of observation names.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.observationfile.Mf6Obs">
+<em class="property">class </em><code class="descclassname">flopy.utils.observationfile.</code><code class="descname">Mf6Obs</code><span class="sig-paren">(</span><em>filename</em>, <em>verbose=False</em>, <em>isBinary=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.Mf6Obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mf6Obs Class - used to read ascii and binary MODFLOW6 observation output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the hydmod output file</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If true, print additional information to to the screen during the
+extraction.  (default is False)</p>
+</dd>
+<dt><strong>hydlbl_len</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length of hydmod labels. (default is 20)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.utils.observationfile.Mf6Obs.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.Mf6Obs.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the observation file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, data for all simulation times
+are returned. (default is None)</p>
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
+data for all simulation times are returned. (default is None)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems). totim is always returned. nitems
+is 2 if idx or obsname is not None or nobs+1.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.Mf6Obs.get_dataframe">
+<code class="descname">get_dataframe</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.Mf6Obs.get_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframe with the incremental and cumulative water budget
+items in the hydmod file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</dd>
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, a dataframe with all simulation
+times is  returned. (default is None)</p>
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
+a dataframe with all simulation times is returned.
+(default is None)</p>
+</dd>
+<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">time unit of the simulation time. Valid values are ‘S’econds,
+‘M’inutes, ‘H’ours, ‘D’ays, ‘Y’ears. (default is ‘D’).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">pandas dataframe</span></dt>
+<dd><p class="first last">Pandas dataframe of selected data.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data as a dataframe.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.Mf6Obs.get_nobs">
+<code class="descname">get_nobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.Mf6Obs.get_nobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of observations in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=’flow’.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.Mf6Obs.get_ntimes">
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.Mf6Obs.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.Mf6Obs.get_obsnames">
+<code class="descname">get_obsnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.Mf6Obs.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of observation names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of observation names in the binary file. totim is not
+included in the list of observation names.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.Mf6Obs.get_times">
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.Mf6Obs.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.observationfile.ObsFiles">
+<em class="property">class </em><code class="descclassname">flopy.utils.observationfile.</code><code class="descname">ObsFiles</code><a class="headerlink" href="#flopy.utils.observationfile.ObsFiles" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="flopy.utils.observationfile.ObsFiles.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.ObsFiles.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the observation file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, data for all simulation times
+are returned. (default is None)</p>
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
+data for all simulation times are returned. (default is None)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems). totim is always returned. nitems
+is 2 if idx or obsname is not None or nobs+1.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.ObsFiles.get_dataframe">
+<code class="descname">get_dataframe</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>idx=None</em>, <em>obsname=None</em>, <em>totim=None</em>, <em>timeunit='D'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.ObsFiles.get_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframe with the incremental and cumulative water budget
+items in the hydmod file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</dd>
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
+If idx is None and totim are None, a dataframe with all simulation
+times is  returned. (default is None)</p>
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
+observation data are returned. (default is None)</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
+a dataframe with all simulation times is returned.
+(default is None)</p>
+</dd>
+<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">time unit of the simulation time. Valid values are ‘S’econds,
+‘M’inutes, ‘H’ours, ‘D’ays, ‘Y’ears. (default is ‘D’).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">pandas dataframe</span></dt>
+<dd><p class="first last">Pandas dataframe of selected data.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>If both idx and obsname are None, will return all of the observation
+data as a dataframe.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.ObsFiles.get_nobs">
+<code class="descname">get_nobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.ObsFiles.get_nobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of observations in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
+in the file. The number of flow items is non-zero only if
+swrtype=’flow’.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.ObsFiles.get_ntimes">
+<code class="descname">get_ntimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.ObsFiles.get_ntimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.ObsFiles.get_obsnames">
+<code class="descname">get_obsnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.ObsFiles.get_obsnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of observation names in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of observation names in the binary file. totim is not
+included in the list of observation names.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.observationfile.ObsFiles.get_times">
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.observationfile.ObsFiles.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -427,24 +826,23 @@ observation files</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the cell budget file</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘double’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the cell budget file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘double’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">so</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">SwrObs</span><span class="p">(</span><span class="s1">&#39;mymodel.swr.obs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -456,29 +854,29 @@ observation files</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 If idx is None and totim are None, data for all simulation times
 are returned. (default is None)</p>
-</div></blockquote>
-<p><strong>obsname</strong> : string</p>
-<blockquote>
-<div><p>The name of the observation to return. If obsname is None, all
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
 observation data are returned. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time to return. If idx is None and totim are None,
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
 data for all simulation times are returned. (default is None)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nitems). totim is always returned. nitems
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">Array has size (ntimes, nitems). totim is always returned. nitems
 is 2 if idx or obsname is not None or nobs+1.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -487,7 +885,7 @@ is 2 if idx or obsname is not None or nobs+1.</p>
 <p>If both idx and obsname are None, will return all of the observation
 data.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -502,39 +900,37 @@ items in the hydmod file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
-<blockquote>
-<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
 Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
-</div></blockquote>
-<p><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+</dd>
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 If idx is None and totim are None, a dataframe with all simulation
 times is  returned. (default is None)</p>
-</div></blockquote>
-<p><strong>obsname</strong> : string</p>
-<blockquote>
-<div><p>The name of the observation to return. If obsname is None, all
+</dd>
+<dt><strong>obsname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the observation to return. If obsname is None, all
 observation data are returned. (default is None)</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time to return. If idx is None and totim are None,
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time to return. If idx is None and totim are None,
 a dataframe with all simulation times is returned.
 (default is None)</p>
-</div></blockquote>
-<p><strong>timeunit</strong> : string</p>
-<blockquote>
-<div><p>time unit of the simulation time. Valid values are ‘S’econds,
+</dd>
+<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">time unit of the simulation time. Valid values are ‘S’econds,
 ‘M’inutes, ‘H’ours, ‘D’ays, ‘Y’ears. (default is ‘D’).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : pandas dataframe</p>
-<blockquote class="last">
-<div><p>Pandas dataframe of selected data.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">pandas dataframe</span></dt>
+<dd><p class="first last">Pandas dataframe of selected data.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -543,7 +939,7 @@ a dataframe with all simulation times is returned.
 <p>If both idx and obsname are None, will return all of the observation
 data as a dataframe.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hyd</span> <span class="o">=</span> <span class="n">HydmodObs</span><span class="p">(</span><span class="s2">&quot;my_model.hyd&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">hyd</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -557,12 +953,13 @@ data as a dataframe.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of int</p>
-<blockquote class="last">
-<div><p>A tupe with the number of records and number of flow items
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">A tupe with the number of records and number of flow items
 in the file. The number of flow items is non-zero only if
 swrtype=’flow’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -577,10 +974,11 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -595,11 +993,12 @@ swrtype=’flow’.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of observation names in the binary file. totim is not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of observation names in the binary file. totim is not
 included in the list of observation names.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -614,10 +1013,11 @@ included in the list of observation names.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -633,20 +1033,21 @@ included in the list of observation names.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
-<blockquote>
-<div><p>recarray of data to make a selection from</p>
-</div></blockquote>
-<p><strong>names</strong> : string or list of strings</p>
-<blockquote>
-<div><p>column names to return</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">recarray of data to make a selection from</p>
+</dd>
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string or list of strings</span></dt>
+<dd><p class="first last">column names to return</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy recarry</p>
-<blockquote class="last">
-<div><p>recarray with selection</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarry</span></dt>
+<dd><p class="first last">recarray with selection</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -668,7 +1069,7 @@ included in the list of observation names.</p>
         <a href="postprocessing.html" class="btn btn-neutral float-right" title="flopy.utils.postprocessing Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="modpathfile.html" class="btn btn-neutral" title="flopy.utils.modpathfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mtlistfile.html" class="btn btn-neutral" title="flopy.utils.mtlistfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -677,7 +1078,7 @@ included in the list of observation names.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -699,7 +1100,7 @@ included in the list of observation names.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

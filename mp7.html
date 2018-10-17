@@ -1,0 +1,1210 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.modpath.mp7 Module &mdash; flopy 3.2.10 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modpath.mp7bas Module" href="mp7bas.html"/>
+        <link rel="prev" title="flopy.modflowlgr.mflgr Module" href="mflgr.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.modpath.mp7 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7bas.html">flopy.modpath.mp7bas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7particledata.html">flopy.modpath.mp7particledata Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7particlegroup.html">flopy.modpath.mp7particlegroup Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7sim.html">flopy.modpath.mp7sim Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp.html">flopy.modpath.mp Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpbas.html">flopy.modpath.mpbas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpsim.html">flopy.modpath.mpsim Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.modpath.mp7 Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mp7.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.modpath.mp7">
+<span id="flopy-modpath-mp7-module"></span><h1>flopy.modpath.mp7 Module<a class="headerlink" href="#module-flopy.modpath.mp7" title="Permalink to this headline">¶</a></h1>
+<p>mp7 module.  Contains the Modpath7List and Modpath7 classes.</p>
+<dl class="class">
+<dt id="flopy.modpath.mp7.Modpath7">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7.</code><code class="descname">Modpath7</code><span class="sig-paren">(</span><em>modelname='modpath7test'</em>, <em>simfile_ext='mpsim'</em>, <em>namefile_ext='mpnam'</em>, <em>version='modpath7'</em>, <em>exe_name='mp7.exe'</em>, <em>flowmodel=None</em>, <em>headfilename=None</em>, <em>budgetfilename=None</em>, <em>model_ws=None</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modpath 7 base class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>modelname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><blockquote class="first">
+<div><p>Basename for MODPATH 7 input and output files (default is
+‘modpath7test’).</p>
+</div></blockquote>
+<dl class="last docutils">
+<dt>simfile_ext <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Filename extension of the MODPATH 7 simulation file
+(default is ‘mpsim’).</p>
+</dd>
+<dt>namefile_ext <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Filename extension of the MODPATH 7 namefile
+(default is ‘mpnam’).</p>
+</dd>
+<dt>version <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">String that defines the MODPATH version. Valid versions are
+‘modpath7’ (default is ‘modpath7’).</p>
+</dd>
+<dt>exe_name <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the executable to use (the default is
+‘mp7’).</p>
+</dd>
+<dt>flowmodel <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow or flopy.mf6.MFModel object</span></dt>
+<dd><p class="first last">MODFLOW model</p>
+</dd>
+<dt>headfilename <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Filename of the MODFLOW output head file. If headfilename is
+not provided then it will be set from the flowmodel (default
+is None).</p>
+</dd>
+<dt>budgetfilename <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Filename of the MODFLOW output cell-by-cell budget file.
+If budgetfilename is not provided then it will be set
+from the flowmodel (default is None).</p>
+</dd>
+<dt>model_ws <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">model workspace.  Directory name to create model data sets.
+(default is the current working directory).</p>
+</dd>
+<dt>verbose <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Print additional information to the screen (default is False).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mf2005.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">Modpath7</span><span class="p">(</span><span class="s1">&#39;mf2005_mp&#39;</span><span class="p">,</span> <span class="n">flowmodel</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.add_existing_package">
+<code class="descname">add_existing_package</code><span class="sig-paren">(</span><em>filename</em>, <em>ptype=None</em>, <em>copy_to_model_ws=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.add_existing_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an existing package to a model instance.
+Parameters
+———-
+filename : str</p>
+<blockquote>
+<div>the name of the file to add as a package</div></blockquote>
+<dl class="docutils">
+<dt>ptype <span class="classifier-delimiter">:</span> <span class="classifier">optional</span></dt>
+<dd>the model package type (e.g. “lpf”, “wel”, etc).  If None,
+then the file extension of the filename arg is used</dd>
+<dt>copy_to_model_ws <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd>flag to copy the package file into the model_ws directory.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.add_external">
+<code class="descname">add_external</code><span class="sig-paren">(</span><em>fname</em>, <em>unit</em>, <em>binflag=False</em>, <em>output=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.add_external" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign an external array so that it will be listed as a DATA or
+DATA(BINARY) entry in the name file.  This will allow an outside
+file package to refer to it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of external array</p>
+</dd>
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of external array</p>
+</dd>
+<dt><strong>binflag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">binary or not. (default is False)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.add_output">
+<code class="descname">add_output</code><span class="sig-paren">(</span><em>fname</em>, <em>unit</em>, <em>binflag=False</em>, <em>package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.add_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign an external array so that it will be listed as a DATA or
+DATA(BINARY) entry in the name file.  This will allow an outside
+file package to refer to it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of external array</p>
+</dd>
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of external array</p>
+</dd>
+<dt><strong>binflag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">binary or not. (default is False)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.add_output_file">
+<code class="descname">add_output_file</code><span class="sig-paren">(</span><em>unit</em>, <em>fname=None</em>, <em>extension='cbc'</em>, <em>binflag=True</em>, <em>package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.add_output_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an ascii or binary output file file for a package</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of external array</p>
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of external array. (default is None)</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">extension to use for the cell-by-cell file. Only used if fname
+is None. (default is cbc)</p>
+</dd>
+<dt><strong>binflag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">boolean flag indicating if the output file is a binary file.
+Default is True</p>
+</dd>
+<dt><strong>package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">string that defines the package the output file is attached to.
+Default is None</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.add_package">
+<code class="descname">add_package</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.add_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.add_pop_key_list">
+<code class="descname">add_pop_key_list</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.add_pop_key_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a external file unit number to a list that will be used to remove
+model output (typically binary) files from ext_unit_dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>key</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">file unit number</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.change_model_ws">
+<code class="descname">change_model_ws</code><span class="sig-paren">(</span><em>new_pth=None</em>, <em>reset_external=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.change_model_ws" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the model work space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>new_pth</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Location of new model workspace.  If this path does not exist,
+it will be created. (default is None, which will be assigned to
+the present working directory).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>val</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">Can be used to see what packages are in the model, and can then
+be used with get_package to pull out individual packages.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check model data for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
+of check method output. If a string is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
+written to the screen</p>
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modpath.mp7.Modpath7.create_mp7">
+<em class="property">static </em><code class="descname">create_mp7</code><span class="sig-paren">(</span><em>trackdir='forward'</em>, <em>flowmodel=None</em>, <em>exe_name='mp7'</em>, <em>model_ws='.'</em>, <em>verbose=False</em>, <em>columncelldivisions=2</em>, <em>rowcelldivisions=2</em>, <em>layercelldivisions=2</em>, <em>nodes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.create_mp7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a default MODPATH 7 model using a passed flowmodel with
+8 particles in user-specified node locations or every active model
+cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>modelname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Basename for MODPATH 7 input and output files (default is
+‘modpath7test’).</p>
+</dd>
+<dt><strong>trackdir</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Keywork that defines the MODPATH particle tracking direction.
+Available trackdir’s are ‘backward’ and ‘forward’.
+(default is ‘forward’)</p>
+</dd>
+<dt><strong>flowmodel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow or flopy.mf6.MFModel object</span></dt>
+<dd><p class="first last">MODFLOW model</p>
+</dd>
+<dt><strong>exe_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the executable to use (the default is ‘mp7’).</p>
+</dd>
+<dt><strong>model_ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">model workspace.  Directory name to create model data sets.
+(default is the current working directory).</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Print additional information to the screen (default is False).</p>
+</dd>
+<dt><strong>columncelldivisions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of particles in a cell in the column (x-coordinate)
+direction (default is 2).</p>
+</dd>
+<dt><strong>rowcelldivisions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of particles in a cell in the row (y-coordinate)
+direction (default is 2).</p>
+</dd>
+<dt><strong>layercelldivisions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of oarticles in a cell in the layer (z-coordinate)
+direction (default is 2).</p>
+</dd>
+<dt><strong>nodes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, list of ints, tuple of ints, or np.ndarray</span></dt>
+<dd><p class="first last">Nodes (zero-based) with particles. If  (default is node 0).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>mp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Modpath7 object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mf2005.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">Modpath7</span><span class="o">.</span><span class="n">create_mp7</span><span class="p">(</span><span class="n">flowmodel</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.get_name_file_entries">
+<code class="descname">get_name_file_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.get_name_file_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a string representation of the name file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.get_output">
+<code class="descname">get_output</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an output file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of output array</p>
+</dd>
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of output array</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.get_output_attribute">
+<code class="descname">get_output_attribute</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em>, <em>attr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.get_output_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a attribute for an output file from the model by specifying either
+the file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of output array</p>
+</dd>
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of output array</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.get_package">
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc. (case-insensitive).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd><p class="first last">Package object of type <a class="reference internal" href="pakbase.html#flopy.pakbase.Package" title="flopy.pakbase.Package"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.pakbase.Package</span></code></a></p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.get_package_list">
+<code class="descname">get_package_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.get_package_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all the package names.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>val</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">Can be used to see what packages are in the model, and can then
+be used with get_package to pull out individual packages.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.has_package">
+<code class="descname">has_package</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.has_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if package name is in package list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘DIS’, ‘BAS6’, etc. (case-insensitive).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if package name exists, otherwise False if not found.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.modpath.mp7.Modpath7.name">
+<code class="descname">name</code><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">name of model</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.next_ext_unit">
+<code class="descname">next_ext_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.next_ext_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to encapsulate next_ext_unit attribute</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>SelPackList=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
+model input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>SelPackList</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool or list</span></dt>
+<dd><p class="first last">List of of packages to plot. If SelPackList=None all packages
+are plotted. (default is None)</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return.
+(default is zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.remove_external">
+<code class="descname">remove_external</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.remove_external" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an external file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of external array</p>
+</dd>
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of external array</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.remove_output">
+<code class="descname">remove_output</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.remove_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an output file from the model by specifying either the
+file name or the unit number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of output array</p>
+</dd>
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of output array</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.remove_package">
+<code class="descname">remove_package</code><span class="sig-paren">(</span><em>pname</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.remove_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a package from this model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the package, such as ‘RIV’, ‘BAS6’, etc.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.run_model">
+<code class="descname">run_model</code><span class="sig-paren">(</span><em>silent=False</em>, <em>pause=False</em>, <em>report=False</em>, <em>normal_msg='normal termination'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.run_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will run the model using subprocess.Popen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>silent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Echo run information to screen (default is True).</p>
+</dd>
+<dt><strong>pause</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean, optional</span></dt>
+<dd><p class="first last">Pause upon completion (default is False).</p>
+</dd>
+<dt><strong>report</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean, optional</span></dt>
+<dd><p class="first last">Save stdout lines to a list (buff) which is returned
+by the method . (default is False).</p>
+</dd>
+<dt><strong>normal_msg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Normal termination message used to determine if the
+run terminated normally. (default is ‘normal termination’)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>(success, buff)</strong></dt>
+<dd></dd>
+<dt><strong>success</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd></dd>
+<dt><strong>buff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of lines of stdout</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.set_model_units">
+<code class="descname">set_model_units</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.set_model_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every model needs its own set_model_units method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.set_output_attribute">
+<code class="descname">set_output_attribute</code><span class="sig-paren">(</span><em>fname=None</em>, <em>unit=None</em>, <em>attr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.set_output_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a variable in an output file from the model by specifying either
+the file name or the unit number and a dictionary with attributes
+to change.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">filename of output array</p>
+</dd>
+<dt><strong>unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">unit number of output array</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.to_shapefile">
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em>, <em>package_names=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper function for writing a shapefile for the model grid.  If
+package_names is not None, then search through the requested packages
+looking for arrays that can be added to the shapefile as attributes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the shapefile to write</p>
+</dd>
+<dt><strong>package_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of package names (e.g. [“dis”,”lpf”])</span></dt>
+<dd><p class="first last">Packages to export data arrays to shapefile. (default is None)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">SelPackList</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.write_input">
+<code class="descname">write_input</code><span class="sig-paren">(</span><em>SelPackList=False</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.write_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the input.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>SelPackList</strong> <span class="classifier-delimiter">:</span> <span class="classifier">False or list of packages</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7.write_name_file">
+<code class="descname">write_name_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7.write_name_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the name file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.modpath.mp7.Modpath7List">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7.</code><code class="descname">Modpath7List</code><span class="sig-paren">(</span><em>model</em>, <em>extension='list'</em>, <em>unitnumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7List" title="Permalink to this definition">¶</a></dt>
+<dd><p>List package class</p>
+<dl class="staticmethod">
+<dt id="flopy.modpath.mp7.Modpath7List.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7List.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7List.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7List.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check package data for common errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
+of check method output. If a sting is passed a file handle
+is created. If f is None, check method does not write
+results to a summary file. (default is None)</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
+written to the screen</p>
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
+performed. If level=1, full checks are performed.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modpath.mp7.Modpath7List.load">
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em>, <em>unitnumber=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7List.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>The load method has not been implemented for this package.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7List.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7List.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
+package input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7List.to_shapefile">
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7List.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export 2-D, 3-D, and transient 2-D model data to shapefile (polygons).
+Adds an attribute for each layer in each data array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modpath.mp7.Modpath7List.write_file">
+<code class="descname">write_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7.Modpath7List.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every Package needs its own write_file function</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mp7bas.html" class="btn btn-neutral float-right" title="flopy.modpath.mp7bas Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mflgr.html" class="btn btn-neutral" title="flopy.modflowlgr.mflgr Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Oct 17, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

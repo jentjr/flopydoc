@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.plot.map Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.plot.map Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.plot.crosssection Module" href="crosssection.html"/>
         <link rel="prev" title="flopy.utils.zonbud Module" href="zonbud.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -198,46 +199,39 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sr</strong> : flopy.utils.reference.SpatialReference</p>
-<blockquote>
-<div><p>The spatial reference class (Default is None)</p>
-</div></blockquote>
-<p><strong>ax</strong> : matplotlib.pyplot axis</p>
-<blockquote>
-<div><p>The plot axis.  If not provided it, plt.gca() will be used.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.utils.reference.SpatialReference</span></dt>
+<dd><p class="first last">The spatial reference class (Default is None)</p>
+</dd>
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot axis</span></dt>
+<dd><p class="first last">The plot axis.  If not provided it, plt.gca() will be used.
 If there is not a current axis then a new one will be created.</p>
-</div></blockquote>
-<p><strong>model</strong> : flopy.modflow object</p>
-<blockquote>
-<div><p>flopy model object. (Default is None)</p>
-</div></blockquote>
-<p><strong>dis</strong> : flopy.modflow.ModflowDis object</p>
-<blockquote>
-<div><p>flopy discretization object. (Default is None)</p>
-</div></blockquote>
-<p><strong>layer</strong> : int</p>
-<blockquote>
-<div><p>Layer to plot.  Default is 0.  Must be between 0 and nlay - 1.</p>
-</div></blockquote>
-<p><strong>xul</strong> : float</p>
-<blockquote>
-<div><p>x coordinate for upper left corner</p>
-</div></blockquote>
-<p><strong>yul</strong> : float</p>
-<blockquote>
-<div><p>y coordinate for upper left corner.  The default is the sum of the
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow object</span></dt>
+<dd><p class="first last">flopy model object. (Default is None)</p>
+</dd>
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.ModflowDis object</span></dt>
+<dd><p class="first last">flopy discretization object. (Default is None)</p>
+</dd>
+<dt><strong>layer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Layer to plot.  Default is 0.  Must be between 0 and nlay - 1.</p>
+</dd>
+<dt><strong>xul</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">x coordinate for upper left corner</p>
+</dd>
+<dt><strong>yul</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">y coordinate for upper left corner.  The default is the sum of the
 delc array.</p>
-</div></blockquote>
-<p><strong>rotation</strong> : float</p>
-<blockquote>
-<div><p>Angle of grid rotation around the upper left corner.  A positive value
+</dd>
+<dt><strong>rotation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Angle of grid rotation around the upper left corner.  A positive value
 indicates clockwise rotation.  Angles are in degrees.</p>
-</div></blockquote>
-<p><strong>extent</strong> : tuple of floats</p>
-<blockquote class="last">
-<div><p>(xmin, xmax, ymin, ymax) will be used to specify axes limits.  If None
+</dd>
+<dt><strong>extent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of floats</span></dt>
+<dd><p class="first last">(xmin, xmax, ymin, ymax) will be used to specify axes limits.  If None
 then these will be calculated based on grid, coordinates, and rotation.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -259,21 +253,23 @@ will contour the layer tied to this class (self.layer).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.pyplot.pcolormesh</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.pyplot.pcolormesh</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>contour_set</strong> : matplotlib.pyplot.contour</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>contour_set</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot.contour</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -289,25 +285,26 @@ will contour the layer tied to this class (self.layer).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vertc</strong> : np.ndarray</p>
-<blockquote>
-<div><p>Array with of size (nc, 2) with centroid location of cvfd</p>
-</div></blockquote>
-<p><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.pyplot.pcolormesh</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>vertc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray</span></dt>
+<dd><p class="first last">Array with of size (nc, 2) with centroid location of cvfd</p>
+</dd>
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.pyplot.pcolormesh</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>contour_set</strong> : matplotlib.pyplot.contour</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>contour_set</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot.contour</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -323,21 +320,23 @@ will plot the layer tied to this class (self.layer).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.pyplot.pcolormesh</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.pyplot.pcolormesh</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>quadmesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.QuadMesh</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -353,35 +352,34 @@ type from a flopy model</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ftype</strong> : string</p>
-<blockquote>
-<div><p>Package name string (‘WEL’, ‘GHB’, etc.). (Default is None)</p>
-</div></blockquote>
-<p><strong>package</strong> : flopy.modflow.Modflow package class instance</p>
-<blockquote>
-<div><p>flopy package class instance. (Default is None)</p>
-</div></blockquote>
-<p><strong>kper</strong> : int</p>
-<blockquote>
-<div><p>Stress period to plot</p>
-</div></blockquote>
-<p><strong>color</strong> : string</p>
-<blockquote>
-<div><p>matplotlib color string. (Default is None)</p>
-</div></blockquote>
-<p><strong>plotAll</strong> : bool</p>
-<blockquote>
-<div><p>Boolean used to specify that boundary condition locations for all
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ftype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Package name string (‘WEL’, ‘GHB’, etc.). (Default is None)</p>
+</dd>
+<dt><strong>package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow package class instance</span></dt>
+<dd><p class="first last">flopy package class instance. (Default is None)</p>
+</dd>
+<dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Stress period to plot</p>
+</dd>
+<dt><strong>color</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">matplotlib color string. (Default is None)</p>
+</dd>
+<dt><strong>plotAll</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to specify that boundary condition locations for all
 layers will be plotted on the current ModelMap layer.
 (Default is False)</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
-</div></blockquote>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>quadmesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.QuadMesh</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -397,18 +395,17 @@ the rotated and offset grid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verts</strong> : ndarray</p>
-<blockquote>
-<div><p>2d array of x and y points.</p>
-</div></blockquote>
-<p><strong>iverts</strong> : list of lists</p>
-<blockquote>
-<div><p>should be of len(ncells) with a list of vertex number for each cell</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : dictionary</p>
-<blockquote class="last">
-<div><p>Keyword arguments passed to plotutil.plot_cvfd()</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>verts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">2d array of x and y points.</p>
+</dd>
+<dt><strong>iverts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of lists</span></dt>
+<dd><p class="first last">should be of len(ncells) with a list of vertex number for each cell</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Keyword arguments passed to plotutil.plot_cvfd()</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -423,47 +420,42 @@ the rotated and offset grid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>frf</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s ‘flow right face’</p>
-</div></blockquote>
-<p><strong>fff</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s ‘flow front face’</p>
-</div></blockquote>
-<p><strong>flf</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s ‘flow lower face’ (Default is None.)</p>
-</div></blockquote>
-<p><strong>head</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s head array.  If not provided, then will assume confined
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>frf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s ‘flow right face’</p>
+</dd>
+<dt><strong>fff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s ‘flow front face’</p>
+</dd>
+<dt><strong>flf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s ‘flow lower face’ (Default is None.)</p>
+</dd>
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s head array.  If not provided, then will assume confined
 conditions in order to calculated saturated thickness.</p>
-</div></blockquote>
-<p><strong>istep</strong> : int</p>
-<blockquote>
-<div><p>row frequency to plot. (Default is 1.)</p>
-</div></blockquote>
-<p><strong>jstep</strong> : int</p>
-<blockquote>
-<div><p>column frequency to plot. (Default is 1.)</p>
-</div></blockquote>
-<p><strong>normalize</strong> : bool</p>
-<blockquote>
-<div><p>boolean flag used to determine if discharge vectors should
+</dd>
+<dt><strong>istep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">row frequency to plot. (Default is 1.)</p>
+</dd>
+<dt><strong>jstep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">column frequency to plot. (Default is 1.)</p>
+</dd>
+<dt><strong>normalize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">boolean flag used to determine if discharge vectors should
 be normalized using the magnitude of the specific discharge in each
 cell. (default is False)</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>Keyword arguments passed to plt.quiver()</p>
-</div></blockquote>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Keyword arguments passed to plt.quiver()</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>quiver</strong> : matplotlib.pyplot.quiver</p>
-<blockquote class="last">
-<div><p>Vectors of specific discharge.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>quiver</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot.quiver</span></dt>
+<dd><p class="first last">Vectors of specific discharge.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -478,43 +470,43 @@ cell. (default is False)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ep</strong> : rec array</p>
-<blockquote>
-<div><p>A numpy recarray with the endpoint particle data from the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">rec array</span></dt>
+<dd><p class="first last">A numpy recarray with the endpoint particle data from the
 MODPATH 6 endpoint file</p>
-</div></blockquote>
-<p><strong>direction</strong> : str</p>
-<blockquote>
-<div><p>String defining if starting or ending particle locations should be
+</dd>
+<dt><strong>direction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">String defining if starting or ending particle locations should be
 considered. (default is ‘ending’)</p>
-</div></blockquote>
-<p><strong>selection</strong> : tuple</p>
-<blockquote>
-<div><p>tuple that defines the zero-base layer, row, column location
+</dd>
+<dt><strong>selection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">tuple that defines the zero-base layer, row, column location
 (l, r, c) to use to make a selection of particle endpoints.
 The selection could be a well location to determine capture zone
 for the well. If selection is None, all particle endpoints for
 the user-sepcified direction will be plotted. (default is None)</p>
-</div></blockquote>
-<p><strong>selection_direction</strong> : str</p>
-<blockquote>
-<div><p>String defining is a selection should be made on starting or
+</dd>
+<dt><strong>selection_direction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">String defining is a selection should be made on starting or
 ending particle locations. If selection is not None and
 selection_direction is None, the selection direction will be set
 to the opposite of direction. (default is None)</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : ax, c, s or size, colorbar, colorbar_label, shrink. The</p>
-<blockquote>
-<div><p>remaining kwargs are passed into the matplotlib scatter
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ax, c, s or size, colorbar, colorbar_label, shrink. The</span></dt>
+<dd><p class="first last">remaining kwargs are passed into the matplotlib scatter
 method. If colorbar is True a colorbar will be added to the plot.
 If colorbar_label is passed in and colorbar is True then
 colorbar_label will be passed to the colorbar set_label()
 method. If shrink is passed in and colorbar is True then
 the colorbar size will be set using shrink.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>sp</strong> : matplotlib.pyplot.scatter</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot.scatter</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -529,13 +521,17 @@ the colorbar size will be set using shrink.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kwargs</strong> : ax, colors.  The remaining kwargs are passed into the</p>
-<blockquote>
-<div><p>the LineCollection constructor.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ax, colors.  The remaining kwargs are passed into the</span></dt>
+<dd><p class="first last">the LineCollection constructor.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>lc</strong> : matplotlib.collections.LineCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>lc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.LineCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -551,21 +547,23 @@ self.ml</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
-</div></blockquote>
-<p><strong>color_noflow</strong> : string</p>
-<blockquote>
-<div><p>(Default is ‘black’)</p>
-</div></blockquote>
-<p><strong>color_ch</strong> : string</p>
-<blockquote>
-<div><p>Color for constant heads (Default is ‘blue’.)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ibound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
+</dd>
+<dt><strong>color_noflow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">(Default is ‘black’)</p>
+</dd>
+<dt><strong>color_ch</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Color for constant heads (Default is ‘blue’.)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>quadmesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.QuadMesh</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -581,17 +579,20 @@ from the self.ml</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
-</div></blockquote>
-<p><strong>color_noflow</strong> : string</p>
-<blockquote>
-<div><p>(Default is ‘black’)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ibound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
+</dd>
+<dt><strong>color_noflow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">(Default is ‘black’)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>quadmesh</strong> : matplotlib.collections.QuadMesh</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>quadmesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.QuadMesh</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -606,16 +607,15 @@ from the self.ml</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pl</strong> : list of rec arrays or a single rec array</p>
-<blockquote>
-<div><p>rec array or list of rec arrays is data returned from
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>pl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of rec arrays or a single rec array</span></dt>
+<dd><p class="first last">rec array or list of rec arrays is data returned from
 modpathfile PathlineFile get_data() or get_alldata()
 methods. Data in rec array is ‘x’, ‘y’, ‘z’, ‘time’,
 ‘k’, and ‘particleid’.</p>
-</div></blockquote>
-<p><strong>travel_time: float or str</strong></p>
-<blockquote>
-<div><p>travel_time is a travel time selection for the displayed
+</dd>
+<dt><strong>travel_time: float or str</strong></dt>
+<dd><p class="first last">travel_time is a travel time selection for the displayed
 pathlines. If a float is passed then pathlines with times
 less than or equal to the passed time are plotted. If a
 string is passed a variety logical constraints can be added
@@ -624,15 +624,18 @@ period of time. Valid logical constraints are &lt;=, &lt;, &gt;=, and
 &gt;. For example, to select all pathlines less than 10000 days
 travel_time=’&lt; 10000’ would be passed to plot_pathline.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : layer, ax, colors.  The remaining kwargs are passed</p>
-<blockquote>
-<div><p>into the LineCollection constructor. If layer=’all’,
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">layer, ax, colors.  The remaining kwargs are passed</span></dt>
+<dd><p class="first last">into the LineCollection constructor. If layer=’all’,
 pathlines are output for all layers</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>lc</strong> : matplotlib.collections.LineCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>lc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.LineCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -648,14 +651,57 @@ the rotated and offset grid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>shp</strong> : string</p>
-<blockquote>
-<div><p>Name of the shapefile to plot</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : dictionary</p>
-<blockquote class="last">
-<div><p>Keyword arguments passed to plotutil.plot_shapefile()</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>shp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the shapefile to plot</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Keyword arguments passed to plotutil.plot_shapefile()</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.plot.map.ModelMap.plot_timeseries">
+<code class="descname">plot_timeseries</code><span class="sig-paren">(</span><em>ts</em>, <em>travel_time=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.map.ModelMap.plot_timeseries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the MODPATH timeseries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of rec arrays or a single rec array</span></dt>
+<dd><p class="first last">rec array or list of rec arrays is data returned from
+modpathfile TimeseriesFile get_data() or get_alldata()
+methods. Data in rec array is ‘x’, ‘y’, ‘z’, ‘time’,
+‘k’, and ‘particleid’.</p>
+</dd>
+<dt><strong>travel_time: float or str</strong></dt>
+<dd><p class="first last">travel_time is a travel time selection for the displayed
+pathlines. If a float is passed then pathlines with times
+less than or equal to the passed time are plotted. If a
+string is passed a variety logical constraints can be added
+in front of a time value to select pathlines for a select
+period of time. Valid logical constraints are &lt;=, &lt;, &gt;=, and
+&gt;. For example, to select all pathlines less than 10000 days
+travel_time=’&lt; 10000’ would be passed to plot_pathline.
+(default is None)</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">layer, ax, colors.  The remaining kwargs are passed</span></dt>
+<dd><p class="first last">into the LineCollection constructor. If layer=’all’,
+pathlines are output for all layers</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>lo</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of Line2D objects</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -688,7 +734,7 @@ the rotated and offset grid.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -710,7 +756,7 @@ the rotated and offset grid.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.postprocessing Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.postprocessing Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.export.shapefile_utils Module" href="shapefile_utils.html"/>
         <link rel="prev" title="flopy.utils.observationfile Module" href="observationfile.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -221,29 +223,28 @@ array for each stress period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 3 or 4-D np.ndarray</p>
-<blockquote>
-<div><p>Heads array.</p>
-</div></blockquote>
-<p><strong>m</strong> : flopy.modflow.Modflow object</p>
-<blockquote>
-<div><p>Must have a flopy.modflow.ModflowDis object attached.</p>
-</div></blockquote>
-<p><strong>nodata</strong> : real</p>
-<blockquote>
-<div><p>HDRY value indicating dry cells.</p>
-</div></blockquote>
-<p><strong>per_idx</strong> : int or sequence of ints</p>
-<blockquote>
-<div><p>stress periods to return. If None,
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Heads array.</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow object</span></dt>
+<dd><p class="first last">Must have a flopy.modflow.ModflowDis object attached.</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">real</span></dt>
+<dd><p class="first last">HDRY value indicating dry cells.</p>
+</dd>
+<dt><strong>per_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or sequence of ints</span></dt>
+<dd><p class="first last">stress periods to return. If None,
 returns all stress periods (default).</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p><strong>grad</strong> : 3 or 4-D np.ndarray</p>
-<blockquote class="last">
-<div><p>Array of hydraulic gradients</p>
-</div></blockquote>
+</dd>
+<dt><strong>Returns</strong></dt>
+<dd></dd>
+<dt><strong>——-</strong></dt>
+<dd></dd>
+<dt><strong>grad</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Array of hydraulic gradients</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -259,29 +260,28 @@ array for each stress period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 3 or 4-D np.ndarray</p>
-<blockquote>
-<div><p>Heads array.</p>
-</div></blockquote>
-<p><strong>m</strong> : flopy.modflow.Modflow object</p>
-<blockquote>
-<div><p>Must have a flopy.modflow.ModflowDis object attached.</p>
-</div></blockquote>
-<p><strong>nodata</strong> : real</p>
-<blockquote>
-<div><p>HDRY value indicating dry cells.</p>
-</div></blockquote>
-<p><strong>per_idx</strong> : int or sequence of ints</p>
-<blockquote>
-<div><p>stress periods to return. If None,
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Heads array.</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow object</span></dt>
+<dd><p class="first last">Must have a flopy.modflow.ModflowDis object attached.</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">real</span></dt>
+<dd><p class="first last">HDRY value indicating dry cells.</p>
+</dd>
+<dt><strong>per_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or sequence of ints</span></dt>
+<dd><p class="first last">stress periods to return. If None,
 returns all stress periods (default).</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p><strong>sat_thickness</strong> : 3 or 4-D np.ndarray</p>
-<blockquote class="last">
-<div><p>Array of saturated thickness</p>
-</div></blockquote>
+</dd>
+<dt><strong>Returns</strong></dt>
+<dd></dd>
+<dt><strong>——-</strong></dt>
+<dd></dd>
+<dt><strong>sat_thickness</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Array of saturated thickness</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -299,48 +299,42 @@ and the water table are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 2D array</p>
-<blockquote>
-<div><p>numpy array of shape nlay by n locations</p>
-</div></blockquote>
-<p><strong>m</strong> : flopy.modflow.Modflow object</p>
-<blockquote>
-<div><p>Must have dis, sr, and lpf or upw packages.</p>
-</div></blockquote>
-<p><strong>r</strong> : 1D array-like of ints, of length n locations</p>
-<blockquote>
-<div><p>row indices (optional; alternately specify x, y)</p>
-</div></blockquote>
-<p><strong>c</strong> : 1D array-like of ints, of length n locations</p>
-<blockquote>
-<div><p>column indicies (optional; alternately specify x, y)</p>
-</div></blockquote>
-<p><strong>x</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>x locations in real world coordinates (optional)</p>
-</div></blockquote>
-<p><strong>y</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>y locations in real world coordinates (optional)</p>
-</div></blockquote>
-<p><strong>sctop</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>open interval tops (optional; default is model top)</p>
-</div></blockquote>
-<p><strong>scbot</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>open interval bottoms (optional; default is model bottom)</p>
-</div></blockquote>
-<p><strong>nodata</strong> : numeric</p>
-<blockquote>
-<div><p>optional; locations where heads=nodata will be assigned T=0</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D array OR 3D array</span></dt>
+<dd><p class="first last">numpy array of shape nlay by n locations (2D) OR complete heads array of the model for one time (3D)</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow object</span></dt>
+<dd><p class="first last">Must have dis, sr, and lpf or upw packages.</p>
+</dd>
+<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of ints, of length n locations</span></dt>
+<dd><p class="first last">row indices (optional; alternately specify x, y)</p>
+</dd>
+<dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of ints, of length n locations</span></dt>
+<dd><p class="first last">column indicies (optional; alternately specify x, y)</p>
+</dd>
+<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">x locations in real world coordinates (optional)</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">y locations in real world coordinates (optional)</p>
+</dd>
+<dt><strong>sctop</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">open interval tops (optional; default is model top)</p>
+</dd>
+<dt><strong>scbot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">open interval bottoms (optional; default is model bottom)</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numeric</span></dt>
+<dd><p class="first last">optional; locations where heads=nodata will be assigned T=0</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>T</strong> : 2D array of same shape as heads (nlay x n locations)</p>
-<blockquote class="last">
-<div><p>Transmissivities in each layer at each location</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>T</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D array of same shape as heads (nlay x n locations)</span></dt>
+<dd><p class="first last">Transmissivities in each layer at each location</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -356,25 +350,25 @@ elevation for each stress period in heads array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 3 or 4-D np.ndarray</p>
-<blockquote>
-<div><p>Heads array.</p>
-</div></blockquote>
-<p><strong>nodata</strong> : real</p>
-<blockquote>
-<div><p>HDRY value indicating dry cells.</p>
-</div></blockquote>
-<p><strong>per_idx</strong> : int or sequence of ints</p>
-<blockquote>
-<div><p>stress periods to return. If None,
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Heads array.</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">real</span></dt>
+<dd><p class="first last">HDRY value indicating dry cells.</p>
+</dd>
+<dt><strong>per_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or sequence of ints</span></dt>
+<dd><p class="first last">stress periods to return. If None,
 returns all stress periods (default).</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p><strong>wt</strong> : 2 or 3-D np.ndarray of water table elevations</p>
-<blockquote class="last">
-<div><p>for each stress period.</p>
-</div></blockquote>
+</dd>
+<dt><strong>Returns</strong></dt>
+<dd></dd>
+<dt><strong>——-</strong></dt>
+<dd></dd>
+<dt><strong>wt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2 or 3-D np.ndarray of water table elevations</span></dt>
+<dd><p class="first last">for each stress period.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -405,7 +399,7 @@ returns all stress periods (default).</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -427,7 +421,7 @@ returns all stress periods (default).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

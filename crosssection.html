@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.plot.crosssection Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.plot.crosssection Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.plot.plotutil Module" href="plotutil.html"/>
         <link rel="prev" title="flopy.plot.map Module" href="map.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -198,46 +199,40 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.pyplot axis</p>
-<blockquote>
-<div><p>The plot axis.  If not provided it, plt.gca() will be used.</p>
-</div></blockquote>
-<p><strong>model</strong> : flopy.modflow object</p>
-<blockquote>
-<div><p>flopy model object. (Default is None)</p>
-</div></blockquote>
-<p><strong>dis</strong> : flopy.modflow.ModflowDis object</p>
-<blockquote>
-<div><p>flopy discretization object. (Default is None)</p>
-</div></blockquote>
-<p><strong>line</strong> : dict</p>
-<blockquote>
-<div><p>Dictionary with either “row”, “column”, or “line” key. If key
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot axis</span></dt>
+<dd><p class="first last">The plot axis.  If not provided it, plt.gca() will be used.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow object</span></dt>
+<dd><p class="first last">flopy model object. (Default is None)</p>
+</dd>
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.ModflowDis object</span></dt>
+<dd><p class="first last">flopy discretization object. (Default is None)</p>
+</dd>
+<dt><strong>line</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Dictionary with either “row”, “column”, or “line” key. If key
 is “row” or “column” key value should be the zero-based row or
 column index for cross-section. If key is “line” value should
 be an array of (x, y) tuples with vertices of cross-section. 
 Vertices should be in map coordinates consistent with xul,
 yul, and rotation.</p>
-</div></blockquote>
-<p><strong>xul</strong> : float</p>
-<blockquote>
-<div><p>x coordinate for upper left corner</p>
-</div></blockquote>
-<p><strong>yul</strong> : float</p>
-<blockquote>
-<div><p>y coordinate for upper left corner.  The default is the sum of the
+</dd>
+<dt><strong>xul</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">x coordinate for upper left corner</p>
+</dd>
+<dt><strong>yul</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">y coordinate for upper left corner.  The default is the sum of the
 delc array.</p>
-</div></blockquote>
-<p><strong>rotation</strong> : float</p>
-<blockquote>
-<div><p>Angle of grid rotation around the upper left corner.  A positive value
+</dd>
+<dt><strong>rotation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Angle of grid rotation around the upper left corner.  A positive value
 indicates clockwise rotation.  Angles are in degrees. Default is None</p>
-</div></blockquote>
-<p><strong>extent</strong> : tuple of floats</p>
-<blockquote class="last">
-<div><p>(xmin, xmax, ymin, ymax) will be used to specify axes limits.  If None
+</dd>
+<dt><strong>extent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of floats</span></dt>
+<dd><p class="first last">(xmin, xmax, ymin, ymax) will be used to specify axes limits.  If None
 then these will be calculated based on grid, coordinates, and rotation.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -250,27 +245,28 @@ then these will be calculated based on grid, coordinates, and rotation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>head</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to set top of patches to the minimum
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to set top of patches to the minimum
 of the top of a layer or the head value. Used to create
 patches that conform to water-level elevations.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.pyplot.contour</p>
-</div></blockquote>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.pyplot.contour</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>contour_set</strong> : matplotlib.pyplot.contour</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>contour_set</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot.contour</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -292,13 +288,17 @@ patches that conform to water-level elevations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.collections.LineCollection</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.collections.LineCollection</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>linecollection</strong> : matplotlib.collections.LineCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>linecollection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.LineCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -313,23 +313,25 @@ patches that conform to water-level elevations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>zpts</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>array of z elevations that correspond to the x, y, and horizontal
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>zpts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">array of z elevations that correspond to the x, y, and horizontal
 distance along the cross-section (self.xpts). Constructed using
 plotutil.cell_value_points().</p>
-</div></blockquote>
-<p><strong>plotarray</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to attach to the Patch Collection.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
-</div></blockquote>
+</dd>
+<dt><strong>plotarray</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to attach to the Patch Collection.</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>patches</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.PatchCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -344,27 +346,28 @@ plotutil.cell_value_points().</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>head</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to set top of patches to the minimum
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to set top of patches to the minimum
 of the top of a layer or the head value. Used to create
 patches that conform to water-level elevations.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
-</div></blockquote>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>patches</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.PatchCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -380,35 +383,34 @@ type from a flopy model</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ftype</strong> : string</p>
-<blockquote>
-<div><p>Package name string (‘WEL’, ‘GHB’, etc.). (Default is None)</p>
-</div></blockquote>
-<p><strong>package</strong> : flopy.modflow.Modflow package class instance</p>
-<blockquote>
-<div><p>flopy package class instance. (Default is None)</p>
-</div></blockquote>
-<p><strong>kper</strong> : int</p>
-<blockquote>
-<div><p>Stress period to plot</p>
-</div></blockquote>
-<p><strong>color</strong> : string</p>
-<blockquote>
-<div><p>matplotlib color string. (Default is None)</p>
-</div></blockquote>
-<p><strong>head</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to set top of patches to the minimum
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ftype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Package name string (‘WEL’, ‘GHB’, etc.). (Default is None)</p>
+</dd>
+<dt><strong>package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow package class instance</span></dt>
+<dd><p class="first last">flopy package class instance. (Default is None)</p>
+</dd>
+<dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Stress period to plot</p>
+</dd>
+<dt><strong>color</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">matplotlib color string. (Default is None)</p>
+</dd>
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to set top of patches to the minimum
 of the top of a layer or the head value. Used to create
 patches that conform to water-level elevations.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
-</div></blockquote>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>patches</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.PatchCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -423,47 +425,42 @@ patches that conform to water-level elevations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>frf</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s ‘flow right face’</p>
-</div></blockquote>
-<p><strong>fff</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s ‘flow front face’</p>
-</div></blockquote>
-<p><strong>flf</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s ‘flow lower face’ (Default is None.)</p>
-</div></blockquote>
-<p><strong>head</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>MODFLOW’s head array.  If not provided, then will assume confined
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>frf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s ‘flow right face’</p>
+</dd>
+<dt><strong>fff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s ‘flow front face’</p>
+</dd>
+<dt><strong>flf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s ‘flow lower face’ (Default is None.)</p>
+</dd>
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW’s head array.  If not provided, then will assume confined
 conditions in order to calculated saturated thickness.</p>
-</div></blockquote>
-<p><strong>kstep</strong> : int</p>
-<blockquote>
-<div><p>layer frequency to plot. (Default is 1.)</p>
-</div></blockquote>
-<p><strong>hstep</strong> : int</p>
-<blockquote>
-<div><p>horizontal frequency to plot. (Default is 1.)</p>
-</div></blockquote>
-<p><strong>normalize</strong> : bool</p>
-<blockquote>
-<div><p>boolean flag used to determine if discharge vectors should
+</dd>
+<dt><strong>kstep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">layer frequency to plot. (Default is 1.)</p>
+</dd>
+<dt><strong>hstep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">horizontal frequency to plot. (Default is 1.)</p>
+</dd>
+<dt><strong>normalize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">boolean flag used to determine if discharge vectors should
 be normalized using the magnitude of the specific discharge in each
 cell. (default is False)</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>Keyword arguments passed to plt.quiver()</p>
-</div></blockquote>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Keyword arguments passed to plt.quiver()</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>quiver</strong> : matplotlib.pyplot.quiver</p>
-<blockquote class="last">
-<div><p>Vectors</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>quiver</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot.quiver</span></dt>
+<dd><p class="first last">Vectors</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -478,27 +475,28 @@ cell. (default is False)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>head</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to set top of patches to the minimum
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to set top of patches to the minimum
 of the top of a layer or the head value. Used to create
 patches that conform to water-level elevations.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.pyplot.plot</p>
-</div></blockquote>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.pyplot.plot</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>plot</strong> : list containing matplotlib.fillbetween objects</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>plot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list containing matplotlib.fillbetween objects</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -513,13 +511,17 @@ patches that conform to water-level elevations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kwargs</strong> : ax, colors.  The remaining kwargs are passed into the</p>
-<blockquote>
-<div><p>the LineCollection constructor.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ax, colors.  The remaining kwargs are passed into the</span></dt>
+<dd><p class="first last">the LineCollection constructor.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>lc</strong> : matplotlib.collections.LineCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>lc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.LineCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -535,31 +537,31 @@ self.model</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ibound</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
-</div></blockquote>
-<p><strong>color_noflow</strong> : string</p>
-<blockquote>
-<div><p>(Default is ‘black’)</p>
-</div></blockquote>
-<p><strong>color_ch</strong> : string</p>
-<blockquote>
-<div><p>Color for constant heads (Default is ‘blue’.)</p>
-</div></blockquote>
-<p><strong>head</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to set top of patches to the minimum
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ibound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">ibound array to plot.  (Default is ibound in ‘BAS6’ package.)</p>
+</dd>
+<dt><strong>color_noflow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">(Default is ‘black’)</p>
+</dd>
+<dt><strong>color_ch</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Color for constant heads (Default is ‘blue’.)</p>
+</dd>
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to set top of patches to the minimum
 of the top of a layer or the head value. Used to create
 patches that conform to water-level elevations.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.collections.PatchCollection</p>
-</div></blockquote>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.collections.PatchCollection</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>patches</strong> : matplotlib.collections.PatchCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>patches</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.PatchCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -574,21 +576,23 @@ patches that conform to water-level elevations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Two- or three-dimensional array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>keyword arguments passed to matplotlib.pyplot.plot</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Two- or three-dimensional array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">keyword arguments passed to matplotlib.pyplot.plot</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>plot</strong> : list containing matplotlib.plot objects</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>plot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list containing matplotlib.plot objects</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -604,13 +608,17 @@ on minimum of cell top elevation (self.elev) or passed vs numpy.ndarray</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vs</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to plot.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>vs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to plot.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>zcentergrid</strong> : numpy.ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>zcentergrid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -626,13 +634,17 @@ on minimum of cell top elevation (self.elev) or passed vs numpy.ndarray</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vs</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Three-dimensional array to plot.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>vs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Three-dimensional array to plot.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>zpts</strong> : numpy.ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>zpts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -665,7 +677,7 @@ on minimum of cell top elevation (self.elev) or passed vs numpy.ndarray</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -687,7 +699,7 @@ on minimum of cell top elevation (self.elev) or passed vs numpy.ndarray</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

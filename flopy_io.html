@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.flopy_io Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.flopy_io Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.formattedfile Module" href="formattedfile.html"/>
         <link rel="prev" title="flopy.utils.binaryswrfile Module" href="binaryswrfile.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -221,17 +223,25 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>cbc_file</strong> : (str) cell budget file name</p>
-<p><strong>text</strong> : (str) text string of the desired flux type (e.g. “drains”)</p>
-<p><strong>precision</strong> : (optional str) precision of the cell budget file</p>
-<p><strong>model</strong> : (optional) BaseModel instance.  If passed, a new ModflowWel</p>
-<blockquote>
-<div><p>instance will be added to model</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool flag passed to CellBudgetFile</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>cbc_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(str) cell budget file name</span></dt>
+<dd></dd>
+<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(str) text string of the desired flux type (e.g. “drains”)</span></dt>
+<dd></dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(optional str) precision of the cell budget file</span></dt>
+<dd></dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(optional) BaseModel instance.  If passed, a new ModflowWel</span></dt>
+<dd><p class="first last">instance will be added to model</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool flag passed to CellBudgetFile</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">flopy.modflow.ModflowWel instance</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>flopy.modflow.ModflowWel instance</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -262,36 +272,33 @@ see <a class="reference external" href="http://stackoverflow.com/questions/18259
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file</strong> : file or str</p>
-<blockquote>
-<div><p>File, filename, or generator to read.</p>
-</div></blockquote>
-<p><strong>delimiter</strong> : str, optional</p>
-<blockquote>
-<div><p>The string used to separate values. By default, this is any whitespace.</p>
-</div></blockquote>
-<p><strong>dtype</strong> : data-type, optional</p>
-<blockquote>
-<div><p>Data-type of the resulting array</p>
-</div></blockquote>
-<p><strong>skiprows</strong> : int, optional</p>
-<blockquote>
-<div><p>Skip the first skiprows lines; default: 0.</p>
-</div></blockquote>
-<p><strong>use_pandas</strong> : bool</p>
-<blockquote>
-<div><p>If true, the much faster pandas.read_csv method is used.</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : dict</p>
-<blockquote>
-<div><p>Keyword arguments passed to numpy.loadtxt or pandas.read_csv.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file or str</span></dt>
+<dd><p class="first last">File, filename, or generator to read.</p>
+</dd>
+<dt><strong>delimiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">The string used to separate values. By default, this is any whitespace.</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">data-type, optional</span></dt>
+<dd><p class="first last">Data-type of the resulting array</p>
+</dd>
+<dt><strong>skiprows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">Skip the first skiprows lines; default: 0.</p>
+</dd>
+<dt><strong>use_pandas</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If true, the much faster pandas.read_csv method is used.</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Keyword arguments passed to numpy.loadtxt or pandas.read_csv.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : np.recarray</p>
-<blockquote class="last">
-<div><p>Numpy record array of file contents.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Numpy record array of file contents.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -306,33 +313,31 @@ see <a class="reference external" href="http://stackoverflow.com/questions/18259
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>line</strong> : str</p>
-<blockquote>
-<div><p>text string to parse.</p>
-</div></blockquote>
-<p><strong>ncol</strong> : int</p>
-<blockquote>
-<div><p>number of columns to parse from line. (default is 1)</p>
-</div></blockquote>
-<p><strong>length</strong> : int</p>
-<blockquote>
-<div><p>length of each column for fixed column widths. (default is 10)</p>
-</div></blockquote>
-<p><strong>ipos</strong> : list, int, or numpy array</p>
-<blockquote>
-<div><p>user-provided column widths. (default is None)</p>
-</div></blockquote>
-<p><strong>free</strong> : bool</p>
-<blockquote>
-<div><p>boolean indicating if sting is free format. ncol, length, and
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>line</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">text string to parse.</p>
+</dd>
+<dt><strong>ncol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">number of columns to parse from line. (default is 1)</p>
+</dd>
+<dt><strong>length</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">length of each column for fixed column widths. (default is 10)</p>
+</dd>
+<dt><strong>ipos</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list, int, or numpy array</span></dt>
+<dd><p class="first last">user-provided column widths. (default is None)</p>
+</dd>
+<dt><strong>free</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">boolean indicating if sting is free format. ncol, length, and
 ipos are not used if free is True. (default is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
-<blockquote class="last">
-<div><p>padded list containing data parsed from the passed text string</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">padded list containing data parsed from the passed text string</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -352,34 +357,32 @@ ipos are not used if free is True. (default is False)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>v</strong> : list, int, float, bool, or numpy array</p>
-<blockquote>
-<div><p>list, int, float, bool, or numpy array containing the data to be
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>v</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list, int, float, bool, or numpy array</span></dt>
+<dd><p class="first last">list, int, float, bool, or numpy array containing the data to be
 written to a string.</p>
-</div></blockquote>
-<p><strong>length</strong> : int</p>
-<blockquote>
-<div><p>length of each column for fixed column widths. (default is 10)</p>
-</div></blockquote>
-<p><strong>ipos</strong> : list, int, or numpy array</p>
-<blockquote>
-<div><p>user-provided column widths. (default is None)</p>
-</div></blockquote>
-<p><strong>free</strong> : bool</p>
-<blockquote>
-<div><p>boolean indicating if a free format string should be generated.
+</dd>
+<dt><strong>length</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">length of each column for fixed column widths. (default is 10)</p>
+</dd>
+<dt><strong>ipos</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list, int, or numpy array</span></dt>
+<dd><p class="first last">user-provided column widths. (default is None)</p>
+</dd>
+<dt><strong>free</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">boolean indicating if a free format string should be generated.
 length and ipos are not used if free is True. (default is False)</p>
-</div></blockquote>
-<p><strong>comment</strong> : str</p>
-<blockquote>
-<div><p>comment string to add to the end of the string</p>
-</div></blockquote>
+</dd>
+<dt><strong>comment</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">comment string to add to the end of the string</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : str</p>
-<blockquote class="last">
-<div><p>fixed or free format string generated using user-provided data</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">fixed or free format string generated using user-provided data</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -410,7 +413,7 @@ length and ipos are not used if free is True. (default is False)</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -432,7 +435,7 @@ length and ipos are not used if free is True. (default is False)</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

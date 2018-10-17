@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.export.utils Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.export.utils Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,10 +35,10 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.export.vtk Module" href="vtk.html"/>
-        <link rel="prev" title="flopy.export.netcdf Module" href="netcdf.html"/> 
+        <link rel="prev" title="flopy.utils.triangle Module" href="triangle.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -118,6 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="metadata.html">flopy.export.metadata Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="netcdf.html">flopy.export.netcdf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triangle.html">flopy.utils.triangle Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.export.utils Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vtk.html">flopy.export.vtk Module</a></li>
 </ul>
@@ -209,10 +211,11 @@ realization suffix to use in the netcdf variable names</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>mfl : MfList instance</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type (NetCdf only for now)</span></dt>
+<dd><p class="first last">mfl : MfList instance</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -244,12 +247,13 @@ oudic : dict {output_filename,flopy datafile/cellbudgetfile instance}</div></blo
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>t2d : Transient2d instance
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type (NetCdf only for now)</span></dt>
+<dd><p class="first last">t2d : Transient2d instance
 min_valid : minimum valid value
 max_valid : maximum valid value</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -264,12 +268,13 @@ max_valid : maximum valid value</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>u2d : Util2d instance
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type (NetCdf only for now)</span></dt>
+<dd><p class="first last">u2d : Util2d instance
 min_valid : minimum valid value
 max_valid : maximum valid value</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -284,12 +289,13 @@ max_valid : maximum valid value</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>u3d : Util3d instance
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type (NetCdf only for now)</span></dt>
+<dd><p class="first last">u3d : Util3d instance
 min_valid : minimum valid value
 max_valid : maximum valid value</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -311,7 +317,7 @@ max_valid : maximum valid value</p>
         <a href="vtk.html" class="btn btn-neutral float-right" title="flopy.export.vtk Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="netcdf.html" class="btn btn-neutral" title="flopy.export.netcdf Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="triangle.html" class="btn btn-neutral" title="flopy.utils.triangle Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -320,7 +326,7 @@ max_valid : maximum valid value</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -342,7 +348,7 @@ max_valid : maximum valid value</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

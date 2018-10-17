@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfnam Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfnam Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mftdis Module" href="mftdis.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfmvr Module" href="mfmvr.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -233,34 +235,30 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation</strong> : MFSimulation</p>
-<blockquote>
-<div><p>Simulation that this package is a part of. Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>simulation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulation</span></dt>
+<dd><p class="first last">Simulation that this package is a part of. Package is automatically
 added to simulation when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>continue_</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>continue_</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>continue (boolean) keyword flag to indicate that the simulation
 should continue even if one or more solutions do not converge.</li>
 </ul>
-</div></blockquote>
-<p><strong>nocheck</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>nocheck</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>nocheck (boolean) keyword flag to indicate that the model input check
 routines should not be called prior to each time step. Checks are
 performed by default.</li>
 </ul>
-</div></blockquote>
-<p><strong>memory_print_option</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>memory_print_option</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>memory_print_option (string) is a flag that controls printing of
 detailed memory manager usage to the end of the simulation list file.
 NONE means do not print detailed information. SUMMARY means print
@@ -268,17 +266,15 @@ only the total memory for each simulation component. ALL means print
 information for each variable stored in the memory manager. NONE is
 default if MEMORY_PRINT_OPTION is not specified.</li>
 </ul>
-</div></blockquote>
-<p><strong>tdis6</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>tdis6</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>tdis6 (string) is the name of the Temporal Discretization (TDIS)
 Input File.</li>
 </ul>
-</div></blockquote>
-<p><strong>models</strong> : [mtype, mfname, mname]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>models</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[mtype, mfname, mname]</span></dt>
+<dd><ul class="first last simple">
 <li>mtype (string) is the type of model to add to simulation.</li>
 <li>mfname (string) is the file name of the model name file.</li>
 <li>mname (string) is the user-assigned name of the model. The model name
@@ -286,10 +282,9 @@ cannot exceed 16 characters and must not have blanks within the name.
 The model name is case insensitive; any lowercase letters are
 converted and stored as upper case letters.</li>
 </ul>
-</div></blockquote>
-<p><strong>exchanges</strong> : [exgtype, exgfile, exgmnamea, exgmnameb]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>exchanges</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[exgtype, exgfile, exgmnamea, exgmnameb]</span></dt>
+<dd><ul class="first last simple">
 <li>exgtype (string) is the exchange type.</li>
 <li>exgfile (string) is the input file for the exchange.</li>
 <li>exgmnamea (string) is the name of the first model that is part of
@@ -297,39 +292,36 @@ this exchange.</li>
 <li>exgmnameb (string) is the name of the second model that is part of
 this exchange.</li>
 </ul>
-</div></blockquote>
-<p><strong>mxiter</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>mxiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>mxiter (integer) is the maximum number of outer iterations for this
 solution group. The default value is 1. If there is only one solution
 in the solution group, then MXITER must be 1.</li>
 </ul>
-</div></blockquote>
-<p><strong>solutiongroup</strong> : [slntype, slnfname, slnmnames]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>solutiongroup</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[slntype, slnfname, slnmnames]</span></dt>
+<dd><ul class="first last simple">
 <li>slntype (string) is the type of solution. The Integrated Model
 Solution (IMS6) is the only supported option in this version.</li>
 <li>slnfname (string) name of file containing solution input.</li>
 <li>slnmnames (string) is the array of model names to add to this
-solution.</li>
+solution. The number of model names is determined by the number of
+model names the user provides on this line.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -342,13 +334,17 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -381,7 +377,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -403,7 +399,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

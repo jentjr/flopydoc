@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.modpath.mp7particlegroup Module &mdash; flopy 3.2.10 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modpath.mp7sim Module" href="mp7sim.html"/>
+        <link rel="prev" title="flopy.modpath.mp7particledata Module" href="mp7particledata.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mp7.html">flopy.modpath.mp7 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7bas.html">flopy.modpath.mp7bas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7particledata.html">flopy.modpath.mp7particledata Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.modpath.mp7particlegroup Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7sim.html">flopy.modpath.mp7sim Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp.html">flopy.modpath.mp Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpbas.html">flopy.modpath.mpbas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpsim.html">flopy.modpath.mpsim Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.modpath.mp7particlegroup Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mp7particlegroup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.modpath.mp7particlegroup">
+<span id="flopy-modpath-mp7particlegroup-module"></span><h1>flopy.modpath.mp7particlegroup Module<a class="headerlink" href="#module-flopy.modpath.mp7particlegroup" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>mp7particlegroup module.  Contains the ParticleGroup, and</dt>
+<dd>ParticleGroupNodeTemplate classes.</dd>
+</dl>
+<dl class="class">
+<dt id="flopy.modpath.mp7particlegroup.ParticleGroup">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particlegroup.</code><code class="descname">ParticleGroup</code><span class="sig-paren">(</span><em>particlegroupname='PG1'</em>, <em>filename=None</em>, <em>releasedata=0.0</em>, <em>particledata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particlegroup.ParticleGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>ParticleGroup class to create MODPATH 7 particle group data for location
+input style 1. Location input style 1 is the most general type of particle
+group that requires the user to define the location of all particles and
+associated data (relative release time, drape, and optionally particle
+ids). Particledata locations can be specified by layer, row, column
+(locationstyle=1) or nodes (locationstyle=2) and are created with the
+ParticleData class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>particlegroupname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of particle group (default is ‘PG1’)</p>
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the external file that will contain the particle data.
+If filename is ‘’ or None the particle information for the
+particle group will be written to the MODPATH7 simulation
+file (default is None).</p>
+</dd>
+<dt><strong>releasedata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, int, list, or tuple</span></dt>
+<dd><p class="first last">If releasedata is a float or an int or a list/tuple with a single
+float or int, releaseoption is set to 1 and release data is the
+particle release time (default is 0.0).</p>
+</dd>
+<dt><strong>particledata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ParticleData</span></dt>
+<dd><p class="first last">ParticleData instance with particle data. If particledata is None,
+a ParticleData instance will be created with a node-based particle
+in the center of the first node in the model (default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">ParticleData</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">ParticleGroup</span><span class="p">(</span><span class="n">particledata</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modpath.mp7particlegroup.ParticleGroup.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>fp=None</em>, <em>ws='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particlegroup.ParticleGroup.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write MODPATH 7 particle data items 1 through 5</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+<dt><strong>ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Workspace for particle data</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.modpath.mp7particlegroup.ParticleGroupLRCTemplate">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particlegroup.</code><code class="descname">ParticleGroupLRCTemplate</code><span class="sig-paren">(</span><em>particlegroupname='PG1'</em>, <em>filename=None</em>, <em>releasedata=(0.0</em>, <em>)</em>, <em>particledata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particlegroup.ParticleGroupLRCTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Layer, row, column particle template class to create MODPATH 7 particle
+location input style 2. Particle locations for this template are specified
+by layer, row, column regions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>particlegroupname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of particle group</p>
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the external file that will contain the particle data.
+If filename is ‘’ or None the particle information for the
+particle group will be written to the MODPATH7 simulation
+file.</p>
+</dd>
+<dt><strong>releasedata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, int, list, or tuple</span></dt>
+<dd><p class="first last">If releasedata is a float or an int or a list/tuple with a single
+float or int, releaseoption is set to 1 and release data is the
+particle release time.</p>
+</dd>
+<dt><strong>particledata :</strong></dt>
+<dd><p class="first last">LRCParticleData object with input style 2 face and/or node particle
+data. If particledata is None a default LRCParticleData object is
+created (default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.modpath.mp7particlegroup.ParticleGroupLRCTemplate.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>fp=None</em>, <em>ws='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particlegroup.ParticleGroupLRCTemplate.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+<dt><strong>ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Workspace for particle data</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.modpath.mp7particlegroup.ParticleGroupNodeTemplate">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particlegroup.</code><code class="descname">ParticleGroupNodeTemplate</code><span class="sig-paren">(</span><em>particlegroupname='PG1'</em>, <em>filename=None</em>, <em>releasedata=(0.0</em>, <em>)</em>, <em>particledata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particlegroup.ParticleGroupNodeTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Node particle template class to create MODPATH 7 particle location
+input style 3. Particle locations for this template are specified
+by nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>particlegroupname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of particle group</p>
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the external file that will contain the particle data.
+If filename is ‘’ or None the particle information for the
+particle group will be written to the MODPATH7 simulation
+file.</p>
+</dd>
+<dt><strong>releasedata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, int, list, or tuple</span></dt>
+<dd><p class="first last">If releasedata is a float or an int or a list/tuple with a single
+float or int, releaseoption is set to 1 and release data is the
+particle release time.</p>
+</dd>
+<dt><strong>particledata :</strong></dt>
+<dd><p class="first last">NodeParticleData object with input style 3 face and/or node particle
+data. If particledata is None a default NodeParticleData object is
+created (default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.modpath.mp7particlegroup.ParticleGroupNodeTemplate.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>fp=None</em>, <em>ws='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particlegroup.ParticleGroupNodeTemplate.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+<dt><strong>ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Workspace for particle data</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mp7sim.html" class="btn btn-neutral float-right" title="flopy.modpath.mp7sim Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mp7particledata.html" class="btn btn-neutral" title="flopy.modpath.mp7particledata Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Oct 17, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfsto Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfsto Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfuzf Module" href="mfgwfuzf.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfsfr Module" href="mfgwfsfr.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -233,86 +235,77 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
-<blockquote>
-<div><p>Model that this package is a part of.  Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModel</span></dt>
+<dd><p class="first last">Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>save_flows</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>save_flows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>save_flows (boolean) keyword to indicate that cell-by-cell flow terms
 will be written to the file specified with “BUDGET SAVE FILE” in
 Output Control.</li>
 </ul>
-</div></blockquote>
-<p><strong>storagecoefficient</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>storagecoefficient</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>storagecoefficient (boolean) keyword to indicate that the SS array is
 read as storage coefficient rather than specific storage.</li>
 </ul>
-</div></blockquote>
-<p><strong>iconvert</strong> : [integer]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>iconvert</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
+<dd><ul class="first last simple">
 <li>iconvert (integer) is a flag for each cell that specifies whether or
 not a cell is convertible for the storage calculation. 0 indicates
 confined storage is used. :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>&gt;`0 indicates confined storage is
-used when head is above cell top and unconfined storage is used when
-head is below cell top. A mixed formulation is when when a cell
-converts from confined to unconfined (or vice versa) during a single
-time step.</li>
+used when head is above cell top and a mixed formulation of
+unconfined and confined storage is used when head is below cell top.</li>
 </ul>
-</div></blockquote>
-<p><strong>ss</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>ss</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
 <li>ss (double) is specific storage (or the storage coefficient if
-STORAGECOEFFICIENT is specified as an option).</li>
+STORAGECOEFFICIENT is specified as an option). Specific storage
+values must be greater than or equal to 0.</li>
 </ul>
-</div></blockquote>
-<p><strong>sy</strong> : [double]</p>
-<blockquote>
-<div><ul class="simple">
-<li>sy (double) is specific yield.</li>
+</dd>
+<dt><strong>sy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[double]</span></dt>
+<dd><ul class="first last simple">
+<li>sy (double) is specific yield. Specific yield values must be greater
+than or equal to 0. Specific yield does not have to be specified if
+there are no convertible cells (ICONVERT=0 in every cell).</li>
 </ul>
-</div></blockquote>
-<p><strong>steady_state</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>steady_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>steady-state (boolean) keyword to indicate that stress-period IPER is
 steady-state. Steady-state conditions will apply until the TRANSIENT
 keyword is specified in a subsequent BEGIN PERIOD block.</li>
 </ul>
-</div></blockquote>
-<p><strong>transient</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>transient</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>transient (boolean) keyword to indicate that stress-period IPER is
 transient. Transient conditions will apply until the STEADY-STATE
 keyword is specified in a subsequent BEGIN PERIOD block.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -325,13 +318,17 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -364,7 +361,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -386,7 +383,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

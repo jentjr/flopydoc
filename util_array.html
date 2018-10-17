@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.util_array Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.util_array Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="prev" title="flopy.utils.sfroutputfile Module" href="sfroutputfile.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -127,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -228,52 +230,48 @@ MODFLOW and flopy</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>u2d</strong> : Util2d instance</p>
-<p><strong>python</strong> : str (optional)</p>
-<blockquote>
-<div><p>python-style output format descriptor e.g. {0:15.6e}</p>
-</div></blockquote>
-<p><strong>fortran</strong> : str (optional)</p>
-<blockquote class="last">
-<div><p>fortran style output format descriptor e.g. (2E15.6)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>u2d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Util2d instance</span></dt>
+<dd></dd>
+<dt><strong>python</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str (optional)</span></dt>
+<dd><p class="first last">python-style output format descriptor e.g. {0:15.6e}</p>
+</dd>
+<dt><strong>fortran</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str (optional)</span></dt>
+<dd><p class="first last">fortran style output format descriptor e.g. (2E15.6)</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="16%" />
-<col width="84%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>fortran</strong></td>
-<td>(str) fortran format output descriptor (e.g. (100G15.6)</td>
-</tr>
-<tr class="row-even"><td><strong>py</strong></td>
-<td>(str) python format output descriptor (e.g. “{0:15.6E}”)</td>
-</tr>
-<tr class="row-odd"><td><strong>numpy</strong></td>
-<td>(str) numpy format output descriptor (e.g. “%15.6e”)</td>
-</tr>
-<tr class="row-even"><td><strong>npl</strong></td>
-<td>(int) number if items per line of output</td>
-</tr>
-<tr class="row-odd"><td><strong>width</strong></td>
-<td>(int) the width of the formatted numeric output</td>
-</tr>
-<tr class="row-even"><td><strong>decimal</strong></td>
-<td>(int) the number of decimal digits in the numeric output</td>
-</tr>
-<tr class="row-odd"><td><strong>format</strong></td>
-<td>(str) the output format type e.g. I, G, E, etc</td>
-</tr>
-<tr class="row-even"><td><strong>free</strong></td>
-<td>(bool) free format flag</td>
-</tr>
-<tr class="row-odd"><td><strong>binary</strong></td>
-<td>(bool) binary format flag</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fortran</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">fortran format output descriptor (e.g. (100G15.6)</p>
+</dd>
+<dt><strong>py</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">python format output descriptor (e.g. “{0:15.6E}”)</p>
+</dd>
+<dt><strong>numpy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">numpy format output descriptor (e.g. “%15.6e”)</p>
+</dd>
+<dt><strong>npl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">number if items per line of output</p>
+</dd>
+<dt><strong>width</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">the width of the formatted numeric output</p>
+</dd>
+<dt><strong>decimal</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">the number of decimal digits in the numeric output</p>
+</dd>
+<dt><strong>format</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the output format type e.g. I, G, E, etc</p>
+</dd>
+<dt><strong>free</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">free format flag</p>
+</dd>
+<dt><strong>binary</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">binary format flag</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -284,7 +282,7 @@ MODFLOW and flopy</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor"><code class="xref py py-obj docutils literal"><span class="pre">decode_fortran_descriptor</span></code></a>(fd)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_fortran_descriptor</span></code></a>()</td>
 <td>Decode fortran descriptor</td>
 </tr>
 </tbody>
@@ -302,15 +300,23 @@ MODFLOW and flopy</p>
 </table>
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor">
-<em class="property">static </em><code class="descname">decode_fortran_descriptor</code><span class="sig-paren">(</span><em>fd</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">decode_fortran_descriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode fortran descriptor</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fd</strong> : str</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>npl, fmt, width, decimal</strong> : int, str, int, int</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>npl, fmt, width, decimal</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, str, int, int</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -327,79 +333,65 @@ just a thin wrapper around Util2d</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>shape</strong> : length 2 tuple</p>
-<blockquote>
-<div><p>shape of the 2-D transient arrays, typically (nrow,ncol)</p>
-</div></blockquote>
-<p><strong>dtype</strong> : [np.int,np.float32,np.bool]</p>
-<blockquote>
-<div><p>the type of the data</p>
-</div></blockquote>
-<p><strong>value</strong> : variable</p>
-<blockquote>
-<div><p>the data to be assigned to the 2-D arrays. Typically a dict
+</dd>
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">length 2 tuple</span></dt>
+<dd><p class="first last">shape of the 2-D transient arrays, typically (nrow,ncol)</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[np.int32, np.float32, np.bool]</span></dt>
+<dd><p class="first last">the type of the data</p>
+</dd>
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">variable</span></dt>
+<dd><p class="first last">the data to be assigned to the 2-D arrays. Typically a dict
 of {kper:value}, where kper is the zero-based stress period
 to assign a value to.  Value should be cast-able to Util2d instance
 can be a scalar, list, or ndarray is the array value is constant in
 time.</p>
-</div></blockquote>
-<p><strong>name</strong> : string</p>
-<blockquote>
-<div><p>name of the property, used for writing comments to input files and
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the property, used for writing comments to input files and
 for forming external files names (if needed)</p>
-</div></blockquote>
-<p><strong>fmtin</strong> : string</p>
-<blockquote>
-<div><p>modflow fmtin variable (optional).  (the default is None)</p>
-</div></blockquote>
-<p><strong>cnstnt</strong> : string</p>
-<blockquote>
-<div><p>modflow cnstnt variable (optional) (the default is 1.0)</p>
-</div></blockquote>
-<p><strong>iprn</strong> : int</p>
-<blockquote>
-<div><p>modflow iprn variable (optional) (the default is -1)</p>
-</div></blockquote>
-<p><strong>locat</strong> : int</p>
-<blockquote>
-<div><p>modflow locat variable (optional) (the default is None).  If the model
+</dd>
+<dt><strong>fmtin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow fmtin variable (optional).  (the default is None)</p>
+</dd>
+<dt><strong>cnstnt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow cnstnt variable (optional) (the default is 1.0)</p>
+</dd>
+<dt><strong>iprn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">modflow iprn variable (optional) (the default is -1)</p>
+</dd>
+<dt><strong>locat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">modflow locat variable (optional) (the default is None).  If the model
 instance does not support free format and the
 external flag is not set and the value is a simple scalar,
 then locat must be explicitly passed as it is the unit number</p>
-<blockquote>
+<blockquote class="last">
 <div><p>to read the array from</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>ext_filename</strong> : string</p>
-<blockquote>
-<div><p>the external filename to write the array representation to
+</dd>
+<dt><strong>ext_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the external filename to write the array representation to
 (optional) (the default is None) .
 If type(value) is a string and is an accessible filename,
 the ext_filename is reset to value.</p>
-</div></blockquote>
-<p><strong>bin</strong> : bool</p>
-<blockquote class="last">
-<div><p>flag to control writing external arrays as binary (optional)
+</dd>
+<dt><strong>bin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">flag to control writing external arrays as binary (optional)
 (the default is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>transient_2ds</strong></td>
-<td>(dict{kper:Util2d}) the transient sequence of Util2d objects</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>transient_2ds</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict{kper:Util2d}</span></dt>
+<dd><p class="first last">the transient sequence of Util2d objects</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -410,8 +402,8 @@ the ext_filename is reset to value.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Transient2d.get_kper_entry" title="flopy.utils.util_array.Transient2d.get_kper_entry"><code class="xref py py-obj docutils literal"><span class="pre">get_kper_entry</span></code></a>(kper)</td>
-<td>get the file entry info for a given kper</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Transient2d.get_kper_entry" title="flopy.utils.util_array.Transient2d.get_kper_entry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kper_entry</span></code></a>(kper)</td>
+<td>get the file entry info for a given kper returns (itmp,file entry string from Util2d)</td>
 </tr>
 </tbody>
 </table>
@@ -456,20 +448,18 @@ returns (itmp,file entry string from Util2d)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename_base</strong> : str</p>
-<blockquote>
-<div><p>Base file name that will be used to automatically generate file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
-</div></blockquote>
-<p><strong>file_extension</strong> : str</p>
-<blockquote>
-<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+</dd>
+<dt><strong>file_extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is ‘png’)</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
 <dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
@@ -509,20 +499,22 @@ kper=’all’ then data for all stress period will be
 extracted. (default is zero).</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis is returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">rch</span><span class="o">.</span><span class="n">rech</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -540,19 +532,23 @@ a list of matplotlib.pyplot.axis is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">rch</span><span class="o">.</span><span class="n">rech</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s1">&#39;test_rech.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -570,79 +566,65 @@ just a thin wrapper around Util3d</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>shape</strong> : length 3 tuple</p>
-<blockquote>
-<div><p>shape of the 3-D transient arrays, typically (nlay,nrow,ncol)</p>
-</div></blockquote>
-<p><strong>dtype</strong> : [np.int,np.float32,np.bool]</p>
-<blockquote>
-<div><p>the type of the data</p>
-</div></blockquote>
-<p><strong>value</strong> : variable</p>
-<blockquote>
-<div><p>the data to be assigned to the 3-D arrays. Typically a dict
+</dd>
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">length 3 tuple</span></dt>
+<dd><p class="first last">shape of the 3-D transient arrays, typically (nlay,nrow,ncol)</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[np.int32, np.float32, np.bool]</span></dt>
+<dd><p class="first last">the type of the data</p>
+</dd>
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">variable</span></dt>
+<dd><p class="first last">the data to be assigned to the 3-D arrays. Typically a dict
 of {kper:value}, where kper is the zero-based stress period
 to assign a value to.  Value should be cast-able to Util2d instance
 can be a scalar, list, or ndarray is the array value is constant in
 time.</p>
-</div></blockquote>
-<p><strong>name</strong> : string</p>
-<blockquote>
-<div><p>name of the property, used for writing comments to input files and
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the property, used for writing comments to input files and
 for forming external files names (if needed)</p>
-</div></blockquote>
-<p><strong>fmtin</strong> : string</p>
-<blockquote>
-<div><p>modflow fmtin variable (optional).  (the default is None)</p>
-</div></blockquote>
-<p><strong>cnstnt</strong> : string</p>
-<blockquote>
-<div><p>modflow cnstnt variable (optional) (the default is 1.0)</p>
-</div></blockquote>
-<p><strong>iprn</strong> : int</p>
-<blockquote>
-<div><p>modflow iprn variable (optional) (the default is -1)</p>
-</div></blockquote>
-<p><strong>locat</strong> : int</p>
-<blockquote>
-<div><p>modflow locat variable (optional) (the default is None).  If the model
+</dd>
+<dt><strong>fmtin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow fmtin variable (optional).  (the default is None)</p>
+</dd>
+<dt><strong>cnstnt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow cnstnt variable (optional) (the default is 1.0)</p>
+</dd>
+<dt><strong>iprn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">modflow iprn variable (optional) (the default is -1)</p>
+</dd>
+<dt><strong>locat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">modflow locat variable (optional) (the default is None).  If the model
 instance does not support free format and the
 external flag is not set and the value is a simple scalar,
 then locat must be explicitly passed as it is the unit number</p>
-<blockquote>
+<blockquote class="last">
 <div><p>to read the array from</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>ext_filename</strong> : string</p>
-<blockquote>
-<div><p>the external filename to write the array representation to
+</dd>
+<dt><strong>ext_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the external filename to write the array representation to
 (optional) (the default is None) .
 If type(value) is a string and is an accessible filename,
 the ext_filename is reset to value.</p>
-</div></blockquote>
-<p><strong>bin</strong> : bool</p>
-<blockquote class="last">
-<div><p>flag to control writing external arrays as binary (optional)
+</dd>
+<dt><strong>bin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">flag to control writing external arrays as binary (optional)
 (the default is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>transient_3ds</strong></td>
-<td>(dict{kper:Util3d}) the transient sequence of Util3d objects</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>transient_3ds</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict{kper:Util3d}</span></dt>
+<dd><p class="first last">the transient sequence of Util3d objects</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -653,8 +635,8 @@ the ext_filename is reset to value.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Transient3d.get_kper_entry" title="flopy.utils.util_array.Transient3d.get_kper_entry"><code class="xref py py-obj docutils literal"><span class="pre">get_kper_entry</span></code></a>(kper)</td>
-<td>get the file entry info for a given kper</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Transient3d.get_kper_entry" title="flopy.utils.util_array.Transient3d.get_kper_entry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kper_entry</span></code></a>(kper)</td>
+<td>get the file entry info for a given kper returns (itmp,file entry string from Util3d)</td>
 </tr>
 </tbody>
 </table>
@@ -676,67 +658,58 @@ returns (itmp,file entry string from Util3d)</p>
 <dl class="class">
 <dt id="flopy.utils.util_array.Util2d">
 <em class="property">class </em><code class="descclassname">flopy.utils.util_array.</code><code class="descname">Util2d</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>value</em>, <em>name</em>, <em>fmtin=None</em>, <em>cnstnt=1.0</em>, <em>iprn=-1</em>, <em>ext_filename=None</em>, <em>locat=None</em>, <em>bin=False</em>, <em>how=None</em>, <em>array_free_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Util2d class for handling 2-D model arrays</p>
+<dd><p>Util2d class for handling 1- or 2-D model arrays</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>shape</strong> : lenght 3 tuple</p>
-<blockquote>
-<div><p>shape of the 3-D array</p>
-</div></blockquote>
-<p><strong>dtype</strong> : [np.int,np.float32,np.bool]</p>
-<blockquote>
-<div><p>the type of the data</p>
-</div></blockquote>
-<p><strong>value</strong> : variable</p>
-<blockquote>
-<div><p>the data to be assigned to the 2-D array.
+</dd>
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">Shape of the 1- or 2-D array</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[np.int32, np.float32, np.bool]</span></dt>
+<dd><p class="first last">the type of the data</p>
+</dd>
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">variable</span></dt>
+<dd><p class="first last">the data to be assigned to the 1- or 2-D array.
 can be a scalar, list, ndarray, or filename</p>
-</div></blockquote>
-<p><strong>name</strong> : string</p>
-<blockquote>
-<div><p>name of the property (optional). (the default is None</p>
-</div></blockquote>
-<p><strong>fmtin</strong> : string</p>
-<blockquote>
-<div><p>modflow fmtin variable (optional).  (the default is None)</p>
-</div></blockquote>
-<p><strong>cnstnt</strong> : string</p>
-<blockquote>
-<div><p>modflow cnstnt variable (optional) (the default is 1.0)</p>
-</div></blockquote>
-<p><strong>iprn</strong> : int</p>
-<blockquote>
-<div><p>modflow iprn variable (optional) (the default is -1)</p>
-</div></blockquote>
-<p><strong>locat</strong> : int</p>
-<blockquote>
-<div><p>modflow locat variable (optional) (the default is None).  If the model
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the property (optional). (the default is None</p>
+</dd>
+<dt><strong>fmtin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow fmtin variable (optional).  (the default is None)</p>
+</dd>
+<dt><strong>cnstnt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow cnstnt variable (optional) (the default is 1.0)</p>
+</dd>
+<dt><strong>iprn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">modflow iprn variable (optional) (the default is -1)</p>
+</dd>
+<dt><strong>locat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">modflow locat variable (optional) (the default is None).  If the model
 instance does not support free format and the
 external flag is not set and the value is a simple scalar,
 then locat must be explicitly passed as it is the unit number</p>
-<blockquote>
+<blockquote class="last">
 <div><p>to read the array from)</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>ext_filename</strong> : string</p>
-<blockquote>
-<div><p>the external filename to write the array representation to
+</dd>
+<dt><strong>ext_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the external filename to write the array representation to
 (optional) (the default is None) .
 If type(value) is a string and is an accessible filename,
 the ext_filename is reset to value.</p>
-</div></blockquote>
-<p><strong>bin</strong> : bool</p>
-<blockquote class="last">
-<div><p>flag to control writing external arrays as binary (optional)
+</dd>
+<dt><strong>bin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">flag to control writing external arrays as binary (optional)
 (the default is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -755,29 +728,23 @@ holds the array is created from the name attribute.  If the model supports
 Otherwise, a unit number and filename is added to the name file.</p>
 <p>If value is an array and model.external_path is None, then the array is
 written internally to the model input file.</p>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Util2d.array" title="flopy.utils.util_array.Util2d.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a></td>
-<td>Get the COPY of array representation of value attribute with the effects of the control record multiplier applied.</td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="7%" />
-<col width="93%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>how</strong></td>
-<td>(str) the str flag to control how the array is written to the model input files e.g. “constant”,”internal”,”external”,”openclose”</td>
-</tr>
-<tr class="row-even"><td><strong>format</strong></td>
-<td>(ArrayFormat object) controls the ASCII representation of the numeric array</td>
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#flopy.utils.util_array.Util2d.array" title="flopy.utils.util_array.Util2d.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray</span></dt>
+<dd><p class="first last">Get the COPY of array representation of value attribute with the effects of the control record multiplier applied.</p>
+</dd>
+<dt><strong>how</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the str flag to control how the array is written to the model
+input files e.g. “constant”,”internal”,”external”,”openclose”</p>
+</dd>
+<dt><strong>format</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ArrayFormat object</span></dt>
+<dd><p class="first last">controls the ASCII representation of the numeric array</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -802,10 +769,11 @@ effects of the control record multiplier applied.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>array</strong> : numpy.ndarray</p>
-<blockquote class="last">
-<div><p>Copy of the array with the multiplier applied.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>array</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Copy of the array with the multiplier applied.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -814,7 +782,7 @@ effects of the control record multiplier applied.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.array2string">
-<em class="property">static </em><code class="descname">array2string</code><span class="sig-paren">(</span><em>shape</em>, <em>data</em>, <em>fortran_format='(FREE)'</em>, <em>python_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.array2string" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">array2string</code><span class="sig-paren">(</span><em>data</em>, <em>fortran_format='(FREE)'</em>, <em>python_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.array2string" title="Permalink to this definition">¶</a></dt>
 <dd><p>return a string representation of
 a (possibly wrapped format) array from a file
 (self.__value) and casts to the proper type (self.dtype)
@@ -825,32 +793,116 @@ may touch.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f_handle</em>, <em>model</em>, <em>shape</em>, <em>dtype</em>, <em>name</em>, <em>ext_unit_dict=None</em>, <em>array_free_format=None</em>, <em>array_format='modflow'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>name</em>, <em>ext_unit_dict=None</em>, <em>array_free_format=None</em>, <em>array_format='modflow'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>functionality to load Util2d instance from an existing
 model input file.
 external and internal record types must be fully loaded
-if you are using fixed format record types,make sure 
+if you are using fixed format record types,make sure
 ext_unit_dict has been initialized from the NAM file</p>
 </dd></dl>
 
 <dl class="staticmethod">
+<dt id="flopy.utils.util_array.Util2d.load_bin">
+<em class="property">static </em><code class="descname">load_bin</code><span class="sig-paren">(</span><em>file_in</em>, <em>dtype</em>, <em>bintype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load unformatted file to a 2-D array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">One or two array dimensions</p>
+</dd>
+<dt><strong>file_in</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file or str</span></dt>
+<dd><p class="first last">Filename or file handle</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.int32 or np.float32</span></dt>
+<dd><p class="first last">Data type of unformatted file and Numpy array; use np.int32 for
+Fortran’s INTEGER, and np.float32 for Fortran’s REAL data types.</p>
+</dd>
+<dt><strong>bintype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Normally ‘Head’</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>2-D array</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This method is similar to MODFLOW’s U2DREL and U2DINT subroutines,
+but only for unformatted files.</p>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load_block">
-<em class="property">static </em><code class="descname">load_block</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_block" title="Permalink to this definition">¶</a></dt>
-<dd><p>load a (possibly wrapped format) array from a mt3d block
-(self.__value) and casts to the proper type (self.dtype)
-made static to support the load functionality
-this routine now supports fixed format arrays where the numbers
-may touch.</p>
+<em class="property">static </em><code class="descname">load_block</code><span class="sig-paren">(</span><em>file_in</em>, <em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load block format from a MT3D file to a 2-D array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">Array dimensions (nrow, ncol)</p>
+</dd>
+<dt><strong>file_in</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file or str</span></dt>
+<dd><p class="first last">Filename or file handle</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.int32 or np.float32</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>2-D array</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load_txt">
-<em class="property">static </em><code class="descname">load_txt</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em>, <em>fmtin</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_txt" title="Permalink to this definition">¶</a></dt>
-<dd><p>load a (possibly wrapped format) array from a file
-(self.__value) and casts to the proper type (self.dtype)
-made static to support the load functionality 
-this routine now supports fixed format arrays where the numbers
-may touch.</p>
+<em class="property">static </em><code class="descname">load_txt</code><span class="sig-paren">(</span><em>file_in</em>, <em>dtype</em>, <em>fmtin</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load formatted file to a 1-D or 2-D array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of int</span></dt>
+<dd><p class="first last">One or two array dimensions</p>
+</dd>
+<dt><strong>file_in</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file or str</span></dt>
+<dd><p class="first last">Filename or file handle</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.int32 or np.float32</span></dt>
+<dd></dd>
+<dt><strong>fmtin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Fortran array format descriptor, ‘(FREE)’ or e.g. ‘(10G11.4)’</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>1-D or 2-D array</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This method is similar to MODFLOW’s U1DREL, U1DINT, U2DREL and U2DINT
+subroutines, but only for formatted files.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -861,7 +913,11 @@ may touch.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">file_path (str): path relative to the name file</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file_path (str): path relative to the name file</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -869,7 +925,7 @@ may touch.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.parse_control_record">
-<em class="property">static </em><code class="descname">parse_control_record</code><span class="sig-paren">(</span><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;class 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_control_record</code><span class="sig-paren">(</span><em>current_unit=None</em>, <em>dtype=&lt;class 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses a control record when reading an existing file
 rectifies fixed to free format
 current_unit (optional) indicates the unit number of the file being parsed</p>
@@ -890,25 +946,22 @@ lot of defense here, so we can make assumptions later</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>title</strong> : str</p>
-<blockquote>
-<div><p>Plot title. If a plot title is not provide one will be
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>title</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Plot title. If a plot title is not provide one will be
 created based on data name (self.name). (default is None)</p>
-</div></blockquote>
-<p><strong>filename_base</strong> : str</p>
-<blockquote>
-<div><p>Base file name that will be used to automatically generate file
+</dd>
+<dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
-</div></blockquote>
-<p><strong>file_extension</strong> : str</p>
-<blockquote>
-<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+</dd>
+<dt><strong>file_extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is ‘png’)</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
 <dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
@@ -943,20 +996,22 @@ on the figure. (default is False)</p>
 <dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis is returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -992,19 +1047,23 @@ record multiplier - this method is used primarily for writing model input files<
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">as_shapefile</span><span class="p">(</span><span class="s1">&#39;test_top.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1024,73 +1083,59 @@ record multiplier - this method is used primarily for writing model input files<
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>shape</strong> : length 3 tuple</p>
-<blockquote>
-<div><p>shape of the 3-D array, typically (nlay,nrow,ncol)</p>
-</div></blockquote>
-<p><strong>dtype</strong> : [np.int,np.float32,np.bool]</p>
-<blockquote>
-<div><p>the type of the data</p>
-</div></blockquote>
-<p><strong>value</strong> : variable</p>
-<blockquote>
-<div><p>the data to be assigned to the 3-D array.
+</dd>
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">length 3 tuple</span></dt>
+<dd><p class="first last">shape of the 3-D array, typically (nlay,nrow,ncol)</p>
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[np.int32, np.float32, np.bool]</span></dt>
+<dd><p class="first last">the type of the data</p>
+</dd>
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">variable</span></dt>
+<dd><p class="first last">the data to be assigned to the 3-D array.
 can be a scalar, list, or ndarray</p>
-</div></blockquote>
-<p><strong>name</strong> : string</p>
-<blockquote>
-<div><p>name of the property, used for writing comments to input files</p>
-</div></blockquote>
-<p><strong>fmtin</strong> : string</p>
-<blockquote>
-<div><p>modflow fmtin variable (optional).  (the default is None)</p>
-</div></blockquote>
-<p><strong>cnstnt</strong> : string</p>
-<blockquote>
-<div><p>modflow cnstnt variable (optional) (the default is 1.0)</p>
-</div></blockquote>
-<p><strong>iprn</strong> : int</p>
-<blockquote>
-<div><p>modflow iprn variable (optional) (the default is -1)</p>
-</div></blockquote>
-<p><strong>locat</strong> : int</p>
-<blockquote>
-<div><p>modflow locat variable (optional) (the default is None).  If the model
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the property, used for writing comments to input files</p>
+</dd>
+<dt><strong>fmtin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow fmtin variable (optional).  (the default is None)</p>
+</dd>
+<dt><strong>cnstnt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">modflow cnstnt variable (optional) (the default is 1.0)</p>
+</dd>
+<dt><strong>iprn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">modflow iprn variable (optional) (the default is -1)</p>
+</dd>
+<dt><strong>locat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">modflow locat variable (optional) (the default is None).  If the model
 instance does not support free format and the
 external flag is not set and the value is a simple scalar,
 then locat must be explicitly passed as it is the unit number
 to read the array from</p>
-</div></blockquote>
-<p><strong>ext_filename</strong> : string</p>
-<blockquote>
-<div><p>the external filename to write the array representation to
+</dd>
+<dt><strong>ext_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the external filename to write the array representation to
 (optional) (the default is None) .
 If type(value) is a string and is an accessible filename, the
 ext_filename is reset to value.</p>
-</div></blockquote>
-<p><strong>bin</strong> : bool</p>
-<blockquote class="last">
-<div><p>flag to control writing external arrays as binary (optional)
+</dd>
+<dt><strong>bin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">flag to control writing external arrays as binary (optional)
 (the defaut is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.Util3d.array" title="flopy.utils.util_array.Util3d.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a></td>
-<td>Return a numpy array of the 3D shape.</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#flopy.utils.util_array.Util3d.array" title="flopy.utils.util_array.Util3d.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray</span></dt>
+<dd><p class="first last">Return a numpy array of the 3D shape.</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1121,25 +1166,22 @@ return an array of size nodes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename_base</strong> : str</p>
-<blockquote>
-<div><p>Base file name that will be used to automatically generate file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
-</div></blockquote>
-<p><strong>file_extension</strong> : str</p>
-<blockquote>
-<div><p>Valid matplotlib.pyplot file extension for savefig(). Only used
+</dd>
+<dt><strong>file_extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is ‘png’)</p>
-</div></blockquote>
-<p><strong>mflay</strong> : int</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
 <dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
@@ -1174,20 +1216,22 @@ on the figure. (default is False)</p>
 <dd><p class="first last">List of unique values to be excluded from the plot.</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis is returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">hk</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -1205,19 +1249,23 @@ a list of matplotlib.pyplot.axis is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">hk</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1255,7 +1303,7 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -1277,7 +1325,7 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

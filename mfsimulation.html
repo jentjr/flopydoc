@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.mfsimulation Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.mfsimulation Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,8 +35,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mf6.modflow.mfgnc Module" href="mfgnc.html"/>
         <link rel="prev" title="flopy.mf6.mfpackage Module" href="mfpackage.html"/> 
 
   
@@ -66,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -110,10 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="mfbase.html">flopy.mf6.mfbase Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfmodel.html">flopy.mf6.mfmodel Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.mfsimulation Module</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -149,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -224,666 +225,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-flopy.mf6.mfsimulation">
-<span id="flopy-mf6-mfsimulation-module"></span><h1>flopy.mf6.mfsimulation Module<a class="headerlink" href="#module-flopy.mf6.mfsimulation" title="Permalink to this headline">¶</a></h1>
-<p>mfsimulation module.  contains the MFSimulation class</p>
-<dl class="class">
-<dt id="flopy.mf6.mfsimulation.MFSimulation">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfsimulation.</code><code class="descname">MFSimulation</code><span class="sig-paren">(</span><em>sim_name='modflowtest'</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>sim_ws='.'</em>, <em>sim_tdis_file='modflow6.tdis'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation" title="Permalink to this definition">¶</a></dt>
-<dd><p>MODFLOW Simulation Class.  Entry point into any MODFLOW simulation.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sim_name</strong> : string</p>
-<blockquote>
-<div><p>name of the simulation.</p>
-</div></blockquote>
-<p><strong>sim_nam_file</strong> : string</p>
-<blockquote>
-<div><p>relative to the simulation name file from the simulation working
-folder.</p>
-</div></blockquote>
-<p><strong>version</strong> : string</p>
-<blockquote>
-<div><p>MODFLOW version</p>
-</div></blockquote>
-<p><strong>exe_name</strong> : string</p>
-<blockquote>
-<div><p>relative path to MODFLOW executable from the simulation working folder</p>
-</div></blockquote>
-<p><strong>sim_ws</strong> : string</p>
-<blockquote>
-<div><p>path to simulation working folder</p>
-</div></blockquote>
-<p><strong>sim_tdis_file</strong> : string</p>
-<blockquote class="last">
-<div><p>relative path to MODFLOW TDIS file</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">flopy6</span><span class="o">.</span><span class="n">mfsimulation</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;my simulation&#39;</span><span class="p">,</span> <span class="s1">&#39;simulation.nam&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="3%" />
-<col width="97%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>sim_name</strong></td>
-<td>(string) name of the simulation</td>
-</tr>
-<tr class="row-even"><td><strong>models</strong></td>
-<td>(OrderedDict) all models in the simulation</td>
-</tr>
-<tr class="row-odd"><td><strong>exchanges</strong></td>
-<td>(list) all exchange packages in the simulation</td>
-</tr>
-<tr class="row-even"><td><strong>imsfiles</strong></td>
-<td>(list) all ims packages in the simulation</td>
-</tr>
-<tr class="row-odd"><td><strong>mfdata</strong></td>
-<td>(OrderedDict) all variables defined in the simulation.  the key for a variable is defined as a tuple.  for “simulation level” packages the tuple starts with the package type, followed by the block name, followed by the variable name (“TDIS”, “DIMENSIONS”, “nper”).  for “model level” packages the tuple starts with the model name, followed by the package name, followed by the block name, followed by the variable name ( “MyModelName”, “DIS6”, “OPTIONS”, “length_units”).</td>
-</tr>
-<tr class="row-even"><td><strong>name_file</strong></td>
-<td>(MFPackage) simulation name file</td>
-</tr>
-<tr class="row-odd"><td><strong>tdis_file</strong></td>
-<td>simulation tdis file</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfsimulation.MFSimulation.load" title="flopy.mf6.mfsimulation.MFSimulation.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>([sim_name,&nbsp;version,&nbsp;exe_name,&nbsp;sim_ws,&nbsp;…])</td>
-<td>Load an existing model.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfsimulation.MFSimulation.write_simulation" title="flopy.mf6.mfsimulation.MFSimulation.write_simulation"><code class="xref py py-obj docutils literal"><span class="pre">write_simulation</span></code></a>([ext_file_action])</td>
-<td>writes the simulation to files</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfsimulation.MFSimulation.get_model" title="flopy.mf6.mfsimulation.MFSimulation.get_model"><code class="xref py py-obj docutils literal"><span class="pre">get_model</span></code></a>([model_name,&nbsp;name_file,&nbsp;model_type])</td>
-<td>Load an existing model.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfsimulation.MFSimulation.get_package" title="flopy.mf6.mfsimulation.MFSimulation.get_package"><code class="xref py py-obj docutils literal"><span class="pre">get_package</span></code></a>([name])</td>
-<td>Get a package.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfsimulation.MFSimulation.is_valid" title="flopy.mf6.mfsimulation.MFSimulation.is_valid"><code class="xref py py-obj docutils literal"><span class="pre">is_valid</span></code></a>()</td>
-<td>check all packages and models in the simulation to verify validity</td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="83%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>set_sim_path</strong></td>
-<td>((path) set the file path to the root simulation folder and updates all model file paths</td>
-</tr>
-<tr class="row-even"><td><strong>add_model</strong></td>
-<td>((model) add model to the simulation</td>
-</tr>
-<tr class="row-odd"><td><strong>remove_mode</strong></td>
-<td>((model_name) remove model from the simulation</td>
-</tr>
-<tr class="row-even"><td><strong>add_package</strong></td>
-<td>((package) adds a simulation package to the simulation</td>
-</tr>
-<tr class="row-odd"><td><strong>remove_package</strong></td>
-<td>((type) removes package from the simulation</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.delete_output_files">
-<code class="descname">delete_output_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.delete_output_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete simulation output files.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.get_exchange_file">
-<code class="descname">get_exchange_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.get_exchange_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>get a specified exchange file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of exchange file to get</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>exchange package</strong> : MFPackage</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.get_gnc_file">
-<code class="descname">get_gnc_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.get_gnc_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>get a specified gnc file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of gnc file to get</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>gnc package</strong> : MFPackage</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.get_model">
-<code class="descname">get_model</code><span class="sig-paren">(</span><em>model_name=''</em>, <em>name_file=''</em>, <em>model_type=''</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.get_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load an existing model.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model_name</strong> : string</p>
-<blockquote>
-<div><p>name of model to get</p>
-</div></blockquote>
-<p><strong>name_file</strong> : string</p>
-<blockquote>
-<div><p>name file of model to get</p>
-</div></blockquote>
-<p><strong>model_type</strong> : string</p>
-<blockquote>
-<div><p>type of model to get</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>model</strong> : MFModel</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.get_mvr_file">
-<code class="descname">get_mvr_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.get_mvr_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>get a specified mover file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of mover file to get</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>mover package</strong> : MFPackage</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.get_package">
-<code class="descname">get_package</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.get_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a package.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.is_valid">
-<code class="descname">is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.is_valid" title="Permalink to this definition">¶</a></dt>
-<dd><p>check all packages and models in the simulation to verify validity</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>valid</strong> : boolean</p>
-<blockquote class="last">
-<div><p>simulation validity</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.load">
-<em class="property">classmethod </em><code class="descname">load</code><span class="sig-paren">(</span><em>sim_name='modflowsim'</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>sim_ws='.'</em>, <em>strict=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load an existing model.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sim_name</strong> : string</p>
-<blockquote>
-<div><p>name of the simulation.</p>
-</div></blockquote>
-<p><strong>sim_nam_file</strong> : string</p>
-<blockquote>
-<div><p>relative to the simulation name file from the simulation working
-folder.</p>
-</div></blockquote>
-<p><strong>version</strong> : string</p>
-<blockquote>
-<div><p>MODFLOW version</p>
-</div></blockquote>
-<p><strong>exe_name</strong> : string</p>
-<blockquote>
-<div><p>relative path to MODFLOW executable from the simulation working
-folder</p>
-</div></blockquote>
-<p><strong>sim_ws</strong> : string</p>
-<blockquote>
-<div><p>path to simulation working folder</p>
-</div></blockquote>
-<p><strong>strict</strong> : boolean</p>
-<blockquote>
-<div><p>strict enforcement of file formatting</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p class="last"><strong>sim</strong> : MFSimulation object</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">flopy6</span><span class="o">.</span><span class="n">mfsimulation</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;my simulation&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.load_package">
-<code class="descname">load_package</code><span class="sig-paren">(</span><em>ftype</em>, <em>fname</em>, <em>pname</em>, <em>strict</em>, <em>ref_path</em>, <em>dict_package_name=None</em>, <em>parent_package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.load_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>loads a package from a file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ftype</strong> : string</p>
-<blockquote>
-<div><p>the file type</p>
-</div></blockquote>
-<p><strong>fname</strong> : string</p>
-<blockquote>
-<div><p>the name of the file containing the package input</p>
-</div></blockquote>
-<p><strong>pname</strong> : string</p>
-<blockquote>
-<div><p>the user-defined name for the package</p>
-</div></blockquote>
-<p><strong>strict</strong> : bool</p>
-<blockquote>
-<div><p>strict mode when loading the file</p>
-</div></blockquote>
-<p><strong>ref_path</strong> : string</p>
-<blockquote>
-<div><p>path to the file. uses local path if set to None</p>
-</div></blockquote>
-<p><strong>dict_package_name</strong> : string</p>
-<blockquote>
-<div><p>package name for dictionary lookup</p>
-</div></blockquote>
-<p><strong>parent_package</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>parent package</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.register_exchange_file">
-<code class="descname">register_exchange_file</code><span class="sig-paren">(</span><em>package</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.register_exchange_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>register an exchange package file with the simulation</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>exchange package object to register</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.register_ims_package">
-<code class="descname">register_ims_package</code><span class="sig-paren">(</span><em>ims_file</em>, <em>model_list</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.register_ims_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>registers an ims package with the simulation</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ims_file</strong> : MFPackage</p>
-<blockquote>
-<div><p>ims package to register</p>
-</div></blockquote>
-<p><strong>model_list</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>list of models using the ims package to be registered</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.register_model">
-<code class="descname">register_model</code><span class="sig-paren">(</span><em>model</em>, <em>model_type</em>, <em>model_name</em>, <em>model_namefile</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.register_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>add a model to the simulation.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
-<blockquote>
-<div><p>model object to add to simulation</p>
-</div></blockquote>
-<p><strong>sln_group</strong> : string</p>
-<blockquote>
-<div><p>solution group of model</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>model_structure_object</strong> : MFModelStructure</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.register_package">
-<code class="descname">register_package</code><span class="sig-paren">(</span><em>package</em>, <em>add_to_package_list=True</em>, <em>set_package_name=True</em>, <em>set_package_filename=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.register_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>register a package file with the simulation</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : MFPackage</p>
-<blockquote>
-<div><p>package to register</p>
-</div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
-<blockquote>
-<div><p>add package to lookup list</p>
-</div></blockquote>
-<p><strong>set_package_name</strong> : bool</p>
-<blockquote>
-<div><p>produce a package name for this package</p>
-</div></blockquote>
-<p><strong>set_package_filename</strong> : bool</p>
-<blockquote>
-<div><p>produce a filename for this package</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>(path</strong> : tuple, package structure</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.remove_model">
-<code class="descname">remove_model</code><span class="sig-paren">(</span><em>model_name</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.remove_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>remove a model from the simulation.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model_name</strong> : string</p>
-<blockquote class="last">
-<div><p>model name to remove from simulation</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.run_simulation">
-<code class="descname">run_simulation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.run_simulation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the simulation.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.MFSimulation.write_simulation">
-<code class="descname">write_simulation</code><span class="sig-paren">(</span><em>ext_file_action=&lt;ExtFileAction.copy_relative_paths: 3&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulation.write_simulation" title="Permalink to this definition">¶</a></dt>
-<dd><p>writes the simulation to files</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ext_file_action</strong> : ExtFileAction</p>
-<blockquote class="last">
-<div><p>defines what to do with external files when the simulation path
-has changed.  defaults to copy_relative_paths which copies only
-files with relative paths, leaving files defined by absolute
-paths fixed.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="flopy.mf6.mfsimulation.MFSimulationData">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfsimulation.</code><code class="descname">MFSimulationData</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.MFSimulationData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class containing MODFLOW simulation data and file formatting data.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>path on disk to the simulation</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>indent_string</strong></td>
-<td>(string) string used to define how much indent to use (file formatting)</td>
-</tr>
-<tr class="row-even"><td><strong>internal_formatting</strong></td>
-<td>(list) list defining string to use for internal formatting</td>
-</tr>
-<tr class="row-odd"><td><strong>external_formatting</strong></td>
-<td>(list) list defining string to use for external formatting</td>
-</tr>
-<tr class="row-even"><td><strong>open_close_formatting</strong></td>
-<td>(list) list defining string to use for open/close</td>
-</tr>
-<tr class="row-odd"><td><strong>max_columns_of_data</strong></td>
-<td>(int) maximum columns of data before line wraps</td>
-</tr>
-<tr class="row-even"><td><strong>wrap_multidim_arrays</strong></td>
-<td>(bool) whether to wrap line for multi-dimensional arrays at the end of a row/column/layer</td>
-</tr>
-<tr class="row-odd"><td><strong>float_precision</strong></td>
-<td>(int) number of decimal points to write for a floating point number</td>
-</tr>
-<tr class="row-even"><td><strong>float_characters</strong></td>
-<td>(int) number of characters a floating point number takes up</td>
-</tr>
-<tr class="row-odd"><td><strong>sci_note_upper_thres</strong></td>
-<td>(float) numbers greater than this threshold are written in scientific notation</td>
-</tr>
-<tr class="row-even"><td><strong>sci_note_lower_thres</strong></td>
-<td>(float) numbers less than this threshold are written in scientific notation</td>
-</tr>
-<tr class="row-odd"><td><strong>mfpath</strong></td>
-<td>(MFFileMgmt) file path location information for the simulation</td>
-</tr>
-<tr class="row-even"><td><strong>model_dimensions</strong></td>
-<td>(OrderedDict) dictionary containing discretization information for each model</td>
-</tr>
-<tr class="row-odd"><td><strong>mfdata</strong></td>
-<td>(SimulationDict) custom dictionary containing all model data for the simulation</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="flopy.mf6.mfsimulation.SimulationDict">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfsimulation.</code><code class="descname">SimulationDict</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class containing custom dictionary for MODFLOW simulations.  Behaves as an
-OrderedDict with some additional features described below.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> : MFFileMgmt</p>
-<blockquote class="last">
-<div><p>object containing path information for the simulation</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code>()</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="12%" />
-<col width="88%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>output_keys</strong></td>
-<td>((print_keys: boolean)) returns a list of output data keys the dictionary supports for output data, print_keys allows those keys to be printed to output.</td>
-</tr>
-<tr class="row-even"><td><strong>input_keys</strong></td>
-<td>(()) prints all input data keys</td>
-</tr>
-<tr class="row-odd"><td><strong>observation_keys</strong></td>
-<td>(()) prints observation keys</td>
-</tr>
-<tr class="row-even"><td><strong>plot</strong></td>
-<td>((key) plots data with key ‘key’ using <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs for plot options</td>
-</tr>
-<tr class="row-odd"><td><strong>shapefile</strong></td>
-<td>((key) create shapefile from data with key ‘key’ and with additional fields in <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.clear">
-<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from od.<a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.clear" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a shallow copy of od<a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.copy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.fromkeys">
-<code class="descname">fromkeys</code><span class="sig-paren">(</span><em>S</em><span class="optional">[</span>, <em>v</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; New ordered dictionary with keys from S.<a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.fromkeys" title="Permalink to this definition">¶</a></dt>
-<dd><p>If not specified, the value defaults to None.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D[k] if k in D, else d.  d defaults to None.<a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.move_to_end">
-<code class="descname">move_to_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.move_to_end" title="Permalink to this definition">¶</a></dt>
-<dd><p>Move an existing element to the end (or beginning if last==False).</p>
-<p>Raises KeyError if the element does not exist.
-When last=True, acts like a fast version of self[key]=self.pop(key).</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.pop">
-<code class="descname">pop</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding<a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.pop" title="Permalink to this definition">¶</a></dt>
-<dd><p>value.  If key is not found, d is returned if given, otherwise KeyError
-is raised.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.popitem">
-<code class="descname">popitem</code><span class="sig-paren">(</span><em>$self</em>, <em>/</em>, <em>last=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.popitem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove and return a (key, value) pair from the dictionary.</p>
-<p>Pairs are returned in LIFO order if last is true or FIFO order if false.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="flopy.mf6.mfsimulation.SimulationDict.setdefault">
-<code class="descname">setdefault</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; od.get(k,d), also set od[k]=d if k not in od<a class="headerlink" href="#flopy.mf6.mfsimulation.SimulationDict.setdefault" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="flopy-mf6-mfsimulation-module">
+<h1>flopy.mf6.mfsimulation Module<a class="headerlink" href="#flopy-mf6-mfsimulation-module" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -896,6 +239,8 @@ is raised.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="mfgnc.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfgnc Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
       
         <a href="mfpackage.html" class="btn btn-neutral" title="flopy.mf6.mfpackage Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
@@ -906,7 +251,7 @@ is raised.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -928,7 +273,7 @@ is raised.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

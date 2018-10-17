@@ -13,3 +13,7 @@ flopy.utils.binaryfile Module
 .. autoclass:: flopy.utils.binaryfile.CellBudgetFile
    :members:
    :inherited-members:
+
+.. autoclass:: flopy.utils.binaryfile.HeadUFile
+   :members:
+   :inherited-members:

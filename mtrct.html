@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mt3d.mtrct Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mt3d.mtrct Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mt3d.mtsft Module" href="mtsft.html"/>
         <link rel="prev" title="flopy.mt3d.mtphc Module" href="mtphc.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mtadv.html">flopy.mt3d.mtadv Module</a></li>
@@ -207,14 +208,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>isothm</strong> : int</p>
-<blockquote>
-<div><p>isothm is a flag indicating which type of sorption (or dual-domain mass
+</dd>
+<dt><strong>isothm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">isothm is a flag indicating which type of sorption (or dual-domain mass
 transfer) is simulated: isothm = 0, no sorption is simulated;
 isothm = 1, linear isotherm (equilibrium-controlled); isothm = 2,
 Freundlich isotherm (equilibrium-controlled); isothm = 3, Langmuir
@@ -222,19 +222,17 @@ isotherm (equilibrium-controlled); isothm = 4, first-order kinetic
 sorption (nonequilibrium); isothm = 5, dual-domain mass transfer
 (without sorption); isothm = 6, dual-domain mass transfer
 (with sorption). (default is 0).</p>
-</div></blockquote>
-<p><strong>ireact</strong> : int</p>
-<blockquote>
-<div><p>ireact is a flag indicating which type of kinetic rate reaction is
+</dd>
+<dt><strong>ireact</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">ireact is a flag indicating which type of kinetic rate reaction is
 simulated: ireact = 0, no kinetic rate reaction is simulated;
 ireact = 1, first-order irreversible reaction. Note that this reaction
 package is not intended for modeling chemical reactions between
 species. An add-on reaction package developed specifically for that
 purpose may be used. (default is 0).</p>
-</div></blockquote>
-<p><strong>igetsc</strong> : int</p>
-<blockquote>
-<div><p>igetsc is an integer flag indicating whether the initial concentration
+</dd>
+<dt><strong>igetsc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">igetsc is an integer flag indicating whether the initial concentration
 for the nonequilibrium sorbed or immobile phase of all species should
 be read when nonequilibrium sorption (isothm = 4) or dual-domain mass
 transfer (isothm = 5 or 6) is simulated: igetsc = 0, the initial
@@ -244,35 +242,31 @@ phase (isothm = 4), and the immobile domain is assumed to have zero
 concentration (isothm = 5 or 6). igetsc &gt; 0, the initial concentration
 for the sorbed phase or immobile liquid phase of all species will be
 read. (default is 1).</p>
-</div></blockquote>
-<p><strong>rhob</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>rhob is the bulk density of the aquifer medium (unit, ML-3). rhob is
+</dd>
+<dt><strong>rhob</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">rhob is the bulk density of the aquifer medium (unit, ML-3). rhob is
 used if isothm = 1, 2, 3, 4, or 6. If rhob is not user-specified and
 isothem is not 5 then rhob is set to 1.8e3. (default is None)</p>
-</div></blockquote>
-<p><strong>prsity2</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>prsity2 is the porosity of the immobile domain (the ratio of pore
+</dd>
+<dt><strong>prsity2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">prsity2 is the porosity of the immobile domain (the ratio of pore
 spaces filled with immobile fluids over the bulk volume of the aquifer
 medium) when the simulation is intended to represent a dual-domain
 system. prsity2 is used if isothm = 5 or 6. If prsity2 is not user-
 specified and isothm = 5 or 6 then prsity2 is set to 0.1.
 (default is None)</p>
-</div></blockquote>
-<p><strong>srconc</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>srconc is the user-specified initial concentration for the sorbed phase
+</dd>
+<dt><strong>srconc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">srconc is the user-specified initial concentration for the sorbed phase
 of the first species if isothm = 4 (unit, MM-1). Note that for
 equilibrium-controlled sorption, the initial concentration for the
 sorbed phase cannot be specified. srconc is the user-specified initial
 concentration of the first species for the immobile liquid phase if
 isothm = 5 or 6 (unit, ML-3). If srconc is not user-specified and
 isothm = 4, 5, or 6 then srconc is set to 0. (default is None).</p>
-</div></blockquote>
-<p><strong>sp1</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>sp1 is the first sorption parameter for the first species. The use of
+</dd>
+<dt><strong>sp1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">sp1 is the first sorption parameter for the first species. The use of
 sp1 depends on the type of sorption selected (the value of isothm).
 For linear sorption (isothm = 1) and nonequilibrium sorption (isothm =
 4), sp1 is the distribution coefficient (Kd) (unit, L3M-1). For
@@ -284,10 +278,9 @@ sorption (isothm = 5), sp1 is not used, but still must be entered. For
 dual-domain mass transfer with sorption (isothm = 6), sp1 is also the
 distribution coefficient (Kd) (unit, L3M-1). If sp1 is not specified
 and isothm &gt; 0 then sp1 is set to 0. (default is None).</p>
-</div></blockquote>
-<p><strong>sp2</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>sp2 is the second sorption or dual-domain model parameter for the first
+</dd>
+<dt><strong>sp2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">sp2 is the second sorption or dual-domain model parameter for the first
 species. The use of sp2 depends on the type of sorption or dual-domain
 model selected. For linear sorption (isothm = 1), sp2 is read but not
 used. For Freundlich sorption (isothm = 2), sp2 is the Freundlich
@@ -298,19 +291,17 @@ transfer rate between the dissolved and sorbed phases (unit, T-1). For
 dual-domain mass transfer (isothm = 5 or 6), sp2 is the first-order
 mass transfer rate between the two domains (unit, T-1). If sp2 is not
 specified and isothm &gt; 0 then sp2 is set to 0. (default is None).</p>
-</div></blockquote>
-<p><strong>rc1</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>rc1 is the first-order reaction rate for the dissolved (liquid) phase
+</dd>
+<dt><strong>rc1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">rc1 is the first-order reaction rate for the dissolved (liquid) phase
 for the first species (unit, T-1). rc1 is not used ireact = 0. If a
 dual-domain system is simulated, the reaction rates for the liquid
 phase in the mobile and immobile domains are assumed to be equal. If
 rc1 is not specified and ireact &gt; 0 then rc1 is set to 0.
 (default is None).</p>
-</div></blockquote>
-<p><strong>rc2</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>rc2 is the first-order reaction rate for the sorbed phase for the first
+</dd>
+<dt><strong>rc2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">rc2 is the first-order reaction rate for the sorbed phase for the first
 species (unit, T-1). rc2 is not used ireact = 0. If a dual-domain
 system is simulated, the reaction rates for the sorbed phase in the
 mobile and immobile domains are assumed to be equal. Generally, if the
@@ -319,29 +310,54 @@ for biodegradation, rc2 may be different from rc1. Note that rc2 is
 read but not used, if no sorption is included in the simulation. If
 rc2 is not specified and ireact &gt; 0 then rc2 is set to 0.
 (default is None).</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘rct’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote class="last">
-<div><dl class="docutils">
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘rct’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><dl class="first last docutils">
 <dt>File unit number. If file unit number is None then an unused unit</dt>
 <dd><p class="first last">number if used. (default is None).</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rct</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3dms</span><span class="o">.</span><span class="n">Mt3dRct</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.mt3d.mtrct.Mt3dRct.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.mt3d.mtrct.Mt3dRct.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.check" title="Permalink to this definition">¶</a></dt>
@@ -350,32 +366,34 @@ rc2 is not specified and ireact &gt; 0 then rc2 is set to 0.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -384,59 +402,56 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtrct.Mt3dRct.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtrct.Mt3dRct.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>nlay</strong> : int</p>
-<blockquote>
-<div><p>Number of model layers in the reaction package. If nlay is not
+</dd>
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model layers in the reaction package. If nlay is not
 specified, the number of layers in the passed model object is
 used. (default is None).</p>
-</div></blockquote>
-<p><strong>nrow</strong> : int</p>
-<blockquote>
-<div><p>Number of model rows in the reaction package. If nrow is not
+</dd>
+<dt><strong>nrow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model rows in the reaction package. If nrow is not
 specified, the number of rows in the passed model object is
 used. (default is None).</p>
-</div></blockquote>
-<p><strong>ncol</strong> : int</p>
-<blockquote>
-<div><p>Number of model columns in the reaction package. If nlay is not
+</dd>
+<dt><strong>ncol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model columns in the reaction package. If nlay is not
 specified, the number of columns in the passed model object is
 used. (default is None).</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>rct</strong> :  Mt3dRct object</p>
-<blockquote class="last">
-<div><p>Mt3dRct object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>rct</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Mt3dRct object</span></dt>
+<dd><p class="first last">Mt3dRct object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rct</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dRct</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.rct&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="p">)</span>
 </pre></div>
@@ -452,9 +467,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -476,20 +491,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -505,19 +522,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -532,7 +553,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -564,7 +589,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -586,7 +611,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

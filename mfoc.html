@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfoc Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfoc Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfpbc Module" href="mfpbc.html"/>
         <link rel="prev" title="flopy.modflow.mfnwt Module" href="mfnwt.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -151,6 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -240,24 +241,21 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>ihedfm</strong> : int</p>
-<blockquote>
-<div><p>is a code for the format in which heads will be printed.
+</dd>
+<dt><strong>ihedfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a code for the format in which heads will be printed.
 (default is 0).</p>
-</div></blockquote>
-<p><strong>iddnfm</strong> : int</p>
-<blockquote>
-<div><p>is a code for the format in which heads will be printed.
+</dd>
+<dt><strong>iddnfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a code for the format in which drawdown will be printed.
 (default is 0).</p>
-</div></blockquote>
-<p><strong>chedfm</strong> : string</p>
-<blockquote>
-<div><p>is a character value that specifies the format for saving heads.
+</dd>
+<dt><strong>chedfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">is a character value that specifies the format for saving heads.
 The format must contain 20 characters or less and must be a valid
 Fortran format that is enclosed in parentheses. The format must be
 enclosed in apostrophes if it contains one or more blanks or commas.
@@ -269,10 +267,9 @@ binary (unformatted) file. Binary files are usually more compact than
 text files, but they are not generally transportable among different
 computer operating systems or different Fortran compilers.
 (default is None)</p>
-</div></blockquote>
-<p><strong>cddnfm</strong> : string</p>
-<blockquote>
-<div><p>is a character value that specifies the format for saving drawdown.
+</dd>
+<dt><strong>cddnfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">is a character value that specifies the format for saving drawdown.
 The format must contain 20 characters or less and must be a valid
 Fortran format that is enclosed in parentheses. The format must be
 enclosed in apostrophes if it contains one or more blanks or commas.
@@ -284,10 +281,9 @@ binary (unformatted) file. Binary files are usually more compact than
 text files, but they are not generally transportable among different
 computer operating systems or different Fortran compilers.
 (default is None)</p>
-</div></blockquote>
-<p><strong>cboufm</strong> : string</p>
-<blockquote>
-<div><p>is a character value that specifies the format for saving ibound.
+</dd>
+<dt><strong>cboufm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">is a character value that specifies the format for saving ibound.
 The format must contain 20 characters or less and must be a valid
 Fortran format that is enclosed in parentheses. The format must be
 enclosed in apostrophes if it contains one or more blanks or commas.
@@ -299,10 +295,9 @@ binary (unformatted) file. Binary files are usually more compact than
 text files, but they are not generally transportable among different
 computer operating systems or different Fortran compilers.
 (default is None)</p>
-</div></blockquote>
-<p><strong>stress_period_data</strong> : dictionary of of lists</p>
-<blockquote>
-<div><p>Dictionary key is a tuple with the zero-based period and step 
+</dd>
+<dt><strong>stress_period_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary of of lists</span></dt>
+<dd><p class="first">Dictionary key is a tuple with the zero-based period and step 
 (IPEROC, ITSOC) for each print/save option list. If stress_period_data
 is None, then heads are saved for the last time step of each stress
 period. (default is None)</p>
@@ -321,24 +316,20 @@ for PRINT HEAD, SAVE HEAD, PRINT DRAWDOWN, SAVE DRAWDOWN, and
 SAVE IBOUND.</p>
 </dd>
 </dl>
-<p>stress_period_data = {(0,1):[‘save head’]}) would save the head for
+<p class="last">stress_period_data = {(0,1):[‘save head’]}) would save the head for
 the second timestep in the first stress period.</p>
-</div></blockquote>
-<p><strong>compact</strong> : boolean</p>
-<blockquote>
-<div><p>Save results in compact budget form. (default is True).</p>
-</div></blockquote>
-<p><strong>extension</strong> : list of strings</p>
-<blockquote>
-<div><p>(default is [‘oc’, ‘hds’, ‘ddn’, ‘cbc’, ‘ibo’]).</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : list of ints</p>
-<blockquote>
-<div><p>(default is [14, 51, 52, 53, 0]).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the head, drawdown, budget (not
+</dd>
+<dt><strong>compact</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Save results in compact budget form. (default is True).</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">(default is [‘oc’, ‘hds’, ‘ddn’, ‘cbc’, ‘ibo’]).</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of ints</span></dt>
+<dd><p class="first last">(default is [14, 51, 52, 53, 0]).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the head, drawdown, budget (not
 used), and ibound output files. If filenames=None the package name
 will be created using the model name and package extension and the
 output file names will be created using the model name and extensions.
@@ -347,7 +338,8 @@ output names will be created using the model name and head, drawdown,
 budget, and ibound extensions. To define the names for all package
 files (input and output) the length of the list of strings should be 5.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -358,7 +350,7 @@ available.  Also, the “compact” budget should normally be used as it
 produces files that are typically much smaller.  The compact budget form is 
 also a requirement for using the MODPATH particle tracking program.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="p">[</span><span class="s1">&#39;print head&#39;</span><span class="p">],</span>
 <span class="gp">... </span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="p">[],</span>
@@ -380,20 +372,24 @@ also a requirement for using the MODPATH particle tracking program.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>None</strong></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>iubud</strong> : integer ot list of integers</p>
-<blockquote class="last">
-<div><p>Unit number or list of cell-by-cell budget output unit numbers.
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>iubud</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer ot list of integers</span></dt>
+<dd><p class="first last">Unit number or list of cell-by-cell budget output unit numbers.
 None is returned if ipakcb is less than one for all packages.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bas</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowBas</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
@@ -411,52 +407,50 @@ None is returned if ipakcb is less than one for all packages.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfoc.ModflowOc.get_ocoutput_units">
-<em class="property">static </em><code class="descname">get_ocoutput_units</code><span class="sig-paren">(</span><em>f</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.get_ocoutput_units" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_ocoutput_units</code><span class="sig-paren">(</span><em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.get_ocoutput_units" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get head and drawdown units from a OC file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ihedun</strong> : integer</p>
-<blockquote>
-<div><p>Unit number of the head file.</p>
-</div></blockquote>
-<p><strong>fhead</strong> : str</p>
-<blockquote>
-<div><p>File name of the head file. Is only defined if ext_unit_dict is
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ihedun</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Unit number of the head file.</p>
+</dd>
+<dt><strong>fhead</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">File name of the head file. Is only defined if ext_unit_dict is
 passed and the unit number is a valid key.
 , headfilename, oc : ModflowOc object
 ModflowOc object.</p>
-</div></blockquote>
-<p><strong>iddnun</strong> : integer</p>
-<blockquote>
-<div><p>Unit number of the drawdown file.</p>
-</div></blockquote>
-<p><strong>fddn</strong> : str</p>
-<blockquote class="last">
-<div><p>File name of the drawdown file. Is only defined if ext_unit_dict is
+</dd>
+<dt><strong>iddnun</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Unit number of the drawdown file.</p>
+</dd>
+<dt><strong>fddn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">File name of the drawdown file. Is only defined if ext_unit_dict is
 passed and the unit number is a valid key.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ihds</span><span class="p">,</span> <span class="n">hf</span><span class="p">,</span> <span class="n">iddn</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="o">.</span><span class="n">get_ocoutput_units</span><span class="p">(</span><span class="s1">&#39;test.oc&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -464,59 +458,56 @@ passed and the unit number is a valid key.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfoc.ModflowOc.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>nstp=None</em>, <em>nlay=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nper=None</em>, <em>nstp=None</em>, <em>nlay=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfoc.ModflowOc.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>nper</strong> : int</p>
-<blockquote>
-<div><p>The number of stress periods.  If nper is None, then nper will be
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of stress periods.  If nper is None, then nper will be
 obtained from the model object. (default is None).</p>
-</div></blockquote>
-<p><strong>nstp</strong> : list</p>
-<blockquote>
-<div><p>List containing the number of time steps in each stress period.  
+</dd>
+<dt><strong>nstp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List containing the number of time steps in each stress period.  
 If nstp is None, then nstp will be obtained from the DIS package 
 attached to the model object. (default is None).</p>
-</div></blockquote>
-<p><strong>nlay</strong> : int</p>
-<blockquote>
-<div><p>The number of model layers.  If nlay is None, then nnlay will be
+</dd>
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of model layers.  If nlay is None, then nnlay will be
 obtained from the model object. nlay only needs to be specified
 if an empty model object is passed in and the oc file being loaded
 is defined using numeric codes. (default is None).</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>oc</strong> : ModflowOc object</p>
-<blockquote class="last">
-<div><p>ModflowOc object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>oc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowOc object</span></dt>
+<dd><p class="first last">ModflowOc object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">oc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowOc</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.oc&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -533,27 +524,30 @@ OC file to the specified budgetunit.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>budgetunit</strong> : int, optional</p>
-<blockquote>
-<div><p>Unit number for cell-by-cell output data. If budgetunit is None
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>budgetunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">Unit number for cell-by-cell output data. If budgetunit is None
 then the next available external unit number is assigned. Default
 is None</p>
-</div></blockquote>
-<p><strong>fname</strong> : string, optional</p>
-<blockquote>
-<div><p>Filename to use for cell-by-cell output file. If fname=None the
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd><p class="first last">Filename to use for cell-by-cell output file. If fname=None the
 cell-by-cell output file will be created using the model name and
 a ‘.cbc’ file extension. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bas</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowBas</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
@@ -576,7 +570,11 @@ a ‘.cbc’ file extension. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -608,7 +606,7 @@ a ‘.cbc’ file extension. Default is None.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -630,7 +628,7 @@ a ‘.cbc’ file extension. Default is None.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.mflistfile Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.mflistfile Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.mfreadnam Module" href="mfreadnam.html"/>
         <link rel="prev" title="flopy.utils.lgrutil Module" href="lgrutil.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -223,18 +225,17 @@ recarrays, which can then be easily plotted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file_name</strong> : str</p>
-<blockquote>
-<div><p>the list file name</p>
-</div></blockquote>
-<p><strong>budgetkey</strong> : str</p>
-<blockquote>
-<div><p>the text string identifying the budget table. (default is None)</p>
-</div></blockquote>
-<p><strong>timeunit</strong> : str</p>
-<blockquote class="last">
-<div><p>the time unit to return in the recarray. (default is ‘days’)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the list file name</p>
+</dd>
+<dt><strong>budgetkey</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the text string identifying the budget table. (default is None)</p>
+</dd>
+<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the time unit to return in the recarray. (default is ‘days’)</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -244,7 +245,7 @@ recarrays, which can then be easily plotted.</p>
 through derived classes: MfListBudget (MODFLOW), SwtListBudget (SEAWAT)
 and SwrListBudget (MODFLOW with the SWR process)</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span><span class="p">,</span> <span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df_in</span><span class="p">,</span> <span class="n">df_out</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">(</span><span class="n">start_datetime</span><span class="o">=</span><span class="s2">&quot;10-21-2015&quot;</span><span class="p">)</span>
 </pre></div>
@@ -258,27 +259,29 @@ in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
-<blockquote class="last">
-<div><p>Numpy recarrays with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarrays</span></dt>
+<dd><p class="first last">Numpy recarrays with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period. A
 separate recarray is returned for the incremental and cumulative
 water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -292,25 +295,27 @@ water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -324,35 +329,34 @@ recarray also includes totim, time_step, and stress_period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None).</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values. (default is None).</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None).</p>
-</div></blockquote>
-<p><strong>incremental</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if incremental or cumulative water
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None).</p>
+</dd>
+<dt><strong>incremental</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if incremental or cumulative water
 budget data for the specified conditions will be returned. If
 incremental=True, incremental water budget data will be returned.
 If incremental=False, cumulative water budget data will be
 returned. (default is False).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (number of budget items, 3). Recarray names are ‘index’,
 ‘value’, ‘name’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -360,7 +364,7 @@ returned. (default is False).</p>
 <p class="rubric">Notes</p>
 <p>if both kstpkper and totim are None, will return the last entry</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -380,25 +384,27 @@ items in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
-<blockquote>
-<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
 Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
-<blockquote class="last">
-<div><p>Pandas dataframes with the incremental and cumulative water budget
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">panda dataframes</span></dt>
+<dd><p class="first last">Pandas dataframes with the incremental and cumulative water budget
 items in list file. A separate pandas dataframe is returned for the
 incremental and cumulative water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -412,25 +418,27 @@ incremental and cumulative water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -445,17 +453,18 @@ water budgets.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in list file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in list file.  kstp and
 kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -469,21 +478,26 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
-<blockquote>
-<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
 (default is ‘seconds’)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd></dd>
+<dt><strong>Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -497,16 +511,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -520,16 +535,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique water budget simulation times (totim) in list file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique water budget simulation times (totim) in list file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -543,16 +559,347 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : boolean</p>
-<blockquote class="last">
-<div><p>Boolean indicating if budget data are available in the file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Boolean indicating if budget data are available in the file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">isvalid</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget">
+<em class="property">class </em><code class="descclassname">flopy.utils.mflistfile.</code><code class="descname">Mf6ListBudget</code><span class="sig-paren">(</span><em>file_name</em>, <em>budgetkey=None</em>, <em>timeunit='days'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_budget">
+<code class="descname">get_budget</code><span class="sig-paren">(</span><em>names=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_budget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the recarrays with the incremental and cumulative water budget items
+in the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarrays</span></dt>
+<dd><p class="first last">Numpy recarrays with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period. A
+separate recarray is returned for the incremental and cumulative
+water budget entries.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_cumulative">
+<code class="descname">get_cumulative</code><span class="sig-paren">(</span><em>names=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_cumulative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the cumulative water budget items in the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>incremental=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get water budget data from the list file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
+(default is None).</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values. (default is None).</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None).</p>
+</dd>
+<dt><strong>incremental</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if incremental or cumulative water
+budget data for the specified conditions will be returned. If
+incremental=True, incremental water budget data will be returned.
+If incremental=False, cumulative water budget data will be
+returned. (default is False).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (number of budget items, 3). Recarray names are ‘index’,
+‘value’, ‘name’.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_dataframes">
+<code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime='1-1-1970'</em>, <em>diff=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pandas dataframes with the incremental and cumulative water budget
+items in the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
+Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">panda dataframes</span></dt>
+<dd><p class="first last">Pandas dataframes with the incremental and cumulative water budget
+items in list file. A separate pandas dataframe is returned for the
+incremental and cumulative water budget entries.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_incremental">
+<code class="descname">get_incremental</code><span class="sig-paren">(</span><em>names=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_incremental" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a recarray with the incremental water budget items in the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
+totim, time_step, stress_period, and selection(s) will be returned.
+(default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
+recarray also includes totim, time_step, and stress_period.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_kstpkper">
+<code class="descname">get_kstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods and time steps in the list file
+water budgets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in list file.  kstp and
+kper values are zero-based.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_model_runtime">
+<code class="descname">get_model_runtime</code><span class="sig-paren">(</span><em>units='seconds'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_model_runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the elapsed runtime of the model from the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+(default is ‘seconds’)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd></dd>
+<dt><strong>Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_record_names">
+<code class="descname">get_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_record_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of water budget record names in the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.get_times">
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique water budget times in the list file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique water budget simulation times (totim) in list file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.mflistfile.Mf6ListBudget.isvalid">
+<code class="descname">isvalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mflistfile.Mf6ListBudget.isvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a boolean indicating if budget data are available in the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Boolean indicating if budget data are available in the file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">isvalid</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -572,27 +919,29 @@ in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
-<blockquote class="last">
-<div><p>Numpy recarrays with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarrays</span></dt>
+<dd><p class="first last">Numpy recarrays with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period. A
 separate recarray is returned for the incremental and cumulative
 water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -606,25 +955,27 @@ water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -638,35 +989,34 @@ recarray also includes totim, time_step, and stress_period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None).</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values. (default is None).</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None).</p>
-</div></blockquote>
-<p><strong>incremental</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if incremental or cumulative water
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None).</p>
+</dd>
+<dt><strong>incremental</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if incremental or cumulative water
 budget data for the specified conditions will be returned. If
 incremental=True, incremental water budget data will be returned.
 If incremental=False, cumulative water budget data will be
 returned. (default is False).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (number of budget items, 3). Recarray names are ‘index’,
 ‘value’, ‘name’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -674,7 +1024,7 @@ returned. (default is False).</p>
 <p class="rubric">Notes</p>
 <p>if both kstpkper and totim are None, will return the last entry</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -694,25 +1044,27 @@ items in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
-<blockquote>
-<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
 Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
-<blockquote class="last">
-<div><p>Pandas dataframes with the incremental and cumulative water budget
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">panda dataframes</span></dt>
+<dd><p class="first last">Pandas dataframes with the incremental and cumulative water budget
 items in list file. A separate pandas dataframe is returned for the
 incremental and cumulative water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -726,25 +1078,27 @@ incremental and cumulative water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -759,17 +1113,18 @@ water budgets.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in list file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in list file.  kstp and
 kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -783,21 +1138,26 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
-<blockquote>
-<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
 (default is ‘seconds’)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd></dd>
+<dt><strong>Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -811,16 +1171,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -834,16 +1195,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique water budget simulation times (totim) in list file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique water budget simulation times (totim) in list file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -857,16 +1219,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : boolean</p>
-<blockquote class="last">
-<div><p>Boolean indicating if budget data are available in the file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Boolean indicating if budget data are available in the file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">isvalid</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -886,27 +1249,29 @@ in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
-<blockquote class="last">
-<div><p>Numpy recarrays with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarrays</span></dt>
+<dd><p class="first last">Numpy recarrays with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period. A
 separate recarray is returned for the incremental and cumulative
 water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -920,25 +1285,27 @@ water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -952,35 +1319,34 @@ recarray also includes totim, time_step, and stress_period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None).</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values. (default is None).</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None).</p>
-</div></blockquote>
-<p><strong>incremental</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if incremental or cumulative water
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None).</p>
+</dd>
+<dt><strong>incremental</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if incremental or cumulative water
 budget data for the specified conditions will be returned. If
 incremental=True, incremental water budget data will be returned.
 If incremental=False, cumulative water budget data will be
 returned. (default is False).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (number of budget items, 3). Recarray names are ‘index’,
 ‘value’, ‘name’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -988,7 +1354,7 @@ returned. (default is False).</p>
 <p class="rubric">Notes</p>
 <p>if both kstpkper and totim are None, will return the last entry</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -1008,25 +1374,27 @@ items in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
-<blockquote>
-<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
 Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
-<blockquote class="last">
-<div><p>Pandas dataframes with the incremental and cumulative water budget
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">panda dataframes</span></dt>
+<dd><p class="first last">Pandas dataframes with the incremental and cumulative water budget
 items in list file. A separate pandas dataframe is returned for the
 incremental and cumulative water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1040,25 +1408,27 @@ incremental and cumulative water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1073,17 +1443,18 @@ water budgets.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in list file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in list file.  kstp and
 kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1097,21 +1468,26 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
-<blockquote>
-<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
 (default is ‘seconds’)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd></dd>
+<dt><strong>Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1125,16 +1501,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1148,16 +1525,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique water budget simulation times (totim) in list file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique water budget simulation times (totim) in list file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1171,16 +1549,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : boolean</p>
-<blockquote class="last">
-<div><p>Boolean indicating if budget data are available in the file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Boolean indicating if budget data are available in the file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">isvalid</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1200,27 +1579,29 @@ in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
-<blockquote class="last">
-<div><p>Numpy recarrays with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarrays</span></dt>
+<dd><p class="first last">Numpy recarrays with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period. A
 separate recarray is returned for the incremental and cumulative
 water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1234,25 +1615,27 @@ water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1266,35 +1649,34 @@ recarray also includes totim, time_step, and stress_period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None).</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values. (default is None).</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None).</p>
-</div></blockquote>
-<p><strong>incremental</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if incremental or cumulative water
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None).</p>
+</dd>
+<dt><strong>incremental</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if incremental or cumulative water
 budget data for the specified conditions will be returned. If
 incremental=True, incremental water budget data will be returned.
 If incremental=False, cumulative water budget data will be
 returned. (default is False).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (number of budget items, 3). Recarray names are ‘index’,
 ‘value’, ‘name’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1302,7 +1684,7 @@ returned. (default is False).</p>
 <p class="rubric">Notes</p>
 <p>if both kstpkper and totim are None, will return the last entry</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -1322,25 +1704,27 @@ items in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
-<blockquote>
-<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
 Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
-<blockquote class="last">
-<div><p>Pandas dataframes with the incremental and cumulative water budget
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">panda dataframes</span></dt>
+<dd><p class="first last">Pandas dataframes with the incremental and cumulative water budget
 items in list file. A separate pandas dataframe is returned for the
 incremental and cumulative water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1354,25 +1738,27 @@ incremental and cumulative water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1387,17 +1773,18 @@ water budgets.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in list file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in list file.  kstp and
 kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1411,21 +1798,26 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
-<blockquote>
-<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
 (default is ‘seconds’)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd></dd>
+<dt><strong>Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1439,16 +1831,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1462,16 +1855,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique water budget simulation times (totim) in list file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique water budget simulation times (totim) in list file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1485,16 +1879,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : boolean</p>
-<blockquote class="last">
-<div><p>Boolean indicating if budget data are available in the file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Boolean indicating if budget data are available in the file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">isvalid</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1514,27 +1909,29 @@ in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarrays</p>
-<blockquote class="last">
-<div><p>Numpy recarrays with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarrays</span></dt>
+<dd><p class="first last">Numpy recarrays with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period. A
 separate recarray is returned for the incremental and cumulative
 water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1548,25 +1945,27 @@ water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cumulative</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_cumulative</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1580,35 +1979,34 @@ recarray also includes totim, time_step, and stress_period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.
 (default is None).</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values. (default is None).</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. (default is None).</p>
-</div></blockquote>
-<p><strong>incremental</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if incremental or cumulative water
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. (default is None).</p>
+</dd>
+<dt><strong>incremental</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if incremental or cumulative water
 budget data for the specified conditions will be returned. If
 incremental=True, incremental water budget data will be returned.
 If incremental=False, cumulative water budget data will be
 returned. (default is False).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy recarray</p>
-<blockquote class="last">
-<div><p>Array has size (number of budget items, 3). Recarray names are ‘index’,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy recarray</span></dt>
+<dd><p class="first last">Array has size (number of budget items, 3). Recarray names are ‘index’,
 ‘value’, ‘name’.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1616,7 +2014,7 @@ returned. (default is False).</p>
 <p class="rubric">Notes</p>
 <p>if both kstpkper and totim are None, will return the last entry</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -1636,25 +2034,27 @@ items in the list file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_datetime</strong> : str</p>
-<blockquote>
-<div><p>If start_datetime is passed as None, the rows are indexed on totim.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">If start_datetime is passed as None, the rows are indexed on totim.
 Otherwise, a DatetimeIndex is set. (default is 1-1-1970).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : panda dataframes</p>
-<blockquote class="last">
-<div><p>Pandas dataframes with the incremental and cumulative water budget
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">panda dataframes</span></dt>
+<dd><p class="first last">Pandas dataframes with the incremental and cumulative water budget
 items in list file. A separate pandas dataframe is returned for the
 incremental and cumulative water budget entries.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incrementaldf</span><span class="p">,</span> <span class="n">cumulativedf</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1668,25 +2068,27 @@ incremental and cumulative water budget entries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : str or list of strings</p>
-<blockquote>
-<div><p>Selection of column names to return.  If names is not None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of strings</span></dt>
+<dd><p class="first last">Selection of column names to return.  If names is not None then
 totim, time_step, stress_period, and selection(s) will be returned.
 (default is None).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : recarray</p>
-<blockquote class="last">
-<div><p>Numpy recarray with the water budget items in list file. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy recarray with the water budget items in list file. The
 recarray also includes totim, time_step, and stress_period.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_incremental</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1701,17 +2103,18 @@ water budgets.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in list file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in list file.  kstp and
 kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kstpkper</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_kstpkper</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1725,21 +2128,26 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
-<blockquote>
-<div><p>Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Units in which to return the runtime. Acceptable values are ‘seconds’, ‘minutes’, ‘hours’
 (default is ‘seconds’)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<p class="last">Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd></dd>
+<dt><strong>Floating point value with the runtime in requested units. Returns NaN if runtime not foudn in list file</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s2">&quot;my_model.list&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">budget</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_model_runtime</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;hours&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1753,16 +2161,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1776,16 +2185,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique water budget simulation times (totim) in list file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique water budget simulation times (totim) in list file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1799,16 +2209,17 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : boolean</p>
-<blockquote class="last">
-<div><p>Boolean indicating if budget data are available in the file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Boolean indicating if budget data are available in the file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf_list</span> <span class="o">=</span> <span class="n">MfListBudget</span><span class="p">(</span><span class="s1">&#39;my_model.list&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span> <span class="o">=</span> <span class="n">mf_list</span><span class="o">.</span><span class="n">isvalid</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1840,7 +2251,7 @@ kper values are zero-based.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -1862,7 +2273,7 @@ kper values are zero-based.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

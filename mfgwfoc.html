@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfoc Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfoc Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfgwfrch Module" href="mfgwfrch.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfnpf Module" href="mfgwfnpf.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -233,42 +235,37 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
-<blockquote>
-<div><p>Model that this package is a part of.  Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModel</span></dt>
+<dd><p class="first last">Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>budget_filerecord</strong> : [budgetfile]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>budget_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[budgetfile]</span></dt>
+<dd><ul class="first last simple">
 <li>budgetfile (string) name of the output file to write budget
 information.</li>
 </ul>
-</div></blockquote>
-<p><strong>head_filerecord</strong> : [headfile]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>head_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[headfile]</span></dt>
+<dd><ul class="first last simple">
 <li>headfile (string) name of the output file to write head information.</li>
 </ul>
-</div></blockquote>
-<p><strong>headprintrecord</strong> : [columns, width, digits, format]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>headprintrecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[columns, width, digits, format]</span></dt>
+<dd><ul class="first last simple">
 <li>columns (integer) number of columns for writing data.</li>
 <li>width (integer) width for writing each number.</li>
 <li>digits (integer) number of digits to use for writing a number.</li>
 <li>format (string) write format can be EXPONENTIAL, FIXED, GENERAL, or
 SCIENTIFIC.</li>
 </ul>
-</div></blockquote>
-<p><strong>saverecord</strong> : [rtype, ocsetting]</p>
-<blockquote>
-<div><ul>
+</dd>
+<dt><strong>saverecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[rtype, ocsetting]</span></dt>
+<dd><ul class="first last">
 <li><p class="first">rtype (string) type of information to save or print. Can be BUDGET or
 HEAD.</p>
 </li>
@@ -282,17 +279,10 @@ saved.</p>
 period.</li>
 </ul>
 </dd>
-<dt>steps <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
+<dt>first <span class="classifier-delimiter">:</span> <span class="classifier">[keyword]</span></dt>
 <dd><ul class="first last simple">
-<li>steps (integer) save for each step specified in STEPS. This
-keyword may be used in conjunction with other keywords to
-print or save results for multiple time steps.</li>
-</ul>
-</dd>
-<dt>frequency <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
-<dd><ul class="first last simple">
-<li>frequency (integer) save at the specified time step
-frequency. This keyword may be used in conjunction with other
+<li>first (keyword) keyword to indicate save for first step in
+period. This keyword may be used in conjunction with other
 keywords to print or save results for multiple time steps.</li>
 </ul>
 </dd>
@@ -303,21 +293,27 @@ period. This keyword may be used in conjunction with other
 keywords to print or save results for multiple time steps.</li>
 </ul>
 </dd>
-<dt>first <span class="classifier-delimiter">:</span> <span class="classifier">[keyword]</span></dt>
+<dt>frequency <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
 <dd><ul class="first last simple">
-<li>first (keyword) keyword to indicate save for first step in
-period. This keyword may be used in conjunction with other
+<li>frequency (integer) save at the specified time step
+frequency. This keyword may be used in conjunction with other
 keywords to print or save results for multiple time steps.</li>
+</ul>
+</dd>
+<dt>steps <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
+<dd><ul class="first last simple">
+<li>steps (integer) save for each step specified in STEPS. This
+keyword may be used in conjunction with other keywords to
+print or save results for multiple time steps.</li>
 </ul>
 </dd>
 </dl>
 </div></blockquote>
 </li>
 </ul>
-</div></blockquote>
-<p><strong>printrecord</strong> : [rtype, ocsetting]</p>
-<blockquote>
-<div><ul>
+</dd>
+<dt><strong>printrecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[rtype, ocsetting]</span></dt>
+<dd><ul class="first last">
 <li><p class="first">rtype (string) type of information to save or print. Can be BUDGET or
 HEAD.</p>
 </li>
@@ -331,17 +327,10 @@ saved.</p>
 period.</li>
 </ul>
 </dd>
-<dt>steps <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
+<dt>first <span class="classifier-delimiter">:</span> <span class="classifier">[keyword]</span></dt>
 <dd><ul class="first last simple">
-<li>steps (integer) save for each step specified in STEPS. This
-keyword may be used in conjunction with other keywords to
-print or save results for multiple time steps.</li>
-</ul>
-</dd>
-<dt>frequency <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
-<dd><ul class="first last simple">
-<li>frequency (integer) save at the specified time step
-frequency. This keyword may be used in conjunction with other
+<li>first (keyword) keyword to indicate save for first step in
+period. This keyword may be used in conjunction with other
 keywords to print or save results for multiple time steps.</li>
 </ul>
 </dd>
@@ -352,32 +341,37 @@ period. This keyword may be used in conjunction with other
 keywords to print or save results for multiple time steps.</li>
 </ul>
 </dd>
-<dt>first <span class="classifier-delimiter">:</span> <span class="classifier">[keyword]</span></dt>
+<dt>frequency <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
 <dd><ul class="first last simple">
-<li>first (keyword) keyword to indicate save for first step in
-period. This keyword may be used in conjunction with other
+<li>frequency (integer) save at the specified time step
+frequency. This keyword may be used in conjunction with other
 keywords to print or save results for multiple time steps.</li>
+</ul>
+</dd>
+<dt>steps <span class="classifier-delimiter">:</span> <span class="classifier">[integer]</span></dt>
+<dd><ul class="first last simple">
+<li>steps (integer) save for each step specified in STEPS. This
+keyword may be used in conjunction with other keywords to
+print or save results for multiple time steps.</li>
 </ul>
 </dd>
 </dl>
 </div></blockquote>
 </li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -390,13 +384,17 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -429,7 +427,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -451,7 +449,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

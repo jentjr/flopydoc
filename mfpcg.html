@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfpcg Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfpcg Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfpcgn Module" href="mfpcgn.html"/>
         <link rel="prev" title="flopy.modflow.mfpbc Module" href="mfpbc.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -151,6 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -240,134 +241,122 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>mxiter</strong> : int</p>
-<blockquote>
-<div><p>maximum number of outer iterations. (default is 50)</p>
-</div></blockquote>
-<p><strong>iter1</strong> : int</p>
-<blockquote>
-<div><p>maximum number of inner iterations. (default is 30)</p>
-</div></blockquote>
-<p><strong>npcond</strong> : int</p>
-<blockquote>
-<div><p>flag used to select the matrix conditioning method. (default is 1).
+</dd>
+<dt><strong>mxiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum number of outer iterations. (default is 50)</p>
+</dd>
+<dt><strong>iter1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum number of inner iterations. (default is 30)</p>
+</dd>
+<dt><strong>npcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">flag used to select the matrix conditioning method. (default is 1).
 specify npcond = 1 for Modified Incomplete Cholesky.
 specify npcond = 2 for Polynomial.</p>
-</div></blockquote>
-<p><strong>hclose</strong> : float</p>
-<blockquote>
-<div><p>is the head change criterion for convergence. (default is 1e-5).</p>
-</div></blockquote>
-<p><strong>rclose</strong> : float</p>
-<blockquote>
-<div><p>is the residual criterion for convergence. (default is 1e-5)</p>
-</div></blockquote>
-<p><strong>relax</strong> : float</p>
-<blockquote>
-<div><p>is the relaxation parameter used with npcond = 1. (default is 1.0)</p>
-</div></blockquote>
-<p><strong>nbpol</strong> : int</p>
-<blockquote>
-<div><p>is only used when npcond = 2 to indicate whether the estimate of the
+</dd>
+<dt><strong>hclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the head change criterion for convergence. (default is 1e-5).</p>
+</dd>
+<dt><strong>rclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the residual criterion for convergence. (default is 1e-5)</p>
+</dd>
+<dt><strong>relax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the relaxation parameter used with npcond = 1. (default is 1.0)</p>
+</dd>
+<dt><strong>nbpol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is only used when npcond = 2 to indicate whether the estimate of the
 upper bound on the maximum eigenvalue is 2.0, or whether the estimate
 will be calculated. nbpol = 2 is used to specify the value is 2.0;
 for any other value of nbpol, the estimate is calculated. Convergence
 is generally insensitive to this parameter. (default is 0).</p>
-</div></blockquote>
-<p><strong>iprpcg</strong> : int</p>
-<blockquote>
-<div><p>solver print out interval. (default is 0).</p>
-</div></blockquote>
-<p><strong>mutpcg</strong> : int</p>
-<blockquote>
-<div><p>If mutpcg = 0, tables of maximum head change and residual will be
+</dd>
+<dt><strong>iprpcg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">solver print out interval. (default is 0).</p>
+</dd>
+<dt><strong>mutpcg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">If mutpcg = 0, tables of maximum head change and residual will be
 printed each iteration.
 If mutpcg = 1, only the total number of iterations will be printed.
 If mutpcg = 2, no information will be printed.
 If mutpcg = 3, information will only be printed if convergence fails.
 (default is 3).</p>
-</div></blockquote>
-<p><strong>damp</strong> : float</p>
-<blockquote>
-<div><p>is the steady-state damping factor. (default is 1.)</p>
-</div></blockquote>
-<p><strong>dampt</strong> : float</p>
-<blockquote>
-<div><p>is the transient damping factor. (default is 1.)</p>
-</div></blockquote>
-<p><strong>ihcofadd</strong> : int</p>
-<blockquote>
-<div><p>is a flag that determines what happens to an active cell that is
+</dd>
+<dt><strong>damp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the steady-state damping factor. (default is 1.)</p>
+</dd>
+<dt><strong>dampt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the transient damping factor. (default is 1.)</p>
+</dd>
+<dt><strong>ihcofadd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a flag that determines what happens to an active cell that is
 surrounded by dry cells.  (default is 0). If ihcofadd=0, cell
 converts to dry regardless of HCOF value. This is the default, which
 is the way PCG2 worked prior to the addition of this option. If
 ihcofadd&lt;&gt;0, cell converts to dry only if HCOF has no head-dependent
 stresses or storage terms.</p>
-</div></blockquote>
-<p><strong>extension</strong> : list string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘pcg’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package. If filenames=None the package name
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘pcg’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package. If filenames=None the package name
 will be created using the model name and package extension. If a
 single string is passed the package will be set to the string.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pcg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcg</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfpcg.ModflowPcg.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfpcg.ModflowPcg.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfpcg.ModflowPcg.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pcg</strong> : ModflowPcg object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pcg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowPcg object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pcg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcg</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.pcg&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -382,7 +371,11 @@ constructed using the function
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -414,7 +407,7 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -436,7 +429,7 @@ constructed using the function
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

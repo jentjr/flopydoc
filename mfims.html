@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfims Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfims Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mf6.modflow.mfmvr Module" href="mfmvr.html"/>
         <link rel="prev" title="flopy.mf6.modflow.mfgwfwel Module" href="mfgwfwel.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -233,19 +235,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation</strong> : MFSimulation</p>
-<blockquote>
-<div><p>Simulation that this package is a part of. Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>simulation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulation</span></dt>
+<dd><p class="first last">Simulation that this package is a part of. Package is automatically
 added to simulation when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>print_option</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_option</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>print_option (string) is a flag that controls printing of convergence
 information from the solver. NONE means print nothing. SUMMARY means
 print only the total number of iterations and nonlinear residual
@@ -255,10 +255,9 @@ matrix solver convergence information to each model listing file in
 addition to SUMMARY information. NONE is default if PRINT_OPTION is
 not specified.</li>
 </ul>
-</div></blockquote>
-<p><strong>complexity</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>complexity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>complexity (string) is an optional keyword that defines default non-
 linear and linear solver parameters. SIMPLE - indicates that default
 solver input values will be defined that work well for nearly linear
@@ -282,10 +281,9 @@ complexity can be modified in the NONLINEAR and LINEAR blocks. If the
 COMPLEXITY option is not specified, NONLINEAR and LINEAR variables
 will be assigned the simple complexity values.</li>
 </ul>
-</div></blockquote>
-<p><strong>csv_output_filerecord</strong> : [csvfile]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>csv_output_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[csvfile]</span></dt>
+<dd><ul class="first last simple">
 <li>csvfile (string) name of the ascii comma separated values output file
 to write solver convergence information. If PRINT_OPTION is NONE or
 SUMMARY, comma separated values output includes maximum head change
@@ -296,28 +294,25 @@ information for the solution and each model (if the solution includes
 more than one model) and linear acceleration information for each
 inner iteration.</li>
 </ul>
-</div></blockquote>
-<p><strong>outer_hclose</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>outer_hclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>outer_hclose (double) real value defining the head change criterion
 for convergence of the outer (nonlinear) iterations, in units of
 length. When the maximum absolute value of the head change at all
 nodes during an iteration is less than or equal to OUTER_HCLOSE,
 iteration stops. Commonly, OUTER_HCLOSE equals 0.01.</li>
 </ul>
-</div></blockquote>
-<p><strong>outer_maximum</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>outer_maximum</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>outer_maximum (integer) integer value defining the maximum number of
 outer (nonlinear) iterations – that is, calls to the solution
 routine. For a linear problem OUTER_MAXIMUM should be 1.</li>
 </ul>
-</div></blockquote>
-<p><strong>under_relaxation</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>under_relaxation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>under_relaxation (string) is an optional keyword that defines the
 nonlinear under-relaxation schemes used. By default under-relaxation
 is not used. NONE - under-relaxation is not used. SIMPLE - Simple
@@ -329,10 +324,9 @@ Raphson formulation, however, experience has indicated that the
 Cooley under-relaxation and damping work well also for the Picard
 scheme with the wet/dry options of MODFLOW 6.</li>
 </ul>
-</div></blockquote>
-<p><strong>under_relaxation_theta</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>under_relaxation_theta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>under_relaxation_theta (double) real value defining the reduction
 factor for the learning rate (under-relaxation term) of the delta-
 bar-delta algorithm. The value of UNDER_RELAXATION_THETA is between
@@ -343,10 +337,9 @@ ranges from 0.3 to 0.9; a value of 0.7 works well for most problems.
 UNDER_RELAXATION_THETA only needs to be specified if UNDER_RELAXATION
 is DBD.</li>
 </ul>
-</div></blockquote>
-<p><strong>under_relaxation_kappa</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>under_relaxation_kappa</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>under_relaxation_kappa (double) real value defining the increment for
 the learning rate (under-relaxation term) of the delta-bar-delta
 algorithm. The value of UNDER_RELAXATION_kappa is between zero and
@@ -357,10 +350,9 @@ an increment of UNDER_RELAXATION_KAPPA. The value usually ranges from
 UNDER_RELAXATION_KAPPA only needs to be specified if UNDER_RELAXATION
 is DBD.</li>
 </ul>
-</div></blockquote>
-<p><strong>under_relaxation_gamma</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>under_relaxation_gamma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>under_relaxation_gamma (double) real value defining the history or
 memory term factor of the delta-bar-delta algorithm.
 UNDER_RELAXATION_GAMMA is between zero and 1 but cannot be equal to
@@ -375,10 +367,9 @@ non-convergence. The value usually ranges from 0.1 to 0.3; a value of
 0.2 works well for most problems. UNDER_RELAXATION_GAMMA only needs
 to be specified if UNDER_RELAXATION is not NONE.</li>
 </ul>
-</div></blockquote>
-<p><strong>under_relaxation_momentum</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>under_relaxation_momentum</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>under_relaxation_momentum (double) real value defining the fraction
 of past history changes that is added as a momentum term to the step
 change for a nonlinear iteration. The value of
@@ -389,20 +380,18 @@ usually ranges from 0.0001 to 0.1; a value of 0.001 works well for
 most problems. UNDER_RELAXATION_MOMENTUM only needs to be specified
 if UNDER_RELAXATION is DBD.</li>
 </ul>
-</div></blockquote>
-<p><strong>backtracking_number</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>backtracking_number</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>backtracking_number (integer) integer value defining the maximum
 number of backtracking iterations allowed for residual reduction
 computations. If BACKTRACKING_NUMBER = 0 then the backtracking
 iterations are omitted. The value usually ranges from 2 to 20; a
 value of 10 works well for most problems.</li>
 </ul>
-</div></blockquote>
-<p><strong>backtracking_tolerance</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>backtracking_tolerance</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>backtracking_tolerance (double) real value defining the tolerance for
 residual change that is allowed for residual reduction computations.
 BACKTRACKING_TOLERANCE should not be less than one to avoid getting
@@ -414,10 +403,9 @@ like 1.1 may be required for harder problems. BACKTRACKING_TOLERANCE
 only needs to be specified if BACKTRACKING_NUMBER is greater than
 zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>backtracking_reduction_factor</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>backtracking_reduction_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>backtracking_reduction_factor (double) real value defining the
 reduction in step size used for residual reduction computations. The
 value of BACKTRACKING_REDUCTION_FACTOR is between zero and one. The
@@ -425,10 +413,9 @@ value usually ranges from 0.1 to 0.3; a value of 0.2 works well for
 most problems. BACKTRACKING_REDUCTION_FACTOR only needs to be
 specified if BACKTRACKING_NUMBER is greater than zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>backtracking_residual_limit</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>backtracking_residual_limit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>backtracking_residual_limit (double) real value defining the limit to
 which the residual is reduced with backtracking. If the residual is
 smaller than BACKTRACKING_RESIDUAL_LIMIT, then further backtracking
@@ -437,20 +424,18 @@ residual reduction to smaller values may only slow down computations.
 BACKTRACKING_RESIDUAL_LIMIT only needs to be specified if
 BACKTRACKING_NUMBER is greater than zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>inner_maximum</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>inner_maximum</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>inner_maximum (integer) integer value defining the maximum number of
 inner (linear) iterations. The number typically depends on the
 characteristics of the matrix solution scheme being used. For
 nonlinear problems, INNER_MAXIMUM usually ranges from 60 to 600; a
 value of 100 will be sufficient for most linear problems.</li>
 </ul>
-</div></blockquote>
-<p><strong>inner_hclose</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>inner_hclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>inner_hclose (double) real value defining the head change criterion
 for convergence of the inner (linear) iterations, in units of length.
 When the maximum absolute value of the head change at all nodes
@@ -459,10 +444,9 @@ solver assumes convergence. Commonly, INNER_HCLOSE is set an order of
 magnitude less than the OUTER_HCLOSE value specified for the
 NONLINEAR block.</li>
 </ul>
-</div></blockquote>
-<p><strong>rcloserecord</strong> : [inner_rclose, rclose_option]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>rcloserecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[inner_rclose, rclose_option]</span></dt>
+<dd><ul class="first last simple">
 <li>inner_rclose (double) real value that defines the flow residual
 tolerance for convergence of the IMS linear solver and specific flow
 residual criteria used. This value represents the maximum allowable
@@ -494,19 +478,17 @@ the RELATIVE_RCLOSE and the initial L-2 Norm for the current inner
 (linear) iteration. If RCLOSE_OPTION is not specified, an absolute
 residual (infinity-norm) criterion is used.</li>
 </ul>
-</div></blockquote>
-<p><strong>linear_acceleration</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>linear_acceleration</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>linear_acceleration (string) a keyword that defines the linear
 acceleration method used by the default IMS linear solvers. CG -
 preconditioned conjugate gradient method. BICGSTAB - preconditioned
 bi-conjugate gradient stabilized method.</li>
 </ul>
-</div></blockquote>
-<p><strong>relaxation_factor</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>relaxation_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>relaxation_factor (double) optional real value that defines the
 relaxation factor used by the incomplete LU factorization
 preconditioners (MILU(0) and MILUT). RELAXATION_FACTOR is unitless
@@ -519,10 +501,9 @@ value specified for PRECONDITIONER_LEVELS and/or
 PRECONDITIONER_DROP_TOLERANCE). By default, RELAXATION_FACTOR is
 zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>preconditioner_levels</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>preconditioner_levels</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>preconditioner_levels (integer) optional integer value defining the
 level of fill for ILU decomposition used in the ILUT and MILUT
 preconditioners. Higher levels of fill provide more robustness but
@@ -533,10 +514,9 @@ than zero results in use of the ILUT preconditioner. By default,
 PRECONDITIONER_LEVELS is zero and the zero-fill incomplete LU
 factorization preconditioners (ILU(0) and MILU(0)) are used.</li>
 </ul>
-</div></blockquote>
-<p><strong>preconditioner_drop_tolerance</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>preconditioner_drop_tolerance</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
+<dd><ul class="first last simple">
 <li>preconditioner_drop_tolerance (double) optional real value that
 defines the drop tolerance used to drop preconditioner terms based on
 the magnitude of matrix entries in the ILUT and MILUT
@@ -545,10 +525,9 @@ problems. By default, PRECONDITIONER_DROP_TOLERANCE is zero and the
 zero-fill incomplete LU factorization preconditioners (ILU(0) and
 MILU(0)) are used.</li>
 </ul>
-</div></blockquote>
-<p><strong>number_orthogonalizations</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>number_orthogonalizations</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>number_orthogonalizations (integer) optional integer value defining
 the interval used to explicitly recalculate the residual of the flow
 equation using the solver coefficient matrix, the latest head
@@ -556,40 +535,36 @@ estimates, and the right hand side. For problems that benefit from
 explicit recalculation of the residual, a number between 4 and 10 is
 appropriate. By default, NUMBER_ORTHOGONALIZATIONS is zero.</li>
 </ul>
-</div></blockquote>
-<p><strong>scaling_method</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>scaling_method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>scaling_method (string) an optional keyword that defines the matrix
 scaling approach used. By default, matrix scaling is not applied.
 NONE - no matrix scaling applied. DIAGONAL - symmetric matrix scaling
 using the POLCG preconditioner scaling method in Hill (1992). L2NORM
 - symmetric matrix scaling using the L2 norm.</li>
 </ul>
-</div></blockquote>
-<p><strong>reordering_method</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>reordering_method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>reordering_method (string) an optional keyword that defines the
 matrix reordering approach used. By default, matrix reordering is not
 applied. NONE - original ordering. RCM - reverse Cuthill McKee
 ordering. MD - minimum degree ordering.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -602,13 +577,17 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -641,7 +620,7 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -663,7 +642,7 @@ a mfgwflak package parent_file.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

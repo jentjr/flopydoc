@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.seawat.swtvsc Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.seawat.swtvsc Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfbct Module" href="mfbct.html"/>
         <link rel="prev" title="flopy.seawat.swtvdf Module" href="swtvdf.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a><ul class="current">
@@ -197,64 +198,57 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="swt.html#flopy.seawat.swt.Seawat" title="flopy.seawat.swt.Seawat"><code class="xref py py-class docutils literal"><span class="pre">flopy.seawat.swt.Seawat</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="swt.html#flopy.seawat.swt.Seawat" title="flopy.seawat.swt.Seawat"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.seawat.swt.Seawat</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>mt3dmuflg (or mt3drhoflg)</strong> : int</p>
-<blockquote>
-<div><p>is the MT3DMS species number that will be used in the equation to
+</dd>
+<dt><strong>mt3dmuflg (or mt3drhoflg)</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the MT3DMS species number that will be used in the equation to
 compute fluid viscosity.
 If MT3DMUFLG &gt;= 0, fluid density is calculated using the MT3DMS
 species number that corresponds with MT3DMUFLG.
 If MT3DMUFLG = -1, fluid viscosity is calculated using one or more
 MT3DMS species.</p>
-</div></blockquote>
-<p><strong>viscmin</strong> : float</p>
-<blockquote>
-<div><p>is the minimum fluid viscosity. If the resulting viscosity value
+</dd>
+<dt><strong>viscmin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the minimum fluid viscosity. If the resulting viscosity value
 calculated with the equation is less than VISCMIN, the viscosity
 value is set to VISCMIN.
 If VISCMIN = 0, the computed fluid viscosity is not limited by
 VISCMIN (this is the option to use for most simulations).
 If VISCMIN &gt; 0, a computed fluid viscosity less than VISCMIN is
 automatically reset to VISCMIN.</p>
-</div></blockquote>
-<p><strong>viscmax</strong> : float</p>
-<blockquote>
-<div><p>is the maximum fluid viscosity. If the resulting viscosity value
+</dd>
+<dt><strong>viscmax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the maximum fluid viscosity. If the resulting viscosity value
 calculated with the equation is greater than VISCMAX, the viscosity
 value is set to VISCMAX.
 If VISCMAX = 0, the computed fluid viscosity is not limited by
 VISCMAX (this is the option to use for most simulations).
 If VISCMAX &gt; 0, a computed fluid viscosity larger than VISCMAX is
 automatically reset to VISCMAX.</p>
-</div></blockquote>
-<p><strong>viscref</strong> : float</p>
-<blockquote>
-<div><p>is the fluid viscosity at the reference concentration and reference
+</dd>
+<dt><strong>viscref</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the fluid viscosity at the reference concentration and reference
 temperature. For most simulations, VISCREF is specified as the
 viscosity of freshwater.</p>
-</div></blockquote>
-<p><strong>dmudc</strong> : float</p>
-<blockquote>
-<div><p>is the slope of the linear equation that relates fluid viscosity to
+</dd>
+<dt><strong>dmudc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the slope of the linear equation that relates fluid viscosity to
 solute concentration.</p>
-</div></blockquote>
-<p><strong>nmueos</strong> : int</p>
-<blockquote>
-<div><p>is the number of MT3DMS species to be used in the linear equation
+</dd>
+<dt><strong>nmueos</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the number of MT3DMS species to be used in the linear equation
 for fluid viscosity (this number does not include the temperature
 species if the nonlinear option is being used). This value is read
 only if MT3DMUFLG = -1. A value of zero indicates that none of the
 MT3DMS species have a linear effect on fluid viscosity (the nonlinear
 temperature dependence may still be activated); nothing should be
 entered for item 3c in this case.</p>
-</div></blockquote>
-<p><strong>mutempopt</strong> : int</p>
-<blockquote>
-<div><p>is a flag that specifies the option for including the effect of
+</dd>
+<dt><strong>mutempopt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a flag that specifies the option for including the effect of
 temperature on fluid viscosity.
 If MUTEMPOPT = 0, the effect of temperature on fluid viscosity is not
 included or is a simple linear relation that is specified in item 3c.
@@ -266,39 +260,32 @@ If MUTEMPOPT = 3, fluid viscosity is calculated using equation 20.
 The size of the AMUCOEFF array in item 3e is 2 (MUNCOEFF = 2).
 If NSMUEOS and MUTEMPOPT are both set to zero, all fluid viscosities
 are set to VISCREF.</p>
-</div></blockquote>
-<p><strong>mtmuspec</strong> : int, or list of ints (of size nsmueos) if nsmueos &gt; 1</p>
-<blockquote>
-<div><p>is the MT3DMS species number corresponding to the adjacent DMUDC and
+</dd>
+<dt><strong>mtmuspec</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, or list of ints (of size nsmueos) if nsmueos &gt; 1</span></dt>
+<dd><p class="first last">is the MT3DMS species number corresponding to the adjacent DMUDC and
 CMUREF.</p>
-</div></blockquote>
-<p><strong>dmudc</strong> : float, or list of floats (of size nsmueos) if nsmueos &gt; 1</p>
-<blockquote>
-<div><p>is the slope of the linear equation that relates fluid viscosity to
+</dd>
+<dt><strong>dmudc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, or list of floats (of size nsmueos) if nsmueos &gt; 1</span></dt>
+<dd><p class="first last">is the slope of the linear equation that relates fluid viscosity to
 solute concentration.</p>
-</div></blockquote>
-<p><strong>cmuref</strong> : float, or list of floats (of size nsmueos) if nsmueos &gt; 1</p>
-<blockquote>
-<div><p>is the reference concentration.</p>
-</div></blockquote>
-<p><strong>mtmuspectemp</strong> : int</p>
-<blockquote>
-<div><p>is the MT3DMS species number that corresponds to temperature. This
+</dd>
+<dt><strong>cmuref</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, or list of floats (of size nsmueos) if nsmueos &gt; 1</span></dt>
+<dd><p class="first last">is the reference concentration.</p>
+</dd>
+<dt><strong>mtmuspectemp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the MT3DMS species number that corresponds to temperature. This
 value must be between 1 and NCOMP and should not be listed in
 MTMUSPEC of item 3c.</p>
-</div></blockquote>
-<p><strong>amucoeff</strong> : float</p>
-<blockquote>
-<div><p>is the coefficient array of size MUNCOEFF. AMUCOEFF is A in
+</dd>
+<dt><strong>amucoeff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the coefficient array of size MUNCOEFF. AMUCOEFF is A in
 equations 18, 19, and 20.</p>
-</div></blockquote>
-<p><strong>muncoef</strong> : int</p>
-<blockquote>
-<div><p>is the size of the AMUCOEFF array.</p>
-</div></blockquote>
-<p><strong>invisc</strong> : int</p>
-<blockquote>
-<div><p>is a flag. INVISC is read only if MT3DMUFLG is equal to zero.
+</dd>
+<dt><strong>muncoef</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the size of the AMUCOEFF array.</p>
+</dd>
+<dt><strong>invisc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a flag. INVISC is read only if MT3DMUFLG is equal to zero.
 If INVISC &lt; 0, values for the VISC array will be reused from the
 previous stress period. If it is the first stress period, values for
 the VISC array will be set to VISCREF.
@@ -307,34 +294,58 @@ INVISC &gt;= 1, values for the VISC array will be read from item 5.
 If INVISC = 2, values read for the VISC array are assumed to
 represent solute concentration, and will be converted to viscosity
 values.</p>
-</div></blockquote>
-<p><strong>visc</strong> : float or array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>is the fluid viscosity array read for each layer using the
+</dd>
+<dt><strong>visc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">is the fluid viscosity array read for each layer using the
 MODFLOW-2000 U2DREL array reader. The VISC array is read only if
 MT3DMUFLG is equal to zero. The VISC array may also be entered in
 terms of solute concen- tration (or any other units) if INVISC is set
 to 2, and the simple linear expression in item 3 can be used to
 represent the relation to viscosity.</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘vsc’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote class="last">
-<div><p>File unit number (default is 38).</p>
-</div></blockquote>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘vsc’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is 38).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">seawat</span><span class="o">.</span><span class="n">Seawat</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vsc</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">SeawatVsc</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.seawat.swtvsc.SeawatVsc.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swtvsc.SeawatVsc.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.seawat.swtvsc.SeawatVsc.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swtvsc.SeawatVsc.check" title="Permalink to this definition">¶</a></dt>
@@ -343,32 +354,34 @@ represent the relation to viscosity.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -377,46 +390,45 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.seawat.swtvsc.SeawatVsc.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swtvsc.SeawatVsc.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.seawat.swtvsc.SeawatVsc.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="swt.html#flopy.seawat.swt.Seawat" title="flopy.seawat.swt.Seawat"><code class="xref py py-class docutils literal"><span class="pre">flopy.seawat.swt.Seawat</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="swt.html#flopy.seawat.swt.Seawat" title="flopy.seawat.swt.Seawat"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.seawat.swt.Seawat</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>nper</strong> : int</p>
-<blockquote>
-<div><p>The number of stress periods.  If nper is None, then nper will be
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of stress periods.  If nper is None, then nper will be
 obtained from the model object. (default is None).</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vsc</strong> : SeawatVsc object</p>
-<blockquote class="last">
-<div><p>SeawatVsc object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vsc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">SeawatVsc object</span></dt>
+<dd><p class="first last">SeawatVsc object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
@@ -435,9 +447,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -459,20 +471,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -488,19 +502,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -515,7 +533,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -547,7 +569,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -569,7 +591,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

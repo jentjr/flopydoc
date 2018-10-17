@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfgmg Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfgmg Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mflak Module" href="mflak.html"/>
         <link rel="prev" title="flopy.modflow.mfghb Module" href="mfghb.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -151,6 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -240,22 +241,19 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>mxiter</strong> : int</p>
-<blockquote>
-<div><p>maximum number of outer iterations. (default is 50)</p>
-</div></blockquote>
-<p><strong>iiter</strong> : int</p>
-<blockquote>
-<div><p>maximum number of inner iterations. (default is 30)</p>
-</div></blockquote>
-<p><strong>iadamp</strong> : int</p>
-<blockquote>
-<div><p>is a flag that controls adaptive damping. The possible values
+</dd>
+<dt><strong>mxiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum number of outer iterations. (default is 50)</p>
+</dd>
+<dt><strong>iiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum number of inner iterations. (default is 30)</p>
+</dd>
+<dt><strong>iadamp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">is a flag that controls adaptive damping. The possible values
 of iadamp are.</p>
 <p>If iadamp = 0, then the value assigned to DAMP is used as a constant
 damping parameter.</p>
@@ -265,33 +263,29 @@ of the head change, using Cooley’s method as described in Mehl
 and Hill (2001), for subsequent iterations.</p>
 <p>If iadamp = 2, the relative reduced residual damping method documented
 in Mehl and Hill (2001) and modified by Banta (2006) is used.</p>
-<p>When iadamp is specified as 2 and the value specified for DAMP is less
+<p class="last">When iadamp is specified as 2 and the value specified for DAMP is less
 than 0.5, the closure criterion for the inner iterations (drclose) is
 assigned simply as rclose. When damp is between 0.5 and 1.0, inclusive,
 or when iadamp is specified as 0 or 1, drclose is calculated according
 to equation 20 on p. 9 of Wilson and Naff (2004).</p>
-</div></blockquote>
-<p><strong>hclose</strong> : float</p>
-<blockquote>
-<div><p>is the head change criterion for convergence. (default is 1e-5).</p>
-</div></blockquote>
-<p><strong>rclose</strong> : float</p>
-<blockquote>
-<div><p>is the residual criterion for convergence. (default is 1e-5)</p>
-</div></blockquote>
-<p><strong>relax</strong> : float</p>
-<blockquote>
-<div><p>is a relaxation parameter for the ILU preconditioned conjugate
+</dd>
+<dt><strong>hclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the head change criterion for convergence. (default is 1e-5).</p>
+</dd>
+<dt><strong>rclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the residual criterion for convergence. (default is 1e-5)</p>
+</dd>
+<dt><strong>relax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is a relaxation parameter for the ILU preconditioned conjugate
 gradient method. The relax parameter can be used to improve the
 spectral condition number of the ILU preconditioned system. The value
 of relax should be approximately one. However, the relaxation parameter
 can cause the factorization to break down. If this happens, then the
 gmg solver will report an assembly error and a value smaller than one
 for relax should be tried. This item is read only if isc = 4.</p>
-</div></blockquote>
-<p><strong>ioutgmg</strong> : int</p>
-<blockquote>
-<div><p>is a flag that controls the output of the gmg solver. The
+</dd>
+<dt><strong>ioutgmg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">is a flag that controls the output of the gmg solver. The
 possible values of ioutgmg are.</p>
 <p>If ioutgmg = 0, then only the solver inputs are printed.</p>
 <p>If ioutgmg = 1, then for each linear solve, the number of pcg
@@ -307,21 +301,19 @@ for each iteration.</p>
 terminal instead of the modflow list output file.</p>
 <p>ioutgmg = 4 is the same as ioutgmg = 2 except output is sent to the
 terminal instead of the modflow list output file.</p>
-<p>(default is 0)</p>
-</div></blockquote>
-<p><strong>iunitmhc</strong> : int</p>
-<blockquote>
-<div><p>is a flag and a unit number, which controls output of maximum
+<p class="last">(default is 0)</p>
+</dd>
+<dt><strong>iunitmhc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a flag and a unit number, which controls output of maximum
 head change values. If iunitmhc = 0, maximum head change values
 are not written to an output file. If iunitmhc &gt; 0, maximum head
 change values are written to unit iunitmhc. Unit iunitmhc should
 be listed in the Name file with ‘DATA’ as the file type. If
 iunitmhc &lt; 0 or is not present, iunitmhc defaults to 0.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>ism</strong> : int</p>
-<blockquote>
-<div><p>is a flag that controls the type of smoother used in the multigrid
+</dd>
+<dt><strong>ism</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a flag that controls the type of smoother used in the multigrid
 preconditioner. If ism = 0, then ilu(0) smoothing is implemented in
 the multigrid preconditioner; this smoothing requires an additional
 ector on each multigrid level to store the pivots in the ilu
@@ -333,10 +325,9 @@ smoothing is not as robust as ilu smoothing; additional iterations are
 likely to be required in reducing the residuals. In extreme cases, the
 solver may fail to converge as the residuals cannot be reduced
 sufficiently. (default is 0)</p>
-</div></blockquote>
-<p><strong>isc</strong> : int</p>
-<blockquote>
-<div><p>is a flag that controls semicoarsening in the multigrid
+</dd>
+<dt><strong>isc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is a flag that controls semicoarsening in the multigrid
 preconditioner. If isc = 0, then the rows, columns and layers are
 all coarsened. If isc = 1, then the rows and columns are coarsened,
 but the layers are not. If isc = 2, then the columns and layers are
@@ -348,55 +339,48 @@ then a value of 1 should be used. If no coarsening is implemented
 (isc = 4), then the gmg solver is comparable to the pcg2 ilu(0) solver
 described in Hill (1990) and uses the least amount of memory.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>damp</strong> : float</p>
-<blockquote>
-<div><p>is the value of the damping parameter. For linear problems, a value
+</dd>
+<dt><strong>damp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the value of the damping parameter. For linear problems, a value
 of 1.0 should be used. For nonlinear problems, a value less than 1.0 but
 greater than 0.0 may be necessary to achieve convergence. A typical
 value for nonlinear problems is 0.5. Damping also helps control the
 convergence criterion of the linear solve to alleviate excessive pcg
 iterations. (default 1.)</p>
-</div></blockquote>
-<p><strong>dup</strong> : float</p>
-<blockquote>
-<div><p>is the maximum damping value that should be applied at any iteration
+</dd>
+<dt><strong>dup</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the maximum damping value that should be applied at any iteration
 when the solver is not oscillating; it is dimensionless. An appropriate
 value for dup will be problem-dependent. For moderately nonlinear problems,
 reasonable values for dup would be in the range 0.5 to 1.0. For a highly
 nonlinear problem, a reasonable value for dup could be as small as 0.1.
 When the solver is oscillating, a damping value as large as 2.0 x DUP may
 be applied. (default is 0.75)</p>
-</div></blockquote>
-<p><strong>dlow</strong> : float</p>
-<blockquote>
-<div><p>is the minimum damping value to be generated by the adaptive-damping
+</dd>
+<dt><strong>dlow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the minimum damping value to be generated by the adaptive-damping
 procedure; it is dimensionless. An appropriate value for dlow will be
 problem-dependent and will be smaller than the value specified for dup.
 For a highly nonlinear problem, an appropriate value for dlow might be as
 small as 0.001. Note that the value specified for the variable, chglimit,
 could result in application of a damping value smaller than dlow.
 (default is 0.01)</p>
-</div></blockquote>
-<p><strong>chglimit</strong> : float</p>
-<blockquote>
-<div><p>is the maximum allowed head change at any cell between outer iterations;
+</dd>
+<dt><strong>chglimit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the maximum allowed head change at any cell between outer iterations;
 it has units of length. The effect of chglimit is to determine a damping
 value that, when applied to all elements of the head-change vector, will
 produce an absolute maximum head change equal to chglimit.
 (default is 1.0)</p>
-</div></blockquote>
-<p><strong>extension</strong> : list string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘gmg’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote>
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘gmg’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the gmg output name will be created using
 the model name and .cbc extension (for example, modflowtest.gmg.out),
@@ -406,54 +390,60 @@ created using the model name and .gmg.out extension, if iunitmhc is a
 number greater than zero. To define the names for all package files
 (input and output) the length of the list of strings should be 2.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gmg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowGmg</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfgmg.ModflowGmg.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfgmg.ModflowGmg.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfgmg.ModflowGmg.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>gmg</strong> : ModflowGmg object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>gmg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowGmg object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gmg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowGmg</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.gmg&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -468,7 +458,11 @@ constructed using the function
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -500,7 +494,7 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -522,7 +516,7 @@ constructed using the function
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

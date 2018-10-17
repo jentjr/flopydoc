@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mflak Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mflak Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mflmt Module" href="mflmt.html"/>
         <link rel="prev" title="flopy.modflow.mfgmg Module" href="mfgmg.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -151,6 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -240,29 +241,26 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>nlakes</strong> : int</p>
-<blockquote>
-<div><p>NLAKES Number of separate lakes.
+</dd>
+<dt><strong>nlakes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">NLAKES Number of separate lakes.
 Sublakes of multiple-lake systems are considered separate lakes for input purposes. 
 The variable NLAKES is used, with certain internal assumptions and approximations, 
 to dimension arrays for the simulation.</p>
-</div></blockquote>
-<p><strong>ipakcb</strong> : int</p>
-<blockquote>
-<div><p>(ILKCB in MODFLOW documentation) 
+</dd>
+<dt><strong>ipakcb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(ILKCB in MODFLOW documentation) 
 Whether or not to write cell-by-cell flows (yes if ILKCB&gt; 0, no otherwise). 
 If ILKCB&lt; 0 and “Save Budget” is specified in the Output Control or ICBCFL is not equal to 0, 
 the cell-by-cell flows will be printed in the standard output file.
 ICBCFL is specified in the input to the Output Control Option of MODFLOW.</p>
-</div></blockquote>
-<p><strong>theta</strong> : float</p>
-<blockquote>
-<div><p>Explicit (THETA = 0.0), semi-implicit (0.0 &lt; THETA &lt; 1.0), or implicit (THETA = 1.0) 
+</dd>
+<dt><strong>theta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Explicit (THETA = 0.0), semi-implicit (0.0 &lt; THETA &lt; 1.0), or implicit (THETA = 1.0) 
 solution for lake stages.
 SURFDEPTH is read only if THETA is assigned a negative value 
 (the negative value of THETA is then changed to a positive value internally by the code).
@@ -282,10 +280,9 @@ negative sign immeditately in front of THETA. A negative THETA sets a flag which
 input values for NSSITR and SSCNCR will follow THETA in the format as described by Merritt 
 and Konikow (p. 52). A negative THETA is automatically reset to a positive value after 
 values of NSSITR and SSCNCR are read.</p>
-</div></blockquote>
-<p><strong>nssitr</strong> : int</p>
-<blockquote>
-<div><p>Maximum number of iterations for Newton’s method of solution for equilibrium lake stages 
+</dd>
+<dt><strong>nssitr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Maximum number of iterations for Newton’s method of solution for equilibrium lake stages 
 in each MODFLOW iteration for steady-state aquifer head solution. Only read if ISS 
 (option flag input to DIS Package of MODFLOW indicating steady-state solution) 
 is not zero or if THETA is specified as a negative value.
@@ -304,19 +301,17 @@ for NSSITR and SSCNCR will follow THETA in the format as described by Merritt an
 (p. 52). A negative THETA is automatically reset to a positive value after values 
 of NSSITR and SSCNCR are read.</p>
 </div></blockquote>
-<ul class="simple">
+<ul class="last simple">
 <li>If NSSITR = 0, a value of 100 will be used instead.</li>
 </ul>
-</div></blockquote>
-<p><strong>sscncr</strong> : float</p>
-<blockquote>
-<div><p>Convergence criterion for equilibrium lake stage solution by Newton’s method. 
+</dd>
+<dt><strong>sscncr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Convergence criterion for equilibrium lake stage solution by Newton’s method. 
 Only read if ISS is not zero or if THETA is specified as a negative value.
 see notes above for nssitr.</p>
-</div></blockquote>
-<p><strong>surfdepth</strong> : float</p>
-<blockquote>
-<div><p>The height of small topological variations (undulations) in lake-bottom elevations 
+</dd>
+<dt><strong>surfdepth</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The height of small topological variations (undulations) in lake-bottom elevations 
 that can affect groundwater discharge to lakes.
 SURFDEPTH decreases the lakebed conductance for vertical flow across a horizontal lakebed 
 caused both by a groundwater head that is between the lakebed and the 
@@ -329,14 +324,12 @@ for the transition of seepage from a lake to groundwater when the lake stage dec
 to the lakebed elevation. Values of SURFDEPTH ranging from 0.01 to 0.5 have been used 
 successfully in test simulations. SURFDEP is read only if THETA is specified 
 as a negative value.</p>
-</div></blockquote>
-<p><strong>stages</strong> : float or list of floats</p>
-<blockquote>
-<div><p>The initial stage of each lake at the beginning of the run.</p>
-</div></blockquote>
-<p><strong>stage_range</strong> : list of tuples (ssmn, ssmx) of length nlakes</p>
-<blockquote>
-<div><p>Where ssmn and ssmx are the minimum and maximum stages allowed for each lake 
+</dd>
+<dt><strong>stages</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or list of floats</span></dt>
+<dd><p class="first last">The initial stage of each lake at the beginning of the run.</p>
+</dd>
+<dt><strong>stage_range</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of tuples (ssmn, ssmx) of length nlakes</span></dt>
+<dd><p class="first">Where ssmn and ssmx are the minimum and maximum stages allowed for each lake 
 in steady-state solution.
 *       SSMN and SSMX are not needed for a transient run and must be omitted</p>
 <blockquote>
@@ -348,11 +341,10 @@ in steady-state solution.
 <blockquote>
 <div><p>SSMN is defined in record 3.</p>
 </div></blockquote>
-<p>For subsequent steady-state stress periods, SSMN is defined in record 9a.</p>
-</div></blockquote>
-<p><strong>lakarr</strong> : array of integers (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>LKARR A value is read in for every grid cell.
+<p class="last">For subsequent steady-state stress periods, SSMN is defined in record 9a.</p>
+</dd>
+<dt><strong>lakarr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of integers (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">LKARR A value is read in for every grid cell.
 If LKARR(I,J,K) = 0, the grid cell is not a lake volume cell.
 If LKARR(I,J,K) &gt; 0, its value is the identification number of the 
 lake occupying the grid cell. LKARR(I,J,K) must not exceed the value NLAKES. 
@@ -371,10 +363,9 @@ vertical lake/aquifer conductances are based on lakebed conductance and
 on the vertical hydraulic conductivity of the aquifer layer underlying 
 the lake when the wet/dry option is implemented, and only on the lakebed leakance when 
 the wet/dry option is not implemented.</p>
-</div></blockquote>
-<p><strong>bdlknc</strong> : array of floats (nlay, nrow, ncol)</p>
-<blockquote>
-<div><p>BDLKNC A value is read in for every grid cell. The value is the lakebed leakance 
+</dd>
+<dt><strong>bdlknc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats (nlay, nrow, ncol)</span></dt>
+<dd><p class="first last">BDLKNC A value is read in for every grid cell. The value is the lakebed leakance 
 that will be assigned to lake/aquifer interfaces that occur in the 
 corresponding grid cell.
 If the wet-dry option flag (IWDFLG) is not active (cells cannot rewet if they become dry), 
@@ -392,10 +383,9 @@ lake-aquifer conductance solely on the basis of the user-specified value of lake
 aquifer hydraulic conductivities are not used in this calculation.  
 An appropriate informational message is now printed after the lakebed conductances 
 are written to the main output file.</p>
-</div></blockquote>
-<p><strong>sill_data</strong> : dict</p>
-<blockquote>
-<div><p>(dataset 8 in documentation)
+</dd>
+<dt><strong>sill_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first">(dataset 8 in documentation)
 Dict of lists keyed by stress period. Each list has a tuple of dataset 8a, 8b
 for every multi-lake system, where dataset 8a is another tuple of
 IC : int</p>
@@ -410,15 +400,14 @@ being described in this record. The center lake number is listed first.</p>
 </dl>
 <p>And dataset 8b contains 
 SILLVT : sequnce of floats</p>
-<blockquote>
+<blockquote class="last">
 <div><p>A sequence of sill elevations for each sublakes that determines whether 
 the center lake is connected with a given sublake. Values are entered 
 for each sublake in the order the sublakes are listed in the previous record.</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>flux_data</strong> : dict</p>
-<blockquote>
-<div><p>(dataset 9 in documentation)
+</dd>
+<dt><strong>flux_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first">(dataset 9 in documentation)
 Dict of lists keyed by stress period. The list for each stress period is a list
 of lists, with each list containing the variables PRCPLK EVAPLK RNF WTHDRW [SSMN] [SSMX]
 from the documentation.
@@ -426,7 +415,7 @@ PRCPLK : float</p>
 <blockquote>
 <div><p>The rate of precipitation per unit area at the surface of a lake (L/T).</p>
 </div></blockquote>
-<dl class="docutils">
+<dl class="last docutils">
 <dt>EVAPLK <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The rate of evaporation per unit area from the surface of a lake (L/T).</p>
 </dd>
@@ -462,22 +451,18 @@ See notes on ssmn and ssmx above.</p>
 <dd><p class="first last">SSMX Maximum stage allowed for each lake in steady-state solution.</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>options</strong> : list of strings</p>
-<blockquote>
-<div><p>Package options. (default is None).</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘lak’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>options</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">Package options. (default is None).</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘lak’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the cbc output name will be created using
 the model name and .cbc extension (for example, modflowtest.cbc),
@@ -487,7 +472,8 @@ created using the model name and .cbc extension, if ipakcbc is a
 number greater than zero. To define the names for all package files
 (input and output) the length of the list of strings should be 2.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -495,7 +481,7 @@ Default is None.</p>
 <p class="rubric">Notes</p>
 <p>Parameters are not supported in FloPy.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lak</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lak</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">15.6</span><span class="p">,</span> <span class="mf">1050.</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]]</span>  <span class="c1">#this lake boundary will be</span>
@@ -503,6 +489,32 @@ Default is None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lak</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowLak</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nstress_period_data</span><span class="o">=</span><span class="n">strd</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mflak.ModflowLak.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mflak.ModflowLak.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.check" title="Permalink to this definition">¶</a></dt>
@@ -511,32 +523,34 @@ Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -545,46 +559,45 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mflak.ModflowLak.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>nper</strong> : int</p>
-<blockquote>
-<div><p>The number of stress periods.  If nper is None, then nper will be
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of stress periods.  If nper is None, then nper will be
 obtained from the model object. (default is None).</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>str</strong> : ModflowStr object</p>
-<blockquote class="last">
-<div><p>ModflowStr object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowStr object</span></dt>
+<dd><p class="first last">ModflowStr object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lak</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowStr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.lak&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -600,9 +613,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -624,20 +637,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -653,19 +668,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -680,7 +699,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -712,7 +735,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -734,7 +757,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

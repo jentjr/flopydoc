@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.export.shapefile_utils Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.export.shapefile_utils Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.swroutputfile Module" href="swroutputfile.html"/>
         <link rel="prev" title="flopy.utils.postprocessing Module" href="postprocessing.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.export.shapefile_utils Module</a></li>
@@ -145,6 +147,7 @@
 <li class="toctree-l3"><a class="reference internal" href="metadata.html">flopy.export.metadata Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="netcdf.html">flopy.export.netcdf Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triangle.html">flopy.utils.triangle Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html">flopy.export.utils Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vtk.html">flopy.export.vtk Module</a></li>
 </ul>
@@ -229,9 +232,17 @@ Add suffix for duplicate names starting at 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>names</strong> : list of strings</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>names</strong> : list of unique strings of len &lt;= 10.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of unique strings of len &lt;= 10.</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -259,31 +270,32 @@ can be added to the shapefile as attributes</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
-<p><strong>ml</strong> : flopy.mbase</p>
-<blockquote>
-<div><p>model instance</p>
-</div></blockquote>
-<p><strong>package_names</strong> : list of package names (e.g. [“dis”,”lpf”])</p>
-<blockquote>
-<div><p>Packages to export data arrays to shapefile. (default is None)</p>
-</div></blockquote>
-<p><strong>array_dict</strong> : dict of {name:2D array} pairs</p>
-<blockquote>
-<div><p>Additional 2D arrays to add as attributes to the shapefile. (default is None)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the shapefile to write</p>
+</dd>
+<dt><strong>ml</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.mbase</span></dt>
+<dd><p class="first last">model instance</p>
+</dd>
+<dt><strong>package_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of package names (e.g. [“dis”,”lpf”])</span></dt>
+<dd><p class="first last">Packages to export data arrays to shapefile. (default is None)</p>
+</dd>
+<dt><strong>array_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict of {name:2D array} pairs</span></dt>
+<dd><p class="first last">Additional 2D arrays to add as attributes to the shapefile. (default is None)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">model_attributes_to_shapefile</span><span class="p">(</span><span class="s1">&#39;model.shp&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -299,27 +311,24 @@ list of geometries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>recarray</strong> : np.recarry</p>
-<blockquote>
-<div><p>Numpy record array with attribute information that will go in the shapefile</p>
-</div></blockquote>
-<p><strong>geoms</strong> : list of flopy.utils.geometry objects</p>
-<blockquote>
-<div><p>The number of geometries in geoms must equal the number of records in
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>recarray</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarry</span></dt>
+<dd><p class="first last">Numpy record array with attribute information that will go in the shapefile</p>
+</dd>
+<dt><strong>geoms</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of flopy.utils.geometry objects</span></dt>
+<dd><p class="first last">The number of geometries in geoms must equal the number of records in
 recarray.</p>
-</div></blockquote>
-<p><strong>shpname</strong> : str</p>
-<blockquote>
-<div><p>Path for the output shapefile</p>
-</div></blockquote>
-<p><strong>epsg</strong> : int</p>
-<blockquote>
-<div><p>EPSG code. See <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a> or spatialreference.org</p>
-</div></blockquote>
-<p><strong>prj</strong> : str</p>
-<blockquote class="last">
-<div><p>Existing projection file to be used with new shapefile.</p>
-</div></blockquote>
+</dd>
+<dt><strong>shpname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Path for the output shapefile</p>
+</dd>
+<dt><strong>epsg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">EPSG code. See <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a> or spatialreference.org</p>
+</dd>
+<dt><strong>prj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Existing projection file to be used with new shapefile.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -341,29 +350,31 @@ conform with ESRI shapefile maximum attribute name length</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : string</p>
-<blockquote>
-<div><p>data array name</p>
-</div></blockquote>
-<p><strong>length</strong> : int</p>
-<blockquote>
-<div><p>maximum length of string to return. Value passed to function is
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">data array name</p>
+</dd>
+<dt><strong>length</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum length of string to return. Value passed to function is
 overridden and set to 10 if keep_layer=True. (default is 6)</p>
-</div></blockquote>
-<p><strong>keep_layer</strong> : bool</p>
-<blockquote>
-<div><p>Boolean that determines if layer number in name should be retained.
+</dd>
+<dt><strong>keep_layer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean that determines if layer number in name should be retained.
 (default is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">String</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>String</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">shape_attr_name</span><span class="p">(</span><span class="s1">&#39;averylongstring&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">name</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;averyl&#39;</span>
@@ -379,13 +390,17 @@ overridden and set to 10 if keep_layer=True. (default is 6)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>shpname</strong> : str</p>
-<blockquote>
-<div><p>ESRI Shapefile.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>shpname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">ESRI Shapefile.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>recarray</strong> : np.recarray</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>recarray</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -400,22 +415,24 @@ overridden and set to 10 if keep_layer=True. (default is 6)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
-<p><strong>sr</strong> : spatial reference instance</p>
-<blockquote>
-<div><p>spatial reference object for model grid</p>
-</div></blockquote>
-<p><strong>array_dict</strong> : dict</p>
-<blockquote>
-<div><p>Dictionary of name and 2D array pairs.  Additional 2D arrays to add as
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the shapefile to write</p>
+</dd>
+<dt><strong>sr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">spatial reference instance</span></dt>
+<dd><p class="first last">spatial reference object for model grid</p>
+</dd>
+<dt><strong>array_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Dictionary of name and 2D array pairs.  Additional 2D arrays to add as
 attributes to the grid shapefile.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -431,14 +448,19 @@ to polygons.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
-<p><strong>sr</strong> : spatial reference</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the shapefile to write</p>
+</dd>
+<dt><strong>sr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">spatial reference</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -469,7 +491,7 @@ to polygons.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -491,7 +513,7 @@ to polygons.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

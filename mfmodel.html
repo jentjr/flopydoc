@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.mfmodel Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.mfmodel Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -228,70 +230,58 @@
 <p>mfmodel module.  Contains the MFModel class</p>
 <dl class="class">
 <dt id="flopy.mf6.mfmodel.MFModel">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfmodel.</code><code class="descname">MFModel</code><span class="sig-paren">(</span><em>simulation</em>, <em>model_type='gwf6'</em>, <em>modelname='modflowtest'</em>, <em>model_nam_file=None</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>add_to_simulation=True</em>, <em>structure=None</em>, <em>model_rel_path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.mfmodel.</code><code class="descname">MFModel</code><span class="sig-paren">(</span><em>simulation</em>, <em>model_type='gwf6'</em>, <em>modelname='model'</em>, <em>model_nam_file=None</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>add_to_simulation=True</em>, <em>structure=None</em>, <em>model_rel_path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>MODFLOW Model Class.  Represents a single model in a simulation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation_data</strong> : MFSimulationData</p>
-<blockquote>
-<div><p>simulation data object</p>
-</div></blockquote>
-<p><strong>structure</strong> : MFModelStructure</p>
-<blockquote>
-<div><p>structure of this type of model</p>
-</div></blockquote>
-<p><strong>modelname</strong> : string</p>
-<blockquote>
-<div><p>name of the model</p>
-</div></blockquote>
-<p><strong>model_nam_file</strong> : string</p>
-<blockquote>
-<div><p>relative path to the model name file from model working folder</p>
-</div></blockquote>
-<p><strong>version</strong> : string</p>
-<blockquote>
-<div><p>version of modflow</p>
-</div></blockquote>
-<p><strong>exe_name</strong> : string</p>
-<blockquote>
-<div><p>model executable name</p>
-</div></blockquote>
-<p><strong>model_ws</strong> : string</p>
-<blockquote>
-<div><p>model working folder path</p>
-</div></blockquote>
-<p><strong>disfile</strong> : string</p>
-<blockquote>
-<div><p>relative path to dis file from model working folder</p>
-</div></blockquote>
-<p><strong>grid_type</strong> : string</p>
-<blockquote class="last">
-<div><p>type of grid the model will use (structured, unstructured, vertices)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>simulation_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulationData</span></dt>
+<dd><p class="first last">simulation data object</p>
+</dd>
+<dt><strong>structure</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModelStructure</span></dt>
+<dd><p class="first last">structure of this type of model</p>
+</dd>
+<dt><strong>modelname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the model</p>
+</dd>
+<dt><strong>model_nam_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">relative path to the model name file from model working folder</p>
+</dd>
+<dt><strong>version</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">version of modflow</p>
+</dd>
+<dt><strong>exe_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">model executable name</p>
+</dd>
+<dt><strong>model_ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">model working folder path</p>
+</dd>
+<dt><strong>disfile</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">relative path to dis file from model working folder</p>
+</dd>
+<dt><strong>grid_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">type of grid the model will use (structured, unstructured, vertices)</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>model_name</strong></td>
-<td>(string) name of the model</td>
-</tr>
-<tr class="row-even"><td><strong>exe_name</strong></td>
-<td>(string) model executable name</td>
-</tr>
-<tr class="row-odd"><td><strong>packages</strong></td>
-<td>(OrderedDict(MFPackage)) dictionary of model packages</td>
-</tr>
-<tr class="row-even"><td><strong>_name_file_io</strong></td>
-<td>(MFNameFile) name file</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the model</p>
+</dd>
+<dt><strong>exe_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">model executable name</p>
+</dd>
+<dt><strong>packages</strong> <span class="classifier-delimiter">:</span> <span class="classifier">OrderedDict(MFPackage)</span></dt>
+<dd><p class="first last">dictionary of model packages</p>
+</dd>
+<dt><strong>_name_file_io</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFNameFile</span></dt>
+<dd><p class="first last">name file</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -302,20 +292,28 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.load" title="flopy.mf6.mfmodel.MFModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(simulation,&nbsp;simulation_data,&nbsp;structure)</td>
-<td>Load an existing model.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.write" title="flopy.mf6.mfmodel.MFModel.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>([ext_file_action])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.write" title="flopy.mf6.mfmodel.MFModel.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>([ext_file_action])</td>
 <td>write model to model files</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.remove_package" title="flopy.mf6.mfmodel.MFModel.remove_package"><code class="xref py py-obj docutils literal"><span class="pre">remove_package</span></code></a>(package)</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.remove_package" title="flopy.mf6.mfmodel.MFModel.remove_package"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_package</span></code></a>(package_name)</td>
 <td>removes a package and all child packages from the model</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.set_model_relative_path" title="flopy.mf6.mfmodel.MFModel.set_model_relative_path"><code class="xref py py-obj docutils literal"><span class="pre">set_model_relative_path</span></code></a>(model_ws)</td>
-<td>sets the file path to the model folder relative to the simulation</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.set_model_relative_path" title="flopy.mf6.mfmodel.MFModel.set_model_relative_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_model_relative_path</span></code></a>(model_ws)</td>
+<td>sets the file path to the model folder relative to the simulation folder and updates all model file paths, placing them in the model folder</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.is_valid" title="flopy.mf6.mfmodel.MFModel.is_valid"><code class="xref py py-obj docutils literal"><span class="pre">is_valid</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#flopy.mf6.mfmodel.MFModel.is_valid" title="flopy.mf6.mfmodel.MFModel.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid</span></code></a>()</td>
 <td>checks the validity of the model and all of its packages</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="96%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>load</strong></td>
+<td>((simulation) namfile : string, type : string, version : string, exe_name : string, model_ws : string, strict : boolean) : MFSimulation a class method that loads a model from files</td>
 </tr>
 </tbody>
 </table>
@@ -327,13 +325,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -348,63 +350,62 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>valid</strong> : boolean</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>valid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="flopy.mf6.mfmodel.MFModel.load">
-<em class="property">classmethod </em><code class="descname">load</code><span class="sig-paren">(</span><em>simulation</em>, <em>simulation_data</em>, <em>structure</em>, <em>modelname='NewModel'</em>, <em>model_nam_file='modflowtest.nam'</em>, <em>type='gwf'</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>strict=True</em>, <em>model_rel_path='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.load" title="Permalink to this definition">¶</a></dt>
+<dt id="flopy.mf6.mfmodel.MFModel.load_base">
+<em class="property">classmethod </em><code class="descname">load_base</code><span class="sig-paren">(</span><em>simulation</em>, <em>structure</em>, <em>modelname='NewModel'</em>, <em>model_nam_file='modflowtest.nam'</em>, <em>type='gwf'</em>, <em>version='mf6'</em>, <em>exe_name='mf6.exe'</em>, <em>strict=True</em>, <em>model_rel_path='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.load_base" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation</strong> : MFSimulation</p>
-<blockquote>
-<div><p>simulation object that this model is a part of</p>
-</div></blockquote>
-<p><strong>simulation_data</strong> : MFSimulationData</p>
-<blockquote>
-<div><p>simulation data object</p>
-</div></blockquote>
-<p><strong>structure</strong> : MFModelStructure</p>
-<blockquote>
-<div><p>structure of this type of model</p>
-</div></blockquote>
-<p><strong>model_name</strong> : string</p>
-<blockquote>
-<div><p>name of the model</p>
-</div></blockquote>
-<p><strong>model_nam_file</strong> : string</p>
-<blockquote>
-<div><p>relative path to the model name file from model working folder</p>
-</div></blockquote>
-<p><strong>version</strong> : string</p>
-<blockquote>
-<div><p>version of modflow</p>
-</div></blockquote>
-<p><strong>exe_name</strong> : string</p>
-<blockquote>
-<div><p>model executable name</p>
-</div></blockquote>
-<p><strong>model_ws</strong> : string</p>
-<blockquote>
-<div><p>model working folder relative to simulation working folder</p>
-</div></blockquote>
-<p><strong>strict</strong> : boolean</p>
-<blockquote>
-<div><p>strict mode when loading files</p>
-</div></blockquote>
-<p><strong>model_rel_path</strong> : string</p>
-<blockquote>
-<div><p>relative path of model folder to simulation folder</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p class="last"><strong>model</strong> : MFModel</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>simulation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulation</span></dt>
+<dd><p class="first last">simulation object that this model is a part of</p>
+</dd>
+<dt><strong>simulation_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulationData</span></dt>
+<dd><p class="first last">simulation data object</p>
+</dd>
+<dt><strong>structure</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModelStructure</span></dt>
+<dd><p class="first last">structure of this type of model</p>
+</dd>
+<dt><strong>model_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the model</p>
+</dd>
+<dt><strong>model_nam_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">relative path to the model name file from model working folder</p>
+</dd>
+<dt><strong>version</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">version of modflow</p>
+</dd>
+<dt><strong>exe_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">model executable name</p>
+</dd>
+<dt><strong>model_ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">model working folder relative to simulation working folder</p>
+</dd>
+<dt><strong>strict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">strict mode when loading files</p>
+</dd>
+<dt><strong>model_rel_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">relative path of model folder to simulation folder</p>
+</dd>
+<dt><strong>Returns</strong></dt>
+<dd></dd>
+<dt><strong>——-</strong></dt>
+<dd></dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModel</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -419,34 +420,29 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ftype</strong> : string</p>
-<blockquote>
-<div><p>the file type</p>
-</div></blockquote>
-<p><strong>fname</strong> : string</p>
-<blockquote>
-<div><p>the name of the file containing the package input</p>
-</div></blockquote>
-<p><strong>pname</strong> : string</p>
-<blockquote>
-<div><p>the user-defined name for the package</p>
-</div></blockquote>
-<p><strong>strict</strong> : bool</p>
-<blockquote>
-<div><p>strict mode when loading the file</p>
-</div></blockquote>
-<p><strong>ref_path</strong> : string</p>
-<blockquote>
-<div><p>path to the file. uses local path if set to None</p>
-</div></blockquote>
-<p><strong>dict_package_name</strong> : string</p>
-<blockquote>
-<div><p>package name for dictionary lookup</p>
-</div></blockquote>
-<p><strong>parent_package</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>parent package</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ftype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the file type</p>
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the name of the file containing the package input</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the user-defined name for the package</p>
+</dd>
+<dt><strong>strict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">strict mode when loading the file</p>
+</dd>
+<dt><strong>ref_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">path to the file. uses local path if set to None</p>
+</dd>
+<dt><strong>dict_package_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">package name for dictionary lookup</p>
+</dd>
+<dt><strong>parent_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">parent package</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -461,25 +457,26 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : MFPackage</p>
-<blockquote>
-<div><p>package to register</p>
-</div></blockquote>
-<p><strong>add_to_package_list</strong> : bool</p>
-<blockquote>
-<div><p>add package to lookup list</p>
-</div></blockquote>
-<p><strong>set_package_name</strong> : bool</p>
-<blockquote>
-<div><p>produce a package name for this package</p>
-</div></blockquote>
-<p><strong>set_package_filename</strong> : bool</p>
-<blockquote>
-<div><p>produce a filename for this package</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">package to register</p>
+</dd>
+<dt><strong>add_to_package_list</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">add package to lookup list</p>
+</dd>
+<dt><strong>set_package_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">produce a package name for this package</p>
+</dd>
+<dt><strong>set_package_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">produce a filename for this package</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>(path</strong> : tuple, package structure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>(path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple, package structure</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -488,16 +485,18 @@
 
 <dl class="method">
 <dt id="flopy.mf6.mfmodel.MFModel.remove_package">
-<code class="descname">remove_package</code><span class="sig-paren">(</span><em>package</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.remove_package" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_package</code><span class="sig-paren">(</span><em>package_name</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfmodel.MFModel.remove_package" title="Permalink to this definition">¶</a></dt>
 <dd><p>removes a package and all child packages from the model</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>package to be removed from the model</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>package_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">package name, package type, or package object to be removed from
+the model</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -514,10 +513,11 @@ folder</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model_ws</strong> : string</p>
-<blockquote class="last">
-<div><p>model working folder relative to simulation working folder</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model_ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">model working folder relative to simulation working folder</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -532,12 +532,13 @@ folder</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ext_file_action</strong> : ExtFileAction</p>
-<blockquote class="last">
-<div><p>defines what to do with external files when the simulation path has
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ext_file_action</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ExtFileAction</span></dt>
+<dd><p class="first last">defines what to do with external files when the simulation path has
 changed.  defaults to copy_relative_paths which copies only files
 with relative paths, leaving files defined by absolute paths fixed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -561,7 +562,7 @@ with relative paths, leaving files defined by absolute paths fixed.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -583,7 +584,7 @@ with relative paths, leaving files defined by absolute paths fixed.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

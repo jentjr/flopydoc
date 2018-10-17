@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.mfbase Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.mfbase Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="prev" title="flopy.modflow.mfaddoutsidefile Module" href="mfaddoutsidefile.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -114,6 +114,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -149,6 +150,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -232,6 +234,32 @@
 <dd><p>An enumeration.</p>
 </dd></dl>
 
+<dl class="exception">
+<dt id="flopy.mf6.mfbase.FlopyException">
+<em class="property">exception </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">FlopyException</code><span class="sig-paren">(</span><em>error</em>, <em>location=''</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.FlopyException" title="Permalink to this definition">¶</a></dt>
+<dd><p>General Flopy Exception</p>
+<dl class="method">
+<dt id="flopy.mf6.mfbase.FlopyException.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.FlopyException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="flopy.mf6.mfbase.MFDataException">
+<em class="property">exception </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">MFDataException</code><span class="sig-paren">(</span><em>model=None</em>, <em>package=None</em>, <em>path=None</em>, <em>current_process=None</em>, <em>data_element=None</em>, <em>method_caught_in=None</em>, <em>org_type=None</em>, <em>org_value=None</em>, <em>org_traceback=None</em>, <em>message=None</em>, <em>debug=None</em>, <em>mfdata_except=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.MFDataException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception related to MODFLOW input/output data</p>
+<dl class="method">
+<dt id="flopy.mf6.mfbase.MFDataException.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.MFDataException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="class">
 <dt id="flopy.mf6.mfbase.MFFileMgmt">
 <em class="property">class </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">MFFileMgmt</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.MFFileMgmt" title="Permalink to this definition">¶</a></dt>
@@ -240,26 +268,22 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>path on disk to the simulation</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">path on disk to the simulation</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="27%" />
-<col width="73%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>sim_path</strong></td>
-<td>(string) path to the simulation</td>
-</tr>
-<tr class="row-even"><td><strong>model_relative_path</strong></td>
-<td>(OrderedDict) dictionary of relative paths to each model folder</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sim_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">path to the simulation</p>
+</dd>
+<dt><strong>model_relative_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">OrderedDict</span></dt>
+<dd><p class="first last">dictionary of relative paths to each model folder</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -270,7 +294,7 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfbase.MFFileMgmt.set_sim_path" title="flopy.mf6.mfbase.MFFileMgmt.set_sim_path"><code class="xref py py-obj docutils literal"><span class="pre">set_sim_path</span></code></a>(path)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfbase.MFFileMgmt.set_sim_path" title="flopy.mf6.mfbase.MFFileMgmt.set_sim_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_sim_path</span></code></a>(path)</td>
 <td>set the file path to the simulation files</td>
 </tr>
 </tbody>
@@ -294,17 +318,31 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>full path or relative path from working directory to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">full path or relative path from working directory to
 simulation folder</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
 <p>self.simulation_data.mfdata.set_sim_path()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="flopy.mf6.mfbase.MFInvalidTransientBlockHeaderException">
+<em class="property">exception </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">MFInvalidTransientBlockHeaderException</code><span class="sig-paren">(</span><em>error</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.MFInvalidTransientBlockHeaderException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception related to parsing a transient block header</p>
+<dl class="method">
+<dt id="flopy.mf6.mfbase.MFInvalidTransientBlockHeaderException.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.MFInvalidTransientBlockHeaderException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 </dd></dl>
@@ -317,36 +355,31 @@ simulation folder</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation_data</strong> : SimulationData</p>
-<blockquote>
-<div><p>the simulation’s SimulationData object</p>
-</div></blockquote>
-<p><strong>name</strong> : string</p>
-<blockquote class="last">
-<div><p>name of the package container object</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>simulation_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">SimulationData</span></dt>
+<dd><p class="first last">the simulation’s SimulationData object</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the package container object</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="29%" />
-<col width="71%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>packages</strong></td>
-<td>(list) packages contained in the package container</td>
-</tr>
-<tr class="row-even"><td><strong>package_type_dict</strong></td>
-<td>(dictionary) dictionary of packages by package type</td>
-</tr>
-<tr class="row-odd"><td><strong>package_name_dict</strong></td>
-<td>(dictionary) dictionary of packages by package name</td>
-</tr>
-<tr class="row-even"><td><strong>package_key_dict</strong></td>
-<td>(dictionary) dictionary of packages by package key</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>packagelist</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">packages contained in the package container</p>
+</dd>
+<dt><strong>package_type_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">dictionary of packages by package type</p>
+</dd>
+<dt><strong>package_name_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">dictionary of packages by package name</p>
+</dd>
+<dt><strong>package_key_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">dictionary of packages by package key</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -357,7 +390,7 @@ simulation folder</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfbase.PackageContainer.get_package" title="flopy.mf6.mfbase.PackageContainer.get_package"><code class="xref py py-obj docutils literal"><span class="pre">get_package</span></code></a>([name])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#flopy.mf6.mfbase.PackageContainer.get_package" title="flopy.mf6.mfbase.PackageContainer.get_package"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_package</span></code></a>([name])</td>
 <td>Get a package.</td>
 </tr>
 </tbody>
@@ -384,13 +417,17 @@ simulation folder</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -402,6 +439,38 @@ simulation folder</p>
 <dl class="class">
 <dt id="flopy.mf6.mfbase.PackageContainerType">
 <em class="property">class </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">PackageContainerType</code><a class="headerlink" href="#flopy.mf6.mfbase.PackageContainerType" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="flopy.mf6.mfbase.ReadAsArraysException">
+<em class="property">exception </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">ReadAsArraysException</code><span class="sig-paren">(</span><em>error</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.ReadAsArraysException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempted to load ReadAsArrays package as non-ReadAsArraysPackage</p>
+<dl class="method">
+<dt id="flopy.mf6.mfbase.ReadAsArraysException.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.ReadAsArraysException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="flopy.mf6.mfbase.StructException">
+<em class="property">exception </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">StructException</code><span class="sig-paren">(</span><em>error</em>, <em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.StructException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception related to the package file structure</p>
+<dl class="method">
+<dt id="flopy.mf6.mfbase.StructException.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfbase.StructException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.mf6.mfbase.VerbosityLevel">
+<em class="property">class </em><code class="descclassname">flopy.mf6.mfbase.</code><code class="descname">VerbosityLevel</code><a class="headerlink" href="#flopy.mf6.mfbase.VerbosityLevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>An enumeration.</p>
 </dd></dl>
 
@@ -427,7 +496,7 @@ simulation folder</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -449,7 +518,7 @@ simulation folder</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

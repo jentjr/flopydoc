@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mt3d.mtsft Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mt3d.mtsft Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.mt3d.mtssm Module" href="mtssm.html"/>
         <link rel="prev" title="flopy.mt3d.mtrct Module" href="mtrct.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mtadv.html">flopy.mt3d.mtadv Module</a></li>
@@ -201,20 +202,19 @@
 <span id="flopy-mt3d-mtsft-module"></span><h1>flopy.mt3d.mtsft Module<a class="headerlink" href="#module-flopy.mt3d.mtsft" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtsft.Mt3dSft">
-<em class="property">class </em><code class="descclassname">flopy.mt3d.mtsft.</code><code class="descname">Mt3dSft</code><span class="sig-paren">(</span><em>model</em>, <em>nsfinit=0</em>, <em>mxsfbc=0</em>, <em>icbcsf=0</em>, <em>ioutobs=None</em>, <em>ietsfr=0</em>, <em>isfsolv=1</em>, <em>wimp=0.5</em>, <em>wups=1.0</em>, <em>cclosesf=1e-06</em>, <em>mxitersf=10</em>, <em>crntsf=1.0</em>, <em>iprtxmd=0</em>, <em>coldsf=0.0</em>, <em>dispsf=0.0</em>, <em>nobssf=0</em>, <em>obs_sf=None</em>, <em>sf_stress_period_data=None</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>dtype=None</em>, <em>extension='sft'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mtsft.</code><code class="descname">Mt3dSft</code><span class="sig-paren">(</span><em>model</em>, <em>nsfinit=0</em>, <em>mxsfbc=0</em>, <em>icbcsf=0</em>, <em>ioutobs=0</em>, <em>ietsfr=0</em>, <em>isfsolv=1</em>, <em>wimp=0.5</em>, <em>wups=1.0</em>, <em>cclosesf=1e-06</em>, <em>mxitersf=10</em>, <em>crntsf=1.0</em>, <em>iprtxmd=0</em>, <em>coldsf=0.0</em>, <em>dispsf=0.0</em>, <em>nobssf=0</em>, <em>obs_sf=None</em>, <em>sf_stress_period_data=None</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>dtype=None</em>, <em>extension='sft'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft" title="Permalink to this definition">¶</a></dt>
 <dd><p>MT3D-USGS StreamFlow Transport package class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>nsfinit</strong> : int</p>
-<blockquote>
-<div><p>Is the number of simulated stream reaches (in SFR2, the number of
+</dd>
+<dt><strong>nsfinit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the number of simulated stream reaches (in SFR2, the number of
 stream reaches is greater than or equal to the number of stream
 segments).  This is equal to NSTRM found on the first line of the
 SFR2 input file.  If NSFINIT &gt; 0 then surface-water transport is
@@ -224,125 +224,108 @@ Otherwise, if NSFINIT &lt; 0, the surface-water network as represented
 by the SFR2 flow package merely acts as a boundary condition to the
 groundwater transport problem; transport in the surface-water
 network is not simulated.</p>
-</div></blockquote>
-<p><strong>mxsfbc</strong> : int</p>
-<blockquote>
-<div><p>Is the maximum number of stream boundary conditions.</p>
-</div></blockquote>
-<p><strong>icbcsf</strong> : int</p>
-<blockquote>
-<div><p>Is an integer value that directs MT3D-USGS to write reach-by-reach
+</dd>
+<dt><strong>mxsfbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the maximum number of stream boundary conditions.</p>
+</dd>
+<dt><strong>icbcsf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is an integer value that directs MT3D-USGS to write reach-by-reach
 concentration information to unit ICBCSF.</p>
-</div></blockquote>
-<p><strong>ioutobs</strong> : int</p>
-<blockquote>
-<div><p>Is the unit number of the output file for simulated concentrations at
+</dd>
+<dt><strong>ioutobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the unit number of the output file for simulated concentrations at
 specified gage locations.  The NAM file must also list the unit
 number to which observation information will be written.</p>
-</div></blockquote>
-<p><strong>ietsfr</strong> : int</p>
-<blockquote>
-<div><p>Specifies whether or not mass will exit the surface-water network
+</dd>
+<dt><strong>ietsfr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Specifies whether or not mass will exit the surface-water network
 with simulated evaporation.  If IETSFR = 0, then mass does not leave
 via stream evaporation.  If IETSFR &gt; 0, then mass is allowed to exit
 the simulation with the simulated evaporation.</p>
-</div></blockquote>
-<p><strong>isfsolv</strong> : int</p>
-<blockquote>
-<div><p>Specifies the numerical technique that will be used to solve the
+</dd>
+<dt><strong>isfsolv</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Specifies the numerical technique that will be used to solve the
 transport problem in the surface water network.  The first release
 of MT3D-USGS (version 1.0) only allows for a finite-difference
 formulation and regardless of what value the user specifies, the
 variable defaults to 1, meaning the finite-difference solution is
 invoked.</p>
-</div></blockquote>
-<p><strong>wimp</strong> : float</p>
-<blockquote>
-<div><p>Is the stream solver time weighting factor.  Ranges between 0.0 and
+</dd>
+<dt><strong>wimp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Is the stream solver time weighting factor.  Ranges between 0.0 and
 1.0.  Values of 0.0, 0.5, or 1.0 correspond to explicit,
 Crank-Nicolson, and fully implicit schemes, respectively.</p>
-</div></blockquote>
-<p><strong>wups</strong> : float</p>
-<blockquote>
-<div><p>Is the space weighting factor employed in the stream network solver.
+</dd>
+<dt><strong>wups</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Is the space weighting factor employed in the stream network solver.
 Ranges between 0.0 and 1.0.  Values of 0.0 and 1.0 correspond to a
 central-in-space and upstream weighting factors, respectively.</p>
-</div></blockquote>
-<p><strong>cclosesf</strong> : float</p>
-<blockquote>
-<div><p>Is the closure criterion for the SFT solver</p>
-</div></blockquote>
-<p><strong>mxitersf</strong> : int</p>
-<blockquote>
-<div><p>Limits the maximum number of iterations the SFT solver can use to
+</dd>
+<dt><strong>cclosesf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Is the closure criterion for the SFT solver</p>
+</dd>
+<dt><strong>mxitersf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Limits the maximum number of iterations the SFT solver can use to
 find a solution of the stream transport problem.</p>
-</div></blockquote>
-<p><strong>crntsf</strong> : float</p>
-<blockquote>
-<div><p>Is the Courant constraint specific to the SFT time step, its value
+</dd>
+<dt><strong>crntsf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Is the Courant constraint specific to the SFT time step, its value
 has no bearing upon the groundwater transport solution time step.</p>
-</div></blockquote>
-<p><strong>iprtxmd</strong> : int</p>
-<blockquote>
-<div><p>A flag to print SFT solution information to the standard output file.
+</dd>
+<dt><strong>iprtxmd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag to print SFT solution information to the standard output file.
 IPRTXMD = 0 means no SFT solution information is printed;
 IPRTXMD = 1 means SFT solution summary information is printed at the
 end of every MT3D-USGS outer iteration; and IPRTXMD = 2 means SFT
 solution details are written for each SFT outer iteration that
 calls the xMD solver that solved SFT equations.</p>
-</div></blockquote>
-<p><strong>coldsf</strong> : array of floats</p>
-<blockquote>
-<div><p>Represents the initial concentrations in the surface water network.
+</dd>
+<dt><strong>coldsf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Represents the initial concentrations in the surface water network.
 The length of the array is equal to the number of stream reaches and
 starting concentration values should be entered in the same order
 that individual reaches are entered for record set 2 in the SFR2
-input file.</p>
-</div></blockquote>
-<p><strong>dispsf</strong> : array of floats</p>
-<blockquote>
-<div><p>Is the dispersion coefficient [L2 T-1] for each stream reach in the
+input file. To specify starting concentrations for other species in a
+multi-species simulation, include additional keywords, such as
+coldsf2, coldsf3, and so forth.</p>
+</dd>
+<dt><strong>dispsf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Is the dispersion coefficient [L2 T-1] for each stream reach in the
 simulation and can vary for each simulated component of the
 simulation.  That is, the length of the array is equal to the number
 of simulated stream reaches times the number of simulated components.
 Values of dispersion for each reach should be entered in the same
 order that individual reaches are entered for record set 2 in the
-SFR2 input file.  The first NSTRM entries correspond to NCOMP = 1,
-with subsequent entries for each NCOMP simulated species.</p>
-</div></blockquote>
-<p><strong>nobssf</strong> : int</p>
-<blockquote>
-<div><p>Specifies the number of surface flow observation points for
+SFR2 input file.  To specify dispsf for other species in a
+multi-species simulation, include additional keywords, such as
+dispsf2, dispsf3, and so forth.</p>
+</dd>
+<dt><strong>nobssf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Specifies the number of surface flow observation points for
 monitoring simulated concentrations in streams.</p>
-</div></blockquote>
-<p><strong>isobs</strong> : int</p>
-<blockquote>
-<div><p>The segment number for each stream flow concentration observation
+</dd>
+<dt><strong>isobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The segment number for each stream flow concentration observation
 point.</p>
-</div></blockquote>
-<p><strong>irobs</strong> : int</p>
-<blockquote>
-<div><p>The reach number for each stream flow concentration observation point.</p>
-</div></blockquote>
-<p><strong>ntmp</strong> : int</p>
-<blockquote>
-<div><p>The number of specified stream boundary conditions to follow.  For
+</dd>
+<dt><strong>irobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The reach number for each stream flow concentration observation point.</p>
+</dd>
+<dt><strong>ntmp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of specified stream boundary conditions to follow.  For
 the first stress period, this value must be greater than or equal to
 zero, but may be less than zero in subsequent stress periods.</p>
-</div></blockquote>
-<p><strong>isegbc</strong> : int</p>
-<blockquote>
-<div><p>Is the segment number for which the current boundary condition will
+</dd>
+<dt><strong>isegbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the segment number for which the current boundary condition will
 be applied.</p>
-</div></blockquote>
-<p><strong>irchbc</strong> : int</p>
-<blockquote>
-<div><p>Is the reach number for which the current boundary condition will be
+</dd>
+<dt><strong>irchbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the reach number for which the current boundary condition will be
 applied.</p>
-</div></blockquote>
-<p><strong>isfbctyp</strong> : int</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>isfbctyp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><dl class="first last docutils">
 <dt>Specifies, for ISEGBC/IRCHBC, what the boundary condition type is</dt>
 <dd><dl class="first docutils">
 <dt>0   A headwater boundary.  That is, for streams entering at the</dt>
@@ -376,34 +359,31 @@ evaporation losses.</p>
 </div></blockquote>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>cbcsf</strong> : float</p>
-<blockquote>
-<div><p>Is the specified concentration associated with the current boundary
+</dd>
+<dt><strong>cbcsf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Is the specified concentration associated with the current boundary
 condition entry.  Repeat CBCSF for each simulated species (NCOMP).</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘sft’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘sft’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the sfr output name will be created using
 the model name and lake concentration observation extension
 (for example, modflowtest.cbc and modflowtest.sftcobs.out), if ioutobs
 is a number greater than zero. If a single string is passed the
-package will be set to the string and lake concentration observation
+package will be set to the string and sfr concentration observation
 output name will be created using the model name and .sftcobs.out
 extension, if ioutobs is a number greater than zero. To define the
 names for all package files (input and output) the length of the list
 of strings should be 2. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -411,13 +391,13 @@ of strings should be 2. Default is None.</p>
 <p class="rubric">Notes</p>
 <p>Parameters are not supported in FloPy.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mf.nam&#39;</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mf.nam&#39;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>                                 <span class="n">load_only</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dis&#39;</span><span class="p">,</span> <span class="s1">&#39;bas6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sfr</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowSfr2</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic.sfr2&#39;</span><span class="p">,</span> <span class="n">mf</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">chk</span> <span class="o">=</span> <span class="n">sfr</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># initialize an MT3D-USGS model</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># initialize an MT3D-USGS model</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mt.nam&#39;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>       <span class="n">exe_name</span> <span class="o">=</span> <span class="s1">&#39;mt3d-usgs_1.0.00.exe&#39;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>       <span class="n">model_ws</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;.\CrnkNic&#39;</span><span class="p">,</span>
@@ -425,6 +405,32 @@ of strings should be 2. Default is None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sft</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dSft</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">mt</span><span class="p">,</span> <span class="s1">&#39;CrnkNic.sft&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.mt3d.mtsft.Mt3dSft.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.mt3d.mtsft.Mt3dSft.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft.check" title="Permalink to this definition">¶</a></dt>
@@ -433,32 +439,34 @@ of strings should be 2. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -467,28 +475,28 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtsft.Mt3dSft.get_default_dtype">
-<em class="property">static </em><code class="descname">get_default_dtype</code><span class="sig-paren">(</span><em>ncomp=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft.get_default_dtype" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_default_dtype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft.get_default_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a dtype for the recarray containing the list of surface
 water boundary conditions.</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtsft.Mt3dSft.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nsfinit=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nsfinit=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft.load" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div>Load an existing package.</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><blockquote class="first">
 <div><p>File to load.</p>
 </div></blockquote>
-<dl class="docutils">
+<dl class="last docutils">
 <dt>model <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
-<dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
 which this package will be added.</p>
 </dd>
 <dt>nsfinit <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -532,25 +540,27 @@ amounts of solver information to the standard output file,
 respectively.</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sft</strong> : MT3D-USGS object</p>
-<blockquote class="last">
-<div><p>MT3D-USGS object</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sft</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MT3D-USGS object</span></dt>
+<dd><p class="first last">MT3D-USGS object</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <dl class="docutils">
 <dt>lopy_testsfr_test’)</dt>
-<dd><div class="first highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mf.nam&#39;</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dis&#39;</span><span class="p">,</span> <span class="s1">&#39;bas6&#39;</span><span class="p">])</span>
+<dd><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mf.nam&#39;</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dis&#39;</span><span class="p">,</span> <span class="s1">&#39;bas6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sfr</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowSfr2</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic.sfr2&#39;</span><span class="p">,</span> <span class="n">mf</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">chk</span> <span class="o">=</span> <span class="n">sfr</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mt.nam&#39;</span><span class="p">,</span> <span class="n">exe_name</span> <span class="o">=</span> <span class="s1">&#39;mt3d-usgs_1.0.00.exe&#39;</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="s1">&#39;btn&#39;</span><span class="p">)</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mt.nam&#39;</span><span class="p">,</span> <span class="n">exe_name</span> <span class="o">=</span> <span class="s1">&#39;mt3d-usgs_1.0.00.exe&#39;</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="s1">&#39;btn&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sft</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dSft</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic.sft&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -567,9 +577,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -591,20 +601,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -620,19 +632,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -647,12 +663,16 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mt.nam&#39;</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mt.nam&#39;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>     <span class="n">exe_name</span> <span class="o">=</span> <span class="s1">&#39;mt3d-usgs_1.0.00.exe&#39;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>     <span class="n">model_ws</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\EDM_LT\GitHub\mt3d-usgsutotest        emp\CrnkNic&#39;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>     <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -690,7 +710,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -712,7 +732,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

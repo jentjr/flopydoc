@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfparbc Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfparbc Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/> 
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -187,29 +187,32 @@ connection to “parameters” is thus nonexistent.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfparbc.ModflowParBc.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>npar</em>, <em>dt</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>npar</em>, <em>dt</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load bc property parameters from an existing bc package
 that uses list data (e.g. WEL, RIV, etc.).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : file handle</p>
-<p><strong>npar</strong> : int</p>
-<blockquote>
-<div><p>The number of parameters.</p>
-</div></blockquote>
-<p><strong>dt</strong> : numpy.dtype</p>
-<blockquote>
-<div><p>numpy.dtype for the particular list boundary condition.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag to control output. (default is False)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file handle</span></dt>
+<dd></dd>
+<dt><strong>npar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of parameters.</p>
+</dd>
+<dt><strong>dt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">numpy.dtype for the particular list boundary condition.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag to control output. (default is False)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dictionary</strong> : dictionary object with parameters in file f</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dictionary</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary object with parameters in file f</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -218,25 +221,29 @@ that uses list data (e.g. WEL, RIV, etc.).</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfparbc.ModflowParBc.loadarray">
-<em class="property">static </em><code class="descname">loadarray</code><span class="sig-paren">(</span><em>f</em>, <em>npar</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.loadarray" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">loadarray</code><span class="sig-paren">(</span><em>npar</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.loadarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load bc property parameters from an existing bc package
 that uses array data (e.g. RCH, EVT).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : file handle</p>
-<p><strong>npar</strong> : int</p>
-<blockquote>
-<div><p>The number of parameters.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag to control output. (default is False)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file handle</span></dt>
+<dd></dd>
+<dt><strong>npar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of parameters.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag to control output. (default is False)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dictionary</strong> : dictionary object with parameters in file f</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dictionary</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary object with parameters in file f</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -245,36 +252,35 @@ that uses array data (e.g. RCH, EVT).</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfparbc.ModflowParBc.parameter_bcfill">
-<em class="property">static </em><code class="descname">parameter_bcfill</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>parm_dict</em>, <em>pak_parms</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.parameter_bcfill" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parameter_bcfill</code><span class="sig-paren">(</span><em>shape</em>, <em>parm_dict</em>, <em>pak_parms</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfparbc.ModflowParBc.parameter_bcfill" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fill an array with parameters using zone, mult, and pval data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>shape</strong> : tuple</p>
-<blockquote>
-<div><p>The shape of the returned data array. Typically shape is (nrow, ncol)</p>
-</div></blockquote>
-<p><strong>parm_dict</strong> : list</p>
-<blockquote>
-<div><p>dictionary of parameter instances</p>
-</div></blockquote>
-<p><strong>pak_parms</strong> : dict</p>
-<blockquote>
-<div><p>dictionary that includes all of the parameter data for a package</p>
-</div></blockquote>
+</dd>
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">The shape of the returned data array. Typically shape is (nrow, ncol)</p>
+</dd>
+<dt><strong>parm_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">dictionary of parameter instances</p>
+</dd>
+<dt><strong>pak_parms</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">dictionary that includes all of the parameter data for a package</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Filled array resulting from applications of zone, mult, pval, and
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Filled array resulting from applications of zone, mult, pval, and
 parameter data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -302,7 +308,7 @@ parameter data.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -324,7 +330,7 @@ parameter data.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

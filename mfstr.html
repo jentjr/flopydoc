@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfstr Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfstr Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfsub Module" href="mfsub.html"/>
         <link rel="prev" title="flopy.modflow.mfsor Module" href="mfsor.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -151,6 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -240,68 +241,58 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>mxacts</strong> : int</p>
-<blockquote>
-<div><p>Maximum number of stream reaches that will be in use during any stress
+</dd>
+<dt><strong>mxacts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum number of stream reaches that will be in use during any stress
 period. (default is 0)</p>
-</div></blockquote>
-<p><strong>nss</strong> : int</p>
-<blockquote>
-<div><p>Number of stream segments. (default is 0)</p>
-</div></blockquote>
-<p><strong>ntrib</strong> : int</p>
-<blockquote>
-<div><p>The number of stream tributaries that can connect to one segment. The
+</dd>
+<dt><strong>nss</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of stream segments. (default is 0)</p>
+</dd>
+<dt><strong>ntrib</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of stream tributaries that can connect to one segment. The
 program is currently dimensioned so that NTRIB cannot exceed 10.
 (default is 0)</p>
-</div></blockquote>
-<p><strong>ndiv</strong> : int</p>
-<blockquote>
-<div><p>A flag, which when positive, specifies that diversions from segments
+</dd>
+<dt><strong>ndiv</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag, which when positive, specifies that diversions from segments
 are to be simulated. (default is 0)</p>
-</div></blockquote>
-<p><strong>icalc</strong> : int</p>
-<blockquote>
-<div><p>A flag, which when positive, specifies that stream stages in reaches
+</dd>
+<dt><strong>icalc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag, which when positive, specifies that stream stages in reaches
 are to be calculated. (default is 0)</p>
-</div></blockquote>
-<p><strong>const</strong> : float</p>
-<blockquote>
-<div><p>Constant value used in calculating stream stage in reaches whenever
+</dd>
+<dt><strong>const</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Constant value used in calculating stream stage in reaches whenever
 ICALC is greater than 0. This constant is 1.486 for flow units of
 cubic feet per second and 1.0 for units of cubic meters per second.
 The constant must be multiplied by 86,400 when using time units of
 days in the simulation. If ICALC is 0, const can be any real value.
 (default is 86400.)</p>
-</div></blockquote>
-<p><strong>ipakcb</strong> : int</p>
-<blockquote>
-<div><p>A flag that is used to determine if cell-by-cell budget data should be
+</dd>
+<dt><strong>ipakcb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag that is used to determine if cell-by-cell budget data should be
 saved. If ipakcb is non-zero cell-by-cell budget data will be saved.
 (default is 0).</p>
-</div></blockquote>
-<p><strong>istcb2</strong> : int</p>
-<blockquote>
-<div><p>A flag that is used flag and a unit number for the option to store
+</dd>
+<dt><strong>istcb2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag that is used flag and a unit number for the option to store
 streamflow out of each reach in an unformatted (binary) file.
 If istcb2 is greater than zero streamflow data will be saved.
 (default is None).</p>
-</div></blockquote>
-<p><strong>dtype</strong> : tuple, list, or numpy array of numpy dtypes</p>
-<blockquote>
-<div><p>is a tuple, list, or numpy array containing the dtype for
+</dd>
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple, list, or numpy array of numpy dtypes</span></dt>
+<dd><p class="first last">is a tuple, list, or numpy array containing the dtype for
 datasets 6 and 8 and the dtype for datasets 9 and 10 data in
 stress_period_data and segment_data dictionaries.
 (default is None)</p>
-</div></blockquote>
-<p><strong>stress_period_data</strong> : dictionary of reach data</p>
-<blockquote>
-<div><p>Each dictionary contains a list of str reach data for a stress period.</p>
+</dd>
+<dt><strong>stress_period_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary of reach data</span></dt>
+<dd><p class="first">Each dictionary contains a list of str reach data for a stress period.</p>
 <p>Each stress period in the dictionary data contains data for
 datasets 6 and 8.</p>
 <p>The value for stress period data for a stress period can be an integer
@@ -327,7 +318,7 @@ appropriately set.</p>
 stress period, where each list of boundaries itself is a list of
 boundaries. Indices of the dictionary are the numbers of the stress
 period. For example, if mxacts=3 this gives the form of:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">stress_period_data</span> <span class="o">=</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stress_period_data</span> <span class="o">=</span>
 <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">[</span><span class="n">lay</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">reach</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">stage</span><span class="p">,</span> <span class="n">cond</span><span class="p">,</span> <span class="n">sbot</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="n">rough</span><span class="p">],</span>
     <span class="p">[</span><span class="n">lay</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">reach</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">stage</span><span class="p">,</span> <span class="n">cond</span><span class="p">,</span> <span class="n">sbot</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="n">rough</span><span class="p">],</span>
@@ -347,10 +338,9 @@ period. For example, if mxacts=3 this gives the form of:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p><strong>segment_data</strong> : dictionary of str segment data</p>
-<blockquote>
-<div><p>Each dictionary contains a list of segment str data for a stress period.</p>
+</dd>
+<dt><strong>segment_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary of str segment data</span></dt>
+<dd><p class="first">Each dictionary contains a list of segment str data for a stress period.</p>
 <p>Each stress period in the dictionary data contains data for
 datasets 9, and 10. Segment data for a stress period are ignored if
 a integer value is specified for stress period data.</p>
@@ -376,7 +366,7 @@ stress period, where each list of boundaries itself is a list of
 boundaries. Indices of the dictionary are the numbers of the stress
 period. For example, if nss=2 and ntrib&gt;0 and/or ndiv&gt;0 this gives the
 form of:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">segment_data</span> <span class="o">=</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">segment_data</span> <span class="o">=</span>
 <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">[</span><span class="n">itrib1</span><span class="p">,</span> <span class="n">itrib2</span><span class="p">,</span> <span class="n">itrib3</span><span class="p">,</span> <span class="n">itrib4</span><span class="p">,</span> <span class="n">itrib5</span><span class="p">,</span> <span class="n">itrib6</span><span class="p">,</span> <span class="n">itrib7</span><span class="p">,</span> <span class="n">itrib8</span><span class="p">,</span> <span class="n">itrib9</span><span class="p">,</span> <span class="n">itrib10</span><span class="p">,</span> <span class="n">iupseg</span><span class="p">],</span>
     <span class="p">[</span><span class="n">itrib1</span><span class="p">,</span> <span class="n">itrib2</span><span class="p">,</span> <span class="n">itrib3</span><span class="p">,</span> <span class="n">itrib4</span><span class="p">,</span> <span class="n">itrib5</span><span class="p">,</span> <span class="n">itrib6</span><span class="p">,</span> <span class="n">itrib7</span><span class="p">,</span> <span class="n">itrib8</span><span class="p">,</span> <span class="n">itrib9</span><span class="p">,</span> <span class="n">itrib10</span><span class="p">,</span> <span class="n">iupseg</span><span class="p">],</span>
@@ -393,22 +383,18 @@ form of:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p><strong>options</strong> : list of strings</p>
-<blockquote>
-<div><p>Package options. (default is None).</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘str’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>options</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">Package options. (default is None).</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘str’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the cbc output and sfr output name will be
 created using the model name and .cbc the .sfr.bin/.sfr.out extensions
@@ -419,7 +405,8 @@ will be created using the model name and .cbc and .sfr.bin/.sfr.out
 extensions, if ipakcbc and istcb2 are numbers greater than zero. To
 define the names for all package files (input and output) the length
 of the list of strings should be 3. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -427,7 +414,7 @@ of the list of strings should be 3. Default is None.</p>
 <p class="rubric">Notes</p>
 <p>Parameters are not supported in FloPy.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strd</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">15.6</span><span class="p">,</span> <span class="mf">1050.</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]]</span>  <span class="c1">#this river boundary will be</span>
@@ -435,6 +422,32 @@ of the list of strings should be 3. Default is None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">str8</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowStr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">stress_period_data</span><span class="o">=</span><span class="n">strd</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfstr.ModflowStr.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfstr.ModflowStr.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfstr.ModflowStr.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfstr.ModflowStr.check" title="Permalink to this definition">¶</a></dt>
@@ -443,32 +456,34 @@ of the list of strings should be 3. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -477,46 +492,45 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfstr.ModflowStr.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfstr.ModflowStr.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfstr.ModflowStr.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>nper</strong> : int</p>
-<blockquote>
-<div><p>The number of stress periods.  If nper is None, then nper will be
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of stress periods.  If nper is None, then nper will be
 obtained from the model object. (default is None).</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>str</strong> : ModflowStr object</p>
-<blockquote class="last">
-<div><p>ModflowStr object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowStr object</span></dt>
+<dd><p class="first last">ModflowStr object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strm</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowStr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.str&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -532,9 +546,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -556,20 +570,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -585,19 +601,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -612,7 +632,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -644,7 +668,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -666,7 +690,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

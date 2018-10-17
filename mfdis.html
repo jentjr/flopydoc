@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.modflow.mfdrn Module" href="mfdrn.html"/>
         <link rel="prev" title="flopy.modflow.mfde4 Module" href="mfde4.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -151,6 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -240,139 +241,144 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.Modflow</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.Modflow</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>nlay</strong> : int</p>
-<blockquote>
-<div><p>Number of model layers (the default is 1).</p>
-</div></blockquote>
-<p><strong>nrow</strong> : int</p>
-<blockquote>
-<div><p>Number of model rows (the default is 2).</p>
-</div></blockquote>
-<p><strong>ncol</strong> : int</p>
-<blockquote>
-<div><p>Number of model columns (the default is 2).</p>
-</div></blockquote>
-<p><strong>nper</strong> : int</p>
-<blockquote>
-<div><p>Number of model stress periods (the default is 1).</p>
-</div></blockquote>
-<p><strong>delr</strong> : float or array of floats (ncol), optional</p>
-<blockquote>
-<div><p>An array of spacings along a row (the default is 1.0).</p>
-</div></blockquote>
-<p><strong>delc</strong> : float or array of floats (nrow), optional</p>
-<blockquote>
-<div><p>An array of spacings along a column (the default is 0.0).</p>
-</div></blockquote>
-<p><strong>laycbd</strong> : int or array of ints (nlay), optional</p>
-<blockquote>
-<div><p>An array of flags indicating whether or not a layer has a Quasi-3D
+</dd>
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model layers (the default is 1).</p>
+</dd>
+<dt><strong>nrow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model rows (the default is 2).</p>
+</dd>
+<dt><strong>ncol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model columns (the default is 2).</p>
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model stress periods (the default is 1).</p>
+</dd>
+<dt><strong>delr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (ncol), optional</span></dt>
+<dd><p class="first last">An array of spacings along a row (the default is 1.0).</p>
+</dd>
+<dt><strong>delc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nrow), optional</span></dt>
+<dd><p class="first last">An array of spacings along a column (the default is 0.0).</p>
+</dd>
+<dt><strong>laycbd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay), optional</span></dt>
+<dd><p class="first last">An array of flags indicating whether or not a layer has a Quasi-3D
 confining bed below it. 0 indicates no confining bed, and not zero
 indicates a confining bed. LAYCBD for the bottom layer must be 0. (the
 default is 0)</p>
-</div></blockquote>
-<p><strong>top</strong> : float or array of floats (nrow, ncol), optional</p>
-<blockquote>
-<div><p>An array of the top elevation of layer 1. For the common situation in
+</dd>
+<dt><strong>top</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nrow, ncol), optional</span></dt>
+<dd><p class="first last">An array of the top elevation of layer 1. For the common situation in
 which the top layer represents a water-table aquifer, it may be
 reasonable to set Top equal to land-surface elevation (the default is
 1.0)</p>
-</div></blockquote>
-<p><strong>botm</strong> : float or array of floats (nlay, nrow, ncol), optional</p>
-<blockquote>
-<div><p>An array of the bottom elevation for each model cell (the default is
+</dd>
+<dt><strong>botm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol), optional</span></dt>
+<dd><p class="first last">An array of the bottom elevation for each model cell (the default is
 0.)</p>
-</div></blockquote>
-<p><strong>perlen</strong> : float or array of floats (nper)</p>
-<blockquote>
-<div><p>An array of the stress period lengths.</p>
-</div></blockquote>
-<p><strong>nstp</strong> : int or array of ints (nper)</p>
-<blockquote>
-<div><p>Number of time steps in each stress period (default is 1).</p>
-</div></blockquote>
-<p><strong>tsmult</strong> : float or array of floats (nper)</p>
-<blockquote>
-<div><p>Time step multiplier (default is 1.0).</p>
-</div></blockquote>
-<p><strong>steady</strong> : boolean or array of boolean (nper)</p>
-<blockquote>
-<div><p>true or False indicating whether or not stress period is steady state
+</dd>
+<dt><strong>perlen</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nper)</span></dt>
+<dd><p class="first last">An array of the stress period lengths.</p>
+</dd>
+<dt><strong>nstp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nper)</span></dt>
+<dd><p class="first last">Number of time steps in each stress period (default is 1).</p>
+</dd>
+<dt><strong>tsmult</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nper)</span></dt>
+<dd><p class="first last">Time step multiplier (default is 1.0).</p>
+</dd>
+<dt><strong>steady</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean or array of boolean (nper)</span></dt>
+<dd><p class="first last">true or False indicating whether or not stress period is steady state
 (default is True).</p>
-</div></blockquote>
-<p><strong>itmuni</strong> : int</p>
-<blockquote>
-<div><p>Time units, default is days (4)</p>
-</div></blockquote>
-<p><strong>lenuni</strong> : int</p>
-<blockquote>
-<div><p>Length units, default is meters (2)</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘dis’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote>
-<div><p>Filenames to use for the package. If filenames=None the package name
+</dd>
+<dt><strong>itmuni</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Time units, default is days (4)</p>
+</dd>
+<dt><strong>lenuni</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length units, default is meters (2)</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘dis’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package. If filenames=None the package name
 will be created using the model name and package extension. If a
 single string is passed the package will be set to the string.
 Default is None.</p>
-</div></blockquote>
-<p><strong>xul</strong> : float</p>
-<blockquote>
-<div><p>x coordinate of upper left corner of the grid, default is None</p>
-</div></blockquote>
-<p><strong>yul</strong> : float</p>
-<blockquote>
-<div><p>y coordinate of upper left corner of the grid, default is None</p>
-</div></blockquote>
-<p><strong>rotation</strong> : float</p>
-<blockquote>
-<div><p>clockwise rotation (in degrees) of the grid about the upper left
+</dd>
+<dt><strong>xul</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">x coordinate of upper left corner of the grid, default is None</p>
+</dd>
+<dt><strong>yul</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">y coordinate of upper left corner of the grid, default is None</p>
+</dd>
+<dt><strong>rotation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">clockwise rotation (in degrees) of the grid about the upper left
 corner. default is 0.0</p>
-</div></blockquote>
-<p><strong>proj4_str</strong> : str</p>
-<blockquote>
-<div><p>PROJ4 string that defines the xul-yul coordinate system
+</dd>
+<dt><strong>proj4_str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">PROJ4 string that defines the xul-yul coordinate system
 (.e.g. ‘+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ‘).
 Can be an EPSG code (e.g. ‘EPSG:4326’). Default is ‘EPSG:4326’</p>
-</div></blockquote>
-<p><strong>start_dateteim</strong> : str</p>
-<blockquote class="last">
-<div><p>starting datetime of the simulation. default is ‘1/1/1970’</p>
-</div></blockquote>
+</dd>
+<dt><strong>start_dateteim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">starting datetime of the simulation. default is ‘1/1/1970’</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="83%" />
-</colgroup>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><strong>heading</strong></td>
-<td>(str) Text string written to top of package input file.</td>
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>heading</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Text string written to top of package input file.</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfdis.ModflowDis.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfdis.ModflowDis.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.check" title="Permalink to this definition">¶</a></dt>
@@ -381,32 +387,34 @@ Can be an EPSG code (e.g. ‘EPSG:4326’). Default is ‘EPSG:4326’</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -427,7 +435,11 @@ performed. If level=1, full checks are performed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>vol</strong> : array of floats (nlay, nrow, ncol)</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats (nlay, nrow, ncol)</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -441,10 +453,11 @@ performed. If level=1, full checks are performed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">totim: float</p>
-<blockquote class="last">
-<div><p>maximum simulation totim</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>totim: float</strong></dt>
+<dd><p class="first last">maximum simulation totim</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -459,25 +472,25 @@ performed. If level=1, full checks are performed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>t</strong> : float</p>
-<blockquote>
-<div><p>totim to return the stress period, time step, and toffset for
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>t</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">totim to return the stress period, time step, and toffset for
 based on time discretization data. Default is 0.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>kstp</strong> : int</p>
-<blockquote>
-<div><p>time step in stress period corresponding to passed totim</p>
-</div></blockquote>
-<p><strong>kper</strong> : int</p>
-<blockquote>
-<div><p>stress period corresponding to passed totim</p>
-</div></blockquote>
-<p><strong>toffset</strong> : float</p>
-<blockquote class="last">
-<div><p>time offset of passed totim from the beginning of kper</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kstp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">time step in stress period corresponding to passed totim</p>
+</dd>
+<dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">stress period corresponding to passed totim</p>
+</dd>
+<dt><strong>toffset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">time offset of passed totim from the beginning of kper</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -492,12 +505,20 @@ based on time discretization data. Default is 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>i</strong> : row index (zero-based)</p>
-<p><strong>j</strong> : column index</p>
-<p><strong>elev</strong> : elevation (in same units as model)</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">row index (zero-based)</span></dt>
+<dd></dd>
+<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">column index</span></dt>
+<dd></dd>
+<dt><strong>elev</strong> <span class="classifier-delimiter">:</span> <span class="classifier">elevation (in same units as model)</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>k</strong> : zero-based layer index</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">zero-based layer index</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -512,10 +533,11 @@ based on time discretization data. Default is 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>v</strong> : list of tuples containing the layer (k), row (i),</p>
-<blockquote class="last">
-<div><p>and column (j) for each node in the input list</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>v</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of tuples containing the layer (k), row (i),</span></dt>
+<dd><p class="first last">and column (j) for each node in the input list</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -530,10 +552,11 @@ based on time discretization data. Default is 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>v</strong> : list of MODFLOW nodes for each layer (k), row (i),</p>
-<blockquote class="last">
-<div><p>and column (j) tuple in the input list</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>v</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of MODFLOW nodes for each layer (k), row (i),</span></dt>
+<dd><p class="first last">and column (j) tuple in the input list</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -548,9 +571,14 @@ based on time discretization data. Default is 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>y</strong> : list of cell y-centroids</p>
-<p><strong>x</strong> : list of cell x-centroids</p>
-<p class="last"><strong>z</strong> : array of floats (nlay, nrow, ncol)</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of cell y-centroids</span></dt>
+<dd></dd>
+<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of cell x-centroids</span></dt>
+<dd></dd>
+<dt><strong>z</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats (nlay, nrow, ncol)</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -566,12 +594,20 @@ in model coordinates.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : scalar or sequence of x coordinates</p>
-<p><strong>y</strong> : scalar or sequence of y coordinates</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar or sequence of x coordinates</span></dt>
+<dd></dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar or sequence of y coordinates</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>r</strong> : row or sequence of rows (zero-based)</p>
-<p class="last"><strong>c</strong> : column or sequence of columns (zero-based)</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">row or sequence of rows (zero-based)</span></dt>
+<dd></dd>
+<dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">column or sequence of columns (zero-based)</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -586,10 +622,11 @@ in model coordinates.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">totim: numpy array</p>
-<blockquote class="last">
-<div><p>numpy array with simulation totim at the end of each time step</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>totim: numpy array</strong></dt>
+<dd><p class="first last">numpy array with simulation totim at the end of each time step</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -605,21 +642,22 @@ of a stress period</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kper</strong> : int</p>
-<blockquote>
-<div><p>stress period. Default is 0</p>
-</div></blockquote>
-<p><strong>toffset</strong> : float</p>
-<blockquote>
-<div><p>time offset relative to the beginning of kper</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">stress period. Default is 0</p>
+</dd>
+<dt><strong>toffset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">time offset relative to the beginning of kper</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>t</strong> : float</p>
-<blockquote class="last">
-<div><p>totim to return the stress period, time step, and toffset for
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>t</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">totim to return the stress period, time step, and toffset for
 based on time discretization data. Default is 0.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -634,8 +672,12 @@ based on time discretization data. Default is 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>botm</strong> : array of floats (nlay, nrow, ncol), or</p>
-<p class="last"><strong>botm</strong> : array of floats (nrow, ncol) if k is not none</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>botm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats (nlay, nrow, ncol), or</span></dt>
+<dd></dd>
+<dt><strong>botm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats (nrow, ncol) if k is not none</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -650,7 +692,11 @@ based on time discretization data. Default is 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>top</strong> : array of floats (nrow, ncol)</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>top</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats (nrow, ncol)</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -658,45 +704,44 @@ based on time discretization data. Default is 0.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfdis.ModflowDis.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
-<p><strong>check</strong> : boolean</p>
-<blockquote>
-<div><p>Check package data for common errors. (default True)</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+<dt><strong>check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Check package data for common errors. (default True)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dis</strong> : ModflowDis object</p>
-<blockquote class="last">
-<div><p>ModflowDis object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowDis object</span></dt>
+<dd><p class="first last">ModflowDis object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.dis&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -712,9 +757,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -736,20 +781,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -770,7 +817,11 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>thickness</strong> : util3d array of floats (nlay, nrow, ncol)</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>thickness</strong> <span class="classifier-delimiter">:</span> <span class="classifier">util3d array of floats (nlay, nrow, ncol)</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -785,19 +836,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -812,13 +867,17 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>check</strong> : boolean</p>
-<blockquote>
-<div><p>Check package data for common errors. (default True)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Check package data for common errors. (default True)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -835,25 +894,26 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dis</strong> : flopy.modflow.ModflowDis object</p>
-<p><strong>i</strong> : scaler or sequence</p>
-<blockquote>
-<div><p>row index (zero-based)</p>
-</div></blockquote>
-<p><strong>j</strong> : scaler or sequence</p>
-<blockquote>
-<div><p>column index</p>
-</div></blockquote>
-<p><strong>elev</strong> : scaler or sequence</p>
-<blockquote>
-<div><p>elevation (in same units as model)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.ModflowDis object</span></dt>
+<dd></dd>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scaler or sequence</span></dt>
+<dd><p class="first last">row index (zero-based)</p>
+</dd>
+<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scaler or sequence</span></dt>
+<dd><p class="first last">column index</p>
+</dd>
+<dt><strong>elev</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scaler or sequence</span></dt>
+<dd><p class="first last">elevation (in same units as model)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>k</strong> : np.ndarray (1-D) or scalar</p>
-<blockquote class="last">
-<div><p>zero-based layer index</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray (1-D) or scalar</span></dt>
+<dd><p class="first last">zero-based layer index</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -884,7 +944,7 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -906,7 +966,7 @@ Adds an attribute for each layer in each data array</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

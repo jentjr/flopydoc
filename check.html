@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.check Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.check Module &mdash; flopy 3.2.10 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
         <link rel="up" title="Flopy Code" href="code.html"/>
         <link rel="next" title="flopy.utils.cvfdutil Module" href="cvfdutil.html"/>
         <link rel="prev" title="flopy.modflow.mfdisu Module" href="mfdisu.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.10
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -128,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -220,23 +222,20 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>package</strong> : object</p>
-<blockquote>
-<div><p>Instance of Package class.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">object</span></dt>
+<dd><p class="first last">Instance of Package class.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
-<p><strong>property_threshold_values</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>property_threshold_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>hk <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
 <dd><p class="first last">Reasonable minimum/maximum hydraulic conductivity value; values below this will be flagged.
 Default is (1e-11, 1e5), after Bear, 1972 (see <a class="reference external" href="https://en.wikipedia.org/wiki/Hydraulic_conductivity">https://en.wikipedia.org/wiki/Hydraulic_conductivity</a>)
@@ -261,11 +260,11 @@ Default is (0.01,0.5) after Anderson, Woessner and Hunt (2015, Table 5.2).</p>
 Default is (3.3e-6, 2e-2) after Anderson, Woessner and Hunt (2015, Table 5.2).</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>thin_cell_threshold</strong> : float</p>
-<blockquote class="last">
-<div><p>Minimum cell thickness in model units. Thicknesses below this value will be flagged (default 1.0).</p>
-</div></blockquote>
+</dd>
+<dt><strong>thin_cell_threshold</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Minimum cell thickness in model units. Thicknesses below this value will be flagged (default 1.0).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -291,17 +290,19 @@ Schwartz, F.W. and Zhang, H., 2003. Fundamentals of Groundwater, Wiley, 583 p.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>include_cbd</strong> : boolean</p>
-<blockquote>
-<div><p>If True, active is of same dimmension as the thickness array
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>include_cbd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If True, active is of same dimmension as the thickness array
 in the DIS module (includes quasi 3-D confining beds). Default False.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>active</strong> : 3-D boolean array</p>
-<blockquote class="last">
-<div><p>True where active.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>active</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3-D boolean array</span></dt>
+<dd><p class="first last">True where active.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -316,16 +317,18 @@ in the DIS module (includes quasi 3-D confining beds). Default False.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>inds</strong> : tuple or lists or arrays; or a 1-D array</p>
-<blockquote>
-<div><p>(k, i, j) for structured grids; (node) for unstructured.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>inds</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple or lists or arrays; or a 1-D array</span></dt>
+<dd><p class="first last">(k, i, j) for structured grids; (node) for unstructured.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isvalid</strong> : 1-D boolean array</p>
-<blockquote class="last">
-<div><p>True for each index in inds that is valid for the model grid.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>isvalid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1-D boolean array</span></dt>
+<dd><p class="first last">True for each index in inds that is valid for the model grid.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -369,18 +372,20 @@ array values, and description of error for each True value in criteria.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : 3-D array</p>
-<blockquote>
-<div><p>Model array in layer, row, column order.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3-D array</span></dt>
+<dd><p class="first last">Model array in layer, row, column order.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>neighbors</strong> : 4-D array</p>
-<blockquote class="last">
-<div><p>Array of neighbors, where axis 0 contains the 6 neighboring
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>neighbors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">4-D array</span></dt>
+<dd><p class="first last">Array of neighbors, where axis 0 contains the 6 neighboring
 values for each value in a, and subsequent axes are in layer, row, column order.
 Nan is returned for values at edges.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -411,7 +416,7 @@ Nan is returned for values at edges.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      Last updated on Oct 17, 2018.
 
     </p>
   </div>
@@ -433,7 +438,7 @@ Nan is returned for values at edges.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.2.9',
+            VERSION:'3.2.10',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
