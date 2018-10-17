@@ -231,8 +231,9 @@
 <span id="flopy-modflow-mfflwob-module"></span><h1>flopy.modflow.mfflwob Module<a class="headerlink" href="#module-flopy.modflow.mfflwob" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfflwob.ModflowFlwob">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfflwob.</code><code class="descname">ModflowFlwob</code><span class="sig-paren">(</span><em>model, nqfb=0, nqcfb=0, nqtfb=0, iufbobsv=0, tomultfb=1.0, nqobfb=[], nqclfb=[], obsnam=[], irefsp=[], toffset=[], flwobs=[], layer=[], row=[], column=[], factor=[], flowtype=None, extension=['chob', 'obc', 'gbob', 'obg', 'drob', 'obd', 'rvob', 'obr'], unitnumber=[40, 140, 41, 141, 42, 142, 43, 143]</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob" title="Permalink to this definition">¶</a></dt>
-<dd><p>Head-dependent flow boundary Observation package class</p>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfflwob.</code><code class="descname">ModflowFlwob</code><span class="sig-paren">(</span><em>model</em>, <em>nqfb=0</em>, <em>nqcfb=0</em>, <em>nqtfb=0</em>, <em>iufbobsv=0</em>, <em>tomultfb=1.0</em>, <em>nqobfb=None</em>, <em>nqclfb=None</em>, <em>obsnam=None</em>, <em>irefsp=None</em>, <em>toffset=None</em>, <em>flwobs=None</em>, <em>layer=None</em>, <em>row=None</em>, <em>column=None</em>, <em>factor=None</em>, <em>flowtype=None</em>, <em>extension=None</em>, <em>unitnumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Head-dependent flow boundary Observation package class. Minimal working
+example that will be refactored in a future version.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -270,8 +271,8 @@ the group.</p>
 <dd><p class="first last">Observation name</p>
 </dd>
 <dt><strong>irefsp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int of length nqtfb</span></dt>
-<dd><p class="first last">Stress period to which the observation time is referenced. The reference
-point is the beginning of the specified stress period.</p>
+<dd><p class="first last">Stress period to which the observation time is referenced.
+The reference point is the beginning of the specified stress period.</p>
 </dd>
 <dt><strong>toffset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float list of length nqtfb</span></dt>
 <dd><p class="first last">Is the time from the beginning of the stress period irefsp to the time
@@ -279,8 +280,8 @@ of the observation.  toffset must be in units such that the product of
 toffset and tomultfb are consistent with other model input.  For steady
 state observations, specify irefsp as the steady state stress period
 and toffset less than or equal to perlen of the stress period.  If
-perlen is zero, set toffset to zero.  If the observation falls within a
-time step, linearly interpolation is used between values at the
+perlen is zero, set toffset to zero.  If the observation falls within
+a time step, linearly interpolation is used between values at the
 beginning and end of the time step.</p>
 </dd>
 <dt><strong>flwobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float list of length nqtfb</span></dt>
@@ -305,24 +306,22 @@ included in the total gain or loss for this cell group (fn of eq. 5).</p>
 type (CHD, GHB, DRN, RIV)</p>
 </dd>
 <dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of string</span></dt>
-<dd><dl class="first last docutils">
-<dt>Filename extension (default is [‘chob’,’obc’,’gbob’,’obg’,’drob’,’obd’,</dt>
-<dd><p class="first last">‘rvob’,’obr’])</p>
-</dd>
-</dl>
+<dd><p class="first last">Filename extension. If extension is None, extension is set to
+[‘chob’,’obc’,’gbob’,’obg’,’drob’,’obd’, ‘rvob’,’obr’]
+(default is None).</p>
 </dd>
 <dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of int</span></dt>
-<dd><p class="first last">File unit number (default is [40, 140, 41, 141, 42, 142, 43, 143])</p>
+<dd><p class="first last">File unit number. If unitnumber is None, unitnumber is set to
+[40, 140, 41, 141, 42, 142, 43, 143] (default is None).</p>
 </dd>
 </dl>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Notes</span></code></p>
-</div>
+<p class="rubric">Notes</p>
+<p>This represents a minimal working example that will be refactored in a
+future version.</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfflwob.ModflowFlwob.add_to_dtype">
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob.add_to_dtype" title="Permalink to this definition">¶</a></dt>

@@ -231,8 +231,9 @@
 <span id="flopy-modflow-mfhob-module"></span><h1>flopy.modflow.mfhob Module<a class="headerlink" href="#module-flopy.modflow.mfhob" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfhob.HeadObservation">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfhob.</code><code class="descname">HeadObservation</code><span class="sig-paren">(</span><em>model, tomulth=1.0, obsname='HOBS', layer=0, row=0, column=0, irefsp=None, roff=0.0, coff=0.0, itt=1, mlay={0: 1.0}, time_series_data=[[0.0, 0.0]], names=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfhob.HeadObservation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create HeadObservation instance from a time series array</p>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfhob.</code><code class="descname">HeadObservation</code><span class="sig-paren">(</span><em>model</em>, <em>tomulth=1.0</em>, <em>obsname='HOBS'</em>, <em>layer=0</em>, <em>row=0</em>, <em>column=0</em>, <em>irefsp=None</em>, <em>roff=0.0</em>, <em>coff=0.0</em>, <em>itt=1</em>, <em>mlay=None</em>, <em>time_series_data=None</em>, <em>names=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfhob.HeadObservation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create single HeadObservation instance from a time series array. A list of
+HeadObservation instances are passed to the ModflowHob package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -276,15 +277,19 @@ specified if irefsp is &lt; 0. Default is 1.</p>
 <dt><strong>mlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary of length (<a href="#id3"><span class="problematic" id="id4">|irefsp|</span></a>)</span></dt>
 <dd><p class="first last">key represents zero-based layer numbers for multilayer observations an
 value represents the fractional value for each layer of multilayer
-observations. Only used if irefsp &lt; 0. Default is {0:1.}</p>
+observations. If mlay is None, a default mlay of {0: 1.} will be
+used (default is None).</p>
 </dd>
 <dt><strong>time_series_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or numpy array</span></dt>
 <dd><p class="first last">two-dimensional list or numpy array containing the simulation time of
-the observation and the observed head [[totim, hob]]. Default is
-[[0., 0.]]</p>
+the observation and the observed head [[totim, hob]]. If
+time_series_dataDefault is None, a default observation of 0. at
+totim 0. will be created (default is None).</p>
 </dd>
 <dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list of specified observation names. Default is None.</p>
+<dd><p class="first last">list of specified observation names. If names is None, observation
+names will be automatically generated from obsname and the order
+of the timeseries data (default is None).</p>
 </dd>
 </dl>
 </td>
@@ -302,9 +307,10 @@ the observation and the observed head [[totim, hob]]. Default is
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">nlay</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="gp">... </span><span class="n">perlen</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obs</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">HeadObservation</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-<span class="gp">... </span><span class="n">time_series_data</span><span class="o">=</span><span class="p">[[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">54.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">55.2</span><span class="p">]])</span>
+<span class="gp">... </span>                               <span class="n">perlen</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tsd</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">54.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">55.2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obsdata</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">HeadObservation</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="gp">... </span>                                        <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">time_series_data</span><span class="o">=</span><span class="n">tsd</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -319,26 +325,31 @@ the observation and the observed head [[totim, hob]]. Default is
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>iuhobsv</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">unit number where output is saved</p>
+<dd><p class="first last">unit number where output is saved. If iuhobsv is None, a unit number
+will be assigned (default is None).</p>
 </dd>
 <dt><strong>hobdry</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Value of the simulated equivalent written to the observation output file
-when the observation is omitted because a cell is dry</p>
+<dd><p class="first last">Value of the simulated equivalent written to the observation output
+file when the observation is omitted because a cell is dry
+(default is 0).</p>
 </dd>
 <dt><strong>tomulth</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Time step multiplier for head observations. The product of tomulth and
 toffset must produce a time value in units consistent with other model
 input. tomulth can be dimensionless or can be used to convert the units
-of toffset to the time unit used in the simulation.</p>
+of toffset to the time unit used in the simulation (default is 1).</p>
 </dd>
-<dt><strong>obs_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of HeadObservation instances</span></dt>
-<dd><p class="first last">list of HeadObservation instances containing all of the data for
-each observation. Default is None.</p>
+<dt><strong>obs_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">HeadObservation or list of HeadObservation instances</span></dt>
+<dd><p class="first last">A single HeadObservation instance or a list of HeadObservation
+instances containing all of the data for each observation. If obs_data
+is None a default HeadObservation with an observation in layer, row,
+column (0, 0, 0) and a head value of 0 at totim 0 will be created
+(default is None).</p>
 </dd>
 <dt><strong>hobname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Name of head observation output file. If iuhobsv is greater than 0,
-and hobname is not provided the model basename with a ‘.hob.out’
-extension will be used. Default is None.</p>
+and hobname is None, the model basename with a ‘.hob.out’ extension
+will be used (default is None).</p>
 </dd>
 <dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
 <dd><p class="first last">Filename extension (default is hob)</p>
@@ -347,16 +358,16 @@ extension will be used. Default is None.</p>
 <dd><p class="first last">File unit number (default is None)</p>
 </dd>
 <dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
-<dd><p class="first last">Filenames to use for the package and the output files. If
-filenames=None the package name will be created using the model name
-and package extension and the hob output name will be created using
-the model name and .hob.out extension (for example,
-modflowtest.hob.out), if iuhobsv is a number greater than zero.
-If a single string is passed the package will be set to the string
-and hob output name will be created using the model name and .hob.out
-extension, if iuhobsv is a number greater than zero. To define the
-names for all package files (input and output) the length of the list
-of strings should be 2. Default is None.</p>
+<dd><p class="first last">Filenames to use for the package and the output files. If filenames
+is None the package name will be created using the model name and
+package extension and the hob output name will be created using the
+model name and .hob.out extension (for example, modflowtest.hob.out),
+if iuhobsv is a number greater than zero. If a single string is passed
+the package will be set to the string and hob output name will be
+created using the model name and .hob.out extension, if iuhobsv is a
+number greater than zero. To define the names for all package files
+(input and output) the length of the list of strings should be 2.
+Default is None.</p>
 </dd>
 </dl>
 </td>
@@ -371,11 +382,12 @@ of strings should be 2. Default is None.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">nlay</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="gp">... </span><span class="n">perlen</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obs</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">HeadObservation</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-<span class="gp">... </span><span class="n">time_series_data</span><span class="o">=</span><span class="p">[[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">54.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">55.2</span><span class="p">]])</span>
+<span class="gp">... </span>                               <span class="n">perlen</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tsd</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">54.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">55.2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obsdata</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">HeadObservation</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="gp">... </span>                                        <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">time_series_data</span><span class="o">=</span><span class="n">tsd</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hob</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowHob</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">iuhobsv</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span> <span class="n">hobdry</span><span class="o">=-</span><span class="mf">9999.</span><span class="p">,</span>
-<span class="gp">... </span><span class="n">obs_data</span><span class="o">=</span><span class="p">[</span><span class="n">obs</span><span class="p">])</span>
+<span class="gp">... </span>                               <span class="n">obs_data</span><span class="o">=</span><span class="n">obsdata</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="staticmethod">
@@ -476,8 +488,8 @@ constructed using the function
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hob</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowHob object</span></dt>
-<dd><p class="first last">ModflowHob object.</p>
+<dt><strong>hob</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowHob package object</span></dt>
+<dd><p class="first last">ModflowHob package object.</p>
 </dd>
 </dl>
 </td>
