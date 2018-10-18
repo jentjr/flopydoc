@@ -86,6 +86,7 @@ Contents:
    mfpackage
    mfsimulation
    mfgnc
+   mfgwf
    mfgwfchd
    mfgwfdis
    mfgwfdisu
@@ -121,6 +122,17 @@ Contents:
    mfutlts
 
 
+MODFLOW-LGR Packages
+--------------------
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   mflgr
+
+
 MODPATH Packages
 ----------------
 
@@ -129,8 +141,15 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   mp7
+   mp7bas
+   mp7particledata
+   mp7particlegroup
+   mp7sim
+   mp
    mpbas
    mpsim
+
 
 MT3DMS Packages
 ---------------
@@ -190,8 +209,6 @@ Contents:
    cvfdutil
    datafile
    binaryfile
-   binaryhydmodfile
-   binaryswrfile
    flopy_io
    formattedfile
    geometry
@@ -201,6 +218,7 @@ Contents:
    mfreadnam
    mfgrdfile
    modpathfile
+   mtlistfile
    observationfile
    postprocessing
    shapefile_utils
@@ -235,6 +253,7 @@ Contents:
    metadata
    netcdf
    shapefile_utils
+   triangle
    utils
    vtk
 

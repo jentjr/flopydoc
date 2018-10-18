@@ -53,7 +53,13 @@
    flopy.modflow.mfuzf1
    flopy.modflow.mfwel
    flopy.modflow.mfzon
+   flopy.modflowlgr.mflgr
    flopy.modpath.mp
+   flopy.modpath.mp7
+   flopy.modpath.mp7bas
+   flopy.modpath.mp7particledata
+   flopy.modpath.mp7particlegroup
+   flopy.modpath.mp7sim
    flopy.modpath.mpbas
    flopy.modpath.mpsim
    flopy.mt3d.mt
@@ -91,11 +97,15 @@
    flopy.utils.mflistfile
    flopy.utils.mfreadnam
    flopy.utils.modpathfile
+   flopy.utils.mtlistfile
    flopy.utils.observationfile
    flopy.utils.postprocessing
+   flopy.utils.ptrack
+   flopy.utils.recarray_utils
    flopy.utils.reference
    flopy.utils.sfroutputfile
    flopy.utils.swroutputfile
+   flopy.utils.triangle
    flopy.utils.util_array
    flopy.utils.util_list
    flopy.utils.utils_def
@@ -103,8 +113,9 @@
    flopy.mf6.mfbase
    flopy.mf6.mfmodel
    flopy.mf6.mfpackage
-   flopy.mf6.mfsimulation
    flopy.mf6/modflow.mfgnc
+   flopy.mf6/modflow.mfgwf
+   flopy.mf6/modflow.mfgwfbuy
    flopy.mf6/modflow.mfgwfchd
    flopy.mf6/modflow.mfgwfdis
    flopy.mf6/modflow.mfgwfdisu
@@ -115,6 +126,7 @@
    flopy.mf6/modflow.mfgwfghb
    flopy.mf6/modflow.mfgwfgnc
    flopy.mf6/modflow.mfgwfgwf
+   flopy.mf6/modflow.mfgwfgwt
    flopy.mf6/modflow.mfgwfhfb
    flopy.mf6/modflow.mfgwfic
    flopy.mf6/modflow.mfgwflak
@@ -130,9 +142,23 @@
    flopy.mf6/modflow.mfgwfsto
    flopy.mf6/modflow.mfgwfuzf
    flopy.mf6/modflow.mfgwfwel
+   flopy.mf6/modflow.mfgwt
+   flopy.mf6/modflow.mfgwtadv
+   flopy.mf6/modflow.mfgwtcnc
+   flopy.mf6/modflow.mfgwtdis
+   flopy.mf6/modflow.mfgwtdisv
+   flopy.mf6/modflow.mfgwtdsp
+   flopy.mf6/modflow.mfgwtic
+   flopy.mf6/modflow.mfgwtnam
+   flopy.mf6/modflow.mfgwtoc
+   flopy.mf6/modflow.mfgwtsrb
+   flopy.mf6/modflow.mfgwtsrc
+   flopy.mf6/modflow.mfgwtssm
+   flopy.mf6/modflow.mfgwtsto
    flopy.mf6/modflow.mfims
    flopy.mf6/modflow.mfmvr
    flopy.mf6/modflow.mfnam
+   flopy.mf6/modflow.mfsimulation
    flopy.mf6/modflow.mftdis
    flopy.mf6/modflow.mfutllaktab
    flopy.mf6/modflow.mfutlobs
