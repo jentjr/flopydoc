@@ -249,7 +249,7 @@ set self.__traceback__ to tb and return self.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>wellid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">is the name of the well. This is a unique alphanumeric identification label for each well.
 The text string is limited to 20 alphanumeric characters. If the name of the well includes spaces,
@@ -567,6 +567,12 @@ specified previously on this line. Sign (positive or negative) is ignored.</p>
 </dl>
 </td>
 </tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="method">
@@ -606,17 +612,111 @@ performed. If level=1, full checks are performed.</p>
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="flopy.modflow.mfmnw2.Mnw.get_item2_names">
-<em class="property">static </em><code class="descname">get_item2_names</code><span class="sig-paren">(</span><em>node_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.get_item2_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine which variables are being used.</p>
+<dt id="flopy.modflow.mfmnw2.Mnw.get_default_spd_dtype">
+<em class="property">static </em><code class="descname">get_default_spd_dtype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.get_default_spd_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the default stress period data dtype</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
-<dd><p class="first last">List of names (same as variables in MNW2 Package input instructions) of columns
-to assign (upon load) or retain (upon write) in reach_data array.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>structured</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean that defines if a structured (True) or unstructured (False)
+dtype will be created (default is True). Not implemented for
+unstructured.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.dtype</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfmnw2.Mnw.get_empty_stress_period_data">
+<em class="property">static </em><code class="descname">get_empty_stress_period_data</code><span class="sig-paren">(</span><em>aux_names=None</em>, <em>structured=True</em>, <em>default_value=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.get_empty_stress_period_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an empty stress_period_data recarray that correponds to dtype</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd></dd>
+<dt><strong>aux_names</strong></dt>
+<dd></dd>
+<dt><strong>structured</strong></dt>
+<dd></dd>
+<dt><strong>default_value</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Recarray</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfmnw2.Mnw.get_item2_names">
+<em class="property">static </em><code class="descname">get_item2_names</code><span class="sig-paren">(</span><em>node_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.get_item2_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get names for unknown things…</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>mnw2obj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Mnw object</span></dt>
+<dd><p class="first last">Mnw object (default is None)</p>
+</dd>
+<dt><strong>node_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">unknown</span></dt>
+<dd><p class="first last">Unknown what is in this parameter (default is None)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd></dd>
+<dt><strong>List of dtype names.</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfmnw2.Mnw.get_nnodes">
+<em class="property">static </em><code class="descname">get_nnodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.get_nnodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of MNW2 nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>node_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of nodes???</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>nnodes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of MNW2 nodes</p>
 </dd>
 </dl>
 </td>
@@ -628,7 +728,19 @@ to assign (upon load) or retain (upon write) in reach_data array.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfmnw2.Mnw.make_node_data">
 <code class="descname">make_node_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.Mnw.make_node_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Makes the node data array from variables entered individually.</p>
+<dd><p>Make the node data array from variables entered individually.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -810,7 +922,7 @@ performed. If level=1, full checks are performed.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>None</strong></dt>
+<dt><strong>chk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">check object</span></dt>
 <dd></dd>
 </dl>
 </td>
@@ -826,19 +938,102 @@ performed. If level=1, full checks are performed.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modflow.mfmnw2.ModflowMnw2.export">
+<code class="descname">export</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export MNW2 data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file</span></dt>
+<dd></dd>
+<dt><strong>kwargs</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>e</strong> <span class="classifier-delimiter">:</span> <span class="classifier">export object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.get_allnode_data">
 <code class="descname">get_allnode_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.get_allnode_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a version of the node_data array that has all MNW2 nodes listed explicitly.
-For example, MNWs with open intervals encompassing multiple layers would have a row
-entry for each layer. Ztop and zbotm values indicate the top and bottom elevations of the node
-(these are the same as the layer top and bottom if the node fully penetrates that layer).</p>
+<dd><p>Get a version of the node_data array that has all MNW2 nodes listed
+explicitly. For example, MNWs with open intervals encompassing
+multiple layers would have a row entry for each layer. Ztop and zbotm
+values indicate the top and bottom elevations of the node (these are
+the same as the layer top and bottom if the node fully penetrates
+that layer).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>allnode_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
-<dd><p class="first last">Numpy record array of same form as node_data, except each row represents only one node.</p>
+<dd><p class="first last">Numpy record array of same form as node_data, except each row
+represents only one node.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfmnw2.ModflowMnw2.get_default_node_dtype">
+<em class="property">static </em><code class="descname">get_default_node_dtype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.get_default_node_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get default dtype for node data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>structured</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean indicating if a structured (True) or unstructured (False)
+model (default is True).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.dtype</span></dt>
+<dd><p class="first last">node data dtype</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfmnw2.ModflowMnw2.get_default_spd_dtype">
+<em class="property">static </em><code class="descname">get_default_spd_dtype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.get_default_spd_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get default dtype for stress period data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>structured</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean indicating if a structured (True) or unstructured (False)
+model (default is True).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.dtype</span></dt>
+<dd><p class="first last">node data dtype</p>
 </dd>
 </dl>
 </td>
@@ -855,9 +1050,62 @@ entry for each layer. Ztop and zbotm values indicate the top and bottom elevatio
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>maxnodes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Total number of nodes to be simulated</p>
+<dd><p class="first last">Total number of nodes to be simulated (default is 0)</p>
+</dd>
+<dt><strong>aux_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of aux name strings (default is None)</p>
+</dd>
+<dt><strong>structured</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean indicating if a structured (True) or unstructured (False)
+model (default is True).</p>
+</dd>
+<dt><strong>default_value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Default value for float variables (default is 0).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Recarray of default dtype of shape maxnode</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfmnw2.ModflowMnw2.get_empty_stress_period_data">
+<em class="property">static </em><code class="descname">get_empty_stress_period_data</code><span class="sig-paren">(</span><em>aux_names=None</em>, <em>structured=True</em>, <em>default_value=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.get_empty_stress_period_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an empty stress period data recarray</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>itmp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of entries in this stress period (default is 0).</p>
+</dd>
+<dt><strong>aux_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of aux names (default is None).</p>
+</dd>
+<dt><strong>structured</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean indicating if a structured (True) or unstructured (False)
+model (default is True).</p>
+</dd>
+<dt><strong>default_value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Default value for float variables (default is 0).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Recarray of default dtype of shape itmp</p>
 </dd>
 </dl>
 </td>
@@ -869,19 +1117,103 @@ entry for each layer. Ztop and zbotm values indicate the top and bottom elevatio
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.load">
 <em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nper=None</em>, <em>gwt=False</em>, <em>nsol=1</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>The load method has not been implemented for this package.</p>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.ModflowMnw2</span></code>) to
+which this package will be added.</p>
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of periods</p>
+</dd>
+<dt><strong>gwt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd></dd>
+<dt><strong>nsol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd></dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
+or older style array control records, then <cite>f</cite> should be a file
+handle.  In this case ext_unit_dict is required, which can be
+constructed using the function
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.modflow.mfmnw2.ModflowMnw2.make_mnw_objects">
+<code class="descname">make_mnw_objects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.make_mnw_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a Mnw object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.make_node_data">
 <code class="descname">make_node_data</code><span class="sig-paren">(</span><em>mnwobjs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.make_node_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make node_data rec array from Mnw objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>mnwobjs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Mnw object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.modflow.mfmnw2.ModflowMnw2.make_stress_period_data">
 <code class="descname">make_stress_period_data</code><span class="sig-paren">(</span><em>mnwobjs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfmnw2.ModflowMnw2.make_stress_period_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>make stress_period_data rec array from Mnw objects</p>
+<dd><p>Make stress_period_data rec array from Mnw objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>mnwobjs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Mnw object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -979,7 +1311,17 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd></dd>
+<dt><strong>float_format</strong></dt>
+<dd></dd>
+<dt><strong>use_tables</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>None</strong></dt>
 <dd></dd>
 </dl>

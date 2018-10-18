@@ -483,27 +483,24 @@ water boundary conditions.</p>
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtsft.Mt3dSft.load">
 <em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nsfinit=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtsft.Mt3dSft.load" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div>Load an existing package.</div></blockquote>
+<dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
-<dd><blockquote class="first">
-<div><p>File to load.</p>
-</div></blockquote>
-<dl class="last docutils">
-<dt>model <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
 <dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
 which this package will be added.</p>
 </dd>
-<dt>nsfinit <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dt><strong>nsfinit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">number of simulated stream reaches in the surface-water transport
 process.</p>
 </dd>
-<dt>isfsolv <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dt><strong>isfsolv</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Specifies the numerical technique that will be used to solve the
 transport problem in the surface water network.  The first release
 of MT3D-USGS (version 1.0) only allows for a finite-difference
@@ -511,35 +508,33 @@ formulation and regardless of what value the user specifies, the
 variable defaults to 1, meaning the finite-difference solution is
 invoked.</p>
 </dd>
-<dt>wimp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dt><strong>wimp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Is the stream solver time weighting factor.  Ranges between 0.0
 and 1.0.  Values of 0.0, 0.5, or 1.0 correspond to explicit,
 Crank-Nicolson, and fully implicit schemes, respectively.</p>
 </dd>
-<dt>wups <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dt><strong>wups</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Is the space weighting factor employed in the stream network
 solver. Ranges between 0.0 and 1.0.  Values of 0.0 and 1.0
 correspond to a central-in-space and upstream weighting factors,
 respectively.</p>
 </dd>
-<dt>cclosesf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dt><strong>cclosesf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Is the closure criterion for the SFT solver</p>
 </dd>
-<dt>mxitersf <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dt><strong>mxitersf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Limits the maximum number of iterations the SFT solver can use to
 find a solution of the stream transport problem.</p>
 </dd>
-<dt>crntsf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dt><strong>crntsf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Is the Courant constraint specific to the SFT time step, its value
 has no bearing upon the groundwater transport solution time step.</p>
 </dd>
-<dt>iprtxmd <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dt><strong>iprtxmd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">a flag to print SFT solution information to the standard output
 file. IPRTXMD can equal 0, 1, or 2, and will write increasing
 amounts of solver information to the standard output file,
 respectively.</p>
-</dd>
-</dl>
 </dd>
 </dl>
 </td>
@@ -553,19 +548,16 @@ respectively.</p>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>lopy_testsfr_test’)</dt>
-<dd><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mf.nam&#39;</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dis&#39;</span><span class="p">,</span> <span class="s1">&#39;bas6&#39;</span><span class="p">])</span>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mf.nam&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                <span class="n">load_only</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dis&#39;</span><span class="p">,</span> <span class="s1">&#39;bas6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sfr</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowSfr2</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic.sfr2&#39;</span><span class="p">,</span> <span class="n">mf</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">chk</span> <span class="o">=</span> <span class="n">sfr</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mt.nam&#39;</span><span class="p">,</span> <span class="n">exe_name</span> <span class="o">=</span> <span class="s1">&#39;mt3d-usgs_1.0.00.exe&#39;</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="s1">&#39;btn&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic_mt.nam&#39;</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="s1">&#39;btn&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sft</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dSft</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;CrnkNic.sft&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="method">

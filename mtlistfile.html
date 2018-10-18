@@ -212,8 +212,8 @@
             
   <div class="section" id="module-flopy.utils.mtlistfile">
 <span id="flopy-utils-mtlistfile-module"></span><h1>flopy.utils.mtlistfile Module<a class="headerlink" href="#module-flopy.utils.mtlistfile" title="Permalink to this headline">¶</a></h1>
-<p>This is a class for reading the mass budget from a (multi-component) mt3d(usgs) run.
-Support SFT budget also</p>
+<p>This is a class for reading the mass budget from a (multi-component)
+mt3d(usgs) run. Also includes support for SFT budget.</p>
 <dl class="class">
 <dt id="flopy.utils.mtlistfile.MtListBudget">
 <em class="property">class </em><code class="descclassname">flopy.utils.mtlistfile.</code><code class="descname">MtListBudget</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mtlistfile.MtListBudget" title="Permalink to this definition">¶</a></dt>
@@ -225,9 +225,6 @@ Support SFT budget also</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">the list file name</p>
-</dd>
-<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">the time unit to return in the recarray. (default is ‘days’)</p>
 </dd>
 </dl>
 </td>
@@ -243,7 +240,7 @@ Support SFT budget also</p>
 <dl class="method">
 <dt id="flopy.utils.mtlistfile.MtListBudget.parse">
 <code class="descname">parse</code><span class="sig-paren">(</span><em>forgive=True</em>, <em>diff=True</em>, <em>start_datetime=None</em>, <em>time_unit='d'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mtlistfile.MtListBudget.parse" title="Permalink to this definition">¶</a></dt>
-<dd><p>main entry point for parsing the list file.</p>
+<dd><p>Main entry point for parsing the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -253,7 +250,8 @@ Support SFT budget also</p>
 <dd><p class="first last">flag to raise exceptions when fail-to-read occurs. Default is True</p>
 </dd>
 <dt><strong>diff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">flag to return dataframes with ‘in minus out’ columns.  Default is True</p>
+<dd><p class="first last">flag to return dataframes with ‘in minus out’ columns.  Default
+is True</p>
 </dd>
 <dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">str that can be parsed by pandas.to_datetime.  Example: ‘1-1-1970’.

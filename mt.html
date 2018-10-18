@@ -424,19 +424,33 @@ is based. (the default is None)</p>
 <dl class="method">
 <dt id="flopy.mt3d.mt.Mt3dms.add_existing_package">
 <code class="descname">add_existing_package</code><span class="sig-paren">(</span><em>filename</em>, <em>ptype=None</em>, <em>copy_to_model_ws=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mt.Mt3dms.add_existing_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>add an existing package to a model instance.
-Parameters
-———-
-filename : str</p>
-<blockquote>
-<div>the name of the file to add as a package</div></blockquote>
-<dl class="docutils">
-<dt>ptype <span class="classifier-delimiter">:</span> <span class="classifier">optional</span></dt>
-<dd>the model package type (e.g. “lpf”, “wel”, etc).  If None,
-then the file extension of the filename arg is used</dd>
-<dt>copy_to_model_ws <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd>flag to copy the package file into the model_ws directory.</dd>
+<dd><p>Add an existing package to a model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the name of the file to add as a package</p>
+</dd>
+<dt><strong>ptype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">optional</span></dt>
+<dd><p class="first last">the model package type (e.g. “lpf”, “wel”, etc).  If None,
+then the file extension of the filename arg is used</p>
+</dd>
+<dt><strong>copy_to_model_ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">flag to copy the package file into the model_ws directory.</p>
+</dd>
 </dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">

@@ -220,7 +220,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>cbc_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or CellBudgetFile object</span></dt>
 <dd><p class="first last">The file name or CellBudgetFile object for which budgets will be
 computed.</p>
@@ -238,10 +238,16 @@ The kstp and kper values are zero based.</p>
 <dt><strong>aliases</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
 <dd><p class="first last">A dictionary with key, value pairs of zones and aliases. Replaces
 the corresponding record and field names with the aliases provided.
-NOTE: When using this option in conjunction with a list of zones,
-the zone(s) passed may either be all strings (aliases), all
-integers, or mixed.</p>
+When using this option in conjunction with a list of zones, the
+zone(s) passed may either be all strings (aliases), all integers,
+or mixed.</p>
 </dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
 </dl>
 </td>
 </tr>
@@ -303,29 +309,35 @@ integers, or mixed.</p>
 <dl class="method">
 <dt id="flopy.utils.zonbud.ZoneBudget.get_dataframes">
 <code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime=None</em>, <em>timeunit='D'</em>, <em>index_key='totim'</em>, <em>names=None</em>, <em>zones=None</em>, <em>net=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get pandas dataframes.
-Parameters
-———-</p>
-<dl class="docutils">
-<dt>start_datetime <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd>Datetime string indicating the time at which the simulation starts.</dd>
-<dt>timeunit <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd>String that indicates the time units used in the model.</dd>
-<dt>index_key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd>Indicates the fields to be used (in addition to “record”) in the
-resulting DataFrame multi-index.</dd>
-<dt>names <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
-<dd>A list of strings containing the names of the records desired.</dd>
-<dt>zones <span class="classifier-delimiter">:</span> <span class="classifier">list of ints or strings</span></dt>
-<dd>A list of integer zone numbers or zone names desired.</dd>
-<dt>net <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd>If True, returns net IN-OUT for each record.</dd>
-</dl>
+<dd><p>Get pandas dataframes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Datetime string indicating the time at which the simulation starts.</p>
+</dd>
+<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">String that indicates the time units used in the model.</p>
+</dd>
+<dt><strong>index_key</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Indicates the fields to be used (in addition to “record”) in the
+resulting DataFrame multi-index.</p>
+</dd>
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">A list of strings containing the names of the records desired.</p>
+</dd>
+<dt><strong>zones</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of ints or strings</span></dt>
+<dd><p class="first last">A list of integer zone numbers or zone names desired.</p>
+</dd>
+<dt><strong>net</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If True, returns net IN-OUT for each record.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>df</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Pandas DataFrame</span></dt>
 <dd><p class="first last">Pandas DataFrame with the budget information.</p>
 </dd>
@@ -341,6 +353,30 @@ resulting DataFrame multi-index.</dd>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">zb</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.zonbud.ZoneBudget.get_model_shape">
+<code class="descname">get_model_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.get_model_shape" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of layers</p>
+</dd>
+<dt><strong>nrow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of rows</p>
+</dd>
+<dt><strong>ncol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of columns</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">

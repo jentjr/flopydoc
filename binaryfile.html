@@ -212,10 +212,11 @@
             
   <div class="section" id="module-flopy.utils.binaryfile">
 <span id="flopy-utils-binaryfile-module"></span><h1>flopy.utils.binaryfile Module<a class="headerlink" href="#module-flopy.utils.binaryfile" title="Permalink to this headline">¶</a></h1>
-<p>Module to read MODFLOW binary output files.  The module contains three
+<p>Module to read MODFLOW binary output files.  The module contains four
 important classes that can be accessed by the user.</p>
 <ul class="simple">
 <li>HeadFile (Binary head file.  Can also be used for drawdown)</li>
+<li>HeadUFile (Binary MODFLOW-USG unstructured head file)</li>
 <li>UcnFile (Binary concentration file from MT3DMS)</li>
 <li>CellBudgetFile (Binary cell-by-cell flow file)</li>
 </ul>
@@ -1301,7 +1302,7 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
 <dl class="class">
 <dt id="flopy.utils.binaryfile.HeadUFile">
 <em class="property">class </em><code class="descclassname">flopy.utils.binaryfile.</code><code class="descname">HeadUFile</code><span class="sig-paren">(</span><em>filename</em>, <em>text='headu'</em>, <em>precision='auto'</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile" title="Permalink to this definition">¶</a></dt>
-<dd><p>USG HeadUFile Class.</p>
+<dd><p>Unstructured MODFLOW-USG HeadUFile Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1494,7 +1495,7 @@ kper values are presently zero-based.</p>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.HeadUFile.get_ts">
 <code class="descname">get_ts</code><span class="sig-paren">(</span><em>idx</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.get_ts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a time series from the binary file.</p>
+<dd><p>Get a time series from the binary HeadUFile (not implemented).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1518,9 +1519,6 @@ data array will contain time (totim).</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<p>The layer, row, and column values must be zero-based, and must be
-within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j &lt; ncol</p>
 </dd></dl>
 
 <dl class="method">
