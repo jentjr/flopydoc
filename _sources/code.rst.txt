@@ -209,8 +209,6 @@ Contents:
    cvfdutil
    datafile
    binaryfile
-   binaryhydmodfile
-   binaryswrfile
    flopy_io
    formattedfile
    geometry
