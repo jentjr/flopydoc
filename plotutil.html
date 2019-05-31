@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.plot.plotutil Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.plot.plotutil Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.export.metadata Module" href="metadata.html"/>
+        <link rel="prev" title="flopy.plot.crosssection Module" href="crosssection.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -308,8 +336,13 @@ binary files</p>
 <dd><p class="first last">Dictionary of zeta results. zeta keys are zero-based zeta surfaces.</p>
 </dd>
 <dt><strong>layer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">Concentration will be calculated for the specified layer.  If layer
 is None, then the concentration will be calculated for all layers.
+=======
+<dd><p class="first last">Concentration will be calculated for the specified layer.  If layer 
+is None, then the concentration will be calculated for all layers. 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 (default is None).</p>
 </dd>
 </dl>
@@ -454,6 +487,53 @@ y-coordinate locations in pts.</p>
 </dd></dl>
 
 <dl class="function">
+<<<<<<< HEAD
+=======
+<dt id="flopy.plot.plotutil.centered_specific_discharge">
+<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">centered_specific_discharge</code><span class="sig-paren">(</span><em>Qx</em>, <em>Qy</em>, <em>Qz</em>, <em>delr</em>, <em>delc</em>, <em>sat_thk</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.centered_specific_discharge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using the MODFLOW discharge, calculate the cell centered specific discharge
+by dividing by the flow width and then averaging to the cell center.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>Qx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW ‘flow right face’</p>
+</dd>
+<dt><strong>Qy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW ‘flow front face’.  The sign on this array will be flipped
+by this function so that the y axis is positive to north.</p>
+</dd>
+<dt><strong>Qz</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW ‘flow lower face’.  The sign on this array will be flipped by
+this function so that the z axis is positive in the upward direction.</p>
+</dd>
+<dt><strong>delr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW delr array</p>
+</dd>
+<dt><strong>delc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">MODFLOW delc array</p>
+</dd>
+<dt><strong>sat_thk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Saturated thickness for each cell</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>(qx, qy, qz)</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of numpy.ndarrays</span></dt>
+<dd><p class="first last">Specific discharge arrays that have been interpolated to cell centers.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dt id="flopy.plot.plotutil.cvfd_to_patch_collection">
 <code class="descclassname">flopy.plot.plotutil.</code><code class="descname">cvfd_to_patch_collection</code><span class="sig-paren">(</span><em>verts</em>, <em>iverts</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.cvfd_to_patch_collection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a patch collection from control volume vertices and incidence list</p>
@@ -592,6 +672,12 @@ information.</p>
 <dd><p class="first last">layer to extract. Used in combination to the optional ncpl
 parameter. Default is 0</p>
 </dd>
+<<<<<<< HEAD
+=======
+<dt><strong>linewidth</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Width of all lines. (default is 1)</p>
+</dd>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dt><strong>cmap</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
 <dd><p class="first last">Name of colormap to use for polygon shading (default is ‘Dark2’)</p>
 </dd>
@@ -636,11 +722,20 @@ Some common kwargs would be ‘linewidths’, ‘linestyles’, ‘alpha’, etc
 <dt><strong>shp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
 <dd><p class="first last">Name of the shapefile to plot.</p>
 </dd>
+<<<<<<< HEAD
 <dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplolib.pyplot.axes object</span></dt>
 <dd></dd>
 <dt><strong>radius</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Radius of circle for points.  (Default is 500.)</p>
 </dd>
+=======
+<dt><strong>radius</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Radius of circle for points.  (Default is 500.)</p>
+</dd>
+<dt><strong>linewidth</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Width of all lines. (default is 1)</p>
+</dd>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dt><strong>cmap</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
 <dd><p class="first last">Name of colormap to use for polygon shading (default is ‘Dark2’)</p>
 </dd>
@@ -671,6 +766,47 @@ Some common kwargs would be ‘linewidths’, ‘linestyles’, ‘alpha’, etc
 <dt><strong>pc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.PatchCollection</span></dt>
 <dd></dd>
 </dl>
+<<<<<<< HEAD
+=======
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.plot.plotutil.saturated_thickness">
+<code class="descclassname">flopy.plot.plotutil.</code><code class="descname">saturated_thickness</code><span class="sig-paren">(</span><em>head</em>, <em>top</em>, <em>botm</em>, <em>laytyp</em>, <em>mask_values=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.plot.plotutil.saturated_thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the saturated thickness.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>head</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">head array</p>
+</dd>
+<dt><strong>top</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">top array of shape (nrow, ncol)</p>
+</dd>
+<dt><strong>botm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">botm array of shape (nlay, nrow, ncol)</p>
+</dd>
+<dt><strong>laytyp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">confined (0) or convertible (1) of shape (nlay)</p>
+</dd>
+<dt><strong>mask_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">If head is one of these values, then set sat to top - bot</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sat_thk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Saturated thickness of shape (nlay, nrow, ncol).</p>
+</dd>
+</dl>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </td>
 </tr>
 </tbody>
@@ -726,7 +862,11 @@ Some common kwargs would be ‘linewidths’, ‘linestyles’, ‘alpha’, etc
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">Vertices is a list with vertices for each feature in the shapefile.
+=======
+<dd><p class="first last">Vertices is a list with vertices for each feature in the shapefile. 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 Individual feature vertices are x, y tuples and contained in a list.
 A list with a single x, y tuple is returned for point shapefiles. A
 list with multiple x, y tuples is returned for polyline and polygon
@@ -800,9 +940,13 @@ patch collection.  Return all shapes if not specified.</p>
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -819,6 +963,34 @@ patch collection.  Return all shapes if not specified.</p>
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

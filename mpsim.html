@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.modpath.mpsim Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.modpath.mpsim Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mt3d.mtadv Module" href="mtadv.html"/>
+        <link rel="prev" title="flopy.modpath.mpbas Module" href="mpbas.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -225,6 +253,7 @@ this package will be added.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
+<<<<<<< HEAD
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>heading</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
@@ -253,12 +282,45 @@ this package will be added.</p>
 <dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
 <dd><p class="first last">One or more data types. If one data type is supplied, it is
 repeated for each field name.</p>
+=======
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>heading</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Text string written to top of package input file.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 </dl>
 </td>
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
+=======
+<dl class="staticmethod">
+<dt id="flopy.modpath.mpsim.ModpathSim.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.ModpathSim.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd></dl>
 
 <dl class="method">
@@ -299,8 +361,13 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modpath.mpsim.ModpathSim.load">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>pak_type</em>, <em>ext_unit_dict=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.ModpathSim.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default load method for standard boundary packages.</p>
+=======
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em>, <em>unitnumber=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.ModpathSim.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>The load method has not been implemented for this package.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd></dl>
 
 <dl class="method">
@@ -430,10 +497,38 @@ this package will be added.</p>
 <dd><p class="first last">Filename extension (default is ‘loc’)</p>
 </dd>
 </dl>
+<<<<<<< HEAD
+=======
 </td>
 </tr>
 </tbody>
 </table>
+<dl class="staticmethod">
+<dt id="flopy.modpath.mpsim.StartingLocationsFile.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.StartingLocationsFile.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
+</td>
+</tr>
+</tbody>
+</table>
+<<<<<<< HEAD
 <dl class="staticmethod">
 <dt id="flopy.modpath.mpsim.StartingLocationsFile.add_to_dtype">
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.StartingLocationsFile.add_to_dtype" title="Permalink to this definition">¶</a></dt>
@@ -458,6 +553,8 @@ repeated for each field name.</p>
 </tr>
 </tbody>
 </table>
+=======
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd></dl>
 
 <dl class="method">
@@ -510,7 +607,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modpath.mpsim.StartingLocationsFile.get_empty_starting_locations_data">
-<em class="property">static </em><code class="descname">get_empty_starting_locations_data</code><span class="sig-paren">(</span><em>npt=0</em>, <em>default_xloc0=0.5</em>, <em>default_yloc0=0.5</em>, <em>default_zloc0=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.StartingLocationsFile.get_empty_starting_locations_data" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_empty_starting_locations_data</code><span class="sig-paren">(</span><em>default_xloc0=0.5</em>, <em>default_yloc0=0.5</em>, <em>default_zloc0=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.StartingLocationsFile.get_empty_starting_locations_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>get an empty recarray for particle starting location info.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -529,8 +626,13 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modpath.mpsim.StartingLocationsFile.load">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>pak_type</em>, <em>ext_unit_dict=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.StartingLocationsFile.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default load method for standard boundary packages.</p>
+=======
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em>, <em>unitnumber=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mpsim.StartingLocationsFile.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>The load method has not been implemented for this package.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd></dl>
 
 <dl class="method">
@@ -650,9 +752,13 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -669,6 +775,34 @@ Adds an attribute for each layer in each data array</p>
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.modflow.mflak Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.modflow.mflak Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mflmt Module" href="mflmt.html"/>
+        <link rel="prev" title="flopy.modflow.mfgmg Module" href="mfgmg.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -249,17 +277,24 @@ input purposes. The variable NLAKES is used, with certain internal
 assumptions and approximations, to dimension arrays for the simulation.</p>
 </dd>
 <dt><strong>ipakcb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">(ILKCB in MODFLOW documentation)
+=======
+<dd><p class="first last">(ILKCB in MODFLOW documentation) 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 Whether or not to write cell-by-cell flows (yes if ILKCB&gt; 0, no
 otherwise). If ILKCB&lt; 0 and “Save Budget” is specified in the Output
 Control or ICBCFL is not equal to 0, the cell-by-cell flows will be
 printed in the standard output file. ICBCFL is specified in the input
 to the Output Control Option of MODFLOW.</p>
 </dd>
+<<<<<<< HEAD
 <dt><strong>lwrt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints (one per SP)</span></dt>
 <dd><p class="first last">lwrt &gt; 0, suppresses printout from the lake package. Default is 0 (to
 print budget information)</p>
 </dd>
+=======
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dt><strong>theta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first">Explicit (THETA = 0.0), semi-implicit (0.0 &lt; THETA &lt; 1.0), or implicit
 (THETA = 1.0) solution for lake stages. SURFDEPTH is read only if
@@ -278,6 +313,7 @@ for simulations that only include transient stress periods. If
 THETA is specified as a negative value, then it is converted to a
 positive value for calculations of lake stage.</p>
 </div></blockquote>
+<<<<<<< HEAD
 <ul class="last simple">
 <li>In MODFLOW-2000 and later, ISS is not part of the input. Instead
 NSSITR or SSCNCR should be included if one or more stress periods
@@ -311,6 +347,51 @@ THETA sets a flag which assumes input values for NSSITR and SSCNCR
 will follow THETA in the format as described by Merritt and Konikow
 (p. 52). A negative THETA is automatically reset to a positive
 value after values of NSSITR and SSCNCR are read.</li>
+=======
+<ul class="simple">
+<li>In MODFLOW-2000 and later, ISS is not part of the input. Instead</li>
+</ul>
+<blockquote>
+<div><p>NSSITR or SSCNCR should be included if one or more stress periods
+is a steady state stress period as defined in Ss/tr in the
+Discretization file.</p>
+</div></blockquote>
+<ul class="simple">
+<li>SSCNCR and NSSITR can be read for a transient only simulation by</li>
+</ul>
+<blockquote class="last">
+<div><p>placing a negative sign immeditately in front of THETA. A negative
+THETA sets a flag which assumes input values for NSSITR and SSCNCR
+will follow THETA in the format as described by Merritt and Konikow
+(p. 52). A negative THETA is automatically reset to a positive
+value after values of NSSITR and SSCNCR are read.</p>
+</div></blockquote>
+</dd>
+<dt><strong>nssitr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Maximum number of iterations for Newton’s method of solution for
+equilibrium lake stages in each MODFLOW iteration for steady-state
+aquifer head solution. Only read if ISS (option flag input to DIS
+Package of MODFLOW indicating steady-state solution) is not zero or
+if THETA is specified as a negative value.
+*       NSSITR and SSCNCR may be omitted for transient solutions (ISS = 0).
+*       In MODFLOW-2000 and later, ISS is not part of the input.</p>
+<blockquote>
+<div><p>Instead NSSITR or SSCNCR should be included if one or more stress
+periods is a steady state stress period as defined in Ss/tr in the
+Discretization file.</p>
+</div></blockquote>
+<ul class="simple">
+<li>SSCNCR and NSSITR can be read for a transient only simulation by</li>
+</ul>
+<blockquote>
+<div><p>placing a negative sign immeditately in front of THETA. A negative
+THETA sets a flag which assumes input values for NSSITR and SSCNCR
+will follow THETA in the format as described by Merritt and Konikow
+(p. 52). A negative THETA is automatically reset to a positive
+value after values of NSSITR and SSCNCR are read.</p>
+</div></blockquote>
+<ul class="last simple">
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <li>If NSSITR = 0, a value of 100 will be used instead.</li>
 </ul>
 </dd>
@@ -341,7 +422,11 @@ SURFDEP is read only if THETA is specified as a negative value.</p>
 <dt><strong>stage_range</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of tuples (ssmn, ssmx) of length nlakes</span></dt>
 <dd><p class="first">Where ssmn and ssmx are the minimum and maximum stages allowed for each
 lake in steady-state solution.
+<<<<<<< HEAD
 *   SSMN and SSMX are not needed for a transient run and must be</p>
+=======
+*       SSMN and SSMX are not needed for a transient run and must be omitted</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <blockquote>
 <div><p>omitted when the solution is transient.</p>
 </div></blockquote>
@@ -349,6 +434,12 @@ lake in steady-state solution.
 <li>When the first stress period is a steady-state stress period,
 SSMN is defined in record 3.</li>
 </ul>
+<<<<<<< HEAD
+=======
+<blockquote>
+<div><p>SSMN is defined in record 3.</p>
+</div></blockquote>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <p class="last">For subsequent steady-state stress periods, SSMN is defined in
 record 9a.</p>
 </dd>
@@ -359,11 +450,19 @@ If LKARR(I,J,K) &gt; 0, its value is the identification number of the lake
 occupying the grid cell. LKARR(I,J,K) must not exceed the value NLAKES.
 If it does, or if LKARR(I,J,K) &lt; 0, LKARR(I,J,K) is set to zero.
 Lake cells cannot be overlain by non-lake cells in a higher layer.
+<<<<<<< HEAD
 Lake cells must be inactive cells (IBOUND = 0) and should not be
 convertible to active cells (WETDRY = 0).</p>
 <p class="last">The Lake package can be used when all or some of the model layers
 containing the lake are confined.  The authors recommend using the
 Layer-Property Flow Package (LPF) for this case, although the
+=======
+Lake cells must be inactive cells (IBOUND = 0) and should not be 
+convertible to active cells (WETDRY = 0).</p>
+<p class="last">The Lake package can be used when all or some of the model layers 
+containing the lake are confined.  The authors recommend using the 
+Layer-Property Flow Package (LPF) for this case, although the 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 BCF and HUF Packages will work too.  However, when using the BCF6
 package to define aquifer properties, lake/aquifer conductances in the
 lateral direction are based solely on the lakebed leakance (and not on
@@ -412,9 +511,15 @@ is listed first.</p>
 </dl>
 </div></blockquote>
 <dl class="last docutils">
+<<<<<<< HEAD
 <dt>And dataset 8b contains</dt>
 <dd><dl class="first last docutils">
 <dt>SILLVT <span class="classifier-delimiter">:</span> <span class="classifier">sequence of floats</span></dt>
+=======
+<dt>And dataset 8b contains </dt>
+<dd><dl class="first last docutils">
+<dt>SILLVT <span class="classifier-delimiter">:</span> <span class="classifier">sequnce of floats</span></dt>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p class="first last">A sequence of sill elevations for each sublakes that determines
 whether the center lake is connected with a given sublake.
 Values are entered for each sublake in the order the sublakes
@@ -466,7 +571,11 @@ outflow, or groundwater seepage. A negative value indicates
 augmentation. Normally, this would be used to specify the
 rate of artificial withdrawal from a lake for human water use,
 or if negative, artificial augmentation of a lake volume for
+<<<<<<< HEAD
 aesthetic or recreational purposes.</p>
+=======
+esthetic or recreational purposes.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt>SSMN <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Minimum stage allowed for each lake in steady-state solution.
@@ -518,7 +627,11 @@ Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mflak.ModflowLak.add_to_dtype">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+=======
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -586,7 +699,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mflak.ModflowLak.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nper=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflak.ModflowLak.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -615,8 +728,13 @@ constructed using the function
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<<<<<<< HEAD
 <dt><strong>str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowLak object</span></dt>
 <dd><p class="first last">ModflowLak object.</p>
+=======
+<dt><strong>str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowStr object</span></dt>
+<dd><p class="first last">ModflowStr object.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 </dl>
 </td>
@@ -760,9 +878,13 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -779,6 +901,34 @@ Adds an attribute for each layer in each data array</p>
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.modflow.mfswt Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.modflow.mfswt Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfupw Module" href="mfupw.html"/>
+        <link rel="prev" title="flopy.modflow.mfswr1 Module" href="mfswr1.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -255,6 +283,7 @@ SUB Package. (default is 0).</p>
 <dd><p class="first last">nsystm is the number of systems of interbeds. (default is 1).</p>
 </dd>
 <dt><strong>ithk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">ithk is a flag to determine how thicknesses of compressible sediments
 vary in response to changes in saturated thickness. If ithk &lt; 1,
 thickness of compressible sediments is constant. If ithk &gt; 0, thickness
@@ -293,28 +322,76 @@ storage will not be read. (default is 0).</p>
 <dt><strong>lnwt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nsystm)</span></dt>
 <dd><p class="first last">lnwt is a one-dimensional array specifying the model layer assignments
 for each system of interbeds. (default is 0).</p>
+=======
+<dd><p class="first last">ithk is a flag to determine how thicknesses of compressible sediments vary
+in response to changes in saturated thickness. If ithk &lt; 1, thickness of
+compressible sediments is constant. If ithk &gt; 0, thickness of compressible
+sediments varies in response to changes in saturated thickness.
+(default is 1).</p>
+</dd>
+<dt><strong>ivoid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">ivoid is a flag to determine how void ratios of compressible sediments vary
+in response to changes in saturated thickness. If ivoid &lt; 1, void ratio will
+be treated as a constant. If ivoid &gt; 0, void ratio will be treated as a
+variable. (default is 0).</p>
+</dd>
+<dt><strong>nn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">nn is the number of nodes used to discretize the half space to approximate
+the head distributions in systems of delay interbeds. (default is 20).</p>
+</dd>
+<dt><strong>istpcs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">istpcs is a flag to determine how initial preconsolidation stress will be
+obtained. If istpcs does not equal 0, an array of offset values will be read in
+for each model layer. The offset values will be added to the initial effective
+stress to get initial preconsolidation stress. If istpcs = 0, an array with
+initial preconsolidation stress values will be read. (default is 1).</p>
+</dd>
+<dt><strong>icrcc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">icrcc is a flag to determine how recompression and compression indices will
+be obtained. If ICRCC is not equal to 0, arrays of elastic specific storage
+and inelastic skeletal specific storage will be read for each system of
+interbeds; the recompression index and compression index will not be read.
+If icrcc = 0, arrays of recompression index and compression index will be
+read for each system of interbeds; elastic skeletal specific storage and
+inelastic skeletal specific storage will not be read. (default is 0).</p>
+</dd>
+<dt><strong>lnwt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nsystm)</span></dt>
+<dd><p class="first last">lnwt is a one-dimensional array specifying the model layer assignments for each
+system of interbeds. (default is 0).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>izcfl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">izcfl is a flag to specify whether or not initial calculated
 values of layer-center elevation will be printed. (default is 0).</p>
 </dd>
 <dt><strong>izcfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">izcfm is is a code for the format in which layer-center elevation will
 be printed. (default is 0).</p>
+=======
+<dd><p class="first last">izcfm is is a code for the format in which layer-center elevation will be
+printed. (default is 0).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>iglfl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">iglfl is a flag to specify whether or not initial calculated values of
 geostatic stress will be printed. (default is 0).</p>
 </dd>
 <dt><strong>iglfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">iglfm is a code for the format in which geostatic stress will be
 printed. (default is 0).</p>
+=======
+<dd><p class="first last">iglfm is a code for the format in which geostatic stress will be printed.
+(default is 0).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>iestfl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">iestfl is a flag to specify whether or not initial calculated values of
 effective stress will be printed. (default is 0).</p>
 </dd>
 <dt><strong>iestfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">iestfm is a code for the format in which effective stress will be
 printed. (default is 0).</p>
 </dd>
@@ -345,6 +422,37 @@ will be printed. (default is 0).</p>
 <dd><p class="first last">gl0 is an array specifying the geostatic stress above model layer 1. If
 the top of model layer 1 is the land surface, enter values of zero for
 this array. (default is 0.).</p>
+=======
+<dd><p class="first last">iestfm is a code for the format in which effective stress will be printed.
+(default is 0).</p>
+</dd>
+<dt><strong>ipcsfl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">ipcsfl is a flag to specify whether or not initial calculated values of
+preconsolidation stress will be printed. (default is 0).</p>
+</dd>
+<dt><strong>ipcsfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">ipcsfm is a code for the format in which preconsolidation stress will be
+printed. (default is 0).</p>
+</dd>
+<dt><strong>istfl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">istfl is a flag to specify whether or not initial equivalent storage properties
+will be printed for each system of interbeds. If icrcc is not equal to 0, the
+equivalent storage properties that can be printed are recompression and
+compression indices (cr and cc), which are calculated from elastic and
+inelastic skeletal specific storage (sske and sskv). If icrcc = 0, equivalent
+storage properties that can be printed are elastic and inelastic skeletal
+specific storage, which are calculated from the recompression and
+compression indices. (default is 0).</p>
+</dd>
+<dt><strong>istfm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">istfm is a code for the format in which equivalent storage properties will
+be printed. (default is 0).</p>
+</dd>
+<dt><strong>gl0</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nrow, ncol)</span></dt>
+<dd><p class="first last">gl0 is an array specifying the geostatic stress above model layer 1. If the
+top of model layer 1 is the land surface, enter values of zero for this
+array. (default is 0.).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>sgm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nrow, ncol)</span></dt>
 <dd><p class="first last">sgm is an array specifying the specific gravity of moist or unsaturated
@@ -356,6 +464,7 @@ sediments. (default is 1.7).</p>
 </dd>
 <dt><strong>thick</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nsystm, nrow, ncol)</span></dt>
 <dd><p class="first last">thick is an array specifying the thickness of compressible sediments.
+<<<<<<< HEAD
 (default is 1.).</p>
 </dd>
 <dt><strong>sse</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nsystm, nrow, ncol)</span></dt>
@@ -367,6 +476,17 @@ storage of compressible beds. sse is not used if icrcc = 0.
 <dd><p class="first last">ssv is an array specifying the initial inelastic skeletal specific
 storage of compressible beds. ssv is not used if icrcc = 0.
 (default is 1.).</p>
+=======
+(default is 1.).</p>
+</dd>
+<dt><strong>sse</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nsystm, nrow, ncol)</span></dt>
+<dd><p class="first last">sse is an array specifying the initial elastic skeletal specific storage of
+compressible beds. sse is not used if icrcc = 0. (default is 1.).</p>
+</dd>
+<dt><strong>ssv</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nsystm, nrow, ncol)</span></dt>
+<dd><p class="first last">ssv is an array specifying the initial inelastic skeletal specific storage
+of compressible beds. ssv is not used if icrcc = 0. (default is 1.).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>cr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nsystm, nrow, ncol)</span></dt>
 <dd><p class="first last">cr is an array specifying the recompression index of compressible beds.
@@ -377,6 +497,7 @@ cr is not used if icrcc is not equal to 0. (default is 0.01).</p>
 cc is not used if icrcc is not equal to 0. (default is 0.25).</p>
 </dd>
 <dt><strong>void</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nsystm, nrow, ncol)</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">void is an array specifying the initial void ratio of compressible
 beds. (default is 0.82).</p>
 </dd>
@@ -389,6 +510,20 @@ do not affect calculations of storage changes or resulting compaction.
 For simulations in which output values will reflect compaction and
 subsidence since the start of the simulation, enter zero values for all
 elements of this array. (default is 0.).</p>
+=======
+<dd><p class="first last">void is an array specifying the initial void ratio of compressible beds.
+(default is 0.82).</p>
+</dd>
+<dt><strong>sub</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nsystm, nrow, ncol)</span></dt>
+<dd><p class="first last">sub is an array specifying the initial compaction in each system of
+interbeds. Compaction values computed by the package are added to values
+in this array so that printed or stored values of compaction and land
+subsidence may include previous components. Values in this array do not
+affect calculations of storage changes or resulting compaction. For
+simulations in which output values will reflect compaction and subsidence
+since the start of the simulation, enter zero values for all elements
+of this array. (default is 0.).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>pcsoff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
 <dd><p class="first last">pcsoff is an array specifying the offset from initial effective stress
@@ -397,6 +532,7 @@ units of height of a column of water. pcsoff is not used if istpcs=0.
 (default is 0.).</p>
 </dd>
 <dt><strong>pcs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">pcs is an array specifying the initial preconsolidation stress, in
 units of height of a column of water, at the bottom of the model layer.
 pcs is not used if istpcs is not equal to 0. (default is 0.).</p>
@@ -438,6 +574,43 @@ ifl25 and ifl26 control layer-center elevation printing and saving.
 If ids17 is None and iswtoc&gt;0 then all available subsidence output will
 be printed and saved to the binary subsidence output file (unit=1054).
 (default is None).</p>
+=======
+<dd><p class="first last">pcs is an array specifying the initial preconsolidation stress, in units
+of height of a column of water, at the bottom of the model layer. pcs is
+not used if istpcs is not equal to 0. (default is 0.).</p>
+</dd>
+<dt><strong>ids16</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or array of ints (26)</span></dt>
+<dd><p class="first last">Format codes and unit numbers for swtsidence, compaction by model layer, compaction
+by interbed system, vertical displacement, preconsolidation stress, change in
+preconsolidation stress, geostatic stress, change in geostatic stress, effective
+stress, void ration, thickness of compressible sediments, and layer-center
+elecation will be printed. If ids16 is None and iswtoc&gt;0 then print code 0
+will be used for all data which is output to the binary swtsidence output file
+(unit=1054). The 26 entries in ids16 correspond to ifm1, iun1, ifm2, iun2, ifm3,
+iun3, ifm4, iun4, ifm5, iun5, ifm6, iun6, ifm7, iun7, ifm8, iun8, ifm9,
+iun9, ifm10, iun11, ifm12, iun12, ifm13, and iun13 variables. (default is None).</p>
+</dd>
+<dt><strong>ids17</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or array of ints (iswtoc, 30)</span></dt>
+<dd><p class="first last">Stress period and time step range and print and save flags used to control printing
+and saving of information generated by the SUB-WT Package during program execution.
+Each row of ids17 corresponds to isp1, isp2, its1, its2, ifl1, ifl2, ifl3, ifl4,
+ifl5, ifl6, ifl7, ifl8, ifl9, ifl10, ifl11, ifl12, ifl13, ifl14, ifl15, ifl16, ifl17,
+ifl18, ifl9, ifl20, ifl21, ifl22, ifl23, ifl24, ifl25, and ifl26 variables for
+iswtoc entries. isp1, isp2, its1, and its2 are stress period and time step ranges.
+ifl1 and ifl2 control subsidence printing and saving. ifl3 and ifl4 control compaction
+by model layer printing and saving. ifl5 and ifl6 control compaction by interbed system
+printing and saving. ifl7 and ifl8 control vertical displacement printing and
+saving. ifl9 and ifl10 control preconsolidation stress printing and saving. ifl11 and
+ifl12 control change in preconsolidation stress printing and saving. ifl13 and ifl14
+control geostatic stress printing and saving. ifl15 and ifl16 control change in
+geostatic stress printing and saving. ifl17 and ifl18 control effective stress printing
+and saving. ifl19 and ifl20 control change in effective stress printing and saving.
+ifl21 and ifl22 control void ratio printing and saving. ifl23 and ifl24 control
+compressible bed thickness printing and saving. ifl25 and ifl26 control layer-center
+elevation printing and saving. If ids17 is None and iswtoc&gt;0 then all available
+subsidence output will be printed and saved to the binary subsidence output file
+(unit=1054). (default is None).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">File unit number (default is None).</p>
@@ -474,7 +647,11 @@ supported in the SUB-WT Package.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfswt.ModflowSwt.add_to_dtype">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswt.ModflowSwt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+=======
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswt.ModflowSwt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -542,7 +719,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfswt.ModflowSwt.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswt.ModflowSwt.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswt.ModflowSwt.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -711,9 +888,13 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -730,6 +911,34 @@ Adds an attribute for each layer in each data array</p>
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.mt3d.mtcts Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.mt3d.mtcts Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.seawat.swtvdf Module" href="swtvdf.html"/>
+        <link rel="prev" title="flopy.mt3d.mtuzt Module" href="mtuzt.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -209,6 +237,7 @@
 this package will be added.</p>
 </dd>
 <dt><strong>mxcts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">The maximum number of contaminant transport systems implemented in a
 simulation.</p>
 </dd>
@@ -232,6 +261,31 @@ to be set equal to MXWEL as specified in the WEL file</p>
 <dd><p class="first">A flag to force concentration in treatment systems to satisfy
 specified concentration/mass values based on the treatment option
 selected without considering whether treatment is necessary or not.
+=======
+<dd><p class="first last">The maximum number of contaminant transport systems implemented in a 
+simulation.</p>
+</dd>
+<dt><strong>ictsout</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The unit number on which well-by-well output information is written. 
+The default file extension assigned to the output file is TSO</p>
+</dd>
+<dt><strong>mxext</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The maximum number of extraction wells specified as part of a 
+contaminant treatment system</p>
+</dd>
+<dt><strong>mxinj: int</strong></dt>
+<dd><p class="first last">The maximum number of injection wells specified as part of a 
+contaminant treatment system</p>
+</dd>
+<dt><strong>mxwel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The maximum number of wells in the flow model. MXWEL is recommended 
+to be set equal to MXWEL as specified in the WEL file</p>
+</dd>
+<dt><strong>iforce</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">A flag to force concentration in treatment systems to satisfy 
+specified concentration/mass values based on the treatment option 
+selected without considering whether treatment is necessary or not. 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 This flag is ignored if ‘no treatment’ option is selected.</p>
 <blockquote class="last">
 <div><dl class="docutils">
@@ -249,9 +303,15 @@ wells inject water with blended concentrations.</p>
 </div></blockquote>
 </dd>
 <dt><strong>ncts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">The number of contaminant treatment systems.  If NCTS &gt;= 0,
 NCTS is the number of contaminant treatment systems. If NCTS = -1,
 treatment system information from the previous stress period is reused
+=======
+<dd><p class="first last">The number of contaminant treatment systems.  If NCTS &gt;= 0, 
+NCTS is the number of contaminant treatment systems. If NCTS = -1, 
+treatment system information from the previous stress period is reused 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 for the current stress period.</p>
 </dd>
 <dt><strong>icts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -264,10 +324,17 @@ for the current stress period.</p>
 <dd><p class="first last">The number of injection wells for the treatment system number ICTS.</p>
 </dd>
 <dt><strong>itrtinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first">Is the level of treatment provided for the treatment system number
 ICTS. Each treatment system blends concentration collected from all
 extraction wells contributing to the treatment system and assigns a
 treated concentration to all injection wells associated with that
+=======
+<dd><p class="first">Is the level of treatment provided for the treatment system number 
+ICTS. Each treatment system blends concentration collected from all 
+extraction wells contributing to the treatment system and assigns a 
+treated concentration to all injection wells associated with that 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 treatment system based on the treatment option selected</p>
 <blockquote class="last">
 <div><p>0   no treatment is provided
@@ -279,6 +346,7 @@ treatment system based on the treatment option selected</p>
 </div></blockquote>
 </dd>
 <dt><strong>qincts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">The external flow entering a treatment system. External flow may be
 flow entering a treatment system that is not a part of the model
 domain but plays an important role in influencing the blended
@@ -291,6 +359,20 @@ system</p>
 <dt><strong>ioptinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first">Is a treatment option. Negative values indicate removal of
 concentration/mass and positive values indicate addition of
+=======
+<dd><p class="first last">The external flow entering a treatment system. External flow may be 
+flow entering a treatment system that is not a part of the model 
+domain but plays an important role in influencing the blended 
+concentration of a treatment system</p>
+</dd>
+<dt><strong>cincts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The concentration with which the external flow enters a treatment 
+system</p>
+</dd>
+<dt><strong>ioptinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Is a treatment option. Negative values indicate removal of 
+concentration/mass and positive values indicate addition of 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 concentration/mass.</p>
 <blockquote class="last">
 <div><dl class="docutils">
@@ -317,9 +399,15 @@ option.</p>
 </div></blockquote>
 </dd>
 <dt><strong>cmchginj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">Is the addition, removal, or specified concentration/mass values set
 for the treatment system. Concentration/mass is added, removed, or
 used as specified concentrations depending on the treatment option
+=======
+<dd><p class="first last">Is the addition, removal, or specified concentration/mass values set 
+for the treatment system. Concentration/mass is added, removed, or 
+used as specified concentrations depending on the treatment option 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 IOPTINJ.
 Note that concentration/mass values as specified by CMCHGINJ are
 enforced if the option IFORCE is set to 1. If IFORCE is set to 0,
@@ -327,8 +415,13 @@ then CMCHGINJ is enforced only when the blended concentration exceeds
 the specified concentration CNTE.</p>
 </dd>
 <dt><strong>cnte</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">The concentration that is not to be exceeded for a treatment system.
 Treatment is applied to blended concentration only if it exceeds
+=======
+<dd><p class="first last">The concentration that is not to be exceeded for a treatment system. 
+Treatment is applied to blended concentration only if it exceeds 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 CNTE, when IFORCE is set to 0.</p>
 </dd>
 <dt><strong>kinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -341,6 +434,7 @@ CNTE, when IFORCE is set to 0.</p>
 <dd><p class="first last">Column index for a CTS injection well</p>
 </dd>
 <dt><strong>iwinj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">The well index number. This number corresponds to the well number as
 it appears in the WEL file of the flow model.</p>
 </dd>
@@ -349,6 +443,16 @@ it appears in the WEL file of the flow model.</p>
 This flow rate must be specified to maintain an overall treatment
 system mass balance. QOUTCTS must be set equal to total inflow into a
 treatment system minus total outflow to all injection wells for a
+=======
+<dd><p class="first last">The well index number. This number corresponds to the well number as 
+it appears in the WEL file of the flow model.</p>
+</dd>
+<dt><strong>qoutcts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">the flow rate of outflow from a treatment system to an external sink. 
+This flow rate must be specified to maintain an overall treatment 
+system mass balance. QOUTCTS must be set equal to total inflow into a 
+treatment system minus total outflow to all injection wells for a 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 treatment system</p>
 </dd>
 </dl>
@@ -367,7 +471,11 @@ treatment system</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtcts.Mt3dCts.add_to_dtype">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+=======
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -435,13 +543,13 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtcts.Mt3dCts.get_default_CTS_dtype">
-<em class="property">static </em><code class="descname">get_default_CTS_dtype</code><span class="sig-paren">(</span><em>ncomp=1</em>, <em>iforce=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.get_default_CTS_dtype" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_default_CTS_dtype</code><span class="sig-paren">(</span><em>iforce=0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.get_default_CTS_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a dtype for the recarray containing the list of cts systems</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtcts.Mt3dCts.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtcts.Mt3dCts.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -597,9 +705,13 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -616,6 +728,34 @@ Adds an attribute for each layer in each data array</p>
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

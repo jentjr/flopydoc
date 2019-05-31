@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.modflow.mfsor Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.modflow.mfsor Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfstr Module" href="mfstr.html"/>
+        <link rel="prev" title="flopy.modflow.mfsms Module" href="mfsms.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -239,18 +267,26 @@ MODFLOW Guide</a>.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">The model object (of type :class:flopy.modflow.mf.Modflow) to which
 this package will be added.</p>
 </dd>
 <dt><strong>mxiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
 <dd><p class="first last">The maximum number of iterations allowed in a time step.
 (default is 200)</p>
+=======
+<dd><p class="first last">The model object (of type :class:flopy.modflow.mf.Modflow) to which this package will be added.</p>
+</dd>
+<dt><strong>mxiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">The maximum number of iterations allowed in a time step. (default is 200)</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>accl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The acceleration variable, which must be greater than zero
 and is generally between 1. and 2. (default is 1)</p>
 </dd>
 <dt><strong>hclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float &gt; 0</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">The head change criterion for convergence. When the maximum absolute
 value of head change from all nodes during an iteration is less than
 or equal to hclose, iteration stops. (default is 1e-5)</p>
@@ -261,6 +297,17 @@ or equal to hclose, iteration stops. (default is 1e-5)</p>
 iteration of a time step whenever the time step is an even multiple of
 iprsor. This printout also occurs at the end of each stress period
 regardless of the value of iprsor. (default is 0)</p>
+=======
+<dd><p class="first last">The head change criterion for convergence. When the maximum absolute value of head change from all nodes
+during an iteration is less than or equal to hclose, iteration stops. (default is 1e-5)</p>
+</dd>
+<dt><strong>iprsor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer &gt; 0</span></dt>
+<dd><p class="first last">the printout interval for sor. iprsor, if equal to zero, is changed to 999.
+The maximum head change (positive or negative) is printed for each iteration of
+a time step whenever the time step is an even multiple of iprsor. This printout
+also occurs at the end of each stress period regardless of the value of iprsor.
+(default is 0)</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
 <dd><p class="first last">Filename extension (default is ‘sor’)</p>
@@ -287,7 +334,7 @@ Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfsor.ModflowSor.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsor.ModflowSor.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -369,9 +416,13 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -388,6 +439,34 @@ constructed using the function
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

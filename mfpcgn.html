@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.modflow.mfpcgn Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.modflow.mfpcgn Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfrch Module" href="mfrch.html"/>
+        <link rel="prev" title="flopy.modflow.mfpcg Module" href="mfpcg.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -326,8 +354,13 @@ proceeding satisfactorily. (default is 0)</p>
 <dd><p class="first last">is the damping factor. (default is 1.)</p>
 </dd>
 <dt><strong>damp_lb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">is the lower bound placed on the dampening; generally,
 0 &lt; damp_lb &lt; damp. (default is 0.001)</p>
+=======
+<dd><p class="first last">is the lower bound placed on the dampening; generally, 0 &lt; damp_lb &lt; damp.
+(default is 0.001)</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>rate_d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">is a rate parameter; generally, 0 &lt; rate_d &lt; 1. (default is 0.1)</p>
@@ -338,6 +371,7 @@ hydraulic heads in a Picard iteration. If chglimit = 0.0, then adaptive
 damping proceeds without this feature. (default is 0.)</p>
 </dd>
 <dt><strong>acnvg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">defines the mode of convergence applied to the PCG solver.
 (default is 0)</p>
 </dd>
@@ -361,10 +395,35 @@ through the picard iteration. It should be emphasized that rate_c must
 have a value greater than 0 for the variable enhancement to be
 ffected; otherwise epsilon remains constant. rate_c is used only in
 convergence mode acnvg = 2. (default is -1.)</p>
+=======
+<dd><p class="first last">defines the mode of convergence applied to the PCG solver. (default is 0)</p>
+</dd>
+<dt><strong>cnvg_lb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the minimum value that the relative convergence is allowed to take under
+the self-adjusting convergence option. cnvg_lb is used only in convergence
+mode acnvg = 1. (default is 0.001)</p>
+</dd>
+<dt><strong>mcnvg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">increases the relative PCG convergence criteria by a power equal to MCNVG.
+MCNVG is used only in convergence mode acnvg = 2. (default is 2)</p>
+</dd>
+<dt><strong>rate_c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">this option results in variable enhancement of epsilon. If 0 &lt; rate_c &lt; 1,
+then enhanced relative convergence is allowed to decrease by increasing
+epsilon(j) = epsilon(j-1) + rate_c epsilon(j-1), where j is the Picard
+iteration number; this change in epsilon occurs so long as the Picard
+iteration is progressing satisfactorily. If rate_c &lt;= 0, then the value
+of epsilon set by mcnvg remains unchanged through the picard iteration.
+It should be emphasized that rate_c must have a value greater than 0
+for the variable enhancement to be effected; otherwise epsilon remains
+constant. rate_c is used only in convergence mode acnvg = 2.
+(default is -1.)</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>ipunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">enables progress reporting for the picard iteration. If ipunit &gt;= 0,
 then a record of progress made by the picard iteration for each time
+<<<<<<< HEAD
 step is printed in the MODFLOW Listing file
 (Harbaugh and others, 2000). This record consists of the total number
 of dry cells at the end of each time step as well as the total number
@@ -376,6 +435,18 @@ number and type ‘data’ should be entered in the modflow Name file.
 If ipunit &lt; 0 then printing of all progress concerning the Picard
 iteration is suppressed, as well as information on the nature of the
 convergence of the picard iteration. (default is 0)</p>
+=======
+step is printed in the MODFLOW Listing file (Harbaugh and others, 2000).
+This record consists of the total number of dry cells at the end of each
+time step as well as the total number of PCG iterations necessary to
+obtain convergence. In addition, if ipunit &gt; 0, then extensive
+diagnostics for each Picard iteration is also written in comma-separated
+format to a file whose unit number corresponds to ipunit; the name for
+this file, along with its unit number and type ‘data’ should be entered
+in the modflow Name file. If ipunit &lt; 0 then printing of all progress
+concerning the Picard iteration is suppressed, as well as information on
+the nature of the convergence of the picard iteration. (default is 0)</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list string</span></dt>
 <dd><p class="first last">Filename extension (default is ‘pcgn’)</p>
@@ -390,8 +461,13 @@ and package extension and the pcgn output names will be created using
 the model name and .pcgni, .pcgnt, and .pcgno extensions. If a single
 string is passed the package will be set to the string and pcgn output
 names will be created using the model name and pcgn output extensions.
+<<<<<<< HEAD
 To define the names for all package files (input and output) the
 length of the list of strings should be 4. Default is None.</p>
+=======
+To define the names for all package files (input and output) the length
+of the list of strings should be 4. Default is None.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 </dl>
 </td>
@@ -406,7 +482,7 @@ length of the list of strings should be 4. Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfpcgn.ModflowPcgn.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfpcgn.ModflowPcgn.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -488,9 +564,13 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -507,6 +587,34 @@ constructed using the function
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

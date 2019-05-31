@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.modflow.mfflwob Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.modflow.mfflwob Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.modflow.mfhfb Module" href="mfhfb.html"/>
+        <link rel="prev" title="flopy.modflow.mffhb Module" href="mffhb.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -227,7 +255,11 @@
 <span id="flopy-modflow-mfflwob-module"></span><h1>flopy.modflow.mfflwob Module<a class="headerlink" href="#module-flopy.modflow.mfflwob" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfflwob.ModflowFlwob">
+<<<<<<< HEAD
 <em class="property">class </em><code class="descclassname">flopy.modflow.mfflwob.</code><code class="descname">ModflowFlwob</code><span class="sig-paren">(</span><em>model</em>, <em>nqfb=0</em>, <em>nqcfb=0</em>, <em>nqtfb=0</em>, <em>iufbobsv=0</em>, <em>tomultfb=1.0</em>, <em>nqobfb=None</em>, <em>nqclfb=None</em>, <em>obsnam=None</em>, <em>irefsp=None</em>, <em>toffset=None</em>, <em>flwobs=None</em>, <em>layer=None</em>, <em>row=None</em>, <em>column=None</em>, <em>factor=None</em>, <em>flowtype=None</em>, <em>extension=None</em>, <em>no_print=False</em>, <em>options=None</em>, <em>filenames=None</em>, <em>unitnumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob" title="Permalink to this definition">¶</a></dt>
+=======
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfflwob.</code><code class="descname">ModflowFlwob</code><span class="sig-paren">(</span><em>model</em>, <em>nqfb=0</em>, <em>nqcfb=0</em>, <em>nqtfb=0</em>, <em>iufbobsv=0</em>, <em>tomultfb=1.0</em>, <em>nqobfb=None</em>, <em>nqclfb=None</em>, <em>obsnam=None</em>, <em>irefsp=None</em>, <em>toffset=None</em>, <em>flwobs=None</em>, <em>layer=None</em>, <em>row=None</em>, <em>column=None</em>, <em>factor=None</em>, <em>flowtype=None</em>, <em>extension=None</em>, <em>unitnumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob" title="Permalink to this definition">¶</a></dt>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Head-dependent flow boundary Observation package class. Minimal working
 example that will be refactored in a future version.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -236,8 +268,12 @@ example that will be refactored in a future version.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>nqfb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">Number of cell groups for the head-dependent flow boundary
 observations</p>
+=======
+<dd><p class="first last">Number of cell groups for the head-dependent flow boundary observations</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>nqcfb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Greater than or equal to the total number of cells in all cell groups</p>
@@ -252,9 +288,15 @@ groups</p>
 <dt><strong>tomultfb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Time-offset multiplier for head-dependent flow boundary observations.
 The product of tomultfb and toffset must produce a time value in units
+<<<<<<< HEAD
 consistent with other model input. tomultfb can be dimensionless or
 can be used to convert the units of toffset to the time unit used in
 the simulation.</p>
+=======
+consistent with other model input. tomultfb can be dimensionless or can
+be used to convert the units of toffset to the time unit used in the
+simulation.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>nqobfb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int list of length nqfb</span></dt>
 <dd><p class="first last">The number of times at which flows are observed for the group of cells</p>
@@ -274,12 +316,21 @@ The reference point is the beginning of the specified stress period.</p>
 <dt><strong>toffset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float list of length nqtfb</span></dt>
 <dd><p class="first last">Is the time from the beginning of the stress period irefsp to the time
 of the observation.  toffset must be in units such that the product of
+<<<<<<< HEAD
 toffset and tomultfb are consistent with other model input.  For
 steady state observations, specify irefsp as the steady state stress
 period and toffset less than or equal to perlen of the stress period.
 If perlen is zero, set toffset to zero.  If the observation falls
 within a time step, linearly interpolation is used between values at
 the beginning and end of the time step.</p>
+=======
+toffset and tomultfb are consistent with other model input.  For steady
+state observations, specify irefsp as the steady state stress period
+and toffset less than or equal to perlen of the stress period.  If
+perlen is zero, set toffset to zero.  If the observation falls within
+a time step, linearly interpolation is used between values at the
+beginning and end of the time step.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>flwobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float list of length nqtfb</span></dt>
 <dd><p class="first last">Observed flow value from the head-dependent flow boundary into the
@@ -307,6 +358,7 @@ type (CHD, GHB, DRN, RIV)</p>
 [‘chob’,’obc’,’gbob’,’obg’,’drob’,’obd’, ‘rvob’,’obr’]
 (default is None).</p>
 </dd>
+<<<<<<< HEAD
 <dt><strong>no_print</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
 <dd><p class="first last">When True or 1, a list of flow observations will not be
 written to the Listing File (default is False)</p>
@@ -329,6 +381,11 @@ and flwob output name will be created using the model name and .out
 extension, if iufbobsv is a number greater than zero. To define the
 names for all package files (input and output) the length of the list
 of strings should be 2. Default is None.</p>
+=======
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of int</span></dt>
+<dd><p class="first last">File unit number. If unitnumber is None, unitnumber is set to
+[40, 140, 41, 141, 42, 142, 43, 143] (default is None).</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 </dl>
 </td>
@@ -340,7 +397,11 @@ of strings should be 2. Default is None.</p>
 future version.</p>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfflwob.ModflowFlwob.add_to_dtype">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+=======
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -408,8 +469,13 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfflwob.ModflowFlwob.load">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>pak_type</em>, <em>ext_unit_dict=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default load method for standard boundary packages.</p>
+=======
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>pack_type</em>, <em>f</em>, <em>nper=None</em>, <em>pop_key_list=None</em>, <em>check=True</em>, <em>unitnumber=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfflwob.ModflowFlwob.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>The load method has not been implemented for this package.</p>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd></dl>
 
 <dl class="method">
@@ -541,9 +607,13 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -560,6 +630,34 @@ Adds an attribute for each layer in each data array</p>
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

@@ -4,7 +4,11 @@
  *
  * Sphinx JavaScript utilities for all documentation.
  *
+<<<<<<< HEAD
  * :copyright: Copyright 2007-2019 by the Sphinx team, see AUTHORS.
+=======
+ * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -70,9 +74,13 @@ jQuery.fn.highlightText = function(text, className) {
     if (node.nodeType === 3) {
       var val = node.nodeValue;
       var pos = val.toLowerCase().indexOf(text);
+<<<<<<< HEAD
       if (pos >= 0 &&
           !jQuery(node.parentNode).hasClass(className) &&
           !jQuery(node.parentNode).hasClass("nohighlight")) {
+=======
+      if (pos >= 0 && !jQuery(node.parentNode).hasClass(className)) {
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
         var span;
         var isInSVG = jQuery(node).closest("body, svg, foreignObject").is("svg");
         if (isInSVG) {

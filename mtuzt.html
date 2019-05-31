@@ -8,7 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+<<<<<<< HEAD
   <title>flopy.mt3d.mtuzt Module &mdash; flopy 3.2.12 documentation</title>
+=======
+  <title>flopy.mt3d.mtuzt Module &mdash; flopy 3.2.10 documentation</title>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -28,7 +32,27 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
+<<<<<<< HEAD
     
+=======
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
+        <link rel="up" title="Flopy Code" href="code.html"/>
+        <link rel="next" title="flopy.mt3d.mtcts Module" href="mtcts.html"/>
+        <link rel="prev" title="flopy.mt3d.mttob Module" href="mttob.html"/> 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -60,7 +84,11 @@
             
             
               <div class="version">
+<<<<<<< HEAD
                 3.2.12
+=======
+                3.2.10
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -208,6 +236,7 @@
 <dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
 </dd>
+<<<<<<< HEAD
 <dt><strong>icbcuz</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Is the unit number to which unsaturated-zone concentration will be
 written out.</p>
@@ -220,6 +249,26 @@ for UZET and GWET arrays in the flow-transport link file.</p>
 </dd>
 <dt><strong>iuzfbnd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of ints</span></dt>
 <dd><p class="first">Specifies which row/column indices variably-saturated transport will
+=======
+<dt><strong>mxuzcon</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the maximum number of UZF1 connections and is equal to the number 
+of non-zero entries in the IRNBND array found in the UZF1 input file 
+for MODFLOW.  Keep in mind there is potential for every cell with a 
+non-zero IRNBND entry to pass water to either a lake or stream segment</p>
+</dd>
+<dt><strong>icbcuz</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is the unit number to which unsaturated-zone concentration will be 
+written out.</p>
+</dd>
+<dt><strong>iet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Is a flag that indicates whether or not ET is being simulated in the 
+UZF1 flow package (=0 indicates that ET is not being simulated).  
+If ET is not being simulated, IET informs FMI package not to look 
+for UZET and GWET arrays in the flow-tranpsort link file.</p>
+</dd>
+<dt><strong>iuzfbnd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of ints</span></dt>
+<dd><p class="first">Specifies which row/column indices variably-saturated transport will 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 be simulated in.</p>
 <blockquote class="last">
 <div><p>&gt;0  indicates variably-saturated transport will be simulated;
@@ -232,6 +281,7 @@ simulated.</p>
 </div></blockquote>
 </div></blockquote>
 </dd>
+<<<<<<< HEAD
 <dt><strong>incuzinf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">(This value is repeated for each stress period as explained next) A
 flag indicating whether an array containing the concentration of
@@ -248,6 +298,39 @@ rate exceeding the vertical hydraulic conductivity, or because
 saturation is reached in the unsaturated zone and the water table is
 therefore at land surface, the concentration of the runoff will be
 equal to CUZINF specified next.  The runoff is routed if IRNBND is
+=======
+<dt><strong>wc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Starting water content.  For cells above the water tables, this value 
+can range between residual and saturated water contents.  In cells 
+below the water table, this value will be eqal to saturated water 
+content (i.e., effective porosity).  For cells containing the water 
+table, a volume average approach needs to be used to calculate an 
+equivalent starting water content.</p>
+</dd>
+<dt><strong>sdh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Starting saturated thickness for each cell in the simulation.  For 
+cells residing above the starting water table, SDH=0. In completely 
+saturated cells, SDH is equal to total thickness.  For cells 
+containing the water table, SDH equals the water table elevation minus 
+the cell bottom elevation.</p>
+</dd>
+<dt><strong>incuzinf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(This value is repeated for each stress period as explained next) A 
+flag indicating whether an array containing the concentration of 
+infiltrating water (FINF) for each simulated species (ncomp) will be 
+read for the current stress period.  If INCUZINF &gt;= 0, an array 
+containing the concentration of infiltrating flux for each species 
+will be read.  If INCUZINF &lt; 0, the concentration of infiltrating flux 
+will be reused from the previous stress period.  If INCUZINF &lt; 0 is 
+specified for the first stress period, then by default the 
+concentration of positive infiltrating flux (source) is set equal to 
+zero.  There is no possibility of a negative infiltration flux being 
+specified.  If infiltrating water is rejected due to an infiltration 
+rate exceeding the vertical hydraulic conductivity, or because 
+saturation is reached in the unsaturated zone and the water table is 
+therefore at land surface, the concentration of the runoff will be 
+equal to CUZINF specified next.  The runoff is routed if IRNBND is 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 specified in the MODFLOW simulation.</p>
 </dd>
 <dt><strong>cuzinf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
@@ -255,6 +338,7 @@ specified in the MODFLOW simulation.</p>
 An array for each species will be read.</p>
 </dd>
 <dt><strong>incuzet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<<<<<<< HEAD
 <dd><p class="first last">(This value is repeated for each stress period as explained next) A
 flag indicating whether an array containing the concentration of
 evapotranspiration flux originating from the unsaturated zone will be
@@ -294,6 +378,47 @@ evapotranspiration flux (source) is set to zero.</p>
 <dt><strong>cgwet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
 <dd><p class="first last">Is the concentration of ET fluxes originating from the saturated zone.
 As a default, this array is set equal to 0 and only overridden if the
+=======
+<dd><p class="first last">(This value is repeated for each stress period as explained next) A 
+flag indicating whether an array containing the concentration of 
+evapotranspiration flux originating from the unsaturated zone will be 
+read for the current stress period.  If INCUZET &gt;= 0, an array 
+containing the concentration of evapotranspiration flux originating 
+from the unsaturated zone for each species will be read.  If 
+INCUZET &lt; 0, the concentration of evapotranspiration flux for each 
+species will be reused from the last stress period.  If INCUZET &lt; 0 
+is specified for the first stress period, then by default, the 
+concentration of negative evapotranspiration flux (sink) is set 
+equal to the aquifer concentration, while the concentration of 
+positive evapotranspiration flux (source) is set to zero.</p>
+</dd>
+<dt><strong>cuzet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Is the concentration of ET fluxes originating from the unsaturated 
+zone.  As a default, this array is set equal to 0 and only overridden 
+if the user specifies INCUZET &gt; 1.  If empirical evidence suggest 
+volatilization of simulated constituents from the unsaturated zone, 
+this may be one mechanism for simulating this process, though it would 
+depend on the amount of simulated ET originating from the unsaturated 
+zone.  An array for each species will be read.</p>
+</dd>
+<dt><strong>incgwet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(This value is repeated for each stress period as explained next) Is 
+a flag indicating whether an array containing the concentration of 
+evapotranspiration flux originating from the saturated zone will be 
+read for the current stress period.  If INCGWET &gt;= 0, an array 
+containing the concentration of evapotranspiration flux originating 
+from the saturated zone for each species will be read.  If 
+INCGWET &lt; 0, the concentration of evapotranspiration flux for each 
+species will be reused from the last stress period.  If INCUZET &lt; 0 
+is specified for the first stress period, then by default, the 
+concentration of negative evapotranspiration flux (sink) is set to 
+the aquifer concentration, while the concentration of positive 
+evapotranspiration flux (source) is set to zero.</p>
+</dd>
+<dt><strong>cgwet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">Is the concentration of ET fluxes originating from the saturated zone. 
+As a default, this array is set equal to 0 and only overridden if the 
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 user specifies INCUZET &gt; 1.  An array for each species will be read.</p>
 </dd>
 <dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
@@ -333,7 +458,11 @@ of strings should be 2. Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtuzt.Mt3dUzt.add_to_dtype">
+<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+=======
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -401,7 +530,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtuzt.Mt3dUzt.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nlay=None</em>, <em>nrow=None</em>, <em>ncol=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtuzt.Mt3dUzt.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -571,9 +700,13 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
+<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
+=======
+      Last updated on Oct 18, 2018.
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -590,6 +723,34 @@ Adds an attribute for each layer in each data array</p>
   
 
 
+<<<<<<< HEAD
+=======
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.2.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+>>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
