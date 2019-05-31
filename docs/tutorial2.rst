@@ -213,12 +213,12 @@ Using these methods, we can create head plots and hydrographs from the model res
        plt.title('stress period ' + str(iplot + 1))
 
 
-       modelmap = flopy.plot.ModelMap(model=mf, layer=0)
+       modelmap = flopy.plot.PlotMapView(model=mf, layer=0)
        qm = modelmap.plot_ibound()
        lc = modelmap.plot_grid()
        qm = modelmap.plot_bc('GHB', alpha=0.5)
        cs = modelmap.contour_array(head, levels=levels)
-       plt.clabel(cs, inline=1, fontsize=10, fmt='%1.1f', zorder=11)
+       plt.clabel(cs, inline=1, fontsize=10, fmt='%1.1f')
        quiver = modelmap.plot_discharge(frf, fff, head=head)
 
 
@@ -254,15 +254,15 @@ Plot Head Versus Time
 Make a plot of head versus time by extracting the binary heads from the headobj::
 
     # Plot the head versus time
-   idx = (0, int(nrow/2) - 1, int(ncol/2) - 1)
-   ts = headobj.get_ts(idx)
-   plt.subplot(1, 1, 1)
-   ttl = 'Head at cell ({0},{1},{2})'.format(idx[0] + 1, idx[1] + 1, idx[2] + 1)
-   plt.title(ttl)
-   plt.xlabel('time')
-   plt.ylabel('head')
-   plt.plot(ts[:, 0], ts[:, 1], 'bo-')
-   plt.savefig('tutorial2-ts.png')
+    idx = (0, int(nrow/2) - 1, int(ncol/2) - 1)
+    ts = headobj.get_ts(idx)
+    plt.subplot(1, 1, 1)
+    ttl = 'Head at cell ({0},{1},{2})'.format(idx[0] + 1, idx[1] + 1, idx[2] + 1)
+    plt.title(ttl)
+    plt.xlabel('time')
+    plt.ylabel('head')
+    plt.plot(ts[:, 0], ts[:, 1], 'bo-')
+    plt.savefig('tutorial2-ts.png')
 
 .. figure:: _static/tutorial2-ts.png
    :alt: head contours in first layer

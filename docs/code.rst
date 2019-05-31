@@ -37,6 +37,7 @@ Contents:
    mfde4
    mfdis
    mfdrn
+   mfdrt
    mfevt
    mffhb
    mfflwob
@@ -269,3 +270,15 @@ Contents:
    templatewriter
    tplarray
 
+Discretization Utilities
+------------------------
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   grid
+   structuredgrid
+   vertexgrid
+   unstructuredgrid
+   modeltime

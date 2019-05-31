@@ -1,7 +1,7 @@
 import os
 import sys
 import numpy as np
-flopypth = os.path.join('..', '..', 'flopy.svn')
+flopypth = os.path.join('..', '..', 'flopy3.git')
 if flopypth not in sys.path:
     sys.path.append(flopypth)
 import flopy
@@ -49,7 +49,7 @@ pcg = flopy.modflow.ModflowPcg(mf)
 mf.write_input()
 
 #Run the MODFLOW model
-mf.run_model3()
+mf.run_model()
 
 import matplotlib.pyplot as plt
 import flopy.utils.binaryfile as bf
