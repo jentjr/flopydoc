@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.modflow.mfdis Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfdrn Module" href="mfdrn.html"/>
-        <link rel="prev" title="flopy.modflow.mfde4 Module" href="mfde4.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -346,19 +318,11 @@ Default is None.</p>
 corner. default is 0.0</p>
 </dd>
 <dt><strong>proj4_str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">PROJ4 string that defines the projected coordinate system
 (e.g. ‘+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs ‘).
 Can be an EPSG code (e.g. ‘EPSG:32614’). Default is None.</p>
 </dd>
 <dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-=======
-<dd><p class="first last">PROJ4 string that defines the xul-yul coordinate system
-(.e.g. ‘+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ‘).
-Can be an EPSG code (e.g. ‘EPSG:4326’). Default is ‘EPSG:4326’</p>
-</dd>
-<dt><strong>start_dateteim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p class="first last">starting datetime of the simulation. default is ‘1/1/1970’</p>
 </dd>
 </dl>
@@ -387,11 +351,7 @@ Can be an EPSG code (e.g. ‘EPSG:4326’). Default is ‘EPSG:4326’</p>
 </table>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfdis.ModflowDis.add_to_dtype">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.add_to_dtype" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.add_to_dtype" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -631,7 +591,6 @@ in model coordinates.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<<<<<<< HEAD
 <dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or sequence of floats</span></dt>
 <dd><p class="first last">x coordinate(s) of points to find in model grid</p>
 </dd>
@@ -642,12 +601,6 @@ in model coordinates.</p>
 <dd><p class="first last">x and y coordinates are in model local coordinates.  If false, then
 x and y are in world coordinates. (default is True)</p>
 </dd>
-=======
-<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar or sequence of x coordinates</span></dt>
-<dd></dd>
-<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar or sequence of y coordinates</span></dt>
-<dd></dd>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dl>
 </td>
 </tr>
@@ -753,7 +706,7 @@ based on time discretization data. Default is 0.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfdis.ModflowDis.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdis.ModflowDis.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -991,13 +944,9 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -1014,34 +963,6 @@ Adds an attribute for each layer in each data array</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

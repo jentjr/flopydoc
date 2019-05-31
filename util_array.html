@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.utils.util_array Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.utils.util_array Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,26 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="prev" title="flopy.utils.sfroutputfile Module" href="sfroutputfile.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -82,11 +59,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -302,11 +275,7 @@ MODFLOW and flopy</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<<<<<<< HEAD
 <tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_fortran_descriptor</span></code></a>(fd)</td>
-=======
-<tr class="row-odd"><td><a class="reference internal" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_fortran_descriptor</span></code></a>()</td>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <td>Decode fortran descriptor</td>
 </tr>
 </tbody>
@@ -324,7 +293,7 @@ MODFLOW and flopy</p>
 </table>
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor">
-<em class="property">static </em><code class="descname">decode_fortran_descriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">decode_fortran_descriptor</code><span class="sig-paren">(</span><em>fd</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.ArrayFormat.decode_fortran_descriptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode fortran descriptor</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -482,7 +451,6 @@ files if file_name_base is not None. (default is None)</p>
 <dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
 if filename_base is not None. (default is ‘png’)</p>
 </dd>
-<<<<<<< HEAD
 <dt><strong>kper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or str</span></dt>
 <dd><p class="first last">model stress period. if ‘all’ is provided, all stress periods
 will be plotted</p>
@@ -490,8 +458,6 @@ will be plotted</p>
 <dt><strong>fignum: list or int</strong></dt>
 <dd><p class="first last">Figure numbers for plot title</p>
 </dd>
-=======
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
 <dd><dl class="first last docutils">
 <dt>axes <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
@@ -816,7 +782,7 @@ effects of the control record multiplier applied.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.array2string">
-<em class="property">static </em><code class="descname">array2string</code><span class="sig-paren">(</span><em>data</em>, <em>fortran_format='(FREE)'</em>, <em>python_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.array2string" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">array2string</code><span class="sig-paren">(</span><em>shape</em>, <em>data</em>, <em>fortran_format='(FREE)'</em>, <em>python_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.array2string" title="Permalink to this definition">¶</a></dt>
 <dd><p>return a string representation of
 a (possibly wrapped format) array from a file
 (self.__value) and casts to the proper type (self._dtype)
@@ -827,7 +793,7 @@ may touch.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>shape</em>, <em>dtype</em>, <em>name</em>, <em>ext_unit_dict=None</em>, <em>array_free_format=None</em>, <em>array_format='modflow'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f_handle</em>, <em>model</em>, <em>shape</em>, <em>dtype</em>, <em>name</em>, <em>ext_unit_dict=None</em>, <em>array_free_format=None</em>, <em>array_format='modflow'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>functionality to load Util2d instance from an existing
 model input file.
 external and internal record types must be fully loaded
@@ -837,11 +803,7 @@ ext_unit_dict has been initialized from the NAM file</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load_bin">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">load_bin</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em>, <em>bintype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_bin" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">load_bin</code><span class="sig-paren">(</span><em>file_in</em>, <em>dtype</em>, <em>bintype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_bin" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Load unformatted file to a 2-D array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -879,11 +841,7 @@ but only for unformatted files.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load_block">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">load_block</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_block" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">load_block</code><span class="sig-paren">(</span><em>file_in</em>, <em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_block" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Load block format from a MT3D file to a 2-D array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -913,11 +871,7 @@ but only for unformatted files.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.load_txt">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">load_txt</code><span class="sig-paren">(</span><em>shape</em>, <em>file_in</em>, <em>dtype</em>, <em>fmtin</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_txt" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">load_txt</code><span class="sig-paren">(</span><em>file_in</em>, <em>dtype</em>, <em>fmtin</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.load_txt" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Load formatted file to a 1-D or 2-D array</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -971,7 +925,7 @@ subroutines, but only for formatted files.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.util_array.Util2d.parse_control_record">
-<em class="property">static </em><code class="descname">parse_control_record</code><span class="sig-paren">(</span><em>current_unit=None</em>, <em>dtype=&lt;class 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">parse_control_record</code><span class="sig-paren">(</span><em>line</em>, <em>current_unit=None</em>, <em>dtype=&lt;class 'numpy.float32'&gt;</em>, <em>ext_unit_dict=None</em>, <em>array_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.util_array.Util2d.parse_control_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses a control record when reading an existing file
 rectifies fixed to free format
 current_unit (optional) indicates the unit number of the file being parsed</p>
@@ -995,11 +949,7 @@ lot of defense here, so we can make assumptions later</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>title</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Plot title. If a plot title is not provide one will be
-<<<<<<< HEAD
 created based on data name (self._name). (default is None)</p>
-=======
-created based on data name (self.name). (default is None)</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
@@ -1351,13 +1301,9 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -1374,34 +1320,6 @@ case lpf 1d arrays (chani, layvka, etc) extend over more than one line</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

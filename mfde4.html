@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.modflow.mfde4 Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.modflow.mfde4 Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfdis Module" href="mfdis.html"/>
-        <link rel="prev" title="flopy.modflow.mfchd Module" href="mfchd.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -271,7 +243,6 @@ MODFLOW Guide</a>.</p>
 this package will be added.</p>
 </dd>
 <dt><strong>itmx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Maximum number of iterations for each time step. Specify ITMAX = 1 if
 iteration is not desired. Ideally iteration would not be required for
 direct solution. However, it is necessary to iterate if the flow
@@ -302,38 +273,6 @@ upper limit (default is 0).</p>
 </dd>
 <dt><strong>ifreq</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Flag indicating the frequency at which coefficients in head matrix
-=======
-<dd><p class="first last">Maximum number of iterations for each time step. Specify ITMAX = 1 if 
-iteration is not desired. Ideally iteration would not be required for 
-direct solution. However, it is necessary to iterate if the flow 
-equation is nonlinear or if computer precision limitations result in 
-inaccurate calculations as indicated by a large water budget error 
-(default is 50).</p>
-</dd>
-<dt><strong>mxup</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum number of equations in the upper part of the equations to be 
-solved. This value impacts the amount of memory used by the DE4 
-Package. If specified as 0, the program will calculate MXUP as half 
-the number of cells in the model, which is an upper limit (default 
-is 0).</p>
-</dd>
-<dt><strong>mxlow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum number of equations in the lower part of equations to be 
-solved. This value impacts the amount of memory used by the DE4 
-Package. If specified as 0, the program will calculate MXLOW as half 
-the number of cells in the model, which is an upper limit (default is 
-0).</p>
-</dd>
-<dt><strong>mxbw</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum band width plus 1 of the lower part of the head coefficients 
-matrix. This value impacts the amount of memory used by the DE4 
-Package. If specified as 0, the program will calculate MXBW as the 
-product of the two smallest grid dimensions plus 1, which is an 
-upper limit (default is 0).</p>
-</dd>
-<dt><strong>ifreq</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Flag indicating the frequency at which coefficients in head matrix 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 change.
 IFREQ = 1 indicates that the flow equations are linear and that
 coefficients of simulated head for all stress terms are constant
@@ -346,11 +285,7 @@ which means that some terms in the head coefficients matrix depend
 on simulated head (default is 3).</p>
 </dd>
 <dt><strong>mutd4</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Flag that indicates the quantity of information that is printed when
-=======
-<dd><p class="first last">Flag that indicates the quantity of information that is printed when 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 convergence information is printed for a time step.
 MUTD4 = 0 indicates that the number of iterations in the time step
 and the maximum head change each iteration are printed.
@@ -359,7 +294,6 @@ step is printed.
 MUTD4 = 2 indicates no information is printed (default is 0).</p>
 </dd>
 <dt><strong>accl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Multiplier for the computed head change for each iteration. Normally
 this value is 1. A value greater than 1 may be useful for improving
 the rate of convergence when using external iteration to solve
@@ -375,23 +309,6 @@ value must always be specified (default is 1e-5).</p>
 <dd><p class="first last">Time step interval for printing out convergence information when
 iterating (ITMX &gt; 1). If IPRD4 is 2, convergence information is
 printed every other time step. A value must always be specified
-=======
-<dd><p class="first last">Multiplier for the computed head change for each iteration. Normally 
-this value is 1. A value greater than 1 may be useful for improving 
-the rate of convergence when using external iteration to solve 
-nonlinear problems (default is 1).</p>
-</dd>
-<dt><strong>hclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Head change closure criterion. If iterating (ITMX &gt; 1), iteration 
-stops when the absolute value of head change at every node is less 
-than or equal to HCLOSE. HCLOSE is not used if not iterating, but a 
-value must always be specified (default is 1e-5).</p>
-</dd>
-<dt><strong>iprd4</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Time step interval for printing out convergence information when 
-iterating (ITMX &gt; 1). If IPRD4 is 2, convergence information is 
-printed every other time step. A value must always be specified 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 even if not iterating (default is 1).</p>
 </dd>
 <dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
@@ -419,7 +336,7 @@ Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfde4.ModflowDe4.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfde4.ModflowDe4.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfde4.ModflowDe4.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -501,13 +418,9 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -524,34 +437,6 @@ constructed using the function
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

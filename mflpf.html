@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.modflow.mflpf Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.modflow.mflpf Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfmnw1 Module" href="mfmnw1.html"/>
-        <link rel="prev" title="flopy.modflow.mflmt Module" href="mflmt.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -285,23 +257,15 @@ that are no-flow cells at the start of a model simulation.
 (default is -1.e30).</p>
 </dd>
 <dt><strong>laytyp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay)</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Layer type, contains a flag for each layer that specifies the layer
 type.
-=======
-<dd><p class="first last">Layer type, contains a flag for each layer that specifies the layer type.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 0 confined
 &gt;0 convertible
 &lt;0 convertible unless the THICKSTRT option is in effect.
 (default is 0).</p>
 </dd>
 <dt><strong>layavg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay)</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Layer average
-=======
-<dd><p class="first last">Layer average 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 0 is harmonic mean
 1 is logarithmic mean
 2 is arithmetic mean of saturated thickness and logarithmic mean of
@@ -348,11 +312,7 @@ If IWETIT  less than or equal to 0, it is changed to 1.
 </dd>
 <dt><strong>ihdwet</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">is a flag that determines which equation is used to define the
-<<<<<<< HEAD
 initial head at cells that become wet.
-=======
-initial head at cells that become wet. 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 (default is 0)</p>
 </dd>
 <dt><strong>hk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
@@ -379,11 +339,7 @@ When STORAGECOEFFICIENT is used, Ss is confined storage coefficient.
 (default is 1.e-5).</p>
 </dd>
 <dt><strong>sy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">is specific yield.
-=======
-<dd><p class="first last">is specific yield. 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 (default is 0.15).</p>
 </dd>
 <dt><strong>vkcb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nlay, nrow, ncol)</span></dt>
@@ -399,11 +355,7 @@ which neighboring cells can cause a cell to become wet.
 </dd>
 <dt><strong>storagecoefficient</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
 <dd><p class="first last">indicates that variable Ss and SS parameters are read as storage
-<<<<<<< HEAD
 coefficient rather than specific storage.
-=======
-coefficient rather than specific storage. 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 (default is False).</p>
 </dd>
 <dt><strong>constantcv</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
@@ -459,11 +411,7 @@ Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mflpf.ModflowLpf.add_to_dtype">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf.add_to_dtype" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf.add_to_dtype" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -531,7 +479,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mflpf.ModflowLpf.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mflpf.ModflowLpf.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -711,13 +659,9 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -734,34 +678,6 @@ Adds an attribute for each layer in each data array</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

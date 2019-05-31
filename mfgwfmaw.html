@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.mf6.modflow.mfgwfmaw Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.mf6.modflow.mfgwfmaw Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mf6.modflow.mfgwfmvr Module" href="mfgwfmvr.html"/>
-        <link rel="prev" title="flopy.mf6.modflow.mfgwflak Module" href="mfgwflak.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -376,7 +348,6 @@ RATE_SCALING option instead of the HEAD_LIMIT option is recommended.
 By default, SHUTDOWN_KAPPA is 0.0001.</li>
 </ul>
 </dd>
-<<<<<<< HEAD
 <dt><strong>timeseries</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{varname:data} or timeseries data</span></dt>
 <dd><ul class="first last simple">
 <li>Contains data for the ts package. Data can be stored in a dictionary
@@ -391,23 +362,6 @@ acceptable. See ts package documentation for more information.</li>
 containing data for the obs package with variable names as keys and
 package data as values. Data just for the observations variable is
 also acceptable. See obs package documentation for more information.</li>
-=======
-<dt><strong>ts_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[ts6_filename]</span></dt>
-<dd><ul class="first last simple">
-<li>ts6_filename (string) defines a time-series file defining time series
-that can be used to assign time-varying values. See the “Time-
-Variable Input” section for instructions on using the time-series
-capability.</li>
-</ul>
-</dd>
-<dt><strong>obs_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[obs6_filename]</span></dt>
-<dd><ul class="first last simple">
-<li>obs6_filename (string) name of input file to define observations for
-the MAW package. See the “Observation utility” section for
-instructions for preparing observation input files. Table
-reftable:obstype lists observation type(s) supported by the MAW
-package.</li>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </ul>
 </dd>
 <dt><strong>mover</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
@@ -589,7 +543,6 @@ in place of a numeric value.</li>
 <dd><ul class="first last simple">
 <li>head_limit (string) is the limiting water level (head) in the
 well, which is the minimum of the well RATE or the well
-<<<<<<< HEAD
 inflow rate from the aquifer. HEAD_LIMIT can be applied to
 extraction wells (RATE <img class="math" src="_images/math/863f524a433d6d1e5715f76f12040c654f10d86d.png" alt="&lt;"/> 0) or injection wells (RATE
 <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0). HEAD_LIMIT can be deactivated by specifying
@@ -600,18 +553,6 @@ HEAD_LIMIT option has been included to facilitate backward
 compatibility with previous versions of MODFLOW but use of
 the RATE_SCALING option instead of the HEAD_LIMIT option is
 recommended. By default, HEAD_LIMIT is <a href="#id3"><span class="problematic" id="id4">`</span></a>OFF’.</li>
-=======
-inflow rate from the aquifer. HEAD_LIMIT is only applied to
-discharging wells (RATE <img class="math" src="_images/math/863f524a433d6d1e5715f76f12040c654f10d86d.png" alt="&lt;"/> 0). HEAD_LIMIT can be
-deactivated by specifying the text string <a href="#id1"><span class="problematic" id="id2">`</span></a>OFF’. The
-HEAD_LIMIT option is based on the HEAD_LIMIT functionality
-available in the MNW2~citep{konikow2009} package for
-MODFLOW-2005. The HEAD_LIMIT option has been included to
-facilitate backward compatibility with previous versions of
-MODFLOW but use of the RATE_SCALING option instead of the
-HEAD_LIMIT option is recommended. By default, HEAD_LIMIT is
-<a href="#id3"><span class="problematic" id="id4">`</span></a>OFF’.</li>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </ul>
 </dd>
 <dt>shutoffrecord <span class="classifier-delimiter">:</span> <span class="classifier">[minrate, maxrate]</span></dt>
@@ -635,22 +576,12 @@ reduce oscillations. maxrate must be greater than MINRATE.</li>
 <dt>rate_scalingrecord <span class="classifier-delimiter">:</span> <span class="classifier">[pump_elevation, scaling_length]</span></dt>
 <dd><ul class="first last simple">
 <li>pump_elevation (double) is the elevation of the multi-aquifer
-<<<<<<< HEAD
 well pump (PUMP_ELEVATION). PUMP_ELEVATION should not be less
 than the bottom elevation (BOTTOM) of the multi-aquifer well.</li>
 <li>scaling_length (double) height above the pump elevation
 (SCALING_LENGTH). If the simulated well head is below this
 elevation (pump elevation plus the scaling length), then the
 pumping rate is reduced.</li>
-=======
-well pump (PUMP_ELEVATION). PUMP_ELEVATION cannot be less
-than the bottom elevation (BOTTOM) of the multi-aquifer well.
-By default, PUMP_ELEVATION is set equal to the bottom of the
-largest GWF node number connected to a MAW well.</li>
-<li>scaling_length (double) height above the pump elevation
-(SCALING_LENGTH) below which the pumping rate is reduced. The
-default value for SCALING_LENGTH is the well radius.</li>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </ul>
 </dd>
 <dt>auxiliaryrecord <span class="classifier-delimiter">:</span> <span class="classifier">[auxname, auxval]</span></dt>
@@ -672,11 +603,7 @@ value.</li>
 </li>
 </ul>
 </dd>
-<<<<<<< HEAD
 <dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
-=======
-<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p class="first last">File name for this package.</p>
 </dd>
 <dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
@@ -711,7 +638,6 @@ a mfgwflak package parent_file.</p>
 <dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
 <dd></dd>
 </dl>
-<<<<<<< HEAD
 </td>
 </tr>
 </tbody>
@@ -763,8 +689,6 @@ zero)</p>
 a list of matplotlib.pyplot.axis are returned.</p>
 </dd>
 </dl>
-=======
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </td>
 </tr>
 </tbody>
@@ -795,13 +719,9 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -818,34 +738,6 @@ a list of matplotlib.pyplot.axis are returned.</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

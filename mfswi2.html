@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.modflow.mfswi2 Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.modflow.mfswi2 Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfswr1 Module" href="mfswr1.html"/>
-        <link rel="prev" title="flopy.modflow.mfsub Module" href="mfsub.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -289,11 +261,7 @@ saved. If ipakcb is non-zero cell-by-cell budget data will be saved.
 <dd><p class="first last">flag and unit number SWI2 observation output. (default is 0).</p>
 </dd>
 <dt><strong>options</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Package options. If ‘adaptive’ is one of the options adaptive SWI2 time
-=======
-<dd><p class="first last">Package options. If ‘adaptive’ is one of the options adaptive SWI2 time 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 steps will be used. (default is None).</p>
 </dd>
 <dt><strong>nsolver</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -357,7 +325,6 @@ parameter. (default is 2).</p>
 <dd><p class="first last">Maximum slope of tip cells. (default is 0.05)</p>
 </dd>
 <dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">fraction of threshold used to move the tip and toe to adjacent empty
 cells when the slope exceeds user-specified TOESLOPE and TIPSLOPE
 values. (default is None)</p>
@@ -386,34 +353,6 @@ size and ADPTFCT, the number of SWI2 time steps is decreased in the
 next MODFLOW time step to a value greater than or equal to 1. ADPTFCT
 must be greater than 0.0 and is reset to 1.0 if NADPTMX is equal to
 NADPTMN. (default is 1.0).</p>
-=======
-<dd><p class="first last">fraction of threshold used to move the tip and toe to adjacent empty cells
-when the slope exceeds user-specified TOESLOPE and TIPSLOPE values. (default is None)</p>
-</dd>
-<dt><strong>beta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Fraction of threshold used to move the toe to adjacent non-empty cells when the
-surface is below a minimum value defined by the user-specified TOESLOPE value.
-(default is 0.1).</p>
-</dd>
-<dt><strong>napptmx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">only used if adaptive is True. Maximum number of SWI2 time steps per MODFLOW
-time step. (default is 1).</p>
-</dd>
-<dt><strong>napptmn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">only used if adaptive is True. Minimum number of SWI2 time steps per MODFLOW
-time step. (default is 1).</p>
-</dd>
-<dt><strong>adptfct</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">is the factor used to evaluate tip and toe thicknesses and control the number
-of SWI2 time steps per MODFLOW time step. When the maximum tip or toe thickness
-exceeds the product of TOESLOPE or TIPSLOPE the cell size and ADPTFCT, the number
-of SWI2 time steps are increased to a value less than or equal to NADPT.
-When the maximum tip or toe thickness is less than the product of TOESLOPE or
-TIPSLOPE the cell size and ADPTFCT, the number of SWI2 time steps is decreased
-in the next MODFLOW time step to a value greater than or equal to 1. ADPTFCT
-must be greater than 0.0 and is reset to 1.0 if NADPTMX is equal to NADPTMN.
-(default is 1.0).</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>nu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
 <dd><p class="first last">if istart = 1, density of each zone (nsrf + 1 values). if istrat = 0,
@@ -429,16 +368,10 @@ list should contain an entry for each surface and be of size nsrf.
 <dd><p class="first last">effective porosity. (default is 0.25)</p>
 </dd>
 <dt><strong>isource</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer or array of integers (nlay, nrow, ncol)</span></dt>
-<<<<<<< HEAD
 <dd><p class="first">Source type of any external sources or sinks, specified with any
 outside package (i.e. WEL Package, RCH Package, GHB Package).
 (default is 0).</p>
 <p class="last">If ISOURCE &gt; 0 sources and sinks have the same fluid density as the
-=======
-<dd><p class="first last">Source type of any external sources or sinks, specified with any outside package
-(i.e. WEL Package, RCH Package, GHB Package). (default is 0).
-If ISOURCE &gt; 0 sources and sinks have the same fluid density as the
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 zone ISOURCE. If such a zone is not present in the cell, sources and
 sinks have the same fluid density as the active zone at the top of
 the aquifer. If ISOURCE = 0 sources and sinks have the same fluid
@@ -492,11 +425,7 @@ connection to “parameters” is thus nonexistent.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfswi2.ModflowSwi2.add_to_dtype">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2.add_to_dtype" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2.add_to_dtype" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -564,7 +493,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfswi2.ModflowSwi2.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfswi2.ModflowSwi2.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -740,13 +669,9 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -763,34 +688,6 @@ Adds an attribute for each layer in each data array</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

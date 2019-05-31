@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.mf6.modflow.mfgwfsfr Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.mf6.modflow.mfgwfsfr Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mf6.modflow.mfgwfsto Module" href="mfgwfsto.html"/>
-        <link rel="prev" title="flopy.mf6.modflow.mfgwfriv Module" href="mfgwfriv.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -333,7 +305,6 @@ information.</li>
 information.</li>
 </ul>
 </dd>
-<<<<<<< HEAD
 <dt><strong>timeseries</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{varname:data} or timeseries data</span></dt>
 <dd><ul class="first last simple">
 <li>Contains data for the ts package. Data can be stored in a dictionary
@@ -348,23 +319,6 @@ acceptable. See ts package documentation for more information.</li>
 containing data for the obs package with variable names as keys and
 package data as values. Data just for the observations variable is
 also acceptable. See obs package documentation for more information.</li>
-=======
-<dt><strong>ts_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[ts6_filename]</span></dt>
-<dd><ul class="first last simple">
-<li>ts6_filename (string) defines a time-series file defining time series
-that can be used to assign time-varying values. See the “Time-
-Variable Input” section for instructions on using the time-series
-capability.</li>
-</ul>
-</dd>
-<dt><strong>obs_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[obs6_filename]</span></dt>
-<dd><ul class="first last simple">
-<li>obs6_filename (string) name of input file to define observations for
-the SFR package. See the “Observation utility” section for
-instructions for preparing observation input files. Table
-reftable:obstype lists observation type(s) supported by the SFR
-package.</li>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </ul>
 </dd>
 <dt><strong>mover</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
@@ -375,15 +329,9 @@ MOVER option is specified, additional memory is allocated within the
 package to store the available, provided, and received water.</li>
 </ul>
 </dd>
-<<<<<<< HEAD
 <dt><strong>maximum_iterations</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
 <dd><ul class="first last simple">
 <li>maximum_iterations (integer) value that defines the maximum number of
-=======
-<dt><strong>maximum_iterations</strong> <span class="classifier-delimiter">:</span> <span class="classifier">double</span></dt>
-<dd><ul class="first last simple">
-<li>maximum_iterations (double) value that defines the maximum number of
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 Streamflow Routing Newton-Raphson iterations allowed for a reach. By
 default, MAXSFRIT is equal to 100.</li>
 </ul>
@@ -554,11 +502,7 @@ a reach or a stage set to the top of the reach (depth = 0).
 In cases where the simulated leakage calculated using the
 specified stage exceeds the sum of inflows to the reach, the
 stage is set to the top of the reach and leakage is set equal
-<<<<<<< HEAD
 to the sum of inflows. Upstream fractions should be changed
-=======
-to the sum of inflows. Upstream factions should be changed
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 using the UPSTREAM_FRACTION SFRSETTING if the status for one
 or more reaches is changed to ACTIVE or INACTIVE. For
 example, if one of two downstream connections for a reach is
@@ -686,11 +630,7 @@ value.</li>
 </li>
 </ul>
 </dd>
-<<<<<<< HEAD
 <dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
-=======
-<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p class="first last">File name for this package.</p>
 </dd>
 <dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
@@ -725,7 +665,6 @@ a mfgwflak package parent_file.</p>
 <dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
 <dd></dd>
 </dl>
-<<<<<<< HEAD
 </td>
 </tr>
 </tbody>
@@ -777,8 +716,6 @@ zero)</p>
 a list of matplotlib.pyplot.axis are returned.</p>
 </dd>
 </dl>
-=======
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </td>
 </tr>
 </tbody>
@@ -809,13 +746,9 @@ a list of matplotlib.pyplot.axis are returned.</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -832,34 +765,6 @@ a list of matplotlib.pyplot.axis are returned.</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

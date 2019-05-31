@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.modflow.mfnwt Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.modflow.mfnwt Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfoc Module" href="mfoc.html"/>
-        <link rel="prev" title="flopy.modflow.mfmnwi Module" href="mfmnwi.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -271,13 +243,8 @@ MODFLOW Guide</a>.</p>
 this package will be added.</p>
 </dd>
 <dt><strong>headtol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">is the maximum head change between outer iterations for solution of
 the nonlinear problem. (default is 1e-4).</p>
-=======
-<dd><p class="first last">is the maximum head change between outer iterations for solution of the
-nonlinear problem. (default is 1e-4).</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>fluxtol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">is the maximum l2 norm for solution of the nonlinear problem.
@@ -304,7 +271,6 @@ convergence will be printed to the main listing file.
 (default is 0).</p>
 </dd>
 <dt><strong>ibotav</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">is a flag that indicates whether corrections will be made to
 groundwater head relative to the cell-bottom altitude if the cell is
 surrounded by dewatered cells (integer). A value of 1 indicates that a
@@ -334,43 +300,10 @@ does not result in successful convergence. (default is COMPLEX).</p>
 <dt><strong>Continue</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">if the model fails to converge during a time step then it will continue
 to solve the following time step. (default is False).  Note the capital
-=======
-<dd><p class="first last">is a flag that indicates whether corrections will be made to groundwater
-head relative to the cell-bottom altitude if the cell is surrounded by
-dewatered cells (integer). A value of 1 indicates that a correction will
-be made and a value of 0 indicates no correction will be made.
-(default is 0).</p>
-</dd>
-<dt><strong>options</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">SPECIFIED indicates that the optional solver input values listed for items 1
-and 2 will be specified in the NWT input file by the user.
-SIMPLE indicates that default solver input values will be defined that work
-well for nearly linear models. This would be used for models that do not
-include nonlinear stress packages, and models that are either confined or
-consist of a single unconfined layer that is thick enough to contain the
-water table within a single layer.
-MODERATE indicates that default solver input values will be defined that work
-well for moderately nonlinear models. This would be used for models that include
-nonlinear stress packages, and models that consist of one or more unconfined
-layers. The MODERATE option should be used when the SIMPLE option does not
-result in successful convergence.
-COMPLEX indicates that default solver input values will be defined that work
-well for highly nonlinear models. This would be used for models that include
-nonlinear stress packages, and models that consist of one or more unconfined
-layers representing complex geology and sw/gw interaction. The COMPLEX option
-should be used when the MODERATE option does not result in successful
-convergence.
-(default is COMPLEX).</p>
-</dd>
-<dt><strong>Continue</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">if the model fails to converge during a time step then it will continue to
-solve the following time step. (default is False).  Note the capital
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 C on this option so that it doesn’t conflict with a reserved Python
 language word.</p>
 </dd>
 <dt><strong>dbdtheta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">is a coefficient used to reduce the weight applied to the head change
 between nonlinear iterations. dbdtheta is used to control oscillations
 in head. Values range between 0.0 and 1.0, and larger values increase
@@ -443,82 +376,12 @@ mean squared error. Usually 1.e-8 to 1.e-12 works well.
 <dt><strong>msdr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">(GMRES) is the number of iterations between restarts of the GMRES
 Solver. (default is 15).</p>
-=======
-<dd><p class="first last">is a coefficient used to reduce the weight applied to the head change between
-nonlinear iterations. dbdtheta is used to control oscillations in head.
-Values range between 0.0 and 1.0, and larger values increase the weight
-(decrease under-relaxation) applied to the head change. (default is 0.4).</p>
-</dd>
-<dt><strong>dbdkappa</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">is a coefficient used to increase the weight applied to the head change between
-nonlinear iterations. dbdkappa is used to control oscillations in head. Values
-range between 0.0 and 1.0, and larger values increase the weight applied to the
-head change. (default is 1.e-5).</p>
-</dd>
-<dt><strong>dbdgamma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">is a factor (used to weight the head change for the previous and current
-iteration. Values range between 0.0 and 1.0, and greater values apply more weight
-to the head change calculated during the current iteration. (default is 0.)</p>
-</dd>
-<dt><strong>momfact</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">is the momentum coefficient and ranges between 0.0 and 1.0. Greater values apply
-more weight to the head change for the current iteration. (default is 0.1).</p>
-</dd>
-<dt><strong>backflag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">is a flag used to specify whether residual control will be used. A value of 1
-indicates that residual control is active and a value of 0 indicates residual
-control is inactive. (default is 1).</p>
-</dd>
-<dt><strong>maxbackiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">is the maximum number of reductions (backtracks) in the head change between
-nonlinear iterations (integer). A value between 10 and 50 works well.
-(default is 50).</p>
-</dd>
-<dt><strong>backtol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">is the proportional decrease in the root-mean-squared error of the groundwater-
-flow equation used to determine if residual control is required at the end of
-a nonlinear iteration. (default is 1.1).</p>
-</dd>
-<dt><strong>backreduce</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">is a reduction factor used for residual control that reduces the head change
-between nonlinear iterations. Values should be between 0.0 and 1.0, where
-smaller values result in smaller head-change values. (default 0.7).</p>
-</dd>
-<dt><strong>maxitinner</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">(GMRES) is the maximum number of iterations for the linear solution.
-(default is 50).</p>
-</dd>
-<dt><strong>ilumethod</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first">(GMRES) is the index for selection of the method for incomplete factorization
-(ILU) used as a preconditioner. (default is 2).</p>
-<p>ilumethod = 1 is ILU with drop tolerance and fill limit. Fill-in terms less
-than drop tolerance times the diagonal are discarded. The number of fill-in
-terms in each row of L and U is limited to the fill limit. The fill-limit
-largest elements are kept in the L and U factors.</p>
-<p class="last">ilumethod=2 is ILU(k) order k incomplete LU factorization. Fill-in terms of
-higher order than k in the factorization are discarded.</p>
-</dd>
-<dt><strong>levfill</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">(GMRES) is the fill limit for ILUMETHOD = 1 and is the level of fill for
-ilumethod = 2. Recommended values: 5-10 for method 1, 0-2 for method 2.
-(default is 5).</p>
-</dd>
-<dt><strong>stoptol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">(GMRES) is the tolerance for convergence of the linear solver. This is the
-residual of the linear equations scaled by the norm of the root mean squared
-error. Usually 1.e-8 to 1.e-12 works well. (default is 1.e-10).</p>
-</dd>
-<dt><strong>msdr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">(GMRES) is the number of iterations between restarts of the GMRES Solver.
-(default is 15).</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>iacl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">(XMD) is a flag for the acceleration method: 0 is conjugate gradient, 1 is ORTHOMIN,
 2 is Bi-CGSTAB. (default is 2).</p>
 </dd>
 <dt><strong>norder</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">(XMD) is a flag for the scheme of ordering the unknowns: 0 is original
 ordering, 1 is RCM ordering, 2 is Minimum Degree ordering.
 (default is 1).</p>
@@ -537,36 +400,13 @@ equal 2 for the other acceleration methods. (default is 7).</p>
 <dd><p class="first last">(XMD) is a flag for reduced system preconditioning (integer): 0-do not
 apply reduced system preconditioning, 1-apply reduced system
 preconditioning. (default is 0)</p>
-=======
-<dd><p class="first last">(XMD) is a flag for the scheme of ordering the unknowns: 0 is original ordering,
-1 is RCM ordering, 2 is Minimum Degree ordering. (default is 1).</p>
-</dd>
-<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">(XMD) is the level of fill for incomplete LU factorization. (default is 5).</p>
-</dd>
-<dt><strong>north</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">(XMD) is the number of orthogonalization for the ORTHOMIN acceleration scheme.
-A number between 4 and 10 is appropriate. Small values require less storage
-but more iterations may be required. This number should equal 2 for the other
-acceleration methods. (default is 7).</p>
-</dd>
-<dt><strong>iredsys</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">(XMD) is a flag for reduced system preconditioning (integer): 0-do not apply
-reduced system preconditioning, 1-apply reduced system preconditioning.
-(default is 0)</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>rrctols</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">(XMD) is the residual reduction-convergence criteria. (default is 0.).</p>
 </dd>
 <dt><strong>idroptol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">(XMD) is a flag for using drop tolerance in the preconditioning:
 0-don’t use drop tolerance, 1-use drop tolerance. (default is 1).</p>
-=======
-<dd><p class="first last">(XMD) is a flag for using drop tolerance in the preconditioning: 0-don’t
-use drop tolerance, 1-use drop tolerance. (default is 1).</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>epsrn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">(XMD) is the drop tolerance for preconditioning. (default is 1.e-4).</p>
@@ -604,7 +444,7 @@ Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfnwt.ModflowNwt.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfnwt.ModflowNwt.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfnwt.ModflowNwt.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -686,13 +526,9 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -709,34 +545,6 @@ constructed using the function
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

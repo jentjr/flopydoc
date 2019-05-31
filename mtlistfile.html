@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.cvfdutil Module &mdash; flopy 3.2.12 documentation</title>
+  <title>flopy.utils.mtlistfile Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="flopy.utils.datafile Module" href="datafile.html" />
-    <link rel="prev" title="flopy.utils.check Module" href="check.html" /> 
+    <link rel="next" title="flopy.utils.observationfile Module" href="observationfile.html" />
+    <link rel="prev" title="flopy.utils.modpathfile Module" href="modpathfile.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,7 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="check.html">flopy.utils.check Module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.cvfdutil Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
@@ -120,7 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -186,13 +186,13 @@
         
           <li><a href="code.html">Flopy Code</a> &raquo;</li>
         
-      <li>flopy.utils.cvfdutil Module</li>
+      <li>flopy.utils.mtlistfile Module</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/cvfdutil.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/mtlistfile.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -205,40 +205,64 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-flopy.utils.cvfdutil">
-<span id="flopy-utils-cvfdutil-module"></span><h1>flopy.utils.cvfdutil Module<a class="headerlink" href="#module-flopy.utils.cvfdutil" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="flopy.utils.cvfdutil.area_of_polygon">
-<code class="descclassname">flopy.utils.cvfdutil.</code><code class="descname">area_of_polygon</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.cvfdutil.area_of_polygon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates the signed area of an arbitrary polygon given its vertices
-<a class="reference external" href="http://stackoverflow.com/a/4682656/190597">http://stackoverflow.com/a/4682656/190597</a> (Joe Kington)
-<a class="reference external" href="http://softsurfer.com/Archive/algorithm_0101/algorithm_0101.htm#2D%20Polygons">http://softsurfer.com/Archive/algorithm_0101/algorithm_0101.htm#2D%20Polygons</a></p>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.utils.cvfdutil.centroid_of_polygon">
-<code class="descclassname">flopy.utils.cvfdutil.</code><code class="descname">centroid_of_polygon</code><span class="sig-paren">(</span><em>points</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.cvfdutil.centroid_of_polygon" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="http://stackoverflow.com/a/14115494/190597">http://stackoverflow.com/a/14115494/190597</a> (mgamba)</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.utils.cvfdutil.shapefile_to_xcyc">
-<code class="descclassname">flopy.utils.cvfdutil.</code><code class="descname">shapefile_to_xcyc</code><span class="sig-paren">(</span><em>shp</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.cvfdutil.shapefile_to_xcyc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get cell centroid coordinates</p>
+  <div class="section" id="module-flopy.utils.mtlistfile">
+<span id="flopy-utils-mtlistfile-module"></span><h1>flopy.utils.mtlistfile Module<a class="headerlink" href="#module-flopy.utils.mtlistfile" title="Permalink to this headline">¶</a></h1>
+<p>This is a class for reading the mass budget from a (multi-component)
+mt3d(usgs) run. Also includes support for SFT budget.</p>
+<dl class="class">
+<dt id="flopy.utils.mtlistfile.MtListBudget">
+<em class="property">class </em><code class="descclassname">flopy.utils.mtlistfile.</code><code class="descname">MtListBudget</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mtlistfile.MtListBudget" title="Permalink to this definition">¶</a></dt>
+<dd><p>MT3D mass budget reader</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the list file name</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mt_list</span> <span class="o">=</span> <span class="n">MtListBudget</span><span class="p">(</span><span class="s2">&quot;my_mt3d.list&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">incremental</span><span class="p">,</span> <span class="n">cumulative</span> <span class="o">=</span> <span class="n">mt_list</span><span class="o">.</span><span class="n">get_budget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gw_df</span><span class="p">,</span> <span class="n">sw_df</span> <span class="o">=</span> <span class="n">mt_list</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">start_datetime</span><span class="o">=</span><span class="s2">&quot;10-21-2015&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.mtlistfile.MtListBudget.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>forgive=True</em>, <em>diff=True</em>, <em>start_datetime=None</em>, <em>time_unit='d'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.mtlistfile.MtListBudget.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main entry point for parsing the list file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>shp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">Name of shape file</p>
+<dt><strong>forgive</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">flag to raise exceptions when fail-to-read occurs. Default is True</p>
+</dd>
+<dt><strong>diff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">flag to return dataframes with ‘in minus out’ columns.  Default
+is True</p>
+</dd>
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">str that can be parsed by pandas.to_datetime.  Example: ‘1-1-1970’.
+Default is None.</p>
+</dd>
+<dt><strong>time_unit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">str to pass to pandas.to_timedelta.  Default is ‘d’ (days)</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>xcyc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
-<dd><p class="first last">x, y coordinates of all polygons in shp</p>
+<dt><strong>df_gw,df_sw</strong> <span class="classifier-delimiter">:</span> <span class="classifier">pandas.DataFrame</span></dt>
+<dd><p class="first last">a dataframe for the groundwater mass and
+(optionally) surface-water mass budget.
+If the SFT process is not used, df_sw is None.</p>
 </dd>
 </dl>
 </td>
@@ -247,46 +271,6 @@
 </table>
 </dd></dl>
 
-<dl class="function">
-<dt id="flopy.utils.cvfdutil.to_cvfd">
-<code class="descclassname">flopy.utils.cvfdutil.</code><code class="descname">to_cvfd</code><span class="sig-paren">(</span><em>vertdict</em>, <em>nodestart=None</em>, <em>nodestop=None</em>, <em>skip_hanging_node_check=False</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.cvfdutil.to_cvfd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert a vertex dictionary</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>vertdict</strong></dt>
-<dd><p class="first last">vertdict is a dictionary {icell: [(x1, y1), (x2, y2), (x3, y3), …]}</p>
-</dd>
-<dt><strong>nodestart</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">starting node number. (default is zero)</p>
-</dd>
-<dt><strong>nodestop</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">ending node number up to but not including. (default is len(vertdict))</p>
-</dd>
-<dt><strong>skip_hanging_node_check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">skip the hanging node check.  this may only be necessary for quad-based
-grid refinement. (default is False)</p>
-</dd>
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">print messages to the screen. (default is False)</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>verts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
-<dd><p class="first last">array of x, y vertices</p>
-</dd>
-<dt><strong>iverts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list containing a list for each cell</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -299,10 +283,10 @@ grid refinement. (default is False)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="datafile.html" class="btn btn-neutral float-right" title="flopy.utils.datafile Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="observationfile.html" class="btn btn-neutral float-right" title="flopy.utils.observationfile Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="check.html" class="btn btn-neutral float-left" title="flopy.utils.check Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="modpathfile.html" class="btn btn-neutral float-left" title="flopy.utils.modpathfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.modflow.mfuzf1 Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfwel Module" href="mfwel.html"/>
-        <link rel="prev" title="flopy.modflow.mfupw Module" href="mfupw.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -259,11 +231,7 @@ the ModflowUzf1 class as <cite>flopy.modflow.ModflowUzf1</cite>.</p>
 MODFLOW Guide</a>.</p>
 <dl class="class">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1">
-<<<<<<< HEAD
 <em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>ipakcb=None</em>, <em>iuzfcb2=None</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>nwt_11_fmt=False</em>, <em>specifysurfk=False</em>, <em>rejectsurfk=False</em>, <em>seepsurfk=False</em>, <em>etsquare=None</em>, <em>netflux=None</em>, <em>nuzgag=None</em>, <em>uzgag=None</em>, <em>extension='uzf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>options=None</em>, <em>surfk=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfuzf1.</code><code class="descname">ModflowUzf1</code><span class="sig-paren">(</span><em>model</em>, <em>nuztop=1</em>, <em>iuzfopt=0</em>, <em>irunflg=0</em>, <em>ietflg=0</em>, <em>ipakcb=None</em>, <em>iuzfcb2=None</em>, <em>ntrail2=10</em>, <em>nsets=20</em>, <em>surfdep=1.0</em>, <em>iuzfbnd=1</em>, <em>irunbnd=0</em>, <em>vks=1e-06</em>, <em>eps=3.5</em>, <em>thts=0.35</em>, <em>thtr=0.15</em>, <em>thti=0.2</em>, <em>specifythtr=0</em>, <em>specifythti=0</em>, <em>nosurfleak=0</em>, <em>finf=1e-08</em>, <em>pet=5e-08</em>, <em>extdp=15.0</em>, <em>extwc=0.1</em>, <em>nwt_11_fmt=False</em>, <em>specifysurfk=False</em>, <em>rejectsurfk=False</em>, <em>seepsurfk=False</em>, <em>etsquare=None</em>, <em>netflux=None</em>, <em>nuzgag=None</em>, <em>uzgag=None</em>, <em>extension='uzf'</em>, <em>unitnumber=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>MODFLOW Unsaturated Zone Flow 1 Boundary Package Class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -293,18 +261,11 @@ and prevents deeper percolation.</p>
 </dl>
 </dd>
 <dt><strong>iuzfopt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">equal to 1 or 2. A value of 1 indicates that the vertical hydraulic
 conductivity will be specified within the UZF1 Package input file using
 array VKS. A value of 2 indicates that the vertical hydraulic
 conductivity will be specified within either the BCF or LPF Package
 input file. (default is 0)</p>
-=======
-<dd><p class="first last">equal to 1 or 2. A value of 1 indicates that the vertical hydraulic conductivity will be
-specified within the UZF1 Package input file using array VKS. A value of 2 indicates that the vertical
-hydraulic conductivity will be specified within either the BCF or LPF Package input file.
-(default is 0)</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>irunflg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
 <dd><p class="first last">specifies whether ground water that discharges to land surface will
@@ -419,21 +380,12 @@ unsaturated zone.</p>
 </dd>
 <dt><strong>nwt_11_fmt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
 <dd><p class="first last">flag indicating whether or not to utilize a newer (MODFLOW-NWT
-<<<<<<< HEAD
 version 1.1 or later) format style, i.e., uzf1 optional variables
 appear line-by-line rather than in a specific order on a single
 line. True means that optional variables (e.g., SPECIFYTHTR,
 SPECIFYTHTI, NOSURFLEAK) appear on new lines. True also supports
 a number of newer optional variables (e.g., SPECIFYSURFK,
 REJECTSURFK, SEEPSURFK). False means that optional variables
-=======
-version 1.1 or later) format style, i.e., uzf1 optional variables 
-appear line-by-line rather than in a specific order on a single
-line. True means that optional variables (e.g., SPECIFYTHTR,
-SPECIFYTHTI, NOSURFLEAK) appear on new lines. True also supports 
-a number of newer optional variables (e.g., SPECIFYSURFK,
-REJECTSURFK, SEEPSURFK). False means that optional variables 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 appear on one line.  (default is False)</p>
 </dd>
 <dt><strong>specifythtr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
@@ -447,7 +399,6 @@ appear on one line.  (default is False)</p>
 (default is 0)</p>
 </dd>
 <dt><strong>specifysurfk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later)
 An optional character variable. When SPECIFYSURFK is specified,
 the variable SURFK is specified in Data Set 4b.</p>
@@ -462,35 +413,13 @@ REJECTSURFK only is included if SPECIFYSURFK is included.</p>
 <dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later)
 An optional character variable. When SEEPSURFK is specified,
 SURFK instead of VKS is used for calculating surface leakage.
-=======
-<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
-An optional character variable. When SPECIFYSURFK is specified, 
-the variable SURFK is specfied in Data Set 4b.</p>
-</dd>
-<dt><strong>rejectsurfk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
-An optional character variable. When REJECTSURFK is specified, 
-SURFK instead of VKS is used for calculating rejected infiltration. 
-REJECTSURFK only is included if SPECIFYSURFK is included.</p>
-</dd>
-<dt><strong>seepsurfk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
-An optional character variable. When SEEPSURFK is specified, 
-SURFK instead of VKS is used for calculating surface leakage. 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 SEEPSURFK only is included if SPECIFYSURFK is included.</p>
 </dd>
 <dt><strong>etsquare</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float (smoothfact)</span></dt>
 <dd><p class="first">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later)
-<<<<<<< HEAD
 An optional character variable. When ETSQUARE is specified,
 groundwater ET is simulated using a constant potential ET rate,
 and is smoothed over a specified smoothing interval.
-=======
-An optional character variable. When ETSQUARE is specified, 
-groundwater ET is simulated using a constant potential ET rate, 
-and is smoothed over a specified smoothing interval. 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 This option is recommended only when using the NWT solver.</p>
 <p class="last">etsquare is activated in flopy by specifying a real value
 for smoothfact (default is None).
@@ -515,15 +444,9 @@ Lists follow the format described in the documentation:
 </div></blockquote>
 </dd>
 <dt><strong>netflux</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of [Unitrech (int), Unitdis (int)]</span></dt>
-<<<<<<< HEAD
 <dd><p class="first">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later)
 An optional character variable. When NETFLUX is specified,
 the sum of recharge (L3/T) and the sum of discharge (L3/T) is written
-=======
-<dd><p class="first">(MODFLOW-NWT version 1.1 and MODFLOW-2005 1.12 or later) 
-An optional character variable. When NETFLUX is specified, 
-the sum of recharge (L3/T) and the sum of discharge (L3/T) is written 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 to separate unformatted files using module UBDSV3.</p>
 <p>netflux is activated in flopy by specifying a list for
 Unitrech and Unitdis (default is None).
@@ -605,15 +528,12 @@ name with the appropriate output file extensions. To define the names
 for all package files (input and output) the length of the list of
 strings should be 3 + len(uzgag). Default is None.</p>
 </dd>
-<<<<<<< HEAD
 <dt><strong>surfk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">An optional array of positive real values used to define the hydraulic
 conductivity (LT-1). SURFK is used for calculating the rejected
 infiltration and/or surface leakage. IF SURFK is set greater than
 VKS then it is set equal to VKS. Only used if SEEPSURFK is True.</p>
 </dd>
-=======
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dl>
 </td>
 </tr>
@@ -645,11 +565,7 @@ the budget summed over all model cells.  (default is None)</p>
 </table>
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1.add_to_dtype">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.add_to_dtype" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.add_to_dtype" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -717,7 +633,7 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.modflow.mfuzf1.ModflowUzf1.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>ext_unit_dict=None</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>ext_unit_dict=None</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfuzf1.ModflowUzf1.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -887,13 +803,9 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -910,34 +822,6 @@ Adds an attribute for each layer in each data array</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

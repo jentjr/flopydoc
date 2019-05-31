@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.utils.reference Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.utils.reference Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.utils.sfroutputfile Module" href="sfroutputfile.html"/>
-        <link rel="prev" title="flopy.utils.swroutputfile Module" href="swroutputfile.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -385,11 +357,7 @@ model reference.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Path of output file. Export format is determined by
-<<<<<<< HEAD
 file extension.
-=======
-file extention.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 ‘.asc’  Arc Ascii grid
 ‘.tif’  GeoTIFF (requires rasterio package)
 ‘.shp’  Shapefile</p>
@@ -405,11 +373,7 @@ file extention.
 (default ‘values’)</p>
 </dd>
 <dt><strong>kwargs:</strong></dt>
-<<<<<<< HEAD
 <dd><p class="first last">keyword arguments to np.savetxt (ascii)
-=======
-<dd><p class="first last">keyword arguments to np.savetxt (ascii) 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 rasterio.open (GeoTIFF)
 or flopy.export.shapefile_utils.write_grid_shapefile2</p>
 </dd>
@@ -440,11 +404,7 @@ will have the same number of rows and pixels as the original.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Path of output file with ‘.shp’ extension.</p>
-=======
-<dd><p class="first last">Path of output file with ‘.shp’ extention.</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D numpy array</span></dt>
 <dd><p class="first last">Array to contour</p>
@@ -580,15 +540,9 @@ in real-world coordinates.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<<<<<<< HEAD
 <dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">row or sequence of rows (zero-based)</span></dt>
 <dd></dd>
 <dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">column or sequence of columns (zero-based)</span></dt>
-=======
-<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">row or sequence of rows (zero-based)</span></dt>
-<dd></dd>
-<dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">column or sequence of columns (zero-based)</span></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd></dd>
 </dl>
 </td>
@@ -678,7 +632,7 @@ model units to sr units, defaulting to 1.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReference.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>namefile=None</em>, <em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to load spatial reference information from
 the following files (in order):
 1) usgs.model.reference
@@ -712,14 +666,14 @@ the following files (in order):
 
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReference.read_usgs_model_reference_file">
-<em class="property">static </em><code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>read spatial reference info from the usgs.model.reference file
 <a class="reference external" href="https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html">https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html</a></p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReference.rotate">
-<em class="property">static </em><code class="descname">rotate</code><span class="sig-paren">(</span><em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.rotate" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReference.rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given x and y array-like values calculate the rotation about an
 arbitrary origin and then return the rotated coordinates.  theta is in
 degrees.</p>
@@ -866,11 +820,7 @@ model reference.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Path of output file. Export format is determined by
-<<<<<<< HEAD
 file extension.
-=======
-file extention.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 ‘.asc’  Arc Ascii grid
 ‘.tif’  GeoTIFF (requires rasterio package)
 ‘.shp’  Shapefile</p>
@@ -886,11 +836,7 @@ file extention.
 (default ‘values’)</p>
 </dd>
 <dt><strong>kwargs:</strong></dt>
-<<<<<<< HEAD
 <dd><p class="first last">keyword arguments to np.savetxt (ascii)
-=======
-<dd><p class="first last">keyword arguments to np.savetxt (ascii) 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 rasterio.open (GeoTIFF)
 or flopy.export.shapefile_utils.write_grid_shapefile2</p>
 </dd>
@@ -921,11 +867,7 @@ will have the same number of rows and pixels as the original.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">Path of output file with ‘.shp’ extension.</p>
-=======
-<dd><p class="first last">Path of output file with ‘.shp’ extention.</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 <dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D numpy array</span></dt>
 <dd><p class="first last">Array to contour</p>
@@ -1128,15 +1070,9 @@ in real-world coordinates.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<<<<<<< HEAD
 <dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">row or sequence of rows (zero-based)</span></dt>
 <dd></dd>
 <dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">column or sequence of columns (zero-based)</span></dt>
-=======
-<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">row or sequence of rows (zero-based)</span></dt>
-<dd></dd>
-<dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">column or sequence of columns (zero-based)</span></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd></dd>
 </dl>
 </td>
@@ -1228,11 +1164,7 @@ model units to sr units, defaulting to 1.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.load">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>namefile=None</em>, <em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.load" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.load" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Attempts to load spatial reference information from
 the following files (in order):
 1) usgs.model.reference
@@ -1266,22 +1198,14 @@ the following files (in order):
 
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.read_usgs_model_reference_file">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>read spatial reference info from the usgs.model.reference file
 <a class="reference external" href="https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html">https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html</a></p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.utils.reference.SpatialReferenceUnstructured.rotate">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.rotate" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">rotate</code><span class="sig-paren">(</span><em>y</em>, <em>theta</em>, <em>xorigin=0.0</em>, <em>yorigin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.reference.SpatialReferenceUnstructured.rotate" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Given x and y array-like values calculate the rotation about an
 arbitrary origin and then return the rotated coordinates.  theta is in
 degrees.</p>
@@ -1462,11 +1386,7 @@ spatialreference.org</p>
 </dd>
 <dt><strong>addlocalreference</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
 <dd><p class="first last">adds the projection file text associated with epsg to a local
-<<<<<<< HEAD
 database, epsgref.json, located in the user’s data directory.</p>
-=======
-database, epsgref.py, located in site-packages.</p>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 </dd>
 </dl>
 </td>
@@ -1522,10 +1442,6 @@ spatialreference.org. See: <a class="reference external" href="https://www.epsg-
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
         <a href="sfroutputfile.html" class="btn btn-neutral float-right" title="flopy.utils.sfroutputfile Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-<<<<<<< HEAD
-=======
-      
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
       
       
         <a href="swroutputfile.html" class="btn btn-neutral float-left" title="flopy.utils.swroutputfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1537,13 +1453,9 @@ spatialreference.org. See: <a class="reference external" href="https://www.epsg-
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -1560,34 +1472,6 @@ spatialreference.org. See: <a class="reference external" href="https://www.epsg-
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

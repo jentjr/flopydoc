@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.mt3d.mtlkt Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.mt3d.mtlkt Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mt3d.mtphc Module" href="mtphc.html"/>
-        <link rel="prev" title="flopy.mt3d.mtgcg Module" href="mtgcg.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -241,34 +213,21 @@ this package will be added.</p>
 simulation</p>
 </dd>
 <dt><strong>mxlkbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">must be greater than or equal to the sum total of boundary conditions
-=======
-<dd><p class="first last">must be greater than or equal to the sum total of boundary conditions 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 applied to each lake</p>
 </dd>
 <dt><strong>icbclk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">is equal to the unit number on which lake-by-lake transport information
-<<<<<<< HEAD
 will be printed.  This unit number must appear in the NAM input file
 required for every MT3D-USGS simulation.</p>
 </dd>
 <dt><strong>ietlak</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">specifies whether or not evaporation as simulated in the flow solution
-=======
-will be printed.  This unit number must appear in the NAM input file 
-required for every MT3D-USGS simulation.</p>
-</dd>
-<dt><strong>ietlak</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">specifies whether or not evaporation as simulated in the flow solution 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 will act as a mass sink.
 = 0, Mass does not exit the model via simulated lake evaporation
 != 0, Mass may leave the lake via simulated lake evaporation</p>
 </dd>
 <dt><strong>coldlak</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
-<<<<<<< HEAD
 <dd><p class="first last">is a vector of real numbers representing the initial concentrations in
 the simulated lakes.  The length of the vector is equal to the number
 of simulated lakes, NLKINIT.  Initial lake concentrations should be
@@ -283,22 +242,6 @@ zero in subsequent stress periods.</p>
 </dd>
 <dt><strong>ilkbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">is the lake number for which the current boundary condition will be
-=======
-<dd><p class="first last">is a vector of real numbers representing the initial concentrations in 
-the simulated lakes.  The length of the vector is equal to the number 
-of simulated lakes, NLKINIT.  Initial lake concentrations should be 
-in the same order as the lakes appearing in the LAK input file 
-corresponding to the MODFLOW simulation.</p>
-</dd>
-<dt><strong>ntmp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">is an integer value corresponding to the number of specified lake 
-boundary conditions to follow.  For the first stress period, this 
-value must be greater than or equal to zero, but may be less than 
-zero in subsequent stress periods.</p>
-</dd>
-<dt><strong>ilkbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">is the lake number for which the current boundary condition will be 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 specified</p>
 </dd>
 <dt><strong>ilkbctyp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -364,11 +307,7 @@ of strings should be 2. Default is None.</p>
 </div>
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtlkt.Mt3dLkt.add_to_dtype">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
-=======
-<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd><p>Add one or more fields to a structured array data type</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -436,19 +375,14 @@ performed. If level=1, full checks are performed.</p>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtlkt.Mt3dLkt.get_default_dtype">
-<<<<<<< HEAD
 <em class="property">static </em><code class="descname">get_default_dtype</code><span class="sig-paren">(</span><em>ncomp=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.get_default_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a dtype for the recarray containing the list of boundary
-=======
-<em class="property">static </em><code class="descname">get_default_dtype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.get_default_dtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct a dtype for the recarray containing the list of boundary 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 conditions interacting with the lake (i.e., pumps, specified runoff…)</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtlkt.Mt3dLkt.load">
-<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>model</em>, <em>nlak=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nlak=None</em>, <em>nper=None</em>, <em>ncomp=None</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an existing package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -630,13 +564,9 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -653,34 +583,6 @@ Adds an attribute for each layer in each data array</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);

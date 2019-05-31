@@ -8,11 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<<<<<<< HEAD
   <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.12 documentation</title>
-=======
-  <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.10 documentation</title>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   
 
   
@@ -32,27 +28,7 @@
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
-<<<<<<< HEAD
     
-=======
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.10 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.utils.mtlistfile Module" href="mtlistfile.html"/>
-        <link rel="prev" title="flopy.utils.mfgrdfile Module" href="mfgrdfile.html"/> 
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -84,11 +60,7 @@
             
             
               <div class="version">
-<<<<<<< HEAD
                 3.2.12
-=======
-                3.2.10
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
               </div>
             
           
@@ -635,17 +607,10 @@ containing only pathlines with final k,i,j in dest_cells.</p>
 
 <dl class="method">
 <dt id="flopy.utils.modpathfile.PathlineFile.write_shapefile">
-<<<<<<< HEAD
 <code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>pathline_data=None</em>, <em>one_per_particle=True</em>, <em>direction='ending'</em>, <em>shpname='endpoints.shp'</em>, <em>mg=None</em>, <em>epsg=None</em>, <em>sr=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write pathlines to a shapefile</p>
 <dl class="docutils">
 <dt>pathline_data <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
-=======
-<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>pathline_data=None</em>, <em>one_per_particle=True</em>, <em>direction='ending'</em>, <em>shpname='endpoints.shp'</em>, <em>sr=None</em>, <em>epsg=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write pathlines to a shapefile</p>
-<dl class="docutils">
-<dt>pathline_data <span class="classifier-delimiter">:</span> <span class="classifier">np.recarry</span></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd>Record array of same form as that returned by
 EndpointFile.get_alldata(). (if none, EndpointFile.get_alldata()
 is exported).</dd>
@@ -661,20 +626,12 @@ included in shapefile attribute information. Only used if
 one_per_particle=False. (default is ‘ending’)</dd>
 <dt>shpname <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd>File path for shapefile</dd>
-<<<<<<< HEAD
 <dt>mg <span class="classifier-delimiter">:</span> <span class="classifier">flopy.discretization.grid instance</span></dt>
-=======
-<dt>sr <span class="classifier-delimiter">:</span> <span class="classifier">flopy.utils.reference.SpatialReference instance</span></dt>
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 <dd>Used to scale and rotate Global x,y,z values in MODPATH Endpoint
 file.</dd>
 <dt>epsg <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd>EPSG code for writing projection (.prj) file. If this is not
-<<<<<<< HEAD
 supplied, the proj4 string or epgs code associated with mg will be
-=======
-supplied, the proj4 string or epgs code associated with sr will be
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 used.</dd>
 </dl>
 <p>kwargs : keyword arguments to flopy.export.shapefile_utils.recarray2shp</p>
@@ -889,13 +846,9 @@ containing only pathlines with final k,i,j in dest_cells.</p>
 
   <div role="contentinfo">
     <p>
-<<<<<<< HEAD
       <span class="lastupdated">
         Last updated on May 31, 2019.
       </span>
-=======
-      Last updated on Oct 18, 2018.
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
 
     </p>
   </div>
@@ -912,34 +865,6 @@ containing only pathlines with final k,i,j in dest_cells.</p>
   
 
 
-<<<<<<< HEAD
-=======
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.10',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
->>>>>>> 9b33aedc30ff5f6a3b4bbb5fc2e239c2f360a6d8
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
