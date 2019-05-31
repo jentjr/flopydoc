@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfpcgn Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfpcgn Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfrch Module" href="mfrch.html"/>
-        <link rel="prev" title="flopy.modflow.mfpcg Module" href="mfpcg.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.modflow.mfrch Module" href="mfrch.html" />
+    <link rel="prev" title="flopy.modflow.mfpcg Module" href="mfpcg.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -113,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdrt.html">flopy.modflow.mfdrt Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
@@ -151,6 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -159,6 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -172,7 +168,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -180,9 +176,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -240,22 +237,20 @@ MODFLOW Guide</a>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>iter_mo</strong> : int</p>
-<blockquote>
-<div><p>The maximum number of picard (outer) iterations allowed. For nonlinear
+</dd>
+<dt><strong>iter_mo</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The maximum number of picard (outer) iterations allowed. For nonlinear
 problems, this variable must be set to some number greater than one,
 depending on the problem size and degree of nonlinearity. If iter_mo
 is set to 1, then the pcgn solver assumes that the problem is linear
 and the input requirements are greatly truncated. (default is 50)</p>
-</div></blockquote>
-<p><strong>iter_mi</strong> : int</p>
-<blockquote>
-<div><p>maximum number of pcg (inner) iterations allowed. Generally,
+</dd>
+<dt><strong>iter_mi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum number of pcg (inner) iterations allowed. Generally,
 this variable is set to some number greater than one, depending on
 the matrix size, degree of convergence called for, and the nature of
 the problem. For a nonlinear problem, iter_mi should be set large
@@ -263,10 +258,9 @@ enough that the pcg iteration converges freely with the relative
 convergence parameter epsilon described in the Parameters Related
 to Convergence of Inner Iteration: Line 4 subsection.
 (default is 30)</p>
-</div></blockquote>
-<p><strong>close_r</strong> : float</p>
-<blockquote>
-<div><p>The residual-based stopping criterion for iteration. This parameter is
+</dd>
+<dt><strong>close_r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first">The residual-based stopping criterion for iteration. This parameter is
 used differently, depending on whether it is applied to a linear or
 nonlinear problem.</p>
 <p>If iter_mo = 1: For a linear problem, the variant of the conjugate
@@ -279,16 +273,15 @@ the square root of the weighted residual norm is less than close_r,
 then the linear Pcg iterative solve is said to have converged,
 causing the pcg iteration to cease and control of the program to
 pass out of the pcg solver.</p>
-<p>If iter_mo &gt; 1: For a nonlinear problem, close_r is used as a criterion
+<p class="last">If iter_mo &gt; 1: For a nonlinear problem, close_r is used as a criterion
 for quitting the picard (outer) iteration. close_r is compared to the
 square root of the inner product of the residuals (the residual norm)
 as calculated on entry to the pcg solver at the beginning of every
 picard iteration. if this norm is less than close_r, then the picard
 iteration is considered to have converged.</p>
-</div></blockquote>
-<p><strong>close_h</strong> : float</p>
-<blockquote>
-<div><p>close_h is used as an alternate stopping criterion for the picard
+</dd>
+<dt><strong>close_h</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">close_h is used as an alternate stopping criterion for the picard
 iteration needed to solve a nonlinear problem. The maximum value of
 the head change is obtained for each picard iteration, after completion
 of the inner, pcg iteration. If this maximum head change is less than
@@ -301,30 +294,25 @@ then a good solution is assumed to have been obtained. If the picard
 iterations are not sequential, then a warning is issued advising that
 the convergence is conditional and the user is urged to examine the
 mass balance of the solution.</p>
-</div></blockquote>
-<p><strong>relax</strong> : float</p>
-<blockquote>
-<div><p>is the relaxation parameter used with npcond = 1. (default is 1.0)</p>
-</div></blockquote>
-<p><strong>ifill</strong> : int</p>
-<blockquote>
-<div><p>is the fill level of the mic preconditioner. Preconditioners with
+</dd>
+<dt><strong>relax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the relaxation parameter used with npcond = 1. (default is 1.0)</p>
+</dd>
+<dt><strong>ifill</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the fill level of the mic preconditioner. Preconditioners with
 fill levels of 0 and 1 are available (ifill = 0 and ifill = 1,
 respectively). (default is 0)</p>
-</div></blockquote>
-<p><strong>unit_pc</strong> : int</p>
-<blockquote>
-<div><p>is the unit number of an optional output file where progress for the
+</dd>
+<dt><strong>unit_pc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the unit number of an optional output file where progress for the
 inner PCG iteration can be written. (default is 0)</p>
-</div></blockquote>
-<p><strong>unit_ts</strong> : int</p>
-<blockquote>
-<div><p>is the unit number of an optional output file where the actual time in
+</dd>
+<dt><strong>unit_ts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the unit number of an optional output file where the actual time in
 the PCG solver is accumulated. (default is 0)</p>
-</div></blockquote>
-<p><strong>adamp</strong> : int</p>
-<blockquote>
-<div><p>defines the mode of damping applied to the linear solution. In general,
+</dd>
+<dt><strong>adamp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">defines the mode of damping applied to the linear solution. In general,
 damping determines how much of the head changes vector shall be applied
 to the hydraulic head vector hj in picard iteration j. If adamp = 0,
 Ordinary damping is employed and a constant value of damping parameter
@@ -333,94 +321,85 @@ valid value for damp. If adamp = 1, Adaptive damping is employed. If
 adamp = 2: Enhanced damping algorithm in which the damping value is
 increased (but never decreased) provided the picard iteration is
 proceeding satisfactorily. (default is 0)</p>
-</div></blockquote>
-<p><strong>damp</strong> : float</p>
-<blockquote>
-<div><p>is the damping factor. (default is 1.)</p>
-</div></blockquote>
-<p><strong>damp_lb</strong> : float</p>
-<blockquote>
-<div><p>is the lower bound placed on the dampening; generally, 0 &lt; damp_lb &lt; damp.
-(default is 0.001)</p>
-</div></blockquote>
-<p><strong>rate_d</strong> : float</p>
-<blockquote>
-<div><p>is a rate parameter; generally, 0 &lt; rate_d &lt; 1. (default is 0.1)</p>
-</div></blockquote>
-<p><strong>chglimit</strong> : float</p>
-<blockquote>
-<div><p>this variable limits the maximum head change applicable to the updated
+</dd>
+<dt><strong>damp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the damping factor. (default is 1.)</p>
+</dd>
+<dt><strong>damp_lb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the lower bound placed on the dampening; generally,
+0 &lt; damp_lb &lt; damp. (default is 0.001)</p>
+</dd>
+<dt><strong>rate_d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is a rate parameter; generally, 0 &lt; rate_d &lt; 1. (default is 0.1)</p>
+</dd>
+<dt><strong>chglimit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">this variable limits the maximum head change applicable to the updated
 hydraulic heads in a Picard iteration. If chglimit = 0.0, then adaptive
 damping proceeds without this feature. (default is 0.)</p>
-</div></blockquote>
-<p><strong>acnvg</strong> : int</p>
-<blockquote>
-<div><p>defines the mode of convergence applied to the PCG solver. (default is 0)</p>
-</div></blockquote>
-<p><strong>cnvg_lb</strong> : int</p>
-<blockquote>
-<div><p>is the minimum value that the relative convergence is allowed to take under
-the self-adjusting convergence option. cnvg_lb is used only in convergence
-mode acnvg = 1. (default is 0.001)</p>
-</div></blockquote>
-<p><strong>mcnvg</strong> : float</p>
-<blockquote>
-<div><p>increases the relative PCG convergence criteria by a power equal to MCNVG.
-MCNVG is used only in convergence mode acnvg = 2. (default is 2)</p>
-</div></blockquote>
-<p><strong>rate_c</strong> : float</p>
-<blockquote>
-<div><p>this option results in variable enhancement of epsilon. If 0 &lt; rate_c &lt; 1,
-then enhanced relative convergence is allowed to decrease by increasing
-epsilon(j) = epsilon(j-1) + rate_c epsilon(j-1), where j is the Picard
-iteration number; this change in epsilon occurs so long as the Picard
-iteration is progressing satisfactorily. If rate_c &lt;= 0, then the value
-of epsilon set by mcnvg remains unchanged through the picard iteration.
-It should be emphasized that rate_c must have a value greater than 0
-for the variable enhancement to be effected; otherwise epsilon remains
-constant. rate_c is used only in convergence mode acnvg = 2.
-(default is -1.)</p>
-</div></blockquote>
-<p><strong>ipunit</strong> : int</p>
-<blockquote>
-<div><p>enables progress reporting for the picard iteration. If ipunit &gt;= 0,
+</dd>
+<dt><strong>acnvg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">defines the mode of convergence applied to the PCG solver.
+(default is 0)</p>
+</dd>
+<dt><strong>cnvg_lb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the minimum value that the relative convergence is allowed to take
+under the self-adjusting convergence option. cnvg_lb is used only in
+convergence mode acnvg = 1. (default is 0.001)</p>
+</dd>
+<dt><strong>mcnvg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">increases the relative PCG convergence criteria by a power equal to
+MCNVG. MCNVG is used only in convergence mode acnvg = 2. (default is 2)</p>
+</dd>
+<dt><strong>rate_c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">this option results in variable enhancement of epsilon.
+If 0 &lt; rate_c &lt; 1, then enhanced relative convergence is allowed to
+decrease by increasing epsilon(j) = epsilon(j-1) + rate_c epsilon(j-1),
+where j is the Picarditeration number; this change in epsilon occurs
+so long as the Picard iteration is progressing satisfactorily. If
+rate_c &lt;= 0, then the value of epsilon set by mcnvg remains unchanged
+through the picard iteration. It should be emphasized that rate_c must
+have a value greater than 0 for the variable enhancement to be
+ffected; otherwise epsilon remains constant. rate_c is used only in
+convergence mode acnvg = 2. (default is -1.)</p>
+</dd>
+<dt><strong>ipunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">enables progress reporting for the picard iteration. If ipunit &gt;= 0,
 then a record of progress made by the picard iteration for each time
-step is printed in the MODFLOW Listing file (Harbaugh and others, 2000).
-This record consists of the total number of dry cells at the end of each
-time step as well as the total number of PCG iterations necessary to
-obtain convergence. In addition, if ipunit &gt; 0, then extensive
-diagnostics for each Picard iteration is also written in comma-separated
-format to a file whose unit number corresponds to ipunit; the name for
-this file, along with its unit number and type ‘data’ should be entered
-in the modflow Name file. If ipunit &lt; 0 then printing of all progress
-concerning the Picard iteration is suppressed, as well as information on
-the nature of the convergence of the picard iteration. (default is 0)</p>
-</div></blockquote>
-<p><strong>extension</strong> : list string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘pcgn’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+step is printed in the MODFLOW Listing file
+(Harbaugh and others, 2000). This record consists of the total number
+of dry cells at the end of each time step as well as the total number
+of PCG iterations necessary to obtain convergence. In addition, if
+ipunit &gt; 0, then extensive diagnostics for each Picard iteration is
+also written in comma-separated format to a file whose unit number
+corresponds to ipunit; the name for this file, along with its unit
+number and type ‘data’ should be entered in the modflow Name file.
+If ipunit &lt; 0 then printing of all progress concerning the Picard
+iteration is suppressed, as well as information on the nature of the
+convergence of the picard iteration. (default is 0)</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘pcgn’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the pcgn output names will be created using
 the model name and .pcgni, .pcgnt, and .pcgno extensions. If a single
 string is passed the package will be set to the string and pcgn output
 names will be created using the model name and pcgn output extensions.
-To define the names for all package files (input and output) the length
-of the list of strings should be 4. Default is None.</p>
-</div></blockquote>
+To define the names for all package files (input and output) the
+length of the list of strings should be 4. Default is None.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pcgn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcgn</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -433,32 +412,34 @@ of the list of strings should be 4. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pcgn</strong> : ModflowPcgn object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pcgn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowPcgn object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pcgn</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPcgn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.pcgn&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -473,7 +454,11 @@ constructed using the function
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -485,9 +470,7 @@ constructed using the function
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -496,7 +479,7 @@ constructed using the function
         <a href="mfrch.html" class="btn btn-neutral float-right" title="flopy.modflow.mfrch Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mfpcg.html" class="btn btn-neutral" title="flopy.modflow.mfpcg Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mfpcg.html" class="btn btn-neutral float-left" title="flopy.modflow.mfpcg Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -505,11 +488,13 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -522,36 +507,15 @@ constructed using the function
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

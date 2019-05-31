@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfdrn Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfdrn Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mf6.modflow.mfgwfevt Module" href="mfgwfevt.html"/>
-        <link rel="prev" title="flopy.mf6.modflow.mfgwfdisv Module" href="mfgwfdisv.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.mf6.modflow.mfgwfevt Module" href="mfgwfevt.html" />
+    <link rel="prev" title="flopy.mf6.modflow.mfgwfdisv Module" href="mfgwfdisv.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -113,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -156,6 +151,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -169,7 +165,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -177,9 +173,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -227,25 +224,23 @@
 <span id="flopy-mf6-modflow-mfgwfdrn-module"></span><h1>flopy.mf6.modflow.mfgwfdrn Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfdrn" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwfdrn.ModflowGwfdrn">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfdrn.</code><code class="descname">ModflowGwfdrn</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>auxiliary=None</em>, <em>auxmultname=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>ts_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>mover=None</em>, <em>maxbound=None</em>, <em>stress_period_data=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfdrn.ModflowGwfdrn" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfdrn.</code><code class="descname">ModflowGwfdrn</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>auxiliary=None</em>, <em>auxmultname=None</em>, <em>boundnames=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>timeseries=None</em>, <em>observations=None</em>, <em>mover=None</em>, <em>maxbound=None</em>, <em>stress_period_data=None</em>, <em>filename=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfdrn.ModflowGwfdrn" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwfdrn defines a drn package within a gwf6 model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
-<blockquote>
-<div><p>Model that this package is a part of.  Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModel</span></dt>
+<dd><p class="first last">Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>auxiliary</strong> : [string]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>auxiliary</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
 <li>auxiliary (string) defines an array of one or more auxiliary variable
 names. There is no limit on the number of auxiliary variables that
 can be provided on this line; however, lists of information provided
@@ -258,32 +253,28 @@ package, but they will be available for use by other parts of the
 program. The program will terminate with an error if auxiliary
 variables are specified on more than one line in the options block.</li>
 </ul>
-</div></blockquote>
-<p><strong>auxmultname</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>auxmultname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>auxmultname (string) name of auxiliary variable to be used as
 multiplier of drain conductance.</li>
 </ul>
-</div></blockquote>
-<p><strong>boundnames</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>boundnames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>boundnames (boolean) keyword to indicate that boundary names may be
 provided with the list of drain cells.</li>
 </ul>
-</div></blockquote>
-<p><strong>print_input</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_input</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>print_input (boolean) keyword to indicate that the list of drain
 information will be written to the listing file immediately after it
 is read.</li>
 </ul>
-</div></blockquote>
-<p><strong>print_flows</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_flows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>print_flows (boolean) keyword to indicate that the list of drain flow
 rates will be printed to the listing file for every stress period
 time step in which “BUDGET PRINT” is specified in Output Control. If
@@ -291,53 +282,46 @@ there is no Output Control option and “PRINT_FLOWS” is specified,
 then flow rates are printed for the last time step of each stress
 period.</li>
 </ul>
-</div></blockquote>
-<p><strong>save_flows</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>save_flows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>save_flows (boolean) keyword to indicate that drain flow terms will
 be written to the file specified with “BUDGET FILEOUT” in Output
 Control.</li>
 </ul>
-</div></blockquote>
-<p><strong>ts_filerecord</strong> : [ts6_filename]</p>
-<blockquote>
-<div><ul class="simple">
-<li>ts6_filename (string) defines a time-series file defining time series
-that can be used to assign time-varying values. See the “Time-
-Variable Input” section for instructions on using the time-series
-capability.</li>
+</dd>
+<dt><strong>timeseries</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{varname:data} or timeseries data</span></dt>
+<dd><ul class="first last simple">
+<li>Contains data for the ts package. Data can be stored in a dictionary
+containing data for the ts package with variable names as keys and
+package data as values. Data just for the timeseries variable is also
+acceptable. See ts package documentation for more information.</li>
 </ul>
-</div></blockquote>
-<p><strong>obs_filerecord</strong> : [obs6_filename]</p>
-<blockquote>
-<div><ul class="simple">
-<li>obs6_filename (string) name of input file to define observations for
-the Drain package. See the “Observation utility” section for
-instructions for preparing observation input files. Table
-reftable:obstype lists observation type(s) supported by the Drain
-package.</li>
+</dd>
+<dt><strong>observations</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{varname:data} or continuous data</span></dt>
+<dd><ul class="first last simple">
+<li>Contains data for the obs package. Data can be stored in a dictionary
+containing data for the obs package with variable names as keys and
+package data as values. Data just for the observations variable is
+also acceptable. See obs package documentation for more information.</li>
 </ul>
-</div></blockquote>
-<p><strong>mover</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>mover</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>mover (boolean) keyword to indicate that this instance of the Drain
 Package can be used with the Water Mover (MVR) Package. When the
 MOVER option is specified, additional memory is allocated within the
 package to store the available, provided, and received water.</li>
 </ul>
-</div></blockquote>
-<p><strong>maxbound</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>maxbound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>maxbound (integer) integer value specifying the maximum number of
 drains cells that will be specified for use during any stress period.</li>
 </ul>
-</div></blockquote>
-<p><strong>stress_period_data</strong> : [cellid, elev, cond, aux, boundname]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>stress_period_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[cellid, elev, cond, aux, boundname]</span></dt>
+<dd><ul class="first last simple">
 <li>cellid ((integer, …)) is the cell identifier, and depends on the
 type of grid that is used for the simulation. For a structured grid
 that uses the DIS input file, CELLID is the layer, row, and column.
@@ -366,21 +350,19 @@ character variable that can contain as many as 40 characters. If
 BOUNDNAME contains spaces in it, then the entire name must be
 enclosed within single quotes.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -393,13 +375,68 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfgwfdrn.ModflowGwfdrn.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfdrn.ModflowGwfdrn.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
+package input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>package: flopy.pakbase.Package instance supplied for plotting</strong></dt>
+<dd></dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -412,9 +449,7 @@ a mfgwflak package parent_file.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -423,7 +458,7 @@ a mfgwflak package parent_file.</p>
         <a href="mfgwfevt.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfgwfevt Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mfgwfdisv.html" class="btn btn-neutral" title="flopy.mf6.modflow.mfgwfdisv Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mfgwfdisv.html" class="btn btn-neutral float-left" title="flopy.mf6.modflow.mfgwfdisv Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -432,11 +467,13 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -449,36 +486,15 @@ a mfgwflak package parent_file.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

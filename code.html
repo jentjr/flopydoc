@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Flopy Code &mdash; flopy 3.2.9 documentation</title>
+  <title>Flopy Code &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,42 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="next" title="mbase Class" href="mbase.html"/>
-        <link rel="prev" title="Ipython Notebooks" href="notebooks.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mbase Class" href="mbase.html" />
+    <link rel="prev" title="Ipython Notebooks" href="notebooks.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -66,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -122,6 +116,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdrt.html">flopy.modflow.mfdrt Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
@@ -165,6 +160,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -200,7 +196,17 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#modflow-lgr-packages">MODFLOW-LGR Packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mflgr.html">flopy.modflowlgr.mflgr Module</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#modpath-packages">MODPATH Packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mp7.html">flopy.modpath.mp7 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7bas.html">flopy.modpath.mp7bas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7particledata.html">flopy.modpath.mp7particledata Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7particlegroup.html">flopy.modpath.mp7particlegroup Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7sim.html">flopy.modpath.mp7sim Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp.html">flopy.modpath.mp Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mpbas.html">flopy.modpath.mpbas Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mpsim.html">flopy.modpath.mpsim Module</a></li>
 </ul>
@@ -236,8 +242,6 @@
 <li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
@@ -247,6 +251,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -269,6 +274,7 @@
 <li class="toctree-l3"><a class="reference internal" href="metadata.html">flopy.export.metadata Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="netcdf.html">flopy.export.netcdf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triangle.html">flopy.utils.triangle Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html">flopy.export.utils Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vtk.html">flopy.export.vtk Module</a></li>
 </ul>
@@ -277,6 +283,14 @@
 <li class="toctree-l3"><a class="reference internal" href="params.html">flopy.pest.params Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="templatewriter.html">flopy.pest.templatewriter Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tplarray.html">flopy.pest.tplarray Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#discretization-utilities">Discretization Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grid.html">flopy.discretization.grid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structuredgrid.html">flopy.discretization.structuredgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertexgrid.html">flopy.discretization.vertexgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unstructuredgrid.html">flopy.discretization.unstructuredgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modeltime.html">flopy.discretization.modeltime Module</a></li>
 </ul>
 </li>
 </ul>
@@ -292,7 +306,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -300,9 +314,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -379,6 +394,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mfdrt.html">flopy.modflow.mfdrt Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
@@ -429,10 +445,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -469,11 +484,26 @@
 </ul>
 </div>
 </div>
+<div class="section" id="modflow-lgr-packages">
+<h2>MODFLOW-LGR Packages<a class="headerlink" href="#modflow-lgr-packages" title="Permalink to this headline">¶</a></h2>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mflgr.html">flopy.modflowlgr.mflgr Module</a></li>
+</ul>
+</div>
+</div>
 <div class="section" id="modpath-packages">
 <h2>MODPATH Packages<a class="headerlink" href="#modpath-packages" title="Permalink to this headline">¶</a></h2>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="mp7.html">flopy.modpath.mp7 Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp7bas.html">flopy.modpath.mp7bas Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp7particledata.html">flopy.modpath.mp7particledata Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp7particlegroup.html">flopy.modpath.mp7particlegroup Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp7sim.html">flopy.modpath.mp7sim Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp.html">flopy.modpath.mp Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mpbas.html">flopy.modpath.mpbas Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mpsim.html">flopy.modpath.mpsim Module</a></li>
 </ul>
@@ -529,8 +559,6 @@
 <li class="toctree-l1"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
@@ -540,13 +568,12 @@
 <li class="toctree-l1"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swroutputfile.html">flopy.utils.swroutputfile Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">flopy.utils.reference Module</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">flopy.utils.reference Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sfroutputfile.html">flopy.utils.sfroutputfile Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="util_array.html">flopy.utils.util_array Module</a><ul class="simple">
 </ul>
@@ -576,6 +603,7 @@
 <li class="toctree-l1"><a class="reference internal" href="metadata.html">flopy.export.metadata Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="netcdf.html">flopy.export.netcdf Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triangle.html">flopy.utils.triangle Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">flopy.export.utils Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vtk.html">flopy.export.vtk Module</a></li>
 </ul>
@@ -592,13 +620,24 @@
 </ul>
 </div>
 </div>
+<div class="section" id="discretization-utilities">
+<h2>Discretization Utilities<a class="headerlink" href="#discretization-utilities" title="Permalink to this headline">¶</a></h2>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="grid.html">flopy.discretization.grid Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structuredgrid.html">flopy.discretization.structuredgrid Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vertexgrid.html">flopy.discretization.vertexgrid Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unstructuredgrid.html">flopy.discretization.unstructuredgrid Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeltime.html">flopy.discretization.modeltime Module</a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -607,7 +646,7 @@
         <a href="mbase.html" class="btn btn-neutral float-right" title="mbase Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="notebooks.html" class="btn btn-neutral" title="Ipython Notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="notebooks.html" class="btn btn-neutral float-left" title="Ipython Notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -616,11 +655,13 @@
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -633,36 +674,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

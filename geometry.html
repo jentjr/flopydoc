@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.geometry Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.geometry Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.utils.gridgen Module" href="gridgen.html"/>
-        <link rel="prev" title="flopy.utils.formattedfile Module" href="formattedfile.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.utils.gridgen Module" href="gridgen.html" />
+    <link rel="prev" title="flopy.utils.formattedfile Module" href="formattedfile.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -117,8 +111,6 @@
 <li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.geometry Module</a></li>
@@ -128,6 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -143,6 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +150,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -164,9 +158,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -221,16 +216,18 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verts</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>polygon vertices</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>verts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">polygon vertices</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>area</strong> : float</p>
-<blockquote class="last">
-<div><p>area of polygon centroid</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">area of polygon centroid</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -245,20 +242,58 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verts</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>polygon vertices</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>verts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">polygon vertices</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>centroid</strong> : tuple</p>
-<blockquote class="last">
-<div><p>(x, y) of polygon centroid</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>centroid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">(x, y) of polygon centroid</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.geometry.is_clockwise">
+<code class="descclassname">flopy.utils.geometry.</code><code class="descname">is_clockwise</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.geometry.is_clockwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if a ring is defined clockwise</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy ndarray</span></dt>
+<dd><p class="first last">The x-coordinates of the ring</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy ndarray</span></dt>
+<dd><p class="first last">The y-coordinate of the ring</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>clockwise</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True when the ring is defined clockwise, False otherwise</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.utils.geometry.rotate">
+<code class="descclassname">flopy.utils.geometry.</code><code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>xoff</em>, <em>yoff</em>, <em>angrot_radians</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.geometry.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values calculate the rotation about an
+arbitrary origin and then return the rotated coordinates.</p>
 </dd></dl>
 
 <dl class="function">
@@ -269,16 +304,24 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pyshp_shpobj</strong> : shapefile._Shape instance</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>pyshp_shpobj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">shapefile._Shape instance</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>shape</strong> : flopy.utils.geometry Polygon, Linestring, or Point</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.utils.geometry Polygon, Linestring, or Point</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
 <p>Currently only regular Polygons, LineStrings and Points (pyshp types 5, 3, 1) supported.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">shapefile</span> <span class="k">as</span> <span class="nn">sf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">shapefile</span> <span class="k">as</span> <span class="nn">sf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">flopy.utils.geometry</span> <span class="k">import</span> <span class="n">shape</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sfobj</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="s1">&#39;shapefile.shp&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flopy_geom</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sfobj</span><span class="o">.</span><span class="n">iterShapes</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
@@ -286,13 +329,18 @@
 </div>
 </dd></dl>
 
+<dl class="function">
+<dt id="flopy.utils.geometry.transform">
+<code class="descclassname">flopy.utils.geometry.</code><code class="descname">transform</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>xoff</em>, <em>yoff</em>, <em>angrot_radians</em>, <em>length_multiplier=1.0</em>, <em>inverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.geometry.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values calculate the translation about an
+arbitrary origin and then return the rotated coordinates.</p>
+</dd></dl>
+
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -301,7 +349,7 @@
         <a href="gridgen.html" class="btn btn-neutral float-right" title="flopy.utils.gridgen Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="formattedfile.html" class="btn btn-neutral" title="flopy.utils.formattedfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="formattedfile.html" class="btn btn-neutral float-left" title="flopy.utils.formattedfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -310,11 +358,13 @@
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -327,36 +377,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.export.utils Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.export.utils Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.export.vtk Module" href="vtk.html"/>
-        <link rel="prev" title="flopy.export.netcdf Module" href="netcdf.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.export.vtk Module" href="vtk.html" />
+    <link rel="prev" title="flopy.utils.triangle Module" href="triangle.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -118,11 +112,13 @@
 <li class="toctree-l3"><a class="reference internal" href="metadata.html">flopy.export.metadata Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="netcdf.html">flopy.export.netcdf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triangle.html">flopy.utils.triangle Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.export.utils Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vtk.html">flopy.export.vtk Module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -136,7 +132,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -144,9 +140,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -193,26 +190,213 @@
   <div class="section" id="module-flopy.export.utils">
 <span id="flopy-export-utils-module"></span><h1>flopy.export.utils Module<a class="headerlink" href="#module-flopy.export.utils" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="flopy.export.utils.ensemble_helper">
-<code class="descclassname">flopy.export.utils.</code><code class="descname">ensemble_helper</code><span class="sig-paren">(</span><em>inputs_filename</em>, <em>outputs_filename</em>, <em>models</em>, <em>add_reals=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.ensemble_helper" title="Permalink to this definition">¶</a></dt>
-<dd><p>helper to export an ensemble of model instances.  Assumes
-all models have same dis and sr, only difference is properties and
-boundary conditions.  Assumes model.nam.split(‘_’)[-1] is the
-realization suffix to use in the netcdf variable names</p>
+<dt id="flopy.export.utils.array2d_export">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">array2d_export</code><span class="sig-paren">(</span><em>f</em>, <em>u2d</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.array2d_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>export helper for Util2d instances</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type (NetCdf only for now)</span></dt>
+<dd><p class="first last">u2d : Util2d instance
+min_valid : minimum valid value
+max_valid : maximum valid value</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
-<dt id="flopy.export.utils.mflist_helper">
-<code class="descclassname">flopy.export.utils.</code><code class="descname">mflist_helper</code><span class="sig-paren">(</span><em>f</em>, <em>mfl</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.mflist_helper" title="Permalink to this definition">¶</a></dt>
+<dt id="flopy.export.utils.array3d_export">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">array3d_export</code><span class="sig-paren">(</span><em>f</em>, <em>u3d</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.array3d_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>export helper for Transient2d instances</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type (NetCdf only for now)</span></dt>
+<dd><p class="first last">u3d : Util3d instance
+min_valid : minimum valid value
+max_valid : maximum valid value</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.utils.contour_array">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">contour_array</code><span class="sig-paren">(</span><em>modelgrid</em>, <em>ax</em>, <em>a</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.contour_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a QuadMesh plot of the specified array using pcolormesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.axes.Axes</span></dt>
+<dd><p class="first last">ax to add the contours</p>
+</dd>
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray</span></dt>
+<dd><p class="first last">array to contour</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>contour_set</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ContourSet</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.utils.ensemble_helper">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">ensemble_helper</code><span class="sig-paren">(</span><em>inputs_filename</em>, <em>outputs_filename</em>, <em>models</em>, <em>add_reals=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.ensemble_helper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper to export an ensemble of model instances.  Assumes
+all models have same dis and reference information, only difference is
+properties and boundary conditions.  Assumes model.nam.split(‘_’)[-1] is
+the realization suffix to use in the netcdf variable names</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.utils.export_array">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">export_array</code><span class="sig-paren">(</span><em>modelgrid</em>, <em>filename</em>, <em>a</em>, <em>nodata=-9999</em>, <em>fieldname='value'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.export_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a numpy array to Arc Ascii grid or shapefile with the model
+reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Path of output file. Export format is determined by
+file extention.
+‘.asc’  Arc Ascii grid
+‘.tif’  GeoTIFF (requries rasterio package)
+‘.shp’  Shapefile</p>
+</dd>
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D numpy.ndarray</span></dt>
+<dd><p class="first last">Array to export</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar</span></dt>
+<dd><p class="first last">Value to assign to np.nan entries (default -9999)</p>
+</dd>
+<dt><strong>fieldname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Attribute field name for array values (shapefile export only).
+(default ‘values’)</p>
+</dd>
+<dt><strong>kwargs:</strong></dt>
+<dd><p class="first last">keyword arguments to np.savetxt (ascii)
+rasterio.open (GeoTIFF)
+or flopy.export.shapefile_utils.write_grid_shapefile2</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Rotated grids will be either be unrotated prior to export,
+using scipy.ndimage.rotate (Arc Ascii format) or rotation will be
+included in their transform property (GeoTiff format). In either case
+the pixels will be displayed in the (unrotated) projected geographic
+coordinate system, so the pixels will no longer align exactly with the
+model grid (as displayed from a shapefile, for example). A key difference
+between Arc Ascii and GeoTiff (besides disk usage) is that the
+unrotated Arc Ascii will have a different grid size, whereas the GeoTiff
+will have the same number of rows and pixels as the original.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.utils.export_array_contours">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">export_array_contours</code><span class="sig-paren">(</span><em>modelgrid</em>, <em>filename</em>, <em>a</em>, <em>fieldname='level'</em>, <em>interval=None</em>, <em>levels=None</em>, <em>maxlevels=1000</em>, <em>epsg=None</em>, <em>prj=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.export_array_contours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contour an array using matplotlib; write shapefile of contours.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Path of output file with ‘.shp’ extention.</p>
+</dd>
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D numpy array</span></dt>
+<dd><p class="first last">Array to contour</p>
+</dd>
+<dt><strong>epsg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">EPSG code. See <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a> or spatialreference.org</p>
+</dd>
+<dt><strong>prj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Existing projection file to be used with new shapefile.</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">keyword arguments to flopy.export.shapefile_utils.recarray2shp</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.utils.export_contours">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">export_contours</code><span class="sig-paren">(</span><em>modelgrid</em>, <em>filename</em>, <em>contours</em>, <em>fieldname='level'</em>, <em>epsg=None</em>, <em>prj=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.export_contours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert matplotlib contour plot object to shapefile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">path of output shapefile</p>
+</dd>
+<dt><strong>contours</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.contour.QuadContourSet or list of them</span></dt>
+<dd><p class="first last">(object returned by matplotlib.pyplot.contour)</p>
+</dd>
+<dt><strong>epsg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">EPSG code. See <a class="reference external" href="https://www.epsg-registry.org/">https://www.epsg-registry.org/</a> or spatialreference.org</p>
+</dd>
+<dt><strong>prj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Existing projection file to be used with new shapefile.</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">key-word arguments to flopy.export.shapefile_utils.recarray2shp</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>df</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dataframe of shapefile contents</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flopy.export.utils.mflist_export">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">mflist_export</code><span class="sig-paren">(</span><em>f</em>, <em>mfl</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.mflist_export" title="Permalink to this definition">¶</a></dt>
 <dd><p>export helper for MfList instances</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>mfl : MfList instance</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type</span></dt>
+<dd><p class="first last">(NetCdf only for now)
+mfl : MfList instance</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -222,34 +406,28 @@ realization suffix to use in the netcdf variable names</p>
 <dl class="function">
 <dt id="flopy.export.utils.output_helper">
 <code class="descclassname">flopy.export.utils.</code><code class="descname">output_helper</code><span class="sig-paren">(</span><em>f</em>, <em>ml</em>, <em>oudic</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.output_helper" title="Permalink to this definition">¶</a></dt>
-<dd><p>export model outputs using the model spatial reference
-info.
-Parameters
-———-</p>
-<blockquote>
-<div>f : filename for output - must have .shp or .nc extension
-ml : BaseModel derived type
-oudic : dict {output_filename,flopy datafile/cellbudgetfile instance}</div></blockquote>
-<blockquote>
-<div>None</div></blockquote>
-<blockquote>
-<div>casts down double precision to single precision for netCDF files</div></blockquote>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.export.utils.transient2d_helper">
-<code class="descclassname">flopy.export.utils.</code><code class="descname">transient2d_helper</code><span class="sig-paren">(</span><em>f</em>, <em>t2d</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.transient2d_helper" title="Permalink to this definition">¶</a></dt>
-<dd><p>export helper for Transient2d instances</p>
+<dd><p>Export model outputs using the model spatial reference info.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>t2d : Transient2d instance
-min_valid : minimum valid value
-max_valid : maximum valid value</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename for output - must have .shp or .nc extension</span></dt>
+<dd><p class="first last">ml : BaseModel derived type
+oudic : dict {output_filename,flopy datafile/cellbudgetfile instance}</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+<dt><strong>Note:</strong></dt>
+<dd></dd>
+<dt><strong>—-</strong></dt>
+<dd><p class="first last">casts down double precision to single precision for netCDF files</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -257,39 +435,20 @@ max_valid : maximum valid value</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="flopy.export.utils.util2d_helper">
-<code class="descclassname">flopy.export.utils.</code><code class="descname">util2d_helper</code><span class="sig-paren">(</span><em>f</em>, <em>u2d</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.util2d_helper" title="Permalink to this definition">¶</a></dt>
-<dd><p>export helper for Util2d instances</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>u2d : Util2d instance
-min_valid : minimum valid value
-max_valid : maximum valid value</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="flopy.export.utils.util3d_helper">
-<code class="descclassname">flopy.export.utils.</code><code class="descname">util3d_helper</code><span class="sig-paren">(</span><em>f</em>, <em>u3d</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.util3d_helper" title="Permalink to this definition">¶</a></dt>
+<dt id="flopy.export.utils.transient2d_export">
+<code class="descclassname">flopy.export.utils.</code><code class="descname">transient2d_export</code><span class="sig-paren">(</span><em>f</em>, <em>t2d</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.utils.transient2d_export" title="Permalink to this definition">¶</a></dt>
 <dd><p>export helper for Transient2d instances</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : string (filename) or existing export instance type (NetCdf only for now)</p>
-<blockquote class="last">
-<div><p>u3d : Util3d instance
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string (filename) or existing export instance type (NetCdf only for now)</span></dt>
+<dd><p class="first last">t2d : Transient2d instance
 min_valid : minimum valid value
 max_valid : maximum valid value</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -300,9 +459,7 @@ max_valid : maximum valid value</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -311,7 +468,7 @@ max_valid : maximum valid value</p>
         <a href="vtk.html" class="btn btn-neutral float-right" title="flopy.export.vtk Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="netcdf.html" class="btn btn-neutral" title="flopy.export.netcdf Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="triangle.html" class="btn btn-neutral float-left" title="flopy.utils.triangle Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -320,11 +477,13 @@ max_valid : maximum valid value</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -337,36 +496,15 @@ max_valid : maximum valid value</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

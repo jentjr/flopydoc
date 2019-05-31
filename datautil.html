@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.utils.datautil Module &mdash; flopy 3.2.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.12
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Flopy Code</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>flopy.utils.datautil Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/datautil.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.utils.datautil">
+<span id="flopy-utils-datautil-module"></span><h1>flopy.utils.datautil Module<a class="headerlink" href="#module-flopy.utils.datautil" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.utils.datautil.MultiList">
+<em class="property">class </em><code class="descclassname">flopy.utils.datautil.</code><code class="descname">MultiList</code><span class="sig-paren">(</span><em>mdlist=None</em>, <em>shape=None</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.datautil.MultiList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for storing objects in an n-dimensional list which can be iterated
+through as a single list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>mdlist</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">multi-dimensional list to initialize the multi-list.  either mdlist
+or both shape and callback must be specified</p>
+</dd>
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">shape of the multi-list</p>
+</dd>
+<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">method</span></dt>
+<dd><p class="first last">callback method that takes a location in the multi-list (tuple) and
+returns an object to be stored at that location in the multi-list</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>increment_dimension</strong></td>
+<td>((dimension, callback)) increments the size of one of the two dimensions of the multi-list</td>
+</tr>
+<tr class="row-even"><td><strong>build_list</strong></td>
+<td>((callback)) builds a multi-list of shape self.list_shape, constructing objects for the list using the supplied callback method</td>
+</tr>
+<tr class="row-odd"><td><strong>first_item</strong></td>
+<td>(()) gets the first entry in the multi-list</td>
+</tr>
+<tr class="row-even"><td><strong>get_total_size</strong></td>
+<td>(()) returns the total number of entries in the multi-list</td>
+</tr>
+<tr class="row-odd"><td><strong>in_shape</strong></td>
+<td>((indexes)) returns whether a tuple of indexes are valid indexes for the shape of the multi-list</td>
+</tr>
+<tr class="row-even"><td><strong>inc_shape_idx</strong></td>
+<td>((indexes)) given a tuple of indexes pointing to an entry in the multi-list, returns a tuple of indexes pointing to the next entry in the multi-list</td>
+</tr>
+<tr class="row-odd"><td><strong>first_index</strong></td>
+<td>(()) returns a tuple of indexes pointing to the first entry in the multi-list</td>
+</tr>
+<tr class="row-even"><td><strong>indexes</strong></td>
+<td>((start_indexes=None, end_indexes=None)) returns an iterator that iterates from the location in the multi-list defined by start_indexes to the location in the multi-list defined by end_indexes</td>
+</tr>
+<tr class="row-odd"><td><strong>elements</strong></td>
+<td>(()) returns an iterator that iterates over each object stored in the multi-list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.datautil.PyListUtil">
+<em class="property">class </em><code class="descclassname">flopy.utils.datautil.</code><code class="descname">PyListUtil</code><span class="sig-paren">(</span><em>path=None</em>, <em>max_error=0.01</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.datautil.PyListUtil" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class contains miscellaneous methods to work with and compare python lists</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">file path to read/write to</p>
+</dd>
+<dt><strong>max_error</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">maximum acceptable error when doing a compare of floating point numbers</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>is_empty_list</strong></td>
+<td>((current_list) determines if an n-dimensional list is empty</td>
+</tr>
+<tr class="row-even"><td><strong>con_convert</strong></td>
+<td>((data) operation) : boolean returns true if data can be converted into data_type</td>
+</tr>
+<tr class="row-odd"><td><strong>max_multi_dim_list_size</strong></td>
+<td>((current_list) determines the max number of items in a multi-dimensional list ‘current_list’</td>
+</tr>
+<tr class="row-even"><td><strong>first_item</strong></td>
+<td>((current_list) returns the first item in the list ‘current_list’</td>
+</tr>
+<tr class="row-odd"><td><strong>next_item</strong></td>
+<td>((current_list) returns the next item in the list ‘current_list’</td>
+</tr>
+<tr class="row-even"><td><strong>array_comp</strong></td>
+<td>((first_array) compares two lists, returns true if they are identical (with max_error)</td>
+</tr>
+<tr class="row-odd"><td><strong>spilt_data_line</strong></td>
+<td>((line) splits a string apart (using split) and then cleans up the results dealing with various MODFLOW input file releated delimiters.  returns the delimiter type used.</td>
+</tr>
+<tr class="row-even"><td><strong>clean_numeric</strong></td>
+<td>((text) returns a cleaned up version of ‘text’ with only numeric characters</td>
+</tr>
+<tr class="row-odd"><td><strong>save_array_diff</strong></td>
+<td>((first_array) first_array_name : string, second_array_name : string) saves lists ‘first_array’ and ‘second_array’ to files first_array_name and second_array_name and then saves the difference of the two arrays to ‘debug_array_diff.txt’</td>
+</tr>
+<tr class="row-even"><td><strong>save_array(filename</strong></td>
+<td>(string, multi_array) saves ‘multi_array’ to the file ‘filename’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

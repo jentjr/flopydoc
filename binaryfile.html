@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.binaryfile Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.utils.binaryhydmodfile Module" href="binaryhydmodfile.html"/>
-        <link rel="prev" title="flopy.utils.datafile Module" href="datafile.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.utils.flopy_io Module" href="flopy_io.html" />
+    <link rel="prev" title="flopy.utils.datafile Module" href="datafile.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -117,8 +111,6 @@
 <li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
@@ -128,6 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -143,6 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +150,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -164,9 +158,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -212,10 +207,11 @@
             
   <div class="section" id="module-flopy.utils.binaryfile">
 <span id="flopy-utils-binaryfile-module"></span><h1>flopy.utils.binaryfile Module<a class="headerlink" href="#module-flopy.utils.binaryfile" title="Permalink to this headline">¶</a></h1>
-<p>Module to read MODFLOW binary output files.  The module contains three
+<p>Module to read MODFLOW binary output files.  The module contains four
 important classes that can be accessed by the user.</p>
 <ul class="simple">
 <li>HeadFile (Binary head file.  Can also be used for drawdown)</li>
+<li>HeadUFile (Binary MODFLOW-USG unstructured head file)</li>
 <li>UcnFile (Binary concentration file from MT3DMS)</li>
 <li>CellBudgetFile (Binary cell-by-cell flow file)</li>
 </ul>
@@ -227,22 +223,20 @@ important classes that can be accessed by the user.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the concentration file</p>
-</div></blockquote>
-<p><strong>text</strong> : string</p>
-<blockquote>
-<div><p>Name of the text string in the head file.  Default is ‘head’</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘auto’, ‘single’ or ‘double’.  Default is ‘auto’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the concentration file</p>
+</dd>
+<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the text string in the head file.  Default is ‘head’</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘auto’, ‘single’ or ‘double’.  Default is ‘auto’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -257,13 +251,13 @@ headers, which are record arrays of the modflow header information
 and long integers, which are pointers to first bytes of data for
 the corresponding data array.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;model.hds&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ddnobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;model.ddn&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;drawdown&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ddnobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;model.ddn&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;drawdown&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ddnobj</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">ddnobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="mf">100.</span><span class="p">)</span>
 </pre></div>
@@ -282,23 +276,24 @@ the corresponding data array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mflay</strong> : integer</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (Default is None.)</p>
-</div></blockquote>
-<p><strong>nodata</strong> : float</p>
-<blockquote>
-<div><p>The nodata value in the data array.  All array values that have the
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The nodata value in the data array.  All array values that have the
 nodata value will be assigned np.nan.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nlay, nrow, ncol) if mflay is None or it
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (ntimes, nlay, nrow, ncol) if mflay is None or it
 has size (ntimes, nrow, ncol) if mlay is specified.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -313,31 +308,30 @@ has size (ntimes, nrow, ncol) if mlay is specified.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>mflay</strong> : integer</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (Default is None.)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nlay, nrow, ncol) if mflay is None or it has size
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nlay, nrow, ncol) if mflay is None or it has size
 (nrow, ncol) if mlay is specified.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -355,16 +349,18 @@ Examples
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>header</strong> : datafile.Header</p>
-<blockquote>
-<div><p>header object</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>header</strong> <span class="classifier-delimiter">:</span> <span class="classifier">datafile.Header</span></dt>
+<dd><p class="first last">header object</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>databytes</strong> : int</p>
-<blockquote class="last">
-<div><p>size of the data array, in bytes, following the header</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>databytes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">size of the data array, in bytes, following the header</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -379,11 +375,12 @@ Examples
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in binary file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in binary file.  kstp and
 kper values are presently zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -398,10 +395,11 @@ kper values are presently zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -416,19 +414,21 @@ kper values are presently zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
-<blockquote>
-<div><p>idx can be (layer, row, column) or it can be a list in the form
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints, or a list of a tuple of ints</span></dt>
+<dd><p class="first last">idx can be (layer, row, column) or it can be a list in the form
 [(layer, row, column), (layer, row, column), …].  The layer,
 row, and column values must be zero based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, ncells + 1).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (ntimes, ncells + 1).  The first column in the
 data array will contain time (totim).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -454,35 +454,30 @@ in LayerFile instance</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
-<blockquote>
-<div><p>List of matplotlib.pyplot.axis that will be used to plot 
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
+<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>mflay</strong> : int</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
-</div></blockquote>
-<p><strong>filename_base</strong> : str</p>
-<blockquote>
-<div><p>Base file name that will be used to automatically generate file
+</dd>
+<dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
@@ -512,16 +507,20 @@ on the figure. (default is False)</p>
 if filename_base is not None. (default is ‘png’)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;test.hds&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -540,37 +539,37 @@ if filename_base is not None. (default is ‘png’)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>mflay</strong> : integer</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then layer 1
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then layer 1
 will be written</p>
-</div></blockquote>
-<p><strong>attrib_name</strong> : str</p>
-<blockquote>
-<div><p>Base name of attribute columns. (default is ‘lf_data’)</p>
-</div></blockquote>
+</dd>
+<dt><strong>attrib_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base name of attribute columns. (default is ‘lf_data’)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;test.hds&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_heads_sp6.shp&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -588,22 +587,20 @@ will be written</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the concentration file</p>
-</div></blockquote>
-<p><strong>text</strong> : string</p>
-<blockquote>
-<div><p>Name of the text string in the ucn file.  Default is ‘CONCENTRATION’</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘auto’, ‘single’ or ‘double’.  Default is ‘auto’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the concentration file</p>
+</dd>
+<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the text string in the ucn file.  Default is ‘CONCENTRATION’</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘auto’, ‘single’ or ‘double’.  Default is ‘auto’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -618,7 +615,7 @@ headers, which are record arrays of the modflow header information
 and long integers, which are pointers to first bytes of data for
 the corresponding data array.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ucnobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">UcnFile</span><span class="p">(</span><span class="s1">&#39;MT3D001.UCN&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ucnobj</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">ucnobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
@@ -638,23 +635,24 @@ the corresponding data array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mflay</strong> : integer</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (Default is None.)</p>
-</div></blockquote>
-<p><strong>nodata</strong> : float</p>
-<blockquote>
-<div><p>The nodata value in the data array.  All array values that have the
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The nodata value in the data array.  All array values that have the
 nodata value will be assigned np.nan.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, nlay, nrow, ncol) if mflay is None or it
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (ntimes, nlay, nrow, ncol) if mflay is None or it
 has size (ntimes, nrow, ncol) if mlay is specified.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -669,31 +667,30 @@ has size (ntimes, nrow, ncol) if mlay is specified.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>mflay</strong> : integer</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (Default is None.)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (nlay, nrow, ncol) if mflay is None or it has size
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nlay, nrow, ncol) if mflay is None or it has size
 (nrow, ncol) if mlay is specified.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -711,16 +708,18 @@ Examples
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>header</strong> : datafile.Header</p>
-<blockquote>
-<div><p>header object</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>header</strong> <span class="classifier-delimiter">:</span> <span class="classifier">datafile.Header</span></dt>
+<dd><p class="first last">header object</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>databytes</strong> : int</p>
-<blockquote class="last">
-<div><p>size of the data array, in bytes, following the header</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>databytes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">size of the data array, in bytes, following the header</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -735,11 +734,12 @@ Examples
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in binary file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in binary file.  kstp and
 kper values are presently zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -754,10 +754,11 @@ kper values are presently zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -772,19 +773,21 @@ kper values are presently zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
-<blockquote>
-<div><p>idx can be (layer, row, column) or it can be a list in the form
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints, or a list of a tuple of ints</span></dt>
+<dd><p class="first last">idx can be (layer, row, column) or it can be a list in the form
 [(layer, row, column), (layer, row, column), …].  The layer,
 row, and column values must be zero based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, ncells + 1).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (ntimes, ncells + 1).  The first column in the
 data array will contain time (totim).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -810,35 +813,30 @@ in LayerFile instance</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>axes</strong> : list of matplotlib.pyplot.axis</p>
-<blockquote>
-<div><p>List of matplotlib.pyplot.axis that will be used to plot 
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
+<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
 data for each layer. If axes=None axes will be generated.
 (default is None)</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>mflay</strong> : int</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then all
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
 all layers will be included. (default is None)</p>
-</div></blockquote>
-<p><strong>filename_base</strong> : str</p>
-<blockquote>
-<div><p>Base file name that will be used to automatically generate file
+</dd>
+<dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
 files if file_name_base is not None. (default is None)</p>
-</div></blockquote>
-<p><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
 plot will be plotted. (default is True)</p>
@@ -868,16 +866,20 @@ on the figure. (default is False)</p>
 if filename_base is not None. (default is ‘png’)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;test.hds&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -896,37 +898,37 @@ if filename_base is not None. (default is ‘png’)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 These are zero-based kstp and kper values.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>mflay</strong> : integer</p>
-<blockquote>
-<div><p>MODFLOW zero-based layer number to return.  If None, then layer 1
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then layer 1
 will be written</p>
-</div></blockquote>
-<p><strong>attrib_name</strong> : str</p>
-<blockquote>
-<div><p>Base name of attribute columns. (default is ‘lf_data’)</p>
-</div></blockquote>
+</dd>
+<dt><strong>attrib_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base name of attribute columns. (default is ‘lf_data’)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;test.hds&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_heads_sp6.shp&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -944,24 +946,23 @@ will be written</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the cell budget file</p>
-</div></blockquote>
-<p><strong>precision</strong> : string</p>
-<blockquote>
-<div><p>‘single’ or ‘double’.  Default is ‘single’.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the cell budget file</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘single’ or ‘double’.  Default is ‘single’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cbb</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">CellBudgetFile</span><span class="p">(</span><span class="s1">&#39;mymodel.cbb&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cbb</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rec</span> <span class="o">=</span> <span class="n">cbb</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;RIVER LEAKAGE&#39;</span><span class="p">)</span>
@@ -984,20 +985,21 @@ full3D keyword for get_data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : dictionary</p>
-<blockquote>
-<div><p>Dictionary with node keywords and flows (q) items.</p>
-</div></blockquote>
-<p><strong>nlay, nrow, ncol</strong> : int</p>
-<blockquote>
-<div><p>Number of layers, rows, and columns of the model grid.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Dictionary with node keywords and flows (q) items.</p>
+</dd>
+<dt><strong>nlay, nrow, ncol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of layers, rows, and columns of the model grid.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy masked array</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy masked array</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1007,45 +1009,43 @@ full3D keyword for get_data.</p>
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_data">
 <code class="descname">get_data</code><span class="sig-paren">(</span><em>idx=None</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>text=None</em>, <em>paknam=None</em>, <em>full3D=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>get data from the budget file.</p>
+<dd><p>Get data from the binary budget file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 The kstp and kper values are zero based.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>text</strong> : str</p>
-<blockquote>
-<div><p>The text identifier for the record.  Examples include
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The text identifier for the record.  Examples include
 ‘RIVER LEAKAGE’, ‘STORAGE’, ‘FLOW RIGHT FACE’, etc.</p>
-</div></blockquote>
-<p><strong>full3D</strong> : boolean</p>
-<blockquote>
-<div><p>If true, then return the record as a three dimensional numpy
-array, even for those list-style records writen as part of a
+</dd>
+<dt><strong>full3D</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If true, then return the record as a three dimensional numpy
+array, even for those list-style records written as part of a
 ‘COMPACT BUDGET’ MODFLOW budget file.  (Default is False.)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>recordlist</strong> : list of records</p>
-<blockquote class="last">
-<div><p>A list of budget objects.  The structure of the returned object
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>recordlist</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of records</span></dt>
+<dd><p class="first">A list of budget objects.  The structure of the returned object
 depends on the structure of the data in the cbb file.</p>
-<p>If full3D is True, then this method will return a numpy masked
+<p class="last">If full3D is True, then this method will return a numpy masked
 array of size (nlay, nrow, ncol) for those list-style
 ‘COMPACT BUDGET’ records written by MODFLOW.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1060,10 +1060,19 @@ array of size (nlay, nrow, ncol) for those list-style
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple</p>
-<blockquote class="last">
-<div><p>indices of selected record name in budget file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The text identifier for the record.  Examples include
+‘RIVER LEAKAGE’, ‘STORAGE’, ‘FLOW RIGHT FACE’, etc.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">indices of selected record name in budget file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1078,11 +1087,12 @@ array of size (nlay, nrow, ncol) for those list-style
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of (kstp, kper) tuples</p>
-<blockquote class="last">
-<div><p>List of unique kstp, kper combinations in binary file.  kstp and
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in binary file.  kstp and
 kper values are zero-based.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1097,10 +1107,44 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>Number of records in the file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of records in the file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.CellBudgetFile.get_position">
+<code class="descname">get_position</code><span class="sig-paren">(</span><em>idx</em>, <em>header=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the starting position of the data or header for a specified record
+number in the binary budget file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.</p>
+</dd>
+<dt><strong>header</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If True, the position of the start of the header data is returned.
+If False, the position of the start of the data is returned
+(default is False).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ipos</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int64</span></dt>
+<dd><p class="first last">The position of the start of the data in the cell budget file
+or the start of the header.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1115,26 +1159,27 @@ kper values are zero-based.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : int</p>
-<blockquote>
-<div><p>The zero-based record number.  The first record is record 0.</p>
-</div></blockquote>
-<p><strong>full3D</strong> : boolean</p>
-<blockquote>
-<div><p>If true, then return the record as a three dimensional numpy
-array, even for those list-style records writen as part of a
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.</p>
+</dd>
+<dt><strong>full3D</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If true, then return the record as a three dimensional numpy
+array, even for those list-style records written as part of a
 ‘COMPACT BUDGET’ MODFLOW budget file.  (Default is False.)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>record</strong> : a single data record</p>
-<blockquote class="last">
-<div><p>The structure of the returned object depends on the structure of
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>record</strong> <span class="classifier-delimiter">:</span> <span class="classifier">a single data record</span></dt>
+<dd><p class="first">The structure of the returned object depends on the structure of
 the data in the cbb file. Compact list data are returned as</p>
-<p>If full3D is True, then this method will return a numpy masked
+<p class="last">If full3D is True, then this method will return a numpy masked
 array of size (nlay, nrow, ncol) for those list-style
 ‘COMPACT BUDGET’ records written by MODFLOW.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1151,22 +1196,23 @@ all flow terms are written to the budget file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>Simulation time for which to calculate the residual.  This value
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Simulation time for which to calculate the residual.  This value
 must be precise, so it is best to get it from the get_times
 method.</p>
-</div></blockquote>
-<p><strong>scaled</strong> : bool</p>
-<blockquote>
-<div><p>If True, then divide the residual by the total cell inflow</p>
-</div></blockquote>
+</dd>
+<dt><strong>scaled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If True, then divide the residual by the total cell inflow</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>residual</strong> : np.ndarray</p>
-<blockquote class="last">
-<div><p>The flow residual for the cell of shape (nlay, nrow, ncol)</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>residual</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray</span></dt>
+<dd><p class="first last">The flow residual for the cell of shape (nlay, nrow, ncol)</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1181,10 +1227,11 @@ method.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of floats</p>
-<blockquote class="last">
-<div><p>List contains unique simulation times (totim) in binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1199,28 +1246,28 @@ method.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>idx</strong> : tuple of ints, or a list of a tuple of ints</p>
-<blockquote>
-<div><p>idx can be (layer, row, column) or it can be a list in the form
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints, or a list of a tuple of ints</span></dt>
+<dd><p class="first last">idx can be (layer, row, column) or it can be a list in the form
 [(layer, row, column), (layer, row, column), …].  The layer,
 row, and column values must be zero based.</p>
-</div></blockquote>
-<p><strong>text</strong> : str</p>
-<blockquote>
-<div><p>The text identifier for the record.  Examples include
+</dd>
+<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The text identifier for the record.  Examples include
 ‘RIVER LEAKAGE’, ‘STORAGE’, ‘FLOW RIGHT FACE’, etc.</p>
-</div></blockquote>
-<p><strong>times</strong> : iterable of floats</p>
-<blockquote>
-<div><p>List of times to from which to get time series.</p>
-</div></blockquote>
+</dd>
+<dt><strong>times</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats</span></dt>
+<dd><p class="first last">List of times to from which to get time series.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Array has size (ntimes, ncells + 1).  The first column in the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (ntimes, ncells + 1).  The first column in the
 data array will contain time (totim).</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1232,16 +1279,24 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_unique_package_names">
-<code class="descname">get_unique_package_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_unique_package_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_unique_package_names</code><span class="sig-paren">(</span><em>decode=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_unique_package_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique package names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique package names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>decode</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Optional boolean used to decode byte strings (default is False).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique package names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1250,16 +1305,24 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
 
 <dl class="method">
 <dt id="flopy.utils.binaryfile.CellBudgetFile.get_unique_record_names">
-<code class="descname">get_unique_record_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_unique_record_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_unique_record_names</code><span class="sig-paren">(</span><em>decode=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.CellBudgetFile.get_unique_record_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of unique record names in the file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>decode</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Optional boolean used to decode byte strings (default is False).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1286,22 +1349,383 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
 
 </dd></dl>
 
+<dl class="class">
+<dt id="flopy.utils.binaryfile.HeadUFile">
+<em class="property">class </em><code class="descclassname">flopy.utils.binaryfile.</code><code class="descname">HeadUFile</code><span class="sig-paren">(</span><em>filename</em>, <em>text='headu'</em>, <em>precision='auto'</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unstructured MODFLOW-USG HeadUFile Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the concentration file</p>
+</dd>
+<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the text string in the head file.  Default is ‘headu’</p>
+</dd>
+<dt><strong>precision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">‘auto’, ‘single’ or ‘double’.  Default is ‘auto’.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The HeadUFile class provides simple ways to retrieve a list of
+head arrays from a MODFLOW-USG binary head file and time series
+arrays for one or more cells.</p>
+<p>The BinaryLayerFile class is built on a record array consisting of
+headers, which are record arrays of the modflow header information
+(kstp, kper, pertim, totim, text, nrow, ncol, ilay)
+and long integers, which are pointers to first bytes of data for
+the corresponding data array.  For unstructured grids, nrow and ncol
+are the starting and ending node numbers for layer, ilay.  This class
+overrides methods in the parent class so that the proper sized arrays
+are created.</p>
+<p>When the get_data method is called for this class, a list of
+one-dimensional arrays will be returned, where each array is the head
+array for a layer.  If the heads for a layer were not saved, then
+None will be returned for that layer.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">HeadUFile</span><span class="p">(</span><span class="s1">&#39;model.hds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">usgheads</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the file handle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.get_alldata">
+<code class="descname">get_alldata</code><span class="sig-paren">(</span><em>mflay=None</em>, <em>nodata=-9999</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all of the data from the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (Default is None.)</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The nodata value in the data array.  All array values that have the
+nodata value will be assigned np.nan.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (ntimes, nlay, nrow, ncol) if mflay is None or it
+has size (ntimes, nrow, ncol) if mlay is specified.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>kstpkper=None</em>, <em>idx=None</em>, <em>totim=None</em>, <em>mflay=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data from the file for the specified conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based record number.  The first record is record 0.</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values.</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (Default is None.)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (nlay, nrow, ncol) if mflay is None or it has size
+(nrow, ncol) if mlay is specified.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>if both kstpkper and totim are None, will return the last entry
+Examples
+——–</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.get_databytes">
+<code class="descname">get_databytes</code><span class="sig-paren">(</span><em>header</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.get_databytes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>header</strong> <span class="classifier-delimiter">:</span> <span class="classifier">datafile.Header</span></dt>
+<dd><p class="first last">header object</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>databytes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">size of the data array, in bytes, following the header</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.get_kstpkper">
+<code class="descname">get_kstpkper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.get_kstpkper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique stress periods and time steps in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of (kstp, kper) tuples</span></dt>
+<dd><p class="first last">List of unique kstp, kper combinations in binary file.  kstp and
+kper values are presently zero-based.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.get_times">
+<code class="descname">get_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.get_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of unique times in the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of floats</span></dt>
+<dd><p class="first last">List contains unique simulation times (totim) in binary file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.get_ts">
+<code class="descname">get_ts</code><span class="sig-paren">(</span><em>idx</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.get_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a time series from the binary HeadUFile (not implemented).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints, or a list of a tuple of ints</span></dt>
+<dd><p class="first last">idx can be (layer, row, column) or it can be a list in the form
+[(layer, row, column), (layer, row, column), …].  The layer,
+row, and column values must be zero based.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Array has size (ntimes, ncells + 1).  The first column in the
+data array will contain time (totim).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.list_records">
+<code class="descname">list_records</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.list_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of all of the records in the file
+obj.list_records()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>axes=None</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>mflay=None</em>, <em>filename_base=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 3-D model output data in a specific location
+in LayerFile instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of matplotlib.pyplot.axis</span></dt>
+<dd><p class="first last">List of matplotlib.pyplot.axis that will be used to plot
+data for each layer. If axes=None axes will be generated.
+(default is None)</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values.</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt><strong>filename_base</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>pcolor <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.pcolormesh
+plot will be plotted. (default is True)</p>
+</dd>
+<dt>colorbar <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if a color bar will be added to
+the matplotlib.pyplot.pcolormesh. Only used if pcolor=True.
+(default is False)</p>
+</dd>
+<dt>contour <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.contour
+plot will be plotted. (default is False)</p>
+</dd>
+<dt>clabel <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if matplotlib.pyplot.clabel
+will be plotted. Only used if contour=True. (default is False)</p>
+</dd>
+<dt>grid <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean used to determine if the model grid will be plotted
+on the figure. (default is False)</p>
+</dd>
+<dt>masked_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of unique values to be excluded from the plot.</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;test.hds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.binaryfile.HeadUFile.to_shapefile">
+<code class="descname">to_shapefile</code><span class="sig-paren">(</span><em>filename</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>mflay=None</em>, <em>attrib_name='lf_data'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.binaryfile.HeadUFile.to_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Export model output data to a shapefile at a specific location</dt>
+<dd>in LayerFile instance.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
+These are zero-based kstp and kper values.</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>mflay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then layer 1
+will be written</p>
+</dd>
+<dt><strong>attrib_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base name of attribute columns. (default is ‘lf_data’)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;test.hds&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">hdobj</span><span class="o">.</span><span class="n">get_times</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdobj</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_heads_sp6.shp&#39;</span><span class="p">,</span> <span class="n">totim</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="binaryhydmodfile.html" class="btn btn-neutral float-right" title="flopy.utils.binaryhydmodfile Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="flopy_io.html" class="btn btn-neutral float-right" title="flopy.utils.flopy_io Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="datafile.html" class="btn btn-neutral" title="flopy.utils.datafile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="datafile.html" class="btn btn-neutral float-left" title="flopy.utils.datafile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1310,11 +1734,13 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1327,36 +1753,15 @@ within the following ranges: 0 &lt;= k &lt; nlay; 0 &lt;= i &lt; nrow; 0 &lt;= j
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

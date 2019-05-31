@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.discretization.grid Module &mdash; flopy 3.2.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.discretization.structuredgrid Module" href="structuredgrid.html" />
+    <link rel="prev" title="flopy.pest.tplarray Module" href="tplarray.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.12
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.discretization.grid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structuredgrid.html">flopy.discretization.structuredgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertexgrid.html">flopy.discretization.vertexgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unstructuredgrid.html">flopy.discretization.unstructuredgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modeltime.html">flopy.discretization.modeltime Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.discretization.grid Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/grid.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.discretization.grid">
+<span id="flopy-discretization-grid-module"></span><h1>flopy.discretization.grid Module<a class="headerlink" href="#module-flopy.discretization.grid" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.discretization.grid.Grid">
+<em class="property">class </em><code class="descclassname">flopy.discretization.grid.</code><code class="descname">Grid</code><span class="sig-paren">(</span><em>grid_type=None</em>, <em>top=None</em>, <em>botm=None</em>, <em>idomain=None</em>, <em>lenuni=None</em>, <em>epsg=None</em>, <em>proj4=None</em>, <em>prj=None</em>, <em>xoff=0.0</em>, <em>yoff=0.0</em>, <em>angrot=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.grid.Grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for a structured or unstructured model grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>grid_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">enumeration</span></dt>
+<dd><p class="first last">type of model grid (‘structured’, ‘vertex_layered’,
+‘vertex_unlayered’)</p>
+</dd>
+<dt><strong>top</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray(np.float)</span></dt>
+<dd><p class="first last">top elevations of cells in topmost layer</p>
+</dd>
+<dt><strong>botm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray(np.float)</span></dt>
+<dd><p class="first last">bottom elevations of all cells</p>
+</dd>
+<dt><strong>idomain</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray(np.int)</span></dt>
+<dd><p class="first last">ibound/idomain value for each cell</p>
+</dd>
+<dt><strong>lenuni</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray(np.int)</span></dt>
+<dd><p class="first last">model length units</p>
+</dd>
+<dt><strong>origin_loc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Corner of the model grid that is the model origin
+‘ul’ (upper left corner) or ‘ll’ (lower left corner)</p>
+</dd>
+<dt><strong>origin_x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">x coordinate of the origin point (lower left corner of model grid)
+in the spatial reference coordinate system</p>
+</dd>
+<dt><strong>origin_y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">y coordinate of the origin point (lower left corner of model grid)
+in the spatial reference coordinate system</p>
+</dd>
+<dt><strong>rotation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">rotation angle of model grid, as it is rotated around the origin point</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>get_coords(x, y)</strong></td>
+<td>transform point or array of points x, y from model coordinates to spatial coordinates</td>
+</tr>
+<tr class="row-even"><td><strong>grid_lines</strong></td>
+<td>((point_type=PointType.spatialxyz)) returns the model grid lines in a list.  each line is returned as a list containing two tuples in the format [(x1,y1), (x2,y2)] where x1,y1 and x2,y2 are the endpoints of the line.</td>
+</tr>
+<tr class="row-odd"><td><strong>xyvertices</strong></td>
+<td>((point_type)) 1D array of x and y coordinates of cell vertices for whole grid (single layer) in C-style (row-major) order (same as np.ravel())</td>
+</tr>
+<tr class="row-even"><td><strong>intersect(x, y, local)</strong></td>
+<td>returns the row and column of the grid that the x, y point is in</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flopy.discretization.grid.Grid.get_coords">
+<code class="descname">get_coords</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.grid.Grid.get_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values, apply rotation, scale and offset,
+to convert them from model coordinates to real-world coordinates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.grid.Grid.get_local_coords">
+<code class="descname">get_local_coords</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.grid.Grid.get_local_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values, apply rotation, scale and offset,
+to convert them from real-world coordinates to model coordinates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.grid.Grid.load_coord_info">
+<code class="descname">load_coord_info</code><span class="sig-paren">(</span><em>namefile=None</em>, <em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.grid.Grid.load_coord_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to load spatial reference information from
+the following files (in order):
+1) usgs.model.reference
+2) NAM file (header comment)
+3) defaults</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.grid.Grid.read_usgs_model_reference_file">
+<code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.grid.Grid.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>read spatial reference info from the usgs.model.reference file
+<a class="reference external" href="https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html">https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html</a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structuredgrid.html" class="btn btn-neutral float-right" title="flopy.discretization.structuredgrid Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tplarray.html" class="btn btn-neutral float-left" title="flopy.pest.tplarray Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

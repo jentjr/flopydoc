@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.export.netcdf Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.export.netcdf Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.export.utils Module" href="utils.html"/>
-        <link rel="prev" title="flopy.export.metadata Module" href="metadata.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.utils.triangle Module" href="triangle.html" />
+    <link rel="prev" title="flopy.export.metadata Module" href="metadata.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -118,11 +112,13 @@
 <li class="toctree-l3"><a class="reference internal" href="metadata.html">flopy.export.metadata Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.export.netcdf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triangle.html">flopy.utils.triangle Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html">flopy.export.utils Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vtk.html">flopy.export.vtk Module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -136,7 +132,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -144,9 +140,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -201,24 +198,24 @@ if filename is passed, then an file handle is opened</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : bool or string</p>
-<blockquote class="last">
-<div><p>if string, it is the log file to write.  If a bool, then log is
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool or string</span></dt>
+<dd><p class="first last">if string, it is the log file to write.  If a bool, then log is
 written to the screen. echo (bool): a flag to force screen output</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="3%" />
-<col width="97%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>items</strong></td>
-<td>(dict) tracks when something is started.  If a log entry is not in items, then it is treated as a new entry with the string being the key and the datetime as the value.  If a log entry is in items, then the end time and delta time are written and the item is popped from the keys</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>items</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">tracks when something is started.  If a log entry is
+not in items, then it is treated as a new entry with the string
+being the key and the datetime as the value.  If a log entry is
+in items, then the end time and delta time are written and
+the item is popped from the keys</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -230,10 +227,11 @@ written to the screen. echo (bool): a flag to force screen output</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>phrase</strong> : str</p>
-<blockquote class="last">
-<div><p>the thing that happened</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>phrase</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the thing that happened</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -248,10 +246,11 @@ written to the screen. echo (bool): a flag to force screen output</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>message</strong> : str</p>
-<blockquote class="last">
-<div><p>the warning text</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>message</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the warning text</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -268,39 +267,37 @@ written to the screen. echo (bool): a flag to force screen output</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>output_filename</strong> : str</p>
-<blockquote>
-<div><p>Name of the .nc file to write</p>
-</div></blockquote>
-<p><strong>model</strong> : flopy model instance</p>
-<p><strong>time_values</strong> : the entries for the time dimension</p>
-<blockquote>
-<div><p>if not None, the constructor will initialize
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>output_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the .nc file to write</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy model instance</span></dt>
+<dd></dd>
+<dt><strong>time_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">the entries for the time dimension</span></dt>
+<dd><p class="first last">if not None, the constructor will initialize
 the file.  If None, the perlen array of ModflowDis
 will be used</p>
-</div></blockquote>
-<p><strong>z_positive</strong> : str (‘up’ or ‘down’)</p>
-<blockquote>
-<div><p>Positive direction of vertical coordinates written to NetCDF file.
+</dd>
+<dt><strong>z_positive</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str (‘up’ or ‘down’)</span></dt>
+<dd><p class="first last">Positive direction of vertical coordinates written to NetCDF file.
 (default ‘down’)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : if True, stdout is verbose.  If str, then a log file</p>
-<blockquote>
-<div><p>is written to the verbose file</p>
-</div></blockquote>
-<p><strong>forgive: what to do if a duplicate variable name is being created.  If</strong></p>
-<blockquote class="last">
-<div><p>True, then the newly requested var is skipped.  If False, then
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">if True, stdout is verbose.  If str, then a log file</span></dt>
+<dd><p class="first last">is written to the verbose file</p>
+</dd>
+<dt><strong>forgive: what to do if a duplicate variable name is being created.  If</strong></dt>
+<dd><p class="first last">True, then the newly requested var is skipped.  If False, then
 an exception is raised.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>This class relies heavily on the ModflowDis object,
-including these attributes: lenuni, itmuni, start_datetime, sr
-(SpatialReference).  Make sure these attributes have meaningful values.</p>
+<p>This class relies heavily on the grid and modeltime objects,
+including these attributes: lenuni, itmuni, start_datetime, and proj4.
+Make sure these attributes have meaningful values.</p>
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.add_global_attributes">
 <code class="descname">add_global_attributes</code><span class="sig-paren">(</span><em>attr_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.add_global_attributes" title="Permalink to this definition">¶</a></dt>
@@ -309,14 +306,24 @@ including these attributes: lenuni, itmuni, start_datetime, sr
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>attr_dict</strong> : dict(attribute name, attribute value)</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>attr_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict(attribute name, attribute value)</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>Exception of self.nc is None (initialize_file()</strong></p>
-<p class="last"><strong>has not been called)</strong></p>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>Exception of self.nc is None (initialize_file()</strong></dt>
+<dd></dd>
+<dt><strong>has not been called)</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -332,7 +339,11 @@ flopy.export.metadata.acdd class.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>metadata</strong> : flopy.export.metadata.acdd object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>metadata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.export.metadata.acdd object</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -340,37 +351,43 @@ flopy.export.metadata.acdd class.</p>
 
 <dl class="method">
 <dt id="flopy.export.netcdf.NetCdf.create_variable">
-<code class="descname">create_variable</code><span class="sig-paren">(</span><em>name</em>, <em>attributes</em>, <em>precision_str='f4'</em>, <em>dimensions=('time'</em>, <em>'layer'</em>, <em>'y'</em>, <em>'x')</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.create_variable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_variable</code><span class="sig-paren">(</span><em>name</em>, <em>attributes</em>, <em>precision_str='f4'</em>, <em>dimensions=('time'</em>, <em>'layer')</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.export.netcdf.NetCdf.create_variable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new variable in the netcdf object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>the name of the variable</p>
-</div></blockquote>
-<p><strong>attributes</strong> : dict</p>
-<blockquote>
-<div><p>attributes to add to the new variable</p>
-</div></blockquote>
-<p><strong>precision_str</strong> : str</p>
-<blockquote>
-<div><p>netcdf-compliant string. e.g. f4</p>
-</div></blockquote>
-<p><strong>dimensions</strong> : tuple</p>
-<blockquote>
-<div><p>which dimensions the variable applies to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the name of the variable</p>
+</dd>
+<dt><strong>attributes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">attributes to add to the new variable</p>
+</dd>
+<dt><strong>precision_str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">netcdf-compliant string. e.g. f4</p>
+</dd>
+<dt><strong>dimensions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">which dimensions the variable applies to
 default : (“time”,”layer”,”x”,”y”)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">nc variable</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nc variable</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>AssertionError if precision_str not right</strong></p>
-<p><strong>AssertionError if variable name already in netcdf object</strong></p>
-<p class="last"><strong>AssertionError if one of more dimensions do not exist</strong></p>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>AssertionError if precision_str not right</strong></dt>
+<dd></dd>
+<dt><strong>AssertionError if variable name already in netcdf object</strong></dt>
+<dd></dd>
+<dt><strong>AssertionError if one of more dimensions do not exist</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -386,23 +403,26 @@ netcdf file</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>other</strong> : either an str filename of a netcdf file or</p>
-<blockquote>
-<div><p>a netCDF4 instance</p>
-</div></blockquote>
-<p><strong>minuend</strong> : (optional) the order of the difference operation.</p>
-<blockquote>
-<div><p>Default is self (e.g. self - other).  Can be “self” or “other”</p>
-</div></blockquote>
-<p><strong>mask_zero_diff</strong> : bool flag to mask differences that are zero.  If</p>
-<blockquote>
-<div><p>True, positions in the difference array that are zero will be set
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>other</strong> <span class="classifier-delimiter">:</span> <span class="classifier">either an str filename of a netcdf file or</span></dt>
+<dd><p class="first last">a netCDF4 instance</p>
+</dd>
+<dt><strong>minuend</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(optional) the order of the difference operation.</span></dt>
+<dd><p class="first last">Default is self (e.g. self - other).  Can be “self” or “other”</p>
+</dd>
+<dt><strong>mask_zero_diff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool flag to mask differences that are zero.  If</span></dt>
+<dd><p class="first last">True, positions in the difference array that are zero will be set
 to self.fillvalue</p>
-</div></blockquote>
-<p><strong>only_diff</strong> : bool flag to only add non-zero diffs to output file</p>
+</dd>
+<dt><strong>only_diff</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool flag to only add non-zero diffs to output file</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">net NetCDF instance</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>net NetCDF instance</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -436,11 +456,12 @@ dimensions, and grid information</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>time_values</strong> : list of times to use as time dimension</p>
-<blockquote class="last">
-<div><p>entries.  If none, then use the times in
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>time_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of times to use as time dimension</span></dt>
+<dd><p class="first last">entries.  If none, then use the times in
 self.model.dis.perlen and self.start_datetime</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -466,18 +487,16 @@ needed for the netcdf file</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="utils.html" class="btn btn-neutral float-right" title="flopy.export.utils Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="triangle.html" class="btn btn-neutral float-right" title="flopy.utils.triangle Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="metadata.html" class="btn btn-neutral" title="flopy.export.metadata Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="metadata.html" class="btn btn-neutral float-left" title="flopy.export.metadata Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -486,11 +505,13 @@ needed for the netcdf file</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -503,36 +524,15 @@ needed for the netcdf file</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfutlobs Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfutlobs Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mf6.modflow.mfutllaktab Module" href="mfutllaktab.html"/>
-        <link rel="prev" title="flopy.mf6.modflow.mftdis Module" href="mftdis.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.mf6.modflow.mfutllaktab Module" href="mfutllaktab.html" />
+    <link rel="prev" title="flopy.mf6.modflow.mftdis Module" href="mftdis.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -113,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -156,6 +151,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -169,7 +165,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -177,9 +173,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -227,37 +224,23 @@
 <span id="flopy-mf6-modflow-mfutlobs-module"></span><h1>flopy.mf6.modflow.mfutlobs Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfutlobs" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfutlobs.ModflowUtlobs">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfutlobs.</code><code class="descname">ModflowUtlobs</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>precision=None</em>, <em>digits=None</em>, <em>print_input=None</em>, <em>continuous=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfutlobs.ModflowUtlobs" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfutlobs.</code><code class="descname">ModflowUtlobs</code><span class="sig-paren">(</span><em>model</em>, <em>loading_package=False</em>, <em>digits=None</em>, <em>print_input=None</em>, <em>continuous=None</em>, <em>filename=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfutlobs.ModflowUtlobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowUtlobs defines a obs package within a utl model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : MFModel</p>
-<blockquote>
-<div><p>Model that this package is a part of.  Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModel</span></dt>
+<dd><p class="first last">Model that this package is a part of.  Package is automatically
 added to model when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>precision</strong> : double</p>
-<blockquote>
-<div><ul class="simple">
-<li>precision (double) Keyword and precision specifier for output of
-binary data, which can be either SINGLE or DOUBLE. The default is
-DOUBLE. When simulated values are written to a file specified as file
-type DATA(BINARY) in the Name File, the precision specifier controls
-whether the data (including simulated values and, for continuous
-observations, time values) are written as single- or double-
-precision.</li>
-</ul>
-</div></blockquote>
-<p><strong>digits</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>digits</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>digits (integer) Keyword and an integer digits specifier used for
 conversion of simulated values to text on output. The default is 5
 digits. When simulated values are written to a file specified as file
@@ -267,18 +250,16 @@ output file. The digits specifier has no effect on the number of
 significant digits with which the simulation time is written for
 continuous observations.</li>
 </ul>
-</div></blockquote>
-<p><strong>print_input</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_input</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>print_input (boolean) keyword to indicate that the list of
 observation information will be written to the listing file
 immediately after it is read.</li>
 </ul>
-</div></blockquote>
-<p><strong>continuous</strong> : [obsname, obstype, id, id2]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>continuous</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[obsname, obstype, id, id2]</span></dt>
+<dd><ul class="first last simple">
 <li>obsname (string) string of 1 to 40 nonblank characters used to
 identify the observation. The identifier need not be unique; however,
 identification and post-processing of observations in the output
@@ -298,21 +279,19 @@ flow observations of a GWF model, for three observation types of the
 LAK Package, for two observation types of the MAW Package, and one
 observation type of the UZF Package.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -325,13 +304,68 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfutlobs.ModflowUtlobs.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfutlobs.ModflowUtlobs.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
+package input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>package: flopy.pakbase.Package instance supplied for plotting</strong></dt>
+<dd></dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -340,13 +374,29 @@ a mfgwflak package parent_file.</p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="flopy.mf6.modflow.mfutlobs.UtlobsPackages">
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfutlobs.</code><code class="descname">UtlobsPackages</code><span class="sig-paren">(</span><em>model</em>, <em>parent</em>, <em>pkg_type</em>, <em>filerecord</em>, <em>package=None</em>, <em>package_class=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfutlobs.UtlobsPackages" title="Permalink to this definition">¶</a></dt>
+<dd><p>UtlobsPackages is a container class for the ModflowUtlobs class.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>initialize</strong></td>
+<td>Initializes a new ModflowUtlobs package removing any sibling child packages attached to the same parent package. See ModflowUtlobs init documentation for definition of parameters.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -355,7 +405,7 @@ a mfgwflak package parent_file.</p>
         <a href="mfutllaktab.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfutllaktab Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mftdis.html" class="btn btn-neutral" title="flopy.mf6.modflow.mftdis Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mftdis.html" class="btn btn-neutral float-left" title="flopy.mf6.modflow.mftdis Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -364,11 +414,13 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -381,36 +433,15 @@ a mfgwflak package parent_file.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

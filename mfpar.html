@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfpar Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfpar Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,40 +17,34 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -64,7 +58,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -112,7 +106,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -120,9 +114,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -187,19 +182,24 @@ connection to “parameters” is thus nonexistent.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : file handle</p>
-<p><strong>npar</strong> : int</p>
-<blockquote>
-<div><p>The number of parameters.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag to control output. (default is False)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file handle</span></dt>
+<dd></dd>
+<dt><strong>npar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of parameters.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag to control output. (default is False)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>list</strong> : list object of unique par_types in file f</p>
-<p class="last"><strong>dictionary</strong> : dictionary object with parameters in file f</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>list</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list object of unique par_types in file f</span></dt>
+<dd></dd>
+<dt><strong>dictionary</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary object with parameters in file f</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -216,41 +216,39 @@ connection to “parameters” is thus nonexistent.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>shape</strong> : tuple</p>
-<blockquote>
-<div><p>The shape of the returned data array. Typically shape is (nrow, ncol)</p>
-</div></blockquote>
-<p><strong>findkey</strong> : string</p>
-<blockquote>
-<div><p>the parameter array to be constructed,</p>
-</div></blockquote>
-<p><strong>parm_dict</strong> : dict</p>
-<blockquote>
-<div><p>dictionary that includes all of the parameter data for a package</p>
-</div></blockquote>
-<p><strong>findlayer</strong> : int</p>
-<blockquote>
-<div><p>Layer that will be filled. Not required for array boundary condition data.</p>
-</div></blockquote>
+</dd>
+<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">The shape of the returned data array. Typically shape is (nrow, ncol)</p>
+</dd>
+<dt><strong>findkey</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">the parameter array to be constructed,</p>
+</dd>
+<dt><strong>parm_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">dictionary that includes all of the parameter data for a package</p>
+</dd>
+<dt><strong>findlayer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Layer that will be filled. Not required for array boundary condition data.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy array</p>
-<blockquote class="last">
-<div><p>Filled array resulting from applications of zone, mult, pval, and
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd><p class="first last">Filled array resulting from applications of zone, mult, pval, and
 parameter data.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
 <p>for lpf and upw:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">ModflowPar</span><span class="o">.</span><span class="n">parameter_fill</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="s1">&#39;vkcb&#39;</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">ModflowPar</span><span class="o">.</span><span class="n">parameter_fill</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="s1">&#39;vkcb&#39;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="o">.....................................................</span><span class="n">parm_dict</span><span class="p">,</span> <span class="n">findlayer</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -264,25 +262,25 @@ parameter data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote class="last">
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">set_mult</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="n">ext_unit_dict</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">set_mult</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="n">ext_unit_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -295,25 +293,25 @@ constructed using the function
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote class="last">
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">set_pval</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="n">ext_unit_dict</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">set_pval</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="n">ext_unit_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -326,25 +324,25 @@ constructed using the function
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote class="last">
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">set_zone</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="n">ext_unit_dict</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">mfpar</span><span class="o">.</span><span class="n">set_zone</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="n">ext_unit_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -355,9 +353,7 @@ constructed using the function
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -366,11 +362,13 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -383,36 +381,15 @@ constructed using the function
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

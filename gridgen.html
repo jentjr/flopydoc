@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.gridgen Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.gridgen Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.utils.lgrutil Module" href="lgrutil.html"/>
-        <link rel="prev" title="flopy.utils.geometry Module" href="geometry.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.utils.lgrutil Module" href="lgrutil.html" />
+    <link rel="prev" title="flopy.utils.geometry Module" href="geometry.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -117,8 +111,6 @@
 <li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
@@ -128,6 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -143,6 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +150,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -164,9 +158,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -220,23 +215,21 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dis</strong> : flopy.modflow.ModflowDis</p>
-<blockquote>
-<div><p>Flopy discretization object</p>
-</div></blockquote>
-<p><strong>model_ws</strong> : str</p>
-<blockquote>
-<div><p>workspace location for creating gridgen files (default is ‘.’)</p>
-</div></blockquote>
-<p><strong>exe_name</strong> : str</p>
-<blockquote>
-<div><p>path and name of the gridgen program. (default is gridgen)</p>
-</div></blockquote>
-<p><strong>surface_interpolation</strong> : str</p>
-<blockquote class="last">
-<div><p>Default gridgen method for interpolating elevations.  Valid options
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.ModflowDis</span></dt>
+<dd><p class="first last">Flopy discretization object</p>
+</dd>
+<dt><strong>model_ws</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">workspace location for creating gridgen files (default is ‘.’)</p>
+</dd>
+<dt><strong>exe_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">path and name of the gridgen program. (default is gridgen)</p>
+</dd>
+<dt><strong>surface_interpolation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Default gridgen method for interpolating elevations.  Valid options
 include ‘replicate’ (default) and ‘interpolate’</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -251,19 +244,22 @@ the bottom of the overlying layer.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>feature</strong> : str or list</p>
-<blockquote>
-<div><p>feature can be either a string containing the name of a polygon
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>feature</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">feature can be either a string containing the name of a polygon
 shapefile or it can be a list of polygons</p>
-</div></blockquote>
-<p><strong>layers</strong> : list</p>
-<blockquote>
-<div><p>A list of layers (zero based) for which this active domain
+</dd>
+<dt><strong>layers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">A list of layers (zero based) for which this active domain
 applies.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -277,27 +273,28 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>features</strong> : str or list</p>
-<blockquote>
-<div><p>features can be either a string containing the name of a shapefile
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>features</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">features can be either a string containing the name of a shapefile
 or it can be a list of points, lines, or polygons</p>
-</div></blockquote>
-<p><strong>featuretype</strong> : str</p>
-<blockquote>
-<div><p>Must be either ‘point’, ‘line’, or ‘polygon’</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>The level of refinement for this features</p>
-</div></blockquote>
-<p><strong>layers</strong> : list</p>
-<blockquote>
-<div><p>A list of layers (zero based) for which this refinement features
+</dd>
+<dt><strong>featuretype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be either ‘point’, ‘line’, or ‘polygon’</p>
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The level of refinement for this features</p>
+</dd>
+<dt><strong>layers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">A list of layers (zero based) for which this refinement features
 applies.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -312,14 +309,18 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>If true, print the results of the gridgen command to the terminal
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If true, print the results of the gridgen command to the terminal
 (default is False)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -334,7 +335,102 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_angldegx">
+<code class="descname">get_angldegx</code><span class="sig-paren">(</span><em>fldr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_angldegx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the angldegx array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fldr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Flow direction indicator array.  If None, then it is read from
+gridgen output.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>angldegx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector indicating the angle (in degrees) between the x
+axis and an outward normal to the face.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_area">
+<code class="descname">get_area</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the area array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of cell areas of size nodes</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_bot">
+<code class="descname">get_bot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_bot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the bot array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of cell bottom elevations of size nodes</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_cellxy">
+<code class="descname">get_cellxy</code><span class="sig-paren">(</span><em>ncells</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_cellxy" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ncells</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of cells for which to create the list of cell centers</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>cellxy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">x and y cell centers.  Shape is (ncells, 2)</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -348,9 +444,281 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodenumber</strong></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nodenumber</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>(x, y)</strong> : tuple</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>(x, y)</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_cl12">
+<code class="descname">get_cl12</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_cl12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the cl12 array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>cl12</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of the cell connection distances, which are from the
+center of cell n to its shared face will cell m</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_fahl">
+<code class="descname">get_fahl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_fahl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fahl array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fahl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of the cell connection information, which is flow area
+for a vertical connection and horizontal length for a horizontal
+connection</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_fldr">
+<code class="descname">get_fldr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_fldr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fldr array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fldr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector indicating the direction of the connection 1, 2, and 3
+are plus x, y, and z directions.  -1, -2, and -3 are negative
+x, y, and z directions.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_gridprops">
+<code class="descname">get_gridprops</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_gridprops" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dictionary of information needed to create a MODFLOW-USG DISU
+Package</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>gridprops</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_gridprops_disu6">
+<code class="descname">get_gridprops_disu6</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_gridprops_disu6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary containing all of the information required to
+create a MODFLOW 6 DISU Package</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>gridprops</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_hwva">
+<code class="descname">get_hwva</code><span class="sig-paren">(</span><em>ja=None</em>, <em>ihc=None</em>, <em>fahl=None</em>, <em>top=None</em>, <em>bot=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_hwva" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the hwva array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ja</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Cell connectivity.  If None, it will be read from gridgen output.</p>
+</dd>
+<dt><strong>ihc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Connection horizontal indicator array.  If None it will be read
+and calculated from gridgen output.</p>
+</dd>
+<dt><strong>fahl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Flow area, horizontal width array required by MODFLOW-USG.  If none
+then it will be read from the gridgen output.  Default is None.</p>
+</dd>
+<dt><strong>top</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Cell top elevation.  If None, it will be read from gridgen output.</p>
+</dd>
+<dt><strong>bot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Cell bottom elevation.  If None, it will be read from gridgen
+output.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fahl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of the cell connection information, which is flow area
+for a vertical connection and horizontal length for a horizontal
+connection</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_iac">
+<code class="descname">get_iac</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_iac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the iac array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>iac</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of the number of connections (plus 1) for each cell</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_ihc">
+<code class="descname">get_ihc</code><span class="sig-paren">(</span><em>fldr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_ihc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ihc array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fldr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Flow direction indicator array.  If None, then it is read from
+gridgen output.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ihc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector indicating the direction of the connection where
+0 is vertical, 1 is a regular horizontal connection and 2 is a
+vertically staggered horizontal connection.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_ivc">
+<code class="descname">get_ivc</code><span class="sig-paren">(</span><em>fldr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_ivc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the MODFLOW-USG ivc array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fldr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Flow direction indicator array.  If None, then it is read from
+gridgen output.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ivc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector indicating the direction of the connection where 1 is
+vertical and 0 is horizontal.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_ja">
+<code class="descname">get_ja</code><span class="sig-paren">(</span><em>nja=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_ja" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ja array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nja</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of connections.  If None, then it is read from gridgen
+output.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ja</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of the cell connectivity (one-based)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_nlay">
+<code class="descname">get_nlay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_nlay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of layers</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -364,10 +732,68 @@ applies.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>node_ra</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>Recarray representation of the node file with zero-based indexing</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>node_ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Recarray representation of the node file with zero-based indexing</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_nodelay">
+<code class="descname">get_nodelay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_nodelay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the nodelay array, which is an array of size nlay containing
+the number of nodes in each layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>nodelay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">Number of nodes in each layer</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_nodes">
+<code class="descname">get_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of nodes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>nodes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_top">
+<code class="descname">get_top</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the top array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>top</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">A 1D vector of cell top elevations of size nodes</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -383,9 +809,49 @@ be the same as the last vertex.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodenumber</strong></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>nodenumber</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>list of vertices</strong> : list</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>list of vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.gridgen.Gridgen.get_verts_iverts">
+<code class="descname">get_verts_iverts</code><span class="sig-paren">(</span><em>ncells</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.gridgen.Gridgen.get_verts_iverts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a 2d array of x and y vertices and a list of size ncells that
+has the list of vertices for each cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ncells</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of entries in iverts.  This should be ncpl for a layered
+model and nodes for a disu model.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Print information as its working</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>verts, iverts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">verts is a 2d array of x and y vertex pairs (nvert, 2) and iverts
+is a list of vertices that comprise each cell</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -398,25 +864,25 @@ be the same as the last vertex.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>features</strong> : str or list</p>
-<blockquote>
-<div><p>features can be either a string containing the name of a shapefile
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>features</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">features can be either a string containing the name of a shapefile
 or it can be a list of points, lines, or polygons</p>
-</div></blockquote>
-<p><strong>featuretype</strong> : str</p>
-<blockquote>
-<div><p>Must be either ‘point’, ‘line’, or ‘polygon’</p>
-</div></blockquote>
-<p><strong>layer</strong> : int</p>
-<blockquote>
-<div><p>Layer (zero based) to intersect with.  Zero based.</p>
-</div></blockquote>
+</dd>
+<dt><strong>featuretype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be either ‘point’, ‘line’, or ‘polygon’</p>
+</dd>
+<dt><strong>layer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Layer (zero based) to intersect with.  Zero based.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : np.recarray</p>
-<blockquote class="last">
-<div><p>Recarray of the intersection properties.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>result</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Recarray of the intersection properties.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -433,44 +899,41 @@ that was created as part of the build method.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : matplotlib.pyplot axis</p>
-<blockquote>
-<div><p>The plot axis.  If not provided it, plt.gca() will be used.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.pyplot axis</span></dt>
+<dd><p class="first last">The plot axis.  If not provided it, plt.gca() will be used.
 If there is not a current axis then a new one will be created.</p>
-</div></blockquote>
-<p><strong>layer</strong> : int</p>
-<blockquote>
-<div><p>Layer number to plot</p>
-</div></blockquote>
-<p><strong>cmap</strong> : string</p>
-<blockquote>
-<div><p>Name of colormap to use for polygon shading (default is ‘Dark2’)</p>
-</div></blockquote>
-<p><strong>edgecolor</strong> : string</p>
-<blockquote>
-<div><p>Color name.  (Default is ‘scaled’ to scale the edge colors.)</p>
-</div></blockquote>
-<p><strong>facecolor</strong> : string</p>
-<blockquote>
-<div><p>Color name.  (Default is ‘scaled’ to scale the face colors.)</p>
-</div></blockquote>
-<p><strong>a</strong> : numpy.ndarray</p>
-<blockquote>
-<div><p>Array to plot.</p>
-</div></blockquote>
-<p><strong>masked_values</strong> : iterable of floats, ints</p>
-<blockquote>
-<div><p>Values to mask.</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : dictionary</p>
-<blockquote>
-<div><p>Keyword arguments that are passed to
-PatchCollection.set(<code class="docutils literal"><span class="pre">**kwargs</span></code>).  Some common kwargs would be
+</dd>
+<dt><strong>layer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Layer number to plot</p>
+</dd>
+<dt><strong>cmap</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of colormap to use for polygon shading (default is ‘Dark2’)</p>
+</dd>
+<dt><strong>edgecolor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Color name.  (Default is ‘scaled’ to scale the edge colors.)</p>
+</dd>
+<dt><strong>facecolor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Color name.  (Default is ‘scaled’ to scale the face colors.)</p>
+</dd>
+<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray</span></dt>
+<dd><p class="first last">Array to plot.</p>
+</dd>
+<dt><strong>masked_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">iterable of floats, ints</span></dt>
+<dd><p class="first last">Values to mask.</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd><p class="first last">Keyword arguments that are passed to
+PatchCollection.set(<code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>).  Some common kwargs would be
 ‘linewidths’, ‘linestyles’, ‘alpha’, etc.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pc</strong> : matplotlib.collections.PatchCollection</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.collections.PatchCollection</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -484,26 +947,27 @@ PatchCollection.set(<code class="docutils literal"><span class="pre">**kwargs</s
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>isurf</strong> : int</p>
-<blockquote>
-<div><p>surface number where 0 is top and nlay + 1 is bottom</p>
-</div></blockquote>
-<p><strong>type</strong> : str</p>
-<blockquote>
-<div><p>Must be ‘INTERPOLATE’, ‘REPLICATE’ or ‘ASCIIGRID’.</p>
-</div></blockquote>
-<p><strong>elev</strong> : numpy.ndarray of shape (nr, nc) or str</p>
-<blockquote>
-<div><p>Array that is used as an asciigrid.  If elev is a string, then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>isurf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">surface number where 0 is top and nlay + 1 is bottom</p>
+</dd>
+<dt><strong>type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be ‘INTERPOLATE’, ‘REPLICATE’ or ‘ASCIIGRID’.</p>
+</dd>
+<dt><strong>elev</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.ndarray of shape (nr, nc) or str</span></dt>
+<dd><p class="first last">Array that is used as an asciigrid.  If elev is a string, then
 it is assumed to be the name of the asciigrid.</p>
-</div></blockquote>
-<p><strong>elev_extent</strong> : list-like</p>
-<blockquote>
-<div><p>list of xmin, xmax, ymin, ymax extents of the elev grid.</p>
-</div></blockquote>
+</dd>
+<dt><strong>elev_extent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list-like</span></dt>
+<dd><p class="first last">list of xmin, xmax, ymin, ymax extents of the elev grid.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -518,14 +982,14 @@ it is assumed to be the name of the asciigrid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
-<blockquote>
-<div><p>name of file to write</p>
-</div></blockquote>
-<p><strong>writevertices</strong> : bool</p>
-<blockquote class="last">
-<div><p>include vertices in the DISU file. (default is True)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">name of file to write</p>
+</dd>
+<dt><strong>writevertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">include vertices in the DISU file. (default is True)</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -540,10 +1004,11 @@ it is assumed to be the name of the asciigrid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
-<blockquote class="last">
-<div><p>name of file to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">name of file to write</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -560,21 +1025,23 @@ it is assumed to be the name of the asciigrid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>features</strong> : list</p>
-<blockquote>
-<div><p>List of point, line, or polygon features</p>
-</div></blockquote>
-<p><strong>featuretype</strong> : str</p>
-<blockquote>
-<div><p>Must be ‘point’, ‘line’, or ‘polygon’</p>
-</div></blockquote>
-<p><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>name of the shapefile to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>features</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of point, line, or polygon features</p>
+</dd>
+<dt><strong>featuretype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Must be ‘point’, ‘line’, or ‘polygon’</p>
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the shapefile to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -592,9 +1059,7 @@ than the read1d function in util_array</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -603,7 +1068,7 @@ than the read1d function in util_array</p>
         <a href="lgrutil.html" class="btn btn-neutral float-right" title="flopy.utils.lgrutil Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geometry.html" class="btn btn-neutral" title="flopy.utils.geometry Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geometry.html" class="btn btn-neutral float-left" title="flopy.utils.geometry Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -612,11 +1077,13 @@ than the read1d function in util_array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -629,36 +1096,15 @@ than the read1d function in util_array</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

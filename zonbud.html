@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.zonbud Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.zonbud Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.plot.map Module" href="map.html"/>
-        <link rel="prev" title="flopy.utils.util_list Module" href="util_list.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.plot.map Module" href="map.html" />
+    <link rel="prev" title="flopy.utils.util_list Module" href="util_list.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -117,8 +111,6 @@
 <li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
@@ -128,6 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -143,6 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +150,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -164,9 +158,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -214,44 +209,47 @@
 <span id="flopy-utils-zonbud-module"></span><h1>flopy.utils.zonbud Module<a class="headerlink" href="#module-flopy.utils.zonbud" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.utils.zonbud.ZoneBudget">
-<em class="property">class </em><code class="descclassname">flopy.utils.zonbud.</code><code class="descname">ZoneBudget</code><span class="sig-paren">(</span><em>cbc_file</em>, <em>z</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>aliases=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.utils.zonbud.</code><code class="descname">ZoneBudget</code><span class="sig-paren">(</span><em>cbc_file</em>, <em>z</em>, <em>kstpkper=None</em>, <em>totim=None</em>, <em>aliases=None</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget" title="Permalink to this definition">¶</a></dt>
 <dd><p>ZoneBudget class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>cbc_file</strong> : str or CellBudgetFile object</p>
-<blockquote>
-<div><p>The file name or CellBudgetFile object for which budgets will be
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>cbc_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or CellBudgetFile object</span></dt>
+<dd><p class="first last">The file name or CellBudgetFile object for which budgets will be
 computed.</p>
-</div></blockquote>
-<p><strong>z</strong> : ndarray</p>
-<blockquote>
-<div><p>The array containing to zones to be used.</p>
-</div></blockquote>
-<p><strong>kstpkper</strong> : tuple of ints</p>
-<blockquote>
-<div><p>A tuple containing the time step and stress period (kstp, kper).
+</dd>
+<dt><strong>z</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray</span></dt>
+<dd><p class="first last">The array containing to zones to be used.</p>
+</dd>
+<dt><strong>kstpkper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of ints</span></dt>
+<dd><p class="first last">A tuple containing the time step and stress period (kstp, kper).
 The kstp and kper values are zero based.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time.</p>
-</div></blockquote>
-<p><strong>aliases</strong> : dict</p>
-<blockquote class="last">
-<div><p>A dictionary with key, value pairs of zones and aliases. Replaces
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time.</p>
+</dd>
+<dt><strong>aliases</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dictionary with key, value pairs of zones and aliases. Replaces
 the corresponding record and field names with the aliases provided.
-NOTE: When using this option in conjunction with a list of zones,
-the zone(s) passed may either be all strings (aliases), all
-integers, or mixed.</p>
-</div></blockquote>
+When using this option in conjunction with a list of zones, the
+zone(s) passed may either be all strings (aliases), all integers,
+or mixed.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">flopy.utils.zonbud</span> <span class="k">import</span> <span class="n">ZoneBudget</span><span class="p">,</span> <span class="n">read_zbarray</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">flopy.utils.zonbud</span> <span class="k">import</span> <span class="n">ZoneBudget</span><span class="p">,</span> <span class="n">read_zbarray</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zon</span> <span class="o">=</span> <span class="n">read_zbarray</span><span class="p">(</span><span class="s1">&#39;zone_input_file&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;zonebudtest.csv&#39;</span><span class="p">)</span>
@@ -272,30 +270,30 @@ integers, or mixed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> : list of strings</p>
-<blockquote>
-<div><p>A list of strings containing the names of the records desired.</p>
-</div></blockquote>
-<p><strong>zones</strong> : list of ints or strings</p>
-<blockquote>
-<div><p>A list of integer zone numbers or zone names desired.</p>
-</div></blockquote>
-<p><strong>net</strong> : boolean</p>
-<blockquote>
-<div><p>If True, returns net IN-OUT for each record.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">A list of strings containing the names of the records desired.</p>
+</dd>
+<dt><strong>zones</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of ints or strings</span></dt>
+<dd><p class="first last">A list of integer zone numbers or zone names desired.</p>
+</dd>
+<dt><strong>net</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If True, returns net IN-OUT for each record.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>budget_list</strong> : list of reecord arrays</p>
-<blockquote class="last">
-<div><p>A list of the zonebudget record arrays.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>budget_list</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of record arrays</span></dt>
+<dd><p class="first last">A list of the zonebudget record arrays.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CONSTANT_HEAD_IN&#39;</span><span class="p">,</span> <span class="s1">&#39;RIVER_LEAKAGE_OUT&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FROM_CONSTANT_HEAD&#39;</span><span class="p">,</span> <span class="s1">&#39;RIVER_LEAKAGE_OUT&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zones</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ZONE_1&#39;</span><span class="p">,</span> <span class="s1">&#39;ZONE_2&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bud</span> <span class="o">=</span> <span class="n">zb</span><span class="o">.</span><span class="n">get_budget</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">zones</span><span class="o">=</span><span class="n">zones</span><span class="p">)</span>
@@ -306,43 +304,74 @@ integers, or mixed.</p>
 <dl class="method">
 <dt id="flopy.utils.zonbud.ZoneBudget.get_dataframes">
 <code class="descname">get_dataframes</code><span class="sig-paren">(</span><em>start_datetime=None</em>, <em>timeunit='D'</em>, <em>index_key='totim'</em>, <em>names=None</em>, <em>zones=None</em>, <em>net=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.get_dataframes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get pandas dataframes.
-Parameters
-———-</p>
-<dl class="docutils">
-<dt>start_datetime <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd>Datetime string indicating the time at which the simulation starts.</dd>
-<dt>timeunit <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd>String that indicates the time units used in the model.</dd>
-<dt>index_key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd>Indicates the fields to be used (in addition to “record”) in the
-resulting DataFrame multi-index.</dd>
-<dt>names <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
-<dd>A list of strings containing the names of the records desired.</dd>
-<dt>zones <span class="classifier-delimiter">:</span> <span class="classifier">list of ints or strings</span></dt>
-<dd>A list of integer zone numbers or zone names desired.</dd>
-<dt>net <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd>If True, returns net IN-OUT for each record.</dd>
-</dl>
+<dd><p>Get pandas dataframes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>df</strong> : Pandas DataFrame</p>
-<blockquote class="last">
-<div><p>Pandas DataFrame with the budget information.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_datetime</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Datetime string indicating the time at which the simulation starts.</p>
+</dd>
+<dt><strong>timeunit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">String that indicates the time units used in the model.</p>
+</dd>
+<dt><strong>index_key</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Indicates the fields to be used (in addition to “record”) in the
+resulting DataFrame multi-index.</p>
+</dd>
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">A list of strings containing the names of the records desired.</p>
+</dd>
+<dt><strong>zones</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of ints or strings</span></dt>
+<dd><p class="first last">A list of integer zone numbers or zone names desired.</p>
+</dd>
+<dt><strong>net</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">If True, returns net IN-OUT for each record.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>df</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Pandas DataFrame</span></dt>
+<dd><p class="first last">Pandas DataFrame with the budget information.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">flopy.utils.zonbud</span> <span class="k">import</span> <span class="n">ZoneBudget</span><span class="p">,</span> <span class="n">read_zbarray</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">flopy.utils.zonbud</span> <span class="k">import</span> <span class="n">ZoneBudget</span><span class="p">,</span> <span class="n">read_zbarray</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zon</span> <span class="o">=</span> <span class="n">read_zbarray</span><span class="p">(</span><span class="s1">&#39;zone_input_file&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">zb</span><span class="o">.</span><span class="n">get_dataframes</span><span class="p">()</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.zonbud.ZoneBudget.get_model_shape">
+<code class="descname">get_model_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.zonbud.ZoneBudget.get_model_shape" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of layers</p>
+</dd>
+<dt><strong>nrow</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of rows</p>
+</dd>
+<dt><strong>ncol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of columns</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -353,16 +382,17 @@ resulting DataFrame multi-index.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
-<blockquote class="last">
-<div><p>List of unique text names in the binary file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings</span></dt>
+<dd><p class="first last">List of unique text names in the binary file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zb</span> <span class="o">=</span> <span class="n">ZoneBudget</span><span class="p">(</span><span class="s1">&#39;zonebudtest.cbc&#39;</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">recnames</span> <span class="o">=</span> <span class="n">zb</span><span class="o">.</span><span class="n">get_record_names</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -377,13 +407,17 @@ comma-separated values file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
-<blockquote>
-<div><p>The name of the output comma-separated values file.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the output comma-separated values file.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -400,16 +434,18 @@ comma-separated values file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> :  str</p>
-<blockquote>
-<div><p>The path and name of the file to be written.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The path and name of the file to be written.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>zones</strong> : numpy ndarray</p>
-<blockquote class="last">
-<div><p>An integer array of the zones.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>zones</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy ndarray</span></dt>
+<dd><p class="first last">An integer array of the zones.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -453,22 +489,20 @@ INTERNAL      (10I8)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array</p>
-<blockquote>
-<div><p>The array of zones to be written.</p>
-</div></blockquote>
-<p><strong>fname</strong> :  str</p>
-<blockquote>
-<div><p>The path and name of the file to be written.</p>
-</div></blockquote>
-<p><strong>fmtin</strong> : int</p>
-<blockquote>
-<div><p>The number of values to write to each line.</p>
-</div></blockquote>
-<p><strong>iprn</strong> : int</p>
-<blockquote class="last">
-<div><p>Padding space to add between each value.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
+<dd><p class="first last">The array of zones to be written.</p>
+</dd>
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The path and name of the file to be written.</p>
+</dd>
+<dt><strong>fmtin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of values to write to each line.</p>
+</dd>
+<dt><strong>iprn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Padding space to add between each value.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -479,9 +513,7 @@ INTERNAL      (10I8)</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -490,7 +522,7 @@ INTERNAL      (10I8)</p>
         <a href="map.html" class="btn btn-neutral float-right" title="flopy.plot.map Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="util_list.html" class="btn btn-neutral" title="flopy.utils.util_list Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="util_list.html" class="btn btn-neutral float-left" title="flopy.utils.util_list Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -499,11 +531,13 @@ INTERNAL      (10I8)</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -516,36 +550,15 @@ INTERNAL      (10I8)</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

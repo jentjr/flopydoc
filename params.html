@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.pest.params Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.pest.params Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.pest.templatewriter Module" href="templatewriter.html"/>
-        <link rel="prev" title="flopy.export.vtk Module" href="vtk.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.pest.templatewriter Module" href="templatewriter.html" />
+    <link rel="prev" title="flopy.export.vtk Module" href="vtk.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -121,6 +115,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tplarray.html">flopy.pest.tplarray Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -134,7 +129,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -142,9 +137,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -198,35 +194,29 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mfpackage</strong> : str</p>
-<blockquote>
-<div><p>The Modflow package type to associated with this parameter.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>mfpackage</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The Modflow package type to associated with this parameter.
 ‘LPF’ is one package that is working now.</p>
-</div></blockquote>
-<p><strong>partype</strong> : str</p>
-<blockquote>
-<div><p>The parameter type, such as ‘hk’.  This must be a valid attribute
+</dd>
+<dt><strong>partype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The parameter type, such as ‘hk’.  This must be a valid attribute
 in the mfpackage.</p>
-</div></blockquote>
-<p><strong>parname</strong> : str</p>
-<blockquote>
-<div><p>The parameter name, such as ‘HK_1’.</p>
-</div></blockquote>
-<p><strong>startvalue</strong> : float</p>
-<blockquote>
-<div><p>The starting value for the parameter.</p>
-</div></blockquote>
-<p><strong>lbound</strong> : float</p>
-<blockquote>
-<div><p>The lower bound for the parameter.</p>
-</div></blockquote>
-<p><strong>ubound</strong> : float</p>
-<blockquote>
-<div><p>The upper bound for the parameter.</p>
-</div></blockquote>
-<p><strong>span</strong> : dict</p>
-<blockquote>
-<div><p>The span over which the parameter applies.  The span depends on the
+</dd>
+<dt><strong>parname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The parameter name, such as ‘HK_1’.</p>
+</dd>
+<dt><strong>startvalue</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The starting value for the parameter.</p>
+</dd>
+<dt><strong>lbound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The lower bound for the parameter.</p>
+</dd>
+<dt><strong>ubound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The upper bound for the parameter.</p>
+</dd>
+<dt><strong>span</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">The span over which the parameter applies.  The span depends on the
 type of array that the parameter applies to.  For 3d arrays, span
 should have either ‘idx’ or ‘layers’ keys.  span[‘layers’] should
 be a list of layer to for which parname will be applied as a
@@ -240,8 +230,10 @@ used to assign parameter to the array using arr[idx] = parname.
 For transient 2d arrays, span must include a ‘kpers’ key such that
 span[‘kpers’] is a list of stress period to which parname will be
 applied as a multiplier.</p>
-</div></blockquote>
-<p class="last"><strong>transform</strong> : Parameter transformation type.</p>
+</dd>
+<dt><strong>transform</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Parameter transformation type.</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -261,9 +253,7 @@ zone value, separated by an underscore.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -272,7 +262,7 @@ zone value, separated by an underscore.</p>
         <a href="templatewriter.html" class="btn btn-neutral float-right" title="flopy.pest.templatewriter Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vtk.html" class="btn btn-neutral" title="flopy.export.vtk Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vtk.html" class="btn btn-neutral float-left" title="flopy.export.vtk Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -281,11 +271,13 @@ zone value, separated by an underscore.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -298,36 +290,15 @@ zone value, separated by an underscore.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

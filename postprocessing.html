@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.postprocessing Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.postprocessing Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.export.shapefile_utils Module" href="shapefile_utils.html"/>
-        <link rel="prev" title="flopy.utils.observationfile Module" href="observationfile.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.export.shapefile_utils Module" href="shapefile_utils.html" />
+    <link rel="prev" title="flopy.utils.observationfile Module" href="observationfile.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -117,8 +111,6 @@
 <li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
@@ -128,6 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modpathfile.html">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -143,6 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +150,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -164,9 +158,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -221,29 +216,28 @@ array for each stress period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 3 or 4-D np.ndarray</p>
-<blockquote>
-<div><p>Heads array.</p>
-</div></blockquote>
-<p><strong>m</strong> : flopy.modflow.Modflow object</p>
-<blockquote>
-<div><p>Must have a flopy.modflow.ModflowDis object attached.</p>
-</div></blockquote>
-<p><strong>nodata</strong> : real</p>
-<blockquote>
-<div><p>HDRY value indicating dry cells.</p>
-</div></blockquote>
-<p><strong>per_idx</strong> : int or sequence of ints</p>
-<blockquote>
-<div><p>stress periods to return. If None,
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Heads array.</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow object</span></dt>
+<dd><p class="first last">Must have a flopy.modflow.ModflowDis object attached.</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">real</span></dt>
+<dd><p class="first last">HDRY value indicating dry cells.</p>
+</dd>
+<dt><strong>per_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or sequence of ints</span></dt>
+<dd><p class="first last">stress periods to return. If None,
 returns all stress periods (default).</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p><strong>grad</strong> : 3 or 4-D np.ndarray</p>
-<blockquote class="last">
-<div><p>Array of hydraulic gradients</p>
-</div></blockquote>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>grad</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Array of hydraulic gradients</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -259,29 +253,28 @@ array for each stress period.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 3 or 4-D np.ndarray</p>
-<blockquote>
-<div><p>Heads array.</p>
-</div></blockquote>
-<p><strong>m</strong> : flopy.modflow.Modflow object</p>
-<blockquote>
-<div><p>Must have a flopy.modflow.ModflowDis object attached.</p>
-</div></blockquote>
-<p><strong>nodata</strong> : real</p>
-<blockquote>
-<div><p>HDRY value indicating dry cells.</p>
-</div></blockquote>
-<p><strong>per_idx</strong> : int or sequence of ints</p>
-<blockquote>
-<div><p>stress periods to return. If None,
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Heads array.</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow object</span></dt>
+<dd><p class="first last">Must have a flopy.modflow.ModflowDis object attached.</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">real</span></dt>
+<dd><p class="first last">HDRY value indicating dry cells.</p>
+</dd>
+<dt><strong>per_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or sequence of ints</span></dt>
+<dd><p class="first last">stress periods to return. If None,
 returns all stress periods (default).</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p><strong>sat_thickness</strong> : 3 or 4-D np.ndarray</p>
-<blockquote class="last">
-<div><p>Array of saturated thickness</p>
-</div></blockquote>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sat_thickness</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Array of saturated thickness</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -291,56 +284,52 @@ returns all stress periods (default).</p>
 <dl class="function">
 <dt id="flopy.utils.postprocessing.get_transmissivities">
 <code class="descclassname">flopy.utils.postprocessing.</code><code class="descname">get_transmissivities</code><span class="sig-paren">(</span><em>heads</em>, <em>m</em>, <em>r=None</em>, <em>c=None</em>, <em>x=None</em>, <em>y=None</em>, <em>sctop=None</em>, <em>scbot=None</em>, <em>nodata=-999</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.postprocessing.get_transmissivities" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes transmissivity in each model layer at specified locations and open intervals.
-A saturated thickness is determined for each row, column or x, y location supplied,
-based on the open interval (sctop, scbot), if supplied, otherwise the layer tops and bottoms
-and the water table are used.</p>
+<dd><p>Computes transmissivity in each model layer at specified locations and
+open intervals. A saturated thickness is determined for each row, column
+or x, y location supplied, based on the open interval (sctop, scbot),
+if supplied, otherwise the layer tops and bottoms and the water table
+are used.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 2D array</p>
-<blockquote>
-<div><p>numpy array of shape nlay by n locations</p>
-</div></blockquote>
-<p><strong>m</strong> : flopy.modflow.Modflow object</p>
-<blockquote>
-<div><p>Must have dis, sr, and lpf or upw packages.</p>
-</div></blockquote>
-<p><strong>r</strong> : 1D array-like of ints, of length n locations</p>
-<blockquote>
-<div><p>row indices (optional; alternately specify x, y)</p>
-</div></blockquote>
-<p><strong>c</strong> : 1D array-like of ints, of length n locations</p>
-<blockquote>
-<div><p>column indicies (optional; alternately specify x, y)</p>
-</div></blockquote>
-<p><strong>x</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>x locations in real world coordinates (optional)</p>
-</div></blockquote>
-<p><strong>y</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>y locations in real world coordinates (optional)</p>
-</div></blockquote>
-<p><strong>sctop</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>open interval tops (optional; default is model top)</p>
-</div></blockquote>
-<p><strong>scbot</strong> : 1D array-like of floats, of length n locations</p>
-<blockquote>
-<div><p>open interval bottoms (optional; default is model bottom)</p>
-</div></blockquote>
-<p><strong>nodata</strong> : numeric</p>
-<blockquote>
-<div><p>optional; locations where heads=nodata will be assigned T=0</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D array OR 3D array</span></dt>
+<dd><p class="first last">numpy array of shape nlay by n locations (2D) OR complete heads array
+of the model for one time (3D)</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.modflow.Modflow object</span></dt>
+<dd><p class="first last">Must have dis, sr, and lpf or upw packages.</p>
+</dd>
+<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of ints, of length n locations</span></dt>
+<dd><p class="first last">row indices (optional; alternately specify x, y)</p>
+</dd>
+<dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of ints, of length n locations</span></dt>
+<dd><p class="first last">column indices (optional; alternately specify x, y)</p>
+</dd>
+<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">x locations in real world coordinates (optional)</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">y locations in real world coordinates (optional)</p>
+</dd>
+<dt><strong>sctop</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">open interval tops (optional; default is model top)</p>
+</dd>
+<dt><strong>scbot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">1D array-like of floats, of length n locations</span></dt>
+<dd><p class="first last">open interval bottoms (optional; default is model bottom)</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numeric</span></dt>
+<dd><p class="first last">optional; locations where heads=nodata will be assigned T=0</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>T</strong> : 2D array of same shape as heads (nlay x n locations)</p>
-<blockquote class="last">
-<div><p>Transmissivities in each layer at each location</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>T</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2D array of same shape as heads (nlay x n locations)</span></dt>
+<dd><p class="first last">Transmissivities in each layer at each location</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -350,31 +339,31 @@ and the water table are used.</p>
 <dl class="function">
 <dt id="flopy.utils.postprocessing.get_water_table">
 <code class="descclassname">flopy.utils.postprocessing.</code><code class="descname">get_water_table</code><span class="sig-paren">(</span><em>heads</em>, <em>nodata</em>, <em>per_idx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.postprocessing.get_water_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a 2D array representing the water table
-elevation for each stress period in heads array.</p>
+<dd><p>Get a 2D array representing the water table elevation for each
+stress period in heads array.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>heads</strong> : 3 or 4-D np.ndarray</p>
-<blockquote>
-<div><p>Heads array.</p>
-</div></blockquote>
-<p><strong>nodata</strong> : real</p>
-<blockquote>
-<div><p>HDRY value indicating dry cells.</p>
-</div></blockquote>
-<p><strong>per_idx</strong> : int or sequence of ints</p>
-<blockquote>
-<div><p>stress periods to return. If None,
-returns all stress periods (default).</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p><strong>wt</strong> : 2 or 3-D np.ndarray of water table elevations</p>
-<blockquote class="last">
-<div><p>for each stress period.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>heads</strong> <span class="classifier-delimiter">:</span> <span class="classifier">3 or 4-D np.ndarray</span></dt>
+<dd><p class="first last">Heads array.</p>
+</dd>
+<dt><strong>nodata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">real</span></dt>
+<dd><p class="first last">HDRY value indicating dry cells.</p>
+</dd>
+<dt><strong>per_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or sequence of ints</span></dt>
+<dd><p class="first last">stress periods to return. If None,
+returns all stress periods (default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>wt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2 or 3-D np.ndarray of water table elevations</span></dt>
+<dd><p class="first last">for each stress period.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -385,9 +374,7 @@ returns all stress periods (default).</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -396,7 +383,7 @@ returns all stress periods (default).</p>
         <a href="shapefile_utils.html" class="btn btn-neutral float-right" title="flopy.export.shapefile_utils Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="observationfile.html" class="btn btn-neutral" title="flopy.utils.observationfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="observationfile.html" class="btn btn-neutral float-left" title="flopy.utils.observationfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -405,11 +392,13 @@ returns all stress periods (default).</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -422,36 +411,15 @@ returns all stress periods (default).</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

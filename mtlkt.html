@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mt3d.mtlkt Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mt3d.mtlkt Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mt3d.mtphc Module" href="mtphc.html"/>
-        <link rel="prev" title="flopy.mt3d.mtgcg Module" href="mtgcg.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.mt3d.mtphc Module" href="mtphc.html" />
+    <link rel="prev" title="flopy.mt3d.mtgcg Module" href="mtgcg.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mtadv.html">flopy.mt3d.mtadv Module</a></li>
@@ -130,6 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -143,7 +138,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -151,9 +146,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -201,101 +197,90 @@
 <span id="flopy-mt3d-mtlkt-module"></span><h1>flopy.mt3d.mtlkt Module<a class="headerlink" href="#module-flopy.mt3d.mtlkt" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mt3d.mtlkt.Mt3dLkt">
-<em class="property">class </em><code class="descclassname">flopy.mt3d.mtlkt.</code><code class="descname">Mt3dLkt</code><span class="sig-paren">(</span><em>model</em>, <em>nlkinit=0</em>, <em>mxlkbc=0</em>, <em>icbclk=None</em>, <em>ietlak=0</em>, <em>coldlak=0.0</em>, <em>lk_stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='lkt'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mt3d.mtlkt.</code><code class="descname">Mt3dLkt</code><span class="sig-paren">(</span><em>model</em>, <em>nlkinit=0</em>, <em>mxlkbc=0</em>, <em>icbclk=None</em>, <em>ietlak=0</em>, <em>coldlak=0.0</em>, <em>lk_stress_period_data=None</em>, <em>dtype=None</em>, <em>extension='lkt'</em>, <em>unitnumber=None</em>, <em>filenames=None</em>, <em>iprn=-1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt" title="Permalink to this definition">¶</a></dt>
 <dd><p>MT3D-USGS LaKe Transport package class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3dms.mt.Mt3dms</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>nlkinit</strong> : int</p>
-<blockquote>
-<div><p>is equal to the number of simulated lakes as specified in the flow
+</dd>
+<dt><strong>nlkinit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is equal to the number of simulated lakes as specified in the flow
 simulation</p>
-</div></blockquote>
-<p><strong>mxlkbc</strong> : int</p>
-<blockquote>
-<div><p>must be greater than or equal to the sum total of boundary conditions 
+</dd>
+<dt><strong>mxlkbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">must be greater than or equal to the sum total of boundary conditions
 applied to each lake</p>
-</div></blockquote>
-<p><strong>icbclk</strong> : int</p>
-<blockquote>
-<div><p>is equal to the unit number on which lake-by-lake transport information
-will be printed.  This unit number must appear in the NAM input file 
+</dd>
+<dt><strong>icbclk</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is equal to the unit number on which lake-by-lake transport information
+will be printed.  This unit number must appear in the NAM input file
 required for every MT3D-USGS simulation.</p>
-</div></blockquote>
-<p><strong>ietlak</strong> : int</p>
-<blockquote>
-<div><p>specifies whether or not evaporation as simulated in the flow solution 
+</dd>
+<dt><strong>ietlak</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">specifies whether or not evaporation as simulated in the flow solution
 will act as a mass sink.
 = 0, Mass does not exit the model via simulated lake evaporation
 != 0, Mass may leave the lake via simulated lake evaporation</p>
-</div></blockquote>
-<p><strong>coldlak</strong> : array of floats</p>
-<blockquote>
-<div><p>is a vector of real numbers representing the initial concentrations in 
-the simulated lakes.  The length of the vector is equal to the number 
-of simulated lakes, NLKINIT.  Initial lake concentrations should be 
-in the same order as the lakes appearing in the LAK input file 
+</dd>
+<dt><strong>coldlak</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats</span></dt>
+<dd><p class="first last">is a vector of real numbers representing the initial concentrations in
+the simulated lakes.  The length of the vector is equal to the number
+of simulated lakes, NLKINIT.  Initial lake concentrations should be
+in the same order as the lakes appearing in the LAK input file
 corresponding to the MODFLOW simulation.</p>
-</div></blockquote>
-<p><strong>ntmp</strong> : int</p>
-<blockquote>
-<div><p>is an integer value corresponding to the number of specified lake 
-boundary conditions to follow.  For the first stress period, this 
-value must be greater than or equal to zero, but may be less than 
+</dd>
+<dt><strong>ntmp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is an integer value corresponding to the number of specified lake
+boundary conditions to follow.  For the first stress period, this
+value must be greater than or equal to zero, but may be less than
 zero in subsequent stress periods.</p>
-</div></blockquote>
-<p><strong>ilkbc</strong> : int</p>
-<blockquote>
-<div><p>is the lake number for which the current boundary condition will be 
+</dd>
+<dt><strong>ilkbc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the lake number for which the current boundary condition will be
 specified</p>
-</div></blockquote>
-<p><strong>ilkbctyp</strong> : int</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>ilkbctyp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><dl class="first last docutils">
 <dt>specifies what the boundary condition type is for ilakbc</dt>
 <dd><dl class="first last docutils">
-<dt>1   a precipitation boundary. If precipitation directly to lakes </dt>
-<dd><p class="first last">is simulated in the flow model and a non-zero concentration 
+<dt>1   a precipitation boundary. If precipitation directly to lakes</dt>
+<dd><p class="first last">is simulated in the flow model and a non-zero concentration
 (default is zero) is desired, use ISFBCTYP = 1;</p>
 </dd>
-<dt>2   a runoff boundary condition that is not the same thing as </dt>
-<dd><p class="first last">runoff simulated in the UZF1 package and routed to a lake (or 
-stream) using the IRNBND array.  Users who specify runoff in 
-the LAK input via the RNF variable appearing in record set 9a 
-and want to assign a non-zero concentration (default is zero) 
+<dt>2   a runoff boundary condition that is not the same thing as</dt>
+<dd><p class="first last">runoff simulated in the UZF1 package and routed to a lake (or
+stream) using the IRNBND array.  Users who specify runoff in
+the LAK input via the RNF variable appearing in record set 9a
+and want to assign a non-zero concentration (default is zero)
 associated with this specified source, use ISFBCTYP=2;</p>
 </dd>
-<dt>3   a Pump boundary condition.  Users who specify a withdrawl</dt>
-<dd><p class="first last">from a lake via the WTHDRW variable appearing in record set 9a 
-and want to assign a non-zero concentration (default is zero) 
+<dt>3   a Pump boundary condition.  Users who specify a withdrawal</dt>
+<dd><p class="first last">from a lake via the WTHDRW variable appearing in record set 9a
+and want to assign a non-zero concentration (default is zero)
 associated with this specified source, use ISFBCTYP=2;</p>
 </dd>
-<dt>4   an evaporation boundary condition.  In models where evaporation </dt>
+<dt>4   an evaporation boundary condition.  In models where evaporation</dt>
 <dd><p class="first last">is simulated directly from the surface of the lake, users can use
-this boundary condition to specify a non-zero concentration 
+this boundary condition to specify a non-zero concentration
 (default is zero) associated with the evaporation losses.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘lkt’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘lkt’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the lake output name will be created using
 the model name and lake concentration observation extension
@@ -306,7 +291,8 @@ output name will be created using the model name and .lkcobs.out
 extension, if icbclk is a number greater than zero. To define the
 names for all package files (input and output) the length of the list
 of strings should be 2. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -314,11 +300,37 @@ of strings should be 2. Default is None.</p>
 <p class="rubric">Notes</p>
 <p>Parameters are not supported in FloPy.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lkt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dLkt</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="staticmethod">
+<dt id="flopy.mt3d.mtlkt.Mt3dLkt.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.mt3d.mtlkt.Mt3dLkt.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.check" title="Permalink to this definition">¶</a></dt>
@@ -327,32 +339,34 @@ of strings should be 2. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -362,7 +376,7 @@ performed. If level=1, full checks are performed.</p>
 <dl class="staticmethod">
 <dt id="flopy.mt3d.mtlkt.Mt3dLkt.get_default_dtype">
 <em class="property">static </em><code class="descname">get_default_dtype</code><span class="sig-paren">(</span><em>ncomp=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mt3d.mtlkt.Mt3dLkt.get_default_dtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct a dtype for the recarray containing the list of boundary 
+<dd><p>Construct a dtype for the recarray containing the list of boundary
 conditions interacting with the lake (i.e., pumps, specified runoff…)</p>
 </dd></dl>
 
@@ -374,47 +388,44 @@ conditions interacting with the lake (i.e., pumps, specified runoff…)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mt.html#flopy.mt3d.mt.Mt3dms" title="flopy.mt3d.mt.Mt3dms"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.mt3d.mt.Mt3dms</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>nlak</strong> : int</p>
-<blockquote>
-<div><p>number of lakes to be simulated</p>
-</div></blockquote>
-<p><strong>nper</strong> : int</p>
-<blockquote>
-<div><p>number of stress periods</p>
-</div></blockquote>
-<p><strong>ncomp</strong> : int</p>
-<blockquote>
-<div><p>number of species to be simulated</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>nlak</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">number of lakes to be simulated</p>
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">number of stress periods</p>
+</dd>
+<dt><strong>ncomp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">number of species to be simulated</p>
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lkt</strong> :  MT3D-USGS object</p>
-<blockquote class="last">
-<div><p>MT3D-USGS object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>lkt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MT3D-USGS object</span></dt>
+<dd><p class="first last">MT3D-USGS object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:       emp\LKT&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mt</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">mt3d</span><span class="o">.</span><span class="n">Mt3dms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;lkt_mt.nam&#39;</span><span class="p">,</span> <span class="n">exe_name</span> <span class="o">=</span> <span class="s1">&#39;mt3d-usgs_1.0.00.exe&#39;</span><span class="p">,</span>
@@ -433,9 +444,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -457,20 +468,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -486,19 +499,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -513,7 +530,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -525,9 +546,7 @@ Adds an attribute for each layer in each data array</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -536,7 +555,7 @@ Adds an attribute for each layer in each data array</p>
         <a href="mtphc.html" class="btn btn-neutral float-right" title="flopy.mt3d.mtphc Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mtgcg.html" class="btn btn-neutral" title="flopy.mt3d.mtgcg Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mtgcg.html" class="btn btn-neutral float-left" title="flopy.mt3d.mtgcg Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -545,11 +564,13 @@ Adds an attribute for each layer in each data array</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -562,36 +583,15 @@ Adds an attribute for each layer in each data array</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

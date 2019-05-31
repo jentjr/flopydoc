@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfdisu Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfdisu Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.utils.check Module" href="check.html"/>
-        <link rel="prev" title="flopy.modflow.mfbct Module" href="mfbct.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.utils.check Module" href="check.html" />
+    <link rel="prev" title="flopy.modflow.mfbct Module" href="mfbct.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -121,6 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -134,7 +129,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -142,9 +137,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -200,31 +196,27 @@ the ModflowDisU class as <cite>flopy.modflow.ModflowDisU</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.Modflow</span></code>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.Modflow</span></code>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>nodes</strong> : int</p>
-<blockquote>
-<div><p>Number of nodes in the model grid (default is 2).</p>
-</div></blockquote>
-<p><strong>nlay</strong> : int</p>
-<blockquote>
-<div><p>Number of layers in the model grid (default is 1).</p>
-</div></blockquote>
-<p><strong>njag</strong> : int</p>
-<blockquote>
-<div><p>Total number of connections of an unstructured grid. njag is used to
+</dd>
+<dt><strong>nodes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of nodes in the model grid (default is 2).</p>
+</dd>
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of layers in the model grid (default is 1).</p>
+</dd>
+<dt><strong>njag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Total number of connections of an unstructured grid. njag is used to
 dimension the sparse matrix in a compressed row storage format. For
 symmetric arrays, only the upper triangle of the matrix may be
 entered. For that case, the symmetric portion (minus the diagonal
 terms) is dimensioned as njags = (njag - nodes) / 2.
 (default is None).</p>
-</div></blockquote>
-<p><strong>ivsd</strong> : int</p>
-<blockquote>
-<div><p>is the vertical sub-discretization index. For purposes of this flag,
+</dd>
+<dt><strong>ivsd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">is the vertical sub-discretization index. For purposes of this flag,
 vertical sub-discretization is defined to occur when all layers are
 not a stacked representation of each other.
 If IVSD = 0 there is no sub-discretization of layers within the model
@@ -243,22 +235,18 @@ this case, the cell areas (AREA) are read only for one layer and are
 computed to be the same for all the stacked layers. A structured
 finite-difference grid is an example of this condition.
 (default is 0).</p>
-</div></blockquote>
-<p><strong>nper</strong> : int</p>
-<blockquote>
-<div><p>Number of model stress periods (the default is 1).</p>
-</div></blockquote>
-<p><strong>itmuni</strong> : int</p>
-<blockquote>
-<div><p>Time units, default is days (4)</p>
-</div></blockquote>
-<p><strong>lenuni</strong> : int</p>
-<blockquote>
-<div><p>Length units, default is meters (2)</p>
-</div></blockquote>
-<p><strong>idsymrd</strong> : int</p>
-<blockquote>
-<div><p>A flag indicating if the finite-volume connectivity information of an
+</dd>
+<dt><strong>nper</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of model stress periods (the default is 1).</p>
+</dd>
+<dt><strong>itmuni</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Time units, default is days (4)</p>
+</dd>
+<dt><strong>lenuni</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length units, default is meters (2)</p>
+</dd>
+<dt><strong>idsymrd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">A flag indicating if the finite-volume connectivity information of an
 unstructured grid is input as a full matrix or as a symmetric matrix
 in the input file.
 If idsymrd is 0 the finite-volume connectivity information is provided
@@ -274,50 +262,43 @@ structure (IDSYMRD=1) is compact but is slightly more complicated to
 organize. Only the non-zero upper triangular items of each row are
 read in sequence for all symmetric matrices.
 (default is 0).</p>
-</div></blockquote>
-<p><strong>laycbd</strong> : int or array of ints (nlay), optional</p>
-<blockquote>
-<div><p>An array of flags indicating whether or not a layer has a Quasi-3D
+</dd>
+<dt><strong>laycbd</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay), optional</span></dt>
+<dd><p class="first last">An array of flags indicating whether or not a layer has a Quasi-3D
 confining bed below it. 0 indicates no confining bed, and not zero
 indicates a confining bed. LAYCBD for the bottom layer must be 0. (the
 default is 0)</p>
-</div></blockquote>
-<p><strong>nodelay</strong> : int or array of ints (nlay)</p>
-<blockquote>
-<div><p>The number of cells in each layer. (the default is None, which means
+</dd>
+<dt><strong>nodelay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nlay)</span></dt>
+<dd><p class="first last">The number of cells in each layer. (the default is None, which means
 the number of cells in a layer is equal to nodes / nlay).</p>
-</div></blockquote>
-<p><strong>top</strong> : float or array of floats (nodes), optional</p>
-<blockquote>
-<div><p>An array of the top elevation for every cell. For the situation in
+</dd>
+<dt><strong>top</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nodes), optional</span></dt>
+<dd><p class="first last">An array of the top elevation for every cell. For the situation in
 which the top layer represents a water-table aquifer, it may be
 reasonable to set Top equal to land-surface elevation (the default is
 1.0)</p>
-</div></blockquote>
-<p><strong>bot</strong> : float or array of floats (nodes), optional</p>
-<blockquote>
-<div><p>An array of the bottom elevation for each model cell (the default is
+</dd>
+<dt><strong>bot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nodes), optional</span></dt>
+<dd><p class="first last">An array of the bottom elevation for each model cell (the default is
 0.)</p>
-</div></blockquote>
-<p><strong>area</strong> : float or array of floats</p>
-<blockquote>
-<div><p>Surface area for model cells.  Area is for only one layer if IVSD = -1
+</dd>
+<dt><strong>area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats</span></dt>
+<dd><p class="first last">Surface area for model cells.  Area is for only one layer if IVSD = -1
 to indicate that the grid is vertically stacked. Otherwise, area is
 required for each layer in the model grid. Note that there may be
 different number of nodes per layer (ndslay) for an unstructured grid.
 (default is 1.0)</p>
-</div></blockquote>
-<p><strong>iac</strong> : array of integers</p>
-<blockquote>
-<div><p>is a vector indicating the number of connections plus 1 for each
+</dd>
+<dt><strong>iac</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of integers</span></dt>
+<dd><p class="first last">is a vector indicating the number of connections plus 1 for each
 node. Note that the IAC array is only supplied for the GWF cells;
 the IAC array is internally expanded to include CLN or GNC nodes if
 they are present in a simulation.
 (default is None. iac must be provided).</p>
-</div></blockquote>
-<p><strong>ja</strong> : array of integers</p>
-<blockquote>
-<div><p>is a list of cell number (n) followed by its connecting cell numbers
+</dd>
+<dt><strong>ja</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of integers</span></dt>
+<dd><p class="first last">is a list of cell number (n) followed by its connecting cell numbers
 (m) for each of the m cells connected to cell n. This list is
 sequentially provided for the first to the last GWF cell. Note that
 the cell and its connections are only supplied for the GWF cells and
@@ -330,34 +311,30 @@ node number of the cell whose connectivity is subsequently listed,
 may be expressed as a negative number the sign of which is
 subsequently corrected by the code.
 (default is None.  ja must be provided).</p>
-</div></blockquote>
-<p><strong>ivc</strong> : int or array of integers</p>
-<blockquote>
-<div><p>is an index array indicating the direction between a node n and all
+</dd>
+<dt><strong>ivc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of integers</span></dt>
+<dd><p class="first last">is an index array indicating the direction between a node n and all
 its m connections. IVC = 0 if the connection between n and m is
 horizontal.  IVC = 1 if the connecting node m is vertically oriented
 to node n.  Note that if the CLN Process is active, the connection
 between two CLN cells has IVC = 2 and the connection between a CLN
 cell and a GWF cell has IVC = 3.
 (default is None.  ivc must be provided if ivsd = 1)</p>
-</div></blockquote>
-<p><strong>cl1</strong> : float or array of floats</p>
-<blockquote>
-<div><p>is the perpendicular length between the center of a node (node 1) and
+</dd>
+<dt><strong>cl1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats</span></dt>
+<dd><p class="first last">is the perpendicular length between the center of a node (node 1) and
 the interface between the node and its adjoining node (node 2).
 (default is None.  cl1 and cl2 must be specified, or cl12 must be
 specified)</p>
-</div></blockquote>
-<p><strong>cl2</strong> : float or array of floats</p>
-<blockquote>
-<div><p>is the perpendicular length between node 2 and the interface between
+</dd>
+<dt><strong>cl2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats</span></dt>
+<dd><p class="first last">is the perpendicular length between node 2 and the interface between
 nodes 1 and 2, and is at the symmetric location of CL1.
 (default is None.  cl1 and cl2 must be specified, or cl12 must be
 specified)</p>
-</div></blockquote>
-<p><strong>cl12</strong> : float or array of floats</p>
-<blockquote>
-<div><p>is the array containing CL1 and CL2 lengths, where CL1 is the
+</dd>
+<dt><strong>cl12</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats</span></dt>
+<dd><p class="first last">is the array containing CL1 and CL2 lengths, where CL1 is the
 perpendicular length between the center of a node (node 1) and the
 interface between the node and its adjoining node (node 2). CL2,
 which is the perpendicular length between node 2 and the interface
@@ -368,44 +345,37 @@ are only supplied for the GWF cell connections and are internally
 expanded if CLN or GNC nodes exist in a simulation.
 (default is None.  cl1 and cl2 must be specified, or cl12 must be
 specified)</p>
-</div></blockquote>
-<p><strong>fahl</strong> : float or arry of floats</p>
-<blockquote>
-<div><p>Area of the interface Anm between nodes n and m.
+</dd>
+<dt><strong>fahl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or arry of floats</span></dt>
+<dd><p class="first last">Area of the interface Anm between nodes n and m.
 (default is None.  fahl must be specified.)</p>
-</div></blockquote>
-<p><strong>perlen</strong> : float or array of floats (nper)</p>
-<blockquote>
-<div><p>An array of the stress period lengths.</p>
-</div></blockquote>
-<p><strong>nstp</strong> : int or array of ints (nper)</p>
-<blockquote>
-<div><p>Number of time steps in each stress period (default is 1).</p>
-</div></blockquote>
-<p><strong>tsmult</strong> : float or array of floats (nper)</p>
-<blockquote>
-<div><p>Time step multiplier (default is 1.0).</p>
-</div></blockquote>
-<p><strong>steady</strong> : boolean or array of boolean (nper)</p>
-<blockquote>
-<div><p>true or False indicating whether or not stress period is steady state
+</dd>
+<dt><strong>perlen</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nper)</span></dt>
+<dd><p class="first last">An array of the stress period lengths.</p>
+</dd>
+<dt><strong>nstp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or array of ints (nper)</span></dt>
+<dd><p class="first last">Number of time steps in each stress period (default is 1).</p>
+</dd>
+<dt><strong>tsmult</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or array of floats (nper)</span></dt>
+<dd><p class="first last">Time step multiplier (default is 1.0).</p>
+</dd>
+<dt><strong>steady</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean or array of boolean (nper)</span></dt>
+<dd><p class="first last">true or False indicating whether or not stress period is steady state
 (default is True).</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘dis’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package. If filenames=None the package name
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘dis’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package. If filenames=None the package name
 will be created using the model name and package extension. If a
 single string is passed the package will be set to the string.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -415,23 +385,50 @@ Default is None.</p>
 be u3d instances until u3d is modified to handle multiple u2d instances
 of different size.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">disu</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDisU</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="83%" />
-</colgroup>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><strong>heading</strong></td>
-<td>(str) Text string written to top of package input file.</td>
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>heading</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Text string written to top of package input file.</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfdisu.ModflowDisU.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdisu.ModflowDisU.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfdisu.ModflowDisU.check">
 <code class="descname">check</code><span class="sig-paren">(</span><em>f=None</em>, <em>verbose=True</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfdisu.ModflowDisU.check" title="Permalink to this definition">¶</a></dt>
@@ -440,32 +437,34 @@ of different size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a sting is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -486,7 +485,11 @@ performed. If level=1, full checks are performed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>vol</strong> : array of floats (nodes)</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array of floats (nodes)</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -500,39 +503,38 @@ performed. If level=1, full checks are performed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
-<p><strong>check</strong> : boolean</p>
-<blockquote>
-<div><p>Check package data for common errors. (default False; not setup yet)</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+<dt><strong>check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">Check package data for common errors. (default False; not setup yet)</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dis</strong> : ModflowDisU object</p>
-<blockquote class="last">
-<div><p>ModflowDisU object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowDisU object</span></dt>
+<dd><p class="first last">ModflowDisU object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">disu</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDisU</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.disu&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -548,9 +550,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -572,20 +574,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -600,7 +604,11 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>thickness</strong> : util2d array of floats (nodes,)</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>thickness</strong> <span class="classifier-delimiter">:</span> <span class="classifier">util2d array of floats (nodes,)</span></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -615,19 +623,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -642,7 +654,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -661,9 +677,7 @@ elevation.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -672,7 +686,7 @@ elevation.</p>
         <a href="check.html" class="btn btn-neutral float-right" title="flopy.utils.check Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mfbct.html" class="btn btn-neutral" title="flopy.modflow.mfbct Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mfbct.html" class="btn btn-neutral float-left" title="flopy.modflow.mfbct Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -681,11 +695,13 @@ elevation.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -698,36 +714,15 @@ elevation.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

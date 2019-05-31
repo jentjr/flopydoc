@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tutorial 2: Unconfined Transient Flow Model &mdash; flopy 3.2.9 documentation</title>
+  <title>Tutorial 2: Unconfined Transient Flow Model &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Tutorials" href="tutorials.html"/>
-        <link rel="next" title="Ipython Notebooks" href="notebooks.html"/>
-        <link rel="prev" title="Tutorial 1: Confined Steady-State Flow Model" href="tutorial1.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ipython Notebooks" href="notebooks.html" />
+    <link rel="prev" title="Tutorial 1: Confined Steady-State Flow Model" href="tutorial1.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -136,7 +129,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -144,9 +137,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -204,7 +198,7 @@
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>As shown in the previous tutorial, import flopy using your preferred method, such as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">flopy</span>
 </pre></div>
 </div>
@@ -214,7 +208,7 @@
 <div class="section" id="define-the-model-extent-grid-resolution-and-characteristics">
 <h3>Define the Model Extent, Grid Resolution, and Characteristics<a class="headerlink" href="#define-the-model-extent-grid-resolution-and-characteristics" title="Permalink to this headline">¶</a></h3>
 <p>Assign the model information:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Model domain and grid definition</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model domain and grid definition</span>
 <span class="n">Lx</span> <span class="o">=</span> <span class="mf">1000.</span>
 <span class="n">Ly</span> <span class="o">=</span> <span class="mf">1000.</span>
 <span class="n">ztop</span> <span class="o">=</span> <span class="mf">10.</span>
@@ -242,7 +236,7 @@
 <div class="section" id="define-the-stress-periods">
 <h3>Define the Stress Periods<a class="headerlink" href="#define-the-stress-periods" title="Permalink to this headline">¶</a></h3>
 <p>To create a model with multiple stress periods, we need to define nper, perlen, nstp, and steady.  This is done in the following block in a manner that allows us to pass these variable directly to the discretization object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Time step parameters</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Time step parameters</span>
 <span class="n">nper</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">perlen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 <span class="n">nstp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
@@ -253,7 +247,7 @@
 <div class="section" id="create-time-invariant-flopy-objects">
 <h3>Create Time-Invariant Flopy Objects<a class="headerlink" href="#create-time-invariant-flopy-objects" title="Permalink to this headline">¶</a></h3>
 <p>With this information, we can now create the static flopy objects that do not change with time:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Flopy objects</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Flopy objects</span>
 <span class="n">modelname</span> <span class="o">=</span> <span class="s1">&#39;tutorial2&#39;</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span> <span class="n">exe_name</span><span class="o">=</span><span class="s1">&#39;mf2005&#39;</span><span class="p">)</span>
 <span class="n">dis</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowDis</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">nlay</span><span class="p">,</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">,</span> <span class="n">delr</span><span class="o">=</span><span class="n">delr</span><span class="p">,</span> <span class="n">delc</span><span class="o">=</span><span class="n">delc</span><span class="p">,</span>
@@ -269,7 +263,7 @@
 <h3>Transient General-Head Boundary Package<a class="headerlink" href="#transient-general-head-boundary-package" title="Permalink to this headline">¶</a></h3>
 <p>At this point, our model is ready to add our transient boundary packages.  First, we will create the GHB object, which is of the following type: <a class="reference external" href="mfghb.html">flopy.modflow.ModflowGhb</a>.</p>
 <p>The key to creating Flopy transient boundary packages is recognizing that the boundary data is stored in a dictionary with key values equal to the zero-based stress period number and values equal to the boundary conditions for that stress period.  For a GHB the values can be a two-dimensional nested list of [layer, row, column, stage, conductance]:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Make list for stress period 1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make list for stress period 1</span>
 <span class="n">stageleft</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">stageright</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">bound_sp1</span> <span class="o">=</span> <span class="p">[]</span>
@@ -306,7 +300,7 @@
 <div class="section" id="transient-well-package">
 <h3>Transient Well Package<a class="headerlink" href="#transient-well-package" title="Permalink to this headline">¶</a></h3>
 <p>Now we can create the well package object, which is of the type, <a class="reference external" href="mfwel.html">flopy.modflow.ModflowWel</a>.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Create the well package</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the well package</span>
 <span class="c1"># Remember to use zero-based layer, row, column indices!</span>
 <span class="n">pumping_rate</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.</span>
 <span class="n">wel_sp1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">nrow</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]</span>
@@ -320,7 +314,7 @@
 <div class="section" id="output-control">
 <h3>Output Control<a class="headerlink" href="#output-control" title="Permalink to this headline">¶</a></h3>
 <p>Here we create the output control package object, which is of the type <a class="reference external" href="mfoc.html">flopy.modflow.ModflowOc</a>.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">stress_period_data</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stress_period_data</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">kper</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nper</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">kstp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nstp</span><span class="p">[</span><span class="n">kper</span><span class="p">]):</span>
         <span class="n">stress_period_data</span><span class="p">[(</span><span class="n">kper</span><span class="p">,</span> <span class="n">kstp</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;save head&#39;</span><span class="p">,</span>
@@ -337,7 +331,7 @@
 <div class="section" id="running-the-modeling">
 <h2>Running the Modeling<a class="headerlink" href="#running-the-modeling" title="Permalink to this headline">¶</a></h2>
 <p>Run the model with the run_model method, which returns a success flag and the stream of output. With run_model, we have some finer control, that allows us to suppress the output.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Write the model input files</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write the model input files</span>
 <span class="n">mf</span><span class="o">.</span><span class="n">write_input</span><span class="p">()</span>
 
 <span class="c1"># Run the model</span>
@@ -354,7 +348,7 @@
 * get_data() will return a three-dimensional head array for the specified time
 * get_ts() will return a time series array [ntimes, headval] for the specified cell</p>
 <p>Using these methods, we can create head plots and hydrographs from the model results.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">flopy.utils.binaryfile</span> <span class="k">as</span> <span class="nn">bf</span>
 
@@ -394,12 +388,12 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;stress period &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">iplot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
 
 
-    <span class="n">modelmap</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">ModelMap</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">mf</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">modelmap</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">PlotMapView</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">mf</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">qm</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">plot_ibound</span><span class="p">()</span>
     <span class="n">lc</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">plot_grid</span><span class="p">()</span>
     <span class="n">qm</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">plot_bc</span><span class="p">(</span><span class="s1">&#39;GHB&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="n">cs</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">contour_array</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">quiver</span> <span class="o">=</span> <span class="n">modelmap</span><span class="o">.</span><span class="n">plot_discharge</span><span class="p">(</span><span class="n">frf</span><span class="p">,</span> <span class="n">fff</span><span class="p">,</span> <span class="n">head</span><span class="o">=</span><span class="n">head</span><span class="p">)</span>
 
 
@@ -426,7 +420,7 @@
 <div class="section" id="plot-head-versus-time">
 <h3>Plot Head Versus Time<a class="headerlink" href="#plot-head-versus-time" title="Permalink to this headline">¶</a></h3>
 <p>Make a plot of head versus time by extracting the binary heads from the headobj:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="c1"># Plot the head versus time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the head versus time</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">nrow</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">ncol</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">headobj</span><span class="o">.</span><span class="n">get_ts</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -447,9 +441,7 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -458,7 +450,7 @@
         <a href="notebooks.html" class="btn btn-neutral float-right" title="Ipython Notebooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tutorial1.html" class="btn btn-neutral" title="Tutorial 1: Confined Steady-State Flow Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorial1.html" class="btn btn-neutral float-left" title="Tutorial 1: Confined Steady-State Flow Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -467,11 +459,13 @@
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -484,36 +478,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

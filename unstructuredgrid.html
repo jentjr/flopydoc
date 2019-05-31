@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.discretization.unstructuredgrid Module &mdash; flopy 3.2.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.discretization.modeltime Module" href="modeltime.html" />
+    <link rel="prev" title="flopy.discretization.vertexgrid Module" href="vertexgrid.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.12
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="grid.html">flopy.discretization.grid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structuredgrid.html">flopy.discretization.structuredgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertexgrid.html">flopy.discretization.vertexgrid Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.discretization.unstructuredgrid Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modeltime.html">flopy.discretization.modeltime Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.discretization.unstructuredgrid Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/unstructuredgrid.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.discretization.unstructuredgrid">
+<span id="flopy-discretization-unstructuredgrid-module"></span><h1>flopy.discretization.unstructuredgrid Module<a class="headerlink" href="#module-flopy.discretization.unstructuredgrid" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid">
+<em class="property">class </em><code class="descclassname">flopy.discretization.unstructuredgrid.</code><code class="descname">UnstructuredGrid</code><span class="sig-paren">(</span><em>vertices=None</em>, <em>iverts=None</em>, <em>xcenters=None</em>, <em>ycenters=None</em>, <em>top=None</em>, <em>botm=None</em>, <em>idomain=None</em>, <em>lenuni=None</em>, <em>ncpl=None</em>, <em>epsg=None</em>, <em>proj4=None</em>, <em>prj=None</em>, <em>xoff=0.0</em>, <em>yoff=0.0</em>, <em>angrot=0.0</em>, <em>layered=True</em>, <em>nodes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for an unstructured model grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vertices</strong></dt>
+<dd><p class="first last">list of vertices that make up the grid</p>
+</dd>
+<dt><strong>cell2d</strong></dt>
+<dd><p class="first last">list of cells and their vertices</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>get_cell_vertices(cellid)</strong></td>
+<td>returns vertices for a single cell at cellid.</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.from_argus_export">
+<em class="property">classmethod </em><code class="descname">from_argus_export</code><span class="sig-paren">(</span><em>fname</em>, <em>nlay=1</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.from_argus_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new SpatialReferenceUnstructured grid from an Argus One
+Trimesh file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">File name</p>
+</dd>
+<dt><strong>nlay</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of layers to create</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sru</strong> <span class="classifier-delimiter">:</span> <span class="classifier">flopy.utils.reference.SpatialReferenceUnstructured</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.get_cell_vertices">
+<code class="descname">get_cell_vertices</code><span class="sig-paren">(</span><em>cellid</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.get_cell_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Method to get a set of cell vertices for a single cell</dt>
+<dd>used in the Shapefile export utilities</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cellid</strong> – (int) cellid number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of x,y cell vertices</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.get_coords">
+<code class="descname">get_coords</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.get_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values, apply rotation, scale and offset,
+to convert them from model coordinates to real-world coordinates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.get_local_coords">
+<code class="descname">get_local_coords</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.get_local_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given x and y array-like values, apply rotation, scale and offset,
+to convert them from real-world coordinates to model coordinates.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.grid_lines">
+<code class="descname">grid_lines</code><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.grid_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a series of grid line vertices for drawing
+a model grid line collection</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>list: grid line vertices</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.load_coord_info">
+<code class="descname">load_coord_info</code><span class="sig-paren">(</span><em>namefile=None</em>, <em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.load_coord_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to load spatial reference information from
+the following files (in order):
+1) usgs.model.reference
+2) NAM file (header comment)
+3) defaults</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.read_usgs_model_reference_file">
+<code class="descname">read_usgs_model_reference_file</code><span class="sig-paren">(</span><em>reffile='usgs.model.reference'</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.read_usgs_model_reference_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>read spatial reference info from the usgs.model.reference file
+<a class="reference external" href="https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html">https://water.usgs.gov/ogw/policy/gw-model/modelers-setup.html</a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.xyzcellcenters">
+<code class="descname">xyzcellcenters</code><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.xyzcellcenters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal method to get cell centers and set to grid</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.discretization.unstructuredgrid.UnstructuredGrid.xyzvertices">
+<code class="descname">xyzvertices</code><a class="headerlink" href="#flopy.discretization.unstructuredgrid.UnstructuredGrid.xyzvertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal method to get model grid verticies</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>list of dimension ncpl by nvertices</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modeltime.html" class="btn btn-neutral float-right" title="flopy.discretization.modeltime Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="vertexgrid.html" class="btn btn-neutral float-left" title="flopy.discretization.vertexgrid Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

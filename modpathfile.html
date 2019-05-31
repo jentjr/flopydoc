@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.utils.modpathfile Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.utils.observationfile Module" href="observationfile.html"/>
-        <link rel="prev" title="flopy.utils.mfgrdfile Module" href="mfgrdfile.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.utils.mtlistfile Module" href="mtlistfile.html" />
+    <link rel="prev" title="flopy.utils.mfgrdfile Module" href="mfgrdfile.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -108,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -117,8 +111,6 @@
 <li class="toctree-l3"><a class="reference internal" href="cvfdutil.html">flopy.utils.cvfdutil Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datafile.html">flopy.utils.datafile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="binaryfile.html">flopy.utils.binaryfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryhydmodfile.html">flopy.utils.binaryhydmodfile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="binaryswrfile.html">flopy.utils.binaryswrfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="flopy_io.html">flopy.utils.flopy_io Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="formattedfile.html">flopy.utils.formattedfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geometry.html">flopy.utils.geometry Module</a></li>
@@ -128,6 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfreadnam.html">flopy.utils.mfreadnam Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgrdfile.html">flopy.utils.mfgrdfile Module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.utils.modpathfile Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtlistfile.html">flopy.utils.mtlistfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="observationfile.html">flopy.utils.observationfile Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="postprocessing.html">flopy.utils.postprocessing Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shapefile_utils.html">flopy.export.shapefile_utils Module</a></li>
@@ -143,6 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +150,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -164,9 +158,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -226,23 +221,20 @@ important classes that can be accessed by the user.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the endpoint file</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the endpoint file</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<p>The EndpointFile class provides simple ways to retrieve MODPATH 6
-endpoint data from a MODPATH 6 ascii endpoint file.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">endobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">EndpointFile</span><span class="p">(</span><span class="s1">&#39;model.mpend&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">e1</span> <span class="o">=</span> <span class="n">endobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -255,16 +247,17 @@ endpoint data from a MODPATH 6 ascii endpoint file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>A numpy recarray with the endpoint particle data</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">A numpy recarray with the endpoint particle data</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">endobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">EndpointFile</span><span class="p">(</span><span class="s1">&#39;model.mpend&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">endobj</span><span class="o">.</span><span class="n">get_alldata</span><span class="p">()</span>
 </pre></div>
@@ -279,24 +272,26 @@ endpoint data from a MODPATH 6 ascii endpoint file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>partid</strong> : int</p>
-<blockquote>
-<div><p>The zero-based particle id.  The first record is record 0.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>partid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based particle id.  The first record is record 0.
 (default is 0)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>A numpy recarray with the endpoint particle data for
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">A numpy recarray with the endpoint particle data for
 endpoint partid.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">endobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">EndpointFile</span><span class="p">(</span><span class="s1">&#39;model.mpend&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">e1</span> <span class="o">=</span> <span class="n">endobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -305,27 +300,40 @@ endpoint partid.</p>
 
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.get_destination_endpoint_data">
-<code class="descname">get_destination_endpoint_data</code><span class="sig-paren">(</span><em>dest_cells</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_destination_endpoint_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_destination_endpoint_data</code><span class="sig-paren">(</span><em>dest_cells</em>, <em>source=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.get_destination_endpoint_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get endpoint data for set of destination cells.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dest_cells</strong> : list or array of tuples</p>
-<blockquote>
-<div><p>(k, i, j) of each destination cell (zero-based)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>dest_cells</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or array of tuples</span></dt>
+<dd><p class="first last">(k, i, j) or (node,) of each destination cell (zero-based)</p>
+</dd>
+<dt><strong>source</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean to specify is dest_cells applies to source or
+destination cells (default is False).</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>epdest</strong> : np.recarray</p>
-<blockquote class="last">
-<div><p>Slice of endpoint data array (e.g. EndpointFile.get_alldata)
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>epdest</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Slice of endpoint data array (e.g. EndpointFile.get_alldata)
 containing only data with final k,i,j in dest_cells.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">EndpointFile</span><span class="p">(</span><span class="s1">&#39;modpath.endpoint&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e0</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">get_destination_endpoint_data</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">... </span>                                      <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -336,10 +344,11 @@ containing only data with final k,i,j in dest_cells.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>Maximum endpoint particle id.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum endpoint particle id.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -354,10 +363,11 @@ containing only data with final k,i,j in dest_cells.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<blockquote class="last">
-<div><p>Maximum endpoint time.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Maximum endpoint time.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -372,10 +382,11 @@ containing only data with final k,i,j in dest_cells.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<blockquote class="last">
-<div><p>Maximum endpoint travel time.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Maximum endpoint travel time.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -384,10 +395,10 @@ containing only data with final k,i,j in dest_cells.</p>
 
 <dl class="method">
 <dt id="flopy.utils.modpathfile.EndpointFile.write_shapefile">
-<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>endpoint_data=None</em>, <em>shpname='endpoings.shp'</em>, <em>direction='ending'</em>, <em>sr=None</em>, <em>epsg=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>endpoint_data=None</em>, <em>shpname='endpoints.shp'</em>, <em>direction='ending'</em>, <em>mg=None</em>, <em>epsg=None</em>, <em>sr=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.EndpointFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write particle starting / ending locations to shapefile.</p>
 <dl class="docutils">
-<dt>endpoint_data <span class="classifier-delimiter">:</span> <span class="classifier">np.recarry</span></dt>
+<dt>endpoint_data <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
 <dd>Record array of same form as that returned by EndpointFile.get_alldata.
 (if none, EndpointFile.get_alldata() is exported).</dd>
 <dt>shpname <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
@@ -414,23 +425,20 @@ the proj4 string or epgs code associated with sr will be used.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>Name of the pathline file</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Write information to the screen.  Default is False.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the pathline file</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<p>The PathlineFile class provides simple ways to retrieve MODPATH 6
-pathline data from a MODPATH 6 ascii pathline file.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pthobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PathlineFile</span><span class="p">(</span><span class="s1">&#39;model.mppth&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">pthobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -443,31 +451,32 @@ pathline data from a MODPATH 6 ascii pathline file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. All pathline points for particle partid
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. All pathline points for particle partid
 that are greater than or equal to (ge=True) or less than or
 equal to (ge=False) totim will be returned. Default is None</p>
-</div></blockquote>
-<p><strong>ge</strong> : bool</p>
-<blockquote>
-<div><p>Boolean that determines if pathline times greater than or equal
+</dd>
+<dt><strong>ge</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean that determines if pathline times greater than or equal
 to or less than or equal to totim is used to create a subset
 of pathlines. Default is True.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>plist</strong> : a list of numpy record array</p>
-<blockquote class="last">
-<div><p>A list of numpy recarrays with the x, y, z, time, k, and particleid for
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>plist</strong> <span class="classifier-delimiter">:</span> <span class="classifier">a list of numpy record array</span></dt>
+<dd><p class="first last">A list of numpy recarrays with the x, y, z, time, k, and particleid for
 all pathlines.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.modpathfile</span> <span class="k">as</span> <span class="nn">mpf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.modpathfile</span> <span class="k">as</span> <span class="nn">mpf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pthobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PathlineFile</span><span class="p">(</span><span class="s1">&#39;model.mppth&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">pthobj</span><span class="o">.</span><span class="n">get_alldata</span><span class="p">()</span>
 </pre></div>
@@ -482,35 +491,35 @@ all pathlines.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>partid</strong> : int</p>
-<blockquote>
-<div><p>The zero-based particle id.  The first record is record 0.</p>
-</div></blockquote>
-<p><strong>totim</strong> : float</p>
-<blockquote>
-<div><p>The simulation time. All pathline points for particle partid
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>partid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based particle id.  The first record is record 0.</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. All pathline points for particle partid
 that are greater than or equal to (ge=True) or less than or
 equal to (ge=False) totim will be returned. Default is None</p>
-</div></blockquote>
-<p><strong>ge</strong> : bool</p>
-<blockquote>
-<div><p>Boolean that determines if pathline times greater than or equal
+</dd>
+<dt><strong>ge</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean that determines if pathline times greater than or equal
 to or less than or equal to totim is used to create a subset
 of pathlines. Default is True.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ra</strong> : numpy record array</p>
-<blockquote class="last">
-<div><p>A numpy recarray with the x, y, z, time, k, and particleid for
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">A numpy recarray with the x, y, z, time, k, and particleid for
 pathline partid.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.modpathfile</span> <span class="k">as</span> <span class="nn">mpf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy.utils.modpathfile</span> <span class="k">as</span> <span class="nn">mpf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pthobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PathlineFile</span><span class="p">(</span><span class="s1">&#39;model.mppth&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">pthobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -519,27 +528,43 @@ pathline partid.</p>
 
 <dl class="method">
 <dt id="flopy.utils.modpathfile.PathlineFile.get_destination_pathline_data">
-<code class="descname">get_destination_pathline_data</code><span class="sig-paren">(</span><em>dest_cells</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_destination_pathline_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_destination_pathline_data</code><span class="sig-paren">(</span><em>dest_cells</em>, <em>to_recarray=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.get_destination_pathline_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pathline data for set of destination cells.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dest_cells</strong> : list or array of tuples</p>
-<blockquote>
-<div><p>(k, i, j) of each destination cell (zero-based)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>dest_cells</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or array of tuples</span></dt>
+<dd><p class="first last">(k, i, j) of each destination cell (zero-based)</p>
+</dd>
+<dt><strong>to_recarray</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean that controls returned pthldest. If to_recarray is True,
+a single recarray with all of the pathlines that intersect
+dest_cells are returned. If to_recarray is False, a list of
+recarrays (the same form as returned by get_alldata method)
+that intersect dest_cells are returned (default is False).</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pthldest</strong> : np.recarray</p>
-<blockquote class="last">
-<div><p>Slice of pathline data array (e.g. PathlineFile._data)
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pthldest</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Slice of pathline data array (e.g. PathlineFile._data)
 containing only pathlines with final k,i,j in dest_cells.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PathlineFile</span><span class="p">(</span><span class="s1">&#39;modpath.pathline&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_destination_pathline_data</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">... </span>                                      <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -550,10 +575,11 @@ containing only pathlines with final k,i,j in dest_cells.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
-<blockquote class="last">
-<div><p>Maximum pathline number.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum pathline number.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -568,10 +594,11 @@ containing only pathlines with final k,i,j in dest_cells.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
-<blockquote class="last">
-<div><p>Maximum pathline time.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Maximum pathline time.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -580,30 +607,219 @@ containing only pathlines with final k,i,j in dest_cells.</p>
 
 <dl class="method">
 <dt id="flopy.utils.modpathfile.PathlineFile.write_shapefile">
-<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>pathline_data=None</em>, <em>one_per_particle=True</em>, <em>direction='ending'</em>, <em>shpname='endpoings.shp'</em>, <em>sr=None</em>, <em>epsg=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write pathlines to shapefile.</p>
+<code class="descname">write_shapefile</code><span class="sig-paren">(</span><em>pathline_data=None</em>, <em>one_per_particle=True</em>, <em>direction='ending'</em>, <em>shpname='endpoints.shp'</em>, <em>mg=None</em>, <em>epsg=None</em>, <em>sr=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.PathlineFile.write_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write pathlines to a shapefile</p>
 <dl class="docutils">
-<dt>pathline_data <span class="classifier-delimiter">:</span> <span class="classifier">np.recarry</span></dt>
-<dd>Record array of same form as that returned by EndpointFile.get_alldata.
-(if none, EndpointFile.get_alldata() is exported).</dd>
+<dt>pathline_data <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd>Record array of same form as that returned by
+EndpointFile.get_alldata(). (if none, EndpointFile.get_alldata()
+is exported).</dd>
 <dt>one_per_particle <span class="classifier-delimiter">:</span> <span class="classifier">boolean (default True)</span></dt>
-<dd>True writes a single LineString with a single set of attribute data for each
-particle. False writes a record/geometry for each pathline segment
-(each row in the PathLine file). This option can be used to visualize
-attribute information (time, model layer, etc.) across a pathline in a GIS.</dd>
+<dd>True writes a single LineString with a single set of attribute
+data for each particle. False writes a record/geometry for each
+pathline segment (each row in the PathLine file). This option can
+be used to visualize attribute information (time, model layer,
+etc.) across a pathline in a GIS.</dd>
 <dt>direction <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd>String defining if starting or ending particle locations should be
-included in shapefile attribute information. Only used if one_per_particle=False.
-(default is ‘ending’)</dd>
+included in shapefile attribute information. Only used if
+one_per_particle=False. (default is ‘ending’)</dd>
 <dt>shpname <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd>File path for shapefile</dd>
-<dt>sr <span class="classifier-delimiter">:</span> <span class="classifier">flopy.utils.reference.SpatialReference instance</span></dt>
-<dd>Used to scale and rotate Global x,y,z values in MODPATH Endpoint file</dd>
+<dt>mg <span class="classifier-delimiter">:</span> <span class="classifier">flopy.discretization.grid instance</span></dt>
+<dd>Used to scale and rotate Global x,y,z values in MODPATH Endpoint
+file.</dd>
 <dt>epsg <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd>EPSG code for writing projection (.prj) file. If this is not supplied,
-the proj4 string or epgs code associated with sr will be used.</dd>
+<dd>EPSG code for writing projection (.prj) file. If this is not
+supplied, the proj4 string or epgs code associated with mg will be
+used.</dd>
 </dl>
 <p>kwargs : keyword arguments to flopy.export.shapefile_utils.recarray2shp</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.utils.modpathfile.TimeseriesFile">
+<em class="property">class </em><code class="descclassname">flopy.utils.modpathfile.</code><code class="descname">TimeseriesFile</code><span class="sig-paren">(</span><em>filename</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.TimeseriesFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>TimeseriesFile Class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Name of the timeseries file</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Write information to the screen.  Default is False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tsobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">TimeseriesFile</span><span class="p">(</span><span class="s1">&#39;model.timeseries&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts1</span> <span class="o">=</span> <span class="n">tsobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.utils.modpathfile.TimeseriesFile.get_alldata">
+<code class="descname">get_alldata</code><span class="sig-paren">(</span><em>totim=None</em>, <em>ge=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.TimeseriesFile.get_alldata" title="Permalink to this definition">¶</a></dt>
+<dd><p>get timeseries data from the timeseries file for all timeseries
+and all times.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. All timeseries points for timeseries partid
+that are greater than or equal to (ge=True) or less than or
+equal to (ge=False) totim will be returned. Default is None</p>
+</dd>
+<dt><strong>ge</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean that determines if timeseries times greater than or equal
+to or less than or equal to totim is used to create a subset
+of timeseries. Default is True.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>tlist</strong> <span class="classifier-delimiter">:</span> <span class="classifier">a list of numpy record array</span></dt>
+<dd><p class="first last">A list of numpy recarrays with the x, y, z, time, k, and
+particleid for all timeseries.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tsobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">TimeseriesFile</span><span class="p">(</span><span class="s1">&#39;model.timeseries&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">tsobj</span><span class="o">.</span><span class="n">get_alldata</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.TimeseriesFile.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>partid=0</em>, <em>totim=None</em>, <em>ge=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.TimeseriesFile.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>get timeseries data from the timeseries file for a single timeseries
+particleid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>partid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The zero-based particle id.  The first record is record 0.</p>
+</dd>
+<dt><strong>totim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The simulation time. All timeseries points for particle partid
+that are greater than or equal to (ge=True) or less than or
+equal to (ge=False) totim will be returned. Default is None</p>
+</dd>
+<dt><strong>ge</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean that determines if timeseries times greater than or equal
+to or less than or equal to totim is used to create a subset
+of timeseries. Default is True.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ra</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy record array</span></dt>
+<dd><p class="first last">A numpy recarray with the x, y, z, time, k, and particleid for
+timeseries partid.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tsobj</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">TimeseriesFile</span><span class="p">(</span><span class="s1">&#39;model.timeseries&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts1</span> <span class="o">=</span> <span class="n">tsobj</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">partid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.TimeseriesFile.get_destination_timeseries_data">
+<code class="descname">get_destination_timeseries_data</code><span class="sig-paren">(</span><em>dest_cells</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.TimeseriesFile.get_destination_timeseries_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get timeseries data for set of destination cells.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>dest_cells</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or array of tuples</span></dt>
+<dd><p class="first last">(k, i, j) or nodes of each destination cell (zero-based)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>tsdest</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.recarray</span></dt>
+<dd><p class="first last">Slice of timeseries data array (e.g. TmeseriesFile._data)
+containing only pathlines with final k,i,j in dest_cells.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">TimeseriesFile</span><span class="p">(</span><span class="s1">&#39;modpath.timeseries&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tss</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">get_destination_timeseries_data</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">... </span>                                          <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.TimeseriesFile.get_maxid">
+<code class="descname">get_maxid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.TimeseriesFile.get_maxid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the maximum timeseries number in the file timeseries file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum pathline number.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.utils.modpathfile.TimeseriesFile.get_maxtime">
+<code class="descname">get_maxtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.utils.modpathfile.TimeseriesFile.get_maxtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the maximum time in timeseries file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Maximum pathline time.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -612,18 +828,16 @@ the proj4 string or epgs code associated with sr will be used.</dd>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="observationfile.html" class="btn btn-neutral float-right" title="flopy.utils.observationfile Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mtlistfile.html" class="btn btn-neutral float-right" title="flopy.utils.mtlistfile Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mfgrdfile.html" class="btn btn-neutral" title="flopy.utils.mfgrdfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mfgrdfile.html" class="btn btn-neutral float-left" title="flopy.utils.mfgrdfile Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -632,11 +846,13 @@ the proj4 string or epgs code associated with sr will be used.</dd>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -649,36 +865,15 @@ the proj4 string or epgs code associated with sr will be used.</dd>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

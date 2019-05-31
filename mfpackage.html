@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.mfpackage Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.mfpackage Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,42 +17,35 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mf6.mfsimulation Module" href="mfsimulation.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.mf6.mfsimulation Module" href="mfsimulation.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -66,7 +59,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -112,6 +105,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -147,6 +141,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -155,6 +150,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -168,7 +164,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -176,9 +172,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -226,56 +223,51 @@
 <span id="flopy-mf6-mfpackage-module"></span><h1>flopy.mf6.mfpackage Module<a class="headerlink" href="#module-flopy.mf6.mfpackage" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.mfpackage.MFBlock">
-<em class="property">class </em><code class="descclassname">flopy.mf6.mfpackage.</code><code class="descname">MFBlock</code><span class="sig-paren">(</span><em>simulation_data</em>, <em>dimensions</em>, <em>structure</em>, <em>path</em>, <em>model_or_sim</em>, <em>container_package=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfpackage.MFBlock" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.mfpackage.</code><code class="descname">MFBlock</code><span class="sig-paren">(</span><em>simulation_data</em>, <em>dimensions</em>, <em>structure</em>, <em>path</em>, <em>model_or_sim</em>, <em>container_package</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfpackage.MFBlock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a block in a MF6 input file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation_data</strong> : MFSimulationData</p>
-<blockquote>
-<div><p>data specific to this simulation</p>
-</div></blockquote>
-<p><strong>dimensions</strong> : MFDimensions</p>
-<blockquote>
-<div><p>describes model dimensions including model grid and simulation time</p>
-</div></blockquote>
-<p><strong>structure</strong> : MFVariableStructure</p>
-<blockquote>
-<div><p>structure describing block</p>
-</div></blockquote>
-<p><strong>path</strong> : tuple</p>
-<blockquote class="last">
-<div><p>unique path to block</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>simulation_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulationData</span></dt>
+<dd><p class="first last">data specific to this simulation</p>
+</dd>
+<dt><strong>dimensions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFDimensions</span></dt>
+<dd><p class="first last">describes model dimensions including model grid and simulation time</p>
+</dd>
+<dt><strong>structure</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFVariableStructure</span></dt>
+<dd><p class="first last">structure describing block</p>
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">unique path to block</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="18%" />
-<col width="82%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>block_headers</strong></td>
-<td>(MFBlockHeaderIO) block header text (BEGIN/END), header variables, comments in the header</td>
-</tr>
-<tr class="row-even"><td><strong>structure</strong></td>
-<td>(MFBlockStructure) structure describing block</td>
-</tr>
-<tr class="row-odd"><td><strong>path</strong></td>
-<td>(tuple) unique path to block</td>
-</tr>
-<tr class="row-even"><td><strong>datasets</strong></td>
-<td>(OrderDict) dictionary of dataset objects with keys that are the name of the dataset</td>
-</tr>
-<tr class="row-odd"><td><strong>datasets_keyword</strong></td>
-<td>(dict) dictionary of dataset objects with keys that are key words to identify start of dataset</td>
-</tr>
-<tr class="row-even"><td><strong>enabled</strong></td>
-<td>(boolean) block is being used</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>block_headers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFBlockHeaderIO</span></dt>
+<dd><p class="first last">block header text (BEGIN/END), header variables, comments in the header</p>
+</dd>
+<dt><strong>structure</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFBlockStructure</span></dt>
+<dd><p class="first last">structure describing block</p>
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">unique path to block</p>
+</dd>
+<dt><strong>datasets</strong> <span class="classifier-delimiter">:</span> <span class="classifier">OrderDict</span></dt>
+<dd><p class="first last">dictionary of dataset objects with keys that are the name of the
+dataset</p>
+</dd>
+<dt><strong>datasets_keyword</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">dictionary of dataset objects with keys that are key words to identify
+start of dataset</p>
+</dd>
+<dt><strong>enabled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">block is being used</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -310,40 +302,34 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : string</p>
-<blockquote>
-<div><p>block name</p>
-</div></blockquote>
-<p><strong>variable_strings</strong> : list</p>
-<blockquote>
-<div><p>list of strings that appear after the block name</p>
-</div></blockquote>
-<p><strong>comment</strong> : MFComment</p>
-<blockquote class="last">
-<div><p>comment text in the block header</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">block name</p>
+</dd>
+<dt><strong>variable_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">list of strings that appear after the block name</p>
+</dd>
+<dt><strong>comment</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFComment</span></dt>
+<dd><p class="first last">comment text in the block header</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="23%" />
-<col width="77%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>name</strong></td>
-<td>(string) block name</td>
-</tr>
-<tr class="row-even"><td><strong>variable_strings</strong></td>
-<td>(list) list of strings that appear after the block name</td>
-</tr>
-<tr class="row-odd"><td><strong>comment</strong></td>
-<td>(MFComment) comment text in the block header</td>
-</tr>
-<tr class="row-even"><td><strong>data_items</strong></td>
-<td>(list) list of MFVariable of the variables contained in this block</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">block name</p>
+</dd>
+<dt><strong>variable_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">list of strings that appear after the block name</p>
+</dd>
+<dt><strong>comment</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFComment</span></dt>
+<dd><p class="first last">comment text in the block header</p>
+</dd>
+<dt><strong>data_items</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">list of MFVariable of the variables contained in this block</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -372,53 +358,44 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model_or_sim</strong> : MFModel of MFSimulation</p>
-<blockquote>
-<div><p>the parent model or simulation containing this package</p>
-</div></blockquote>
-<p><strong>package_type</strong> : string</p>
-<blockquote>
-<div><p>string defining the package type</p>
-</div></blockquote>
-<p><strong>filename</strong> : string</p>
-<blockquote>
-<div><p>filename of file where this package is stored</p>
-</div></blockquote>
-<p><strong>pname</strong> : string</p>
-<blockquote>
-<div><p>package name</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>whether or not to add this package to the parent container’s package
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>model_or_sim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFModel of MFSimulation</span></dt>
+<dd><p class="first last">the parent model or simulation containing this package</p>
+</dd>
+<dt><strong>package_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">string defining the package type</p>
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">filename of file where this package is stored</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">package name</p>
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">whether or not to add this package to the parent container’s package
 list during initialization</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>parent package that contains this package</p>
-</div></blockquote>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">parent package that contains this package</p>
+</dd>
+</dl>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="16%" />
-<col width="84%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>blocks</strong></td>
-<td>(OrderedDict) dictionary of blocks contained in this package by block name</td>
-</tr>
-<tr class="row-even"><td><strong>path</strong></td>
-<td>(tuple) data dictionary path to this package</td>
-</tr>
-<tr class="row-odd"><td><strong>structure</strong></td>
-<td>(PackageStructure) describes the blocks and data contain in this package</td>
-</tr>
-<tr class="row-even"><td><strong>dimensions</strong></td>
-<td>(PackageDimension) resolves data dimensions for data within this package</td>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>blocks</strong> <span class="classifier-delimiter">:</span> <span class="classifier">OrderedDict</span></dt>
+<dd><p class="first last">dictionary of blocks contained in this package by block name</p>
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
+<dd><p class="first last">data dictionary path to this package</p>
+</dd>
+<dt><strong>structure</strong> <span class="classifier-delimiter">:</span> <span class="classifier">PackageStructure</span></dt>
+<dd><p class="first last">describes the blocks and data contain in this package</p>
+</dd>
+<dt><strong>dimensions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">PackageDimension</span></dt>
+<dd><p class="first last">resolves data dimensions for data within this package</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -444,6 +421,9 @@ list during initialization</p>
 <tr class="row-odd"><td><strong>get_file_path</strong></td>
 <td>(string) Returns the package file’s path</td>
 </tr>
+<tr class="row-even"><td><strong>remove</strong></td>
+<td>Removes package from the simulation/model it is currently a part of</td>
+</tr>
 </tbody>
 </table>
 <dl class="method">
@@ -454,13 +434,68 @@ list during initialization</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mf6.mfpackage.MFPackage.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.mfpackage.MFPackage.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
+package input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>package: flopy.pakbase.Package instance supplied for plotting</strong></dt>
+<dd></dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -473,9 +508,7 @@ list during initialization</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -491,11 +524,13 @@ list during initialization</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -508,36 +543,15 @@ list during initialization</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

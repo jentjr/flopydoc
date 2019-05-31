@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfsfr2 Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html"/>
-        <link rel="prev" title="flopy.modflow.mfriv Module" href="mfriv.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.modflow.mfsip Module" href="mfsip.html" />
+    <link rel="prev" title="flopy.modflow.mfriv Module" href="mfriv.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -113,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfde4.html">flopy.modflow.mfde4 Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfdis.html">flopy.modflow.mfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfdrn.html">flopy.modflow.mfdrn Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfdrt.html">flopy.modflow.mfdrt Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfevt.html">flopy.modflow.mfevt Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mffhb.html">flopy.modflow.mffhb Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfflwob.html">flopy.modflow.mfflwob Module</a></li>
@@ -151,6 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -159,6 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -172,7 +168,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -180,9 +176,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -230,207 +227,237 @@
 <span id="flopy-modflow-mfsfr2-module"></span><h1>flopy.modflow.mfsfr2 Module<a class="headerlink" href="#module-flopy.modflow.mfsfr2" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2">
-<em class="property">class </em><code class="descclassname">flopy.modflow.mfsfr2.</code><code class="descname">ModflowSfr2</code><span class="sig-paren">(</span><em>model</em>, <em>nstrm=-2</em>, <em>nss=1</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=None</em>, <em>dleak=0.0001</em>, <em>ipakcb=None</em>, <em>istcb2=None</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=0</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>irdflag=0</em>, <em>iptflag=0</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unit_number=None</em>, <em>filenames=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.modflow.mfsfr2.</code><code class="descname">ModflowSfr2</code><span class="sig-paren">(</span><em>model</em>, <em>nstrm=-2</em>, <em>nss=1</em>, <em>nsfrpar=0</em>, <em>nparseg=0</em>, <em>const=None</em>, <em>dleak=0.0001</em>, <em>ipakcb=None</em>, <em>istcb2=None</em>, <em>isfropt=0</em>, <em>nstrail=10</em>, <em>isuzn=1</em>, <em>nsfrsets=30</em>, <em>irtflg=0</em>, <em>numtim=2</em>, <em>weight=0.75</em>, <em>flwtol=0.0001</em>, <em>reach_data=None</em>, <em>segment_data=None</em>, <em>channel_geometry_data=None</em>, <em>channel_flow_data=None</em>, <em>dataset_5=None</em>, <em>irdflag=0</em>, <em>iptflag=0</em>, <em>reachinput=False</em>, <em>transroute=False</em>, <em>tabfiles=False</em>, <em>tabfiles_dict=None</em>, <em>extension='sfr'</em>, <em>unit_number=None</em>, <em>filenames=None</em>, <em>options=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Streamflow-Routing (SFR2) Package Class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type :class:’flopy.modflow.mf.Modflow’) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type :class:’flopy.modflow.mf.Modflow’) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>nstrm</strong> : integer</p>
-<blockquote>
-<div><p>An integer value that can be specified to be positive or negative. The absolute value of NSTRM is equal to
-the number of stream reaches (finite-difference cells) that are active during the simulation and the number of
-lines of data to be included in Item 2, described below. When NSTRM is specified to be a negative integer,
-it is also used as a flag for changing the format of the data input, for simulating unsaturated flow beneath
-streams, and (or) for simulating transient streamflow routing (for MODFLOW-2005 simulations only), depending
-on the values specified for variables ISFROPT and IRTFLG, as described below. When NSTRM is negative, NSFRPAR
-must be set to zero, which means that parameters cannot be specified. 
-By default, nstrm is set to negative.</p>
-</div></blockquote>
-<p><strong>nss</strong> : integer</p>
-<blockquote>
-<div><p>An integer value equal to the number of stream segments (consisting of one or more reaches) that are used
-to define the complete stream network. The value of NSS represents the number of segments that must be
-defined through a combination of parameters and variables in Item 4 or variables in Item 6.</p>
-</div></blockquote>
-<p><strong>nparseg</strong> : integer</p>
-<blockquote>
-<div><p>An integer value equal to (or exceeding) the number of stream-segment definitions associated with all
-parameters. This number can be more than the total number of segments (NSS) in the stream network because
-the same segment can be defined in multiple parameters, and because parameters can be time-varying. NPARSEG
-must equal or exceed the sum of NLST x N for all parameters, where N is the greater of 1 and NUMINST;
-that is, NPARSEG must equal or exceed the total number of repetitions of item 4b. This variable must be zero
-when NSTRM is negative.</p>
-</div></blockquote>
-<p><strong>const</strong> : float</p>
-<blockquote>
-<div><p>A real value (or conversion factor) used in calculating stream depth for stream reach. If stream depth is
-not calculated using Manning’s equation for any stream segment (that is, ICALC does not equal 1 or 2), then
-a value of zero can be entered. If Manning’s equation is used, a constant of 1.486 is used for flow units of
-cubic feet per second, and a constant of 1.0 is used for units of cubic meters per second. The constant must
-be multiplied by 86,400 when using time units of days in the simulation. An explanation of time units used
-in MODFLOW is given by Harbaugh and others (2000, p. 10).</p>
-</div></blockquote>
-<p><strong>dleak</strong> : float</p>
-<blockquote>
-<div><p>A real value equal to the tolerance level of stream depth used in computing leakage between each stream
-reach and active model cell. Value is in units of length. Usually a value of 0.0001 is sufficient when units
-of feet or meters are used in model.</p>
-</div></blockquote>
-<p><strong>ipakcb</strong> : integer</p>
-<blockquote>
-<div><p>An integer value used as a flag for writing stream-aquifer leakage values. If ipakcb &gt; 0, unformatted leakage
-between each stream reach and corresponding model cell will be saved to the main cell-by-cell budget file whenever
-when a cell-by-cell budget has been specified in Output Control (see Harbaugh and others, 2000, pages 52-55).
-If ipakcb = 0, leakage values will not be printed or saved. Printing to the listing file (ipakcb &lt; 0) is not supported.</p>
-</div></blockquote>
-<p><strong>istcsb2</strong> : integer</p>
-<blockquote>
-<div><p>An integer value used as a flag for writing to a separate formatted file all information on inflows and
-outflows from each reach; on stream depth, width, and streambed conductance; and on head difference and
-gradient across the streambed. If ISTCB2 &gt; 0, then ISTCB2 also represents the unit number to which all
-information for each stream reach will be saved to a separate file when a cell-by-cell budget has been
-specified in Output Control. If ISTCB2 &lt; 0, it is the unit number to which unformatted streamflow out of
-each reach will be saved to a file whenever the cell-by-cell budget has been specified in Output Control.
-Unformatted output will be saved to &lt;model name&gt;.sfq.</p>
-</div></blockquote>
-<p><strong>isfropt</strong> : integer</p>
-<blockquote>
-<div><p>An integer value that defines the format of the input data and whether or not unsaturated flow is simulated
-beneath streams. Values of ISFROPT are defined as follows</p>
-<dl class="docutils">
-<dt>0   No vertical unsaturated flow beneath streams. Streambed elevations, stream slope, streambed thickness,</dt>
-<dd><p class="first last">and streambed hydraulic conductivity are read for each stress period using variables defined in Items 6b
-and 6c; the optional variables in Item 2 are not used.</p>
 </dd>
-<dt>1   No vertical unsaturated flow beneath streams. Streambed elevation, stream slope, streambed thickness,</dt>
-<dd><p class="first last">and streambed hydraulic conductivity are read for each reach only once at the beginning of the simulation
-using optional variables defined in Item 2; Items 6b and 6c are used to define stream width and depth for
-ICALC = 0 and stream width for ICALC = 1.</p>
+<dt><strong>nstrm</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value that can be specified to be positive or negative. The
+absolute value of NSTRM is equal to the number of stream reaches
+(finite-difference cells) that are active during the simulation and
+the number of lines of data to be included in Item 2, described below.
+When NSTRM is specified to be a negative integer, it is also used as a
+flag for changing the format of the data input, for simulating
+unsaturated flow beneath streams, and (or) for simulating transient
+streamflow routing (for MODFLOW-2005 simulations only), depending
+on the values specified for variables ISFROPT and IRTFLG, as described
+below. When NSTRM is negative, NSFRPAR must be set to zero, which means
+that parameters cannot be specified. By default, nstrm is set to
+negative.</p>
 </dd>
-<dt>2   Streambed and unsaturated-zone properties are read for each reach only once at the beginning of the</dt>
-<dd><p class="first last">simulation using optional variables defined in Item 2; Items 6b and 6c are used to define stream width and
-depth for ICALC = 0 and stream width for ICALC = 1. When using the LPF Package, saturated vertical
-hydraulic conductivity for the unsaturated zone is the same as the vertical hydraulic conductivity of the
-corresponding layer in LPF and input variable UHC is not read.</p>
+<dt><strong>nss</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value equal to the number of stream segments (consisting of
+one or more reaches) that are used to define the complete stream
+network. The value of NSS represents the number of segments that must
+be defined through a combination of parameters and variables in Item 4
+or variables in Item 6.</p>
 </dd>
-<dt>3   Same as 2 except saturated vertical hydraulic conductivity for the unsaturated zone (input variable UHC)</dt>
-<dd><p class="first last">is read for each reach.</p>
+<dt><strong>nparseg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value equal to (or exceeding) the number of stream-segment
+definitions associated with all parameters. This number can be more
+than the total number of segments (NSS) in the stream network because
+the same segment can be defined in multiple parameters, and because
+parameters can be time-varying. NPARSEG must equal or exceed the sum
+of NLST x N for all parameters, where N is the greater of 1 and
+NUMINST; that is, NPARSEG must equal or exceed the total number of
+repetitions of item 4b. This variable must be zero when NSTRM is
+negative.</p>
 </dd>
-<dt>4   Streambed and unsaturated-zone properties are read for the beginning and end of each stream segment using</dt>
-<dd><p class="first last">variables defined in Items 6b and 6c; the optional variables in Item 2 are not used. Streambed properties
-can vary each stress period. When using the LPF Package, saturated vertical hydraulic conductivity for the
-unsaturated zone is the same as the vertical hydraulic conductivity of the corresponding layer in LPF
-and input variable UHC1 is not read.</p>
+<dt><strong>const</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">A real value (or conversion factor) used in calculating stream depth
+for stream reach. If stream depth is not calculated using Manning’s
+equation for any stream segment (that is, ICALC does not equal 1 or 2),
+then a value of zero can be entered. If Manning’s equation is used, a
+constant of 1.486 is used for flow units of cubic feet per second, and
+a constant of 1.0 is used for units of cubic meters per second. The
+constant must be multiplied by 86,400 when using time units of days in
+the simulation. An explanation of time units used in MODFLOW is given
+by Harbaugh and others (2000, p. 10).</p>
 </dd>
-<dt>5   Same as 4 except saturated vertical hydraulic conductivity for the unsaturated zone (input variable UHC1)</dt>
-<dd><p class="first last">is read for each segment at the beginning of the first stress period only.</p>
+<dt><strong>dleak</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">A real value equal to the tolerance level of stream depth used in
+computing leakage between each stream reach and active model cell.
+Value is in units of length. Usually a value of 0.0001 is sufficient
+when units of feet or meters are used in model.</p>
+</dd>
+<dt><strong>ipakcb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value used as a flag for writing stream-aquifer leakage
+values. If ipakcb &gt; 0, unformatted leakage between each stream reach
+and corresponding model cell will be saved to the main cell-by-cell
+budget file whenever when a cell-by-cell budget has been specified in
+Output Control (see Harbaugh and others, 2000, pages 52-55). If
+ipakcb = 0, leakage values will not be printed or saved. Printing to
+the listing file (ipakcb &lt; 0) is not supported.</p>
+</dd>
+<dt><strong>istcsb2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value used as a flag for writing to a separate formatted
+file all information on inflows and outflows from each reach; on
+stream depth, width, and streambed conductance; and on head difference
+and gradient across the streambed. If ISTCB2 &gt; 0, then ISTCB2 also
+represents the unit number to which all information for each stream
+reach will be saved to a separate file when a cell-by-cell budget has
+been specified in Output Control. If ISTCB2 &lt; 0, it is the unit number
+to which unformatted streamflow out of each reach will be saved to a
+file whenever the cell-by-cell budget has been specified in Output
+Control. Unformatted output will be saved to &lt;model name&gt;.sfq.</p>
+</dd>
+<dt><strong>isfropt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first">An integer value that defines the format of the input data and whether
+or not unsaturated flow is simulated beneath streams. Values of ISFROPT
+are defined as follows</p>
+<dl class="last docutils">
+<dt>0   No vertical unsaturated flow beneath streams. Streambed elevations,</dt>
+<dd><p class="first last">stream slope, streambed thickness, and streambed hydraulic
+conductivity are read for each stress period using variables
+defined in Items 6b and 6c; the optional variables in Item 2 are
+not used.</p>
+</dd>
+<dt>1   No vertical unsaturated flow beneath streams. Streambed elevation,</dt>
+<dd><p class="first last">stream slope, streambed thickness, and streambed hydraulic
+conductivity are read for each reach only once at the beginning of
+the simulation using optional variables defined in Item 2; Items 6b
+and 6c are used to define stream width and depth for ICALC = 0 and
+stream width for ICALC = 1.</p>
+</dd>
+<dt>2   Streambed and unsaturated-zone properties are read for each reach</dt>
+<dd><p class="first last">only once at the beginning of the simulation using optional
+variables defined in Item 2; Items 6b and 6c are used to define
+stream width and depth for ICALC = 0 and stream width for
+ICALC = 1. When using the LPF Package, saturated vertical
+hydraulic conductivity for the unsaturated zone is the same as
+the vertical hydraulic conductivity of the corresponding layer in
+LPF and input variable UHC is not read.</p>
+</dd>
+<dt>3   Same as 2 except saturated vertical hydraulic conductivity for the</dt>
+<dd><p class="first last">unsaturated zone (input variable UHC) is read for each reach.</p>
+</dd>
+<dt>4   Streambed and unsaturated-zone properties are read for the</dt>
+<dd><p class="first last">beginning and end of each stream segment using variables defined
+in Items 6b and 6c; the optional variables in Item 2 are not used.
+Streambed properties can vary each stress period. When using the
+LPF Package, saturated vertical hydraulic conductivity for the
+unsaturated zone is the same as the vertical hydraulic conductivity
+of the corresponding layer in LPF and input variable UHC1 is not
+read.</p>
+</dd>
+<dt>5   Same as 4 except saturated vertical hydraulic conductivity for the</dt>
+<dd><p class="first last">unsaturated zone (input variable UHC1) is read for each segment at
+the beginning of the first stress period only.</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>nstrail</strong> : integer</p>
-<blockquote>
-<div><p>An integer value that is the number of trailing wave increments used to represent a trailing wave. Trailing
-waves are used to represent a decrease in the surface infiltration rate. The value can be increased to improve
-mass balance in the unsaturated zone. Values between 10 and 20 work well and result in unsaturated-zone mass
-balance errors beneath streams ranging between 0.001 and 0.01 percent. Please see Smith (1983) for further
-details. (default is 10; for MODFLOW-2005 simulations only when isfropt &gt; 1)</p>
-</div></blockquote>
-<p><strong>isuzn</strong> : integer</p>
-<blockquote>
-<div><p>An integer value that is the maximum number of vertical cells used to define the unsaturated zone beneath a
-stream reach. If ICALC is 1 for all segments then ISUZN should be set to 1.
-(default is 1; for MODFLOW-2005 simulations only when isfropt &gt; 1)</p>
-</div></blockquote>
-<p><strong>nsfrsets</strong> : integer</p>
-<blockquote>
-<div><p>An integer value that is the maximum number of different sets of trailing waves used to allocate arrays.
-Arrays are allocated by multiplying NSTRAIL by NSFRSETS. A value of 30 is sufficient for problems where the
-stream depth varies often. NSFRSETS does not affect model run time.
-(default is 30; for MODFLOW-2005 simulations only when isfropt &gt; 1)</p>
-</div></blockquote>
-<p><strong>irtflg</strong> : integer</p>
-<blockquote>
-<div><p>An integer value that indicates whether transient streamflow routing is active. IRTFLG must be specified
-if NSTRM &lt; 0. If IRTFLG &gt; 0, streamflow will be routed using the kinematic-wave equation (see USGS Techniques
-and Methods 6-D1, p. 68-69); otherwise, IRTFLG should be specified as 0. Transient streamflow routing is only
-available for MODFLOW-2005; IRTFLG can be left blank for MODFLOW-2000 simulations.
+</dd>
+<dt><strong>nstrail</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value that is the number of trailing wave increments used to
+represent a trailing wave. Trailing waves are used to represent a
+decrease in the surface infiltration rate. The value can be increased
+to improve mass balance in the unsaturated zone. Values between 10 and
+20 work well and result in unsaturated-zone mass balance errors beneath
+streams ranging between 0.001 and 0.01 percent. Please see Smith (1983)
+for further details. (default is 10; for MODFLOW-2005 simulations only
+when isfropt &gt; 1)</p>
+</dd>
+<dt><strong>isuzn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value that is the maximum number of vertical cells used to
+define the unsaturated zone beneath a stream reach. If ICALC is 1 for
+all segments then ISUZN should be set to 1. (default is 1; for
+MODFLOW-2005 simulations only when isfropt &gt; 1)</p>
+</dd>
+<dt><strong>nsfrsets</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value that is the maximum number of different sets of
+trailing waves used to allocate arrays. Arrays are allocated by
+multiplying NSTRAIL by NSFRSETS. A value of 30 is sufficient for
+problems where the stream depth varies often. NSFRSETS does not affect
+model run time. (default is 30; for MODFLOW-2005 simulations only
+when isfropt &gt; 1)</p>
+</dd>
+<dt><strong>irtflg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value that indicates whether transient streamflow routing is
+active. IRTFLG must be specified if NSTRM &lt; 0. If IRTFLG &gt; 0,
+streamflow will be routed using the kinematic-wave equation (see USGS
+Techniques and Methods 6-D1, p. 68-69); otherwise, IRTFLG should be
+specified as 0. Transient streamflow routing is only available for
+MODFLOW-2005; IRTFLG can be left blank for MODFLOW-2000 simulations.
 (default is 1)</p>
-</div></blockquote>
-<p><strong>numtim</strong> : integer</p>
-<blockquote>
-<div><p>An integer value equal to the number of sub time steps used to route streamflow. The time step that will be
-used to route streamflow will be equal to the MODFLOW time step divided by NUMTIM.
-(default is 2; for MODFLOW-2005 simulations only when irtflg &gt; 0)</p>
-</div></blockquote>
-<p><strong>weight</strong> : float</p>
-<blockquote>
-<div><p>A real number equal to the time weighting factor used to calculate the change in channel storage. WEIGHT has
-a value between 0.5 and 1. Please refer to equation 83 in USGS Techniques and Methods 6-D1 for further
-details. (default is 0.75; for MODFLOW-2005 simulations only when irtflg &gt; 0)</p>
-</div></blockquote>
-<p><strong>flwtol</strong> : float</p>
-<blockquote>
-<div><p>A real number equal to the streamflow tolerance for convergence of the kinematic wave equation used for
-transient streamflow routing. A value of 0.00003 cubic meters per second has been used successfully in test
-simulations (and would need to be converted to whatever units are being used in the particular simulation).
-(default is 0.0001; for MODFLOW-2005 simulations only when irtflg &gt; 0)</p>
-</div></blockquote>
-<p><strong>reach_data</strong> : recarray</p>
-<blockquote>
-<div><p>Numpy record array of length equal to nstrm, with columns for each variable entered in item 2
-(see SFR package input instructions). In following flopy convention, layer, row, column and node number
-(for unstructured grids) are zero-based; segment and reach are one-based.</p>
-</div></blockquote>
-<p><strong>segment_data</strong> : recarray</p>
-<blockquote>
-<div><p>Numpy record array of length equal to nss, with columns for each variable entered in items 6a, 6b and 6c
-(see SFR package input instructions). Segment numbers are one-based.</p>
-</div></blockquote>
-<p><strong>dataset_5</strong> : dict of lists</p>
-<blockquote>
-<div><p>Optional; will be built automatically from segment_data unless specified.
-Dict of lists, with key for each stress period. Each list contains the variables [itmp, irdflag, iptflag].
-(see SFR documentation for more details):</p>
-</div></blockquote>
-<p><strong>itmp</strong> : list of integers (len = NPER)</p>
-<blockquote>
-<div><p>For each stress period, an integer value for reusing or reading stream segment data that can change each
-stress period. If ITMP = 0 then all stream segment data are defined by Item 4 (NSFRPAR &gt; 0; number of stream
-parameters is greater than 0). If ITMP &gt; 0, then stream segment data are not defined in Item 4 and must be
-defined in Item 6 below for a number of segments equal to the value of ITMP. If ITMP &lt; 0, then stream segment
-data not defined in Item 4 will be reused from the last stress period (Item 6 is not read for the current
-stress period). ITMP must be defined &gt;= 0 for the first stress period of a simulation.</p>
-</div></blockquote>
-<p><strong>irdflag</strong> : int or list of integers (len = NPER)</p>
-<blockquote>
-<div><p>For each stress period, an integer value for printing input data specified for this stress period.
-If IRDFLG = 0, input data for this stress period will be printed. If IRDFLG &gt; 0, then input data for this
+</dd>
+<dt><strong>numtim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">An integer value equal to the number of sub time steps used to route
+streamflow. The time step that will be used to route streamflow will
+be equal to the MODFLOW time step divided by NUMTIM. (default is 2;
+for MODFLOW-2005 simulations only when irtflg &gt; 0)</p>
+</dd>
+<dt><strong>weight</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">A real number equal to the time weighting factor used to calculate the
+change in channel storage. WEIGHT has a value between 0.5 and 1. Please
+refer to equation 83 in USGS Techniques and Methods 6-D1 for further
+details. (default is 0.75; for MODFLOW-2005 simulations only when
+irtflg &gt; 0)</p>
+</dd>
+<dt><strong>flwtol</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">A real number equal to the streamflow tolerance for convergence of the
+kinematic wave equation used for transient streamflow routing. A value
+of 0.00003 cubic meters per second has been used successfully in test
+simulations (and would need to be converted to whatever units are being
+used in the particular simulation). (default is 0.0001; for
+MODFLOW-2005 simulations only when irtflg &gt; 0)</p>
+</dd>
+<dt><strong>reach_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy record array of length equal to nstrm, with columns for each
+variable entered in item 2 (see SFR package input instructions). In
+following flopy convention, layer, row, column and node number
+(for unstructured grids) are zero-based; segment and reach are
+one-based.</p>
+</dd>
+<dt><strong>segment_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">recarray</span></dt>
+<dd><p class="first last">Numpy record array of length equal to nss, with columns for each
+variable entered in items 6a, 6b and 6c (see SFR package input
+instructions). Segment numbers are one-based.</p>
+</dd>
+<dt><strong>dataset_5</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict of lists</span></dt>
+<dd><p class="first last">Optional; will be built automatically from segment_data unless
+specified. Dict of lists, with key for each stress period. Each list
+contains the variables [itmp, irdflag, iptflag]. (see SFR documentation
+for more details):</p>
+</dd>
+<dt><strong>itmp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of integers (len = NPER)</span></dt>
+<dd><p class="first last">For each stress period, an integer value for reusing or reading stream
+segment data that can change each stress period. If ITMP = 0 then all
+stream segment data are defined by Item 4 (NSFRPAR &gt; 0; number of
+stream parameters is greater than 0). If ITMP &gt; 0, then stream segment
+data are not defined in Item 4 and must be defined in Item 6 below for
+a number of segments equal to the value of ITMP. If ITMP &lt; 0, then
+stream segment data not defined in Item 4 will be reused from the last
+stress period (Item 6 is not read for the current stress period). ITMP
+must be defined &gt;= 0 for the first stress period of a simulation.</p>
+</dd>
+<dt><strong>irdflag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of integers (len = NPER)</span></dt>
+<dd><p class="first last">For each stress period, an integer value for printing input data
+specified for this stress period. If IRDFLG = 0, input data for this
+stress period will be printed. If IRDFLG &gt; 0, then input data for this
 stress period will not be printed.</p>
-</div></blockquote>
-<p><strong>iptflag</strong> : int or list of integers (len = NPER)</p>
-<blockquote>
-<div><p>For each stress period, an integer value for printing streamflow-routing results during this stress period.
-If IPTFLG = 0, or whenever the variable ICBCFL or “Save Budget” is specified in Output Control, the results
-for specified time steps during this stress period will be printed. If IPTFLG &gt; 0, then the results during
-this stress period will not be printed.</p>
-</div></blockquote>
-<p><strong>extension</strong> : string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘sfr’)</p>
-</div></blockquote>
-<p><strong>unit_number</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is None).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
-<blockquote class="last">
-<div><p>Filenames to use for the package and the output files. If
+</dd>
+<dt><strong>iptflag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of integers (len = NPER)</span></dt>
+<dd><p class="first last">For each stress period, an integer value for printing streamflow-
+routing results during this stress period. If IPTFLG = 0, or whenever
+the variable ICBCFL or “Save Budget” is specified in Output Control,
+the results for specified time steps during this stress period will be
+printed. If IPTFLG &gt; 0, then the results during this stress period will
+not be printed.</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘sfr’)</p>
+</dd>
+<dt><strong>unit_number</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is None).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package and the output files. If
 filenames=None the package name will be created using the model name
 and package extension and the cbc output and sfr output name will be
 created using the model name and .cbc the .sfr.bin/.sfr.out extensions
@@ -440,7 +467,8 @@ package name will be set to the string and other uzf output files will
 be set to the model name with the appropriate output file extensions.
 To define the names for all package files (input and output) the
 length of the list of strings should be 3. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -451,26 +479,72 @@ length of the list of strings should be 3. Default is None.</p>
 <p>The Ground-Water Transport (GWT) process is not supported.</p>
 <p>Limitations on which features are supported…</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sfr2</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowSfr2</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="3%" />
-<col width="97%" />
-</colgroup>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><strong>outlets</strong></td>
-<td>(nested dictionary) Contains the outlet for each SFR segment; format is {per: {segment: outlet}} This attribute is created by the get_outlets() method.</td>
-</tr>
-<tr class="row-even"><td><strong>outsegs</strong></td>
-<td>(dictionary of arrays) Each array is of shape nss rows x maximum of nss columns. The first column contains the SFR segments, the second column contains the outsegs of those segments; the third column the outsegs of the outsegs, and so on, until all outlets have been encountered, or nss is reached. The latter case indicates circular routing. This attribute is created by the get_outlets() method.</td>
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>outlets</strong> <span class="classifier-delimiter">:</span> <span class="classifier">nested dictionary</span></dt>
+<dd><p class="first last">Contains the outlet for each SFR segment; format is
+{per: {segment: outlet}} This attribute is created by the
+get_outlets() method.</p>
+</dd>
+<dt><strong>outsegs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary of arrays</span></dt>
+<dd><p class="first last">Each array is of shape nss rows x maximum of nss columns. The first
+column contains the SFR segments, the second column contains the
+outsegs of those segments; the third column the outsegs of the outsegs,
+and so on, until all outlets have been encountered, or nss is reached.
+The latter case indicates circular routing. This attribute is created
+by the get_outlets() method.</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.add_to_dtype">
+<em class="property">static </em><code class="descname">add_to_dtype</code><span class="sig-paren">(</span><em>dtype</em>, <em>field_names</em>, <em>field_types</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.add_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more fields to a structured array data type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype</span></dt>
+<dd><p class="first last">Input structured array datatype to add to.</p>
+</dd>
+<dt><strong>field_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">One or more field names.</p>
+</dd>
+<dt><strong>field_types</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.dtype or list</span></dt>
+<dd><p class="first last">One or more data types. If one data type is supplied, it is
+repeated for each field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.all_segments">
+<code class="descname">all_segments</code><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.all_segments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to get a list of all segments in the simulation,
+since all segments do not have to be active in a given stress
+period</p>
+<dl class="docutils">
+<dt>ra <span class="classifier-delimiter">:</span> <span class="classifier">(np.recarray)</span></dt>
+<dd>recarray contains a single entry of segment data for each stream segment</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.assign_layers">
 <code class="descname">assign_layers</code><span class="sig-paren">(</span><em>adjust_botms=False</em>, <em>pad=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.assign_layers" title="Permalink to this definition">¶</a></dt>
@@ -480,19 +554,19 @@ based on cell bottoms at location of reach.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>adjust_botms</strong> : bool</p>
-<blockquote>
-<div><p>Streambed bottom elevations below the model bottom
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>adjust_botms</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Streambed bottom elevations below the model bottom
 will cause an error in MODFLOW. If True, adjust
 bottom elevations in lowest layer of the model
 so they are at least pad distance below any co-located
 streambed elevations.</p>
-</div></blockquote>
-<p><strong>pad</strong> : scalar</p>
-<blockquote class="last">
-<div><p>Minimum distance below streambed bottom to set
+</dd>
+<dt><strong>pad</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar</span></dt>
+<dd><p class="first last">Minimum distance below streambed bottom to set
 any conflicting model bottom elevations.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -500,7 +574,7 @@ any conflicting model bottom elevations.</p>
 <p class="rubric">Notes</p>
 <p>Streambed bottom = strtop - strthick
 This routine updates the elevations in the botm array
-of the flopy.model.ModflowDis instance. To produce a 
+of the flopy.model.ModflowDis instance. To produce a
 new DIS package file, model.write() or flopy.model.ModflowDis.write()
 must be run.</p>
 </dd></dl>
@@ -513,32 +587,34 @@ must be run.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str or file handle</p>
-<blockquote>
-<div><p>String defining file name or file handle for summary file
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or file handle</span></dt>
+<dd><p class="first last">String defining file name or file handle for summary file
 of check method output. If a string is passed a file handle
 is created. If f is None, check method does not write
 results to a summary file. (default is None)</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote>
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;model.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">sfr2</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 </pre></div>
@@ -552,11 +628,33 @@ performed. If level=1, full checks are performed.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.deactivate_ibound_above">
+<code class="descname">deactivate_ibound_above</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.deactivate_ibound_above" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets ibound to 0 for all cells above active SFR cells.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>none</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This routine updates the ibound array of the flopy.model.ModflowBas6
+instance. To produce a new BAS6 package file, model.write() or
+flopy.model.ModflowBas6.write() must be run.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.export_linkages">
 <code class="descname">export_linkages</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.export_linkages" title="Permalink to this definition">¶</a></dt>
-<dd><p>Export linework shapefile showing all routing connections between SFR reaches.
-A length field containing the distance between connected reaches
-can be used to filter for the longest connections in a GIS.</p>
+<dd><p>Export linework shapefile showing all routing connections between
+SFR reaches. A length field containing the distance between connected
+reaches can be used to filter for the longest connections in a GIS.</p>
 </dd></dl>
 
 <dl class="method">
@@ -569,22 +667,24 @@ the model (outset=0).</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.export_transient_variable">
 <code class="descname">export_transient_variable</code><span class="sig-paren">(</span><em>f</em>, <em>varname</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.export_transient_variable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Export point shapefile showing locations with
-a given segment_data variable applied. For example, segments
-where streamflow is entering or leaving the upstream end of a stream segment (FLOW)
-or where RUNOFF is applied. Cell centroids of the first reach of segments with
-non-zero terms of varname are exported; values of varname are exported by
-stress period in the attribute fields (e.g. flow0, flow1, flow2… for FLOW
+<dd><p>Export point shapefile showing locations with a given segment_data
+variable applied. For example, segments where streamflow is entering
+or leaving the upstream end of a stream segment (FLOW) or where RUNOFF
+is applied. Cell centroids of the first reach of segments with non-zero
+terms of varname are exported; values of varname are exported by stress
+period in the attribute fields (e.g. flow0, flow1, flow2… for FLOW
 in stress periods 0, 1, 2…</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : str, filename</p>
-<p><strong>varname</strong> : str</p>
-<blockquote class="last">
-<div><p>Variable in SFR Package dataset 6a (see SFR package documentation)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, filename</span></dt>
+<dd></dd>
+<dt><strong>varname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Variable in SFR Package dataset 6a (see SFR package documentation)</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -600,32 +700,32 @@ in stress periods 0, 1, 2…</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.get_slopes">
 <code class="descname">get_slopes</code><span class="sig-paren">(</span><em>default_slope=0.001</em>, <em>minimum_slope=0.0001</em>, <em>maximum_slope=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.get_slopes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute slopes by reach using values in strtop (streambed top) and rchlen (reach length)
-columns of reach_data. The slope for a reach n is computed as strtop(n+1) - strtop(n) / rchlen(n).
-Slopes for outlet reaches are set equal to a default value (default_slope).
-Populates the slope column in reach_data.</p>
+<dd><p>Compute slopes by reach using values in strtop (streambed top)
+and rchlen (reach length) columns of reach_data. The slope for a
+reach n is computed as strtop(n+1) - strtop(n) / rchlen(n).
+Slopes for outlet reaches are set equal to a default value
+(default_slope). Populates the slope column in reach_data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>default_slope</strong> : float</p>
-<blockquote>
-<div><p>Slope value applied to outlet reaches (where water leaves the model).
-Default value is 0.001</p>
-</div></blockquote>
-<p><strong>minimum_slope</strong> : float</p>
-<blockquote>
-<div><p>Assigned to reaches with computed slopes less than this value.
-This ensures that the Manning’s equation won’t produce unreasonable values of stage
-(in other words, that stage is consistent with assumption that
-streamflow is primarily drive by the streambed gradient).
-Default value is 0.0001.</p>
-</div></blockquote>
-<p><strong>maximum_slope</strong> : float</p>
-<blockquote class="last">
-<div><p>Assigned to reaches with computed slopes more than this value.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>default_slope</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Slope value applied to outlet reaches
+(where water leaves the model). Default value is 0.001</p>
+</dd>
+<dt><strong>minimum_slope</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Assigned to reaches with computed slopes less than this value.
+This ensures that the Manning’s equation won’t produce unreasonable
+values of stage (in other words, that stage is consistent with
+assumption that streamflow is primarily drive by the streambed
+gradient). Default value is 0.0001.</p>
+</dd>
+<dt><strong>maximum_slope</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Assigned to reaches with computed slopes more than this value.
 Default value is 1.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -635,22 +735,30 @@ Default value is 1.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.get_upsegs">
 <code class="descname">get_upsegs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.get_upsegs" title="Permalink to this definition">¶</a></dt>
-<dd><p>From segment_data, returns nested dict of all upstream segments by segemnt,
-by stress period.</p>
+<dd><p>From segment_data, returns nested dict of all upstream segments by
+segment, by stress period.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>all_upsegs</strong> : dict</p>
-<blockquote class="last">
-<div><p>Nested dictionary of form {stress period: {segment: [list of upsegs]}}</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>all_upsegs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Nested dictionary of form
+{stress period: {segment: [list of upsegs]}}</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
 <p>This method will not work if there are instances of circular routing.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="flopy.modflow.mfsfr2.ModflowSfr2.load">
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>model</em>, <em>nper=None</em>, <em>gwt=False</em>, <em>nsol=1</em>, <em>ext_unit_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default load method for standard boundary packages.</p>
 </dd></dl>
 
 <dl class="method">
@@ -662,9 +770,9 @@ package input data</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>**kwargs</strong> : dict</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
 <dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">Base file name that will be used to automatically generate file
 names for output image files. Plots will be exported as image
@@ -686,20 +794,22 @@ zero)</p>
 <dd><p class="first last">MfList dictionary key. (default is None)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>axes</strong> : list</p>
-<blockquote class="last">
-<div><p>Empty list is returned if filename_base is not None. Otherwise
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
 a list of matplotlib.pyplot.axis are returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">dis</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
@@ -709,28 +819,30 @@ a list of matplotlib.pyplot.axis are returned.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.plot_path">
 <code class="descname">plot_path</code><span class="sig-paren">(</span><em>start_seg=None</em>, <em>end_seg=0</em>, <em>plot_segment_lines=True</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.plot_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot a profile of streambed elevation and model top 
+<dd><p>Plot a profile of streambed elevation and model top
 along a path of segments.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>start_seg</strong> : int</p>
-<blockquote>
-<div><p>Number of first segment in path.</p>
-</div></blockquote>
-<p><strong>end_seg</strong> : int</p>
-<blockquote>
-<div><p>Number of last segment in path (defaults to 0/outlet).</p>
-</div></blockquote>
-<p><strong>plot_segment_lines</strong> : bool</p>
-<blockquote>
-<div><p>Controls plotting of segment end locations along profile.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_seg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of first segment in path.</p>
+</dd>
+<dt><strong>end_seg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of last segment in path (defaults to 0/outlet).</p>
+</dd>
+<dt><strong>plot_segment_lines</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Controls plotting of segment end locations along profile.
 (default True)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>ax</strong> : matplotlib.axes._subplots.AxesSubplot object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.axes._subplots.AxesSubplot object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -740,16 +852,29 @@ along a path of segments.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.renumber_segments">
 <code class="descname">renumber_segments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.renumber_segments" title="Permalink to this definition">¶</a></dt>
-<dd><p>Renumber segments so that segment numbering is continuous and always increases
-in the downstream direction. This may speed convergence of the NWT solver 
-in some situations.</p>
+<dd><p>Renumber segments so that segment numbering is continuous and always
+increases in the downstream direction. This may speed convergence of
+the NWT solver in some situations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>r</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary mapping old segment numbers to new</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.ModflowSfr2.set_outreaches">
 <code class="descname">set_outreaches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.ModflowSfr2.set_outreaches" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine the outreach for each SFR reach (requires a reachID column in reach_data).
-Uses the segment routing specified for the first stress period to route reaches between segments.</p>
+<dd><p>Determine the outreach for each SFR reach (requires a reachID
+column in reach_data). Uses the segment routing specified for the
+first stress period to route reaches between segments.</p>
 </dd></dl>
 
 <dl class="method">
@@ -761,19 +886,23 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>Shapefile name to write</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Shapefile name to write</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.nam&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ml</span><span class="o">.</span><span class="n">lpf</span><span class="o">.</span><span class="n">to_shapefile</span><span class="p">(</span><span class="s1">&#39;test_hk.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -788,7 +917,11 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -804,20 +937,19 @@ Adds an attribute for each layer in each data array</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sfrpackage</strong> : object</p>
-<blockquote>
-<div><p>Instance of Flopy ModflowSfr2 class.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : bool</p>
-<blockquote>
-<div><p>Boolean flag used to determine if check method results are
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sfrpackage</strong> <span class="classifier-delimiter">:</span> <span class="classifier">object</span></dt>
+<dd><p class="first last">Instance of Flopy ModflowSfr2 class.</p>
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean flag used to determine if check method results are
 written to the screen</p>
-</div></blockquote>
-<p><strong>level</strong> : int</p>
-<blockquote class="last">
-<div><p>Check method analysis level. If level=0, summary checks are
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Check method analysis level. If level=0, summary checks are
 performed. If level=1, full checks are performed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -838,7 +970,8 @@ performed. If level=1, full checks are performed.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.check.elevations">
 <code class="descname">elevations</code><span class="sig-paren">(</span><em>min_strtop=-10</em>, <em>max_strtop=15000</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.elevations" title="Permalink to this definition">¶</a></dt>
-<dd><p>checks streambed elevations for downstream rises and inconsistencies with model grid</p>
+<dd><p>Checks streambed elevations for downstream rises and inconsistencies
+with model grid</p>
 </dd></dl>
 
 <dl class="method">
@@ -850,19 +983,21 @@ performed. If level=1, full checks are performed.</p>
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.check.numbering">
 <code class="descname">numbering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.numbering" title="Permalink to this definition">¶</a></dt>
-<dd><p>checks for continuity in segment and reach numbering</p>
+<dd><p>Checks for continuity in segment and reach numbering</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.check.overlapping_conductance">
 <code class="descname">overlapping_conductance</code><span class="sig-paren">(</span><em>tol=1e-06</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.overlapping_conductance" title="Permalink to this definition">¶</a></dt>
-<dd><p>checks for multiple SFR reaches in one cell; and whether more than one reach has Cond &gt; 0</p>
+<dd><p>Checks for multiple SFR reaches in one cell; and whether more than
+one reach has Cond &gt; 0</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="flopy.modflow.mfsfr2.check.routing">
 <code class="descname">routing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modflow.mfsfr2.check.routing" title="Permalink to this definition">¶</a></dt>
-<dd><p>checks for breaks in routing and does comprehensive check for circular routing</p>
+<dd><p>Checks for breaks in routing and does comprehensive check for
+circular routing</p>
 </dd></dl>
 
 <dl class="method">
@@ -879,9 +1014,7 @@ where stage is computed.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -890,7 +1023,7 @@ where stage is computed.</p>
         <a href="mfsip.html" class="btn btn-neutral float-right" title="flopy.modflow.mfsip Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mfriv.html" class="btn btn-neutral" title="flopy.modflow.mfriv Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mfriv.html" class="btn btn-neutral float-left" title="flopy.modflow.mfriv Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -899,11 +1032,13 @@ where stage is computed.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -916,36 +1051,15 @@ where stage is computed.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

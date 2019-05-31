@@ -1,0 +1,625 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flopy.modpath.mp7particledata Module &mdash; flopy 3.2.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.modpath.mp7particlegroup Module" href="mp7particlegroup.html" />
+    <link rel="prev" title="flopy.modpath.mp7bas Module" href="mp7bas.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> flopy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.12
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is FloPy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-installation">FloPy Installation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-resources">FloPy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#flopy-development-team">FloPy Development Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#how-to-cite">How to Cite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Ipython Notebooks</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="code.html">Flopy Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-classes">Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-packages">MODFLOW Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-6-packages">MODFLOW 6 Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mp7.html">flopy.modpath.mp7 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7bas.html">flopy.modpath.mp7bas Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flopy.modpath.mp7particledata Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7particlegroup.html">flopy.modpath.mp7particlegroup Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp7sim.html">flopy.modpath.mp7sim Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp.html">flopy.modpath.mp Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpbas.html">flopy.modpath.mpbas Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpsim.html">flopy.modpath.mpsim Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-usg-packages">MODFLOW-USG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#model-utilities-including-binary-file-readers">Model Utilities (including binary file readers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">flopy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="code.html">Flopy Code</a> &raquo;</li>
+        
+      <li>flopy.modpath.mp7particledata Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mp7particledata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-flopy.modpath.mp7particledata">
+<span id="flopy-modpath-mp7particledata-module"></span><h1>flopy.modpath.mp7particledata Module<a class="headerlink" href="#module-flopy.modpath.mp7particledata" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>mp7particledata module. Contains the ParticleData, CellDataType,</dt>
+<dd>FaceDataType, and NodeParticleData classes.</dd>
+</dl>
+<dl class="class">
+<dt id="flopy.modpath.mp7particledata.CellDataType">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particledata.</code><code class="descname">CellDataType</code><span class="sig-paren">(</span><em>drape=0</em>, <em>columncelldivisions=3</em>, <em>rowcelldivisions=3</em>, <em>layercelldivisions=3</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.CellDataType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cell data type class to create a MODPATH 7 particle location template for
+input style 2, 3, and 4 in cells (templatesubdivisiontype = 2).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>drape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Drape indicates how particles are treated when starting locations
+are specified for cells that are dry. If drape is 0, Particles are
+placed in the specified cell. If the cell is dry at the time of
+release, the status of the particle is set to unreleased and
+removed from the simulation. If drape is 1, particles are placed
+in the upper most active grid cell directly beneath the specified
+layer, row, column or node location (default is 0).</p>
+</dd>
+<dt><strong>columncelldivisions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of particles in a cell in the column (x-coordinate)
+direction (default is 3).</p>
+</dd>
+<dt><strong>rowcelldivisions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of particles in a cell in the row (y-coordinate)
+direction (default is 3).</p>
+</dd>
+<dt><strong>layercelldivisions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of particles in a cell in the layer (z-coordinate)
+direction (default is 3).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cd</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">CellDataType</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modpath.mp7particledata.CellDataType.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>f=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.CellDataType.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.modpath.mp7particledata.FaceDataType">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particledata.</code><code class="descname">FaceDataType</code><span class="sig-paren">(</span><em>drape=0</em>, <em>verticaldivisions1=3</em>, <em>horizontaldivisions1=3</em>, <em>verticaldivisions2=3</em>, <em>horizontaldivisions2=3</em>, <em>verticaldivisions3=3</em>, <em>horizontaldivisions3=3</em>, <em>verticaldivisions4=3</em>, <em>horizontaldivisions4=3</em>, <em>rowdivisions5=3</em>, <em>columndivisions5=3</em>, <em>rowdivisions6=3</em>, <em>columndivisions6=3</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.FaceDataType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Face data type class to create a MODPATH 7 particle location template for
+input style 2, 3, and 4 on cell faces (templatesubdivisiontype = 2).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>drape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Drape indicates how particles are treated when starting locations
+are specified for cells that are dry. If drape is 0, Particles are
+placed in the specified cell. If the cell is dry at the time of
+release, the status of the particle is set to unreleased and
+removed from the simulation. If drape is 1, particles are placed
+in the upper most active grid cell directly beneath the specified
+layer, row, column or node location (default is 0).</p>
+</dd>
+<dt><strong>verticaldivisions1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of vertical subdivisions that define the two-dimensional
+array of particles on cell face 1 (default is 3).</p>
+</dd>
+<dt><strong>horizontaldivisions1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of horizontal subdivisions that define the two-dimensional
+array of particles on cell face 1 (default is 3).</p>
+</dd>
+<dt><strong>verticaldivisions2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of vertical subdivisions that define the two-dimensional
+array of particles on cell face 2 (default is 3).</p>
+</dd>
+<dt><strong>horizontaldivisions2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of horizontal subdivisions that define the two-dimensional
+array of particles on cell face 2 (default is 3).</p>
+</dd>
+<dt><strong>verticaldivisions3</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of vertical subdivisions that define the two-dimensional
+array of particles on cell face 3 (default is 3).</p>
+</dd>
+<dt><strong>horizontaldivisions3</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of horizontal subdivisions that define the two-dimensional
+array of particles on cell face 3 (default is 3).</p>
+</dd>
+<dt><strong>verticaldivisions4</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of vertical subdivisions that define the two-dimensional
+array of particles on cell face 4 (default is 3).</p>
+</dd>
+<dt><strong>horizontaldivisions4</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of horizontal subdivisions that define the two-dimensional
+array of particles on cell face 4 (default is 3).</p>
+</dd>
+<dt><strong>rowdivisions5</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of row subdivisions that define the two-dimensional array
+of particles on the bottom cell face (face 5) (default is 3).</p>
+</dd>
+<dt><strong>columndivisions5</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of column subdivisions that define the two-dimensional array
+of particles on the bottom cell face (face 5) (default is 3).</p>
+</dd>
+<dt><strong>rowdivisions6</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of row subdivisions that define the two-dimensional array
+of particles on the top cell face (face 6) (default is 3).</p>
+</dd>
+<dt><strong>columndivisions6</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of column subdivisions that define the two-dimensional array
+of particles on the top cell face (face 6) (default is 3).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">FaceDataType</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modpath.mp7particledata.FaceDataType.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>f=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.FaceDataType.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.modpath.mp7particledata.LRCParticleData">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particledata.</code><code class="descname">LRCParticleData</code><span class="sig-paren">(</span><em>subdivisiondata=None</em>, <em>lrcregions=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.LRCParticleData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Layer, row, column particle data template class to create MODPATH 7
+particle location input style 2 on cell faces (templatesubdivisiontype = 1)
+and/or in cells (templatesubdivisiontype = 2). Particle locations for this
+template are specified by layer, row, column regions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>subdivisiondata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">FaceDataType, CellDataType or list of FaceDataType</span></dt>
+<dd><blockquote class="first">
+<div><p>and/or CellDataType types</p>
+</div></blockquote>
+<p class="last">FaceDataType, CellDataType, or a list of FaceDataType and/or
+CellDataTypes that are used to create one or more particle templates
+in a particle group. If subdivisiondata is None, a default CellDataType
+with 27 particles per cell will be created (default is None).</p>
+</dd>
+<dt><strong>lrcregions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of lists tuples or np.ndarrays</span></dt>
+<dd><p class="first last">Layer, row, column (zero-based) regions with particles created using
+the specified template parameters. A region is defined as a list/tuple
+of minlayer, minrow, mincolumn, maxlayer, maxrow, maxcolumn values.
+If subdivisiondata is a list, a list/tuple or array of layer, row,
+column regions with the same length as subdivision data must be
+provided. If lrcregions is None, particles will be placed in
+the first model cell (default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">LRCParticleData</span><span class="p">(</span><span class="n">lrcregions</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modpath.mp7particledata.LRCParticleData.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>f=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.LRCParticleData.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.modpath.mp7particledata.NodeParticleData">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particledata.</code><code class="descname">NodeParticleData</code><span class="sig-paren">(</span><em>subdivisiondata=None</em>, <em>nodes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.NodeParticleData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Node particle data template class to create MODPATH 7 particle location
+input style 3 on cell faces (templatesubdivisiontype = 1) and/or in cells
+(templatesubdivisiontype = 2). Particle locations for this template are
+specified by nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>subdivisiondata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">FaceDataType, CellDataType or list of FaceDataType</span></dt>
+<dd><blockquote class="first">
+<div><p>and/or CellDataType types</p>
+</div></blockquote>
+<p class="last">FaceDataType, CellDataType, or a list of FaceDataType and/or
+CellDataTypes that are used to create one or more particle templates
+in a particle group. If subdivisiondata is None, a default CellDataType
+with 27 particles per cell will be created (default is None).</p>
+</dd>
+<dt><strong>nodes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, list of ints, tuple of ints, or np.ndarray</span></dt>
+<dd><p class="first last">Nodes (zero-based) with particles created using the specified template
+parameters. If subdivisiondata is a list, a list of nodes with the same
+length as subdivision data must be provided. If nodes is None,
+particles will be placed in the first model cell (default is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pg</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">NodeParticleData</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modpath.mp7particledata.NodeParticleData.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>f=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.NodeParticleData.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="flopy.modpath.mp7particledata.ParticleData">
+<em class="property">class </em><code class="descclassname">flopy.modpath.mp7particledata.</code><code class="descname">ParticleData</code><span class="sig-paren">(</span><em>partlocs=None</em>, <em>structured=False</em>, <em>particleids=None</em>, <em>localx=None</em>, <em>localy=None</em>, <em>localz=None</em>, <em>timeoffset=None</em>, <em>drape=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.ParticleData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to create the most basic particle data type (starting location
+input style 1). Input style 1 is the most general input style and
+provides the most flexibility in customizing starting locations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>partlocs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list/tuple of int, list/tuple of list/tuple, or np.ndarray</span></dt>
+<dd><p class="first last">Particle locations (zero-based) that are either layer, row, column
+locations or nodes.</p>
+</dd>
+<dt><strong>structured</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Boolean defining if a structured (True) or unstructured
+particle recarray will be created (default is True).</p>
+</dd>
+<dt><strong>particleids</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list, tuple, or np.ndarray</span></dt>
+<dd><p class="first last">Particle ids for the defined particle locations. If particleids
+is None, MODPATH 7 will define the particle ids to each particle
+location. If particleids is provided a particle
+id must be provided for each partloc (default is None).</p>
+</dd>
+<dt><strong>localx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, list, tuple, or np.ndarray</span></dt>
+<dd><p class="first last">Local x-location of the particle in the cell. If a single value is
+provided all particles will have the same localx position. If
+a list, tuple, or np.ndarray is provided a localx position must
+be provided for each partloc. If localx is None, a value of
+0.5 (center of the cell) will be used (default is None).</p>
+</dd>
+<dt><strong>localy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, list, tuple, or np.ndarray</span></dt>
+<dd><p class="first last">Local y-location of the particle in the cell. If a single value is
+provided all particles will have the same localy position. If
+a list, tuple, or np.ndarray is provided a localy position must
+be provided for each partloc. If localy is None, a value of
+0.5 (center of the cell) will be used (default is None).</p>
+</dd>
+<dt><strong>localz</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, list, tuple, or np.ndarray</span></dt>
+<dd><p class="first last">Local z-location of the particle in the cell. If a single value is
+provided all particles will have the same localz position. If
+a list, tuple, or np.ndarray is provided a localz position must
+be provided for each partloc. If localy is None, a value of
+0.5 (center of the cell) will be used (default is None).</p>
+</dd>
+<dt><strong>timeoffset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, list, tuple, or np.ndarray</span></dt>
+<dd><p class="first last">Timeoffset of the particle relative to the release time. If a
+single value is provided all particles will have the same
+timeoffset. If a list, tuple, or np.ndarray is provided a
+timeoffset must be provided for each partloc. If timeoffset is
+None, a value of 0. (equal to the release time) will be used
+(default is None).</p>
+</dd>
+<dt><strong>drape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, list, tuple, or np.ndarray</span></dt>
+<dd><p class="first last">Drape indicates how particles are treated when starting locations
+are specified for cells that are dry. If drape is 0, Particles are
+placed in the specified cell. If the cell is dry at the time of
+release, the status of the particle is set to unreleased and
+removed from the simulation. If drape is 1, particles are placed
+in the upper most active grid cell directly beneath the specified
+layer, row, column or node location. If a single value is provided
+all particles will have the same drape value. If a list, tuple, or
+np.ndarray is provided a drape value must be provided for each
+partloc. If drape is None, a value of 0 will be used (default
+is None).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">locs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modpath</span><span class="o">.</span><span class="n">ParticleData</span><span class="p">(</span><span class="n">locs</span><span class="p">,</span> <span class="n">structured</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">drape</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span>                                <span class="n">localx</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">localy</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">localz</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="flopy.modpath.mp7particledata.ParticleData.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>f=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.modpath.mp7particledata.ParticleData.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">fileobject</span></dt>
+<dd><p class="first last">Fileobject that is open with write access</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mp7particlegroup.html" class="btn btn-neutral float-right" title="flopy.modpath.mp7particlegroup Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mp7bas.html" class="btn btn-neutral float-left" title="flopy.modpath.mp7bas Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

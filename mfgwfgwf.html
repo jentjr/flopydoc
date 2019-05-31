@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.mf6.modflow.mfgwfgwf Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.mf6.modflow.mfgwfgwf Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,43 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/>
-        <link rel="up" title="Flopy Code" href="code.html"/>
-        <link rel="next" title="flopy.mf6.modflow.mfgwfhfb Module" href="mfgwfhfb.html"/>
-        <link rel="prev" title="flopy.mf6.modflow.mfgwfgnc Module" href="mfgwfgnc.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="flopy.mf6.modflow.mfgwfhfb Module" href="mfgwfhfb.html" />
+    <link rel="prev" title="flopy.mf6.modflow.mfgwfgnc Module" href="mfgwfgnc.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -113,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfpackage.html">flopy.mf6.mfpackage Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfsimulation.html">flopy.mf6.mfsimulation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgnc.html">flopy.mf6.modflow.mfgnc Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfgwf.html">flopy.mf6.modflow.mfgwf Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfchd.html">flopy.mf6.modflow.mfgwfchd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdis.html">flopy.mf6.modflow.mfgwfdis Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mfgwfdisu.html">flopy.mf6.modflow.mfgwfdisu Module</a></li>
@@ -148,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mfutlts.html">flopy.mf6.modflow.mfutlts Module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#modflow-lgr-packages">MODFLOW-LGR Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#modpath-packages">MODPATH Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#mt3dms-packages">MT3DMS Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#seawat-packages">SEAWAT Packages</a></li>
@@ -156,6 +151,7 @@
 <li class="toctree-l2"><a class="reference internal" href="code.html#plotting-utilities">Plotting Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#export-utilities">Export Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code.html#pest-utilities">PEST Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html#discretization-utilities">Discretization Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -169,7 +165,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -177,9 +173,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -227,85 +224,81 @@
 <span id="flopy-mf6-modflow-mfgwfgwf-module"></span><h1>flopy.mf6.modflow.mfgwfgwf Module<a class="headerlink" href="#module-flopy.mf6.modflow.mfgwfgwf" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf">
-<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfgwf.</code><code class="descname">ModflowGwfgwf</code><span class="sig-paren">(</span><em>simulation</em>, <em>loading_package=False</em>, <em>exgtype=None</em>, <em>exgmnamea=None</em>, <em>exgmnameb=None</em>, <em>auxiliary=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>cell_averaging=None</em>, <em>cvoptions=None</em>, <em>newton=None</em>, <em>gnc_filerecord=None</em>, <em>mvr_filerecord=None</em>, <em>obs_filerecord=None</em>, <em>nexg=None</em>, <em>exchangedata=None</em>, <em>fname=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">flopy.mf6.modflow.mfgwfgwf.</code><code class="descname">ModflowGwfgwf</code><span class="sig-paren">(</span><em>simulation</em>, <em>loading_package=False</em>, <em>exgtype=None</em>, <em>exgmnamea=None</em>, <em>exgmnameb=None</em>, <em>auxiliary=None</em>, <em>print_input=None</em>, <em>print_flows=None</em>, <em>save_flows=None</em>, <em>cell_averaging=None</em>, <em>cvoptions=None</em>, <em>newton=None</em>, <em>gnc_filerecord=None</em>, <em>mvr_filerecord=None</em>, <em>observations=None</em>, <em>nexg=None</em>, <em>exchangedata=None</em>, <em>filename=None</em>, <em>pname=None</em>, <em>parent_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf" title="Permalink to this definition">¶</a></dt>
 <dd><p>ModflowGwfgwf defines a gwfgwf package.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>simulation</strong> : MFSimulation</p>
-<blockquote>
-<div><p>Simulation that this package is a part of. Package is automatically
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>simulation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFSimulation</span></dt>
+<dd><p class="first last">Simulation that this package is a part of. Package is automatically
 added to simulation when it is initialized.</p>
-</div></blockquote>
-<p><strong>loading_package</strong> : bool</p>
-<blockquote>
-<div><p>Do not set this parameter. It is intended for debugging and internal
+</dd>
+<dt><strong>loading_package</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Do not set this parameter. It is intended for debugging and internal
 processing purposes only.</p>
-</div></blockquote>
-<p><strong>exgtype</strong> : &lt;string&gt;</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>exgtype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">&lt;string&gt;</span></dt>
+<dd><ul class="first last simple">
 <li>is the exchange type (GWF-GWF or GWF-GWT).</li>
 </ul>
-</div></blockquote>
-<p><strong>exgmnamea</strong> : &lt;string&gt;</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>exgmnamea</strong> <span class="classifier-delimiter">:</span> <span class="classifier">&lt;string&gt;</span></dt>
+<dd><ul class="first last simple">
 <li>is the name of the first model that is part of this exchange.</li>
 </ul>
-</div></blockquote>
-<p><strong>exgmnameb</strong> : &lt;string&gt;</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>exgmnameb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">&lt;string&gt;</span></dt>
+<dd><ul class="first last simple">
 <li>is the name of the second model that is part of this exchange.</li>
 </ul>
-</div></blockquote>
-<p><strong>auxiliary</strong> : [string]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>auxiliary</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[string]</span></dt>
+<dd><ul class="first last simple">
 <li>auxiliary (string) an array of auxiliary variable names. There is no
 limit on the number of auxiliary variables that can be provided. Most
 auxiliary variables will not be used by the GWF-GWF Exchange, but
 they will be available for use by other parts of the program. If an
 auxiliary variable with the name “ANGLDEGX” is found, then this
 information will be used as the angle (provided in degrees) between
-the connection face normal and the x axis. Additional information on
-“ANGLDEGX” is provided in the description of the DISU Package. If an
-auxiliary variable with the name “CDIST” is found, then this
-information will be used as the straight-line connection distance
-between the two cell centers. CDIST is required if specific discharge
-is calculated for either of the groundwater models.</li>
+the connection face normal and the x axis, where a value of zero
+indicates that a normal vector points directly along the positive x
+axis. The connection face normal is a normal vector on the cell face
+shared between the cell in model 1 and the cell in model 2 pointing
+away from the model 1 cell. Additional information on “ANGLDEGX” is
+provided in the description of the DISU Package. If an auxiliary
+variable with the name “CDIST” is found, then this information will
+be used as the straight-line connection distance, including the
+vertical component, between the two cell centers. Both ANGLDEGX and
+CDIST are required if specific discharge is calculated for either of
+the groundwater models.</li>
 </ul>
-</div></blockquote>
-<p><strong>print_input</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_input</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>print_input (boolean) keyword to indicate that the list of exchange
 entries will be echoed to the listing file immediately after it is
 read.</li>
 </ul>
-</div></blockquote>
-<p><strong>print_flows</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>print_flows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>print_flows (boolean) keyword to indicate that the list of exchange
 flow rates will be printed to the listing file for every stress
 period in which “SAVE BUDGET” is specified in Output Control.</li>
 </ul>
-</div></blockquote>
-<p><strong>save_flows</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>save_flows</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>save_flows (boolean) keyword to indicate that cell-by-cell flow terms
 will be written to the budget file for each model provided that the
 Output Control for the models are set up with the “BUDGET SAVE FILE”
 option.</li>
 </ul>
-</div></blockquote>
-<p><strong>cell_averaging</strong> : string</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>cell_averaging</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><ul class="first last simple">
 <li>cell_averaging (string) is a keyword and text keyword to indicate the
 method that will be used for calculating the conductance for
 horizontal cell connections. The text value for CELL_AVERAGING can be
@@ -314,27 +307,24 @@ thickness and logarithmic-mean hydraulic conductivity”. If the user
 does not specify a value for CELL_AVERAGING, then the harmonic-mean
 method will be used.</li>
 </ul>
-</div></blockquote>
-<p><strong>cvoptions</strong> : [dewatered]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>cvoptions</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[dewatered]</span></dt>
+<dd><ul class="first last simple">
 <li>dewatered (string) If the DEWATERED keyword is specified, then the
 vertical conductance is calculated using only the saturated thickness
 and properties of the overlying cell if the head in the underlying
 cell is below its top.</li>
 </ul>
-</div></blockquote>
-<p><strong>newton</strong> : boolean</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>newton</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><ul class="first last simple">
 <li>newton (boolean) keyword that activates the Newton-Raphson
 formulation for groundwater flow between connected, convertible
 groundwater cells. Cells will not dry when this option is used.</li>
 </ul>
-</div></blockquote>
-<p><strong>gnc_filerecord</strong> : [gnc6_filename]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>gnc_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[gnc6_filename]</span></dt>
+<dd><ul class="first last simple">
 <li>gnc6_filename (string) is the file name for ghost node correction
 input file. Information for the ghost nodes are provided in the file
 provided with these keywords. The format for specifying the ghost
@@ -345,10 +335,9 @@ the cells in the EXCHANGEDATA block. For the GNCDATA, noden and all
 of the nodej values are assumed to be located in model 1, and nodem
 is assumed to be in model 2.</li>
 </ul>
-</div></blockquote>
-<p><strong>mvr_filerecord</strong> : [mvr6_filename]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>mvr_filerecord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[mvr6_filename]</span></dt>
+<dd><ul class="first last simple">
 <li>mvr6_filename (string) is the file name of the water mover input file
 to apply to this exchange. Information for the water mover are
 provided in the file provided with these keywords. The format for
@@ -360,27 +349,23 @@ name must be included before package name 1 and package name 2 in the
 BEGIN PERIOD block. This allows providers and receivers to be located
 in both models listed as part of this exchange.</li>
 </ul>
-</div></blockquote>
-<p><strong>obs_filerecord</strong> : [obs6_filename]</p>
-<blockquote>
-<div><ul class="simple">
-<li>obs6_filename (string) is the file name of the observations input
-file for this exchange. See the “Observation utility” section for
-instructions for preparing observation input files. Table
-ref{table:obstype} lists observation type(s) supported by the GWF-GWF
-package.</li>
+</dd>
+<dt><strong>observations</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{varname:data} or continuous data</span></dt>
+<dd><ul class="first last simple">
+<li>Contains data for the obs package. Data can be stored in a dictionary
+containing data for the obs package with variable names as keys and
+package data as values. Data just for the observations variable is
+also acceptable. See obs package documentation for more information.</li>
 </ul>
-</div></blockquote>
-<p><strong>nexg</strong> : integer</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>nexg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><ul class="first last simple">
 <li>nexg (integer) keyword and integer value specifying the number of
 GWF-GWF exchanges.</li>
 </ul>
-</div></blockquote>
-<p><strong>exchangedata</strong> : [cellidm1, cellidm2, ihc, cl1, cl2, hwva, aux]</p>
-<blockquote>
-<div><ul class="simple">
+</dd>
+<dt><strong>exchangedata</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[cellidm1, cellidm2, ihc, cl1, cl2, hwva, aux]</span></dt>
+<dd><ul class="first last simple">
 <li>cellidm1 ((integer, …)) is the cellid of the cell in model 1 as
 specified in the simulation name file. For a structured grid that
 uses the DIS input file, CELLIDM1 is the layer, row, and column
@@ -401,8 +386,8 @@ is vertical. If IHC = 1 then the connection is horizontal. If IHC = 2
 then the connection is horizontal for a vertically staggered grid.</li>
 <li>cl1 (double) is the distance between the center of cell 1 and the its
 shared face with cell 2.</li>
-<li>cl2 (double) is the distance between the center of cell 1 and the its
-shared face with cell 2.</li>
+<li>cl2 (double) is the distance between the center of cell 2 and the its
+shared face with cell 1.</li>
 <li>hwva (double) is the horizontal width of the flow connection between
 cell 1 and cell 2 if IHC <img class="math" src="_images/math/9d74fb19f4fb5926b6e8801d9aaf22b0976321a0.png" alt="&gt;"/> 0, or it is the area perpendicular
 to flow of the vertical connection between cell 1 and cell 2 if IHC =
@@ -412,21 +397,19 @@ each GWFGWF Exchange. The values of auxiliary variables must be
 present for each exchange. The values must be specified in the order
 of the auxiliary variables specified in the OPTIONS block.</li>
 </ul>
-</div></blockquote>
-<p><strong>fname</strong> : String</p>
-<blockquote>
-<div><p>File name for this package.</p>
-</div></blockquote>
-<p><strong>pname</strong> : String</p>
-<blockquote>
-<div><p>Package name for this package.</p>
-</div></blockquote>
-<p><strong>parent_file</strong> : MFPackage</p>
-<blockquote class="last">
-<div><p>Parent package file that references this package. Only needed for
+</dd>
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">File name for this package.</p>
+</dd>
+<dt><strong>pname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">Package name for this package.</p>
+</dd>
+<dt><strong>parent_file</strong> <span class="classifier-delimiter">:</span> <span class="classifier">MFPackage</span></dt>
+<dd><p class="first last">Parent package file that references this package. Only needed for
 utility packages (mfutl*). For example, mfutllaktab package must have 
 a mfgwflak package parent_file.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -439,13 +422,68 @@ a mfgwflak package parent_file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Name of the package, ‘RIV’, ‘LPF’, etc.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the package, ‘RIV’, ‘LPF’, etc.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pp</strong> : Package object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Package object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#flopy.mf6.modflow.mfgwfgwf.ModflowGwfgwf.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2-D, 3-D, transient 2-D, and stress period list (MfList)
+package input data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>package: flopy.pakbase.Package instance supplied for plotting</strong></dt>
+<dd></dd>
+<dt><strong>**kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>filename_base <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Base file name that will be used to automatically generate file
+names for output image files. Plots will be exported as image
+files if file_name_base is not None. (default is None)</p>
+</dd>
+<dt>file_extension <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Valid matplotlib.pyplot file extension for savefig(). Only used
+if filename_base is not None. (default is ‘png’)</p>
+</dd>
+<dt>mflay <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based layer number to return.  If None, then all
+all layers will be included. (default is None)</p>
+</dd>
+<dt>kper <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">MODFLOW zero-based stress period number to return. (default is
+zero)</p>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">MfList dictionary key. (default is None)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>axes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">Empty list is returned if filename_base is not None. Otherwise
+a list of matplotlib.pyplot.axis are returned.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -458,9 +496,7 @@ a mfgwflak package parent_file.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -469,7 +505,7 @@ a mfgwflak package parent_file.</p>
         <a href="mfgwfhfb.html" class="btn btn-neutral float-right" title="flopy.mf6.modflow.mfgwfhfb Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mfgwfgnc.html" class="btn btn-neutral" title="flopy.mf6.modflow.mfgwfgnc Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mfgwfgnc.html" class="btn btn-neutral float-left" title="flopy.mf6.modflow.mfgwfgnc Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -478,11 +514,13 @@ a mfgwflak package parent_file.</p>
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -495,36 +533,15 @@ a mfgwflak package parent_file.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

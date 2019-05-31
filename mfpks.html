@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>flopy.modflow.mfpks Module &mdash; flopy 3.2.9 documentation</title>
+  <title>flopy.modflow.mfpks Module &mdash; flopy 3.2.12 documentation</title>
   
 
   
@@ -17,40 +17,34 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="flopy 3.2.9 documentation" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -64,7 +58,7 @@
             
             
               <div class="version">
-                3.2.9
+                3.2.12
               </div>
             
           
@@ -112,7 +106,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">flopy</a>
@@ -120,9 +114,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -176,75 +171,73 @@ the ModflowPks class as <cite>flopy.modflow.ModflowPks</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to which
 this package will be added.</p>
-</div></blockquote>
-<p><strong>mxiter</strong> : int</p>
-<blockquote>
-<div><p>maximum number of outer iterations. (default is 100)</p>
-</div></blockquote>
-<p><strong>innerit</strong> : int</p>
-<blockquote>
-<div><p>maximum number of inner iterations. (default is 30)</p>
-</div></blockquote>
-<p><strong>hclose</strong> : float</p>
-<blockquote>
-<div><p>is the head change criterion for convergence. (default is 1.e-3).</p>
-</div></blockquote>
-<p><strong>rclose</strong> : float</p>
-<blockquote>
-<div><p>is the residual criterion for convergence. (default is 1.e-1)</p>
-</div></blockquote>
-<p><strong>relax</strong> : float</p>
-<blockquote>
-<div><p>is the relaxation parameter used with npcond = 1. (default is 1.0)</p>
-</div></blockquote>
-<p><strong>.</strong></p>
-<p><strong>.</strong></p>
-<p><strong>.</strong></p>
-<p><strong>iprpks</strong> : int</p>
-<blockquote>
-<div><p>solver print out interval. (default is 0).</p>
-</div></blockquote>
-<p><strong>mutpks</strong> : int</p>
-<blockquote>
-<div><p>If mutpcg = 0, tables of maximum head change and residual will be printed each iteration.
-If mutpcg = 1, only the total number of iterations will be printed.
+</dd>
+<dt><strong>mxiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum number of outer iterations. (default is 100)</p>
+</dd>
+<dt><strong>innerit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum number of inner iterations. (default is 30)</p>
+</dd>
+<dt><strong>hclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the head change criterion for convergence. (default is 1.e-3).</p>
+</dd>
+<dt><strong>rclose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the residual criterion for convergence. (default is 1.e-1)</p>
+</dd>
+<dt><strong>relax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the relaxation parameter used with npcond = 1. (default is 1.0)</p>
+</dd>
+<dt><strong>.</strong></dt>
+<dd></dd>
+<dt><strong>.</strong></dt>
+<dd></dd>
+<dt><strong>.</strong></dt>
+<dd></dd>
+<dt><strong>iprpks</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">solver print out interval. (default is 0).</p>
+</dd>
+<dt><strong>mutpks</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><dl class="first docutils">
+<dt>If mutpcg = 0, tables of maximum head change and residual will be</dt>
+<dd><p class="first last">printed each iteration.</p>
+</dd>
+</dl>
+<p>If mutpcg = 1, only the total number of iterations will be printed.
 If mutpcg = 2, no information will be printed.
-If mutpcg = 3, information will only be printed if convergence fails.
-(default is 3).</p>
-</div></blockquote>
-<p><strong>damp</strong> : float</p>
-<blockquote>
-<div><p>is the steady-state damping factor. (default is 1.)</p>
-</div></blockquote>
-<p><strong>dampt</strong> : float</p>
-<blockquote>
-<div><p>is the transient damping factor. (default is 1.)</p>
-</div></blockquote>
-<p><strong>extension</strong> : list string</p>
-<blockquote>
-<div><p>Filename extension (default is ‘pks’)</p>
-</div></blockquote>
-<p><strong>unitnumber</strong> : int</p>
-<blockquote>
-<div><p>File unit number (default is 27).</p>
-</div></blockquote>
-<p><strong>filenames</strong> : str or list of str</p>
+If mutpcg = 3, information will only be printed if convergence fails.</p>
 <blockquote class="last">
-<div><p>Filenames to use for the package. If filenames=None the package name
+<div><p>(default is 3).</p>
+</div></blockquote>
+</dd>
+<dt><strong>damp</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the steady-state damping factor. (default is 1.)</p>
+</dd>
+<dt><strong>dampt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">is the transient damping factor. (default is 1.)</p>
+</dd>
+<dt><strong>extension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list string</span></dt>
+<dd><p class="first last">Filename extension (default is ‘pks’)</p>
+</dd>
+<dt><strong>unitnumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">File unit number (default is 27).</p>
+</dd>
+<dt><strong>filenames</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or list of str</span></dt>
+<dd><p class="first last">Filenames to use for the package. If filenames=None the package name
 will be created using the model name and package extension. If a
 single string is passed the package will be set to the string.
 Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pks</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPks</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -257,32 +250,34 @@ Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : filename or file handle</p>
-<blockquote>
-<div><p>File to load.</p>
-</div></blockquote>
-<p><strong>model</strong> : model object</p>
-<blockquote>
-<div><p>The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">filename or file handle</span></dt>
+<dd><p class="first last">File to load.</p>
+</dd>
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier">model object</span></dt>
+<dd><p class="first last">The model object (of type <a class="reference internal" href="mf.html#flopy.modflow.mf.Modflow" title="flopy.modflow.mf.Modflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.modflow.mf.Modflow</span></code></a>) to
 which this package will be added.</p>
-</div></blockquote>
-<p><strong>ext_unit_dict</strong> : dictionary, optional</p>
-<blockquote>
-<div><p>If the arrays in the file are specified using EXTERNAL,
+</dd>
+<dt><strong>ext_unit_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary, optional</span></dt>
+<dd><p class="first last">If the arrays in the file are specified using EXTERNAL,
 or older style array control records, then <cite>f</cite> should be a file
 handle.  In this case ext_unit_dict is required, which can be
 constructed using the function
-<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
-</div></blockquote>
+<a class="reference internal" href="mfreadnam.html#flopy.utils.mfreadnam.parsenamefile" title="flopy.utils.mfreadnam.parsenamefile"><code class="xref py py-class docutils literal notranslate"><span class="pre">flopy.utils.mfreadnam.parsenamefile</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>pks</strong> : ModflowPks object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pks</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ModflowPks object</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">flopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">Modflow</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pks</span> <span class="o">=</span> <span class="n">flopy</span><span class="o">.</span><span class="n">modflow</span><span class="o">.</span><span class="n">ModflowPks</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;test.pks&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </pre></div>
@@ -297,7 +292,11 @@ constructed using the function
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -309,9 +308,7 @@ constructed using the function
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -320,11 +317,13 @@ constructed using the function
 
   <div role="contentinfo">
     <p>
-      Last updated on Feb 28, 2018.
+      <span class="lastupdated">
+        Last updated on May 31, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -337,36 +336,15 @@ constructed using the function
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.2.9',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
